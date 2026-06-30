@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete Class 12th Mathematics Notes, Quick Revision, and PYQs by Shorveer Notes.">
+    <title>Mathematics | Shorveer Notes</title>
+    
+    <style>
+        /* --- CSS Variables --- */
+        :root {
+            --bg-color: #f0f4f8;
+            --text-color: #1e293b;
+            --primary-color: #0f172a; 
+            --accent-color: #d4af37; 
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --bg-color: #0f172a;
+            --text-color: #f1f5f9;
+            --primary-color: #1e293b;
+            --card-bg: rgba(30, 41, 59, 0.95);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); transition: var(--transition); overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- Mathematics Special Preloader (Geometry Grid Animation) --- */
+        #math-preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: var(--primary-color); z-index: 9999; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: opacity 0.5s ease; color: white;
+        }
+        
+        /* Math Geometry Animation */
+        .math-loader {
+            width: 80px; height: 80px; position: relative; margin-bottom: 25px;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .geo-shape {
+            position: absolute; width: 100%; height: 100%;
+            border: 3px solid transparent; border-radius: 50%;
+            animation: rotateMath 2s linear infinite;
+        }
+        .shape-1 { border-top-color: var(--accent-color); border-bottom-color: var(--accent-color); }
+        .shape-2 { width: 70%; height: 70%; border-left-color: #3b82f6; border-right-color: #3b82f6; animation-direction: reverse; border-radius: 0%; } /* Square inside */
+        .shape-3 { width: 40%; height: 40%; border-top-color: #ef4444; border-bottom-color: #ef4444; }
+        
+        @keyframes rotateMath {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* --- Header --- */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; background-color: var(--card-bg); backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;
+        }
+        .back-btn { font-weight: bold; cursor: pointer; color: var(--accent-color); font-size: 16px; }
+        .page-title { font-size: 20px; font-weight: 800; text-align: center; }
+        .theme-toggle { cursor: pointer; font-size: 22px; background: none; border: none; }
+
+        /* --- Main Container & Chapters --- */
+        .container { padding: 40px 5%; max-width: 1000px; margin: 0 auto; min-height: 70vh; }
+        .section-heading { font-size: 2rem; font-weight: 800; margin-bottom: 30px; border-bottom: 3px solid var(--accent-color); display: inline-block; padding-bottom: 5px; }
+        
+        .chapter-card {
+            background: var(--card-bg); padding: 25px; border-radius: 16px;
+            margin-bottom: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            display: flex; flex-direction: column; gap: 15px; 
+            border-left: 6px solid var(--accent-color); transition: transform 0.2s;
+        }
+        .chapter-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
+        .chapter-info h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--text-color); }
+        .chapter-info p { font-size: 0.95rem; opacity: 0.8; }
+        
+        /* Mobile Optimized Buttons */
+        .chapter-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+        .action-btn { 
+            padding: 10px 15px; border-radius: 8px; font-size: 13px; font-weight: 600; 
+            border: none; cursor: pointer; transition: 0.3s; flex-grow: 1; text-align: center;
+        }
+        .btn-long { background: var(--primary-color); color: white; }
+        .btn-quick { background: #3b82f6; color: white; } 
+        .btn-pyq { background: #ef4444; color: white; } 
+        .action-btn:hover { opacity: 0.8; transform: scale(1.02); }
+        .done-check { width: 22px; height: 22px; cursor: pointer; accent-color: var(--accent-color); margin-left: 10px; }
+
+        /* --- Sample Papers Section --- */
+        .sample-papers-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(0,0,0,0.1); }
+        .sp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .sp-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px dashed var(--accent-color); text-align: center; }
+        .sp-card h4 { margin-bottom: 15px; font-size: 1.1rem; }
+        .sp-card button { background: var(--accent-color); color: black; padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
+        
+        /* --- Footer --- */
+        footer { background: var(--primary-color); color: white; text-align: center; padding: 30px 20px; margin-top: 50px; font-size: 0.9rem; }
+        .support-btn { background: #ffdd00; color: black; padding: 8px 15px; border-radius: 20px; font-weight: bold; display: inline-block; margin-top: 15px; }
+
+        /* --- Cookie Consent Banner --- */
+        #cookieConsent {
+            position: fixed; bottom: -100px; left: 0; width: 100%; background: var(--primary-color); color: white;
+            padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.2); transition: bottom 0.5s ease; z-index: 10000;
+        }
+        #cookieConsent p { font-size: 14px; margin-right: 20px; flex-grow: 1; }
+        #cookieConsent button { background: var(--accent-color); color: black; padding: 10px 25px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; white-space: nowrap; margin-top: 10px; }
+
+        /* --- Media Queries --- */
+        @media (min-width: 768px) {
+            .chapter-card { flex-direction: row; justify-content: space-between; align-items: center; }
+            .chapter-actions { flex-grow: 0; justify-content: flex-end; }
+            .action-btn { flex-grow: 0; }
+            #cookieConsent button { margin-top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="math-preloader">
+        <div class="math-loader">
+            <div class="geo-shape shape-1"></div>
+            <div class="geo-shape shape-2"></div>
+            <div class="geo-shape shape-3"></div>
+        </div>
+        <h2>Loading Mathematics Core...</h2>
+    </div>
+
+    <header>
+        <a href="../index.html" class="back-btn">⬅ Home</a>
+        <div class="page-title">CLASS 12 MATHEMATICS</div>
+        <button class="theme-toggle" onclick="toggleTheme()" id="themeIcon">🌙</button>
+    </header>
+
+    <div class="container">
+        <h2 class="section-heading">All 13 Chapters</h2>
+
+        <div class="chapter-card">
+            <div class="chapter-info">
+                <h3>1. Relations and Functions</h3>
+                <p>Types of relations, equivalence relations, one-to-one and onto functions.</p>
+            </div>
+            <div class="chapter-actions">
+                <button class="action-btn btn-long">Long Notes</button>
+                <button class="action-btn btn-quick">Quick Revision</button>
+                <button class="action-btn btn-pyq">PYQs</button>
+                <input type="checkbox" class="done-check" title="Mark as Done">
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-info">
+                <h3>2. Inverse Trigonometric Functions</h3>
+                <p>Domain, range, principal value branches, graphs of inverse trigonometric functions.</p>
+            </div>
+            <div class="chapter-actions">
+                <button class="action-btn btn-long">Long Notes</button>
+                <button class="action-btn btn-quick">Quick Revision</button>
+                <button class="action-btn btn-pyq">PYQs</button>
+                <input type="checkbox" class="done-check" title="Mark as Done">
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-info">
+                <h3>3. Matrices</h3>
+                <p>Types of matrices, operations on matrices, transpose, symmetric and skew-symmetric.</p>
+            </div>
+            <div class="chapter-actions">
+                <button class="action-btn btn-long">Long Notes</button>
+                <button class="action-btn btn-quick">Quick Revision</button>
+                <button class="action-btn btn-pyq">PYQs</button>
+                <input type="checkbox" class="done-check" title="Mark as Done">
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-info">
+                <h3>4. Determinants</h3>
+                <p>Determinant of a square matrix, properties, minors, cofactors, and applications.</p>
+            </div>
+            <div class="chapter-actions">
+                <button class="action-btn btn-long">Long Notes</button>
+                <button class="action-btn btn-quick">Quick Revision</button>
+                <button class="action-btn btn-pyq">PYQs</button>
+                <input type="checkbox" class="done-check" title="Mark as Done">
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-info">
+                <h3>5. Continuity and Differentiability</h3>
+                <p>Continuity, derivative of composite functions, chain rule, implicit functions.</p>
+            </div>
+            <div class="chapter-actions">
+                <button class="action-btn btn-long">Long Notes</button>
+                <button class="action-btn btn-quick">Quick Revision</button>
+                <button class="action-btn btn-pyq">PYQs</button>
+                <input type="checkbox" class="done-check" title="Mark as Done">
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-info">
+                <h3>6. Application of Derivatives</h3>
+                <p>Rate of change, increasing/decreasing functions, maxima and minima.</p>
+            </div>
+            <div class="chapter-actions">
+                <button class="action-btn btn-long">Long Notes</button>
+                <button class="action-btn btn-quick">Quick Revision</button>
+                <button class="action-btn btn-pyq">PYQs</button>
+                <input type="checkbox" class="done-check" title="Mark as Done">
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-info">
+                <h3>7. Integrals</h3>
+                <p>Integration as inverse process of differentiation, integration by substitution, partial fractions.</p>
+            </div>
+            <div class="chapter-actions">
+                <button class="action-btn btn-long">Long Notes</button>
+                <button class="action-btn btn-quick">Quick Revision</button>
+                <button class="action-btn btn-pyq">PYQs</button>
+                <input type="checkbox" class="done-check" title="Mark as Done">
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-info">
+                <h3>8. Application of Integrals</h3>
+                <p>Area under simple curves, area of circles/parabolas/ellipses.</p>
+            </div>
+            <div class="chapter-actions">
+                <button class="action-btn btn-long">Long Notes</button>
+                <button class="action-btn btn-quick">Quick Revision</button>
+                <button class="action-btn btn-pyq">PYQs</button>
+                <input type="checkbox" class="done-check" title="Mark as Done">
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-info">
+                <h3>9. Differential Equations</h3>
+                <p>Order and degree, general and particular solutions, separation of variables.</p>
+            </div>
+            <div class="chapter-actions">
+                <button class="action-btn btn-long">Long Notes</button>
+                <button class="action-btn btn-quick">Quick Revision</button>
+                <button class="action-btn btn-pyq">PYQs</button>
+                <input type="checkbox" class="done-check" title="Mark as Done">
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-info">
+                <h3>10. Vector Algebra</h3>
+                <p>Vectors and scalars, magnitude and direction, addition, components of a vector.</p>
+            </div>
+            <div class="chapter-actions">
+                <button class="action-btn btn-long">Long Notes</button>
+                <button class="action-btn btn-quick">Quick Revision</button>
+                <button class="action-btn btn-pyq">PYQs</button>
+                <input type="checkbox" class="done-check" title="Mark as Done">
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-info">
+                <h3>11. Three Dimensional Geometry</h3>
+                <p>Direction cosines and ratios, equation of a line in space, shortest distance between two lines.</p>
+            </div>
+            <div class="chapter-actions">
+                <button class="action-btn btn-long">Long Notes</button>
+                <button class="action-btn btn-quick">Quick Revision</button>
+                <button class="action-btn btn-pyq">PYQs</button>
+                <input type="checkbox" class="done-check" title="Mark as Done">
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-info">
+                <h3>12. Linear Programming</h3>
+                <p>Mathematical formulation of L.P. problems, graphical method of solution for two variables.</p>
+            </div>
+            <div class="chapter-actions">
+                <button class="action-btn btn-long">Long Notes</button>
+                <button class="action-btn btn-quick">Quick Revision</button>
+                <button class="action-btn btn-pyq">PYQs</button>
+                <input type="checkbox" class="done-check" title="Mark as Done">
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-info">
+                <h3>13. Probability</h3>
+                <p>Conditional probability, multiplication theorem, independent events, Bayes' theorem.</p>
+            </div>
+            <div class="chapter-actions">
+                <button class="action-btn btn-long">Long Notes</button>
+                <button class="action-btn btn-quick">Quick Revision</button>
+                <button class="action-btn btn-pyq">PYQs</button>
+                <input type="checkbox" class="done-check" title="Mark as Done">
+            </div>
+        </div>
+
+        <div class="sample-papers-section">
+            <h2 class="section-heading">CBSE Sample Papers & Solutions</h2>
+            <p>Practice with previous year papers and official sample papers to boost your score.</p>
+            <div class="sp-grid">
+                <div class="sp-card">
+                    <h4>Sample Paper 2025-26</h4>
+                    <button>Download Paper + Solution</button>
+                </div>
+                <div class="sp-card">
+                    <h4>Previous Year Paper (2024)</h4>
+                    <button>Download Paper + Solution</button>
+                </div>
+                <div class="sp-card">
+                    <h4>Previous Year Paper (2023)</h4>
+                    <button>Download Paper + Solution</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookieConsent">
+        <p>🍪 We use cookies to enhance your experience, track your progress, and analyze our traffic.</p>
+        <button onclick="acceptCookies()">Accept Cookies</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Shorveer Notes. All Rights Reserved.</p>
+        <a href="#" class="support-btn">☕ Support Shorveer Notes</a>
+    </footer>
+
+    <script>
+        // 1. Math Preloader Logic
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('math-preloader').style.opacity = '0';
+                setTimeout(() => { document.getElementById('math-preloader').style.display = 'none'; }, 500);
+            }, 1200); 
+        });
+
+        // 2. Dark Mode Logic
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.getElementById('themeIcon');
+            icon.innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+
+        // 3. Cookie Consent Logic
+        window.onload = function() {
+            if (!localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => {
+                    document.getElementById('cookieConsent').style.bottom = '0';
+                }, 3000); 
+            }
+        };
+
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookieConsent').style.bottom = '-100px'; 
+        }
+    </script>
+</body>
+</html>
