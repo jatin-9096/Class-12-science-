@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page Not Found - Shorveer Notes">
+    <title>Page Not Found | Shorveer Notes</title>
+    
+    <style>
+        /* --- CSS Variables (Matching your Shorveer Theme) --- */
+        :root {
+            --bg-color: #0f172a; /* Keeping it default dark for premium cinematic feel */
+            --text-color: #f1f5f9;
+            --accent-color: #d4af37; 
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            overflow: hidden; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* --- STAGE 1: Searching / Waiting Animation --- */
+        #searching-stage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: absolute;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            z-index: 10;
+        }
+
+        .waiting-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--text-color);
+            letter-spacing: 0.5px;
+        }
+        .waiting-text span {
+            color: var(--accent-color);
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-top: 8px;
+            opacity: 0.8;
+        }
+
+        /* Radar Scanning Animation */
+        .radar-box {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid rgba(214, 175, 55, 0.2);
+        }
+        .radar-box::before, .radar-box::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 100%; height: 100%;
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            animation: radarPulse 2s infinite linear;
+            opacity: 0;
+        }
+        .radar-box::after {
+            animation-delay: 1s;
+        }
+
+        @keyframes radarPulse {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0; }
+        }
+
+
+        /* --- STAGE 2: Core 404 Error UI --- */
+        #error-stage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            max-width: 500px;
+            width: 90%;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 28px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        /* When Stage 2 activates */
+        #error-stage.active {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+        }
+
+        .glitch-404 {
+            font-size: 6.5rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            line-height: 1;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+            text-shadow: 0 5px 20px rgba(214, 175, 55, 0.3);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .error-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .error-desc {
+            font-size: 0.95rem;
+            opacity: 0.7;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        /* Navigation Buttons */
+        .btn-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+        .nav-btn {
+            padding: 12px 25px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: var(--accent-color);
+            color: #000;
+            border: none;
+            box-shadow: 0 4px 15px rgba(214, 175, 55, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(214, 175, 55, 0.5);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-color);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: var(--text-color);
+        }
+
+        /* Quick Links Footer */
+        .error-footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            width: 100%;
+        }
+        .error-footer a {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+        .error-footer a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Floating Animation for 404 */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Mobile Adjustments */
+        @media (min-width: 480px) {
+            .btn-group {
+                flex-direction: row;
+            }
+            .nav-btn {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="searching-stage">
+        <h2 class="waiting-text">
+            Don't Worry.
+            <span>Please wait for a while...</span>
+        </h2>
+        <div class="radar-box"></div>
+    </div>
+
+    <div id="error-stage">
+        <div class="glitch-404">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-desc">Oops! The page you are looking for might have been moved, deleted, or perhaps never existed in the Shorveer universe.</p>
+        
+   <div class="btn-group">
+    <a href="javascript:history.back()" class="nav-btn btn-secondary">⬅ Go Back</a>
+    <a href="/index.html" class="nav-btn btn-primary">Go to Home</a>
+</div>
+
+<div class="error-footer">
+    <a href="/about.html">About Us</a>
+    <a href="/about-notes.html">About Notes</a>
+    <a href="/privacy.html">Privacy Policy</a>
+</div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // 3000ms (3 seconds) तक "Please wait..." वाला एनीमेशन चलेगा
+            setTimeout(() => {
+                const stage1 = document.getElementById('searching-stage');
+                const stage2 = document.getElementById('error-stage');
+                
+                // Stage 1 को गायब करना
+                stage1.style.opacity = '0';
+                stage1.style.transform = 'translateY(-20px)';
+                
+                // Stage 1 को DOM से पूरी तरह हटाने के बाद Stage 2 एक्टिव करना
+                setTimeout(() => {
+                    stage1.style.display = 'none';
+                    stage2.classList.add('active');
+                }, 600);
+
+            }, 3000); 
+        });
+    </script>
+</body>
+</html>
