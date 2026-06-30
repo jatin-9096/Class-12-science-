@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How Shorveer Notes are crafted - The sources and methodology.">
+    <title>About Our Notes | Shorveer Notes</title>
+    
+    <style>
+        /* --- CSS Variables --- */
+        :root {
+            --bg-color: #f0f4f8;
+            --text-color: #1e293b;
+            --primary-color: #0f172a; 
+            --accent-color: #d4af37; 
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --bg-color: #0f172a;
+            --text-color: #f1f5f9;
+            --primary-color: #1e293b;
+            --card-bg: rgba(30, 41, 59, 0.95);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); transition: var(--transition); overflow-x: hidden; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- Special Preloader (Writing Notes Animation) --- */
+        #notes-preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: var(--primary-color); z-index: 9999; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: opacity 0.5s ease; color: white;
+        }
+        
+        .document-loader {
+            width: 60px; height: 80px;
+            background: #ffffff; border-radius: 6px;
+            position: relative; padding: 15px 10px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            animation: floatDoc 2s infinite ease-in-out;
+            margin-bottom: 25px;
+        }
+        .doc-line {
+            height: 4px; background: var(--accent-color); margin-bottom: 10px; border-radius: 2px;
+            animation: drawLine 1.5s infinite ease-out;
+            transform-origin: left;
+        }
+        .doc-line:nth-child(2) { animation-delay: 0.2s; width: 80%; }
+        .doc-line:nth-child(3) { animation-delay: 0.4s; width: 60%; }
+        
+        @keyframes drawLine {
+            0% { transform: scaleX(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: scaleX(1); opacity: 0; }
+        }
+        @keyframes floatDoc {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        /* --- Header --- */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; background-color: var(--card-bg); backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;
+        }
+        .back-btn { font-weight: bold; cursor: pointer; color: var(--accent-color); font-size: 16px; }
+        .page-title { font-size: 20px; font-weight: 800; text-align: center; }
+        .theme-toggle { cursor: pointer; font-size: 22px; background: none; border: none; }
+
+        /* --- Main Content --- */
+        .container { padding: 40px 5%; max-width: 900px; margin: 0 auto; min-height: 70vh; animation: fadeIn 1s ease; }
+        .section-heading { font-size: 2rem; font-weight: 800; margin-bottom: 10px; text-align: center; color: var(--accent-color); }
+        .sub-text { text-align: center; font-size: 1.1rem; opacity: 0.8; margin-bottom: 40px; }
+        
+        .source-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;
+        }
+
+        .source-card {
+            background: var(--card-bg); padding: 30px; border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05); border-top: 4px solid var(--accent-color);
+            transition: transform 0.3s ease; position: relative; overflow: hidden;
+        }
+        .source-card:hover { transform: translateY(-8px); }
+        
+        .source-card h3 { font-size: 1.4rem; color: var(--text-color); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .source-card p { font-size: 0.95rem; opacity: 0.85; line-height: 1.6; }
+        
+        /* Icon placeholders */
+        .icon-circle {
+            width: 40px; height: 40px; border-radius: 50%; background: rgba(212, 175, 55, 0.2);
+            display: flex; justify-content: center; align-items: center; font-size: 1.2rem; color: var(--accent-color);
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, var(--primary-color), #1e293b);
+            color: white; padding: 30px; border-radius: 16px; margin-top: 40px; text-align: center;
+            border: 1px solid var(--accent-color);
+        }
+        .conclusion-box h3 { color: var(--accent-color); margin-bottom: 10px; font-size: 1.5rem; }
+
+        /* --- Footer --- */
+        footer { background: var(--primary-color); color: white; text-align: center; padding: 30px 20px; margin-top: 50px; font-size: 0.9rem; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    </style>
+</head>
+<body>
+
+    <div id="notes-preloader">
+        <div class="document-loader">
+            <div class="doc-line"></div>
+            <div class="doc-line"></div>
+            <div class="doc-line"></div>
+        </div>
+        <h2>Compiling Study Material...</h2>
+    </div>
+
+    <header>
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+        <div class="page-title">ABOUT OUR NOTES</div>
+        <button class="theme-toggle" onclick="toggleTheme()" id="themeIcon">🌙</button>
+    </header>
+
+    <div class="container">
+        <h1 class="section-heading">How Shorveer Notes Are Crafted</h1>
+        <p class="sub-text">We don't just copy-paste. Every single PDF and revision sheet on this platform is a result of deep research, analysis, and a student-first approach.</p>
+
+        <div class="source-grid">
+            
+            <div class="source-card">
+                <h3><div class="icon-circle">📖</div> The NCERT Core</h3>
+                <p>The foundation of all our notes is the strictly updated CBSE NCERT curriculum. We extract the absolute essence of the textbook, ensuring that no crucial line or hidden concept is missed. If it's in the NCERT, it's simplified here.</p>
+            </div>
+
+            <div class="source-card">
+                <h3><div class="icon-circle">📚</div> Premium Reference Books</h3>
+                <p>To make complex topics easy to understand, we synthesize explanations from top-tier reference books (like HC Verma, SL Arora, Pradeep's, etc.). We take the best diagrams and the easiest definitions to save you hours of reading.</p>
+            </div>
+
+            <div class="source-card">
+                <h3><div class="icon-circle">🎯</div> 10-Year PYQ Analysis</h3>
+                <p>Before writing a chapter's notes, we analyze the last 10 years of CBSE Board papers. Topics that are frequently asked are specially marked as <strong>"Most Important"</strong> or <strong>"High Yield"</strong> right inside the notes.</p>
+            </div>
+
+            <div class="source-card">
+                <h3><div class="icon-circle">🧠</div> Topper's Methodology</h3>
+                <p>The notes are structured for maximum brain retention. Using bullet points, flowcharts, mnemonics, and bold highlights, we ensure that during quick revisions, your eyes land exactly on the keywords the examiner wants to see.</p>
+            </div>
+
+        </div>
+
+        <div class="conclusion-box">
+            <h3>Crafted by a Student, For the Students</h3>
+            <p>Every piece of content on Shorveer Notes is handwritten, digitized, and cross-checked by <strong>Jatin Sharma</strong>. The goal is simple: You shouldn't have to spend 5 hours making notes when you can spend those 5 hours actually learning and practicing.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Shorveer Notes. Crafted with dedication by Jatin Sharma.</p>
+    </footer>
+
+    <script>
+        // 1. Notes Preloader Logic
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('notes-preloader').style.opacity = '0';
+                setTimeout(() => { document.getElementById('notes-preloader').style.display = 'none'; }, 500);
+            }, 1500); 
+        });
+
+        // 2. Dark Mode Logic
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.getElementById('themeIcon');
+            icon.innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+    </script>
+</body>
+</html>
