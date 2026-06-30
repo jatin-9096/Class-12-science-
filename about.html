@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Shorveer Notes and its founder.">
+    <title>About Us | Shorveer Notes</title>
+    
+    <style>
+        /* --- CSS Variables --- */
+        :root {
+            --bg-color: #f0f4f8;
+            --text-color: #1e293b;
+            --primary-color: #0f172a; 
+            --accent-color: #d4af37; 
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --bg-color: #0f172a;
+            --text-color: #f1f5f9;
+            --primary-color: #1e293b;
+            --card-bg: rgba(30, 41, 59, 0.95);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); transition: var(--transition); overflow-x: hidden; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- About Us Special Preloader (Radar Sweep Animation) --- */
+        #about-preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: var(--primary-color); z-index: 9999; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: opacity 0.5s ease; color: white;
+        }
+        
+        .radar-loader {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+        .radar-loader::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 100%; height: 100%;
+            background: conic-gradient(from 0deg at 0% 0%, transparent 70%, rgba(212, 175, 55, 0.8) 100%);
+            transform-origin: 0 0;
+            animation: radarSweep 1.5s linear infinite;
+        }
+        .radar-loader::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px; height: 8px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+        
+        @keyframes radarSweep {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* --- Header --- */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; background-color: var(--card-bg); backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;
+        }
+        .back-btn { font-weight: bold; cursor: pointer; color: var(--accent-color); font-size: 16px; }
+        .page-title { font-size: 20px; font-weight: 800; text-align: center; }
+        .theme-toggle { cursor: pointer; font-size: 22px; background: none; border: none; }
+
+        /* --- Main Content --- */
+        .container { padding: 40px 5%; max-width: 900px; margin: 0 auto; min-height: 70vh; animation: fadeIn 1s ease; }
+        
+        .about-card {
+            background: var(--card-bg); padding: 40px; border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--accent-color);
+            margin-bottom: 30px;
+        }
+        
+        .profile-section { text-align: center; margin-bottom: 30px; }
+        .profile-name { font-size: 2.2rem; font-weight: 900; color: var(--accent-color); margin-bottom: 5px; }
+        .profile-tag { font-size: 1.1rem; opacity: 0.8; font-weight: 600; }
+
+        .about-content h2 { color: var(--accent-color); margin: 25px 0 10px; font-size: 1.5rem; }
+        .about-content p { font-size: 1.05rem; margin-bottom: 15px; opacity: 0.9; line-height: 1.7; }
+        
+        .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
+        .social-btn {
+            background: var(--primary-color); color: white; padding: 10px 25px; 
+            border-radius: 8px; font-weight: bold; transition: 0.3s; border: 1px solid transparent;
+        }
+        .social-btn:hover { background: transparent; color: var(--text-color); border-color: var(--accent-color); transform: translateY(-3px); }
+
+        /* --- Footer --- */
+        footer { background: var(--primary-color); color: white; text-align: center; padding: 30px 20px; margin-top: 50px; font-size: 0.9rem; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- Media Queries --- */
+        @media (max-width: 768px) {
+            .about-card { padding: 25px; }
+            .profile-name { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- About Us Special Preloader (Radar) -->
+    <div id="about-preloader">
+        <div class="radar-loader"></div>
+        <h2>Loading Mission Info...</h2>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+        <div class="page-title">ABOUT US</div>
+        <button class="theme-toggle" onclick="toggleTheme()" id="themeIcon">🌙</button>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="about-card">
+            
+            <div class="profile-section">
+                <h1 class="profile-name">Jatin Sharma</h1>
+                <p class="profile-tag">Founder & Creator of Shorveer Notes</p>
+            </div>
+
+            <div class="about-content">
+                <h2>The Vision Behind Shorveer</h2>
+                <p>Hello! I am Jatin Sharma, operating from the Samchana region of Haryana. The creation of <strong>Shorveer Notes</strong> stems from a very personal journey and a clear mission. Preparing for crucial milestones like the Class 12 board exams and the NDA taught me the undeniable value of structured, high-quality, and accessible study material.</p>
+                <p>I built this platform to provide students with premium notes, quick revisions, and previous year questions all in one place—completely free of distractions. My goal is to empower every student to learn like a "Shorveer" (Warrior) and conquer their academic challenges.</p>
+
+                <h2>My Journey & Aspirations</h2>
+                <p>Beyond academics, I have a deep-rooted passion for the Indian armed forces and aviation, aspiring to serve as an officer in the Indian Air Force or work within defense technology. This discipline and motivation reflect directly in how I structure my content and run this platform.</p>
+                
+                <h2>Join the Community</h2>
+                <p>Education is just one part of the journey. For daily motivation, life lessons, and high-energy edits, I also run a YouTube channel dedicated to keeping the fire alive.</p>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.youtube.com/@JSEDIZ" target="_blank" class="social-btn">📺 Subscribe to JS EDIZ</a>
+                <a href="mailto:contact@shorveernotes.com" class="social-btn">✉️ Contact Me</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Shorveer Notes. Crafted with dedication by Jatin Sharma.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 1. About Us Preloader Logic
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('about-preloader').style.opacity = '0';
+                setTimeout(() => { document.getElementById('about-preloader').style.display = 'none'; }, 500);
+            }, 1200); 
+        });
+
+        // 2. Dark Mode Logic
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.getElementById('themeIcon');
+            icon.innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+    </script>
+</body>
+</html>
