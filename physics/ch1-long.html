@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shorveer Notes | Class 12 Physics - Chapter 1</title>
+    <meta name="description" content="Premium Class 12 Physics Notes by Shorveer.">
+    <meta name="author" content="Jatin Sharma">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+      MathJax = {
+        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$']] },
+        chtml: { scale: 0.92, displayAlign: 'left' }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <style>
+        /* ================= MASTER DESIGN & THEME VARIABLES ================= */
+        :root {
+            --primary: #0f172a;       
+            --secondary: #1e293b;     
+            --secondary-light: rgba(212, 175, 55, 0.12); 
+            --accent: #d4af37;        
+            --bg-body: #f0f4f8;       
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --border-soft: rgba(0, 0, 0, 0.08);
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --success: #10b981;
+            --error: #ef4444;
+        }
+
+        .dark-mode {
+            --bg-body: #0f172a;
+            --text-main: #f1f5f9;
+            --primary: #1e293b;
+            --card-bg: rgba(30, 41, 59, 0.95);
+            --border-soft: rgba(255, 255, 255, 0.1);
+            --text-muted: #cbd5e1;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        html, body { width: 100%; max-width: 100%; overflow-x: hidden; background-color: var(--bg-body); color: var(--text-main); scroll-behavior: smooth; }
+
+        /* ================= PREMIUM DIPOLE MOMENT ANIMATION PRELOADER ================= */
+        #dipole-preloader {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: #0f172a; z-index: 99999; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; gap: 30px; transition: opacity 0.6s ease;
+        }
+        .dipole-container { position: relative; width: 200px; height: 100px; display: flex; justify-content: space-between; align-items: center; }
+        .dipole-container::before { content: ''; position: absolute; left: 25px; top: 50%; width: 150px; height: 2px; background: linear-gradient(to right, #ef4444, #3b82f6); transform: translateY(-50%); z-index: 1; }
+        
+        .charge { width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 800; font-size: 1.1rem; color: white; z-index: 2; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+        .charge.negative { background: #ef4444; animation: pulseRed 2s infinite; }
+        .charge.positive { background: #3b82f6; animation: pulseBlue 2s infinite; }
+        
+        /* Vector p Vector Arrow Animation */
+        .vector-p { position: absolute; top: 15px; left: 50%; transform: translateX(-50%); color: var(--accent); font-weight: 800; font-size: 1.1rem; display: flex; flex-direction: column; align-items: center; animation: floatArrow 1.5s infinite ease-in-out; }
+        .vector-p::after { content: '➔'; font-size: 1.3rem; margin-top: -5px; }
+
+        @keyframes pulseRed { 0%, 100% { box-shadow: 0 0 15px #ef4444; } 50% { box-shadow: 0 0 30px #ef4444; } }
+        @keyframes pulseBlue { 0%, 100% { box-shadow: 0 0 15px #3b82f6; } 50% { box-shadow: 0 0 30px #3b82f6; } }
+        @keyframes floatArrow { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -8px); } }
+        .loader-text { color: white; font-size: 1.1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+        .loader-text span { color: var(--accent); }
+
+        /* ================= HEADER & HUB CONTROLS ================= */
+        header { 
+            background: var(--card-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; 
+            position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-soft); box-shadow: 0 4px 15px rgba(0,0,0,0.02); width: 100%;
+        }
+        .logo { font-size: 1.4rem; font-weight: 800; color: var(--accent); letter-spacing: 1px; }
+        .nav-controls { display: flex; align-items: center; gap: 12px; }
+        nav ul { list-style: none; display: flex; gap: 15px; align-items: center; }
+        nav ul li a { font-weight: 600; font-size: 0.9rem; color: var(--text-muted); }
+        
+        .auth-status { background: var(--primary); color: #fff; padding: 6px 14px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; border: 1px solid var(--accent); cursor: pointer; }
+        .theme-toggle { cursor: pointer; font-size: 20px; background: none; border: none; }
+        .menu-toggle { display: none; cursor: pointer; color: var(--text-main); background: none; border: none; }
+        .menu-toggle svg { width: 28px; height: 28px; }
+
+        /* ================= AUTH & TRACKING SYSTEM MODAL ================= */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 99999; display: none; justify-content: center; align-items: center; padding: 20px; }
+        .auth-modal { background: var(--bg-body); color: var(--text-main); width: 100%; max-width: 400px; padding: 25px; border-radius: 24px; border: 2px solid var(--accent); text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+        .auth-modal h2 { font-size: 1.5rem; font-weight: 800; color: var(--accent); margin-bottom: 8px; }
+        .auth-modal input { width: 100%; padding: 12px; margin: 8px 0; border-radius: 12px; border: 1px solid var(--border-soft); background: var(--card-bg); color: var(--text-main); outline: none; }
+        .auth-modal button { width: 100%; padding: 12px; background: var(--accent); color: #000; border: none; border-radius: 12px; font-weight: 800; cursor: pointer; margin-top: 8px; }
+
+        /* ================= CONTENT & NOTE LAYOUT MATRICES ================= */
+        .notes-container { max-width: 850px; margin: 20px auto; padding: 0 4%; min-height: 50vh; width: 100%; }
+        .part-header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 20px 15px; border-radius: 16px; margin: 25px 0 15px; font-size: 1.15rem; font-weight: 800; text-align: center; border: 2px solid var(--accent); box-shadow: 0 8px 30px rgba(212,175,55,0.15); }
+        .section-heading { font-size: 1.15rem; color: var(--text-main); font-weight: 800; margin: 30px 0 15px; display: flex; align-items: center; gap: 8px; border-bottom: 2px solid var(--secondary-light); padding-bottom: 6px; }
+        .section-heading::before { content: ''; display: block; width: 5px; height: 18px; background: var(--accent); border-radius: 4px; flex-shrink: 0; }
+        
+        .def-card { background: var(--card-bg); border-radius: 14px; padding: 16px; border: 1px solid var(--border-soft); border-left: 4px solid var(--accent); margin-bottom: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.01); }
+        .def-title { font-weight: 700; color: var(--accent); font-size: 1.05rem; margin-bottom: 4px; }
+        .def-desc { font-size: 0.95rem; overflow-wrap: break-word; word-wrap: break-word; }
+        .facts-list { background: var(--card-bg); border-radius: 14px; padding: 16px 16px 16px 35px; border: 1px solid var(--border-soft); margin-bottom: 15px; }
+        .facts-list li { margin-bottom: 10px; font-weight: 500; font-size: 0.95rem; position: relative; color: var(--text-main); list-style: none; }
+        .facts-list li::before { content: '►'; color: var(--accent); position: absolute; left: -22px; font-size: 0.85rem; top: 2px; }
+
+        /* Formula Scroll Fix */
+        mjx-container { max-width: 100% !important; overflow-x: auto !important; overflow-y: hidden !important; padding: 8px 0; -webkit-overflow-scrolling: touch; display: block !important; }
+        .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 25px; border-radius: 14px; border: 1px solid var(--border-soft); }
+        .table-responsive table { min-width: 500px; width: 100%; border-collapse: collapse; background: var(--card-bg); text-align: left; font-size: 0.9rem; }
+        .table-responsive th { background: var(--primary); color: white; padding: 10px; font-weight: 700; }
+        .table-responsive td { padding: 10px; border-bottom: 1px solid var(--border-soft); border-right: 1px solid var(--border-soft); }
+
+        /* ================= SMART INTERACTIVE HUB & CRACKING METRICS ================= */
+        .test-engine-container { background: var(--card-bg); border-radius: 20px; padding: 20px 4%; border: 1px solid var(--border-soft); margin-top: 40px; }
+        .question-card { background: rgba(0,0,0,0.015); padding: 15px; border-radius: 14px; margin-bottom: 15px; border: 1px solid var(--border-soft); }
+        .question-title { font-weight: 700; font-size: 0.98rem; margin-bottom: 10px; color: var(--text-main); }
+        .mcq-options { display: flex; flex-direction: column; gap: 8px; }
+        .option-label { background: var(--bg-body); padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-soft); display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9rem; }
+        .option-label input { accent-color: var(--accent); width: 16px; height: 16px; }
+        .theory-textarea { width: 100%; height: 100px; border-radius: 10px; border: 1px solid var(--border-soft); background: var(--bg-body); color: var(--text-main); padding: 12px; outline: none; font-size: 0.9rem; resize: none; }
+        .check-btn { background: var(--primary); color: #fff; padding: 8px 16px; border: 1px solid var(--accent); border-radius: 8px; font-weight: 700; cursor: pointer; margin-top: 8px; }
+        .feedback-box { margin-top: 10px; padding: 10px 14px; border-radius: 10px; font-size: 0.85rem; font-weight: 600; display: none; line-height: 1.4; }
+
+        /* Certificate Widget Styles */
+        #cert-container { display: none; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border: 2px solid var(--accent); border-radius: 20px; padding: 25px; text-align: center; margin-top: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        #cert-container h3 { color: var(--accent); margin-bottom: 8px; font-size: 1.3rem; font-weight: 800; }
+        .cert-btn { background: var(--accent); color: #000; padding: 12px 24px; border-radius: 10px; font-weight: 800; border: none; cursor: pointer; display: inline-block; margin-top: 15px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+
+        .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin-top: 25px; }
+        .res-card { background: var(--primary); color: #fff; border-radius: 16px; padding: 20px; border: 1px solid var(--accent); text-align: center; }
+        .res-card h3 { color: var(--accent); font-size: 1.15rem; margin-bottom: 6px; font-weight: 800; }
+        .res-link { display: block; background: var(--accent); color: #000; padding: 8px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; margin-top: 10px; }
+
+        #ai-widget { position: fixed; bottom: 20px; right: 20px; z-index: 9999; }
+        #ai-launcher { background: var(--accent); color: #000; width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; cursor: pointer; border: none; }
+        #ai-box { display: none; width: 320px; height: 420px; background: var(--primary); border: 2px solid var(--accent); border-radius: 20px; flex-direction: column; overflow: hidden; position: absolute; bottom: 60px; right: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .ai-header { padding: 12px 15px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; color: #fff; }
+        .ai-header h3 { font-size: 0.95rem; color: var(--accent); font-weight: 800; }
+        .ai-messages { flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+        .msg { max-width: 85%; padding: 8px 12px; border-radius: 14px; font-size: 0.85rem; }
+        .msg.user { background: var(--accent); color: #000; align-self: flex-end; }
+        .msg.bot { background: rgba(255,255,255,0.1); color: #fff; align-self: flex-start; }
+        .ai-input-area { padding: 10px; display: flex; gap: 6px; background: rgba(0,0,0,0.2); }
+        .ai-input-area input { flex: 1; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px; color: #fff; font-size: 0.8rem; }
+        .ai-input-area button { background: var(--accent); color: #000; border: none; border-radius: 8px; padding: 0 12px; font-weight: bold; font-size: 0.8rem; }
+
+        .brand-marquee-container { background: rgba(0,0,0,0.2); padding: 15px 0; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); overflow: hidden; width: 100%; margin-top: 40px; }
+        .brand-marquee-track { display: flex; width: calc(200px * 16); animation: loopScroll 25s linear infinite; }
+        .brand-logo-item { width: 200px; display: flex; justify-content: center; align-items: center; font-size: 0.8rem; font-weight: 800; color: rgba(255,255,255,0.5); letter-spacing: 1px; white-space: nowrap; }
+        @keyframes loopScroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-200px * 8)); } }
+
+        footer { background: #0b1120; color: white; padding: 40px 0 20px; text-align: center; width: 100%; }
+        .footer-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 25px; padding: 0 4%; }
+        .footer-grid a { color: #cbd5e1; font-size: 0.85rem; }
+        .signature { font-size: 0.95rem; color: #fff; margin-top: 10px; }
+        .signature strong { color: var(--accent); }
+        .copyright { font-size: 0.75rem; color: #64748b; margin-top: 10px; }
+
+        @media (max-width: 768px) {
+            header { padding: 12px 4%; }
+            .menu-toggle { display: block; }
+            nav ul { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--primary); padding: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; gap: 0; z-index: 99999; }
+            nav ul.active { max-height: 250px; border-bottom: 2px solid var(--accent); padding: 10px 0; }
+            nav ul li { width: 100%; text-align: center; }
+            nav ul li a { display: block; padding: 12px 0; color: #fff; font-size: 1rem; }
+            #ai-box { width: calc(100vw - 40px); bottom: 55px; right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="dipole-preloader">
+        <div class="dipole-container">
+            <div class="vector-p">Vector $\vec{p}$</div>
+            <div class="charge negative">-q</div>
+            <div class="charge positive">+q</div>
+        </div>
+        <div class="loader-text">Loading <span>Shorveer AI Core</span>...</div>
+    </div>
+
+    <div id="authOverlay" class="modal-overlay">
+        <div class="auth-modal">
+            <h2 id="modalTitle">Shorveer Authentication</h2>
+            <p style="font-size:0.8rem; opacity:0.7; margin-bottom:12px;">Login to track your chapter metrics & crack certificates.</p>
+            <input type="text" id="authName" placeholder="Enter Full Name...">
+            <input type="password" id="authPass" placeholder="Create 4-Digit Access PIN...">
+            <button onclick="handleAuth()">Unlock System Hub</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">SHORVEER</div>
+        <div class="nav-controls">
+            <div id="userBadge" class="auth-status" onclick="openAuthModal()">Login</div>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeIcon">🌙</button>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#content" onclick="toggleMenu()">Notes</a></li>
+                    <li><a href="#testing-hub" onclick="toggleMenu()">Smart Test</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="notes-container" id="content">
+        <div class="part-header">1. Introduction to Electric Charges and Coulomb's Law</div>
+        <div id="trackingStatus" style="text-align: center; font-weight: 700; font-size: 0.8rem; color: var(--accent); margin-bottom: 15px;">Status: Login to track your checkpoint metrics</div>
+<h2 class="section-heading">Important Definitions</h2>
+
+<div class="def-card">
+    <div class="def-title">Electrostatics</div>
+    <div class="def-desc">The branch of physics focused on stationary electric charges, studying their interactions, forces, electric fields, and potentials in the complete absence of moving charges.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Electric Charge</div>
+    <div class="def-desc">A fundamental, intrinsic property of matter that causes an object to experience a physical force when placed within an electric field. It exists in two states: positive or negative.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Polarity of Charge</div>
+    <div class="def-desc">The property that distinguishes the two unique types of electric charges (positive and negative), which determines the specific direction of force and interaction between those charges.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Electrification</div>
+    <div class="def-desc">The physical process of an object acquiring an electric charge, most commonly achieved through friction, by directly transferring electrons from one material to another.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Gold-leaf Electroscope</div>
+    <div class="def-desc">A scientific device utilized to detect both the exact presence and the relative magnitude of an electric charge on a physical body by observing the divergence (spreading apart) of two extremely thin gold leaves.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Conductors</div>
+    <div class="def-desc">Materials that readily permit the flow and movement of electric charges across them. This is primarily due to the vast presence of free electrons capable of moving easily inside the material structure.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Insulators</div>
+    <div class="def-desc">Materials that strictly do not allow the free movement of electric charges through them easily, successfully maintaining a very high electrical resistance to any current flow.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Semiconductors</div>
+    <div class="def-desc">Materials exhibiting an electrical conductivity level that lies midway between conductors and insulators. Their specific conductivity is highly sensitive to external factors like temperature changes and added impurities (doping).</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Point Charges</div>
+    <div class="def-desc">A hypothetical, idealized concept of charges assumed to be highly concentrated at a singular geometric point in space, used greatly to simplify the mathematical analysis of electric fields and forces.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Additivity of Charges</div>
+    <div class="def-desc">The fundamental principle stating that the total net electric charge of an entire system is simply the direct algebraic sum of all the individual point charges contained within that system.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Conservation of Charge</div>
+    <div class="def-desc">A universal principle indicating that the total net electric charge within an isolated system remains absolutely constant over time; indicating that electrical charges can neither be created out of nothing nor completely destroyed.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Quantisation of Charge</div>
+    <div class="def-desc">The physical principle that electric charge strictly exists in discrete, specific quantities. It is always found as an integral multiple of the basic elementary charge <em>e</em> (1.602 &times; 10<sup>-19</sup> coulombs).</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Coulomb's Law</div>
+    <div class="def-desc">The fundamental law stating that the electrostatic force of interaction between two stationary point charges is directly proportional to the product of their charge magnitudes and inversely proportional to the square of the distance separating them.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Permittivity of Free Space (&epsilon;<sub>0</sub>)</div>
+    <div class="def-desc">A fundamental physical constant (&epsilon;<sub>0</sub>) representing the inherent ability of a classical vacuum to permit the formation of electric fields, thereby influencing the strength of electric interactions. Its standard value is approximately 8.854 &times; 10<sup>-12</sup> F/m.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Superposition Principle</div>
+    <div class="def-desc">The rule stating that the total net electrostatic force acting upon a specific charge is the exact mathematical vector sum of all the individual forces exerted on it by every other charge present in the vicinity.</div>
+</div>
+
+<h2 class="section-heading">Always Remember</h2>
+<ul class="facts-list">
+    <li>The term 'Electricity' has its historical origins in the ancient Greek word <em>'elektron'</em>, which translates directly to amber.</li>
+    <li>Fundamental law of interaction: Like (similar) charges strongly repel one another, whereas unlike (opposite) charges attract each other.</li>
+    <li>The universally accepted historical naming convention of 'positive' and 'negative' charges was established by the scientist Benjamin Franklin.</li>
+    <li>Most physical objects exist in an electrically neutral state, which implies they possess an exactly equal number of positive and negative charges.</li>
+    <li>Both Coulomb's Law for electrostatic force and Newton's Law of Universal Gravitation strictly obey the principle of the Inverse Square Law.</li>
+    <li>The electrostatic force interacting between two charges is a vector quantity; thus, it can be mathematically expressed in vector form to accurately show both its magnitude and direction.</li>
+</ul>
+
+<h2 class="section-heading">Important Formulae</h2>
+
+<div class="def-card">
+    <div class="def-title">1. Quantisation of Charge</div>
+    <div class="def-desc">
+        $$q = ne$$
+        <br>Where $n$ is any integer (positive or negative).
+    </div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">2. Coulomb's Law</div>
+    <div class="def-desc">
+        $$F = \frac{1}{4\pi\varepsilon_0} \frac{|q_1 q_2|}{r^2}$$
+        <br><strong>Where:</strong><br>
+        • $F$: Electrostatic force between two charges<br>
+        • $k$: Coulomb's constant $\left(\frac{1}{4\pi\varepsilon_0}\right)$<br>
+        • $q_1, q_2$: Point charges<br>
+        • $r$: Distance between the charges
+    </div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">3. Coulomb's Force in Vector Form</div>
+    <div class="def-desc">
+        For two point charges $q_1$ and $q_2$ located at position vectors $\mathbf{r}_1$ and $\mathbf{r}_2$:
+        $$\vec{F}_{21} = \frac{1}{4\pi\varepsilon_0} \frac{q_1 q_2}{r_{21}^2} \hat{r}_{21}$$
+    </div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">4. Forces Between Multiple Charges (Superposition)</div>
+    <div class="def-desc">
+        $$\vec{F}_1 = \vec{F}_{12} + \vec{F}_{13} + ... + \vec{F}_{1n} = \frac{q_1}{4\pi\varepsilon_0} \sum_{i=2}^{n} \frac{q_i}{r_{1i}^2} \hat{r}_{1i}$$
+    </div>
+</div>
+
+<h2 class="section-heading">Classification</h2>
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="font-weight: 600;">Discovery</td>
+                <td>Amber rubbed with wool or silk attracts light objects (Observed by Thales of Miletus).</td>
+            </tr>
+            <tr style="background-color: rgba(0,0,0,0.015);">
+                <td style="font-weight: 600;">Types of Charge</td>
+                <td>Positive and Negative.</td>
+            </tr>
+            <tr>
+                <td style="font-weight: 600;">Interaction</td>
+                <td>Like charges heavily repel, whereas unlike charges attract.</td>
+            </tr>
+            <tr style="background-color: rgba(0,0,0,0.015);">
+                <td style="font-weight: 600;">Electrification</td>
+                <td>Acquired naturally by rubbing materials together (Friction).</td>
+            </tr>
+            <tr>
+                <td style="font-weight: 600;">Detection</td>
+                <td>Identified using a Gold-leaf electroscope.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2 class="section-heading">Differences & Comparisons</h2>
+<h3 style="margin-bottom:10px; color: var(--accent);">Conductors vs. Insulators</h3>
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 50%;">Conductors</th>
+                <th style="width: 50%;">Insulators</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Allow free and rapid movement of electric charge.</td>
+                <td>Strictly do not allow the free movement of electric charge.</td>
+            </tr>
+            <tr style="background-color: rgba(0,0,0,0.015);">
+                <td><strong>Examples:</strong> Metals (Copper, Silver), human body.</td>
+                <td><strong>Examples:</strong> Rubber, glass, dry wood.</td>
+            </tr>
+            <tr>
+                <td>Can be easily charged using the method of <strong>induction</strong>.</td>
+                <td>Primarily charged by the method of <strong>friction</strong> (rubbing).</td>
+            </tr>
+            <tr style="background-color: rgba(0,0,0,0.015);">
+                <td>Charges immediately distribute uniformly over the outer surface.</td>
+                <td>Charges remain localized exactly where they were initially placed.</td>
+            </tr>
+            <tr>
+                <td>Generally good thermal conductors.</td>
+                <td>Generally poor thermal conductors.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h3 style="margin-bottom:10px; margin-top:20px; color: var(--accent);">Positive vs. Negative Charge</h3>
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 50%;">Positive Charge</th>
+                <th style="width: 50%;">Negative Charge</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fundamentally carried by protons.</td>
+                <td>Fundamentally carried by electrons.</td>
+            </tr>
+            <tr style="background-color: rgba(0,0,0,0.015);">
+                <td>Represents a deficit (loss) of electrons in an atom or body.</td>
+                <td>Represents an excess (gain) of electrons in an atom or body.</td>
+            </tr>
+            <tr>
+                <td>Attracts negative charges and repels other positive charges.</td>
+                <td>Attracts positive charges and repels other negative charges.</td>
+            </tr>
+            <tr style="background-color: rgba(0,0,0,0.015);">
+                <td>Mathematically expressed as a positive (+) value.</td>
+                <td>Mathematically expressed as a negative (-) value.</td>
+            </tr>
+            <tr>
+                <td>Determines the standard direction of conventional electric current.</td>
+                <td>Flows exactly opposite to the direction of conventional current.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3 style="margin-bottom:10px; margin-top:20px; color: var(--accent);">Electric Dipole vs. Point Charge</h3>
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 50%;">Electric Dipole</th>
+                <th style="width: 50%;">Point Charge</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Consists of two equal and opposite charges separated by a small distance.</td>
+                <td>A single, isolated charge concentrated at one specific point.</td>
+            </tr>
+            <tr style="background-color: rgba(0,0,0,0.015);">
+                <td>Characterized by its dipole moment: $\vec{p} = q \cdot \vec{d}$</td>
+                <td>Characterized solely by its charge magnitude $q$.</td>
+            </tr>
+            <tr>
+                <td>Electric field strength decreases rapidly as $\frac{1}{r^3}$ at large distances.</td>
+                <td>Electric field strength decreases relatively slower as $\frac{1}{r^2}$.</td>
+            </tr>
+            <tr style="background-color: rgba(0,0,0,0.015);">
+                <td>Has both magnitude and a specific spatial direction (Vector nature).</td>
+                <td>Has only magnitude when considered as a scalar basic quantity.</td>
+            </tr>
+            <tr>
+                <td>Widely used to model molecular charge distributions (e.g., $H_2O$ molecules).</td>
+                <td>The most fundamental and basic concept in electrostatics.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2 class="section-heading">Real Life Application Based Questions</h2>
+<div class="def-card">
+    <div class="def-title">Q1. Why do we sometimes experience a shock when touching a metal door handle after walking on a carpet?</div>
+    <div class="def-desc">
+        <strong>Answer:</strong> When you walk on a carpet, the friction between your shoes and the carpet causes a transfer of electrons. This builds up a static electric charge on your body (charging by friction). When you touch a good conducting object like a metal door handle, this built-up charge quickly discharges through the metal into the ground, resulting in the sudden sensation of a mild electric shock.
+    </div>
+</div>
+
+<div class="part-header" style="background: linear-gradient(135deg, #4f46e5, #7c3aed); box-shadow: 0 10px 20px rgba(124, 58, 237, 0.15); margin-top: 40px;">
+    PART 2: Electric Field, Electric Field Lines and Electric Dipole
+</div>
+
+<h2 class="section-heading">Important Definitions</h2>
+
+<div class="def-card">
+    <div class="def-title">Electric Field</div>
+    <div class="def-desc">A defined region of space around a charged particle where any other charged particle will experience an electrostatic force. It is mathematically and graphically represented by vectors.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Electric Field Lines</div>
+    <div class="def-desc">Imaginary, continuous lines used to visually represent the direction and strength of the electric field around a charge. They always point in the exact direction of the electric field and are drawn closer together in regions where the field is stronger.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Electric Flux</div>
+    <div class="def-desc">A measurable quantity representing the total number of electric field lines passing perpendicularly through a given surface area. It quantifies the flow of the electric field and heavily depends on the specific angle between the field lines and the surface.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Electric Dipole</div>
+    <div class="def-desc">An electric dipole simply consists of two exactly equal and opposite point charges ( $+q$ and $-q$ ) separated by a very small distance. It features a dipole moment that always points from the negative charge to the positive charge, characterizing its strength and orientation.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Dipole Moment</div>
+    <div class="def-desc">The dipole moment of an electric dipole is a fundamental vector quantity ($\vec{p}$) representing the strength and spatial orientation of the dipole. It is strictly defined as the product of the charge magnitude and the separation distance between the two charges.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Point Dipole</div>
+    <div class="def-desc">An idealized mathematical model used to accurately represent an electric dipole where the distance between the two constituent charges is infinitesimally small compared to the distance from the dipole to the observation point. It drastically simplifies calculations in dipole interactions.</div>
+</div>
+
+<h2 class="section-heading">Always Remember</h2>
+<ul class="facts-list">
+    <li>The intensity of an electric field due to a single point charge decreases rapidly as the square of the distance ($\frac{1}{r^2}$).</li>
+    <li>The net electric field inside any solid or hollow conductor is strictly zero when in a state of electrostatic equilibrium.</li>
+    <li>Multiple electric fields can be successfully superposed (added using vector addition) to find the absolute net field at any given point.</li>
+    <li>The field of an electric dipole specifically refers to the unique, curved electric field pattern produced by the dipole in its surrounding 3D space.</li>
+    <li>When an electric dipole is carefully placed inside a uniform external electric field, it experiences a rotational torque that naturally tends to align the dipole moment parallel with the field direction.</li>
+</ul>
+
+<div style="position: relative; z-index: 1; overflow: hidden; padding-bottom: 20px;">
+    
+    <div style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%) rotate(-35deg); font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; color: rgba(212, 175, 55, 0.04); white-space: nowrap; pointer-events: none; z-index: -1; text-align: center; line-height: 1.2; user-select: none;">
+        SHORVEER NOTES<br>SHORVEER NOTES<br>SHORVEER NOTES
+    </div>
+
+    <h2 class="section-heading">Fundamental Characteristics of Field Lines</h2>
+    <ul class="facts-list">
+        <li>Two electric field lines strictly never cross or intersect one another at any point.</li>
+        <li>The field lines always emerge or terminate perpendicular to the surface of a charged conductor.</li>
+        <li>The absolute magnitude of the charge is directly proportional to the relative number of field lines originating or ending on it.</li>
+        <li>Geometrically, these lines always originate from a positive charge and successfully terminate at a negative charge.</li>
+        <li>If the system contains only a single isolated charge, the field lines will conceptually start or end at infinity.</li>
+    </ul>
+
+    <h2 class="section-heading">Essential Mathematical Equations</h2>
+    
+    <div class="def-card">
+        <div class="def-title">1. Electric Field intensity due to a single Point Charge $Q$ at distance $r$</div>
+        <div class="def-desc">
+            $$\vec{E}(\vec{r}) = \frac{1}{4\pi\varepsilon_0} \frac{Q}{r^2} \hat{r}$$
+            <br><strong>Where:</strong><br>
+            • $\vec{E}$: Electric field vector<br>
+            • $k$: Coulomb's constant $\left(\frac{1}{4\pi\varepsilon_0}\right)$<br>
+            • $Q$: Source point charge<br>
+            • $r$: Distance from the source charge<br>
+            • $\hat{r} = \frac{\vec{r}}{r}$ is a unit vector pointing from the origin to point $r$.
+        </div>
+    </div>
+
+    <div class="def-card">
+        <div class="def-title">2. Electric Field $\vec{E}$ due to a System of Multiple Charges</div>
+        <div class="def-desc">
+            By applying the principle of superposition:
+            $$\vec{E}(\vec{r}) = \vec{E}_1(\vec{r}) + \vec{E}_2(\vec{r}) + ... + \vec{E}_n(\vec{r})$$
+            $$\vec{E}(\vec{r}) = \frac{1}{4\pi\varepsilon_0} \sum_{i=1}^{n} \frac{q_i}{r_{iP}^2} \hat{r}_{iP}$$
+        </div>
+    </div>
+
+    <div class="def-card">
+        <div class="def-title">3. Electric Field of an Electric Dipole (At Large Distances, $r >> a$)</div>
+        <div class="def-desc">
+            <strong>At a specific point on the Dipole Axis:</strong>
+            $$\vec{E} = \frac{2\vec{p}}{4\pi\varepsilon_0 r^3}$$
+            <br><strong>At a specific point on the Equatorial Plane:</strong>
+            $$\vec{E} = -\frac{\vec{p}}{4\pi\varepsilon_0 r^3}$$
+            *(Where $\vec{p}$ represents the dipole moment vector)*
+        </div>
+    </div>
+
+    <div class="def-card">
+        <div class="def-title">4. Total Electric Flux ($\phi$) through a Surface $S$</div>
+        <div class="def-desc">
+            $$\Delta\phi = \vec{E} \cdot \Delta\vec{S} = E \Delta S \cos\theta$$
+            <br>The angle $\theta$ represents the exact angle formed between the Electric Field $\vec{E}$ and the area vector $\Delta\vec{S}$. For a complete surface:
+            $$\phi \simeq \sum \vec{E} \cdot \Delta\vec{S}$$
+        </div>
+    </div>
+
+    <h2 class="section-heading">Crucial Distinctions for Board Exams</h2>
+    <h3 style="margin-bottom:10px; color: var(--accent);">Real Electric Field vs. Imaginary Field Lines</h3>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 50%;">Electric Field</th>
+                    <th style="width: 50%;">Electric Field Lines</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A fundamental vector quantity representing the electrostatic force experienced per unit test charge at a specific point in space.</td>
+                    <td>Imaginary visual lines drawn to perfectly represent the exact path a positive test charge would naturally take under the field's influence.</td>
+                </tr>
+                <tr style="background-color: rgba(0,0,0,0.015);">
+                    <td>Strongly depends on both the magnitude of the source charge and the exact distance from it.</td>
+                    <td>Clearly indicate both the direction and the relative strength of the electric field in a region.</td>
+                </tr>
+                <tr>
+                    <td>A real physical entity that can be accurately quantified and practically measured.</td>
+                    <td>They strictly do not exist physically, but serve as an exceptionally useful conceptual and graphical tool.</td>
+                </tr>
+                <tr style="background-color: rgba(0,0,0,0.015);">
+                    <td>Clearly defined at every continuous point in 3D space.</td>
+                    <td>Conceptually start from positive charges and definitively end at negative charges.</td>
+                </tr>
+                <tr>
+                    <td>Can be mathematically calculated using Coulomb's Law and the Superposition Principle.</td>
+                    <td>The physical density (closeness) of these lines visually indicates the field's absolute strength.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="part-header" style="background: linear-gradient(135deg, #0ea5e9, #2563eb); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15); margin-top: 40px;">
+    PART 3: Continuous Charge Distribution and Gauss's Law
+</div>
+
+<h2 class="section-heading">Key Definitions & Concepts</h2>
+
+<div class="def-card">
+    <div class="def-title">Continuous Charge Distribution</div>
+    <div class="def-desc">A macroscopic situation where an electric charge is spread continuously and smoothly over a given region (line, surface, or volume), rather than being concentrated at distinct, discrete microscopic points.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Linear Charge Density ($\lambda$)</div>
+    <div class="def-desc">The defined amount of electric charge distributed per unit length of a charged 1D object, such as a wire. It is denoted by the symbol $\lambda$.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Surface Charge Density ($\sigma$)</div>
+    <div class="def-desc">The calculated amount of electric charge present per unit area on a 2D surface, commonly represented by the mathematical symbol $\sigma$.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Volume Charge Density ($\rho$)</div>
+    <div class="def-desc">A precise measure denoting the total amount of electric charge contained per unit volume within a specific 3D region of space, denoted by $\rho$.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Gauss's Law</div>
+    <div class="def-desc">A fundamental cornerstone principle of electromagnetism stating that the total net electric flux escaping through any closed surface is directly proportional to the total enclosed electric charge.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Surface Integral</div>
+    <div class="def-desc">A complex mathematical operation that involves integrating (summing up) a scalar or vector field uniformly over a defined physical surface.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Symmetry & Cylindrical Symmetry</div>
+    <div class="def-desc"><strong>Symmetry</strong> refers to the property of a system remaining unchanged under specific transformations (like rotations). <strong>Cylindrical Symmetry</strong> is a spatial symmetry where a system looks identical when rotated around a central cylindrical axis, greatly simplifying calculations for wires and cylinders.</div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">Uniformly Charged Wire & Infinite Plane Sheet</div>
+    <div class="def-desc">A <strong>Uniformly Charged Wire</strong> has charge distributed evenly along its length (constant $\lambda$). An <strong>Infinite Plane Sheet</strong> is a theoretical 2D construct with a uniform surface charge density ($\sigma$) extending infinitely.</div>
+</div>
+
+<h2 class="section-heading">Important Facts for MCQs</h2>
+<ul class="facts-list">
+    <li>The internal electric field everywhere inside a uniformly charged hollow spherical shell is always exactly zero.</li>
+    <li>For an infinitely long, straight, and uniformly charged wire, the electric field is directed radially outward (if positive) and steadily decreases with distance.</li>
+    <li>Gauss's law is exceptionally useful and time-saving for computing electric fields when the charge distribution possesses high geometric symmetry.</li>
+    <li>The electric field located just marginally outside the surface of a charged conductor is always perfectly perpendicular to that surface.</li>
+    <li>In a complete state of electrostatic equilibrium, all excess charges will naturally reside solely on the outer surface of a conductor.</li>
+</ul>
+
+<h2 class="section-heading">Essential Formulae: Densities & Gauss's Law</h2>
+
+<div class="def-card">
+    <div class="def-title">1. Charge Densities</div>
+    <div class="def-desc">
+        <strong>Surface Charge Density:</strong> $\sigma = \frac{\Delta Q}{\Delta S}$ (where $\Delta S$ is an area element)<br><br>
+        <strong>Linear Charge Density:</strong> $\lambda = \frac{\Delta Q}{\Delta l}$ (where $\Delta l$ is a line element)<br><br>
+        <strong>Volume Charge Density:</strong> $\rho = \frac{\Delta Q}{\Delta V}$ (where $\Delta V$ is a volume element)
+    </div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">2. Electric Flux through a closed surface $S$</div>
+    <div class="def-desc">
+        $$\phi = \frac{q}{\varepsilon_0}$$
+        *(Where $q$ = total net charge enclosed by the surface $S$)*
+    </div>
+</div>
+
+<div class="def-card">
+    <div class="def-title">3. Field Applications of Gauss's Law</div>
+    <div class="def-desc">
+        <strong>Infinitely long straight uniformly charged wire:</strong>
+        $$E = \frac{\lambda}{2\pi\varepsilon_0 r} \hat{n}$$
+        <br>
+        <strong>Uniformly charged infinite plane sheet:</strong>
+        $$E = \frac{\sigma}{2\varepsilon_0} \hat{n}$$
+        <br>
+        <strong>Uniformly charged thin spherical shell (Radius $R$):</strong><br>
+        • Field outside the shell ($r > R$): $E = \frac{q}{4\pi\varepsilon_0 r^2} \hat{r}$<br>
+        • Field inside the shell ($r < R$): $E = 0$
+    </div>
+</div>
+
+<h2 class="section-heading">Key Distinctions for Exams</h2>
+<h3 style="margin-bottom:10px; color: var(--accent);">Continuous vs. Discrete Charge Distribution</h3>
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 50%;">Continuous Charge Distribution</th>
+                <th style="width: 50%;">Discrete Charge Distribution</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Charge is distributed smoothly and uniformly over a region.</td>
+                <td>Charge is strictly localized at specific, individual points.</td>
+            </tr>
+            <tr style="background-color: rgba(0,0,0,0.015);">
+                <td>Described mathematically using charge density ($\lambda, \sigma, \rho$).</td>
+                <td>Described mathematically using individual point charges ($q_1, q_2$).</td>
+            </tr>
+            <tr>
+                <td>Uses <strong>Integrals</strong> ($\int$) to calculate net electric fields.</td>
+                <td>Uses <strong>Summation</strong> ($\sum$) to calculate net electric fields.</td>
+            </tr>
+            <tr style="background-color: rgba(0,0,0,0.015);">
+                <td>Highly applicable to larger, macroscopic physical scales.</td>
+                <td>Highly applicable to microscopic, atomic, or molecular scales.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3 style="margin-bottom:10px; margin-top:30px; color: var(--accent);">Gauss's Law vs. Coulomb's Law</h3>
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 50%;">Gauss's Law</th>
+                <th style="width: 50%;">Coulomb's Law</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Relates total electric flux through a closed surface directly to the charge enclosed.</td>
+                <td>Describes the exact mechanical force acting between two isolated point charges.</td>
+            </tr>
+            <tr style="background-color: rgba(0,0,0,0.015);">
+                <td>Integral form: $\oint \vec{E} \cdot d\vec{A} = \frac{Q}{\varepsilon_0}$</td>
+                <td>Formula: $F = k\frac{|q_1 q_2|}{r^2}$</td>
+            </tr>
+            <tr>
+                <td>Exceptionally useful for calculating fields in highly symmetric charge distributions.</td>
+                <td>Universally applicable to any two specific point charges.</td>
+            </tr>
+            <tr style="background-color: rgba(0,0,0,0.015);">
+                <td>Forms a crucial part of Maxwell's fundamental equations of electromagnetism.</td>
+                <td>Serves as the foundational experimental principle of classical electrostatics.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h2 class="section-heading" id="testing-hub">Shorveer Smart AI Testing Engine (20 MCQs Matrix)</h2>
+<div class="test-engine-container">
+    <p style="font-size: 0.85rem; margin-bottom: 20px; opacity: 0.8; font-weight: 500; line-height: 1.4;">
+        Complete the evaluation below. Subjective fields utilize real-time <strong>anti-copy protection</strong> and generative <strong>AI linguistics scanning</strong> to instantly flag systemic web parsing or automated answers.
+    </p>
+
+    <h3 style="margin-bottom:15px; color:var(--accent); font-size: 1.1rem;">Part A: Objective Evaluation (MCQs)</h3>
+    
+    <div class="question-card">
+        <p class="question-title">Q1. If an object loses $10^6$ electrons, what will be the net electrical charge acquired by it?</p>
+        <div class="mcq-options">
+            <label class="option-label"><input type="radio" name="mcq1" value="A"> <span>A) +1.6 x 10^-13 C</span></label>
+            <label class="option-label"><input type="radio" name="mcq1" value="B"> <span>B) -1.6 x 10^-13 C</span></label>
+            <label class="option-label"><input type="radio" name="mcq1" value="C"> <span>C) +1.6 x 10^-19 C</span></label>
+        </div>
+        <button class="check-btn" onclick="checkMCQ('mcq1', 'A', 'feedback1')">Validate Option</button>
+        <div id="feedback1" class="feedback-box"></div>
+    </div>
+
+    <div class="question-card">
+        <p class="question-title">Q2. What happens to the relative electrostatic force between two structural point charges if the distance separating them is doubled?</p>
+        <div class="mcq-options">
+            <label class="option-label"><input type="radio" name="mcq2" value="A"> <span>A) Becomes 4 times greater</span></label>
+            <label class="option-label"><input type="radio" name="mcq2" value="B"> <span>B) Decreases to 1/4th of original value</span></label>
+            <label class="option-label"><input type="radio" name="mcq2" value="C"> <span>C) Remains absolutely unaffected</span></label>
+        </div>
+        <button class="check-btn" onclick="checkMCQ('mcq2', 'B', 'feedback2')">Validate Option</button>
+        <div id="feedback2" class="feedback-box"></div>
+    </div>
+    
+    <div id="dynamicMCQPlaceholder"></div>
+
+    <h3 style="margin-top:35px; margin-bottom:15px; color:var(--accent); font-size: 1.1rem;">Part B: Board Subjective Simulator (AI Evaluated)</h3>
+    
+    <div class="question-card">
+        <p class="question-title">Q11. State and structurally explain the physical significance of the 'Conservation of Charge' principle.</p>
+        <textarea id="theory1" class="theory-textarea" placeholder="Type your answer here... (Copy-paste is blocked)"></textarea>
+        <button class="check-btn" onclick="evaluateTheory('theory1', 'Conservation of Charge significance', 'feedTheory1')">Submit for AI Evaluation</button>
+        <div id="feedTheory1" class="feedback-box"></div>
+    </div>
+    
+    <div id="dynamicTheoryPlaceholder"></div>
+</div>
+
+<div id="cert-container">
+    <h3>🏆 SHORVEER ACHIEVER ANALYTICS</h3>
+    <p id="certNameText">Cadet, complete all validations to crack your official performance certificate!</p>
+    <div id="certMetrics" style="margin: 15px 0; font-size: 1.1rem; color: var(--accent); font-weight: 700;">Score: 0 / 100</div>
+    <button class="cert-btn" id="downloadCertBtn" onclick="generateShorveerCertificate()" disabled style="opacity: 0.5; cursor: not-allowed;">Lock Certificate 🔒</button>
+</div>
+
+<h2 class="section-heading">Shorveer Resource Hub & Navigation Links</h2>
+<div class="resources-grid">
+    <div class="res-card">
+        <h3>🎯 PYQs Zone</h3>
+        <p>Access the last 10 years of solved CBSE board exam questions.</p>
+        <a href="ch1-pyq.html" class="res-link">Open Solved PYQs</a>
+    </div>
+    <div class="res-card">
+        <h3>🚀 Next Mission</h3>
+        <p>Step up your preparation. Advance directly to Chapter 2.</p>
+        <a href="ch2-long.html" class="res-link">Go to Chapter 2 ➔</a>
+    </div>
+</div>
+
+<div id="ai-widget">
+    <button id="ai-launcher" onclick="toggleAIChat()">🤖</button>
+    <div id="ai-box">
+        <div class="ai-header">
+            <h3>Shorveer AI Assistant</h3>
+            <button class="ai-close" onclick="toggleAIChat()">✕</button>
+        </div>
+        <div class="ai-messages" id="aiMessages">
+            <div class="msg bot">जय हिंद भाई! मैं शूरवीर AI हूँ। इस चैप्टर का चप्पा-चप्पा जानता हूँ। कुछ भी पूछो!</div>
+        </div>
+        <div class="ai-input-area">
+            <input type="text" id="aiInput" placeholder="Ask anything about this chapter..." onkeypress="handleKeyPress(event)">
+            <button onclick="askShorveerAI()">Send</button>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <div class="brand-marquee-container">
+<div class="brand-marquee-track">
+    <div class="brand-logo-item"><span>📚</span> Class 12 Physics</div>
+    <div class="brand-logo-item"><span>🧪</span> Class 12 Chemistry</div>
+    <div class="brand-logo-item"><span>📐</span> Class 12 Mathematics</div>
+    <div class="brand-logo-item"><span>📖</span> Class 12 English</div>
+    <div class="brand-logo-item"><span>🏆</span> Shorveer Toppers</div>
+    <div class="brand-logo-item"><span>🎓</span> CBSE Experts</div>
+    <div class="brand-logo-item"><span>🔥</span> JS EDIZ Network</div>
+    <div class="brand-logo-item"><span>💡</span> Smart AI Testing</div>
+    <div class="brand-logo-item"><span>📚</span> Class 12 Physics</div>
+    <div class="brand-logo-item"><span>🧪</span> Class 12 Chemistry</div>
+    <div class="brand-logo-item"><span>📐</span> Class 12 Mathematics</div>
+    <div class="brand-logo-item"><span>📖</span> Class 12 English</div>
+    <div class="brand-logo-item"><span>🏆</span> Shorveer Toppers</div>
+    <div class="brand-logo-item"><span>🎓</span> CBSE Experts</div>
+    <div class="brand-logo-item"><span>🔥</span> JS EDIZ Network</div>
+    <div class="brand-logo-item"><span>💡</span> Smart AI Testing</div>
+</div>
+    </div>
+
+    <footer>
+<div class="footer-grid">
+    <a href="../about.html">About Us</a>
+    <a href="../about-notes.html">About Our Notes</a>
+    <a href="../privacy.html">Privacy Policy</a>
+</div>
+<div class="signature">Crafted with Dedication by <strong>Jatin Sharma</strong> (~Founder of Shorveer)</div>
+<div class="copyright">&copy; 2026 Shorveer Notes. All Rights Reserved.</div>
+    </footer>
+
+    <script>
+const GEMINI_KEY = "TOKEN_PLACEHOLDER"; 
+let currentUser = localStorage.getItem('shorveer_auth_user') || null;
+let scoreTracker = { mcq: 0, theory: 0 };
+
+window.addEventListener('DOMContentLoaded', () => {
+    initAuthStatus();
+    setupAntiCheating();
+    generateRemainingQuestions();
+    
+    /* Dipole loader timeout logic */
+    setTimeout(() => {
+        const preloader = document.getElementById('dipole-preloader');
+        if(preloader) {
+            preloader.style.opacity = '0';
+            setTimeout(() => preloader.style.display = 'none', 600);
+        }
+    }, 2000);
+});
+
+function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    document.getElementById('themeIcon').innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+}
+
+/* ================= AUTHENTICATION & SECURE HUB ================= */
+function initAuthStatus() {
+    const badge = document.getElementById('userBadge');
+    const status = document.getElementById('trackingStatus');
+    const certContainer = document.getElementById('cert-container');
+    
+    if (currentUser) {
+        badge.innerText = `Hi, ${currentUser}`;
+        badge.style.borderColor = "var(--success)";
+        certContainer.style.display = "block";
+        updateCertificateUI();
+    } else {
+        badge.innerText = "Login";
+        status.innerText = "Status: Login to track your checkpoint metrics";
+        certContainer.style.display = "none";
+    }
+}
+
+function openAuthModal() { document.getElementById('authOverlay').style.display = 'flex'; }
+
+function handleAuth() {
+    const name = document.getElementById('authName').value.trim();
+    const pin = document.getElementById('authPass').value.trim();
+    if (!name || !pin) { alert("Please fill details correctly भाई!"); return; }
+    localStorage.setItem('shorveer_auth_user', name);
+    currentUser = name;
+    initAuthStatus();
+    document.getElementById('authOverlay').style.display = 'none';
+}
+
+/* ================= 20+ QUESTIONS ENGINE DATA ARCHITECTURE ================= */
+function generateRemainingQuestions() {
+    const mcqBox = document.getElementById('dynamicMCQPlaceholder');
+const questionsData = [
+    { id: "mcq3", q: "Q3. What is the standard SI unit and dimensional formula of permittivity of free space ($\\varepsilon_0$)?", a: "A", o: ["A) $C^2 N^{-1} m^{-2}$ and $[M^{-1}L^{-3}T^4A^2]$", "B) $N m^2 C^{-2}$ and $[ML^3T^{-4}A^{-2}]$", "C) $J C^{-1} m^{-1}$ and $[M^{-1}L^2T^{-3}A^1]$"] },
+    { id: "mcq4", q: "Q4. Electric field intensity inside a perfectly conducting charged solid sphere is always:", a: "C", o: ["A) Infinite at the center", "B) Maximum at the core radius", "C) Strictly zero everywhere inside"] },
+    { id: "mcq5", q: "Q5. A glass rod is rubbed with silk cloth and acquires a positive charge. This is due to transfer of:", a: "B", o: ["A) Protons from silk to glass rod", "B) Electrons from glass rod to silk cloth", "C) Protons from glass rod to silk cloth"] },
+    { id: "mcq6", q: "Q6. Two identical point charges repel with force $F$. If a dielectric constant $K = 4$ is filled between them, new force is:", a: "C", o: ["A) $4F$", "B) $2F$", "C) $F/4$"] },
+    { id: "mcq7", q: "Q7. What is the total net electric flux escaping through a closed cubical surface enclosing an electric dipole?", a: "A", o: ["A) Zero", "B) $q/\\varepsilon_0$", "C) $2q/\\varepsilon_0$"] },
+    { id: "mcq8", q: "Q8. The electric field intensity $E$ due to an infinitely long straight uniformly charged wire varies with distance $r$ as:", a: "B", o: ["A) $E \\propto 1/r^2$", "B) $E \propto 1/r$", "C) $E \\propto r$"] },
+    { id: "mcq9", q: "Q9. If a charge $q$ is placed exactly at the center of a hemispherical surface, what is the electric flux passing through the curved surface?", a: "A", o: ["A) $q / (2\\varepsilon_0)$", "B) $q / \\varepsilon_0$", "C) $2q / \\varepsilon_0$"] },
+    { id: "mcq10", q: "Q10. The torque $\\tau$ experienced by an electric dipole of dipole moment $\\vec{p}$ placed in a uniform electric field $\\vec{E}$ is mathematically given by:", a: "B", o: ["A) $\\vec{p} \\cdot \\vec{E}$", "B) $\\vec{p} \\times \\vec{E}$", "C) $pE \\cos\\theta$"] },
+    { id: "mcq11", q: "Q11. At what angle between the electric dipole moment $\\vec{p}$ and uniform electric field $\\vec{E}$ is the dipole in a state of stable equilibrium?", a: "A", o: ["A) $0^\\circ$", "B) $90^\\circ$", "C) $180^\\circ$"] },
+    { id: "mcq12", q: "Q12. The electric field intensity $E$ due to a uniformly charged infinite plane sheet of surface charge density $\\sigma$ is:", a: "C", o: ["A) Dependent directly on distance $r^2$", "B) $\\sigma / \\varepsilon_0$", "C) $\\sigma / (2\\varepsilon_0)$ and independent of distance $r$"] },
+    { id: "mcq13", q: "Q13. Which of the following fundamental principles is the experimental basis for Coulomb's Law?", a: "B", o: ["A) Law of conservation of energy", "B) Inverse Square Law principle", "C) Quantisation of mass dynamics"] },
+    { id: "mcq14", q: "Q14. If the number of electric field lines entering a closed surface is $\\phi_1$ and leaving is $\\phi_2$, the net charge enclosed inside the surface is:", a: "C", o: ["A) $(\\phi_1 + \\phi_2)\\varepsilon_0$", "B) $(\\phi_1 - \\phi_2)/\\varepsilon_0", "C) $(\\phi_2 - \\phi_1)\\varepsilon_0$"] },
+    { id: "mcq15", q: "Q15. A total of $10^{19}$ electrons are injected into a neutral copper sphere. The absolute net charge on the sphere becomes:", a: "B", o: ["A) +1.6 C", "B) -1.6 C", "C) -1.6 x 10^{-19} C"] },
+        { id: "mcq16", q: "Q16. Electric field lines are highly dense in a specific region of space. This density graphically indicates that the field strength there is:", a: "A", o: ["A) Exceptionally Strong", "B) Extremely Weak", "C) Constant and uniform"] },
+    { id: "mcq17", q: "Q17. The basic elementary charge magnitude $e$ is equal to $1.6 \\times 10^{-19}$ C. Which property dictates that fraction charges like $0.5e$ cannot exist naturally?", a: "C", o: ["A) Conservation of charge", "B) Additivity of charge", "C) Quantisation of charge"] },
+    { id: "mcq18", q: "Q18. The direction of an electric dipole moment vector $\\vec{p}$ is conventionally assumed to be:", a: "A", o: ["A) From the negative charge to the positive charge", "B) From the positive charge to the negative charge", "C) Perpendicularly outwards from both axis"] },
+    { id: "mcq19", q: "Q19. How does the axial electric field intensity $E$ of a short electric dipole vary with the distance $r$ from its center?", a: "C", o: ["A) $E \\propto 1/r^3$", "B) $E \\propto 1/r^2$", "C) $E \\propto 1/r^3$"] },
+    { id: "mcq20", q: "Q20. If a soap bubble is given a net negative charge, its physical radius will immediately:", a: "B", o: ["A) Decrease due to surface tension collapse", "B) Increase due to electrostatic repulsion among surface charges", "C) Remain absolutely unchanged"] }
+];
+  
+    questionsData.forEach(item => {
+        mcqBox.innerHTML += `
+            <div class="question-card">
+                <p class="question-title">${item.q}</p>
+                <div class="mcq-options">
+                    ${item.o.map((opt, i) => `<label class="option-label"><input type="radio" name="${item.id}" value="${String.fromCharCode(65+i)}"> <span>${opt}</span></label>`).join('')}
+                </div>
+                <button class="check-btn" onclick="checkMCQ('${item.id}', '${item.a}', 'feed_${item.id}')">Validate Option</button>
+                <div id="feed_${item.id}" class="feedback-box"></div>
+            </div>
+        `;
+    });
+
+    if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([mcqBox]);
+    }
+}
+
+function checkMCQ(name, correctValue, feedbackId) {
+    const selected = document.querySelector(`input[name="${name}"]:checked`);
+    const box = document.getElementById(feedbackId);
+    box.style.display = "block"; box.className = "feedback-box";
+    if (!selected) { box.innerText = "कृपया पहले कोई एक विकल्प चुनें, भाई!"; box.style.background = "rgba(0,0,0,0.05)"; return; }
+    
+    if (selected.value === correctValue) {
+        box.innerText = "🎯 सही उत्तर, भाई! शानदार काम। Score Updated.";
+        box.style.background = "rgba(16,185,129,0.15)"; box.style.color = "var(--success)";
+        if(!box.classList.contains('counted')) {
+            scoreTracker.mcq += 5;
+            box.classList.add('counted');
+            updateCertificateUI();
+        }
+    } else {
+        box.innerText = "❌ गलत जवाब भाई! थोड़ा और ध्यान से नोट्स पढ़ो और दोबारा कोशिश करो।";
+        box.style.background = "rgba(239,68,68,0.15)"; box.style.color = "var(--error)";
+    }
+}
+
+function updateCertificateUI() {
+    if (!currentUser) return;
+    const totalScore = Math.min(scoreTracker.mcq + scoreTracker.theory, 100);
+    const statusText = document.getElementById('trackingStatus');
+    const metricsText = document.getElementById('certMetrics');
+    const downloadBtn = document.getElementById('downloadCertBtn');
+    
+    statusText.innerText = `Cadet: ${currentUser} | Core Checkpoint Metrics Score: ${totalScore}/100`;
+    metricsText.innerText = `Score Tracker: ${totalScore} / 100`;
+    
+    if(totalScore >= 40) {
+        downloadBtn.innerText = "Download Shorveer Certificate 🎓";
+        downloadBtn.disabled = false;
+        downloadBtn.style.opacity = "1";
+        downloadBtn.style.cursor = "pointer";
+    }
+}
+
+function generateShorveerCertificate() {
+    const totalScore = Math.min(scoreTracker.mcq + scoreTracker.theory, 100);
+    alert(`🏆 SHORVEER OFFICIAL ANALTICS CERTIFICATE 🏆\n\nThis certifies that Cadet [ ${currentUser} ] has successfully verified and cracked Class 12 Physics Chapter 1 Smart Evaluation with a score of ${totalScore}/100.\n\nVerified by: Shorveer Notes Analytics Framework.`);
+}
+
+/* ================= SPECIAL ANTI-COPY LINGUISTIC DETECTOR ================= */
+function setupAntiCheating() {
+    document.querySelectorAll('.theory-textarea').forEach(box => {
+        box.addEventListener('paste', (e) => { e.preventDefault(); triggerPlagiarismAlert(box.id); });
+        box.addEventListener('contextmenu', (e) => e.preventDefault());
+    });
+}
+
+function triggerPlagiarismAlert(areaId) {
+    alert("⚠️ SECURITY TRIGGER: आपके सिस्टम ने कॉपी-पेस्ट डिटेक्ट किया है! शूरवीर प्लेटफॉर्म पर केवल अपने हाथों से टाइप किया हुआ ओरिजिनल आंसर ही स्वीकार किया जाता है।");
+    document.getElementById(areaId).value = "";
+}
+
+async function evaluateTheory(inputId, topicContext, feedId) {
+    const answerText = document.getElementById(inputId).value.trim();
+    const feedEl = document.getElementById(feedId);
+    feedEl.style.display = "block"; feedEl.className = "feedback-box";
+
+    if (!answerText) { feedEl.innerText = "उत्तर खाली नहीं छोड़ा जा सकता, भाई!"; feedEl.style.background = "rgba(0,0,0,0.05)"; return; }
+
+    // AI Lingusitic rules checking bot prefixes
+    const genericAIPrefixes = ["as an ai", "here is an explanation", "delve", "furthermore", "testament", "not only"];
+    if (genericAIPrefixes.some(prefix => answerText.toLowerCase().includes(prefix)) || answerText.length < 10) {
+        feedEl.innerText = "❌ Answer Unqualified! आपका उत्तर एआई जनित (AI-Made) लग रहा है। कृपया अपने शब्दों में दोबारा टाइप करें भाई!";
+        feedEl.style.background = "rgba(239,68,68,0.15)"; feedEl.style.color = "var(--error)";
+        return;
+    }
+
+    feedEl.innerText = "Scanning linguistics through Shorveer AI Core...";
+    feedEl.style.background = "rgba(0,0,0,0.05)";
+
+    const evaluationPrompt = `Rate the student's answer out of 5 marks. Context: ${topicContext}. Answer: ${answerText}. Give a short review in Hindi-English (Hinglish) mix like a supportive elder brother. Format output strictly as: Marks: [X/5] | Feedback: [Your Review]`;
+
+    try {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_KEY}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contents: [{ parts: [{ text: evaluationPrompt }] }] })
+        });
+        const data = await response.json();
+        const textResult = data.candidates[0].content.parts[0].text;
+        
+        feedEl.innerText = `🎯 AI Evaluation Result:\n${textResult}`;
+        feedEl.style.background = "rgba(16,185,129,0.15)"; feedEl.style.color = "var(--success)";
+        
+        if(!feedEl.classList.contains('counted-theory')) {
+            scoreTracker.theory += 10;
+            feedEl.classList.add('counted-theory');
+            updateCertificateUI();
+        }
+    } catch (err) {
+        feedEl.innerText = "🎯 उत्तर दर्ज हो गया भाई! कीप इट अप!";
+        feedEl.style.background = "rgba(212,175,55,0.15)";
+    }
+}
+
+/* ================= SHORVEER CHATBOT ENGINE CONTEXT ================= */
+function toggleAIChat() {
+    const aiBox = document.getElementById('ai-box');
+    aiBox.style.display = (aiBox.style.display === 'none' || aiBox.style.display === '') ? 'flex' : 'none';
+}
+
+function handleKeyPress(e) { if (e.key === 'Enter') askShorveerAI(); }
+
+async function askShorveerAI() {
+    const inputEl = document.getElementById('aiInput');
+    const query = inputEl.value.trim();
+    if (!query) return;
+
+    appendMessage(query, 'user'); inputEl.value = '';
+    const loadingId = appendMessage('Typing...', 'bot');
+
+    try {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_KEY}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contents: [{ parts: [{ text: query }] }] })
+        });
+        const data = await response.json();
+        document.getElementById(loadingId).remove();
+        appendMessage(data.candidates[0].content.parts[0].text, 'bot');
+    } catch (e) {
+        document.getElementById(loadingId).remove();
+        appendMessage("नोट्स को ध्यान से रिवाइज करो भाई!", 'bot');
+    }
+}
+
+function appendMessage(text, sender) {
+    const box = document.getElementById('aiMessages');
+    const msgEl = document.createElement('div');
+    const id = 'msg-' + Date.now(); msgEl.id = id;
+    msgEl.className = `msg ${sender}`; msgEl.innerText = text;
+    box.appendChild(msgEl); box.scrollTop = box.scrollHeight;
+    return id;
+}
+    </script>
+</body>
+</html>
