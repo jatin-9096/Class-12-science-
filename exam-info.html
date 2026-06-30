@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete details, blueprint, and marking scheme for CBSE Class 12 Science Stream Exams.">
+    <title>Class 12 Exam Details | Shorveer Notes</title>
+    
+    <style>
+        /* --- CSS Variables --- */
+        :root {
+            --bg-color: #f0f4f8;
+            --text-color: #1e293b;
+            --primary-color: #0f172a; 
+            --accent-color: #d4af37; 
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --bg-color: #0f172a;
+            --text-color: #f1f5f9;
+            --primary-color: #1e293b;
+            --card-bg: rgba(30, 41, 59, 0.95);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); transition: var(--transition); overflow-x: hidden; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- Special Exam Preloader (Hourglass Animation) --- */
+        #exam-preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: var(--primary-color); z-index: 9999; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: opacity 0.5s ease; color: white;
+        }
+        
+        .hourglass {
+            width: 50px; height: 70px;
+            border-top: 5px solid var(--accent-color);
+            border-bottom: 5px solid var(--accent-color);
+            position: relative;
+            animation: spinGlass 2s infinite ease-in-out;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .hourglass::before, .hourglass::after {
+            content: ''; position: absolute; width: 0; height: 0;
+            border-left: 20px solid transparent; border-right: 20px solid transparent;
+            left: 50%; transform: translateX(-50%);
+        }
+        .hourglass::before { border-top: 30px solid rgba(212, 175, 55, 0.7); top: 0; }
+        .hourglass::after { border-bottom: 30px solid rgba(212, 175, 55, 0.7); bottom: 0; }
+        
+        @keyframes spinGlass {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+            100% { transform: rotate(180deg); }
+        }
+
+        /* --- Header --- */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; background-color: var(--card-bg); backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;
+        }
+        .back-btn { font-weight: bold; cursor: pointer; color: var(--accent-color); font-size: 16px; }
+        .page-title { font-size: 20px; font-weight: 800; text-align: center; }
+        .theme-toggle { cursor: pointer; font-size: 22px; background: none; border: none; }
+
+        /* --- Main Content --- */
+        .container { padding: 40px 5%; max-width: 1000px; margin: 0 auto; min-height: 70vh; animation: fadeIn 1s ease; }
+        .section-heading { font-size: 2.2rem; font-weight: 900; margin-bottom: 10px; text-align: center; color: var(--accent-color); }
+        .sub-text { text-align: center; font-size: 1.1rem; opacity: 0.8; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        
+        /* Grid for Subject Marking */
+        .marking-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px;
+        }
+        .mark-card {
+            background: var(--card-bg); padding: 25px; border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05); border-left: 5px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+        .mark-card:hover { transform: translateY(-5px); }
+        .mark-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--text-color); display: flex; justify-content: space-between; align-items: center; }
+        .mark-card .total { background: var(--primary-color); color: var(--accent-color); padding: 5px 12px; border-radius: 20px; font-size: 0.9rem; }
+        .mark-row { display: flex; justify-content: space-between; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed rgba(0,0,0,0.1); }
+        .dark-mode .mark-row { border-bottom-color: rgba(255,255,255,0.1); }
+        
+        /* Info Boxes */
+        .info-box {
+            background: var(--card-bg); padding: 30px; border-radius: 16px; margin-bottom: 30px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05); border-top: 4px solid #3b82f6;
+        }
+        .info-box.alert { border-top-color: #ef4444; }
+        .info-box h2 { font-size: 1.5rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .info-box ul { padding-left: 20px; }
+        .info-box li { margin-bottom: 10px; opacity: 0.9; }
+        .info-box strong { color: var(--text-color); }
+
+        /* --- Footer --- */
+        footer { background: var(--primary-color); color: white; text-align: center; padding: 30px 20px; margin-top: 50px; font-size: 0.9rem; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <div id="exam-preloader">
+        <div class="hourglass"></div>
+        <h2>Decoding Board Exams...</h2>
+    </div>
+
+    <header>
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+        <div class="page-title">EXAM BLUEPRINT</div>
+        <button class="theme-toggle" onclick="toggleTheme()" id="themeIcon">🌙</button>
+    </header>
+
+    <div class="container">
+        <h1 class="section-heading">Class 12th Science Exam Details</h1>
+        <p class="sub-text">Everything you need to know about the latest CBSE marking scheme, exam pattern, and passing criteria for Physics, Chemistry, Maths, and Biology.</p>
+
+        <h2 style="margin-bottom: 20px; color: var(--accent-color);">📚 Subject-wise Marking Breakdown</h2>
+        <div class="marking-grid">
+            
+            <div class="mark-card">
+                <h3>Physics <span class="total">100 Marks</span></h3>
+                <div class="mark-row"><span>Theory Exam</span> <strong>70 Marks</strong></div>
+                <div class="mark-row"><span>Practical Exam</span> <strong>30 Marks</strong></div>
+                <div style="font-size: 0.85rem; opacity: 0.7; margin-top: 10px;">*Time Allowed: 3 Hours (Theory)</div>
+            </div>
+
+            <div class="mark-card">
+                <h3>Chemistry <span class="total">100 Marks</span></h3>
+                <div class="mark-row"><span>Theory Exam</span> <strong>70 Marks</strong></div>
+                <div class="mark-row"><span>Practical Exam</span> <strong>30 Marks</strong></div>
+                <div style="font-size: 0.85rem; opacity: 0.7; margin-top: 10px;">*Time Allowed: 3 Hours (Theory)</div>
+            </div>
+
+            <div class="mark-card">
+                <h3>Biology <span class="total">100 Marks</span></h3>
+                <div class="mark-row"><span>Theory Exam</span> <strong>70 Marks</strong></div>
+                <div class="mark-row"><span>Practical Exam</span> <strong>30 Marks</strong></div>
+                <div style="font-size: 0.85rem; opacity: 0.7; margin-top: 10px;">*Time Allowed: 3 Hours (Theory)</div>
+            </div>
+
+            <div class="mark-card">
+                <h3>Mathematics <span class="total">100 Marks</span></h3>
+                <div class="mark-row"><span>Theory Exam</span> <strong>80 Marks</strong></div>
+                <div class="mark-row"><span>Internal Assessment</span> <strong>20 Marks</strong></div>
+                <div style="font-size: 0.85rem; opacity: 0.7; margin-top: 10px;">*(Tests: 10M, Activities: 10M)</div>
+            </div>
+
+            <div class="mark-card">
+                <h3>English Core <span class="total">100 Marks</span></h3>
+                <div class="mark-row"><span>Theory Exam</span> <strong>80 Marks</strong></div>
+                <div class="mark-row"><span>ASL (Internal)</span> <strong>20 Marks</strong></div>
+                <div style="font-size: 0.85rem; opacity: 0.7; margin-top: 10px;">*(Assessment of Speaking & Listening)</div>
+            </div>
+
+        </div>
+
+        <div class="info-box">
+            <h2 style="color: #3b82f6;">📝 Latest CBSE Exam Pattern (NEP 2020 Aligned)</h2>
+            <p style="margin-bottom: 15px; opacity: 0.9;">CBSE has shifted focus from rote learning to competency-based education. Here is how your question paper will look:</p>
+            <ul>
+                <li><strong>Competency-Based Questions (50%):</strong> Multiple Choice Questions (MCQs), Case-based questions, Source-based integrated questions, and Assertion-Reasoning.</li>
+                <li><strong>Select Response Type (20%):</strong> Standard objective type MCQs.</li>
+                <li><strong>Constructed Response Questions (30%):</strong> Short Answer (SA) and Long Answer (LA) questions.</li>
+            </ul>
+        </div>
+
+        <div class="info-box alert">
+            <h2 style="color: #ef4444;">⚠️ The Golden Passing Rule (Must Know)</h2>
+            <p style="margin-bottom: 15px; opacity: 0.9;">Unlike Class 10th, the passing criteria in Class 12th is strict, especially for Science students:</p>
+            <ul>
+                <li>You must score a minimum of <strong>33% Overall</strong> to pass a subject.</li>
+                <li><strong>CRUCIAL RULE:</strong> In subjects with practicals (Physics, Chemistry, Bio), you must score <strong>33% in Theory (i.e., 23 out of 70)</strong> AND <strong>33% in Practical (i.e., 9 out of 30)</strong> SEPARATELY.</li>
+                <li>If you fail in Theory but pass in Practical, you will get a compartment. You cannot combine theory and practical marks to reach 33% if you fail theory individually.</li>
+                <li>For Maths and English, you need 33% combined (Theory 80 + Internal 20 = 100), meaning at least 33 out of 100 overall.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Shorveer Notes. Crafted with dedication by Jatin Sharma.</p>
+    </footer>
+
+    <script>
+        // 1. Exam Preloader Logic
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('exam-preloader').style.opacity = '0';
+                setTimeout(() => { document.getElementById('exam-preloader').style.display = 'none'; }, 500);
+            }, 1500); 
+        });
+
+        // 2. Dark Mode Logic
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.getElementById('themeIcon');
+            icon.innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+    </script>
+</body>
+</html>
