@@ -3,179 +3,1953 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Privacy Policy for Shorveer Notes.">
+
+    <meta name="description"
+          content="Shorveer Notes Privacy Policy — Learn how we handle information, cookies, local storage, external links and your privacy.">
+
+    <meta name="theme-color" content="#08111f">
+
     <title>Privacy Policy | Shorveer Notes</title>
-    
+
     <style>
-        /* --- CSS Variables --- */
+        /* =========================================================
+           SHORVEER NOTES — PRIVACY POLICY
+           Modern Educational Design
+        ========================================================= */
+
         :root {
-            --bg-color: #f0f4f8;
-            --text-color: #1e293b;
-            --primary-color: #0f172a; 
-            --accent-color: #d4af37; 
-            --card-bg: rgba(255, 255, 255, 0.9);
-            --transition: all 0.3s ease;
+            --bg: #f5f8fc;
+            --bg-secondary: #eaf0f7;
+
+            --text: #172033;
+            --text-soft: #64748b;
+
+            --primary: #0b1220;
+            --primary-soft: #17243a;
+
+            --accent: #f4b942;
+            --accent-2: #ffcf70;
+
+            --card: rgba(255,255,255,0.72);
+            --card-solid: #ffffff;
+
+            --border: rgba(15,23,42,0.08);
+
+            --shadow:
+                0 20px 60px rgba(15,23,42,0.08);
+
+            --transition:
+                0.35s cubic-bezier(.2,.8,.2,1);
         }
 
-        .dark-mode {
-            --bg-color: #0f172a;
-            --text-color: #f1f5f9;
-            --primary-color: #1e293b;
-            --card-bg: rgba(30, 41, 59, 0.95);
+        body.dark-mode {
+            --bg: #07101d;
+            --bg-secondary: #0c1727;
+
+            --text: #edf4ff;
+            --text-soft: #9eabc0;
+
+            --primary: #f4f7fb;
+            --primary-soft: #cbd5e1;
+
+            --card: rgba(15,27,44,0.72);
+            --card-solid: #0f1b2d;
+
+            --border: rgba(255,255,255,0.08);
+
+            --shadow:
+                0 25px 70px rgba(0,0,0,0.35);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); transition: var(--transition); overflow-x: hidden; line-height: 1.6; }
-        a { text-decoration: none; color: var(--accent-color); font-weight: bold; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        /* --- Header --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                "Segoe UI",
+                system-ui,
+                -apple-system,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(244,185,66,0.10),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(59,130,246,0.08),
+                    transparent 30%
+                ),
+                var(--bg);
+
+            color: var(--text);
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+
+            transition:
+                background var(--transition),
+                color var(--transition);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        /* =========================================================
+           BACKGROUND
+        ========================================================= */
+
+        .background-orb {
+            position: fixed;
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            filter: blur(70px);
+
+            opacity: 0.12;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            animation: orbFloat 10s ease-in-out infinite alternate;
+        }
+
+        .orb-one {
+            background: #f4b942;
+            top: 12%;
+            left: -100px;
+        }
+
+        .orb-two {
+            background: #3b82f6;
+            right: -100px;
+            top: 50%;
+            animation-delay: -4s;
+        }
+
+        .orb-three {
+            background: #8b5cf6;
+            bottom: -100px;
+            left: 40%;
+            animation-delay: -7s;
+        }
+
+        @keyframes orbFloat {
+            from {
+                transform: translate(0,0) scale(1);
+            }
+
+            to {
+                transform: translate(40px,-30px) scale(1.15);
+            }
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
         header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 5%; background-color: var(--card-bg); backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;
-        }
-        .back-btn { font-weight: bold; cursor: pointer; color: var(--accent-color); font-size: 16px; }
-        .theme-toggle { cursor: pointer; font-size: 22px; background: none; border: none; }
+            position: sticky;
+            top: 0;
 
-        /* --- Animated Privacy Policy Title --- */
-        .animated-title-container {
-            text-align: center;
-            padding: 50px 20px 20px;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 15px 5%;
+
+            background:
+                rgba(255,255,255,0.70);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid var(--border);
+
+            transition:
+                background var(--transition),
+                box-shadow var(--transition);
         }
-        .animated-title {
-            font-size: 2.5rem;
+
+        body.dark-mode header {
+            background:
+                rgba(7,16,29,0.72);
+        }
+
+        header.scrolled {
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.08);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
             font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            /* Gradient Text Magic */
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color), #f59e0b, var(--accent-color), var(--primary-color));
+            letter-spacing: 1px;
+        }
+
+        .brand-logo {
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 13px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--accent),
+                    var(--accent-2)
+                );
+
+            color: #111827;
+
+            box-shadow:
+                0 8px 25px rgba(244,185,66,0.28);
+
+            animation: logoPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes logoPulse {
+            50% {
+                transform: translateY(-2px);
+            }
+        }
+
+        .brand-name {
+            font-size: 1rem;
+        }
+
+        .brand-subtitle {
+            font-size: 0.68rem;
+            color: var(--text-soft);
+            letter-spacing: 0.5px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .back-btn,
+        .theme-btn {
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            color: var(--text);
+
+            cursor: pointer;
+
+            transition: var(--transition);
+        }
+
+        .back-btn {
+            padding: 9px 15px;
+            border-radius: 12px;
+
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .theme-btn {
+            width: 42px;
+            height: 42px;
+
+            border-radius: 12px;
+
+            display: grid;
+            place-items: center;
+
+            font-size: 1.1rem;
+        }
+
+        .back-btn:hover,
+        .theme-btn:hover {
+            transform: translateY(-3px);
+
+            border-color:
+                rgba(244,185,66,0.6);
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            max-width: 1050px;
+
+            margin: auto;
+
+            padding:
+                85px 20px
+                55px;
+
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 14px;
+
+            border-radius: 999px;
+
+            background:
+                rgba(244,185,66,0.12);
+
+            border:
+                1px solid rgba(244,185,66,0.25);
+
+            color:
+                var(--text);
+
+            font-size: 0.8rem;
+            font-weight: 800;
+
+            animation:
+                fadeUp 0.8s ease both;
+        }
+
+        .hero h1 {
+            margin-top: 22px;
+
+            font-size:
+                clamp(2.2rem,6vw,4.4rem);
+
+            line-height: 1.05;
+
+            font-weight: 950;
+
+            letter-spacing: -2px;
+
+            background:
+                linear-gradient(
+                    100deg,
+                    var(--text),
+                    var(--accent),
+                    var(--text)
+                );
+
             background-size: 200% auto;
+
             color: transparent;
+
             -webkit-background-clip: text;
             background-clip: text;
-            /* Animations */
-            animation: shine 3s linear infinite, slideUp 1s ease-out forwards;
-            opacity: 0; /* Starts hidden for slideUp */
-            transform: translateY(30px);
-        }
-        
-        .dark-mode .animated-title {
-            background: linear-gradient(90deg, #fff, var(--accent-color), #f59e0b, var(--accent-color), #fff);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
+
+            animation:
+                titleShine 5s linear infinite,
+                fadeUp 0.9s ease both;
         }
 
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
-        @keyframes slideUp {
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes titleShine {
+            to {
+                background-position:
+                    200% center;
+            }
         }
 
-        /* --- Main Content (Policy Text) --- */
-        .container { 
-            padding: 20px 5%; 
-            max-width: 900px; 
-            margin: 0 auto; 
-            min-height: 70vh; 
-            animation: fadeIn 1.5s ease;
+        .hero p {
+            max-width: 680px;
+
+            margin:
+                20px auto 0;
+
+            color: var(--text-soft);
+
+            font-size:
+                clamp(0.95rem,2vw,1.1rem);
+
+            animation:
+                fadeUp 1s 0.15s ease both;
         }
-        
-        .policy-card {
-            background: var(--card-bg); 
-            padding: 40px; 
+
+        .updated {
+            display: inline-block;
+
+            margin-top: 22px;
+
+            padding: 7px 13px;
+
+            border-radius: 999px;
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            color: var(--text-soft);
+
+            font-size: 0.75rem;
+
+            animation:
+                fadeUp 1s 0.25s ease both;
+        }
+
+        /* =========================================================
+           LAYOUT
+        ========================================================= */
+
+        .page-layout {
+            width: min(1180px,92%);
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                250px 1fr;
+
+            gap: 30px;
+
+            align-items: start;
+        }
+
+        /* =========================================================
+           SIDEBAR
+        ========================================================= */
+
+        .toc {
+            position: sticky;
+            top: 90px;
+
+            padding: 20px;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                var(--card);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-radius: 20px;
+
+            box-shadow:
+                var(--shadow);
+
+            animation:
+                fadeUp 0.8s 0.2s ease both;
+        }
+
+        .toc-title {
+            font-size: 0.75rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            font-weight: 900;
+
+            color: var(--accent);
+
+            margin-bottom: 12px;
+        }
+
+        .toc a {
+            display: block;
+
+            padding: 9px 10px;
+
+            border-radius: 9px;
+
+            color: var(--text-soft);
+
+            font-size: 0.83rem;
+
+            transition: var(--transition);
+        }
+
+        .toc a:hover {
+            background:
+                rgba(244,185,66,0.10);
+
+            color: var(--text);
+
+            transform:
+                translateX(4px);
+        }
+
+        /* =========================================================
+           CONTENT CARD
+        ========================================================= */
+
+        .policy-wrapper {
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-radius: 28px;
+
+            padding:
+                clamp(25px,5vw,55px);
+
+            box-shadow:
+                var(--shadow);
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .policy-wrapper::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 100%;
+            height: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--accent),
+                    transparent
+                );
+
+            background-size: 200% 100%;
+
+            animation:
+                lineMove 4s linear infinite;
+        }
+
+        @keyframes lineMove {
+            to {
+                background-position: 200% 0;
+            }
+        }
+
+        .policy-section {
+            padding:
+                10px 0 30px;
+
+            margin-bottom: 28px;
+
+            border-bottom:
+                1px solid var(--border);
+
+            opacity: 0;
+
+            transform:
+                translateY(25px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .policy-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .policy-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            margin-bottom: 14px;
+        }
+
+        .section-number {
+            flex-shrink: 0;
+
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 11px;
+
+            background:
+                rgba(244,185,66,0.14);
+
+            color:
+                var(--accent);
+
+            font-weight: 900;
+
+            font-size: 0.82rem;
+        }
+
+        .policy-section h2 {
+            font-size:
+                clamp(1.15rem,2vw,1.45rem);
+
+            font-weight: 850;
+        }
+
+        .policy-section p {
+            margin-bottom: 12px;
+
+            color: var(--text-soft);
+
+            font-size:
+                clamp(0.9rem,1.5vw,0.98rem);
+        }
+
+        .policy-section strong {
+            color: var(--text);
+        }
+
+        .policy-section ul {
+            margin:
+                12px 0 15px;
+
+            padding-left: 22px;
+        }
+
+        .policy-section li {
+            margin-bottom: 9px;
+
+            color: var(--text-soft);
+
+            font-size: 0.94rem;
+        }
+
+        .policy-section li::marker {
+            color: var(--accent);
+        }
+
+        /* =========================================================
+           INFO BOX
+        ========================================================= */
+
+        .info-box {
+            margin:
+                18px 0;
+
+            padding: 17px 18px;
+
             border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--accent-color);
+
+            background:
+                rgba(244,185,66,0.08);
+
+            border:
+                1px solid rgba(244,185,66,0.20);
+
+            position: relative;
+
+            overflow: hidden;
         }
 
-        .policy-card h2 { margin: 25px 0 10px; color: var(--accent-color); font-size: 1.5rem; }
-        .policy-card p, .policy-card ul { margin-bottom: 15px; font-size: 1rem; opacity: 0.9; }
-        .policy-card ul { padding-left: 20px; }
-        .policy-card li { margin-bottom: 8px; }
+        .info-box::after {
+            content: "";
 
-        /* --- Footer --- */
-        footer { background: var(--primary-color); color: white; text-align: center; padding: 30px 20px; margin-top: 50px; font-size: 0.9rem; }
+            position: absolute;
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+            width: 100px;
+            height: 100px;
 
-        /* --- Media Queries --- */
-        @media (max-width: 768px) {
-            .animated-title { font-size: 1.8rem; }
-            .policy-card { padding: 25px; }
+            right: -40px;
+            top: -40px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(244,185,66,0.10);
+        }
+
+        .info-box strong {
+            display: block;
+
+            margin-bottom: 4px;
+
+            color: var(--accent);
+        }
+
+        /* =========================================================
+           CONTACT CARD
+        ========================================================= */
+
+        .contact-card {
+            margin-top: 10px;
+
+            padding: 24px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(244,185,66,0.13),
+                    rgba(59,130,246,0.07)
+                );
+
+            border:
+                1px solid var(--border);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .contact-link {
+            display: inline-flex;
+
+            margin-top: 10px;
+
+            padding: 10px 15px;
+
+            border-radius: 11px;
+
+            background:
+                var(--primary);
+
+            color:
+                var(--bg);
+
+            font-weight: 800;
+
+            font-size: 0.84rem;
+
+            transition: var(--transition);
+        }
+
+        .contact-link:hover {
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            margin-top: 80px;
+
+            padding:
+                55px 20px 30px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--primary-soft),
+                    #050a12
+                );
+
+            color: #fff;
+
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-size: 1.5rem;
+
+            font-weight: 950;
+
+            color: var(--accent);
+
+            letter-spacing: 1px;
+        }
+
+        .footer-text {
+            max-width: 550px;
+
+            margin:
+                10px auto 25px;
+
+            color: #aab5c7;
+
+            font-size: 0.88rem;
+        }
+
+        .footer-links {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 18px;
+
+            margin-bottom: 28px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+
+            font-size: 0.82rem;
+
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+
+            transform:
+                translateY(-2px);
+        }
+
+        .copyright {
+            padding-top: 22px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.08);
+
+            color: #718096;
+
+            font-size: 0.76rem;
+        }
+
+        /* =========================================================
+           SCROLL TOP
+        ========================================================= */
+
+        #scrollTop {
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            width: 45px;
+            height: 45px;
+
+            border: none;
+
+            border-radius: 14px;
+
+            background:
+                var(--accent);
+
+            color: #111827;
+
+            cursor: pointer;
+
+            font-size: 1.1rem;
+
+            font-weight: 900;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transform:
+                translateY(15px);
+
+            transition:
+                var(--transition);
+
+            box-shadow:
+                0 10px 25px rgba(244,185,66,0.25);
+
+            z-index: 500;
+        }
+
+        #scrollTop.show {
+            opacity: 1;
+            visibility: visible;
+
+            transform:
+                translateY(0);
+        }
+
+        #scrollTop:hover {
+            transform:
+                translateY(-4px);
+        }
+
+        /* =========================================================
+           ANIMATIONS
+        ========================================================= */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform:
+                    translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
+            }
+        }
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 850px) {
+
+            .page-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .toc {
+                position: relative;
+                top: auto;
+
+                display: flex;
+
+                overflow-x: auto;
+
+                gap: 6px;
+
+                padding: 12px;
+
+                scrollbar-width: none;
+            }
+
+            .toc::-webkit-scrollbar {
+                display: none;
+            }
+
+            .toc-title {
+                display: none;
+            }
+
+            .toc a {
+                white-space: nowrap;
+
+                padding:
+                    8px 12px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding:
+                    12px 4%;
+            }
+
+            .brand-subtitle {
+                display: none;
+            }
+
+            .brand-logo {
+                width: 38px;
+                height: 38px;
+            }
+
+            .back-btn {
+                padding:
+                    8px 11px;
+
+                font-size:
+                    0.75rem;
+            }
+
+            .theme-btn {
+                width: 38px;
+                height: 38px;
+            }
+
+            .hero {
+                padding:
+                    60px 18px 35px;
+            }
+
+            .hero h1 {
+                letter-spacing:
+                    -1px;
+            }
+
+            .policy-wrapper {
+                border-radius:
+                    21px;
+
+                padding:
+                    25px 20px;
+            }
+
+            .section-heading {
+                align-items:
+                    flex-start;
+            }
+
+            .section-number {
+                width: 34px;
+                height: 34px;
+            }
+
+            footer {
+                margin-top:
+                    55px;
+            }
+        }
+
+        /* =========================================================
+           ACCESSIBILITY
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                scroll-behavior:
+                    auto !important;
+
+                transition-duration:
+                    0.01ms !important;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Header -->
-    <header>
-        <a href="index.html" class="back-btn">⬅ Back to Home</a>
-        <button class="theme-toggle" onclick="toggleTheme()" id="themeIcon">🌙</button>
+    <!-- Animated Background -->
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+    <div class="background-orb orb-three"></div>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header id="siteHeader">
+
+        <a href="index.html" class="brand">
+
+            <div class="brand-logo">
+                SN
+            </div>
+
+            <div>
+                <div class="brand-name">
+                    SHORVEER NOTES
+                </div>
+
+                <div class="brand-subtitle">
+                    Class 12 Science Study Platform
+                </div>
+            </div>
+
+        </a>
+
+
+        <div class="header-actions">
+
+            <a
+                href="index.html"
+                class="back-btn"
+            >
+                ← Home
+            </a>
+
+            <button
+                class="theme-btn"
+                id="themeButton"
+                aria-label="Toggle dark mode"
+            >
+                🌙
+            </button>
+
+        </div>
+
     </header>
 
-    <!-- Animated Title Section -->
-    <div class="animated-title-container">
-        <h1 class="animated-title">Shorveer Notes Privacy Policy</h1>
-    </div>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="policy-card">
-            <p><strong>Last Updated:</strong> June 2026</p>
-            <p>Welcome to <strong>Shorveer Notes</strong>. We value your trust and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website.</p>
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
 
-            <h2>1. Information We Collect</h2>
-            <p>We believe in minimalism and privacy. We only collect data that is essential for improving your learning experience:</p>
-            <ul>
-                <li><strong>Voluntary Information:</strong> If you choose to enter your name for a personalized greeting, it is stored locally on your device (using LocalStorage). We do not send this to our servers.</li>
-                <li><strong>Usage Data:</strong> We track your chapter progress ("Mark as Done" feature) locally on your browser.</li>
-            </ul>
+    <section class="hero">
 
-            <h2>2. How We Use Your Information</h2>
-            <p>The information collected is used solely to:</p>
-            <ul>
-                <li>Personalize your experience on the website.</li>
-                <li>Help you track your study progress effortlessly.</li>
-                <li>Ensure smooth functionality of our dark mode and interactive features.</li>
-            </ul>
+        <span class="hero-badge">
+            🔒 Your Privacy Matters
+        </span>
 
-            <h2>3. Cookies and Tracking</h2>
-            <p>We use essential cookies to keep track of your preferences (like theme selection and cookie consent). These do not track your personal identity across the internet.</p>
+        <h1>
+            Privacy Policy
+        </h1>
 
-            <h2>4. Third-Party Services and Advertisements</h2>
-            <p>To keep Shorveer Notes free for all students, we may use third-party services:</p>
-            <ul>
-                <li><strong>Google AdMob / AdSense:</strong> We may display advertisements. These third-party vendors use cookies to serve ads based on your prior visits to this or other websites.</li>
-                <li><strong>External Links:</strong> Our site contains links to our official YouTube channel (JS EDIZ). Once you leave our site, their respective privacy policies apply.</li>
-            </ul>
+        <p>
+            This page explains what information Shorveer Notes
+            may collect, how it is used, how local browser storage
+            works, and how external services and links are handled.
+        </p>
 
-            <h2>5. Data Security</h2>
-            <p>Your security is our priority. Since most user preferences are stored locally on your device, there is minimal risk of data breaches from our end. However, please remember that no method of transmission over the internet is 100% secure.</p>
+        <span class="updated">
+            Last Updated: August 2026
+        </span>
 
-            <h2>6. Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. The updated version will be indicated by the "Last Updated" date at the top.</p>
+    </section>
 
-            <h2>7. Contact Us</h2>
-            <p>If you have any questions or concerns about this Privacy Policy, please reach out to us:</p>
-            <p><strong>Developer:</strong> Jatin Sharma<br>
-               <strong>Channel:</strong> <a href="https://www.youtube.com/@JSEDIZ" target="_blank">JS EDIZ</a></p>
-        </div>
-    </div>
 
-    <!-- Footer -->
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
+
+    <main class="page-layout">
+
+
+        <!-- TABLE OF CONTENTS -->
+
+        <aside class="toc">
+
+            <div class="toc-title">
+                On this page
+            </div>
+
+            <a href="#information">
+                Information
+            </a>
+
+            <a href="#localstorage">
+                Local Storage
+            </a>
+
+            <a href="#usage">
+                How We Use Data
+            </a>
+
+            <a href="#cookies">
+                Cookies
+            </a>
+
+            <a href="#thirdparty">
+                Third-Party Services
+            </a>
+
+            <a href="#links">
+                External Links
+            </a>
+
+            <a href="#security">
+                Security
+            </a>
+
+            <a href="#children">
+                Students & Minors
+            </a>
+
+            <a href="#changes">
+                Policy Changes
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </aside>
+
+
+        <!-- POLICY -->
+
+        <article class="policy-wrapper">
+
+
+            <!-- SECTION 1 -->
+
+            <section
+                class="policy-section"
+                id="information"
+            >
+
+                <div class="section-heading">
+
+                    <span class="section-number">
+                        01
+                    </span>
+
+                    <h2>
+                        Information We Collect
+                    </h2>
+
+                </div>
+
+                <p>
+                    Shorveer Notes is designed as a learning platform
+                    for Class 12 Science students. We aim to keep the
+                    amount of personal information we collect as low
+                    as reasonably possible.
+                </p>
+
+                <p>
+                    Depending on the features enabled on the website,
+                    information may include:
+                </p>
+
+                <ul>
+
+                    <li>
+                        Information that you voluntarily enter into
+                        the website, such as a display name.
+                    </li>
+
+                    <li>
+                        Basic preferences such as dark/light mode.
+                    </li>
+
+                    <li>
+                        Study progress stored by interactive
+                        chapter features.
+                    </li>
+
+                    <li>
+                        Technical information that may be automatically
+                        processed by hosting or third-party services
+                        when such services are used.
+                    </li>
+
+                </ul>
+
+                <div class="info-box">
+
+                    <strong>
+                        Privacy-first approach
+                    </strong>
+
+                    We do not ask students to provide unnecessary
+                    personal information simply to access educational
+                    content.
+
+                </div>
+
+            </section>
+
+
+            <!-- SECTION 2 -->
+
+            <section
+                class="policy-section"
+                id="localstorage"
+            >
+
+                <div class="section-heading">
+
+                    <span class="section-number">
+                        02
+                    </span>
+
+                    <h2>
+                        Local Storage & Personalization
+                    </h2>
+
+                </div>
+
+                <p>
+                    Some website features may use your browser's
+                    <strong>LocalStorage</strong> to remember information
+                    directly on your device.
+                </p>
+
+                <p>
+                    For example, the website may store a display name,
+                    selected theme, cookie preference, or chapter
+                    completion status.
+                </p>
+
+                <p>
+                    This information is generally stored inside the
+                    browser on the device where the website is being
+                    used. Clearing browser storage can remove this
+                    information.
+                </p>
+
+            </section>
+
+
+            <!-- SECTION 3 -->
+
+            <section
+                class="policy-section"
+                id="usage"
+            >
+
+                <div class="section-heading">
+
+                    <span class="section-number">
+                        03
+                    </span>
+
+                    <h2>
+                        How Information Is Used
+                    </h2>
+
+                </div>
+
+                <p>
+                    Information and preferences may be used to provide
+                    a smoother and more personalized learning experience.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Display a personalized welcome message.
+                    </li>
+
+                    <li>
+                        Remember website preferences.
+                    </li>
+
+                    <li>
+                        Remember interactive study progress.
+                    </li>
+
+                    <li>
+                        Improve the usability and functionality of
+                        the educational website.
+                    </li>
+
+                </ul>
+
+                <p>
+                    We do not intend to use voluntarily entered
+                    information for unrelated purposes.
+                </p>
+
+            </section>
+
+
+            <!-- SECTION 4 -->
+
+            <section
+                class="policy-section"
+                id="cookies"
+            >
+
+                <div class="section-heading">
+
+                    <span class="section-number">
+                        04
+                    </span>
+
+                    <h2>
+                        Cookies & Similar Technologies
+                    </h2>
+
+                </div>
+
+                <p>
+                    Shorveer Notes may use cookies or browser storage
+                    technologies for functionality and preferences.
+                </p>
+
+                <p>
+                    These technologies can help the website remember
+                    choices such as theme preferences, consent settings,
+                    or other functionality-related settings.
+                </p>
+
+                <div class="info-box">
+
+                    <strong>
+                        Cookie control
+                    </strong>
+
+                    If the website provides a cookie preference panel,
+                    you can use it to manage the available optional
+                    categories.
+
+                </div>
+
+                <p>
+                    Browser settings can also be used to clear or
+                    restrict cookies and stored website data. Some
+                    website functionality may not work correctly if
+                    essential storage is disabled.
+                </p>
+
+            </section>
+
+
+            <!-- SECTION 5 -->
+
+            <section
+                class="policy-section"
+                id="thirdparty"
+            >
+
+                <div class="section-heading">
+
+                    <span class="section-number">
+                        05
+                    </span>
+
+                    <h2>
+                        Third-Party Services
+                    </h2>
+
+                </div>
+
+                <p>
+                    Shorveer Notes may use third-party services for
+                    hosting, analytics, embedded content, advertisements,
+                    video, or other website functionality.
+                </p>
+
+                <p>
+                    If such services are enabled, those providers may
+                    process certain technical information according to
+                    their own privacy policies and terms.
+                </p>
+
+                <p>
+                    We recommend reviewing the privacy policies of
+                    third-party services before interacting with
+                    external features.
+                </p>
+
+                <p>
+                    Any advertising or analytics service should only
+                    be listed here when it is actually implemented
+                    on the website.
+                </p>
+
+            </section>
+
+
+            <!-- SECTION 6 -->
+
+            <section
+                class="policy-section"
+                id="links"
+            >
+
+                <div class="section-heading">
+
+                    <span class="section-number">
+                        06
+                    </span>
+
+                    <h2>
+                        External Links
+                    </h2>
+
+                </div>
+
+                <p>
+                    Shorveer Notes may contain links to external
+                    websites, educational resources, social platforms,
+                    videos, or other services.
+                </p>
+
+                <p>
+                    Once you leave Shorveer Notes and visit an external
+                    website, that website's own privacy policy and
+                    terms apply.
+                </p>
+
+                <p>
+                    We are not responsible for the privacy practices,
+                    content, security, or availability of third-party
+                    websites.
+                </p>
+
+            </section>
+
+
+            <!-- SECTION 7 -->
+
+            <section
+                class="policy-section"
+                id="security"
+            >
+
+                <div class="section-heading">
+
+                    <span class="section-number">
+                        07
+                    </span>
+
+                    <h2>
+                        Data Security
+                    </h2>
+
+                </div>
+
+                <p>
+                    We take reasonable steps to keep the website and
+                    its associated systems secure.
+                </p>
+
+                <p>
+                    However, no website, server, application, or
+                    internet transmission can be guaranteed to be
+                    completely secure.
+                </p>
+
+                <p>
+                    Users should avoid entering sensitive information
+                    such as passwords, financial information, government
+                    identification numbers, or other confidential
+                    information into areas of the website that do not
+                    specifically request it.
+                </p>
+
+            </section>
+
+
+            <!-- SECTION 8 -->
+
+            <section
+                class="policy-section"
+                id="children"
+            >
+
+                <div class="section-heading">
+
+                    <span class="section-number">
+                        08
+                    </span>
+
+                    <h2>
+                        Students & Younger Users
+                    </h2>
+
+                </div>
+
+                <p>
+                    Shorveer Notes is an educational platform intended
+                    to provide study material to students.
+                </p>
+
+                <p>
+                    We aim to avoid unnecessary collection of personal
+                    information from students. Users should not submit
+                    sensitive personal information through public forms,
+                    comments, or external links.
+                </p>
+
+                <p>
+                    Parents or guardians who have concerns about
+                    information associated with a student may contact
+                    us using the available contact details.
+                </p>
+
+            </section>
+
+
+            <!-- SECTION 9 -->
+
+            <section
+                class="policy-section"
+                id="changes"
+            >
+
+                <div class="section-heading">
+
+                    <span class="section-number">
+                        09
+                    </span>
+
+                    <h2>
+                        Changes to This Privacy Policy
+                    </h2>
+
+                </div>
+
+                <p>
+                    This Privacy Policy may be updated when website
+                    features, technologies, services, or legal
+                    requirements change.
+                </p>
+
+                <p>
+                    When important changes are made, the
+                    <strong>Last Updated</strong> date at the top
+                    of this page will be updated.
+                </p>
+
+                <p>
+                    We encourage visitors to review this page
+                    periodically.
+                </p>
+
+            </section>
+
+
+            <!-- SECTION 10 -->
+
+            <section
+                class="policy-section"
+                id="contact"
+            >
+
+                <div class="section-heading">
+
+                    <span class="section-number">
+                        10
+                    </span>
+
+                    <h2>
+                        Contact Us
+                    </h2>
+
+                </div>
+
+                <p>
+                    If you have a question, concern, correction request,
+                    or privacy-related issue regarding Shorveer Notes,
+                    you can contact the website team.
+                </p>
+
+                <div class="contact-card">
+
+                    <h3>
+                        Shorveer Notes
+                    </h3>
+
+                    <p>
+                        Educational study platform for Class 12
+                        Science students.
+                    </p>
+
+                    <p>
+                        <strong>Developer:</strong>
+                        Jatin Sharma
+                    </p>
+
+                    <a
+                        href="mailto:contact@shorveernotes.com"
+                        class="contact-link"
+                    >
+                        ✉ Contact Us
+                    </a>
+
+                </div>
+
+            </section>
+
+
+        </article>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
     <footer>
-        <p>&copy; 2026 Shorveer Notes. All Rights Reserved.</p>
+
+        <div class="footer-brand">
+            SHORVEER NOTES
+        </div>
+
+        <p class="footer-text">
+            Focused on making Class 12 Science preparation
+            simpler, organized, and accessible.
+        </p>
+
+        <nav class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="about-notes.html">
+                About Notes
+            </a>
+
+            <a href="exam-info.html">
+                Exam Info
+            </a>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="cookies.html">
+                Cookies
+            </a>
+
+        </nav>
+
+        <div class="copyright">
+
+            © <span id="year"></span>
+            Shorveer Notes.
+            All Rights Reserved.
+
+        </div>
+
     </footer>
 
-    <!-- Scripts -->
+
+    <!-- Scroll To Top -->
+
+    <button
+        id="scrollTop"
+        aria-label="Scroll to top"
+    >
+        ↑
+    </button>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
     <script>
-        // Dark Mode Logic
-        function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-            const icon = document.getElementById('themeIcon');
-            icon.innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+
+        /* ---------------------------------------------------------
+           DARK MODE
+        --------------------------------------------------------- */
+
+        const themeButton =
+            document.getElementById("themeButton");
+
+        const savedTheme =
+            localStorage.getItem("shorveerTheme");
+
+        if (savedTheme === "dark") {
+
+            document.body.classList.add("dark-mode");
+
+            themeButton.textContent = "☀️";
+
         }
+
+        themeButton.addEventListener(
+            "click",
+            () => {
+
+                document.body.classList.toggle(
+                    "dark-mode"
+                );
+
+                const isDark =
+                    document.body.classList.contains(
+                        "dark-mode"
+                    );
+
+                themeButton.textContent =
+                    isDark ? "☀️" : "🌙";
+
+                localStorage.setItem(
+                    "shorveerTheme",
+                    isDark ? "dark" : "light"
+                );
+
+            }
+        );
+
+
+        /* ---------------------------------------------------------
+           HEADER SHADOW ON SCROLL
+        --------------------------------------------------------- */
+
+        const header =
+            document.getElementById("siteHeader");
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                if (window.scrollY > 20) {
+
+                    header.classList.add("scrolled");
+
+                } else {
+
+                    header.classList.remove("scrolled");
+
+                }
+
+            },
+            { passive: true }
+        );
+
+
+        /* ---------------------------------------------------------
+           SCROLL REVEAL
+        --------------------------------------------------------- */
+
+        const sections =
+            document.querySelectorAll(
+                ".policy-section"
+            );
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+        sections.forEach(
+            section =>
+                observer.observe(section)
+        );
+
+
+        /* ---------------------------------------------------------
+           SCROLL TO TOP
+        --------------------------------------------------------- */
+
+        const scrollTop =
+            document.getElementById(
+                "scrollTop"
+            );
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                if (window.scrollY > 500) {
+
+                    scrollTop.classList.add("show");
+
+                } else {
+
+                    scrollTop.classList.remove("show");
+
+                }
+
+            },
+            { passive: true }
+        );
+
+        scrollTop.addEventListener(
+            "click",
+            () => {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+
+        /* ---------------------------------------------------------
+           CURRENT YEAR
+        --------------------------------------------------------- */
+
+        document.getElementById(
+            "year"
+        ).textContent =
+            new Date().getFullYear();
+
+
+        /* ---------------------------------------------------------
+           SMOOTH TOC NAVIGATION
+        --------------------------------------------------------- */
+
+        document.querySelectorAll(
+            '.toc a[href^="#"]'
+        ).forEach(link => {
+
+            link.addEventListener(
+                "click",
+                event => {
+
+                    event.preventDefault();
+
+                    const target =
+                        document.querySelector(
+                            link.getAttribute("href")
+                        );
+
+                    if (target) {
+
+                        const offset = 95;
+
+                        const position =
+                            target.getBoundingClientRect()
+                                .top
+                            +
+                            window.scrollY
+                            -
+                            offset;
+
+                        window.scrollTo({
+                            top: position,
+                            behavior: "smooth"
+                        });
+
+                    }
+
+                }
+            );
+
+        });
+
     </script>
+
 </body>
 </html>
