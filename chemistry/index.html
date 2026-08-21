@@ -1,405 +1,2230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Complete Class 12th Chemistry Notes, Quick Revision, and PYQs by Shorveer Notes.">
-    <title>Chemistry | Shorveer Notes</title>
-    
-    <style>
-        /* --- CSS Variables --- */
-        :root {
-            --bg-color: #f0f4f8;
-            --text-color: #1e293b;
-            --primary-color: #0f172a; 
-            --accent-color: #d4af37; 
-            --card-bg: rgba(255, 255, 255, 0.9);
-            --transition: all 0.3s ease;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .dark-mode {
-            --bg-color: #0f172a;
-            --text-color: #f1f5f9;
-            --primary-color: #1e293b;
-            --card-bg: rgba(30, 41, 59, 0.95);
-        }
+<meta name="description"
+content="Shorveer Notes - Class 12 Chemistry complete chapter-wise Long Notes, Mind Maps and PYQs.">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); transition: var(--transition); overflow-x: hidden; }
-        a { text-decoration: none; color: inherit; }
+<meta name="theme-color" content="#071b1b">
 
-        /* --- CHEMISTRY SPECIAL PRELOADER: Substitution Reaction & H-Bonding --- */
-        #chem-preloader {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-            background: var(--primary-color); z-index: 9999; 
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            transition: opacity 0.5s ease; color: white;
-        }
-        
-        .reaction-container {
-            position: relative;
-            width: 140px; height: 80px;
-            margin-bottom: 30px;
-        }
-        
-        .atom {
-            position: absolute;
-            border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            color: white; font-weight: bold; font-size: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-        
-        /* Central Carbon Atom */
-        .carbon {
-            width: 34px; height: 34px; background: #475569; /* Dark Slate */
-            top: 23px; left: 53px; z-index: 2;
-        }
-        .carbon::after { content: 'C'; }
-        
-        /* Leaving Group (e.g., Chlorine) */
-        .leaving-group {
-            width: 26px; height: 26px; background: #22c55e; /* Green */
-            top: 27px; left: 95px;
-            animation: leaveGroup 3s infinite ease-in-out;
-        }
-        .leaving-group::after { content: 'LG'; font-size: 8px;}
-        
-        /* Attacking Hydrophilic/Nucleophile Group (e.g., OH-) */
-        .nucleophile {
-            width: 28px; height: 28px; background: #3b82f6; /* Blue */
-            top: 26px; left: 0px;
-            animation: attackNucleophile 3s infinite ease-in-out;
-        }
-        .nucleophile::after { content: 'OH⁻'; font-size: 9px;}
-        
-        /* Solid Bond */
-        .bond-main {
-            position: absolute; width: 20px; height: 4px; background: #94a3b8;
-            top: 38px; left: 75px;
-            animation: bondBreak 3s infinite ease-in-out;
-        }
-        
-        /* Dashed Hydrogen Bond / Attraction */
-        .bond-h {
-            position: absolute; height: 2px;
-            border-top: 3px dashed var(--accent-color);
-            top: 39px; opacity: 0;
-            animation: hBondForm 3s infinite ease-in-out;
-        }
+<title>Class 12 Chemistry | Shorveer Notes</title>
 
-        /* Animation Keyframes for the Reaction */
-        @keyframes attackNucleophile {
-            0%, 15% { transform: translateX(0); }
-            30%, 45% { transform: translateX(18px); } /* Approaches, forms H-bond */
-            55%, 85% { transform: translateX(35px); } /* Substitutes */
-            100% { transform: translateX(0); }
-        }
-        
-        @keyframes leaveGroup {
-            0%, 45% { transform: translateX(0); opacity: 1; }
-            55%, 85% { transform: translateX(30px); opacity: 0; } /* Leaves */
-            100% { transform: translateX(0); opacity: 1; }
-        }
-        
-        @keyframes bondBreak {
-            0%, 45% { transform: scaleX(1); opacity: 1; transform-origin: left; }
-            55%, 85% { transform: scaleX(0); opacity: 0; }
-            100% { transform: scaleX(1); opacity: 1; }
-        }
-        
-        @keyframes hBondForm {
-            0%, 15% { opacity: 0; width: 0; left: 30px; }
-            30%, 45% { opacity: 1; width: 15px; left: 35px; } /* Attraction phase */
-            55%, 100% { opacity: 0; width: 0; }
-        }
+<style>
 
-        /* --- Header --- */
-        header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 5%; background-color: var(--card-bg); backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;
-        }
-        .back-btn { font-weight: bold; cursor: pointer; color: var(--accent-color); font-size: 16px; }
-        .page-title { font-size: 20px; font-weight: 800; text-align: center; }
-        .theme-toggle { cursor: pointer; font-size: 22px; background: none; border: none; }
+/* =========================================================
+   SHORVEER CHEMISTRY
+   PREMIUM AQUA / EMERALD EDUCATIONAL THEME
+   ========================================================= */
 
-        /* --- Main Container & Chapters --- */
-        .container { padding: 40px 5%; max-width: 1000px; margin: 0 auto; min-height: 70vh; }
-        .section-heading { font-size: 2rem; font-weight: 800; margin-bottom: 30px; border-bottom: 3px solid var(--accent-color); display: inline-block; padding-bottom: 5px; }
-        
-        .chapter-card {
-            background: var(--card-bg); padding: 25px; border-radius: 16px;
-            margin-bottom: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            display: flex; flex-direction: column; gap: 15px; 
-            border-left: 6px solid var(--accent-color); transition: transform 0.2s;
-        }
-        .chapter-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
-        .chapter-info h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--text-color); }
-        .chapter-info p { font-size: 0.95rem; opacity: 0.8; }
-        
-        /* Mobile Optimized Buttons */
-        .chapter-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-        .action-btn { 
-            padding: 10px 15px; border-radius: 8px; font-size: 13px; font-weight: 600; 
-            border: none; cursor: pointer; transition: 0.3s; flex-grow: 1; text-align: center;
-        }
-        .btn-long { background: var(--primary-color); color: white; }
-        .btn-quick { background: #3b82f6; color: white; } 
-        .btn-pyq { background: #ef4444; color: white; } 
-        .action-btn:hover { opacity: 0.8; transform: scale(1.02); }
-        .done-check { width: 22px; height: 22px; cursor: pointer; accent-color: var(--accent-color); margin-left: 10px; }
+:root{
+    --bg:#061414;
+    --bg2:#092020;
+    --surface:rgba(12,35,35,.72);
+    --surface2:rgba(18,49,48,.72);
 
-        /* --- Sample Papers Section --- */
-        .sample-papers-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(0,0,0,0.1); }
-        .sp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
-        .sp-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px dashed var(--accent-color); text-align: center; }
-        .sp-card h4 { margin-bottom: 15px; font-size: 1.1rem; }
-        .sp-card button { background: var(--accent-color); color: black; padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
-        
-        /* --- Footer --- */
-        footer { background: var(--primary-color); color: white; text-align: center; padding: 30px 20px; margin-top: 50px; font-size: 0.9rem; }
-        .support-btn { background: #ffdd00; color: black; padding: 8px 15px; border-radius: 20px; font-weight: bold; display: inline-block; margin-top: 15px; }
+    --text:#ecffff;
+    --muted:#a7c5c5;
 
-        /* --- Cookie Consent Banner --- */
-        #cookieConsent {
-            position: fixed; bottom: -100px; left: 0; width: 100%; background: var(--primary-color); color: white;
-            padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.2); transition: bottom 0.5s ease; z-index: 10000;
-        }
-        #cookieConsent p { font-size: 14px; margin-right: 20px; flex-grow: 1; }
-        #cookieConsent button { background: var(--accent-color); color: black; padding: 10px 25px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; white-space: nowrap; margin-top: 10px; }
+    --primary:#2dd4bf;
+    --secondary:#22c55e;
+    --blue:#38bdf8;
+    --gold:#f5c76b;
 
-        /* --- Media Queries --- */
-        @media (min-width: 768px) {
-            .chapter-card { flex-direction: row; justify-content: space-between; align-items: center; }
-            .chapter-actions { flex-grow: 0; justify-content: flex-end; }
-            .action-btn { flex-grow: 0; }
-            #cookieConsent button { margin-top: 0; }
-        }
-    </style>
+    --border:rgba(120,255,230,.15);
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,.28);
+
+    --radius:24px;
+
+    --transition:
+        .35s cubic-bezier(.2,.8,.2,1);
+}
+
+.light-mode{
+    --bg:#f3fbfa;
+    --bg2:#e9f7f5;
+    --surface:rgba(255,255,255,.76);
+    --surface2:rgba(255,255,255,.9);
+
+    --text:#092525;
+    --muted:#567070;
+
+    --border:rgba(5,120,110,.13);
+
+    --shadow:
+        0 20px 55px rgba(0,70,70,.10);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    color:var(--text);
+    background:
+        radial-gradient(circle at 10% 10%,rgba(45,212,191,.10),transparent 30%),
+        radial-gradient(circle at 90% 20%,rgba(56,189,248,.08),transparent 28%),
+        linear-gradient(135deg,var(--bg),var(--bg2));
+    font-family:
+        Inter,
+        "Segoe UI",
+        system-ui,
+        sans-serif;
+    overflow-x:hidden;
+    transition:
+        background .4s ease,
+        color .4s ease;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+    background-size:45px 45px;
+    mask-image:linear-gradient(to bottom,black,transparent);
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================================================
+   FLOATING MOLECULE BACKGROUND
+   ========================================================= */
+
+.molecule{
+    position:fixed;
+    width:120px;
+    height:120px;
+    border:1px solid rgba(45,212,191,.08);
+    border-radius:50%;
+    pointer-events:none;
+    z-index:-1;
+    animation:floatMolecule 12s ease-in-out infinite;
+}
+
+.molecule::before,
+.molecule::after{
+    content:"";
+    position:absolute;
+    inset:20%;
+    border:1px solid rgba(56,189,248,.08);
+    border-radius:50%;
+}
+
+.molecule.one{
+    top:15%;
+    left:-35px;
+}
+
+.molecule.two{
+    right:-45px;
+    top:48%;
+    animation-delay:3s;
+}
+
+.molecule.three{
+    left:35%;
+    bottom:5%;
+    animation-delay:6s;
+}
+
+@keyframes floatMolecule{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50%{
+        transform:
+            translateY(-35px)
+            rotate(90deg);
+    }
+}
+
+
+/* =========================================================
+   PRELOADER
+   ========================================================= */
+
+#preloader{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    background:#041111;
+
+    transition:
+        opacity .7s ease,
+        visibility .7s ease;
+}
+
+#preloader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.flask{
+    position:relative;
+    width:70px;
+    height:90px;
+    margin-bottom:25px;
+}
+
+.flask-neck{
+    position:absolute;
+    top:0;
+    left:27px;
+    width:16px;
+    height:35px;
+
+    border:3px solid var(--primary);
+    border-bottom:none;
+    border-radius:8px 8px 0 0;
+}
+
+.flask-body{
+    position:absolute;
+    bottom:0;
+    left:8px;
+
+    width:54px;
+    height:62px;
+
+    border:3px solid var(--primary);
+    border-radius:10px 10px 28px 28px;
+
+    overflow:hidden;
+}
+
+.liquid{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:45%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--blue)
+        );
+
+    animation:liquidMove 1.5s infinite ease-in-out;
+}
+
+@keyframes liquidMove{
+
+    0%,100%{
+        height:40%;
+    }
+
+    50%{
+        height:58%;
+    }
+}
+
+#preloader h2{
+    color:#dffffb;
+    font-size:1.1rem;
+    letter-spacing:2px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:500;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+
+    padding:16px 5%;
+
+    background:
+        rgba(4,20,20,.72);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border-bottom:1px solid var(--border);
+}
+
+.light-mode header{
+    background:rgba(243,251,250,.78);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:1.35rem;
+    font-weight:900;
+    letter-spacing:1px;
+
+    color:var(--primary);
+}
+
+.logo-mark{
+    width:38px;
+    height:38px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(45,212,191,.22),
+            rgba(56,189,248,.12)
+        );
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 0 25px rgba(45,212,191,.08);
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.home-btn,
+.theme-btn{
+    border:1px solid var(--border);
+    background:var(--surface);
+    color:var(--text);
+
+    padding:10px 14px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+}
+
+.home-btn:hover,
+.theme-btn:hover{
+    transform:translateY(-2px);
+    border-color:var(--primary);
+    color:var(--primary);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+    position:relative;
+
+    max-width:1200px;
+    margin:auto;
+
+    padding:
+        80px 5%
+        55px;
+
+    text-align:center;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    top:0;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(45,212,191,.13),
+            transparent 70%
+        );
+
+    filter:blur(10px);
+
+    z-index:-1;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:8px 15px;
+
+    border:1px solid var(--border);
+    border-radius:50px;
+
+    background:var(--surface);
+
+    color:var(--primary);
+
+    font-size:.82rem;
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    animation:fadeUp .8s ease both;
+}
+
+.hero h1{
+    margin-top:22px;
+
+    font-size:
+        clamp(2.4rem,7vw,5.3rem);
+
+    line-height:1.03;
+
+    font-weight:950;
+
+    letter-spacing:-2px;
+
+    animation:fadeUp .9s .1s ease both;
+}
+
+.gradient-text{
+    background:
+        linear-gradient(
+            100deg,
+            var(--primary),
+            var(--blue),
+            var(--secondary)
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    background-size:200% auto;
+
+    animation:
+        gradientFlow 5s linear infinite;
+}
+
+@keyframes gradientFlow{
+
+    to{
+        background-position:200% center;
+    }
+}
+
+.hero p{
+    max-width:700px;
+
+    margin:
+        22px auto 0;
+
+    color:var(--muted);
+
+    font-size:
+        clamp(1rem,2vw,1.15rem);
+
+    line-height:1.7;
+
+    animation:fadeUp 1s .2s ease both;
+}
+
+.hero-badges{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:30px;
+
+    animation:fadeUp 1s .3s ease both;
+}
+
+.badge{
+    padding:9px 14px;
+
+    border-radius:50px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    color:var(--muted);
+
+    font-size:.82rem;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-section{
+    max-width:850px;
+
+    margin:
+        0 auto 45px;
+
+    padding:0 5%;
+}
+
+.search-box{
+    position:relative;
+}
+
+.search-box input{
+    width:100%;
+
+    padding:
+        17px 55px 17px 20px;
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    outline:none;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    backdrop-filter:blur(15px);
+
+    font-size:1rem;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+}
+
+.search-box input:focus{
+    border-color:var(--primary);
+
+    box-shadow:
+        0 0 0 4px rgba(45,212,191,.08),
+        var(--shadow);
+}
+
+.search-icon{
+    position:absolute;
+
+    right:18px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:1.2rem;
+}
+
+.search-results{
+    position:absolute;
+
+    top:calc(100% + 8px);
+    left:0;
+    right:0;
+
+    display:none;
+
+    background:var(--surface2);
+
+    backdrop-filter:blur(20px);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    z-index:50;
+}
+
+.search-results.show{
+    display:block;
+}
+
+.search-result{
+    padding:14px 18px;
+
+    border-bottom:
+        1px solid var(--border);
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.search-result:hover{
+    background:
+        rgba(45,212,191,.10);
+
+    padding-left:24px;
+}
+
+
+/* =========================================================
+   CHAPTER SECTION
+   ========================================================= */
+
+.main{
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+        0 5% 80px;
+}
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+
+    gap:20px;
+
+    margin-bottom:22px;
+}
+
+.section-title{
+    font-size:1.7rem;
+    font-weight:900;
+}
+
+.section-title span{
+    color:var(--primary);
+}
+
+.section-subtitle{
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+
+/* =========================================================
+   CHAPTER GRID
+   ========================================================= */
+
+.chapter-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(285px,1fr)
+        );
+
+    gap:20px;
+}
+
+.chapter-card{
+    position:relative;
+
+    padding:24px;
+
+    min-height:300px;
+
+    background:var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    backdrop-filter:blur(18px);
+
+    transition:
+        transform .4s cubic-bezier(.2,.8,.2,1),
+        border-color .4s ease,
+        box-shadow .4s ease;
+
+    opacity:0;
+    transform:translateY(30px);
+}
+
+.chapter-card.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.chapter-card:hover{
+    transform:
+        translateY(-10px)
+        scale(1.015);
+
+    border-color:
+        rgba(45,212,191,.45);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.32),
+        0 0 35px rgba(45,212,191,.07);
+}
+
+.chapter-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:130px;
+    height:130px;
+
+    right:-50px;
+    top:-50px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(45,212,191,.15),
+            transparent 70%
+        );
+
+    transition:.5s;
+}
+
+.chapter-card:hover::before{
+    transform:scale(1.5);
+}
+
+.chapter-number{
+    display:inline-flex;
+
+    width:42px;
+    height:42px;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(45,212,191,.18),
+            rgba(56,189,248,.12)
+        );
+
+    border:
+        1px solid var(--border);
+
+    color:var(--primary);
+
+    font-weight:900;
+
+    margin-bottom:18px;
+}
+
+.chapter-card h3{
+    font-size:1.22rem;
+
+    line-height:1.3;
+
+    margin-bottom:10px;
+}
+
+.chapter-card p{
+    color:var(--muted);
+
+    font-size:.9rem;
+
+    line-height:1.6;
+
+    min-height:46px;
+}
+
+.resource-buttons{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:8px;
+
+    margin-top:22px;
+}
+
+.resource-btn{
+    padding:11px 7px;
+
+    border-radius:12px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(255,255,255,.025);
+
+    color:var(--text);
+
+    text-align:center;
+
+    font-size:.76rem;
+    font-weight:800;
+
+    transition:var(--transition);
+}
+
+.resource-btn:hover{
+    transform:translateY(-3px);
+
+    background:
+        rgba(45,212,191,.12);
+
+    border-color:var(--primary);
+
+    color:var(--primary);
+}
+
+.resource-btn.notes:hover{
+    color:var(--blue);
+    border-color:var(--blue);
+}
+
+.resource-btn.mindmap:hover{
+    color:#a78bfa;
+    border-color:#a78bfa;
+}
+
+.resource-btn.pyq:hover{
+    color:var(--gold);
+    border-color:var(--gold);
+}
+
+
+/* =========================================================
+   QUICK REVISION PANEL
+   ========================================================= */
+
+.revision-panel{
+    margin-top:60px;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(45,212,191,.12),
+            rgba(56,189,248,.07)
+        );
+
+    border:
+        1px solid var(--border);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.revision-panel::after{
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    right:-80px;
+    bottom:-120px;
+
+    border-radius:50%;
+
+    background:
+        rgba(45,212,191,.08);
+
+    filter:blur(20px);
+}
+
+.revision-panel h2{
+    font-size:1.7rem;
+    margin-bottom:10px;
+}
+
+.revision-panel p{
+    color:var(--muted);
+    max-width:700px;
+}
+
+.revision-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(200px,1fr)
+        );
+
+    gap:15px;
+
+    margin-top:25px;
+}
+
+.revision-item{
+    padding:20px;
+
+    border-radius:18px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    transition:var(--transition);
+}
+
+.revision-item:hover{
+    transform:translateY(-5px);
+}
+
+.revision-item strong{
+    display:block;
+
+    margin-bottom:6px;
+
+    color:var(--primary);
+}
+
+.revision-item span{
+    color:var(--muted);
+    font-size:.85rem;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+    margin-top:30px;
+
+    padding:
+        55px 5% 30px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(0,0,0,.3)
+        );
+
+    border-top:
+        1px solid var(--border);
+}
+
+.footer-grid{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr;
+
+    gap:40px;
+}
+
+.footer-brand h2{
+    color:var(--primary);
+
+    margin-bottom:10px;
+}
+
+.footer-brand p{
+    color:var(--muted);
+
+    max-width:420px;
+
+    line-height:1.7;
+}
+
+.footer-column h4{
+    margin-bottom:14px;
+}
+
+.footer-column a{
+    display:block;
+
+    color:var(--muted);
+
+    margin:9px 0;
+
+    transition:.25s;
+}
+
+.footer-column a:hover{
+    color:var(--primary);
+    transform:translateX(4px);
+}
+
+.copyright{
+    max-width:1200px;
+
+    margin:
+        35px auto 0;
+
+    padding-top:20px;
+
+    border-top:
+        1px solid var(--border);
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-size:.8rem;
+}
+
+
+/* =========================================================
+   SCROLL TOP
+   ========================================================= */
+
+#topBtn{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:#001414;
+
+    font-size:1.1rem;
+
+    cursor:pointer;
+
+    opacity:0;
+    pointer-events:none;
+
+    transform:translateY(10px);
+
+    transition:var(--transition);
+
+    z-index:400;
+}
+
+#topBtn.show{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:700px){
+
+    header{
+        padding:12px 4%;
+    }
+
+    .logo span{
+        display:none;
+    }
+
+    .home-btn{
+        font-size:.8rem;
+        padding:9px 11px;
+    }
+
+    .hero{
+        padding-top:60px;
+    }
+
+    .hero h1{
+        letter-spacing:-1px;
+    }
+
+    .section-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .resource-buttons{
+        grid-template-columns:1fr;
+    }
+
+    .resource-btn{
+        padding:12px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .revision-panel{
+        padding:25px 20px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        scroll-behavior:auto!important;
+        transition-duration:.01ms!important;
+    }
+}
+
+</style>
 </head>
+
+
 <body>
 
-    <!-- Substitution & H-Bonding Preloader -->
-    <div id="chem-preloader">
-        <div class="reaction-container">
-            <div class="atom nucleophile"></div>
-            <div class="bond-h"></div>
-            <div class="atom carbon"></div>
-            <div class="bond-main"></div>
-            <div class="atom leaving-group"></div>
+<!-- =======================================================
+     BACKGROUND DECORATION
+     ======================================================= -->
+
+<div class="molecule one"></div>
+<div class="molecule two"></div>
+<div class="molecule three"></div>
+
+
+<!-- =======================================================
+     PRELOADER
+     ======================================================= -->
+
+<div id="preloader">
+
+    <div class="flask">
+
+        <div class="flask-neck"></div>
+
+        <div class="flask-body">
+            <div class="liquid"></div>
         </div>
-        <h2>Synthesizing Chemistry Core...</h2>
+
     </div>
 
-    <!-- Header -->
-    <header>
-        <a href="../index.html" class="back-btn">⬅ Home</a>
-        <div class="page-title">CLASS 12 CHEMISTRY</div>
-        <button class="theme-toggle" onclick="toggleTheme()" id="themeIcon">🌙</button>
-    </header>
+    <h2>Preparing Chemistry...</h2>
 
-    <!-- Main Content -->
-    <div class="container">
-        <h2 class="section-heading">All Chapters</h2>
+</div>
 
-        <!-- Physical Chemistry -->
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>1. Solutions</h3>
-                <p>Types of solutions, Raoult's law, Colligative properties.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Long Notes</button>
-                <button class="action-btn btn-quick">Quick Revision</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
 
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>2. Electrochemistry</h3>
-                <p>Electrochemical cells, Nernst equation, Kohlrausch's law.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Long Notes</button>
-                <button class="action-btn btn-quick">Quick Revision</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
+<!-- =======================================================
+     HEADER
+     ======================================================= -->
 
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>3. Chemical Kinetics</h3>
-                <p>Rate of reaction, Order and molecularity, Arrhenius equation.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Long Notes</button>
-                <button class="action-btn btn-quick">Quick Revision</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
+<header>
 
-        <!-- Inorganic Chemistry -->
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>4. The d- and f- Block Elements</h3>
-                <p>Transition elements, Lanthanoids, Actinoids.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Long Notes</button>
-                <button class="action-btn btn-quick">Quick Revision</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
+    <a href="../index.html" class="logo">
 
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>5. Coordination Compounds</h3>
-                <p>Ligands, Werner's theory, VBT, CFT.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Long Notes</button>
-                <button class="action-btn btn-quick">Quick Revision</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
+        <span class="logo-mark">⚗</span>
 
-        <!-- Organic Chemistry -->
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>6. Haloalkanes and Haloarenes</h3>
-                <p>Nomenclature, SN1 and SN2 reactions, Uses.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Long Notes</button>
-                <button class="action-btn btn-quick">Quick Revision</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
+        <span>SHORVEER NOTES</span>
 
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>7. Alcohols, Phenols and Ethers</h3>
-                <p>Preparation, Properties, Acidity, Electrophilic substitution.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Long Notes</button>
-                <button class="action-btn btn-quick">Quick Revision</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
+    </a>
 
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>8. Aldehydes, Ketones and Carboxylic Acids</h3>
-                <p>Nucleophilic addition, Aldol condensation, Cannizzaro reaction.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Long Notes</button>
-                <button class="action-btn btn-quick">Quick Revision</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
+    <div class="header-actions">
 
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>9. Amines</h3>
-                <p>Classification, Basic character, Diazonium salts.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Long Notes</button>
-                <button class="action-btn btn-quick">Quick Revision</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
+        <a
+            href="../index.html"
+            class="home-btn">
+            ← Home
+        </a>
 
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>10. Biomolecules</h3>
-                <p>Carbohydrates, Proteins, Vitamins, Nucleic acids.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Long Notes</button>
-                <button class="action-btn btn-quick">Quick Revision</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
+        <button
+            class="theme-btn"
+            id="themeBtn"
+            aria-label="Toggle theme">
+            ☀
+        </button>
 
-        <!-- Sample Papers Section -->
-        <div class="sample-papers-section">
-            <h2 class="section-heading">CBSE Sample Papers & Solutions</h2>
-            <p>Practice with previous year papers and official sample papers to boost your score.</p>
-            <div class="sp-grid">
-                <div class="sp-card">
-                    <h4>Sample Paper 2025-26</h4>
-                    <button>Download Paper + Solution</button>
-                </div>
-                <div class="sp-card">
-                    <h4>Previous Year Paper (2024)</h4>
-                    <button>Download Paper + Solution</button>
-                </div>
-                <div class="sp-card">
-                    <h4>Previous Year Paper (2023)</h4>
-                    <button>Download Paper + Solution</button>
-                </div>
-            </div>
-        </div>
     </div>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookieConsent">
-        <p>🍪 We use cookies to enhance your experience, track your progress, and analyze our traffic.</p>
-        <button onclick="acceptCookies()">Accept Cookies</button>
+</header>
+
+
+<!-- =======================================================
+     HERO
+     ======================================================= -->
+
+<section class="hero">
+
+    <div class="eyebrow">
+        🧪 CLASS 12 • CHEMISTRY
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Shorveer Notes. All Rights Reserved.</p>
-        <a href="#" class="support-btn">☕ Support Shorveer Notes</a>
-    </footer>
+    <h1>
+        Master Chemistry
+        <br>
+        <span class="gradient-text">
+            Chapter by Chapter.
+        </span>
+    </h1>
 
-    <!-- Scripts -->
-    <script>
-        // 1. Preloader Logic (Increased time slightly so the animation is visible)
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                document.getElementById('chem-preloader').style.opacity = '0';
-                setTimeout(() => { document.getElementById('chem-preloader').style.display = 'none'; }, 500);
-            }, 1800); 
+    <p>
+        Complete Class 12 Chemistry study material designed
+        for smart learning, fast revision and confident
+        board-exam preparation.
+    </p>
+
+    <div class="hero-badges">
+
+        <span class="badge">📚 Long Notes</span>
+
+        <span class="badge">🧠 Mind Maps</span>
+
+        <span class="badge">🎯 PYQs</span>
+
+        <span class="badge">✨ Smart Revision</span>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     SEARCH
+     ======================================================= -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Search Chemistry chapters..."
+            autocomplete="off">
+
+        <span class="search-icon">
+            🔎
+        </span>
+
+        <div
+            class="search-results"
+            id="searchResults">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     MAIN
+     ======================================================= -->
+
+<main class="main">
+
+    <div class="section-header">
+
+        <div>
+
+            <h2 class="section-title">
+                Chemistry <span>Chapters</span>
+            </h2>
+
+            <p class="section-subtitle">
+                Choose a chapter and start learning.
+            </p>
+
+        </div>
+
+        <div class="section-subtitle">
+            3 resources per chapter
+        </div>
+
+    </div>
+
+
+    <!-- ===================================================
+         CHAPTER GRID
+         =================================================== -->
+
+    <section
+        class="chapter-grid"
+        id="chapterGrid">
+
+
+        <!-- CHAPTER 1 -->
+
+        <article
+            class="chapter-card"
+            data-name="Solutions">
+
+            <div class="chapter-number">
+                01
+            </div>
+
+            <h3>
+                Solutions
+            </h3>
+
+            <p>
+                Concentration terms, Raoult's law,
+                colligative properties and abnormal
+                molar masses.
+            </p>
+
+            <div class="resource-buttons">
+
+                <a
+                    class="resource-btn notes"
+                    href="solutions/long-notes.html">
+                    📚 Notes
+                </a>
+
+                <a
+                    class="resource-btn mindmap"
+                    href="solutions/mind-map.html">
+                    🧠 Mind Map
+                </a>
+
+                <a
+                    class="resource-btn pyq"
+                    href="solutions/pyq.html">
+                    🎯 PYQs
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CHAPTER 2 -->
+
+        <article
+            class="chapter-card"
+            data-name="Electrochemistry">
+
+            <div class="chapter-number">
+                02
+            </div>
+
+            <h3>
+                Electrochemistry
+            </h3>
+
+            <p>
+                Electrochemical cells, Nernst equation,
+                conductivity, electrolysis and batteries.
+            </p>
+
+            <div class="resource-buttons">
+
+                <a
+                    class="resource-btn notes"
+                    href="electrochemistry/long-notes.html">
+                    📚 Notes
+                </a>
+
+                <a
+                    class="resource-btn mindmap"
+                    href="electrochemistry/mind-map.html">
+                    🧠 Mind Map
+                </a>
+
+                <a
+                    class="resource-btn pyq"
+                    href="electrochemistry/pyq.html">
+                    🎯 PYQs
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CHAPTER 3 -->
+
+        <article
+            class="chapter-card"
+            data-name="Chemical Kinetics">
+
+            <div class="chapter-number">
+                03
+            </div>
+
+            <h3>
+                Chemical Kinetics
+            </h3>
+
+            <p>
+                Rate laws, order of reaction, integrated
+                equations, half-life and Arrhenius equation.
+            </p>
+
+            <div class="resource-buttons">
+
+                <a
+                    class="resource-btn notes"
+                    href="chemical-kinetics/long-notes.html">
+                    📚 Notes
+                </a>
+
+                <a
+                    class="resource-btn mindmap"
+                    href="chemical-kinetics/mind-map.html">
+                    🧠 Mind Map
+                </a>
+
+                <a
+                    class="resource-btn pyq"
+                    href="chemical-kinetics/pyq.html">
+                    🎯 PYQs
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CHAPTER 4 -->
+
+        <article
+            class="chapter-card"
+            data-name="d and f Block Elements">
+
+            <div class="chapter-number">
+                04
+            </div>
+
+            <h3>
+                d- and f-Block Elements
+            </h3>
+
+            <p>
+                Transition elements, oxidation states,
+                magnetic properties, lanthanides and
+                actinides.
+            </p>
+
+            <div class="resource-buttons">
+
+                <a
+                    class="resource-btn notes"
+                    href="d-and-f-block/long-notes.html">
+                    📚 Notes
+                </a>
+
+                <a
+                    class="resource-btn mindmap"
+                    href="d-and-f-block/mind-map.html">
+                    🧠 Mind Map
+                </a>
+
+                <a
+                    class="resource-btn pyq"
+                    href="d-and-f-block/pyq.html">
+                    🎯 PYQs
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CHAPTER 5 -->
+
+        <article
+            class="chapter-card"
+            data-name="Coordination Compounds">
+
+            <div class="chapter-number">
+                05
+            </div>
+
+            <h3>
+                Coordination Compounds
+            </h3>
+
+            <p>
+                Coordination terminology, nomenclature,
+                bonding theories, isomerism and applications.
+            </p>
+
+            <div class="resource-buttons">
+
+                <a
+                    class="resource-btn notes"
+                    href="coordination-compounds/long-notes.html">
+                    📚 Notes
+                </a>
+
+                <a
+                    class="resource-btn mindmap"
+                    href="coordination-compounds/mind-map.html">
+                    🧠 Mind Map
+                </a>
+
+                <a
+                    class="resource-btn pyq"
+                    href="coordination-compounds/pyq.html">
+                    🎯 PYQs
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CHAPTER 6 -->
+
+        <article
+            class="chapter-card"
+            data-name="Haloalkanes and Haloarenes">
+
+            <div class="chapter-number">
+                06
+            </div>
+
+            <h3>
+                Haloalkanes & Haloarenes
+            </h3>
+
+            <p>
+                Classification, nomenclature, preparation,
+                reactions, mechanisms and environmental
+                applications.
+            </p>
+
+            <div class="resource-buttons">
+
+                <a
+                    class="resource-btn notes"
+                    href="haloalkanes/long-notes.html">
+                    📚 Notes
+                </a>
+
+                <a
+                    class="resource-btn mindmap"
+                    href="haloalkanes/mind-map.html">
+                    🧠 Mind Map
+                </a>
+
+                <a
+                    class="resource-btn pyq"
+                    href="haloalkanes/pyq.html">
+                    🎯 PYQs
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CHAPTER 7 -->
+
+        <article
+            class="chapter-card"
+            data-name="Alcohols Phenols Ethers">
+
+            <div class="chapter-number">
+                07
+            </div>
+
+            <h3>
+                Alcohols, Phenols & Ethers
+            </h3>
+
+            <p>
+                Preparation, physical properties, reactions,
+                acidity and important named reactions.
+            </p>
+
+            <div class="resource-buttons">
+
+                <a
+                    class="resource-btn notes"
+                    href="alcohols-phenols-ethers/long-notes.html">
+                    📚 Notes
+                </a>
+
+                <a
+                    class="resource-btn mindmap"
+                    href="alcohols-phenols-ethers/mind-map.html">
+                    🧠 Mind Map
+                </a>
+
+                <a
+                    class="resource-btn pyq"
+                    href="alcohols-phenols-ethers/pyq.html">
+                    🎯 PYQs
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CHAPTER 8 -->
+
+        <article
+            class="chapter-card"
+            data-name="Aldehydes Ketones Carboxylic Acids">
+
+            <div class="chapter-number">
+                08
+            </div>
+
+            <h3>
+                Aldehydes, Ketones & Carboxylic Acids
+            </h3>
+
+            <p>
+                Carbonyl chemistry, nucleophilic addition,
+                oxidation, reduction and important reactions.
+            </p>
+
+            <div class="resource-buttons">
+
+                <a
+                    class="resource-btn notes"
+                    href="aldehydes-ketones-acids/long-notes.html">
+                    📚 Notes
+                </a>
+
+                <a
+                    class="resource-btn mindmap"
+                    href="aldehydes-ketones-acids/mind-map.html">
+                    🧠 Mind Map
+                </a>
+
+                <a
+                    class="resource-btn pyq"
+                    href="aldehydes-ketones-acids/pyq.html">
+                    🎯 PYQs
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CHAPTER 9 -->
+
+        <article
+            class="chapter-card"
+            data-name="Amines">
+
+            <div class="chapter-number">
+                09
+            </div>
+
+            <h3>
+                Amines
+            </h3>
+
+            <p>
+                Classification, nomenclature, preparation,
+                basicity, reactions and diazonium salts.
+            </p>
+
+            <div class="resource-buttons">
+
+                <a
+                    class="resource-btn notes"
+                    href="amines/long-notes.html">
+                    📚 Notes
+                </a>
+
+                <a
+                    class="resource-btn mindmap"
+                    href="amines/mind-map.html">
+                    🧠 Mind Map
+                </a>
+
+                <a
+                    class="resource-btn pyq"
+                    href="amines/pyq.html">
+                    🎯 PYQs
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CHAPTER 10 -->
+
+        <article
+            class="chapter-card"
+            data-name="Biomolecules">
+
+            <div class="chapter-number">
+                10
+            </div>
+
+            <h3>
+                Biomolecules
+            </h3>
+
+            <p>
+                Carbohydrates, proteins, enzymes, vitamins,
+                nucleic acids and their biological importance.
+            </p>
+
+            <div class="resource-buttons">
+
+                <a
+                    class="resource-btn notes"
+                    href="biomolecules/long-notes.html">
+                    📚 Notes
+                </a>
+
+                <a
+                    class="resource-btn mindmap"
+                    href="biomolecules/mind-map.html">
+                    🧠 Mind Map
+                </a>
+
+                <a
+                    class="resource-btn pyq"
+                    href="biomolecules/pyq.html">
+                    🎯 PYQs
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+    <!-- ===================================================
+         REVISION PANEL
+         =================================================== -->
+
+    <section class="revision-panel">
+
+        <h2>
+            🧪 Your Chemistry Revision System
+        </h2>
+
+        <p>
+            Don't try to revise everything in the same way.
+            Use the three-resource system according to your
+            preparation stage.
+        </p>
+
+        <div class="revision-grid">
+
+            <div class="revision-item">
+
+                <strong>📚 Long Notes</strong>
+
+                <span>
+                    Use when learning a chapter for the
+                    first time or clearing concepts.
+                </span>
+
+            </div>
+
+            <div class="revision-item">
+
+                <strong>🧠 Mind Maps</strong>
+
+                <span>
+                    Use for rapid revision before tests
+                    and board examinations.
+                </span>
+
+            </div>
+
+            <div class="revision-item">
+
+                <strong>🎯 PYQs</strong>
+
+                <span>
+                    Use after studying to test your
+                    understanding and exam readiness.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =======================================================
+     FOOTER
+     ======================================================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <h2>
+                SHORVEER NOTES
+            </h2>
+
+            <p>
+                A student-focused learning platform created
+                to make Class 12 preparation more organized,
+                simple and effective.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Explore
+            </h4>
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="../exam-info.html">
+                Exam Details
+            </a>
+
+            <a href="../about-notes.html">
+                About Our Notes
+            </a>
+
+            <a href="../about.html">
+                About Us
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Information
+            </h4>
+
+            <a href="../privacy.html">
+                Privacy Policy
+            </a>
+
+            <a href="../cookies.html">
+                Cookie Policy
+            </a>
+
+            <a href="../contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © <span id="year"></span>
+        Shorveer Notes.
+        Crafted for learners.
+
+    </div>
+
+</footer>
+
+
+<!-- SCROLL TOP -->
+
+<button
+    id="topBtn"
+    aria-label="Back to top">
+    ↑
+</button>
+
+
+<script>
+
+/* =========================================================
+   PRELOADER
+   ========================================================= */
+
+window.addEventListener("load",()=>{
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("preloader")
+            .classList.add("hide");
+
+    },900);
+
+});
+
+
+/* =========================================================
+   THEME
+   ========================================================= */
+
+const themeBtn =
+    document.getElementById("themeBtn");
+
+const savedTheme =
+    localStorage.getItem("shorveer-theme");
+
+if(savedTheme === "light"){
+
+    document.body.classList.add("light-mode");
+
+    themeBtn.textContent="🌙";
+
+}else{
+
+    themeBtn.textContent="☀";
+
+}
+
+themeBtn.addEventListener("click",()=>{
+
+    document.body.classList.toggle("light-mode");
+
+    const light =
+        document.body.classList.contains("light-mode");
+
+    localStorage.setItem(
+        "shorveer-theme",
+        light ? "light" : "dark"
+    );
+
+    themeBtn.textContent =
+        light ? "🌙" : "☀";
+
+});
+
+
+/* =========================================================
+   CHAPTER REVEAL ANIMATION
+   ========================================================= */
+
+const cards =
+    document.querySelectorAll(".chapter-card");
+
+const observer =
+    new IntersectionObserver(
+
+        entries=>{
+
+            entries.forEach(entry=>{
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:.12
+        }
+
+    );
+
+
+cards.forEach((card,index)=>{
+
+    card.style.transitionDelay =
+        `${Math.min(index * 0.05,0.4)}s`;
+
+    observer.observe(card);
+
+});
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const resultsBox =
+    document.getElementById("searchResults");
+
+const chapterCards =
+    [...document.querySelectorAll(".chapter-card")];
+
+searchInput.addEventListener("input",()=>{
+
+    const query =
+        searchInput.value
+        .trim()
+        .toLowerCase();
+
+    resultsBox.innerHTML="";
+
+    if(!query){
+
+        resultsBox.classList.remove("show");
+
+        chapterCards.forEach(card=>{
+            card.style.display="";
         });
 
-        // 2. Dark Mode Logic
-        function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-            const icon = document.getElementById('themeIcon');
-            icon.innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-        }
+        return;
+    }
 
-        // 3. Cookie Consent Logic
-        window.onload = function() {
-            if (!localStorage.getItem('cookiesAccepted')) {
-                setTimeout(() => {
-                    document.getElementById('cookieConsent').style.bottom = '0';
-                }, 3000); 
-            }
-        };
 
-        function acceptCookies() {
-            localStorage.setItem('cookiesAccepted', 'true');
-            document.getElementById('cookieConsent').style.bottom = '-100px'; 
-        }
-    </script>
+    const matches =
+        chapterCards.filter(card=>
+
+            card.dataset.name
+            .toLowerCase()
+            .includes(query)
+
+        );
+
+
+    chapterCards.forEach(card=>{
+
+        card.style.display =
+            card.dataset.name
+            .toLowerCase()
+            .includes(query)
+            ? ""
+            : "none";
+
+    });
+
+
+    if(matches.length){
+
+        matches.forEach(card=>{
+
+            const item =
+                document.createElement("div");
+
+            item.className="search-result";
+
+            item.textContent =
+                card.dataset.name;
+
+            item.addEventListener("click",()=>{
+
+                card.scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
+                });
+
+                resultsBox.classList.remove("show");
+
+                searchInput.value =
+                    card.dataset.name;
+
+            });
+
+            resultsBox.appendChild(item);
+
+        });
+
+        resultsBox.classList.add("show");
+
+    }else{
+
+        const item =
+            document.createElement("div");
+
+        item.className="search-result";
+
+        item.textContent =
+            "No Chemistry chapter found.";
+
+        resultsBox.appendChild(item);
+
+        resultsBox.classList.add("show");
+
+    }
+
+});
+
+
+document.addEventListener("click",event=>{
+
+    if(!event.target.closest(".search-box")){
+
+        resultsBox.classList.remove("show");
+
+    }
+
+});
+
+
+/* =========================================================
+   SCROLL TO TOP
+   ========================================================= */
+
+const topBtn =
+    document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 450){
+
+        topBtn.classList.add("show");
+
+    }else{
+
+        topBtn.classList.remove("show");
+
+    }
+
+});
+
+
+topBtn.addEventListener("click",()=>{
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+
+/* =========================================================
+   YEAR
+   ========================================================= */
+
+document.getElementById("year")
+    .textContent =
+    new Date().getFullYear();
+
+
+/* =========================================================
+   CARD TILT EFFECT
+   ========================================================= */
+
+if(window.matchMedia("(pointer:fine)").matches){
+
+    cards.forEach(card=>{
+
+        card.addEventListener("mousemove",event=>{
+
+            const rect =
+                card.getBoundingClientRect();
+
+            const x =
+                event.clientX - rect.left;
+
+            const y =
+                event.clientY - rect.top;
+
+            const rotateX =
+                ((y / rect.height)-.5)*-4;
+
+            const rotateY =
+                ((x / rect.width)-.5)*4;
+
+            card.style.transform =
+                `translateY(-10px)
+                 perspective(700px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 scale(1.015)`;
+
+        });
+
+
+        card.addEventListener("mouseleave",()=>{
+
+            card.style.transform="";
+
+        });
+
+    });
+
+}
+
+</script>
+
 </body>
 </html>
