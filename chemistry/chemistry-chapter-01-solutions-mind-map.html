@@ -1,0 +1,3992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Chemistry Chapter 1 - Solutions. Interactive concept map covering concentration, solubility, Henry's law, ideal and non-ideal solutions, colligative properties, osmotic pressure and abnormal molar mass.">
+
+<meta name="theme-color" content="#f5f7fb">
+
+<title>Chapter 01 — Solutions | Shorveer Chemistry</title>
+
+<style>
+
+/* =========================================================
+   SHORVEER CHEMISTRY — CHAPTER 01
+   ORIGINAL INTERACTIVE MIND MAP
+   ========================================================= */
+
+:root{
+    --bg:#f5f7fb;
+    --bg2:#edf2f7;
+    --surface:rgba(255,255,255,.92);
+    --surface2:rgba(255,255,255,.82);
+    --border:rgba(30,64,175,.12);
+    --border2:rgba(37,99,235,.28);
+
+    --text:#172033;
+    --muted:#64748b;
+
+    --blue:#2563eb;
+    --cyan:#0891b2;
+    --violet:#6366f1;
+    --gold:#c79a2b;
+    --green:#16a34a;
+    --pink:#db2777;
+    --red:#dc2626;
+
+    --shadow:
+        0 18px 50px rgba(30,41,59,.10);
+
+    --radius:24px;
+    --transition:.35s cubic-bezier(.2,.8,.2,1);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 12% 8%,rgba(37,99,235,.055),transparent 28%),
+        radial-gradient(circle at 88% 14%,rgba(99,102,241,.045),transparent 28%),
+        linear-gradient(135deg,var(--bg),var(--bg2));
+    color:var(--text);
+    font-family:
+        Inter,
+        "Segoe UI",
+        system-ui,
+        -apple-system,
+        sans-serif;
+    line-height:1.65;
+    overflow-x:hidden;
+}
+
+
+button,
+a{
+    font:inherit;
+}
+
+button{
+    border:0;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.background-grid{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-3;
+    opacity:.24;
+
+    background-image:
+        linear-gradient(
+            rgba(120,180,230,.06) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(120,180,230,.06) 1px,
+            transparent 1px
+        );
+
+    background-size:42px 42px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 88%
+        );
+}
+
+.orb{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(70px);
+    pointer-events:none;
+    z-index:-2;
+    opacity:.16;
+}
+
+.orb.one{
+    width:320px;
+    height:320px;
+    background:var(--blue);
+    top:80px;
+    left:-100px;
+}
+
+.orb.two{
+    width:360px;
+    height:360px;
+    background:var(--violet);
+    right:-120px;
+    top:460px;
+}
+
+.orb.three{
+    width:250px;
+    height:250px;
+    background:var(--cyan);
+    left:35%;
+    bottom:-100px;
+}
+
+/* =========================================================
+   LOADER
+   ========================================================= */
+
+#loader{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    background:#ffffff;
+
+    transition:
+        opacity .6s ease,
+        visibility .6s ease;
+}
+
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-ring{
+    width:72px;
+    height:72px;
+
+    border-radius:50%;
+    border:2px solid rgba(255,255,255,.08);
+    border-top-color:var(--blue);
+    border-right-color:var(--cyan);
+
+    animation:
+        spin 1.1s linear infinite;
+}
+
+.loader-title{
+    margin-top:22px;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+.loader-sub{
+    color:#64748b;
+    font-size:.85rem;
+    margin-top:4px;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.88);
+    border-bottom:1px solid var(--border);
+}
+
+
+.nav{
+    max-width:1400px;
+    margin:auto;
+
+    min-height:74px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 24px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand-mark{
+    width:40px;
+    height:40px;
+    border-radius:13px;
+
+    display:grid;
+    place-items:center;
+
+    font-weight:900;
+
+    color:#ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--blue)
+        );
+
+    box-shadow:
+        0 8px 25px rgba(85,184,255,.25);
+}
+
+.brand-text strong{
+    display:block;
+    font-size:.95rem;
+}
+
+.brand-text span{
+    color:var(--muted);
+    font-size:.72rem;
+}
+
+.nav-actions{
+    display:flex;
+    gap:8px;
+}
+
+.icon-btn{
+    width:40px;
+    height:40px;
+
+    border-radius:12px;
+
+    background:var(--surface);
+    border:1px solid var(--border);
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+}
+
+.icon-btn:hover{
+    transform:translateY(-2px);
+    border-color:var(--border2);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+    max-width:1400px;
+    margin:auto;
+    padding:72px 24px 45px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:
+        minmax(0,1.35fr)
+        minmax(300px,.65fr);
+
+    gap:35px;
+    align-items:center;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:7px 12px;
+
+    border-radius:999px;
+
+    background:rgba(85,184,255,.08);
+    border:1px solid rgba(85,184,255,.18);
+
+    color:var(--blue);
+
+    font-size:.75rem;
+    font-weight:800;
+    letter-spacing:.9px;
+    text-transform:uppercase;
+}
+
+.live-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--cyan);
+    box-shadow:0 0 12px var(--cyan);
+}
+
+.hero h1{
+    margin-top:18px;
+
+    font-size:
+        clamp(
+            2.6rem,
+            7vw,
+            5.6rem
+        );
+
+    line-height:.98;
+    letter-spacing:-4px;
+}
+
+.hero h1 span{
+    background:
+        linear-gradient(
+            100deg,
+            var(--blue),
+            var(--cyan),
+            var(--violet)
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-description{
+    max-width:760px;
+    color:var(--muted);
+    margin-top:24px;
+    font-size:1.04rem;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:28px;
+}
+
+.primary-btn,
+.secondary-btn{
+    padding:12px 18px;
+    border-radius:14px;
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+}
+
+.primary-btn{
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--cyan)
+        );
+
+    color:#ffffff;
+    font-weight:800;
+
+    box-shadow:
+        0 12px 30px rgba(85,184,255,.18);
+}
+
+.secondary-btn{
+    background:var(--surface);
+    border:1px solid var(--border);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================================================
+   HERO MOLECULE VISUAL
+   ========================================================= */
+
+.molecule-card{
+    position:relative;
+    min-height:330px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(85,184,255,.08),
+            rgba(156,140,255,.05)
+        );
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+}
+
+.molecule-card::before{
+    content:"";
+    position:absolute;
+    width:230px;
+    height:230px;
+
+    border-radius:50%;
+
+    border:1px dashed
+        rgba(94,231,225,.25);
+
+    animation:
+        orbit 12s linear infinite;
+}
+
+.molecule-card::after{
+    content:"";
+    position:absolute;
+    width:310px;
+    height:310px;
+
+    border-radius:50%;
+
+    border:1px dashed
+        rgba(156,140,255,.16);
+
+    animation:
+        orbitReverse 18s linear infinite;
+}
+
+.atom{
+    position:relative;
+    z-index:2;
+
+    width:110px;
+    height:110px;
+
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #d9ffff,
+            var(--cyan) 24%,
+            #237fa7 65%,
+            #102a48
+        );
+
+    color:#ffffff;
+
+    font-size:2rem;
+    font-weight:900;
+
+    box-shadow:
+        0 0 50px rgba(94,231,225,.38);
+
+    animation:
+        nucleusFloat 3.5s ease-in-out infinite;
+}
+
+.electron{
+    position:absolute;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 18px var(--gold);
+}
+
+.e1{
+    transform:translate(135px,-18px);
+}
+
+.e2{
+    transform:translate(-120px,45px);
+}
+
+.e3{
+    transform:translate(55px,125px);
+}
+
+@keyframes orbit{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes orbitReverse{
+    to{
+        transform:rotate(-360deg);
+    }
+}
+
+@keyframes nucleusFloat{
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+/* =========================================================
+   QUICK NAV
+   ========================================================= */
+
+.quick-nav{
+    max-width:1400px;
+    margin:0 auto 25px;
+    padding:0 24px;
+}
+
+.quick-nav-inner{
+    display:flex;
+    gap:9px;
+    overflow:auto;
+
+    scrollbar-width:none;
+}
+
+.quick-nav-inner::-webkit-scrollbar{
+    display:none;
+}
+
+.quick-link{
+    flex:0 0 auto;
+
+    padding:9px 13px;
+
+    border:1px solid var(--border);
+    background:var(--surface);
+
+    border-radius:999px;
+
+    color:var(--muted);
+    font-size:.78rem;
+
+    transition:var(--transition);
+}
+
+.quick-link:hover{
+    color:var(--text);
+    border-color:var(--border2);
+}
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.container{
+    max-width:1400px;
+    margin:auto;
+    padding:0 24px 80px;
+}
+
+.section{
+    margin-top:28px;
+    scroll-margin-top:100px;
+}
+
+.section-heading{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:15px;
+
+    margin-bottom:15px;
+}
+
+.section-heading h2{
+    font-size:1.65rem;
+    letter-spacing:-.8px;
+}
+
+.section-heading p{
+    color:var(--muted);
+    font-size:.82rem;
+}
+
+/* =========================================================
+   CENTRAL MAP
+   ========================================================= */
+
+.map-wrapper{
+    position:relative;
+
+    min-height:610px;
+
+    border-radius:30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(85,184,255,.09),
+            transparent 35%
+        ),
+        var(--surface);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+}
+
+.map-svg{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+}
+
+.connection{
+    fill:none;
+    stroke:rgba(85,184,255,.22);
+    stroke-width:2;
+
+    stroke-dasharray:8 10;
+
+    animation:
+        flow 7s linear infinite;
+}
+
+@keyframes flow{
+    to{
+        stroke-dashoffset:-100;
+    }
+}
+
+.map-core{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:190px;
+    height:190px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(85,184,255,.30),
+            rgba(255,255,255,.98) 67%
+        );
+
+    border:
+        1px solid
+        rgba(94,231,225,.45);
+
+    box-shadow:
+        0 0 70px rgba(85,184,255,.18),
+        inset 0 0 45px rgba(85,184,255,.10);
+
+    z-index:3;
+
+    animation:
+        corePulse 4s ease-in-out infinite;
+}
+
+.map-core strong{
+    font-size:1.4rem;
+}
+
+.map-core small{
+    display:block;
+    margin-top:5px;
+    color:var(--muted);
+    font-size:.68rem;
+    letter-spacing:.7px;
+}
+
+@keyframes corePulse{
+    50%{
+        box-shadow:
+            0 0 90px rgba(85,184,255,.25),
+            inset 0 0 55px rgba(85,184,255,.14);
+    }
+}
+
+.map-node{
+    position:absolute;
+
+    width:220px;
+    min-height:110px;
+
+    padding:17px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.96),
+            rgba(248,250,252,.96)
+        );
+
+    border:1px solid var(--border);
+
+    cursor:pointer;
+
+    z-index:4;
+
+    transition:var(--transition);
+
+    box-shadow:
+        0 16px 35px rgba(0,0,0,.18);
+}
+
+
+.map-node:hover{
+    transform:translateY(-7px) scale(1.015);
+    border-color:var(--border2);
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.25);
+}
+
+.node-number{
+    display:inline-grid;
+    place-items:center;
+
+    width:27px;
+    height:27px;
+
+    border-radius:9px;
+
+    background:rgba(85,184,255,.12);
+    color:var(--blue);
+
+    font-size:.7rem;
+    font-weight:900;
+}
+
+.map-node h3{
+    margin-top:10px;
+    font-size:.98rem;
+}
+
+.map-node p{
+    margin-top:4px;
+    color:var(--muted);
+    font-size:.74rem;
+}
+
+.node-a{
+    left:5%;
+    top:8%;
+}
+
+.node-b{
+    right:5%;
+    top:8%;
+}
+
+.node-c{
+    left:3%;
+    top:42%;
+}
+
+.node-d{
+    right:3%;
+    top:42%;
+}
+
+.node-e{
+    left:8%;
+    bottom:8%;
+}
+
+.node-f{
+    right:8%;
+    bottom:8%;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+    gap:16px;
+}
+
+.card{
+    position:relative;
+
+    padding:23px;
+
+    border-radius:22px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.12);
+
+    transition:var(--transition);
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:var(--border2);
+}
+
+.card-icon{
+    width:44px;
+    height:44px;
+
+    border-radius:14px;
+
+    display:grid;
+    place-items:center;
+
+    background:rgba(85,184,255,.10);
+
+    color:var(--blue);
+
+    font-size:1.15rem;
+}
+
+.card h3{
+    margin-top:16px;
+    font-size:1.08rem;
+}
+
+.card p{
+    color:var(--muted);
+    margin-top:8px;
+    font-size:.86rem;
+}
+
+.card ul{
+    margin-top:12px;
+    padding-left:18px;
+    color:var(--muted);
+    font-size:.82rem;
+}
+
+.card li{
+    margin:5px 0;
+}
+
+/* =========================================================
+   FORMULA BOX
+   ========================================================= */
+
+.formula-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(270px,1fr)
+        );
+    gap:15px;
+}
+
+.formula{
+    padding:20px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(85,184,255,.08),
+            rgba(156,140,255,.06)
+        );
+
+    border:1px solid var(--border);
+}
+
+.formula-label{
+    color:var(--cyan);
+
+    font-size:.72rem;
+    font-weight:900;
+
+    text-transform:uppercase;
+    letter-spacing:.8px;
+}
+
+.formula-expression{
+    margin-top:12px;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    background:rgba(15,23,42,.045);
+
+    text-align:center;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:1.16rem;
+
+    color:var(--gold);
+
+    overflow-x:auto;
+}
+
+
+.formula-note{
+    margin-top:9px;
+    color:var(--muted);
+    font-size:.77rem;
+}
+
+/* =========================================================
+   INFO TABLE
+   ========================================================= */
+
+.table-wrap{
+    overflow-x:auto;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    background:var(--surface);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:720px;
+}
+
+th,
+td{
+    padding:14px 16px;
+    text-align:left;
+
+    border-bottom:1px solid var(--border);
+
+    font-size:.82rem;
+}
+
+th{
+    color:var(--blue);
+    font-size:.75rem;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+}
+
+td{
+    color:var(--muted);
+}
+
+tr:last-child td{
+    border-bottom:0;
+}
+
+/* =========================================================
+   SVG GRAPH SECTION
+   ========================================================= */
+
+.graph-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(320px,1fr)
+        );
+    gap:18px;
+}
+
+.graph-card{
+    padding:20px;
+
+    border-radius:22px;
+
+    background:var(--surface);
+    border:1px solid var(--border);
+}
+
+.graph-card h3{
+    font-size:.98rem;
+}
+
+.graph-card p{
+    color:var(--muted);
+    font-size:.78rem;
+    margin-top:5px;
+}
+
+.graph{
+    width:100%;
+    height:auto;
+    margin-top:15px;
+}
+
+.axis{
+    stroke:var(--muted);
+    stroke-width:1.5;
+}
+
+.graph-line{
+    fill:none;
+    stroke:var(--blue);
+    stroke-width:3;
+    stroke-linecap:round;
+
+    stroke-dasharray:500;
+    stroke-dashoffset:500;
+
+    animation:
+        drawGraph 2.5s ease forwards;
+}
+
+.graph-line.alt{
+    stroke:var(--cyan);
+    animation-delay:.5s;
+}
+
+.graph-line.gold{
+    stroke:var(--gold);
+    animation-delay:.9s;
+}
+
+.graph-label{
+    fill:var(--muted);
+    font-size:11px;
+}
+
+@keyframes drawGraph{
+    to{
+        stroke-dashoffset:0;
+    }
+}
+
+/* =========================================================
+   SOLUBILITY DIAGRAM
+   ========================================================= */
+
+.solubility-diagram{
+    position:relative;
+    height:270px;
+
+    border-radius:20px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    overflow:hidden;
+}
+
+.solution-beaker{
+    position:absolute;
+
+    left:50%;
+    bottom:30px;
+
+    transform:translateX(-50%);
+
+    width:170px;
+    height:180px;
+
+    border:
+        3px solid
+        rgba(150,210,255,.65);
+
+    border-top:0;
+
+    border-radius:
+        0 0 25px 25px;
+}
+
+.solution-liquid{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    height:115px;
+
+    border-radius:
+        0 0 22px 22px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(94,231,225,.18),
+            rgba(85,184,255,.32)
+        );
+
+    animation:
+        liquidWave 3s ease-in-out infinite;
+}
+
+.particle{
+    position:absolute;
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    box-shadow:
+        0 0 9px rgba(233,196,106,.6);
+}
+
+.p1{left:20%;bottom:55px}
+.p2{left:35%;bottom:80px}
+.p3{left:48%;bottom:45px}
+.p4{left:63%;bottom:95px}
+.p5{left:78%;bottom:62px}
+.p6{left:27%;bottom:110px}
+.p7{left:57%;bottom:125px}
+
+@keyframes liquidWave{
+    50%{
+        transform:
+            translateY(-3px)
+            scaleX(1.01);
+    }
+}
+
+/* =========================================================
+   PROCESS STEPS
+   ========================================================= */
+
+.steps{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px,1fr)
+        );
+    gap:14px;
+}
+
+.step{
+    position:relative;
+    padding:20px;
+
+    background:var(--surface);
+    border:1px solid var(--border);
+
+    border-radius:20px;
+}
+
+.step-number{
+    width:34px;
+    height:34px;
+
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--violet)
+        );
+
+    color:#ffffff;
+    font-weight:900;
+}
+
+.step h3{
+    margin-top:14px;
+    font-size:.98rem;
+}
+
+.step p{
+    margin-top:6px;
+    color:var(--muted);
+    font-size:.8rem;
+}
+
+/* =========================================================
+   CALLOUT
+   ========================================================= */
+
+.callout{
+    padding:24px;
+
+    border-radius:24px;
+
+    border:
+        1px solid
+        rgba(94,231,225,.20);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(94,231,225,.08),
+            rgba(85,184,255,.04)
+        );
+}
+
+.callout strong{
+    color:var(--cyan);
+}
+
+.callout p{
+    margin-top:8px;
+    color:var(--muted);
+    font-size:.88rem;
+}
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(15,23,42,.28);
+
+    backdrop-filter:blur(10px);
+
+    z-index:500;
+}
+
+.modal.open{
+    display:flex;
+}
+
+.modal-box{
+    max-width:680px;
+    width:100%;
+    max-height:85vh;
+    overflow:auto;
+
+    padding:28px;
+
+    border-radius:26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0e2035,
+            #091523
+        );
+
+    border:1px solid var(--border2);
+
+    box-shadow:var(--shadow);
+
+    animation:
+        modalIn .35s ease;
+}
+
+
+@keyframes modalIn{
+    from{
+        opacity:0;
+        transform:translateY(20px) scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+.modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.modal-close{
+    width:36px;
+    height:36px;
+
+    border-radius:10px;
+
+    background:var(--surface);
+    color:var(--text);
+
+    cursor:pointer;
+}
+
+.modal-content{
+    margin-top:20px;
+}
+
+.modal-content p,
+.modal-content li{
+    color:var(--muted);
+    font-size:.88rem;
+}
+
+.modal-content ul{
+    padding-left:20px;
+    margin-top:10px;
+}
+
+.modal-content li{
+    margin:7px 0;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:900px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .molecule-card{
+        min-height:280px;
+    }
+
+    .map-wrapper{
+        min-height:
+            auto;
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+        gap:12px;
+
+        padding:20px;
+    }
+
+    .map-svg,
+    .map-core{
+        display:none;
+    }
+
+    .map-node{
+        position:relative;
+
+        inset:auto!important;
+
+        width:100%;
+    }
+
+    .hero{
+        padding-top:45px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+}
+
+@media(max-width:560px){
+
+    .nav{
+        padding:0 15px;
+    }
+
+    .brand-text span{
+        display:none;
+    }
+
+    .hero,
+    .container,
+    .quick-nav{
+        padding-left:15px;
+        padding-right:15px;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .molecule-card{
+        min-height:250px;
+    }
+
+    .formula-expression{
+        font-size:1rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =======================================================
+     LOADER
+     ======================================================= -->
+
+<div id="loader">
+
+    <div class="loader-ring"></div>
+
+    <div class="loader-title">
+        Building Chemistry Map
+    </div>
+
+    <div class="loader-sub">
+        Chapter 01 • Solutions
+    </div>
+
+</div>
+
+<div class="background-grid"></div>
+
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div class="orb three"></div>
+
+
+<!-- =======================================================
+     HEADER
+     ======================================================= -->
+
+<header>
+
+    <nav class="nav">
+
+        <a
+            href="chemistry-index.html"
+            class="brand"
+            aria-label="Back to Chemistry">
+
+            <div class="brand-mark">
+                S
+            </div>
+
+            <div class="brand-text">
+
+                <strong>
+                    SHORVEER CHEMISTRY
+                </strong>
+
+                <span>
+                    Chapter-wise Learning System
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <div class="nav-actions">
+<button
+                class="icon-btn"
+                onclick="window.scrollTo({top:0,behavior:'smooth'})"
+                aria-label="Back to top">
+                ↑
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- =======================================================
+     HERO
+     ======================================================= -->
+
+<section class="hero">
+
+    <div class="hero-grid">
+
+        <div>
+
+            <div class="eyebrow">
+
+                <span class="live-dot"></span>
+
+                Chapter 01 • Physical Chemistry
+
+            </div>
+
+
+            <h1>
+
+                <span>Solutions</span>
+
+                <br>
+
+                Interactive Mind Map
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                A structured visual guide to the chemistry of
+                solutions — from concentration and solubility
+                to Henry's law, vapour pressure, ideal and
+                non-ideal behaviour, colligative properties,
+                osmotic pressure and abnormal molar mass.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#mindmap"
+                    class="primary-btn">
+
+                    Explore Mind Map →
+                    
+                </a>
+
+
+                <a
+                    href="#formulas"
+                    class="secondary-btn">
+
+                    Formula Bank
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="molecule-card">
+
+            <div class="atom">
+                S
+            </div>
+
+            <div class="electron e1"></div>
+            <div class="electron e2"></div>
+            <div class="electron e3"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     QUICK NAV
+     ======================================================= -->
+
+<div class="quick-nav">
+
+    <div class="quick-nav-inner">
+
+        <a class="quick-link" href="#mindmap">
+            Overview
+        </a>
+
+        <a class="quick-link" href="#concentration">
+            Concentration
+        </a>
+
+        <a class="quick-link" href="#solubility">
+            Solubility
+        </a>
+
+        <a class="quick-link" href="#henry">
+            Henry's Law
+        </a>
+
+        <a class="quick-link" href="#ideal">
+            Ideal / Non-Ideal
+        </a>
+
+        <a class="quick-link" href="#colligative">
+            Colligative
+        </a>
+
+        <a class="quick-link" href="#formulas">
+            Formula Bank
+        </a>
+
+        <a class="quick-link" href="#graphs">
+            Graphs
+        </a>
+
+    </div>
+
+</div>
+
+
+<main class="container">
+
+
+<!-- =======================================================
+     MAIN MIND MAP
+     ======================================================= -->
+
+<section
+    class="section"
+    id="mindmap">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                The Chapter at a Glance
+            </h2>
+
+            <p>
+                Click any concept card for a focused explanation.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="map-wrapper">
+
+        <!-- Connecting lines -->
+        <svg
+            class="map-svg"
+            viewBox="0 0 1200 610"
+            preserveAspectRatio="none">
+
+            <path
+                class="connection"
+                d="M600 305 C470 220 330 130 160 95"/>
+
+            <path
+                class="connection"
+                d="M600 305 C730 220 870 130 1040 95"/>
+
+            <path
+                class="connection"
+                d="M600 305 C430 300 270 300 110 300"/>
+
+            <path
+                class="connection"
+                d="M600 305 C770 300 930 300 1090 300"/>
+
+            <path
+                class="connection"
+                d="M600 305 C470 390 340 475 180 535"/>
+
+            <path
+                class="connection"
+                d="M600 305 C730 390 860 475 1020 535"/>
+
+        </svg>
+
+
+        <div class="map-core">
+
+            <div>
+
+                <strong>
+                    SOLUTIONS
+                </strong>
+
+                <small>
+                    CHAPTER 01
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="map-node node-a"
+            onclick="openConcept('concentration')">
+
+            <span class="node-number">
+                01
+            </span>
+
+            <h3>
+                Concentration
+            </h3>
+
+            <p>
+                Mass %, volume %, ppm, mole fraction,
+                molarity and molality.
+            </p>
+
+        </div>
+
+
+        <div
+            class="map-node node-b"
+            onclick="openConcept('solubility')">
+
+            <span class="node-number">
+                02
+            </span>
+
+            <h3>
+                Solubility
+            </h3>
+
+            <p>
+                Saturation, temperature effects,
+                pressure and dissolution behaviour.
+            </p>
+
+        </div>
+
+
+        <div
+            class="map-node node-c"
+            onclick="openConcept('henry')">
+
+            <span class="node-number">
+                03
+            </span>
+
+            <h3>
+                Henry's Law
+            </h3>
+
+            <p>
+                Gas pressure, mole fraction and
+                gas solubility in liquids.
+            </p>
+
+        </div>
+
+
+        <div
+            class="map-node node-d"
+            onclick="openConcept('ideal')">
+
+            <span class="node-number">
+                04
+            </span>
+
+            <h3>
+                Ideal & Non-Ideal
+            </h3>
+
+            <p>
+                Raoult's law, deviations, azeotropes
+                and molecular interactions.
+            </p>
+
+        </div>
+
+
+        <div
+            class="map-node node-e"
+            onclick="openConcept('colligative')">
+
+            <span class="node-number">
+                05
+            </span>
+
+            <h3>
+                Colligative Properties
+            </h3>
+
+            <p>
+                Vapour pressure, boiling point,
+                freezing point and osmotic pressure.
+            </p>
+
+        </div>
+
+
+        <div
+            class="map-node node-f"
+            onclick="openConcept('vanthoff')">
+
+            <span class="node-number">
+                06
+            </span>
+
+            <h3>
+                Abnormal Molar Mass
+            </h3>
+
+            <p>
+                Association, dissociation and
+                van't Hoff factor.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     CONCENTRATION
+     ======================================================= -->
+
+<section
+    class="section"
+    id="concentration">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                01. Expressing Concentration
+            </h2>
+
+            <p>
+                Different numerical ways to describe composition.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="cards">
+
+        <article class="card">
+
+            <div class="card-icon">
+                %
+            </div>
+
+            <h3>
+                Percentage Methods
+            </h3>
+
+            <p>
+                Percentage concentration compares the amount
+                of a chosen component with the total quantity
+                of the solution.
+            </p>
+
+            <ul>
+
+                <li>
+                    Mass percentage — useful for solid/liquid
+                    formulations.
+                </li>
+
+                <li>
+                    Volume percentage — convenient when
+                    both quantities are measured as volumes.
+                </li>
+
+                <li>
+                    Mass-by-volume percentage — frequently
+                    used for laboratory and pharmaceutical
+                    formulations.
+                </li>
+
+            </ul>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                χ
+            </div>
+
+            <h3>
+                Mole Fraction
+            </h3>
+
+            <p>
+                Mole fraction expresses the share of one
+                component in terms of total moles present.
+                It is especially useful in vapour-pressure
+                and phase-equilibrium calculations.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                M
+            </div>
+
+            <h3>
+                Molarity
+            </h3>
+
+            <p>
+                Molarity is based on the volume of the
+                complete solution. Because liquid volume
+                can change with temperature, molarity is
+                temperature dependent.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                m
+            </div>
+
+            <h3>
+                Molality
+            </h3>
+
+            <p>
+                Molality relates moles of solute to the mass
+                of solvent. Since mass does not change simply
+                because temperature changes, molality is
+                preferred in many temperature-sensitive
+                calculations.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                ppm
+            </div>
+
+            <h3>
+                Parts Per Million
+            </h3>
+
+            <p>
+                ppm is designed for very small concentrations.
+                It is commonly encountered in environmental
+                chemistry, water analysis and trace-component
+                measurements.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                ⚗
+            </div>
+
+            <h3>
+                Concentration Selection
+            </h3>
+
+            <p>
+                The most useful concentration unit depends
+                on what is being measured and what kind of
+                calculation is required. Mass-based units are
+                generally less sensitive to temperature than
+                volume-based units.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     SOLUBILITY
+     ======================================================= -->
+
+<section
+    class="section"
+    id="solubility">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                02. Solubility & Dissolution
+            </h2>
+
+            <p>
+                Why substances dissolve — and what controls the limit.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="cards">
+
+        <article class="card">
+
+            <div class="card-icon">
+                S
+            </div>
+
+            <h3>
+                Solubility
+            </h3>
+
+            <p>
+                Solubility describes the maximum amount of
+                a substance that can dissolve in a specified
+                amount of solvent under specified conditions,
+                especially temperature and pressure.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                1
+            </div>
+
+            <h3>
+                Unsaturated Solution
+            </h3>
+
+            <p>
+                The solution contains less dissolved solute
+                than its equilibrium capacity. Additional
+                solute can therefore dissolve under the same
+                conditions.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                2
+            </div>
+
+            <h3>
+                Saturated Solution
+            </h3>
+
+            <p>
+                At equilibrium, the solvent has reached its
+                dissolution capacity. Adding more solute does
+                not increase the dissolved amount under the
+                same conditions.
+            </p>
+
+        </article>
+
+    </div>
+
+
+    <div class="solubility-diagram">
+
+        <div class="solution-beaker">
+
+            <div class="solution-liquid">
+
+                <span class="particle p1"></span>
+                <span class="particle p2"></span>
+                <span class="particle p3"></span>
+                <span class="particle p4"></span>
+                <span class="particle p5"></span>
+                <span class="particle p6"></span>
+                <span class="particle p7"></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="callout">
+
+        <strong>
+            Temperature rule:
+        </strong>
+
+        <p>
+            For many solids, dissolution becomes more favourable
+            as temperature rises when the process is endothermic.
+            If dissolution releases heat, increasing temperature
+            can have the opposite effect. Gas solubility in liquids
+            generally decreases as temperature increases.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     HENRY LAW
+     ======================================================= -->
+
+<section
+    class="section"
+    id="henry">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                03. Henry's Law
+            </h2>
+
+            <p>
+                Pressure–solubility relationship for gases.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="formula-grid">
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Henry's Law
+            </div>
+
+            <div class="formula-expression">
+                p = K<sub>H</sub> χ
+            </div>
+
+            <div class="formula-note">
+                At constant temperature, the partial pressure
+                of a gas above a solution is proportional to
+                its mole fraction in the liquid phase.
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Solubility insight
+            </div>
+
+            <div class="formula-expression">
+                K<sub>H</sub> ↑ → χ ↓
+            </div>
+
+            <div class="formula-note">
+                With the same gas pressure, a larger Henry
+                constant corresponds to lower dissolved
+                gas concentration.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="cards">
+
+        <article class="card">
+
+            <div class="card-icon">
+                CO₂
+            </div>
+
+            <h3>
+                Carbonated Drinks
+            </h3>
+
+            <p>
+                Pressurising a beverage encourages carbon dioxide
+                to remain dissolved. Opening the container reduces
+                pressure and allows dissolved gas to escape.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                O₂
+            </div>
+
+            <h3>
+                Dissolved Oxygen
+            </h3>
+
+            <p>
+                Aquatic ecosystems depend on dissolved oxygen.
+                Since warmer water generally holds less oxygen,
+                rising temperature can reduce oxygen availability.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                ⚓
+            </div>
+
+            <h3>
+                Diving & Pressure
+            </h3>
+
+            <p>
+                Increased pressure can increase gas dissolution
+                in body fluids. Controlled ascent is therefore
+                essential when pressure changes rapidly.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     IDEAL / NON IDEAL
+     ======================================================= -->
+
+<section
+    class="section"
+    id="ideal">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                04. Ideal & Non-Ideal Solutions
+            </h2>
+
+            <p>
+                How molecular interactions change solution behaviour.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="cards">
+
+        <article class="card">
+
+            <div class="card-icon">
+                ✓
+            </div>
+
+            <h3>
+                Ideal Solution
+            </h3>
+
+            <p>
+                An ideal solution follows Raoult's law throughout
+                its composition range. Interactions between unlike
+                molecules are approximately comparable to those
+                between like molecules.
+            </p>
+
+            <ul>
+
+                <li>
+                    ΔH<sub>mix</sub> ≈ 0
+                </li>
+
+                <li>
+                    ΔV<sub>mix</sub> ≈ 0
+                </li>
+
+                <li>
+                    Raoult's law is obeyed.
+                </li>
+
+            </ul>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                +
+            </div>
+
+            <h3>
+                Positive Deviation
+            </h3>
+
+            <p>
+                If unlike-molecule attraction is weaker than
+                the original interactions, molecules escape
+                more readily into the vapour phase.
+            </p>
+
+            <ul>
+
+                <li>
+                    Vapour pressure becomes higher than ideal.
+                </li>
+
+                <li>
+                    ΔH<sub>mix</sub> &gt; 0
+                </li>
+
+                <li>
+                    ΔV<sub>mix</sub> &gt; 0
+                </li>
+
+                <li>
+                    Can produce minimum-boiling azeotropes.
+                </li>
+
+            </ul>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                −
+            </div>
+
+            <h3>
+                Negative Deviation
+            </h3>
+
+            <p>
+                Stronger unlike-molecule interactions hold
+                molecules more tightly in the liquid phase.
+                The vapour pressure consequently becomes
+                lower than the ideal prediction.
+            </p>
+
+            <ul>
+
+                <li>
+                    ΔH<sub>mix</sub> &lt; 0
+                </li>
+
+                <li>
+                    ΔV<sub>mix</sub> &lt; 0
+                </li>
+
+                <li>
+                    Can produce maximum-boiling azeotropes.
+                </li>
+
+            </ul>
+
+        </article>
+
+    </div>
+
+
+    <div
+        class="section"
+        style="margin-top:18px;">
+
+        <div class="cards">
+
+            <article class="card">
+
+                <div class="card-icon">
+                    A
+                </div>
+
+                <h3>
+                    Azeotropes
+                </h3>
+
+                <p>
+                    An azeotropic mixture has a vapour composition
+                    that matches the liquid composition at a
+                    particular composition and boils at a constant
+                    temperature. Ordinary fractional distillation
+                    cannot completely separate such a mixture.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-icon">
+                    I
+                </div>
+
+                <h3>
+                    Molecular Interaction Test
+                </h3>
+
+                <p>
+                    A useful conceptual question is:
+                    “Are unlike molecules attracting each other
+                    more strongly or less strongly than they did
+                    in the original liquids?” The answer predicts
+                    the direction of deviation.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     COLLIGATIVE
+     ======================================================= -->
+
+<section
+    class="section"
+    id="colligative">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                05. Colligative Properties
+            </h2>
+
+            <p>
+                Properties governed primarily by the number of solute particles.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="cards">
+
+        <article class="card">
+
+            <div class="card-icon">
+                ↓
+            </div>
+
+            <h3>
+                Relative Lowering of Vapour Pressure
+            </h3>
+
+            <p>
+                Adding a non-volatile solute reduces the fraction
+                of solvent molecules available to escape into
+                the vapour phase.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                ↑
+            </div>
+
+            <h3>
+                Elevation of Boiling Point
+            </h3>
+
+            <p>
+                A solution containing a non-volatile solute
+                generally requires a higher temperature to reach
+                the external pressure needed for boiling.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                ↓
+            </div>
+
+            <h3>
+                Depression of Freezing Point
+            </h3>
+
+            <p>
+                Dissolved particles lower the temperature at
+                which the solvent's solid and liquid phases
+                reach equilibrium.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="card-icon">
+                π
+            </div>
+
+            <h3>
+                Osmotic Pressure
+            </h3>
+
+            <p>
+                Osmotic pressure is the pressure that must be
+                applied to a solution to stop the net movement
+                of solvent through a semipermeable membrane.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     FORMULA BANK
+     ======================================================= -->
+
+<section
+    class="section"
+    id="formulas">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                Formula Bank
+            </h2>
+
+            <p>
+                Exam-focused equations in a separate visual layer.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="formula-grid">
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Mass percentage
+            </div>
+
+            <div class="formula-expression">
+
+                Mass % =
+                <sup>Mass of solute</sup>
+                /
+                <sub>Mass of solution</sub>
+                × 100
+
+            </div>
+
+            <div class="formula-note">
+                Useful when both numerator and denominator are
+                expressed by mass.
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Volume percentage
+            </div>
+
+            <div class="formula-expression">
+
+                Volume % =
+                <sup>Volume of component</sup>
+                /
+                <sub>Total volume of solution</sub>
+                × 100
+
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Mass by volume
+            </div>
+
+            <div class="formula-expression">
+
+                (w/v)% =
+                <sup>Mass of solute</sup>
+                /
+                <sub>Volume of solution</sub>
+                × 100
+
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Parts per million
+            </div>
+
+            <div class="formula-expression">
+
+                ppm =
+                <sup>Parts of component</sup>
+                /
+                <sub>Total parts</sub>
+                × 10<sup>6</sup>
+
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Mole fraction
+            </div>
+
+            <div class="formula-expression">
+
+                χ<sub>i</sub> =
+                <sup>n<sub>i</sub></sup>
+                /
+                <sub>Σn</sub>
+
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Molarity
+            </div>
+
+            <div class="formula-expression">
+
+                M =
+                <sup>n<sub>solute</sub></sup>
+                /
+                <sub>V<sub>solution</sub>(L)</sub>
+
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Molality
+            </div>
+
+            <div class="formula-expression">
+
+                m =
+                <sup>n<sub>solute</sub></sup>
+                /
+                <sub>Mass of solvent (kg)</sub>
+
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Henry's law
+            </div>
+
+            <div class="formula-expression">
+
+                p = K<sub>H</sub>χ
+
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Raoult's law
+            </div>
+
+            <div class="formula-expression">
+
+                p<sub>i</sub>
+                =
+                x<sub>i</sub>p<sub>i</sub><sup>0</sup>
+
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Total vapour pressure
+            </div>
+
+            <div class="formula-expression">
+
+                P<sub>total</sub>
+                =
+                Σp<sub>i</sub>
+
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Osmotic pressure
+            </div>
+
+            <div class="formula-expression">
+
+                π = CRT
+
+            </div>
+
+            <div class="formula-note">
+                For dilute solutions in the ideal approximation.
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Boiling point elevation
+            </div>
+
+            <div class="formula-expression">
+
+                ΔT<sub>b</sub>
+                =
+                K<sub>b</sub>m
+
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Freezing point depression
+            </div>
+
+            <div class="formula-expression">
+
+                ΔT<sub>f</sub>
+                =
+                K<sub>f</sub>m
+
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Vapour pressure lowering
+            </div>
+
+            <div class="formula-expression">
+
+                Δp/p<sup>0</sup>
+                ≈
+                x<sub>solute</sub>
+
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                van't Hoff factor
+            </div>
+
+            <div class="formula-expression">
+
+                i =
+                Observed colligative property
+                /
+                Calculated property
+
+            </div>
+
+        </div>
+
+
+        <div class="formula">
+
+            <div class="formula-label">
+                Modified colligative equations
+            </div>
+
+            <div class="formula-expression">
+
+                ΔT<sub>b</sub>
+                =
+                iK<sub>b</sub>m
+                &nbsp;&nbsp; |
+                &nbsp;&nbsp;
+                ΔT<sub>f</sub>
+                =
+                iK<sub>f</sub>m
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     GRAPHS
+     ======================================================= -->
+
+<section
+    class="section"
+    id="graphs">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                Concept Graphs
+            </h2>
+
+            <p>
+                Drawn entirely with SVG — no image files required.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="graph-grid">
+
+
+        <!-- Graph 1 -->
+
+        <article class="graph-card">
+
+            <h3>
+                Vapour Pressure vs Mole Fraction
+            </h3>
+
+            <p>
+                Ideal binary liquid solution — schematic representation.
+            </p>
+
+
+            <svg
+                class="graph"
+                viewBox="0 0 500 300">
+
+                <line
+                    class="axis"
+                    x1="55"
+                    y1="250"
+                    x2="460"
+                    y2="250"/>
+
+                <line
+                    class="axis"
+                    x1="55"
+                    y1="250"
+                    x2="55"
+                    y2="35"/>
+
+
+                <path
+                    class="graph-line"
+                    d="M55 225 L460 70"/>
+
+                <path
+                    class="graph-line alt"
+                    d="M55 70 L460 225"/>
+
+                <path
+                    class="graph-line gold"
+                    d="M55 70 C160 120 340 160 460 225"/>
+
+
+                <text
+                    class="graph-label"
+                    x="210"
+                    y="285">
+                    Mole fraction
+                </text>
+
+                <text
+                    class="graph-label"
+                    x="8"
+                    y="150"
+                    transform="rotate(-90 8 150)">
+                    Vapour pressure
+                </text>
+
+                <text
+                    class="graph-label"
+                    x="375"
+                    y="62">
+                    p₁
+                </text>
+
+                <text
+                    class="graph-label"
+                    x="75"
+                    y="62">
+                    p₂
+                </text>
+
+            </svg>
+
+        </article>
+
+
+        <!-- Graph 2 -->
+
+        <article class="graph-card">
+
+            <h3>
+                Boiling Point Elevation
+            </h3>
+
+            <p>
+                Addition of non-volatile solute shifts the boiling
+                point upward.
+            </p>
+
+
+            <svg
+                class="graph"
+                viewBox="0 0 500 300">
+
+                <line
+                    class="axis"
+                    x1="55"
+                    y1="250"
+                    x2="460"
+                    y2="250"/>
+
+                <line
+                    class="axis"
+                    x1="55"
+                    y1="250"
+                    x2="55"
+                    y2="35"/>
+
+
+                <path
+                    class="graph-line"
+                    d="M70 225 C150 180 250 125 430 55"/>
+
+                <path
+                    class="graph-line alt"
+                    d="M70 245 C155 205 260 150 430 78"/>
+
+
+                <line
+                    x1="350"
+                    y1="86"
+                    x2="350"
+                    y2="145"
+                    stroke="var(--gold)"
+                    stroke-width="2"
+                    stroke-dasharray="5 5"/>
+
+
+                <text
+                    class="graph-label"
+                    x="330"
+                    y="165">
+                    ΔTᵦ
+                </text>
+
+                <text
+                    class="graph-label"
+                    x="190"
+                    y="285">
+                    Temperature
+                </text>
+
+                <text
+                    class="graph-label"
+                    x="8"
+                    y="150"
+                    transform="rotate(-90 8 150)">
+                    Vapour pressure
+                </text>
+
+            </svg>
+
+        </article>
+
+
+        <!-- Graph 3 -->
+
+        <article class="graph-card">
+
+            <h3>
+                Freezing Point Depression
+            </h3>
+
+            <p>
+                A solution freezes at a lower temperature than
+                the corresponding pure solvent.
+            </p>
+
+
+            <svg
+                class="graph"
+                viewBox="0 0 500 300">
+
+                <line
+                    class="axis"
+                    x1="55"
+                    y1="250"
+                    x2="460"
+                    y2="250"/>
+
+                <line
+                    class="axis"
+                    x1="55"
+                    y1="250"
+                    x2="55"
+                    y2="35"/>
+
+
+                <path
+                    class="graph-line"
+                    d="M80 210 L420 70"/>
+
+                <path
+                    class="graph-line alt"
+                    d="M80 235 L420 100"/>
+
+
+                <line
+                    x1="270"
+                    y1="130"
+                    x2="270"
+                    y2="157"
+                    stroke="var(--gold)"
+                    stroke-width="2"
+                    stroke-dasharray="5 5"/>
+
+
+                <text
+                    class="graph-label"
+                    x="275"
+                    y="150">
+                    ΔTᶠ
+                </text>
+
+                <text
+                    class="graph-label"
+                    x="205"
+                    y="285">
+                    Temperature
+                </text>
+
+                <text
+                    class="graph-label"
+                    x="8"
+                    y="150"
+                    transform="rotate(-90 8 150)">
+                    Vapour pressure
+                </text>
+
+            </svg>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     CONCENTRATION COMPARISON
+     ======================================================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                Choosing the Right Concentration Unit
+            </h2>
+
+            <p>
+                A quick revision comparison.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Quantity
+                    </th>
+
+                    <th>
+                        Based On
+                    </th>
+
+                    <th>
+                        Main Advantage
+                    </th>
+
+                    <th>
+                        Temperature Sensitivity
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        Mass %
+                    </td>
+
+                    <td>
+                        Mass of solution
+                    </td>
+
+                    <td>
+                        Simple composition reporting
+                    </td>
+
+                    <td>
+                        Very low
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Volume %
+                    </td>
+
+                    <td>
+                        Volume of solution
+                    </td>
+
+                    <td>
+                        Convenient for liquid mixtures
+                    </td>
+
+                    <td>
+                        Relatively high
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        ppm
+                    </td>
+
+                    <td>
+                        Trace quantities
+                    </td>
+
+                    <td>
+                        Extremely dilute systems
+                    </td>
+
+                    <td>
+                        Depends on definition
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Mole fraction
+                    </td>
+
+                    <td>
+                        Number of moles
+                    </td>
+
+                    <td>
+                        Phase-equilibrium calculations
+                    </td>
+
+                    <td>
+                        Low
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Molarity
+                    </td>
+
+                    <td>
+                        Solution volume
+                    </td>
+
+                    <td>
+                        Common laboratory calculations
+                    </td>
+
+                    <td>
+                        Yes
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Molality
+                    </td>
+
+                    <td>
+                        Solvent mass
+                    </td>
+
+                    <td>
+                        Temperature-independent mass basis
+                    </td>
+
+                    <td>
+                        Very low
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     REVISION FLOW
+     ======================================================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                One-Minute Revision Flow
+            </h2>
+
+            <p>
+                Use this sequence before solving questions.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="steps">
+
+
+        <article class="step">
+
+            <div class="step-number">
+                1
+            </div>
+
+            <h3>
+                Identify the Components
+            </h3>
+
+            <p>
+                Decide which substance is the solvent and which
+                is the solute.
+            </p>
+
+        </article>
+
+
+        <article class="step">
+
+            <div class="step-number">
+                2
+            </div>
+
+            <h3>
+                Choose the Unit
+            </h3>
+
+            <p>
+                Look at whether the question gives mass, volume,
+                moles, solvent mass or trace concentration.
+            </p>
+
+        </article>
+
+
+        <article class="step">
+
+            <div class="step-number">
+                3
+            </div>
+
+            <h3>
+                Check Temperature
+            </h3>
+
+            <p>
+                Be careful whenever solution volume or molarity
+                appears.
+            </p>
+
+        </article>
+
+
+        <article class="step">
+
+            <div class="step-number">
+                4
+            </div>
+
+            <h3>
+                Select the Law
+            </h3>
+
+            <p>
+                Vapour pressure → Raoult;
+                gas solubility → Henry;
+                particle effects → colligative relations.
+            </p>
+
+        </article>
+
+
+        <article class="step">
+
+            <div class="step-number">
+                5
+            </div>
+
+            <h3>
+                Check Association / Dissociation
+            </h3>
+
+            <p>
+                If experimental and theoretical values disagree,
+                consider the van't Hoff factor.
+            </p>
+
+        </article>
+
+
+        <article class="step">
+
+            <div class="step-number">
+                6
+            </div>
+
+            <h3>
+                Apply Units Carefully
+            </h3>
+
+            <p>
+                Convert litres, kilograms, grams and temperature
+                units before substituting into equations.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     FINAL TAKEAWAY
+     ======================================================= -->
+
+<section class="section">
+
+    <div class="callout">
+
+        <strong>
+            Chapter takeaway:
+        </strong>
+
+        <p>
+            The central idea of the chapter is that adding one
+            component to another changes measurable physical
+            properties according to composition, molecular
+            interactions and the number of dissolved particles.
+            Once concentration units, solubility behaviour,
+            vapour-pressure laws and colligative relationships
+            are connected, most of the chapter becomes a single
+            logical system rather than a collection of unrelated
+            formulas.
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+<!-- =======================================================
+     CONCEPT MODAL
+     ======================================================= -->
+
+<div
+    class="modal"
+    id="conceptModal"
+    onclick="closeModal(event)">
+
+    <div
+        class="modal-box"
+        onclick="event.stopPropagation()">
+
+        <div class="modal-head">
+
+            <h2 id="modalTitle">
+                Concept
+            </h2>
+
+            <button
+                class="modal-close"
+                onclick="closeModal()">
+                ×
+            </button>
+
+        </div>
+
+        <div
+            class="modal-content"
+            id="modalContent">
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   LOADER
+   ========================================================= */
+
+window.addEventListener("load",function(){
+
+    setTimeout(function(){
+
+        document
+            .getElementById("loader")
+            .classList
+            .add("hide");
+
+    },700);
+
+});
+/* =========================================================
+   CONCEPT MODALS
+   ========================================================= */
+
+const concepts = {
+
+    concentration:{
+
+        title:"Concentration — Core Idea",
+
+        html:`
+
+            <p>
+                Concentration tells us how much of a particular
+                component is present relative to the complete
+                solution or solvent.
+            </p>
+
+            <ul>
+
+                <li>
+                    Mass percentage compares component mass
+                    with total solution mass.
+                </li>
+
+                <li>
+                    Volume percentage compares component volume
+                    with total solution volume.
+                </li>
+
+                <li>
+                    Mole fraction uses moles and is especially
+                    useful in vapour-pressure relationships.
+                </li>
+
+                <li>
+                    Molarity uses solution volume.
+                </li>
+
+                <li>
+                    Molality uses solvent mass.
+                </li>
+
+                <li>
+                    ppm is useful for trace-level quantities.
+                </li>
+
+            </ul>
+
+        `
+
+    },
+
+
+    solubility:{
+
+        title:"Solubility — Core Idea",
+
+        html:`
+
+            <p>
+                Solubility is the equilibrium capacity of a
+                solvent to dissolve a substance under specified
+                conditions.
+            </p>
+
+            <ul>
+
+                <li>
+                    Unsaturated solution → more solute can dissolve.
+                </li>
+
+                <li>
+                    Saturated solution → dissolution capacity
+                    has been reached.
+                </li>
+
+                <li>
+                    Temperature can strongly affect solid
+                    and gas solubility.
+                </li>
+
+                <li>
+                    Gas solubility generally decreases when
+                    temperature increases.
+                </li>
+
+            </ul>
+
+        `
+
+    },
+
+
+    henry:{
+
+        title:"Henry's Law",
+
+        html:`
+
+            <p>
+                For a gas dissolved in a liquid, Henry's law
+                connects gas pressure with the mole fraction
+                of the dissolved gas.
+            </p>
+
+            <div class="formula-expression">
+                p = K<sub>H</sub>χ
+            </div>
+
+            <ul>
+
+                <li>
+                    Higher gas pressure generally favours
+                    dissolution.
+                </li>
+
+                <li>
+                    A larger K<sub>H</sub> corresponds to
+                    lower solubility under the same pressure.
+                </li>
+
+                <li>
+                    Temperature must remain fixed while applying
+                    the simple relationship.
+                </li>
+
+            </ul>
+
+        `
+
+    },
+
+
+    ideal:{
+
+        title:"Ideal & Non-Ideal Solutions",
+
+        html:`
+
+            <p>
+                The difference between ideal and non-ideal
+                solutions comes mainly from how unlike molecules
+                interact compared with like molecules.
+            </p>
+
+            <ul>
+
+                <li>
+                    Ideal solution → approximately follows
+                    Raoult's law across the composition range.
+                </li>
+
+                <li>
+                    Positive deviation → weaker unlike interactions
+                    and higher vapour pressure than predicted.
+                </li>
+
+                <li>
+                    Negative deviation → stronger unlike interactions
+                    and lower vapour pressure than predicted.
+                </li>
+
+                <li>
+                    Azeotropes are special mixtures whose vapour
+                    and liquid compositions coincide at the
+                    azeotropic composition.
+                </li>
+
+            </ul>
+
+        `
+
+    },
+
+
+    colligative:{
+
+        title:"Colligative Properties",
+
+        html:`
+
+            <p>
+                Colligative properties primarily depend on the
+                number of dissolved particles rather than their
+                chemical identity, provided the required
+                assumptions are satisfied.
+            </p>
+
+            <ul>
+
+                <li>
+                    Relative lowering of vapour pressure
+                </li>
+
+                <li>
+                    Elevation of boiling point
+                </li>
+
+                <li>
+                    Depression of freezing point
+                </li>
+
+                <li>
+                    Osmotic pressure
+                </li>
+
+            </ul>
+
+        `
+
+    },
+
+
+    vanthoff:{
+
+        title:"Abnormal Molar Mass & van't Hoff Factor",
+
+        html:`
+
+            <p>
+                Experimental molar mass can differ from the
+                simple theoretical value when solute particles
+                associate or dissociate in solution.
+            </p>
+
+            <div class="formula-expression">
+                i =
+                Observed colligative effect
+                /
+                Calculated colligative effect
+            </div>
+
+            <ul>
+
+                <li>
+                    i ≈ 1 → no significant change in particle count.
+                </li>
+
+                <li>
+                    i &lt; 1 → association reduces the number
+                    of particles.
+                </li>
+
+                <li>
+                    i &gt; 1 → dissociation increases the number
+                    of particles.
+                </li>
+
+            </ul>
+
+        `
+
+    }
+
+};
+
+
+function openConcept(key){
+
+    const concept = concepts[key];
+
+    if(!concept){
+        return;
+    }
+
+    document
+        .getElementById("modalTitle")
+        .innerHTML =
+        concept.title;
+
+    document
+        .getElementById("modalContent")
+        .innerHTML =
+        concept.html;
+
+    document
+        .getElementById("conceptModal")
+        .classList
+        .add("open");
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+function closeModal(event){
+
+    if(
+        event &&
+        event.target !==
+        document.getElementById("conceptModal")
+    ){
+        return;
+    }
+
+    document
+        .getElementById("conceptModal")
+        .classList
+        .remove("open");
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/* =========================================================
+   ESC KEY
+   ========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            document
+                .getElementById("conceptModal")
+                .classList
+                .remove("open");
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INTERSECTION ANIMATION
+   ========================================================= */
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.08
+        }
+    );
+
+
+document
+    .querySelectorAll(".card,.formula,.step,.graph-card")
+    .forEach(element => {
+
+        element.style.opacity = "0";
+        element.style.transform =
+            "translateY(18px)";
+
+        element.style.transition =
+            "opacity .7s ease, transform .7s ease";
+
+        observer.observe(element);
+
+    });
+
+</script>
+
+</body>
+</html>
