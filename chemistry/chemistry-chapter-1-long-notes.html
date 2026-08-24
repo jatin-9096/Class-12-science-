@@ -1,0 +1,3662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Class 12 Chemistry Chapter 1 Solutions - Complete Long Notes, Concentration Methods, Solubility, Henry's Law, Raoult's Law, Ideal and Non-Ideal Solutions.">
+
+    <meta name="keywords"
+        content="Class 12 Chemistry Solutions, Chapter 1 Chemistry Notes, CBSE Solutions Notes, Molarity, Molality, Mole Fraction, Henry Law, Raoult Law">
+
+    <meta name="author" content="Shorveer Notes">
+
+    <title>Chapter 1 — Solutions | Long Notes | Shorveer Notes</title>
+
+    <style>
+
+        /* =========================================================
+           ROOT VARIABLES
+        ========================================================= */
+
+        :root {
+            --bg: #f8f7ff;
+            --bg-secondary: #f0efff;
+            --surface: rgba(255, 255, 255, 0.82);
+            --surface-solid: #ffffff;
+
+            --text: #182033;
+            --text-soft: #667085;
+            --heading: #17152b;
+
+            --primary: #6d5dfc;
+            --primary-dark: #5144d6;
+            --secondary: #e85aad;
+            --accent: #00a896;
+
+            --formula-bg: #f1efff;
+            --formula-border: #8175ff;
+
+            --success: #16a34a;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #2563eb;
+
+            --border: rgba(109, 93, 252, 0.14);
+
+            --shadow-sm: 0 8px 25px rgba(36, 30, 85, 0.06);
+            --shadow-md: 0 18px 45px rgba(36, 30, 85, 0.10);
+            --shadow-lg: 0 25px 70px rgba(36, 30, 85, 0.15);
+
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 30px;
+
+            --transition: 0.35s cubic-bezier(.2,.8,.2,1);
+        }
+
+
+        /* =========================================================
+           DARK MODE
+        ========================================================= */
+
+        body.dark-mode {
+
+            --bg: #0d1020;
+            --bg-secondary: #13172a;
+
+            --surface: rgba(24, 28, 48, 0.82);
+            --surface-solid: #181c30;
+
+            --text: #eef0ff;
+            --text-soft: #a8aec6;
+            --heading: #ffffff;
+
+            --primary: #8c82ff;
+            --primary-dark: #7569ff;
+            --secondary: #ef72bd;
+            --accent: #28c7b5;
+
+            --formula-bg: rgba(109, 93, 252, 0.12);
+            --formula-border: #8c82ff;
+
+            --border: rgba(255,255,255,0.09);
+
+            --shadow-sm: 0 8px 25px rgba(0,0,0,0.20);
+            --shadow-md: 0 18px 45px rgba(0,0,0,0.30);
+            --shadow-lg: 0 25px 70px rgba(0,0,0,0.40);
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                "Segoe UI",
+                Inter,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(109,93,252,0.12),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 15%,
+                    rgba(232,90,173,0.10),
+                    transparent 28%
+                ),
+                var(--bg);
+
+            color: var(--text);
+
+            line-height: 1.75;
+
+            overflow-x: hidden;
+
+            transition:
+                background-color var(--transition),
+                color var(--transition);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =========================================================
+           BACKGROUND DECORATIONS
+        ========================================================= */
+
+        .background-orb {
+            position: fixed;
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            filter: blur(80px);
+
+            opacity: 0.18;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            animation: orbFloat 10s ease-in-out infinite;
+        }
+
+        .orb-one {
+            background: #6d5dfc;
+            top: 12%;
+            left: -100px;
+        }
+
+        .orb-two {
+            background: #e85aad;
+            bottom: 10%;
+            right: -100px;
+            animation-delay: -5s;
+        }
+
+        @keyframes orbFloat {
+
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-35px) scale(1.08);
+            }
+        }
+
+
+        /* =========================================================
+           TOP PROGRESS BAR
+        ========================================================= */
+
+        #readingProgress {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 0%;
+            height: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--secondary),
+                    var(--accent)
+                );
+
+            z-index: 9999;
+
+            box-shadow:
+                0 0 15px rgba(109,93,252,0.5);
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 15px 5%;
+
+            background:
+                var(--surface);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid var(--border);
+
+            box-shadow:
+                0 8px 30px rgba(20,15,60,0.05);
+        }
+
+        .brand {
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-weight: 900;
+            letter-spacing: 0.4px;
+        }
+
+        .brand-icon {
+
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            color: white;
+
+            box-shadow:
+                0 8px 22px rgba(109,93,252,0.25);
+        }
+
+        .brand-text small {
+            display: block;
+            color: var(--text-soft);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .header-actions {
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-btn {
+
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 13px;
+
+            background: var(--surface);
+
+            color: var(--text);
+
+            cursor: pointer;
+
+            transition: var(--transition);
+        }
+
+        .header-btn:hover {
+
+            transform: translateY(-3px);
+
+            border-color: var(--primary);
+
+            color: var(--primary);
+
+            box-shadow: var(--shadow-sm);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+
+            max-width: 1180px;
+
+            margin: auto;
+
+            padding:
+                80px 5%
+                55px;
+
+            text-align: center;
+
+            position: relative;
+        }
+
+        .chapter-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 8px 16px;
+
+            border-radius: 999px;
+
+            background:
+                rgba(109,93,252,0.10);
+
+            color: var(--primary);
+
+            border:
+                1px solid rgba(109,93,252,0.20);
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            margin-bottom: 22px;
+
+            animation: fadeDown 0.8s ease both;
+        }
+
+        .hero h1 {
+
+            font-size:
+                clamp(2.4rem, 6vw, 5rem);
+
+            line-height: 1.05;
+
+            font-weight: 950;
+
+            letter-spacing: -2px;
+
+            background:
+                linear-gradient(
+                    110deg,
+                    var(--heading),
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            animation:
+                heroTitle 1s ease both;
+        }
+
+        .hero-subtitle {
+
+            max-width: 820px;
+
+            margin:
+                22px auto 0;
+
+            color: var(--text-soft);
+
+            font-size:
+                clamp(1rem, 2vw, 1.15rem);
+
+            animation:
+                fadeUp 1s 0.2s ease both;
+        }
+
+        .hero-pills {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-top: 28px;
+
+            animation:
+                fadeUp 1s 0.4s ease both;
+        }
+
+        .hero-pill {
+
+            padding: 8px 13px;
+
+            border-radius: 999px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            color: var(--text-soft);
+
+            font-size: 13px;
+
+            box-shadow: var(--shadow-sm);
+        }
+
+
+        /* =========================================================
+           QUICK NAV
+        ========================================================= */
+
+        .quick-nav {
+
+            max-width: 1180px;
+
+            margin:
+                0 auto 35px;
+
+            padding: 0 5%;
+        }
+
+        .quick-nav-inner {
+
+            display: flex;
+
+            gap: 10px;
+
+            overflow-x: auto;
+
+            padding: 12px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 18px;
+
+            background: var(--surface);
+
+            backdrop-filter: blur(15px);
+
+            box-shadow: var(--shadow-sm);
+
+            scrollbar-width: thin;
+        }
+
+        .quick-nav a {
+
+            flex-shrink: 0;
+
+            padding: 9px 14px;
+
+            border-radius: 11px;
+
+            color: var(--text-soft);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: var(--transition);
+        }
+
+        .quick-nav a:hover {
+
+            background: rgba(109,93,252,0.10);
+
+            color: var(--primary);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           MAIN CONTAINER
+        ========================================================= */
+
+        .container {
+
+            width: min(1100px, 90%);
+
+            margin: auto;
+
+            padding-bottom: 80px;
+        }
+
+
+        /* =========================================================
+           SECTION
+        ========================================================= */
+
+        .section {
+
+            margin-top: 55px;
+
+            scroll-margin-top: 100px;
+
+            opacity: 0;
+
+            transform: translateY(30px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .section.visible {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+        .section-heading {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 22px;
+        }
+
+        .section-number {
+
+            min-width: 38px;
+            height: 38px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            color: white;
+
+            font-weight: 900;
+
+            font-size: 14px;
+        }
+
+        .section-heading h2 {
+
+            font-size:
+                clamp(1.55rem, 3vw, 2.2rem);
+
+            line-height: 1.2;
+
+            color: var(--heading);
+        }
+
+
+        /* =========================================================
+           CONTENT CARD
+        ========================================================= */
+
+        .content-card {
+
+            background: var(--surface);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: var(--radius-md);
+
+            padding:
+                clamp(20px, 4vw, 34px);
+
+            box-shadow: var(--shadow-sm);
+
+            backdrop-filter: blur(14px);
+
+            -webkit-backdrop-filter: blur(14px);
+
+            transition: var(--transition);
+        }
+
+        .content-card:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow: var(--shadow-md);
+        }
+
+        .content-card p {
+
+            margin-bottom: 16px;
+
+            color: var(--text);
+        }
+
+        .content-card p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================================================
+           DEFINITION CARDS
+        ========================================================= */
+
+        .definition-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
+            gap: 18px;
+        }
+
+        .definition-card {
+
+            position: relative;
+
+            padding: 24px;
+
+            border-radius: 18px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            box-shadow: var(--shadow-sm);
+
+            overflow: hidden;
+
+            transition: var(--transition);
+        }
+
+        .definition-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 4px;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+        }
+
+        .definition-card:hover {
+
+            transform:
+                translateY(-7px)
+                scale(1.01);
+
+            box-shadow: var(--shadow-md);
+        }
+
+        .definition-card h3 {
+
+            font-size: 1.05rem;
+
+            color: var(--heading);
+
+            margin-bottom: 9px;
+        }
+
+        .definition-card p {
+
+            color: var(--text-soft);
+
+            font-size: 0.94rem;
+        }
+
+
+        /* =========================================================
+           LISTS
+        ========================================================= */
+
+        .styled-list {
+
+            list-style: none;
+
+            display: grid;
+
+            gap: 12px;
+
+            margin-top: 15px;
+        }
+
+        .styled-list li {
+
+            position: relative;
+
+            padding:
+                13px
+                15px
+                13px
+                42px;
+
+            border-radius: 13px;
+
+            background:
+                rgba(109,93,252,0.045);
+
+            border:
+                1px solid var(--border);
+
+            color: var(--text);
+        }
+
+        .styled-list li::before {
+
+            content: "✓";
+
+            position: absolute;
+
+            left: 15px;
+            top: 12px;
+
+            width: 21px;
+            height: 21px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: 900;
+        }
+
+
+        /* =========================================================
+           FORMULA SECTION
+        ========================================================= */
+
+        .formula-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(290px, 1fr));
+
+            gap: 18px;
+        }
+
+        .formula-card {
+
+            position: relative;
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--formula-bg),
+                    var(--surface)
+                );
+
+            border:
+                1px solid var(--formula-border);
+
+            box-shadow:
+                0 12px 30px rgba(109,93,252,0.08);
+
+            overflow: hidden;
+
+            transition: var(--transition);
+        }
+
+        .formula-card::after {
+
+            content: "FORMULA";
+
+            position: absolute;
+
+            right: -25px;
+            top: 15px;
+
+            transform: rotate(35deg);
+
+            font-size: 9px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            color: var(--primary);
+
+            opacity: 0.20;
+        }
+
+        .formula-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            box-shadow: var(--shadow-md);
+        }
+
+        .formula-card h3 {
+
+            color: var(--primary);
+
+            font-size: 1rem;
+
+            margin-bottom: 16px;
+        }
+
+        .formula {
+
+            padding:
+                18px 14px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(0,0,0,0.045);
+
+            border:
+                1px dashed var(--formula-border);
+
+            text-align: center;
+
+            font-size:
+                clamp(1rem, 2.4vw, 1.3rem);
+
+            font-weight: 850;
+
+            color: var(--heading);
+
+            overflow-x: auto;
+
+            white-space: nowrap;
+        }
+
+        .formula-note {
+
+            margin-top: 12px;
+
+            color: var(--text-soft);
+
+            font-size: 0.84rem;
+
+            line-height: 1.55;
+        }
+
+
+        /* =========================================================
+           PHASE MATRIX
+        ========================================================= */
+
+        .phase-table-wrapper {
+
+            overflow-x: auto;
+
+            border-radius: 18px;
+
+            border: 1px solid var(--border);
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .phase-table {
+
+            width: 100%;
+
+            min-width: 720px;
+
+            border-collapse: collapse;
+
+            background: var(--surface);
+        }
+
+        .phase-table th,
+        .phase-table td {
+
+            padding: 16px;
+
+            text-align: left;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+        .phase-table th {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(109,93,252,0.12),
+                    rgba(232,90,173,0.10)
+                );
+
+            color: var(--heading);
+
+            font-size: 0.9rem;
+        }
+
+        .phase-table td {
+
+            color: var(--text-soft);
+
+            font-size: 0.91rem;
+        }
+
+        .phase-table tr:hover td {
+
+            background:
+                rgba(109,93,252,0.035);
+        }
+
+
+        /* =========================================================
+           APPLICATION CARDS
+        ========================================================= */
+
+        .application-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 18px;
+        }
+
+        .application-card {
+
+            padding: 24px;
+
+            border-radius: 20px;
+
+            background: var(--surface);
+
+            border:
+                1px solid var(--border);
+
+            box-shadow: var(--shadow-sm);
+
+            transition: var(--transition);
+        }
+
+        .application-card:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow: var(--shadow-md);
+        }
+
+        .application-icon {
+
+            width: 48px;
+            height: 48px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(109,93,252,0.14),
+                    rgba(232,90,173,0.14)
+                );
+
+            font-size: 22px;
+
+            margin-bottom: 16px;
+        }
+
+        .application-card h3 {
+
+            margin-bottom: 9px;
+
+            color: var(--heading);
+        }
+
+        .application-card p {
+
+            color: var(--text-soft);
+
+            font-size: 0.92rem;
+        }
+
+
+        /* =========================================================
+           SPECIAL INSIGHT BOX
+        ========================================================= */
+
+        .insight {
+
+            margin-top: 22px;
+
+            padding: 22px 24px;
+
+            border-radius: 18px;
+
+            border-left: 5px solid var(--accent);
+
+            background:
+                rgba(0,168,150,0.07);
+
+            border-top:
+                1px solid rgba(0,168,150,0.12);
+
+            border-right:
+                1px solid rgba(0,168,150,0.12);
+
+            border-bottom:
+                1px solid rgba(0,168,150,0.12);
+        }
+
+        .insight strong {
+
+            color: var(--accent);
+        }
+
+
+        /* =========================================================
+           WARNING BOX
+        ========================================================= */
+
+        .warning-box {
+
+            padding: 22px 24px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(245,158,11,0.08);
+
+            border:
+                1px solid rgba(245,158,11,0.25);
+
+            border-left:
+                5px solid var(--warning);
+        }
+
+        .warning-box h3 {
+
+            color: var(--warning);
+
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================================================
+           COMPARISON
+        ========================================================= */
+
+        .comparison-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(290px, 1fr));
+
+            gap: 20px;
+        }
+
+        .comparison-card {
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            border: 1px solid var(--border);
+
+            background: var(--surface);
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .comparison-card.ideal {
+
+            border-top:
+                5px solid var(--success);
+        }
+
+        .comparison-card.nonideal {
+
+            border-top:
+                5px solid var(--secondary);
+        }
+
+        .comparison-card h3 {
+
+            margin-bottom: 15px;
+        }
+
+        .comparison-card ul {
+
+            padding-left: 20px;
+
+            color: var(--text-soft);
+        }
+
+        .comparison-card li {
+
+            margin-bottom: 9px;
+        }
+
+
+        /* =========================================================
+           QUICK REVISION
+        ========================================================= */
+
+        .revision-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 14px;
+        }
+
+        .revision-item {
+
+            padding: 18px;
+
+            border-radius: 15px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            box-shadow: var(--shadow-sm);
+
+            transition: var(--transition);
+        }
+
+        .revision-item:hover {
+
+            transform: translateY(-4px);
+
+            border-color: var(--primary);
+        }
+
+        .revision-item strong {
+
+            display: block;
+
+            color: var(--primary);
+
+            margin-bottom: 5px;
+        }
+
+        .revision-item span {
+
+            color: var(--text-soft);
+
+            font-size: 0.88rem;
+        }
+
+
+        /* =========================================================
+           CHAPTER NAVIGATION
+        ========================================================= */
+
+        .chapter-navigation {
+
+            margin-top: 70px;
+
+            padding: 25px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(109,93,252,0.10),
+                    rgba(232,90,173,0.08)
+                );
+
+            border: 1px solid var(--border);
+        }
+
+        .chapter-link {
+
+            padding: 12px 18px;
+
+            border-radius: 13px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            font-weight: 750;
+
+            transition: var(--transition);
+        }
+
+        .chapter-link:hover {
+
+            transform: translateY(-3px);
+
+            color: var(--primary);
+
+            box-shadow: var(--shadow-sm);
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+
+            padding: 45px 5%;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #11132a,
+                    #1d1730
+                );
+
+            color: #ffffff;
+        }
+
+        .footer-title {
+
+            font-size: 1.25rem;
+
+            font-weight: 900;
+
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+
+            color: rgba(255,255,255,0.65);
+
+            font-size: 0.85rem;
+        }
+
+
+        /* =========================================================
+           BACK TO TOP
+        ========================================================= */
+
+        #backTop {
+
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            width: 46px;
+            height: 46px;
+
+            border: none;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            color: white;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 30px rgba(109,93,252,0.30);
+
+            opacity: 0;
+
+            transform:
+                translateY(15px);
+
+            pointer-events: none;
+
+            transition: var(--transition);
+
+            z-index: 999;
+        }
+
+        #backTop.show {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+            pointer-events: auto;
+        }
+
+
+        /* =========================================================
+           ANIMATIONS
+        ========================================================= */
+
+        @keyframes fadeDown {
+
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heroTitle {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(30px)
+                    scale(0.97);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 12px 4%;
+            }
+
+            .brand-text {
+                font-size: 13px;
+            }
+
+            .brand-text small {
+                font-size: 9px;
+            }
+
+            .hero {
+
+                padding:
+                    60px 5%
+                    35px;
+            }
+
+            .hero h1 {
+
+                letter-spacing: -1px;
+            }
+
+            .container {
+
+                width: 92%;
+            }
+
+            .section {
+
+                margin-top: 42px;
+            }
+
+            .chapter-navigation {
+
+                flex-direction: column;
+            }
+
+            .chapter-link {
+
+                text-align: center;
+            }
+
+            .formula {
+
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+
+                scroll-behavior: auto !important;
+
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Reading Progress -->
+    <div id="readingProgress"></div>
+
+    <!-- Background Decoration -->
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header>
+
+        <a href="chemistry.html" class="brand">
+
+            <div class="brand-icon">
+                🧪
+            </div>
+
+            <div class="brand-text">
+                Shorveer Notes
+                <small>Class 12 Chemistry</small>
+            </div>
+
+        </a>
+
+
+        <div class="header-actions">
+
+            <button
+                class="header-btn"
+                onclick="history.back()"
+                title="Go Back">
+                ←
+            </button>
+
+            <button
+                class="header-btn"
+                onclick="toggleTheme()"
+                id="themeButton"
+                title="Toggle Theme">
+                🌙
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <section class="hero">
+
+        <div class="chapter-badge">
+            🧪 CHAPTER 01 • LONG NOTES
+        </div>
+
+        <h1>
+            Solutions
+        </h1>
+
+        <p class="hero-subtitle">
+            The Ultimate Guide to Chemical Mixtures, Concentration Methods,
+            Solubility, Henry's Law, Vapour Pressure, Raoult's Law,
+            Ideal Solutions and Non-Ideal Solutions.
+        </p>
+
+        <div class="hero-pills">
+
+            <span class="hero-pill">📖 NCERT Concepts</span>
+            <span class="hero-pill">🧮 Formula Focus</span>
+            <span class="hero-pill">🎯 Board Revision</span>
+            <span class="hero-pill">🧠 Concept Clarity</span>
+            <span class="hero-pill">⚗️ Applications</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         QUICK NAVIGATION
+    ========================================================== -->
+
+    <nav class="quick-nav">
+
+        <div class="quick-nav-inner">
+
+            <a href="#terminology">Terminology</a>
+
+            <a href="#concentration">Concentration</a>
+
+            <a href="#phases">Solution Phases</a>
+
+            <a href="#solubility">Solubility</a>
+
+            <a href="#henry">Henry's Law</a>
+
+            <a href="#vapour">Vapour Pressure</a>
+
+            <a href="#raoult">Raoult's Law</a>
+
+            <a href="#ideal">Ideal / Non-Ideal</a>
+
+            <a href="#applications">Applications</a>
+
+            <a href="#revision">Quick Revision</a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+
+        <!-- =====================================================
+             SECTION 1
+        ====================================================== -->
+
+        <section class="section" id="terminology">
+
+            <div class="section-heading">
+
+                <div class="section-number">01</div>
+
+                <h2>
+                    Core Terminologies & Universal Concepts
+                </h2>
+
+            </div>
+
+
+            <div class="definition-grid">
+
+
+                <article class="definition-card">
+
+                    <h3>🧪 Chemical Solution</h3>
+
+                    <p>
+                        A perfectly uniform, single-phase blend containing
+                        two or more distinct chemical entities acting together.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>💧 Primary Medium (Solvent)</h3>
+
+                    <p>
+                        The dominant substance in a mixture. It acts as the
+                        dissolving agent and determines the final physical
+                        state of the solution.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>⚗️ Dissolved Entity (Solute)</h3>
+
+                    <p>
+                        The minor substance(s) introduced into and dissolved
+                        by the primary medium.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>🌬️ Gas-Phase Mixtures</h3>
+
+                    <p>
+                        Mixtures where the bulk dissolving medium is a gas,
+                        for example atmospheric air.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>💦 Liquid-Phase Mixtures</h3>
+
+                    <p>
+                        Systems where a liquid acts as the primary medium,
+                        capable of dissolving solids, other liquids, or gases.
+                        Example: carbonated water.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>🔩 Solid-State Mixtures</h3>
+
+                    <p>
+                        Formulations where the primary framework is solid,
+                        widely seen in metallurgy as alloys, such as brass,
+                        a combination of copper and zinc.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 2 - CONCENTRATION
+        ====================================================== -->
+
+        <section class="section" id="concentration">
+
+            <div class="section-heading">
+
+                <div class="section-number">02</div>
+
+                <h2>
+                    Metrics of Concentration
+                </h2>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <p>
+                    Concentration tells us how much solute is present in a
+                    given amount of solution or solvent. Different concentration
+                    methods are useful in different scientific, industrial,
+                    medical and environmental situations.
+                </p>
+
+                <ul class="styled-list">
+
+                    <li>
+                        <strong>Volumetric Molarity (M):</strong>
+                        A metric defining the number of moles of a dissolved
+                        entity present in exactly one litre of the overall
+                        solution.
+                    </li>
+
+                    <li>
+                        <strong>Gravimetric Molality (m):</strong>
+                        A mass-based standard measuring the moles of solute
+                        strictly per kilogram of the pure dissolving medium.
+                    </li>
+
+                    <li>
+                        <strong>Molar Proportion (Mole Fraction):</strong>
+                        A comparative ratio representing the moles of a
+                        specific component divided by the total sum of moles
+                        for all components in the system.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="formula-grid" style="margin-top:22px;">
+
+
+                <article class="formula-card">
+
+                    <h3>⚖️ Weight-by-Weight Ratio</h3>
+
+                    <div class="formula">
+                        w/w % = (Mass of Component ÷ Total Mass) × 100
+                    </div>
+
+                    <p class="formula-note">
+                        Mass percentage expresses the mass of a component
+                        relative to the total mass of the solution.
+                    </p>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>🧴 Volume-by-Volume Ratio</h3>
+
+                    <div class="formula">
+                        v/v % = (Volume of Component ÷ Total Volume) × 100
+                    </div>
+
+                    <p class="formula-note">
+                        Volume percentage is particularly practical for
+                        mixtures composed entirely of liquids.
+                    </p>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>🔬 Parts Per Million</h3>
+
+                    <div class="formula">
+                        ppm = (Component Parts ÷ Total Parts) × 10⁶
+                    </div>
+
+                    <p class="formula-note">
+                        ppm is used when the amount of a component is
+                        extremely small or present only in trace quantities.
+                    </p>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>🧮 Mole Fraction</h3>
+
+                    <div class="formula">
+                        χᵢ = nᵢ ÷ Σn
+                    </div>
+
+                    <p class="formula-note">
+                        χᵢ represents the mole fraction of component i.
+                        The sum of mole fractions of all components is 1.
+                    </p>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>📐 Molarity</h3>
+
+                    <div class="formula">
+                        M = n(solute) ÷ V(solution in L)
+                    </div>
+
+                    <p class="formula-note">
+                        Molarity depends on solution volume and is therefore
+                        temperature sensitive.
+                    </p>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>⚖️ Molality</h3>
+
+                    <div class="formula">
+                        m = n(solute) ÷ Mass of solvent in kg
+                    </div>
+
+                    <p class="formula-note">
+                        Molality uses the mass of solvent rather than solution
+                        volume, making it independent of temperature.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="insight">
+
+                <strong>Temperature Insight:</strong>
+
+                Mass-oriented concentration terms such as mass percentage,
+                ppm, molality and mole fraction are not affected by changes
+                in temperature because mass does not thermally expand.
+
+                In contrast, molarity depends on volume, and volume can
+                change with temperature.
+                
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 3 - PRACTICAL IMPLICATIONS
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div class="section-number">03</div>
+
+                <h2>
+                    Key Insights & Practical Implications
+                </h2>
+
+            </div>
+
+
+            <div class="application-grid">
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">🏭</div>
+
+                    <h3>Industrial Standard</h3>
+
+                    <p>
+                        Evaluating chemical concentrations via mass percentage
+                        is the universally accepted standard in large-scale
+                        industrial manufacturing.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">💧</div>
+
+                    <h3>Fluid Blending</h3>
+
+                    <p>
+                        When formulating mixtures composed entirely of liquids,
+                        volume percentage is the most practical metric to use.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">💊</div>
+
+                    <h3>Medical Formulations</h3>
+
+                    <p>
+                        The pharmaceutical and medical sectors predominantly
+                        rely on mass-by-volume metrics to ensure drug safety
+                        and dosage accuracy.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">🔬</div>
+
+                    <h3>Trace Element Tracking</h3>
+
+                    <p>
+                        For infinitesimally small quantities of a substance,
+                        scientists utilize the Parts Per Million (ppm) metric.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">🌍</div>
+
+                    <h3>Environmental Monitoring</h3>
+
+                    <p>
+                        The ppm scale is the go-to method for quantifying
+                        pollutants and contaminants in air and water supplies.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">🌡️</div>
+
+                    <h3>Thermal Stability</h3>
+
+                    <p>
+                        Mass-oriented metrics—such as Mass percentage, ppm,
+                        Molality and Mole Fraction—are completely immune to
+                        temperature fluctuations.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">📈</div>
+
+                    <h3>Thermal Sensitivity</h3>
+
+                    <p>
+                        Conversely, volumetric measurements like Molarity are
+                        highly sensitive to temperature changes due to the
+                        thermal expansion and contraction of liquids.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 4 - PHASE MATRIX
+        ====================================================== -->
+
+        <section class="section" id="phases">
+
+            <div class="section-heading">
+
+                <div class="section-number">04</div>
+
+                <h2>
+                    The Matrix of Solution Phases
+                </h2>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <p>
+                    Solutions can be classified according to the physical
+                    state of their solvent. The solvent determines whether
+                    the resulting solution is gas-dominant, liquid-dominant
+                    or solid-dominant.
+                </p>
+
+            </div>
+
+
+            <div class="phase-table-wrapper" style="margin-top:20px;">
+
+                <table class="phase-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Dominant Phase</th>
+
+                            <th>Solute</th>
+
+                            <th>Solvent</th>
+
+                            <th>Example</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Gas-Dominant</td>
+                            <td>Gas</td>
+                            <td>Gas</td>
+                            <td>Atmospheric blends: Nitrogen + Oxygen</td>
+                        </tr>
+
+                        <tr>
+                            <td>Gas-Dominant</td>
+                            <td>Liquid</td>
+                            <td>Gas</td>
+                            <td>Chloroform vapours dispersed in Nitrogen</td>
+                        </tr>
+
+                        <tr>
+                            <td>Gas-Dominant</td>
+                            <td>Solid</td>
+                            <td>Gas</td>
+                            <td>Camphor sublimating into Nitrogen</td>
+                        </tr>
+
+                        <tr>
+                            <td>Liquid-Dominant</td>
+                            <td>Gas</td>
+                            <td>Liquid</td>
+                            <td>Dissolved Oxygen in rivers</td>
+                        </tr>
+
+                        <tr>
+                            <td>Liquid-Dominant</td>
+                            <td>Liquid</td>
+                            <td>Liquid</td>
+                            <td>Ethanol blended with water</td>
+                        </tr>
+
+                        <tr>
+                            <td>Liquid-Dominant</td>
+                            <td>Solid</td>
+                            <td>Liquid</td>
+                            <td>Glucose dissolved in aqueous medium</td>
+                        </tr>
+
+                        <tr>
+                            <td>Solid-Dominant</td>
+                            <td>Gas</td>
+                            <td>Solid</td>
+                            <td>Hydrogen trapped inside Palladium</td>
+                        </tr>
+
+                        <tr>
+                            <td>Solid-Dominant</td>
+                            <td>Liquid</td>
+                            <td>Solid</td>
+                            <td>Mercury stabilized with Sodium</td>
+                        </tr>
+
+                        <tr>
+                            <td>Solid-Dominant</td>
+                            <td>Solid</td>
+                            <td>Solid</td>
+                            <td>Structural metal alloys</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 5 - SOLUBILITY
+        ====================================================== -->
+
+        <section class="section" id="solubility">
+
+            <div class="section-heading">
+
+                <div class="section-number">05</div>
+
+                <h2>
+                    Solubility & Dissolution Dynamics
+                </h2>
+
+            </div>
+
+
+            <div class="definition-grid">
+
+
+                <article class="definition-card">
+
+                    <h3>💧 Maximum Dissolution Capacity</h3>
+
+                    <p>
+                        <strong>Solubility:</strong> The absolute maximum
+                        quantity of a given substance that can seamlessly
+                        integrate into a specific volume of solvent at a
+                        strictly defined temperature.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>⚖️ Saturated Solution</h3>
+
+                    <p>
+                        A chemical state where the primary medium (solvent)
+                        has reached its absolute limit; no additional dissolved
+                        entity (solute) can be integrated under the current
+                        temperature and pressure conditions.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>🧪 Unsaturated Solution</h3>
+
+                    <p>
+                        A mixture that has not yet reached its maximum capacity,
+                        meaning it retains the ability to dissolve further
+                        quantities of the solute at the prevailing temperature.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="insight">
+
+                <strong>Compatibility Principle — "Like Dissolves Like":</strong>
+
+                Substances tend to mix successfully when their intermolecular
+                forces and structural polarities mirror one another.
+
+            </div>
+
+
+            <div class="content-card" style="margin-top:20px;">
+
+                <h3 style="margin-bottom:15px;">
+                    🌡️ Effect of Temperature on Solubility
+                </h3>
+
+                <ul class="styled-list">
+
+                    <li>
+                        For solids dissolved in liquids, if dissolution is
+                        <strong>endothermic</strong>, increasing temperature
+                        generally increases solubility.
+                    </li>
+
+                    <li>
+                        If dissolution is <strong>exothermic</strong>,
+                        increasing temperature generally decreases solubility.
+                    </li>
+
+                    <li>
+                        For gases dissolved in liquids, solubility generally
+                        decreases as temperature rises.
+                    </li>
+
+                    <li>
+                        Increasing external pressure generally increases the
+                        solubility of gases in liquids.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 6 - HENRY'S LAW
+        ====================================================== -->
+
+        <section class="section" id="henry">
+
+            <div class="section-heading">
+
+                <div class="section-number">06</div>
+
+                <h2>
+                    Henry's Law & Gas Solubility
+                </h2>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <p>
+                    For gases dissolved in liquids, pressure has a major
+                    influence on solubility. Henry's law provides the
+                    mathematical relationship between the partial pressure
+                    of a gas and its mole fraction in the solution.
+                </p>
+
+                <div class="formula-card" style="margin-top:20px;">
+
+                    <h3>📐 Henry's Law</h3>
+
+                    <div class="formula">
+                        p = K<sub>H</sub> χ
+                    </div>
+
+                    <p class="formula-note">
+
+                        At constant temperature, the partial pressure
+                        <strong>p</strong> of a gas in the vapour phase is
+                        directly proportional to its mole fraction
+                        <strong>χ</strong> in the liquid solution.
+
+                        <br><br>
+
+                        Here, <strong>K<sub>H</sub></strong> is Henry's law
+                        constant.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="warning-box" style="margin-top:20px;">
+
+                <h3>
+                    Important Henry's Constant Relationship
+                </h3>
+
+                <p>
+                    For a given gas at constant pressure, a higher
+                    Henry's law constant K<sub>H</sub> corresponds to a
+                    lower solubility of that gas in the liquid.
+                </p>
+
+            </div>
+
+
+            <div class="application-grid" style="margin-top:20px;">
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">🥤</div>
+
+                    <h3>Beverage Carbonation</h3>
+
+                    <p>
+                        The signature fizz and acidic bite in carbonated drinks
+                        stem from pressurized carbon dioxide. Because gas
+                        solubility decreases as temperatures climb, warm
+                        beverages rapidly lose their dissolved gas, resulting
+                        in a flat taste.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">🌊</div>
+
+                    <h3>Marine Ecosystem Vulnerability</h3>
+
+                    <p>
+                        Aquatic organisms depend on oxygen dissolved in their
+                        habitats. As water bodies heat up, their capacity to
+                        hold oxygen generally decreases, creating low-oxygen
+                        environments that can severely stress aquatic life.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">🤿</div>
+
+                    <h3>Deep-Sea Diving Dynamics</h3>
+
+                    <p>
+                        Under massive underwater pressure, a diver's bloodstream
+                        can absorb increased amounts of gases. If ascent is too
+                        rapid, the sudden drop in pressure can cause dissolved
+                        nitrogen to come out of solution and form bubbles,
+                        producing decompression sickness, commonly known as
+                        the bends.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">🫁</div>
+
+                    <h3>Physiological Gas Transport</h3>
+
+                    <p>
+                        The solubility of carbon dioxide in human blood is
+                        biologically important. It allows the cardiovascular
+                        system to transport carbon dioxide from tissues toward
+                        the lungs, where it can be exhaled, while contributing
+                        to regulation of the body's acid-base balance.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">☕</div>
+
+                    <h3>Chemistry of Decaffeination</h3>
+
+                    <p>
+                        Commercial extraction of caffeine can use selective
+                        solubility. Supercritical carbon dioxide can act as a
+                        selective solvent to extract caffeine from coffee beans,
+                        after which the solvent is separated from the product.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="insight">
+
+                <strong>Medical Term — Anoxia:</strong>
+
+                Anoxia is a dangerous physiological state characterized by an
+                extreme deficiency of oxygen reaching tissues. In the context
+                of solution chemistry, dissolved oxygen is especially important
+                for biological systems.
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 7 - VAPOUR PRESSURE
+        ====================================================== -->
+
+        <section class="section" id="vapour">
+
+            <div class="section-heading">
+
+                <div class="section-number">07</div>
+
+                <h2>
+                    Vapour Pressure & Fluid Blends
+                </h2>
+
+            </div>
+
+
+            <div class="definition-grid">
+
+
+                <article class="definition-card">
+
+                    <h3>🧪 Dual-Component Mixtures</h3>
+
+                    <p>
+                        A fluid system strictly composed of exactly two distinct
+                        chemical substances.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>💨 Individual Vapour Pressure</h3>
+
+                    <p>
+                        The specific, isolated pressure exerted by one component
+                        within the gaseous phase of a larger mixture.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>✨ Ideal Solutions</h3>
+
+                    <p>
+                        Fluid blends that strictly and closely adhere to
+                        Raoult's mathematical model across the concentration
+                        range.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>⚠️ Non-Ideal Solutions</h3>
+
+                    <p>
+                        Blends that deviate from Raoult's law over part or all
+                        of their concentration range.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>♨️ Azeotropes</h3>
+
+                    <p>
+                        Unique liquid combinations that maintain the same
+                        composition in the liquid and vapour phases at the
+                        azeotropic composition and boil at a constant
+                        temperature.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 8 - RAOULT'S LAW
+        ====================================================== -->
+
+        <section class="section" id="raoult">
+
+            <div class="section-heading">
+
+                <div class="section-number">08</div>
+
+                <h2>
+                    Raoult's Law & Dalton's Law
+                </h2>
+
+            </div>
+
+
+            <div class="formula-grid">
+
+
+                <article class="formula-card">
+
+                    <h3>📐 Raoult's Law</h3>
+
+                    <div class="formula">
+
+                        p<sub>1</sub> = p<sub>1</sub><sup>0</sup> x<sub>1</sub>
+
+                    </div>
+
+                    <p class="formula-note">
+
+                        The partial vapour pressure of a component is directly
+                        proportional to its mole fraction in the liquid phase.
+
+                        <br><br>
+
+                        p<sub>1</sub> = partial vapour pressure of component 1
+
+                        <br>
+
+                        p<sub>1</sub><sup>0</sup> = vapour pressure of pure
+                        component 1
+
+                        <br>
+
+                        x<sub>1</sub> = mole fraction of component 1 in liquid
+
+                    </p>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>📊 Dalton's Law</h3>
+
+                    <div class="formula">
+
+                        P<sub>total</sub>
+                        =
+                        p<sub>1</sub> + p<sub>2</sub> + ...
+
+                    </div>
+
+                    <p class="formula-note">
+
+                        The total pressure of a mixture of gases is equal to
+                        the sum of the partial pressures of its components.
+
+                    </p>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>💨 Vapour Phase Mole Fraction</h3>
+
+                    <div class="formula">
+
+                        p<sub>1</sub> = y<sub>1</sub>P<sub>total</sub>
+
+                    </div>
+
+                    <p class="formula-note">
+
+                        Therefore,
+
+                        <br><br>
+
+                        y<sub>1</sub>
+                        =
+                        p<sub>1</sub> ÷ P<sub>total</sub>
+
+                        <br><br>
+
+                        where y<sub>1</sub> is the mole fraction of component
+                        1 in the vapour phase.
+
+                    </p>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="content-card" style="margin-top:22px;">
+
+                <h3 style="margin-bottom:14px;">
+                    🔗 Combined Understanding
+                </h3>
+
+                <p>
+                    For a binary ideal solution, Raoult's law can be applied
+                    to determine the partial vapour pressures of the individual
+                    components. Dalton's law can then be used to determine the
+                    total vapour pressure of the system.
+                </p>
+
+                <div class="formula">
+
+                    P<sub>total</sub>
+                    =
+                    p<sub>1</sub> + p<sub>2</sub>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 9 - IDEAL VS NON IDEAL
+        ====================================================== -->
+
+        <section class="section" id="ideal">
+
+            <div class="section-heading">
+
+                <div class="section-number">09</div>
+
+                <h2>
+                    Ideal vs Non-Ideal Solutions
+                </h2>
+
+            </div>
+
+
+            <div class="comparison-grid">
+
+
+                <article class="comparison-card ideal">
+
+                    <h3 style="color:var(--success);">
+                        ✅ Ideal Solutions
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            They closely obey Raoult's law throughout the
+                            concentration range.
+                        </li>
+
+                        <li>
+                            Intermolecular attractions between unlike molecules
+                            are approximately similar to those between like
+                            molecules.
+                        </li>
+
+                        <li>
+                            No significant heat is absorbed or evolved during
+                            mixing.
+                        </li>
+
+                        <li>
+                            No significant volume change occurs on mixing.
+                        </li>
+
+                        <li>
+                            ΔH<sub>mix</sub> ≈ 0
+                        </li>
+
+                        <li>
+                            ΔV<sub>mix</sub> ≈ 0
+                        </li>
+
+                        <li>
+                            A classic example is benzene and toluene.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <article class="comparison-card nonideal">
+
+                    <h3 style="color:var(--secondary);">
+                        ⚠️ Non-Ideal Solutions
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            They deviate from Raoult's law.
+                        </li>
+
+                        <li>
+                            Intermolecular forces between unlike molecules
+                            differ significantly from those between like
+                            molecules.
+                        </li>
+
+                        <li>
+                            Heat may be absorbed or released during mixing.
+                        </li>
+
+                        <li>
+                            Volume may increase or decrease on mixing.
+                        </li>
+
+                        <li>
+                            ΔH<sub>mix</sub> ≠ 0
+                        </li>
+
+                        <li>
+                            ΔV<sub>mix</sub> ≠ 0
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="content-card" style="margin-top:22px;">
+
+                <h3 style="margin-bottom:18px;">
+                    📈 Positive Deviation from Raoult's Law
+                </h3>
+
+                <p>
+                    This phenomenon occurs when the new molecular interactions
+                    in the mixture are weaker than those in the pure liquids.
+                    It results in a noticeably higher overall vapour pressure
+                    than what Raoult's law predicts.
+                </p>
+
+                <ul class="styled-list">
+
+                    <li>
+                        Intermolecular attraction between unlike molecules is
+                        weaker.
+                    </li>
+
+                    <li>
+                        Vapour pressure becomes higher than the ideal prediction.
+                    </li>
+
+                    <li>
+                        Mixing generally absorbs heat:
+                        <strong>ΔH<sub>mix</sub> &gt; 0</strong>.
+                    </li>
+
+                    <li>
+                        Volume generally increases:
+                        <strong>ΔV<sub>mix</sub> &gt; 0</strong>.
+                    </li>
+
+                    <li>
+                        Such systems can form minimum-boiling azeotropes.
+                    </li>
+
+                    <li>
+                        Examples include ethanol-water and certain other
+                        systems showing positive deviation.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="content-card" style="margin-top:22px;">
+
+                <h3 style="margin-bottom:18px;">
+                    📉 Negative Deviation from Raoult's Law
+                </h3>
+
+                <p>
+                    Negative deviation occurs when the blended molecules
+                    attract each other more strongly than they do in their
+                    separate pure states.
+                </p>
+
+                <ul class="styled-list">
+
+                    <li>
+                        Intermolecular attraction between unlike molecules is
+                        stronger.
+                    </li>
+
+                    <li>
+                        Vapour pressure becomes lower than the ideal prediction.
+                    </li>
+
+                    <li>
+                        Mixing releases heat:
+                        <strong>ΔH<sub>mix</sub> &lt; 0</strong>.
+                    </li>
+
+                    <li>
+                        Volume generally decreases:
+                        <strong>ΔV<sub>mix</sub> &lt; 0</strong>.
+                    </li>
+
+                    <li>
+                        Such systems can form maximum-boiling azeotropes.
+                    </li>
+
+                    <li>
+                        A classic example is the nitric acid-water system.
+                    </li>
+
+                    <li>
+                        Other commonly discussed examples include phenol-aniline
+                        and chloroform-acetone systems.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 10 - MISCONCEPTIONS
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div class="section-number">10</div>
+
+                <h2>
+                    Common Misconceptions — Fact Check
+                </h2>
+
+            </div>
+
+
+            <div class="definition-grid">
+
+
+                <article class="definition-card">
+
+                    <h3>❌ Myth: All liquids have the same vapour pressure</h3>
+
+                    <p>
+                        Vapour pressure varies significantly from one liquid
+                        to another because volatility and intermolecular forces
+                        are different.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>❌ Myth: More liquid means more vapour pressure</h3>
+
+                    <p>
+                        Increasing the amount of liquid in a container does not
+                        automatically increase its equilibrium vapour pressure.
+                        At a given temperature, equilibrium vapour pressure is
+                        determined by the nature of the liquid and temperature.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>❌ Myth: Non-volatile solutes increase vapour pressure</h3>
+
+                    <p>
+                        Introducing a non-volatile solute generally lowers the
+                        vapour pressure of the solvent because the mole fraction
+                        of the solvent decreases.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>❌ Myth: Raoult's law works for every solution</h3>
+
+                    <p>
+                        Raoult's law provides ideal-solution behaviour.
+                        Real solutions may show positive or negative deviations.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <h3>❌ Myth: Azeotropes can be separated by simple distillation</h3>
+
+                    <p>
+                        Constant-boiling azeotropic mixtures cannot be completely
+                        separated by ordinary simple fractional distillation
+                        because the vapour and liquid compositions become the same
+                        at the azeotropic point.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 11 - DAILY LIFE
+        ====================================================== -->
+
+        <section class="section" id="applications">
+
+            <div class="section-heading">
+
+                <div class="section-number">11</div>
+
+                <h2>
+                    Chemistry in Daily Life
+                </h2>
+
+            </div>
+
+
+            <div class="application-grid">
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">🦷</div>
+
+                    <h3>Dental Health & Fluoridation</h3>
+
+                    <p>
+                        The presence of fluoride in municipal drinking water
+                        represents a delicate chemical balance. A tiny trace
+                        concentration of roughly 1 ppm can be beneficial for
+                        strengthening enamel and reducing dental decay.
+                        Excessive fluoride concentrations can produce dental
+                        fluorosis and, at sufficiently high exposure levels,
+                        toxicity. This demonstrates why ppm is important in
+                        environmental chemistry.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">🧂</div>
+
+                    <h3>Food Preservation</h3>
+
+                    <p>
+                        The food industry relies heavily on concentration
+                        principles, particularly through the use of concentrated
+                        saltwater solutions such as brine. High salt concentrations
+                        lower water availability and create osmotic conditions
+                        that inhibit microbial growth, helping extend the shelf
+                        life of perishable foods.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">🌸</div>
+
+                    <h3>Fragrance Design</h3>
+
+                    <p>
+                        The perfume industry makes use of the volatility and
+                        intermolecular interactions of fragrance compounds.
+                        Compounds that evaporate readily can spread their aroma
+                        through the surrounding air.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">🏭</div>
+
+                    <h3>Chemical Manufacturing</h3>
+
+                    <p>
+                        Non-ideal solution behaviour is important in industrial
+                        chemistry. Differences in molecular interactions can
+                        affect vapour pressure, boiling points, separation
+                        processes and solvent selection.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <div class="application-icon">🍶</div>
+
+                    <h3>Alcohol Refinement</h3>
+
+                    <p>
+                        Attempting to completely purify ethanol from water using
+                        ordinary distillation is difficult because the system
+                        forms an azeotrope at a particular composition. At the
+                        azeotropic point, the vapour composition matches the
+                        liquid composition, preventing complete separation by
+                        simple distillation alone.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 12 - IMPORTANT FORMULA SHEET
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div class="section-number">12</div>
+
+                <h2>
+                    ⭐ Complete Formula Sheet
+                </h2>
+
+            </div>
+
+
+            <div class="formula-grid">
+
+
+                <article class="formula-card">
+
+                    <h3>1. Mass Percentage</h3>
+
+                    <div class="formula">
+                        Mass % =
+                        (Mass of Solute ÷ Mass of Solution) × 100
+                    </div>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>2. Volume Percentage</h3>
+
+                    <div class="formula">
+                        Volume % =
+                        (Volume of Solute ÷ Volume of Solution) × 100
+                    </div>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>3. Mass by Volume Percentage</h3>
+
+                    <div class="formula">
+                        (Mass of Solute ÷ Volume of Solution) × 100
+                    </div>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>4. Parts Per Million</h3>
+
+                    <div class="formula">
+                        ppm =
+                        (Parts of Component ÷ Total Parts) × 10⁶
+                    </div>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>5. Mole Fraction</h3>
+
+                    <div class="formula">
+                        χᵢ = nᵢ ÷ (n₁ + n₂ + ...)
+                    </div>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>6. Molarity</h3>
+
+                    <div class="formula">
+                        M = n ÷ V(L)
+                    </div>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>7. Molality</h3>
+
+                    <div class="formula">
+                        m = n ÷ Mass of Solvent(kg)
+                    </div>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>8. Henry's Law</h3>
+
+                    <div class="formula">
+                        p = K<sub>H</sub>χ
+                    </div>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>9. Raoult's Law</h3>
+
+                    <div class="formula">
+                        p<sub>1</sub> =
+                        p<sub>1</sub><sup>0</sup>x<sub>1</sub>
+                    </div>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>10. Dalton's Law</h3>
+
+                    <div class="formula">
+                        P<sub>total</sub> =
+                        p<sub>1</sub> + p<sub>2</sub> + ...
+                    </div>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>11. Vapour Phase Mole Fraction</h3>
+
+                    <div class="formula">
+                        y<sub>1</sub> =
+                        p<sub>1</sub> ÷ P<sub>total</sub>
+                    </div>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <h3>12. Ideal Solution Conditions</h3>
+
+                    <div class="formula">
+                        ΔH<sub>mix</sub> ≈ 0
+                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                        ΔV<sub>mix</sub> ≈ 0
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 13 - QUICK REVISION
+        ====================================================== -->
+
+        <section class="section" id="revision">
+
+            <div class="section-heading">
+
+                <div class="section-number">13</div>
+
+                <h2>
+                    ⚡ Quick Revision — Must Remember
+                </h2>
+
+            </div>
+
+
+            <div class="revision-grid">
+
+
+                <div class="revision-item">
+                    <strong>Molarity</strong>
+                    <span>Moles of solute per litre of solution.</span>
+                </div>
+
+
+                <div class="revision-item">
+                    <strong>Molality</strong>
+                    <span>Moles of solute per kilogram of solvent.</span>
+                </div>
+
+
+                <div class="revision-item">
+                    <strong>Mole Fraction</strong>
+                    <span>Moles of component divided by total moles.</span>
+                </div>
+
+
+                <div class="revision-item">
+                    <strong>ppm</strong>
+                    <span>Used for extremely small concentrations.</span>
+                </div>
+
+
+                <div class="revision-item">
+                    <strong>Henry's Law</strong>
+                    <span>p = K<sub>H</sub>χ</span>
+                </div>
+
+
+                <div class="revision-item">
+                    <strong>Raoult's Law</strong>
+                    <span>p<sub>i</sub> = p<sub>i</sub><sup>0</sup>x<sub>i</sub></span>
+                </div>
+
+
+                <div class="revision-item">
+                    <strong>Dalton's Law</strong>
+                    <span>Total pressure is the sum of partial pressures.</span>
+                </div>
+
+
+                <div class="revision-item">
+                    <strong>Ideal Solution</strong>
+                    <span>Approximately follows Raoult's law.</span>
+                </div>
+
+
+                <div class="revision-item">
+                    <strong>Positive Deviation</strong>
+                    <span>Higher vapour pressure than ideal prediction.</span>
+                </div>
+
+
+                <div class="revision-item">
+                    <strong>Negative Deviation</strong>
+                    <span>Lower vapour pressure than ideal prediction.</span>
+                </div>
+
+
+                <div class="revision-item">
+                    <strong>Minimum-Boiling Azeotrope</strong>
+                    <span>Associated with positive deviation.</span>
+                </div>
+
+
+                <div class="revision-item">
+                    <strong>Maximum-Boiling Azeotrope</strong>
+                    <span>Associated with negative deviation.</span>
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FINAL CONCEPT SUMMARY
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="content-card">
+
+                <h2 style="margin-bottom:18px;">
+                    🧠 Chapter 1 — Concept Summary
+                </h2>
+
+                <p>
+                    Solutions are homogeneous mixtures consisting of a solvent
+                    and one or more solutes. Their concentration can be expressed
+                    through mass percentage, volume percentage, mass-by-volume
+                    percentage, ppm, mole fraction, molarity and molality.
+                </p>
+
+                <p>
+                    Solubility describes the maximum amount of solute that can
+                    dissolve under specified conditions. Temperature and pressure
+                    influence solubility differently for solids and gases.
+                </p>
+
+                <p>
+                    Henry's law explains the pressure-solubility relationship
+                    for gases dissolved in liquids, while Raoult's law describes
+                    vapour-pressure behaviour of components in ideal solutions.
+                </p>
+
+                <p>
+                    Ideal solutions show negligible changes in enthalpy and
+                    volume on mixing, whereas non-ideal solutions show positive
+                    or negative deviations depending upon the relative strength
+                    of intermolecular interactions.
+                </p>
+
+                <p>
+                    Azeotropes are especially important in separation chemistry
+                    because their liquid and vapour compositions become identical
+                    at the azeotropic composition, preventing complete separation
+                    through ordinary distillation.
+                </p>
+
+                <div class="insight">
+
+                    <strong>Board Exam Focus:</strong>
+
+                    Concentration formulas, temperature dependence of molarity
+                    and molality, Henry's law, Raoult's law, ideal/non-ideal
+                    solutions, positive/negative deviations and azeotropes are
+                    especially important concepts to understand thoroughly.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CHAPTER NAVIGATION
+        ====================================================== -->
+
+        <div class="chapter-navigation">
+
+            <a
+                href="chemistry.html"
+                class="chapter-link">
+                ← Chemistry Home
+            </a>
+
+            <a
+                href="chemistry-chapter-1-mindmap.html"
+                class="chapter-link">
+                🧠 Chapter 1 Mind Map
+            </a>
+
+            <a
+                href="chemistry-chapter-1-pyq.html"
+                class="chapter-link">
+                📝 Chapter 1 PYQs →
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="footer-title">
+            🧪 Shorveer Notes
+        </div>
+
+        <p class="footer-text">
+            Class 12 Chemistry • Chapter 1 • Solutions
+        </p>
+
+        <p class="footer-text" style="margin-top:8px;">
+            Long Notes designed for concept clarity, revision and board
+            examination preparation.
+        </p>
+
+        <p
+            class="footer-text"
+            style="margin-top:18px; opacity:0.45;">
+            © 2026 Shorveer Notes. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- BACK TO TOP -->
+
+    <button
+        id="backTop"
+        onclick="window.scrollTo({top:0, behavior:'smooth'})"
+        aria-label="Back to top">
+        ↑
+    </button>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /* =========================================================
+           THEME
+        ========================================================== */
+
+        const themeButton =
+            document.getElementById("themeButton");
+
+
+        function toggleTheme() {
+
+            document.body.classList.toggle("dark-mode");
+
+            const dark =
+                document.body.classList.contains("dark-mode");
+
+            themeButton.textContent =
+                dark ? "☀️" : "🌙";
+
+            localStorage.setItem(
+                "shorveer-theme",
+                dark ? "dark" : "light"
+            );
+        }
+
+
+        /* =========================================================
+           LOAD SAVED THEME
+        ========================================================== */
+
+        const savedTheme =
+            localStorage.getItem("shorveer-theme");
+
+        if (savedTheme === "dark") {
+
+            document.body.classList.add("dark-mode");
+
+            themeButton.textContent = "☀️";
+        }
+
+
+        /* =========================================================
+           READING PROGRESS
+        ========================================================== */
+
+        window.addEventListener("scroll", () => {
+
+            const scrollTop =
+                window.scrollY;
+
+            const documentHeight =
+                document.documentElement.scrollHeight
+                - window.innerHeight;
+
+            const progress =
+                documentHeight > 0
+                    ? (scrollTop / documentHeight) * 100
+                    : 0;
+
+            document.getElementById(
+                "readingProgress"
+            ).style.width =
+                progress + "%";
+
+
+            /* Back to top */
+
+            const backTop =
+                document.getElementById("backTop");
+
+            if (scrollTop > 500) {
+
+                backTop.classList.add("show");
+
+            } else {
+
+                backTop.classList.remove("show");
+
+            }
+
+        });
+
+
+        /* =========================================================
+           SCROLL REVEAL
+        ========================================================== */
+
+        const sections =
+            document.querySelectorAll(".section");
+
+
+        const observer =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.10
+                }
+
+            );
+
+
+        sections.forEach(section => {
+
+            observer.observe(section);
+
+        });
+
+
+        /* =========================================================
+           ACTIVE QUICK NAV
+        ========================================================== */
+
+        const navLinks =
+            document.querySelectorAll(
+                ".quick-nav a"
+            );
+
+
+        const observedSections =
+            document.querySelectorAll(
+                "section[id]"
+            );
+
+
+        window.addEventListener("scroll", () => {
+
+            let current = "";
+
+            observedSections.forEach(section => {
+
+                const sectionTop =
+                    section.offsetTop - 140;
+
+                if (
+                    window.scrollY >=
+                    sectionTop
+                ) {
+
+                    current =
+                        section.getAttribute("id");
+
+                }
+
+            });
+
+
+            navLinks.forEach(link => {
+
+                link.style.color = "";
+
+                if (
+                    link.getAttribute("href")
+                    === "#" + current
+                ) {
+
+                    link.style.color =
+                        "var(--primary)";
+
+                }
+
+            });
+
+        });
+
+
+        /* =========================================================
+           KEYBOARD SHORTCUT
+        ========================================================== */
+
+        document.addEventListener(
+            "keydown",
+            (event) => {
+
+                if (
+                    event.key.toLowerCase()
+                    === "d"
+                    &&
+                    !["INPUT","TEXTAREA"].includes(
+                        document.activeElement.tagName
+                    )
+                ) {
+
+                    toggleTheme();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
