@@ -1,0 +1,1916 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Class 12 Physics Chapter 1: Electric Charges and Fields - Official CBSE Previous Year Questions (1M, 2M, 3M, 5M) with Step-by-Step Marking Solutions by Shorveer Notes.">
+  <meta name="author" content="Jatin Sandilya">
+  <meta name="theme-color" content="#07111f">
+  <title>Chapter 1: Solved Board PYQs | Shorveer Notes</title>
+
+  <!-- MathJax Configuration -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: { scale: 0.95, displayAlign: 'left' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+  <style>
+    :root {
+      --bg: #f5f8fc;
+      --bg-secondary: #ffffff;
+      --surface: rgba(255, 255, 255, 0.85);
+      --surface-solid: #ffffff;
+      --text: #0f172a;
+      --text-soft: #64748b;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #7c3aed;
+      --accent: #06b6d4;
+      --border: rgba(15, 23, 42, 0.09);
+      --shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 25px 65px rgba(37, 99, 235, 0.16);
+      --radius: 20px;
+      --transition: 0.3s cubic-bezier(.2,.8,.2,1);
+    }
+
+    body.dark {
+      --bg: #050b14;
+      --bg-secondary: #08111f;
+      --surface: rgba(15, 23, 42, 0.82);
+      --surface-solid: #0f172a;
+      --text: #f8fafc;
+      --text-soft: #94a3b8;
+      --border: rgba(255, 255, 255, 0.09);
+      --shadow: 0 20px 55px rgba(0, 0, 0, 0.35);
+      --shadow-hover: 0 25px 70px rgba(37, 99, 235, 0.2);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      transition: background .35s ease, color .35s ease;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+
+    /* BACKGROUND ORBS */
+    .background {
+      position: fixed; inset: 0; z-index: -5; overflow: hidden; pointer-events: none;
+    }
+    .orb {
+      position: absolute; width: 440px; height: 440px; border-radius: 50%;
+      filter: blur(80px); opacity: .16; animation: floatOrb 12s ease-in-out infinite;
+    }
+    .orb.one { background: #2563eb; top: -180px; left: -120px; }
+    .orb.two { background: #7c3aed; right: -160px; top: 25%; animation-delay: -4s; }
+    .orb.three { background: #06b6d4; bottom: -200px; left: 35%; animation-delay: -7s; }
+    @keyframes floatOrb {
+      0%,100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(35px,-25px,0) scale(1.08); }
+    }
+
+    /* HEADER */
+    header {
+      position: sticky; top: 0; z-index: 1000; width: 100%;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--surface-solid) 76%, transparent);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    }
+    .nav {
+      width: min(1180px, 92%); margin: auto; min-height: 74px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -.5px; }
+    .brand-icon {
+      width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; font-size: 20px; box-shadow: 0 10px 25px rgba(37,99,235,.25);
+    }
+    .brand-name { font-size: 20px; }
+    .brand-name span { color: var(--primary); }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .nav-links a {
+      padding: 10px 14px; border-radius: 10px; color: var(--text-soft);
+      font-size: 14px; font-weight: 650; transition: var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary); background: rgba(37,99,235,.08);
+    }
+    .icon-btn {
+      width: 42px; height: 42px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text); border-radius: 12px;
+      transition: var(--transition);
+    }
+
+    /* HERO */
+    .article-header { width: min(1180px, 92%); margin: auto; padding: 45px 0 25px; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px; font-size: 13px;
+      font-weight: 700; color: var(--text-soft); margin-bottom: 16px;
+    }
+    .breadcrumb a:hover { color: var(--primary); }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px;
+      border-radius: 999px; background: rgba(37,99,235,.09); color: var(--primary);
+      font-size: 13px; font-weight: 800; border: 1px solid rgba(37,99,235,.12); margin-bottom: 14px;
+    }
+    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; }
+    .article-header h1 {
+      font-size: clamp(28px, 4.5vw, 44px); letter-spacing: -1.5px; margin-bottom: 10px; line-height: 1.15;
+    }
+    .gradient-text {
+      background: linear-gradient(100deg, #2563eb, #7c3aed, #06b6d4);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+
+    /* CONTAINER & TABS */
+    .container { width: min(1180px, 92%); margin: auto; padding-bottom: 80px; }
+
+    .section-title {
+      font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin: 40px 0 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+
+    /* QUESTION CARD SYSTEM */
+    .pyq-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 26px; margin-bottom: 22px; box-shadow: var(--shadow); backdrop-filter: blur(12px);
+      transition: var(--transition);
+    }
+    .pyq-card:hover { border-color: rgba(37,99,235,0.3); }
+
+    .pyq-top {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;
+      flex-wrap: wrap; gap: 10px;
+    }
+    .tag-group { display: flex; align-items: center; gap: 8px; }
+    .pyq-tag-marks {
+      font-size: 11.5px; font-weight: 800; text-transform: uppercase; padding: 4px 10px;
+      border-radius: 6px; background: rgba(37,99,235,0.1); color: var(--primary);
+    }
+    .pyq-tag-year {
+      font-size: 12px; font-weight: 700; color: var(--text-soft);
+    }
+
+    .pyq-question {
+      font-size: 15.5px; font-weight: 700; line-height: 1.65; color: var(--text); margin-bottom: 16px;
+    }
+
+    /* MCQS INTERACTIVE OPTIONS */
+    .mcq-options { display: flex; flex-direction: column; gap: 9px; margin-bottom: 15px; }
+    .mcq-option {
+      display: flex; align-items: center; gap: 10px; padding: 11px 16px; border-radius: 12px;
+      border: 1px solid var(--border); background: color-mix(in srgb, var(--surface-solid) 85%, transparent);
+      cursor: pointer; font-size: 14px; font-weight: 600; transition: var(--transition);
+    }
+    .mcq-option:hover { border-color: var(--primary); transform: translateX(3px); }
+    .mcq-option input { accent-color: var(--primary); }
+
+    .btn-action {
+      display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 10px;
+      font-weight: 750; font-size: 13px; border: none; transition: var(--transition);
+      background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white;
+    }
+    .btn-action:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,99,235,0.25); }
+
+    .solution-box {
+      display: none; margin-top: 16px; padding: 18px 22px; border-radius: 14px;
+      background: color-mix(in srgb, var(--surface-solid) 92%, transparent);
+      border-left: 4px solid var(--primary); font-size: 14px; line-height: 1.7;
+    }
+    .solution-box.show { display: block; }
+    .solution-box.correct { border-left-color: #22c55e; background: rgba(34,197,94,0.06); }
+    .solution-box.incorrect { border-left-color: #ef4444; background: rgba(239,68,68,0.06); }
+
+    .step-item { margin-bottom: 8px; }
+    .step-item strong { color: var(--primary); }
+
+    /* SVG DIAGRAMS WITHIN QUESTIONS */
+    .q-diagram-frame {
+      display: flex; justify-content: center; align-items: center; margin: 15px 0;
+      background: color-mix(in srgb, var(--surface-solid) 92%, transparent);
+      border: 1px solid var(--border); border-radius: 14px; padding: 15px;
+    }
+
+    /* MISSION BAR */
+    .mission-bar {
+      margin-top: 60px; padding: 35px; border-radius: 24px;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 10%, var(--surface)), var(--surface));
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+    }
+    .mission-bar h3 { font-size: 22px; margin-bottom: 8px; }
+    .mission-bar p { color: var(--text-soft); font-size: 14px; margin-bottom: 24px; }
+    .action-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;
+    }
+    .action-card {
+      background: var(--surface-solid); border: 1px solid var(--border); border-radius: 16px;
+      padding: 20px; transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .action-card:hover { transform: translateY(-4px); border-color: var(--primary); box-shadow: var(--shadow-hover); }
+    .action-badge {
+      display: inline-block; font-size: 11px; font-weight: 800; text-transform: uppercase;
+      color: var(--primary); margin-bottom: 8px;
+    }
+    .action-card h4 { font-size: 16px; margin-bottom: 6px; }
+    .action-card p { font-size: 13px; color: var(--text-soft); line-height: 1.5; margin-bottom: 15px; }
+    .action-link {
+      display: inline-flex; align-items: center; gap: 6px; font-weight: 800; font-size: 13.5px;
+      color: var(--primary);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 60px 0 25px;
+    }
+    .footer-inner { width: min(1180px, 92%); margin: auto; }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 35px; padding-bottom: 45px;
+    }
+    .footer-brand p { max-width: 330px; color: var(--text-soft); line-height: 1.7; font-size: 14px; margin-top: 15px; }
+    .footer-column h4 { margin-bottom: 17px; font-size: 15px; }
+    .footer-column a { display: block; color: var(--text-soft); font-size: 14px; margin-bottom: 11px; transition: var(--transition); }
+    .footer-column a:hover { color: var(--primary); transform: translateX(3px); }
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 22px; display: flex;
+      justify-content: space-between; align-items: center; flex-wrap: wrap;
+      gap: 15px; color: var(--text-soft); font-size: 13px;
+    }
+    .author-credit { font-weight: 700; color: var(--text); }
+    .author-credit span { color: var(--primary); }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Orbs -->
+  <div class="background">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <nav class="nav">
+      <a href="/index.html" class="brand">
+        <div class="brand-icon">S</div>
+        <div class="brand-name">Shorveer<span>Notes</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/physics/index.html" class="active">Physics Hub</a>
+        <a href="/chemistry/index.html">Chemistry</a>
+        <a href="/mathematics/index.html">Mathematics</a>
+        <a href="/exam-info.html">Exam Info</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeButton" aria-label="Toggle theme">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Header -->
+  <div class="article-header">
+    <div class="breadcrumb">
+      <a href="/index.html">Home</a> <span>/</span>
+      <a href="/physics/index.html">Physics</a> <span>/</span>
+      <span>Chapter 1 PYQs</span>
+    </div>
+    <div class="badge">
+      <span class="badge-dot"></span> Official Board Examination Archive
+    </div>
+    <h1>Electric Charges and Fields: <span class="gradient-text">Solved CBSE PYQs</span></h1>
+    <p style="color: var(--text-soft); max-width: 760px; font-size: 15px; line-height: 1.6;">
+      Classified topic-wise questions from past CBSE Board Papers (1M MCQs, Assertion-Reasoning, 2M, 3M, and 5M Long Numericals). Test your knowledge interactively and study the step-by-step marking schemes.
+    </p>
+  </div>
+
+  <main class="container">
+
+    <!-- ================= PART 1: 1-MARK MCQS ================= -->
+    <div class="section-title">🎯 Section A: Objective & MCQs (1 Mark Each)</div>
+
+    <!-- MCQ 1 -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">1 Mark</span>
+          <span class="pyq-tag-year">CBSE 2022 Term-1</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q1. A negatively charged body $X$ experiences electrostatic repulsion from another charged body $Y$. An uncharged or charged body $Z$ is brought near $Y$ and experiences electrostatic attraction towards $Y$. Which of the following statements represents the correct state of body $Z$?
+      </div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="pyq1" value="A"> (a) Positively charged body only</label>
+        <label class="mcq-option"><input type="radio" name="pyq1" value="B"> (b) Negatively charged body only</label>
+        <label class="mcq-option"><input type="radio" name="pyq1" value="C"> (c) Neutral or positively charged</label>
+        <label class="mcq-option"><input type="radio" name="pyq1" value="D"> (d) Neutral or negatively charged</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('pyq1', 'C', 'sol_pyq1', 'Since $X$ is negatively charged and repelled by $Y$, body $Y$ must also be <strong>negatively charged</strong>. Body $Z$ is attracted to negative body $Y$. Attraction occurs between opposite charges (positive and negative) as well as between a charged body and a neutral body due to induced polarization. Hence, $Z$ can be <strong>neutral or positively charged</strong>.')">Verify Answer & Solution</button>
+      <div id="sol_pyq1" class="solution-box"></div>
+    </div>
+
+    <!-- MCQ 2 -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">1 Mark</span>
+          <span class="pyq-tag-year">CBSE 2022 Term-1</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q2. In a Millikan-type chamber experiment, three microscopic latex spheres carry initial electric charges of $+3e$, $+5e$, and $-3e$ respectively. The three spheres are momentarily brought into simultaneous physical contact and then separated. Which of the following charge combinations is physically possible on the separated spheres?
+      </div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="pyq2" value="A"> (a) $+5e, -4e, +5e$</label>
+        <label class="mcq-option"><input type="radio" name="pyq2" value="B"> (b) $+6e, +6e, -7e$</label>
+        <label class="mcq-option"><input type="radio" name="pyq2" value="C"> (c) $-4e, +3.5e, +5.5e$</label>
+        <label class="mcq-option"><input type="radio" name="pyq2" value="D"> (d) $+5e, -8e, +7e$</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('pyq2', 'B', 'sol_pyq2', 'By the <strong>Law of Conservation of Charge</strong>, the total initial charge must equal total final charge: $Q_{\\text{initial}} = (+3e) + (+5e) + (-3e) = +5e$. Also, by <strong>Quantisation of Charge</strong>, fractional charges like $3.5e$ are physically impossible. Checking option (b): $(+6e) + (+6e) + (-7e) = +5e$, which satisfies both conservation and quantization laws.')">Verify Answer & Solution</button>
+      <div id="sol_pyq2" class="solution-box"></div>
+    </div>
+
+    <!-- MCQ 3 -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">1 Mark</span>
+          <span class="pyq-tag-year">CBSE 2022 Term-1</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q3. An object initially possesses a net positive charge of $+1.0\text{ C}$. It then gains $5.0 \times 10^{18}$ electrons. The final net charge on the object becomes:
+      </div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="pyq3" value="A"> (a) $-0.80\text{ C}$</label>
+        <label class="mcq-option"><input type="radio" name="pyq3" value="B"> (b) $+0.80\text{ C}$</label>
+        <label class="mcq-option"><input type="radio" name="pyq3" value="C"> (c) $+1.80\text{ C}$</label>
+        <label class="mcq-option"><input type="radio" name="pyq3" value="D"> (d) $+0.20\text{ C}$</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('pyq3', 'D', 'sol_pyq3', 'Charge added by $5.0 \\times 10^{18}$ electrons: $q_{\\text{added}} = -n e = -(5.0 \\times 10^{18}) \\times (1.6 \\times 10^{-19}\\text{ C}) = -0.80\\text{ C}$.<br>Final net charge: $Q_{\\text{final}} = Q_{\\text{initial}} + q_{\\text{added}} = 1.0\\text{ C} - 0.80\\text{ C} = \\mathbf{+0.20\\text{ C}}$.')">Verify Answer & Solution</button>
+      <div id="sol_pyq3" class="solution-box"></div>
+    </div>
+
+    <!-- MCQ 4 (With SVG Coordinate Geometry Diagram) -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">1 Mark</span>
+          <span class="pyq-tag-year">CBSE 2022 Term-1</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q4. Three charges $q, -q$, and $q_0$ are placed on coordinate axes as shown below: $+q$ is at $(a, 0)$, $-q$ is at $(0, a)$, and test charge $q_0$ is fixed at origin $(0, 0)$. Taking $k = \frac{1}{4\pi\varepsilon_0}$, determine the net electrostatic force on $q_0$.
+      </div>
+      
+      <div class="q-diagram-frame">
+        <svg viewBox="0 0 260 180" width="100%" height="180">
+          <line x1="20" y1="130" x2="240" y2="130" stroke="var(--text-soft)" stroke-width="2" marker-end="url(#arr)" />
+          <line x1="70" y1="170" x2="70" y2="20" stroke="var(--text-soft)" stroke-width="2" marker-end="url(#arr)" />
+          <text x="235" y="148" font-size="12" font-weight="700" fill="var(--text)">x</text>
+          <text x="50" y="30" font-size="12" font-weight="700" fill="var(--text)">y</text>
+          <!-- Origin q0 -->
+          <circle cx="70" cy="130" r="7" fill="var(--primary)" />
+          <text x="75" y="146" font-size="11" font-weight="800" fill="var(--text)">q₀ (0,0)</text>
+          <!-- Charge +q at (a,0) -->
+          <circle cx="180" cy="130" r="7" fill="#ef4444" />
+          <text x="175" y="148" font-size="11" font-weight="800" fill="#ef4444">+q (a,0)</text>
+          <!-- Charge -q at (0,a) -->
+          <circle cx="70" cy="40" r="7" fill="#3b82f6" />
+          <text x="15" y="45" font-size="11" font-weight="800" fill="#3b82f6">-q (0,a)</text>
+          <!-- Distance markers -->
+          <text x="125" y="122" font-size="11" fill="var(--text-soft)">a</text>
+          <text x="78" y="85" font-size="11" fill="var(--text-soft)">a</text>
+        </svg>
+      </div>
+
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="pyq4" value="A"> (a) $0$</label>
+        <label class="mcq-option"><input type="radio" name="pyq4" value="B"> (b) $\frac{2kqq_0}{a^2}$</label>
+        <label class="mcq-option"><input type="radio" name="pyq4" value="C"> (c) $\frac{\sqrt{2}kqq_0}{a^2}$</label>
+        <label class="mcq-option"><input type="radio" name="pyq4" value="D"> (d) $\frac{1}{\sqrt{2}}\frac{kqq_0}{a^2}$</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('pyq4', 'C', 'sol_pyq4', '1. Force due to $+q$ on $q_0$ acts along negative $x$-axis (repulsion): $\\vec{F}_1 = -\\frac{kqq_0}{a^2}\\hat{i}$.<br>2. Force due to $-q$ on $q_0$ acts along positive $y$-axis (attraction): $\\vec{F}_2 = +\\frac{kqq_0}{a^2}\\hat{j}$.<br>3. Since $\\vec{F}_1 \\perp \\vec{F}_2$, resultant magnitude is: $|\\vec{F}| = \\sqrt{F_1^2 + F_2^2} = \\sqrt{\\left(\\frac{kqq_0}{a^2}\\right)^2 + \\left(\\frac{kqq_0}{a^2}\\right)^2} = \\mathbf{\\frac{\\sqrt{2}kqq_0}{a^2}}$.')">Verify Answer & Solution</button>
+      <div id="sol_pyq4" class="solution-box"></div>
+    </div>
+
+    <!-- MCQ 5 (Dipole Stability CFPQ) -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">1 Mark</span>
+          <span class="pyq-tag-year">CBSE CFPQ Competency Question</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q5. Two insulated dielectric rods with opposite static charges ($+q$ and $-q$) at their extremities are pivoted at their centers. They can rotate freely in the plane. In which of the given orientations are the rods in a state of <strong>stable equilibrium</strong> (such that they return to original orientation when slightly displaced)?
+      </div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="pyq5" value="A"> (a) Orientations P and Q are stable</label>
+        <label class="mcq-option"><input type="radio" name="pyq5" value="B"> (b) Orientations Q and R are stable</label>
+        <label class="mcq-option"><input type="radio" name="pyq5" value="C"> (c) Orientations Q and S are stable; P and R are unstable</label>
+        <label class="mcq-option"><input type="radio" name="pyq5" value="D"> (d) Orientations P and R are stable</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('pyq5', 'C', 'sol_pyq5', 'In configurations $Q$ and $S$, opposite charges ($+$ and $-$) lie closest to each other, minimizing mutual potential energy ($U < 0$). Any angular displacement causes an attractive restoring torque pulling them back. Hence, <strong>Q and S are stable</strong>, whereas $P$ and $R$ have like charges closest to each other, creating maximum repulsive unstable potential energy.')">Verify Answer & Solution</button>
+      <div id="sol_pyq5" class="solution-box"></div>
+    </div>
+
+    <!-- ================= PART 2: ASSERTION & REASON ================= -->
+    <div class="section-title">⚖️ Section B: Assertion & Reason (1 Mark Each)</div>
+    <p style="color:var(--text-soft); font-size:13.5px; margin-bottom:15px;">
+      Directions: (a) Both A and R are true and R is correct explanation of A. (b) Both A and R are true but R is NOT correct explanation. (c) A is true but R is false. (d) A is false but R is true.
+    </p>
+
+    <!-- AR 1 -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">1 Mark</span>
+          <span class="pyq-tag-year">CBSE Board Standard</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        <strong>Assertion (A):</strong> The magnitude of electric charge on an object is strictly relativistic invariant.<br>
+        <strong>Reason (R):</strong> The measured electric charge does not depend on the relative velocity of the particle or the frame of reference.
+      </div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="ar1" value="A"> (a) Both A and R are true, and R is the correct explanation of A</label>
+        <label class="mcq-option"><input type="radio" name="ar1" value="B"> (b) Both A and R are true, but R is not the correct explanation of A</label>
+        <label class="mcq-option"><input type="radio" name="ar1" value="C"> (c) A is true, but R is false</label>
+        <label class="mcq-option"><input type="radio" name="ar1" value="D"> (d) A is false, but R is true</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('ar1', 'A', 'sol_ar1', 'Correct Option is <strong>(a)</strong>. Unlike mass (which increases with speed according to $m = \\frac{m_0}{\\sqrt{1 - v^2/c^2}}$), electric charge $q$ is invariant and remains identical across all inertial and non-inertial reference frames.')">Verify Explanation</button>
+      <div id="sol_ar1" class="solution-box"></div>
+    </div>
+
+    <!-- AR 2 -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">1 Mark</span>
+          <span class="pyq-tag-year">CBSE Board Standard</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        <strong>Assertion (A):</strong> Electrostatic attraction can exist even between a charged body and an uncharged (neutral) body.<br>
+        <strong>Reason (R):</strong> In Coulomb attraction, both interacting bodies must always carry opposite and equal charges.
+      </div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="ar2" value="A"> (a) Both A and R are true, and R is the correct explanation</label>
+        <label class="mcq-option"><input type="radio" name="ar2" value="B"> (b) Both A and R are true, but R is NOT the correct explanation</label>
+        <label class="mcq-option"><input type="radio" name="ar2" value="C"> (c) A is true, but R is false</label>
+        <label class="mcq-option"><input type="radio" name="ar2" value="D"> (d) A is false, but R is true</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('ar2', 'C', 'sol_ar2', 'Correct Option is <strong>(c)</strong>. A charged object induces opposite charge on the near side of a neutral conductor and like charge on the far side. Because unlike induced charges are closer, net attraction occurs. Hence Assertion is true, but Reason is false.')">Verify Explanation</button>
+      <div id="sol_ar2" class="solution-box"></div>
+    </div>
+
+    <!-- ================= PART 3: 2-MARK QUESTIONS ================= -->
+    <div class="section-title">📝 Section C: Short Answer Questions (2 Marks Each)</div>
+
+    <!-- 2M Q1 -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">2 Marks</span>
+          <span class="pyq-tag-year">CBSE Core Syllabus</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q1. Define and explain two fundamental intrinsic properties of electric charges.
+      </div>
+      <button class="btn-action" onclick="toggleSolution('sol_2m1')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_2m1" class="solution-box">
+        <div class="step-item"><strong>1. Quantisation of Charge (1 Mark):</strong> Electric charge exists in discrete packets rather than a continuous spectrum. Any observable charge $q$ is always an integral multiple of basic quantum $e$:
+          $$q = \pm ne \quad (\text{where } n = 1, 2, 3\dots \text{ and } e = 1.6 \times 10^{-19}\text{ C})$$
+        </div>
+        <div class="step-item"><strong>2. Conservation of Charge (1 Mark):</strong> The net electric charge in an isolated physical system remains invariant over time. Charge can neither be created nor destroyed; it can only transfer from one object to another.
+        </div>
+      </div>
+    </div>
+
+    <!-- 2M Q2 -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">2 Marks</span>
+          <span class="pyq-tag-year">NCERT Intext / CBSE Board</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q2. If $10^9$ electrons move out of a neutral body to another body every second, calculate the total time required to accumulate a net negative charge of $1.0\text{ C}$ on the receiving body.
+      </div>
+      <button class="btn-action" onclick="toggleSolution('sol_2m2')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_2m2" class="solution-box">
+        <div class="step-item"><strong>Step 1: Charge transferred per second (1 Mark):</strong>
+          $$q_{\text{per sec}} = n \cdot e = 10^9 \times (1.6 \times 10^{-19}\text{ C}) = 1.6 \times 10^{-10}\text{ C/s}$$
+        </div>
+        <div class="step-item"><strong>Step 2: Total time calculation (1 Mark):</strong>
+          $$t = \frac{Q}{q_{\text{per sec}}} = \frac{1\text{ C}}{1.6 \times 10^{-10}\text{ C/s}} = 6.25 \times 10^9\text{ seconds}$$
+          Converting into years:
+          $$t = \frac{6.25 \times 10^9}{365 \times 24 \times 3600} \approx \mathbf{198.18\text{ Years}}$$
+        </div>
+      </div>
+    </div>
+
+    <!-- 2M Q3 -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">2 Marks</span>
+          <span class="pyq-tag-year">NCERT Exemplar / CBSE</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q3. Estimate the total amount of positive (and negative) charge present in a standard cup ($250\text{ g}$) of pure water.
+      </div>
+      <button class="btn-action" onclick="toggleSolution('sol_2m3')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_2m3" class="solution-box">
+        <div class="step-item"><strong>Step 1: Number of water molecules in 250 g (1 Mark):</strong><br>
+          Molecular mass of $H_2O = 18\text{ g/mol}$.
+          $$N = \left(\frac{250}{18}\right) \times N_A = \left(\frac{250}{18}\right) \times 6.023 \times 10^{23} \approx 8.365 \times 10^{24}\text{ molecules}$$
+        </div>
+        <div class="step-item"><strong>Step 2: Net Charge calculation (1 Mark):</strong><br>
+          One $H_2O$ molecule has 2 protons (from H) + 8 protons (from O) = 10 protons (and 10 electrons).
+          $$Q = N \times 10 \times e = (8.365 \times 10^{24}) \times 10 \times (1.6 \times 10^{-19}\text{ C}) = \mathbf{1.34 \times 10^7\text{ C}}$$
+        </div>
+      </div>
+    </div>
+
+     <!-- ================= SECTION D CONTINUED: 3-MARK QUESTIONS ================= -->
+
+<!-- NCERT SPHERE TOUCHING & DISTANCE HALVED (3 MARKS) -->
+<div class="pyq-card">
+  <div class="pyq-top">
+    <div class="tag-group">
+      <span class="pyq-tag-marks">3 Marks</span>
+      <span class="pyq-tag-year">NCERT Intext / CBSE Core</span>
+    </div>
+  </div>
+  <div class="pyq-question">
+    Q3. A small conducting charged sphere $A$ is suspended by an insulating nylon thread. Another identical conducting sphere $B$ held by an insulating handle is brought close to $A$ such that the separation between their centers is $r_1 = 10\text{ cm}$. The repulsive electrostatic force $F$ is recorded.<br><br>
+    Identical uncharged spheres $C$ and $D$ are then brought in contact with $A$ and $B$ respectively and then removed. Sphere $B$ is now moved closer to $A$ such that the separation becomes $r_2 = 5.0\text{ cm}$. Calculate the new electrostatic force of repulsion $F'$ between $A$ and $B$ in terms of $F$.
+  </div>
+
+  <!-- Pure SVG Diagram for Spheres touching -->
+  <div class="q-diagram-frame">
+    <svg viewBox="0 0 340 130" width="100%" height="130">
+      <!-- Case 1: r = 10cm -->
+      <line x1="40" y1="20" x2="40" y2="60" stroke="var(--text-soft)" stroke-width="1.5" />
+      <circle cx="40" cy="65" r="12" fill="#ef4444" />
+      <text x="35" y="70" font-size="10" font-weight="800" fill="#fff">A</text>
+      
+      <circle cx="140" cy="65" r="12" fill="#ef4444" />
+      <text x="136" y="70" font-size="10" font-weight="800" fill="#fff">B</text>
+      <line x1="40" y1="95" x2="140" y2="95" stroke="var(--text-soft)" stroke-width="1.5" stroke-dasharray="3,3" />
+      <text x="75" y="112" font-size="11" font-weight="700" fill="var(--text)">r = 10 cm</text>
+
+      <!-- Divider -->
+      <line x1="180" y1="15" x2="180" y2="115" stroke="var(--border)" stroke-width="2" />
+
+      <!-- Case 2: r = 5cm, charge q/2 -->
+      <line x1="220" y1="20" x2="220" y2="60" stroke="var(--text-soft)" stroke-width="1.5" />
+      <circle cx="220" cy="65" r="12" fill="#f87171" />
+      <text x="214" y="69" font-size="9" font-weight="800" fill="#fff">q/2</text>
+      
+      <circle cx="280" cy="65" r="12" fill="#f87171" />
+      <text x="274" y="69" font-size="9" font-weight="800" fill="#fff">q'/2</text>
+      <line x1="220" y1="95" x2="280" y2="95" stroke="var(--text-soft)" stroke-width="1.5" stroke-dasharray="3,3" />
+      <text x="235" y="112" font-size="11" font-weight="700" fill="var(--text)">r/2 = 5 cm</text>
+    </svg>
+  </div>
+
+  <button class="btn-action" onclick="toggleSolution('sol_3m_spheres')">Show Step-by-Step Marking Scheme</button>
+  <div id="sol_3m_spheres" class="solution-box">
+    <div class="step-item">
+      <strong>Step 1: Initial Force Expression (1 Mark):</strong><br>
+      Let sphere $A$ have initial charge $q$ and sphere $B$ have charge $q'$. At separation $r = 10\text{ cm}$:
+      $$F = \frac{1}{4\pi\varepsilon_0}\frac{q q'}{r^2}$$
+    </div>
+    <div class="step-item">
+      <strong>Step 2: Charge redistribution after contact (1 Mark):</strong><br>
+      When identical uncharged sphere $C$ touches $A$, the charge divides equally:
+      $$q_A' = \frac{q + 0}{2} = \frac{q}{2}$$
+      Similarly, when identical uncharged sphere $D$ touches $B$:
+      $$q_B' = \frac{q' + 0}{2} = \frac{q'}{2}$$
+    </div>
+    <div class="step-item">
+      <strong>Step 3: New Force Calculation at distance $r' = \frac{r}{2} = 5\text{ cm}$ (1 Mark):</strong><br>
+      $$F' = \frac{1}{4\pi\varepsilon_0}\frac{q_A' q_B'}{(r')^2} = \frac{1}{4\pi\varepsilon_0}\frac{\left(\frac{q}{2}\right)\left(\frac{q'}{2}\right)}{\left(\frac{r}{2}\right)^2} = \frac{1}{4\pi\varepsilon_0}\frac{\frac{q q'}{4}}{\frac{r^2}{4}} = \frac{1}{4\pi\varepsilon_0}\frac{q q'}{r^2} = \mathbf{F}$$
+      <strong>Conclusion:</strong> The electrostatic force of repulsion remains <strong>completely unchanged (Unite/Unaltered = F)</strong>.
+    </div>
+  </div>
+</div>
+
+<!-- NCERT TRIANGLE VERTICES q, q, -q (3 MARKS) -->
+<div class="pyq-card">
+  <div class="pyq-top">
+    <div class="tag-group">
+      <span class="pyq-tag-marks">3 Marks</span>
+      <span class="pyq-tag-year">NCERT Intext / CBSE Board</span>
+    </div>
+  </div>
+  <div class="pyq-question">
+    Q4. Three charges $+q$, $+q$, and $-q$ are placed at vertices $A$, $B$, and $C$ of an equilateral triangle of side $l$. Determine the magnitude and vector direction of the resultant electrostatic force acting on each charge. Also verify whether the sum of all forces on the three charges equals zero.
+  </div>
+
+  <!-- Pure SVG Vector Triangle Diagram -->
+  <div class="q-diagram-frame">
+    <svg viewBox="0 0 300 200" width="100%" height="200">
+      <!-- Triangle ABC -->
+      <polygon points="150,30 60,160 240,160" fill="none" stroke="var(--text-soft)" stroke-width="2" />
+      
+      <!-- Charges -->
+      <circle cx="150" cy="30" r="10" fill="#3b82f6" />
+      <text x="145" y="15" font-size="12" font-weight="800" fill="#3b82f6">C (-q)</text>
+
+      <circle cx="60" cy="160" r="10" fill="#ef4444" />
+      <text x="30" y="180" font-size="12" font-weight="800" fill="#ef4444">A (+q)</text>
+
+      <circle cx="240" cy="160" r="10" fill="#ef4444" />
+      <text x="245" y="180" font-size="12" font-weight="800" fill="#ef4444">B (+q)</text>
+
+      <!-- Side lengths -->
+      <text x="90" y="90" font-size="11" fill="var(--text-soft)">l</text>
+      <text x="200" y="90" font-size="11" fill="var(--text-soft)">l</text>
+      <text x="145" y="180" font-size="11" fill="var(--text-soft)">l</text>
+
+      <!-- Vectors on C -->
+      <line x1="150" y1="30" x2="110" y2="85" stroke="#7c3aed" stroke-width="2" marker-end="url(#arr)" />
+      <line x1="150" y1="30" x2="190" y2="85" stroke="#7c3aed" stroke-width="2" marker-end="url(#arr)" />
+      <line x1="150" y1="30" x2="150" y2="105" stroke="#22c55e" stroke-width="2.5" />
+      <text x="155" y="105" font-size="11" font-weight="800" fill="#22c55e">F₃ = √3 F</text>
+    </svg>
+  </div>
+
+  <button class="btn-action" onclick="toggleSolution('sol_3m_triangle')">Show Step-by-Step Marking Scheme</button>
+  <div id="sol_3m_triangle" class="solution-box">
+    <div class="step-item">
+      <strong>Step 1: Magnitude of Pairwise Force (1 Mark):</strong><br>
+      The electrostatic interaction between any pair of charges has the same magnitude:
+      $$F = \frac{1}{4\pi\varepsilon_0}\frac{q^2}{l^2}$$
+    </div>
+    <div class="step-item">
+      <strong>Step 2: Net Force on Vertex A ($+q$) and Vertex B ($+q$) (1 Mark):</strong><br>
+      • At $A$: Repelled by $+q$ at $B$ ($\vec{F}_{AB}$ along $BA$) and attracted by $-q$ at $C$ ($\vec{F}_{AC}$ along $AC$). Angle between them is $180^\circ - 60^\circ = 120^\circ$.
+      $$F_1 = \sqrt{F^2 + F^2 + 2F^2\cos 120^\circ} = \sqrt{2F^2 - F^2} = \mathbf{F} = \frac{1}{4\pi\varepsilon_0}\frac{q^2}{l^2}$$
+      (Directed along the direction bisecting the angle, parallel to side $BC$).<br>
+      • By exact symmetry, net force at vertex $B$ is also: $\mathbf{F_2 = F}$ (parallel to side $AC$).
+    </div>
+    <div class="step-item">
+      <strong>Step 3: Net Force on Vertex C ($-q$) (1 Mark):</strong><br>
+      • At $C$: Attracted by $+q$ at $A$ along $CA$ and attracted by $+q$ at $B$ along $CB$. Angle between these forces is $60^\circ$.
+      $$F_3 = \sqrt{F^2 + F^2 + 2F^2\cos 60^\circ} = \sqrt{2F^2 + F^2} = \mathbf{\sqrt{3}F} = \mathbf{\frac{\sqrt{3}}{4\pi\varepsilon_0}\frac{q^2}{l^2}}$$
+      (Directed along the angle bisector vertically downwards).<br><br>
+      <strong>Verification of Newton's Third Law:</strong>
+      $$\vec{F}_1 + \vec{F}_2 + \vec{F}_3 = \mathbf{0}$$
+    </div>
+  </div>
+</div>
+
+<!-- ================= SECTION E CONTINUED: 5-MARK LONG QUESTIONS ================= -->
+
+<!-- 5M EQUILIBRIUM OF THREE CHARGES DERIVATION -->
+<div class="pyq-card">
+  <div class="pyq-top">
+    <div class="tag-group">
+      <span class="pyq-tag-marks">5 Marks</span>
+      <span class="pyq-tag-year">CBSE Board Exam Classic</span>
+    </div>
+  </div>
+  <div class="pyq-question">
+    Q2. Two identical positive point charges $+q$ each are held fixed at a distance of $2\text{ m}$ apart in air. A third point charge $Q$ of unknown sign and magnitude is placed along the line joining them such that the entire three-charge system remains in complete electrostatic equilibrium.<br><br>
+    (i) Determine the exact position of charge $Q$ from either charge.<br>
+    (ii) Prove whether the charge $Q$ must be positive or negative.<br>
+    (iii) Calculate the exact magnitude of charge $Q$ in terms of $q$.
+  </div>
+
+  <!-- Pure SVG Number Line Axis Diagram -->
+  <div class="q-diagram-frame">
+    <svg viewBox="0 0 340 100" width="100%" height="100">
+      <line x1="30" y1="50" x2="310" y2="50" stroke="var(--text-soft)" stroke-width="2" />
+      
+      <!-- Point A -->
+      <circle cx="50" cy="50" r="10" fill="#ef4444" />
+      <text x="42" y="30" font-size="12" font-weight="800" fill="#ef4444">+q (A)</text>
+      
+      <!-- Point O (Q) -->
+      <circle cx="180" cy="50" r="9" fill="var(--primary)" />
+      <text x="175" y="30" font-size="12" font-weight="800" fill="var(--primary)">Q (O)</text>
+      
+      <!-- Point B -->
+      <circle cx="300" cy="50" r="10" fill="#ef4444" />
+      <text x="292" y="30" font-size="12" font-weight="800" fill="#ef4444">+q (B)</text>
+
+      <!-- Dimension Lines -->
+      <line x1="50" y1="75" x2="180" y2="75" stroke="var(--text-soft)" stroke-width="1.5" marker-end="url(#arr)" />
+      <text x="110" y="90" font-size="11" fill="var(--text)">x</text>
+
+      <line x1="180" y1="75" x2="300" y2="75" stroke="var(--text-soft)" stroke-width="1.5" marker-end="url(#arr)" />
+      <text x="230" y="90" font-size="11" fill="var(--text)">2 - x</text>
+    </svg>
+  </div>
+
+  <button class="btn-action" onclick="toggleSolution('sol_5m_equilibrium')">Show Step-by-Step Marking Scheme</button>
+  <div id="sol_5m_equilibrium" class="solution-box">
+    <div class="step-item">
+      <strong>Part (i): Position of Charge Q (2 Marks):</strong><br>
+      Let charge $Q$ be placed at distance $x$ from charge $A$ ($+q$). Distance from charge $B$ ($+q$) is $(2 - x)$.<br>
+      For $Q$ to be in equilibrium, the electrostatic forces on $Q$ due to $A$ and $B$ must be equal in magnitude and opposite in direction:
+      $$\frac{1}{4\pi\varepsilon_0}\frac{q Q}{x^2} = \frac{1}{4\pi\varepsilon_0}\frac{q Q}{(2 - x)^2} \implies x^2 = (2 - x)^2$$
+      Taking square root on both sides:
+      $$x = 2 - x \implies 2x = 2 \implies \mathbf{x = 1\text{ m}}$$
+      Hence, charge $Q$ must be placed exactly at the <strong>midpoint ($1\text{ m}$)</strong> between the two $+q$ charges.
+    </div>
+
+    <div class="step-item">
+      <strong>Part (ii): Nature and Sign of Charge Q (1 Mark):</strong><br>
+      If $Q$ were positive, both $+q$ and $Q$ would push the charge at $A$ in the same direction towards the left, making equilibrium impossible.<br>
+      Therefore, charge $Q$ must be <strong>negative</strong> so that its attractive force balances the mutual repulsion between the two $+q$ charges.
+    </div>
+
+    <div class="step-item">
+      <strong>Part (iii): Magnitude of Charge Q (2 Marks):</strong><br>
+      For the entire system to be in equilibrium, net force on charge at $A$ must also be zero:
+      $$F_{\text{net on } A} = F_{AB} + F_{AO} = 0$$
+      $$\frac{1}{4\pi\varepsilon_0}\frac{q \cdot q}{(2)^2} + \frac{1}{4\pi\varepsilon_0}\frac{q \cdot Q}{(1)^2} = 0$$
+      Canceling common factor $\frac{q}{4\pi\varepsilon_0}$:
+      $$\frac{q}{4} + Q = 0 \implies \mathbf{Q = -\frac{q}{4}}$$
+      <strong>Final Conclusion:</strong> The third charge must have a magnitude of $\mathbf{\frac{q}{4}}$ and a <strong>negative sign</strong>, placed at the midpoint $\mathbf{1\text{ m}}$ from either charge.
+    </div>
+  </div>
+</div>
+    <!-- ================= PART 5: 5-MARK LONG QUESTIONS ================= -->
+    <div class="section-title">🏆 Section E: 5-Mark Long Exam Numericals</div>
+
+    <!-- 5M Q1 -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">5 Marks</span>
+          <span class="pyq-tag-year">CBSE Board Standard</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q1. Two identical point charges $+q$ each are separated by a distance of $2\text{ m}$ in air. A third point charge $Q$ of unknown magnitude and sign is placed on the line joining them such that the entire three-charge system remains in electrostatic equilibrium.<br>
+        (i) Find the position of charge $Q$.<br>
+        (ii) Determine the magnitude and sign of charge $Q$.
+      </div>
+      <button class="btn-action" onclick="toggleSolution('sol_5m1')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_5m1" class="solution-box">
+        <div class="step-item"><strong>Part (i): Position of Third Charge $Q$ (2 Marks):</strong><br>
+          Let $Q$ be placed at distance $x$ from one charge. Distance from second charge is $(2 - x)$.
+          For $Q$ to be in equilibrium:
+          $$\frac{1}{4\pi\varepsilon_0}\frac{qQ}{x^2} = \frac{1}{4\pi\varepsilon_0}\frac{qQ}{(2 - x)^2} \implies x^2 = (2 - x)^2$$
+          $$x = 2 - x \implies 2x = 2 \implies \mathbf{x = 1\text{ m}}$$
+          Hence, charge $Q$ must be placed exactly at the <strong>midpoint ($1\text{ m}$)</strong> between the two charges.
+        </div>
+        <div class="step-item"><strong>Part (ii): Sign and Magnitude of Charge $Q$ (3 Marks):</strong><br>
+          For the entire system to be in equilibrium, net force on one of the outer $+q$ charges must also be zero:
+          $$F_{\text{net on outer } q} = \frac{1}{4\pi\varepsilon_0}\frac{q^2}{(2)^2} + \frac{1}{4\pi\varepsilon_0}\frac{qQ}{(1)^2} = 0$$
+          $$\frac{q^2}{4} + qQ = 0 \implies qQ = -\frac{q^2}{4} \implies \mathbf{Q = -\frac{q}{4}}$$
+          <strong>Conclusion:</strong> The charge $Q$ must be <strong>negative</strong> in nature with magnitude $\mathbf{q/4}$.
+        </div>
+      </div>
+    </div>
+<!-- ================= PAGE 39: OBJECTIVE, ASSERTION & SUBJECTIVE ================= -->
+    <div class="section-title">🎯 Section A: Electric Field & Dipole Very Short answer (1 Mark Each)</div>
+
+
+    <!-- Q1 -->
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">1 Mark</span><span class="pyq-tag-year">CBSE 2022 (Re)</span></div></div>
+      <div class="pyq-question">1. The magnitude of electric field due to a point charge $2q$, at distance $r$ is $E$. Then the magnitude of electric field due to a uniformly charged thin spherical shell of radius $R$ with total charge $q$ at a distance $\frac{r}{2}\ (r \gg R)$ will be:</div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="p39_1" value="A"> (a) $E/4$</label>
+        <label class="mcq-option"><input type="radio" name="p39_1" value="B"> (b) $0$</label>
+        <label class="mcq-option"><input type="radio" name="p39_1" value="C"> (c) $2E$</label>
+        <label class="mcq-option"><input type="radio" name="p39_1" value="D"> (d) $4E$</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('p39_1', 'C', 'sol_p39_1', '1. Field due to point charge $2q$ at distance $r$: $E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{2q}{r^2}$.<br>2. Field due to spherical shell $q$ at distance $r/2$: $E_{\\text{shell}} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{(r/2)^2} = \\frac{4q}{4\\pi\\varepsilon_0 r^2} = \\mathbf{2E}$.')">Verify Answer & Solution</button>
+      <div id="sol_p39_1" class="solution-box"></div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">1 Mark</span><span class="pyq-tag-year">CBSE 2022 (Ev)</span></div></div>
+      <div class="pyq-question">2. A square sheet of side '$a$' is lying parallel to $XY$ plane at $z = a$. The electric field in the region is $\vec{E} = cz^2\hat{k}$. The electric flux through the sheet is:</div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="p39_2" value="A"> (a) $a^4 c$</label>
+        <label class="mcq-option"><input type="radio" name="p39_2" value="B"> (b) $\frac{1}{3}a^4 c$</label>
+        <label class="mcq-option"><input type="radio" name="p39_2" value="C"> (c) $\frac{1}{3}a^4 c$ (duplicate)</label>
+        <label class="mcq-option"><input type="radio" name="p39_2" value="D"> (d) $0$</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('p39_2', 'A', 'sol_p39_2', 'Area vector of square sheet in $XY$ plane is $\\vec{A} = a^2 \\hat{k}$. At $z = a$, electric field is $\\vec{E} = c(a)^2 \\hat{k} = ca^2 \\hat{k}$. Flux $\\Phi = \\vec{E} \\cdot \\vec{A} = (ca^2)\\hat{k} \\cdot (a^2)\\hat{k} = \\mathbf{a^4 c}$.')">Verify Answer & Solution</button>
+      <div id="sol_p39_2" class="solution-box"></div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">1 Mark</span><span class="pyq-tag-year">CBSE SQP 2023 (Ev)</span></div></div>
+      <div class="pyq-question">3. An electric dipole placed in an electric field of intensity $2 \times 10^5\text{ N/C}$ at an angle of $30^\circ$ experiences a torque equal to $4\text{ Nm}$. The charge on the dipole of dipole length $2\text{ cm}$ is:</div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="p39_3" value="A"> (a) $7\,\mu\text{C}$</label>
+        <label class="mcq-option"><input type="radio" name="p39_3" value="B"> (b) $8\text{ mC}$</label>
+        <label class="mcq-option"><input type="radio" name="p39_3" value="C"> (c) $2\text{ mC}$</label>
+        <label class="mcq-option"><input type="radio" name="p39_3" value="D"> (d) $5\text{ mC}$</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('p39_3', 'C', 'sol_p39_3', '$\\tau = pE \\sin\\theta \\implies 4 = (q \\cdot 2a)E \\sin 30^\\circ$<br>$4 = q \\times (0.02) \\times (2 \\times 10^5) \\times 0.5 \\implies 4 = q \\times 2000$<br>$q = \\frac{4}{2000} = 2 \\times 10^{-3}\\text{ C} = \\mathbf{2\\text{ mC}}$.')">Verify Answer & Solution</button>
+      <div id="sol_p39_3" class="solution-box"></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">1 Mark</span><span class="pyq-tag-year">CBSE CFPQ 2023 (Ev)</span></div></div>
+      <div class="pyq-question">4. Electric field lines are pictorial representations of electric fields due to static charges on the plane of a paper. Study the given electric field representation and identify one <strong>INCORRECT</strong> qualitative impression given by this representation:</div>
+      
+      <div class="q-diagram-frame">
+        <svg viewBox="0 0 220 120" width="100%" height="120">
+          <circle cx="70" cy="60" r="14" fill="#ef4444" /><text x="66" y="65" font-size="12" font-weight="900" fill="#fff">+</text>
+          <circle cx="150" cy="60" r="14" fill="#ef4444" /><text x="146" y="65" font-size="12" font-weight="900" fill="#fff">+</text>
+          <circle cx="110" cy="60" r="5" fill="var(--text)" /><text x="105" y="48" font-size="11" font-weight="800" fill="var(--text)">C</text>
+          <circle cx="50" cy="25" r="5" fill="var(--text)" /><text x="35" y="22" font-size="11" font-weight="800" fill="var(--text)">A</text>
+          <circle cx="170" cy="25" r="5" fill="var(--text)" /><text x="175" y="22" font-size="11" font-weight="800" fill="var(--text)">B</text>
+        </svg>
+      </div>
+
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="p39_4" value="A"> (a) The electric field at point $A$ is stronger than at point $B$.</label>
+        <label class="mcq-option"><input type="radio" name="p39_4" value="B"> (b) The electric field distribution is two-dimensional.</label>
+        <label class="mcq-option"><input type="radio" name="p39_4" value="C"> (c) The electric field at point $C$ is zero.</label>
+        <label class="mcq-option"><input type="radio" name="p39_4" value="D"> (d) The electric field always points away from a positive charge.</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('p39_4', 'A', 'sol_p39_4', 'Points $A$ and $B$ are symmetrically positioned relative to identical positive charges, meaning field magnitudes at $A$ and $B$ are equal. Statement (a) is therefore <strong>incorrect</strong>.')">Verify Answer & Solution</button>
+      <div id="sol_p39_4" class="solution-box"></div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">1 Mark</span><span class="pyq-tag-year">CBSE Board (Ev)</span></div></div>
+      <div class="pyq-question">5. If the intensity of an electric field is given by $\vec{E} = 8\hat{i} + 8\hat{j} + \hat{k}$ in $\text{NC}^{-1}$. The electric flux through a surface $\vec{S} = 10\hat{i}\text{ m}^2$ is:</div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="p39_5" value="A"> (a) $10\text{ Nm}^2\text{C}^{-1}$</label>
+        <label class="mcq-option"><input type="radio" name="p39_5" value="B"> (b) $80\text{ Nm}^2\text{C}^{-1}$</label>
+        <label class="mcq-option"><input type="radio" name="p39_5" value="C"> (c) $18\text{ Nm}^2\text{C}^{-1}$</label>
+        <label class="mcq-option"><input type="radio" name="p39_5" value="D"> (d) None</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('p39_5', 'B', 'sol_p39_5', '$\\Phi = \\vec{E} \\cdot \\vec{S} = (8\\hat{i} + 8\\hat{j} + \\hat{k}) \\cdot (10\\hat{i}) = 8 \\times 10 = \\mathbf{80\\text{ Nm}^2\\text{C}^{-1}}$.')">Verify Answer & Solution</button>
+      <div id="sol_p39_5" class="solution-box"></div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">1 Mark</span><span class="pyq-tag-year">CBSE (Ev)</span></div></div>
+      <div class="pyq-question">6. An electric dipole consists of two charges of magnitude placed $0.1\,\mu\text{C}$ separated by a distance of $2\text{ cm}$. The dipole is in an external field of $10^5\text{ N/C}$. What maximum torque does the electric field exert on the dipole?</div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="p39_6" value="A"> (a) $10^{-4}\text{ N}\cdot\text{m}$</label>
+        <label class="mcq-option"><input type="radio" name="p39_6" value="B"> (b) $4 \times 10^{-6}\text{ N}\cdot\text{m}$</label>
+        <label class="mcq-option"><input type="radio" name="p39_6" value="C"> (c) $2 \times 10^{-4}\text{ N}\cdot\text{m}$</label>
+        <label class="mcq-option"><input type="radio" name="p39_6" value="D"> (d) $3 \times 10^{-4}\text{ N}\cdot\text{m}$</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('p39_6', 'C', 'sol_p39_6', '$\\tau_{\\text{max}} = pE = q(2a)E = (0.1 \times 10^{-6}\\text{ C}) \times (0.02\\text{ m}) \times (10^5\\text{ N/C}) = \\mathbf{2 \\times 10^{-4}\\text{ N}\\cdot\\text{m}}$.')">Verify Answer & Solution</button>
+      <div id="sol_p39_6" class="solution-box"></div>
+    </div>
+
+
+    <!-- ================= SECTION B: ASSERTION AND REASON ================= -->
+    <div class="section-title">⚖️ Section B: Assertion and Reason (1 Mark Each)</div>
+
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">1 Mark</span><span class="pyq-tag-year">CBSE 2022 (Re)</span></div></div>
+      <div class="pyq-question">1. <strong>Assertion (A):</strong> A negative charge in an electric field starts to move along the direction of the electric field.<br><strong>Reason (R):</strong> On a negative charge, a force acts in the opposite direction of the electric field.</div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="p39_ar1" value="A"> (a) Both A and R are true, and R is the correct explanation of A.</label>
+        <label class="mcq-option"><input type="radio" name="p39_ar1" value="B"> (b) Both A and R are true, but R is not the correct explanation of A.</label>
+        <label class="mcq-option"><input type="radio" name="p39_ar1" value="C"> (c) A is true, but R is false.</label>
+        <label class="mcq-option"><input type="radio" name="p39_ar1" value="D"> (d) A is false, but R is true.</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('p39_ar1', 'D', 'sol_p39_ar1', 'Correct Option is <strong>(d)</strong>. Force on negative charge is $\\vec{F} = -e\\vec{E}$ (opposite to field). Thus Assertion A is false, but Reason R is true.')">Verify Explanation</button>
+      <div id="sol_p39_ar1" class="solution-box"></div>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">1 Mark</span><span class="pyq-tag-year">CBSE CFPQ 2022 (Re)</span></div></div>
+      <div class="pyq-question">2. <strong>Assertion (A):</strong> An electric dipole is in stable equilibrium when placed in a uniform electric field with its dipole moment opposite to the field.<br><strong>Reason (R):</strong> No torque acts on an electric dipole when its dipole moment is in a direction opposite to the field.</div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="p39_ar2" value="A"> (a) Both A and R are true, and R is the correct explanation of A.</label>
+        <label class="mcq-option"><input type="radio" name="p39_ar2" value="B"> (b) Both A and R are true, but R is not the correct explanation of A.</label>
+        <label class="mcq-option"><input type="radio" name="p39_ar2" value="C"> (c) A is true, but R is false.</label>
+        <label class="mcq-option"><input type="radio" name="p39_ar2" value="D"> (d) A is false, but R is true.</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('p39_ar2', 'D', 'sol_p39_ar2', 'Correct Option is <strong>(d)</strong>. Opposite direction ($\\theta = 180^\\circ$) is unstable equilibrium. Hence A is false, while R is true.')">Verify Explanation</button>
+      <div id="sol_p39_ar2" class="solution-box"></div>
+    </div>
+
+
+    <!-- ================= SECTION C: SUBJECTIVE (VERY SHORT ANSWER) ================= -->
+    <div class="section-title">🎯 Section A: Electric Field & Dipole Short answer (2 Mark Each)</div>
+
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">2 Marks</span><span class="pyq-tag-year">CBSE 2020 (Un)</span></div></div>
+      <div class="pyq-question">1. The work done in moving a charge particle between two points in a uniform electric field, does not depend on the path followed by the particle. Why?</div>
+      <button class="btn-action" onclick="toggleSolution('sol_p39_vsa1')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p39_vsa1" class="solution-box">
+        <div class="step-item">Because electrostatic field is a <strong>conservative field</strong> (1 Mark). Work done depends exclusively on the initial and final positions: $W = q\Delta V$ (1 Mark).</div>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">2 Marks</span><span class="pyq-tag-year">CBSE 2019 (Cr)</span></div></div>
+      <div class="pyq-question">2. Draw the pattern of electric field lines, when a point charge $-Q$ is kept near an uncharged conducting plate.</div>
+      <button class="btn-action" onclick="toggleSolution('sol_p39_vsa2')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p39_vsa2" class="solution-box">
+        <div class="step-item">Positive and negative charges get induced on the metal surface due to electrostatic induction (1 Mark). Field lines terminate perpendicularly onto the conducting plate surface (1 Mark).</div>
+      </div>
+    </div>
+    <!-- ================= PAGE 40: VSA, CONCEPTUAL & SHORT ANSWER NUMERICALS ================= -->
+    
+    <!-- Top small VSA from page 40 top -->
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">2 Marks</span><span class="pyq-tag-year">CBSE Board Exam</span></div></div>
+      <div class="pyq-question">Q3. (b) If the net electric flux through a closed surface is zero, what can be said about the net charge enclosed inside that Gaussian surface?</div>
+      <button class="btn-action" onclick="toggleSolution('sol_p40_vsa')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p40_vsa" class="solution-box">
+        <div class="step-item">By Gauss's Theorem, total flux $\Phi = \frac{q_{\text{enclosed}}}{\varepsilon_0}$ (1 Mark).<br>If net flux is zero, it implies that the **net algebraic charge enclosed inside the Gaussian surface is strictly zero** ($q_{\text{enclosed}} = 0$), though equal and opposite charges may exist inside (1 Mark).</div>
+      </div>
+    </div>
+
+    <!-- Conceptual Q3: Spherical vs Cylindrical Symmetry -->
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">2 Marks</span><span class="pyq-tag-year">CBSE Board Conceptual</span></div></div>
+      <div class="pyq-question">Q3. What does the statement, "The electric field of a point charge exhibits spherical symmetry, while that of an electric dipole displays cylindrical symmetry," signify?</div>
+      <button class="btn-action" onclick="toggleSolution('sol_p40_q3')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p40_q3" class="solution-box">
+        <div class="step-item"><strong>1. Point Charge (Spherical Symmetry - 1 Mark):</strong> The field magnitude $E = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}$ remains constant at all points on the surface of a sphere of radius $r$ centered around the charge. It is independent of direction, giving spherical symmetry.</div>
+        <div class="step-item"><strong>2. Electric Dipole (Cylindrical Symmetry - 1 Mark):</strong> The field remains uniform at all locations situated along a cylindrical surface of radius $r$ aligned symmetrically along the dipole's axis. Its appearance is consistent within all planes intersecting the dipole axis, hence possessing cylindrical symmetry.</div>
+      </div>
+    </div>
+
+    <!-- Short Answer Type Questions (3 Marks) -->
+    <div class="section-title">📝 Section D: Short Answer Type Questions (3 Marks Each)</div>
+
+    <!-- Q1: Zero Field Numerical with Diagram Framework -->
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">3 Marks</span><span class="pyq-tag-year">CBSE Board Exam (Ev)</span></div></div>
+      <div class="pyq-question">Q1. Two charges of value $2\,\mu\text{C}$ and $-50\,\mu\text{C}$ are placed $80\text{ cm}$ apart. Calculate the distance of the point from the smaller charge where the net electric field intensity is zero.</div>
+      
+      <div class="q-diagram-frame">
+        <svg viewBox="0 0 300 60" width="100%" height="60">
+          <line x1="30" y1="30" x2="270" y2="30" stroke="var(--text-soft)" stroke-width="2" />
+          <circle cx="50" cy="30" r="6" fill="#ef4444" /><text x="35" y="20" font-size="10" font-weight="800" fill="#ef4444">P (2μC)</text>
+          <circle cx="240" cy="30" r="6" fill="#3b82f6" /><text x="210" y="20" font-size="10" font-weight="800" fill="#3b82f6">-50μC</text>
+          <text x="135" y="22" font-size="11" fill="var(--text)">80 cm</text>
+        </svg>
+      </div>
+
+      <button class="btn-action" onclick="toggleSolution('sol_p40_q1')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p40_q1" class="solution-box">
+        <div class="step-item"><strong>Step 1: Conceptual Position Analysis (1 Mark):</strong><br>Since charges have opposite signs, the neutral point where $E = 0$ lies outside on the line joining them, on the side of the smaller charge ($2\,\mu\text{C}$). Let distance be $x$.</div>
+        <div class="step-item"><strong>Step 2: Mathematical Equating (1 Mark):</strong><br>
+          $$\frac{k q_1}{x^2} = \frac{k |q_2|}{(80 + x)^2} \implies \frac{2 \times 10^{-6}}{x^2} = \frac{50 \times 10^{-6}}{(80 + x)^2}$$
+          $$\frac{1}{x^2} = \frac{25}{(80 + x)^2} \implies \frac{1}{x} = \frac{5}{80 + x}$$
+        </div>
+        <div class="step-item"><strong>Step 3: Final Calculation (1 Mark):</strong><br>
+          $$80 + x = 5x \implies 4x = 80 \implies \mathbf{x = 20\text{ cm}}$$
+          The intensity is zero at a distance of **$20\text{ cm}$** from the smaller charge.
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2: Water molecule torque -->
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">3 Marks</span><span class="pyq-tag-year">CBSE Board Exam</span></div></div>
+      <div class="pyq-question">Q2. Calculate the maximum torque experienced by a water molecule whose electric dipole moment is $6.2 \times 10^{-30}\text{ C}\cdot\text{m}$, when it is placed in a uniform electric field of intensity $10^6\text{ N/C}$.</div>
+      <button class="btn-action" onclick="toggleSolution('sol_p40_q2')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p40_q2" class="solution-box">
+        <div class="step-item"><strong>Given Data (1 Mark):</strong><br>Dipole moment $p = 6.2 \times 10^{-30}\text{ C}\cdot\text{m}$, Electric field $E = 10^6\text{ N/C}$.</div>
+        <div class="step-item"><strong>Formula & Calculation (2 Marks):</strong><br>
+          Torque formula: $\tau = p E \sin\theta$. For maximum torque, $\theta = 90^\circ \implies \sin 90^\circ = 1$.
+          $$\tau_{\text{max}} = (6.2 \times 10^{-30}\text{ C}\cdot\text{m}) \times (10^6\text{ N/C}) = \mathbf{6.2 \times 10^{-24}\text{ N}\cdot\text{m}}$$
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3: NCERT Intext Triangle Vector Field at A, B, C -->
+    <div class="pyq-card">
+      <div class="pyq-top"><div class="tag-group"><span class="pyq-tag-marks">3 Marks</span><span class="pyq-tag-year">NCERT Intext / CBSE Board</span></div></div>
+      <div class="pyq-question">Q3. Two point charges $q_1$ and $q_2$ of magnitudes $+10^{-8}\text{ C}$ and $-10^{-8}\text{ C}$ respectively, are placed $0.1\text{ m}$ apart. Calculate the electric fields at points $A$ (midpoint), $B$ (outside left), and $C$ (equator apex) as shown in the figure.</div>
+      
+      <div class="q-diagram-frame">
+        <svg viewBox="0 0 240 140" width="100%" height="140">
+          <polygon points="120,20 40,120 200,120" fill="none" stroke="var(--text-soft)" stroke-width="1.5" stroke-dasharray="3,3" />
+          <circle cx="40" cy="120" r="5" fill="#ef4444" /><text x="25" y="135" font-size="10" font-weight="800" fill="#ef4444">q₁ (+)</text>
+          <circle cx="200" cy="120" r="5" fill="#3b82f6" /><text x="195" y="135" font-size="10" font-weight="800" fill="#3b82f6">q₂ (-)</text>
+          <circle cx="120" cy="120" r="4" fill="var(--text)" /><text x="115" y="135" font-size="10" font-weight="800" fill="var(--text)">A</text>
+          <circle cx="120" cy="50" r="4" fill="var(--text)" /><text x="128" y="52" font-size="10" font-weight="800" fill="var(--text)">C</text>
+          <circle cx="15" cy="120" r="4" fill="var(--text)" /><text x="5" y="112" font-size="10" font-weight="800" fill="var(--text)">B</text>
+        </svg>
+      </div>
+
+      <button class="btn-action" onclick="toggleSolution('sol_p40_q3_num')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p40_q3_num" class="solution-box">
+        <div class="step-item"><strong>1. Electric Field at Midpoint A ($r = 0.05\text{ m}$ - 1 Mark):</strong><br>
+          $E_{1A}$ due to $q_1$ and $E_{2A}$ due to $q_2$ both point towards the right.<br>
+          $$E_A = E_{1A} + E_{2A} = 2 \times \left(\frac{9 \times 10^9 \times 10^{-8}}{(0.05)^2}\right) = \mathbf{7.2 \times 10^4\text{ N/C}} \quad (\text{towards right})$$
+        </div>
+        <div class="step-item"><strong>2. Electric Field at Point B ($r = 0.05\text{ m}$ to left of $q_1$ - 1 Mark):</strong><br>
+          $$E_{1B} = \frac{9 \times 10^9 \times 10^{-8}}{(0.05)^2} = 3.6 \times 10^4\text{ N/C} \quad (\leftarrow)$$
+          $$E_{2B} = \frac{9 \times 10^9 \times 10^{-8}}{(0.15)^2} = 4 \times 10^3\text{ N/C} \quad (\rightarrow)$$
+          $$E_B = E_{1B} - E_{2B} = \mathbf{3.2 \times 10^4\text{ N/C}} \quad (\text{towards left})$$
+        </div>
+        <div class="step-item"><strong>3. Electric Field at Apex Point C (1 Mark):</strong><br>
+          Equilateral triangle geometry yields individual vector magnitudes of $9 \times 10^3\text{ N/C}$ inclined at $60^\circ$. By vector addition: $\mathbf{E_C = 9 \times 10^3\text{ N/C}}$ (directed parallel to $q_1 q_2$ towards the right).
+        </div>
+      </div>
+    </div>
+    <!-- ================= PAGE 41: LONG ANSWER TYPE QUESTIONS (5 MARKS) ================= -->
+    <div class="section-title">🏆 Section D: Long Answer Type Questions (5 Marks Each)</div>
+
+    <!-- Q1: Equatorial Line Derivation & Midpoint Numerical -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">5 Marks</span>
+          <span class="pyq-tag-year">CBSE Board Exam (2019)</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q1. (a) Derive an analytical expression for the electric field intensity $\vec{E}$ at any point on the equatorial line (perpendicular bisector) of an electric dipole of dipole moment $\vec{p}$.<br>
+        (b) Two point charges $q_A = 3\,\mu\text{C}$ and $q_B = -3\,\mu\text{C}$ are located $20\text{ cm}$ apart in vacuum. Calculate the total electric field at the midpoint $O$ of the line $AB$ joining the two charges.
+      </div>
+
+      <!-- Clean SVG Equatorial Triangle Diagram -->
+      <div class="q-diagram-frame">
+        <svg viewBox="0 0 280 150" width="100%" height="150">
+          <!-- Base Line AB -->
+          <line x1="40" y1="120" x2="240" y2="120" stroke="var(--text-soft)" stroke-width="1.5" stroke-dasharray="3,3" />
+          <circle cx="40" cy="120" r="6" fill="#3b82f6" />
+          <text x="32" y="140" font-size="11" font-weight="800" fill="#3b82f6">-q (A)</text>
+          
+          <circle cx="240" cy="120" r="6" fill="#ef4444" />
+          <text x="232" y="140" font-size="11" font-weight="800" fill="#ef4444">+q (B)</text>
+          
+          <circle cx="140" cy="120" r="4" font-weight="800" fill="var(--text)" />
+          <text x="135" y="138" font-size="11" fill="var(--text)">O</text>
+
+          <!-- Point P on Bisector -->
+          <circle cx="140" cy="30" r="5" fill="var(--primary)" />
+          <text x="150" y="30" font-size="11" font-weight="800" fill="var(--primary)">P</text>
+
+          <!-- Triangle sides -->
+          <line x1="40" y1="120" x2="140" y2="30" stroke="var(--text-soft)" stroke-width="1.2" />
+          <line x1="240" y1="120" x2="140" y2="30" stroke="var(--text-soft)" stroke-width="1.2" />
+          <line x1="140" y1="120" x2="140" y2="30" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="4,4" />
+          <text x="145" y="75" font-size="11" fill="var(--primary)">r</text>
+          <text x="85" y="65" font-size="11" fill="var(--text-soft)">√(r²+a²)</text>
+        </svg>
+      </div>
+
+      <button class="btn-action" onclick="toggleSolution('sol_p41_q1')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p41_q1" class="solution-box">
+        <div class="step-item">
+          <strong>Part (a): Equatorial Line Derivation (3 Marks):</strong><br>
+          • Let charges $-q$ and $+q$ be separated by $2a$. Point $P$ lies on the perpendicular bisector at distance $r$.<br>
+          • Distance from each charge to $P$ is $R = \sqrt{r^2 + a^2}$. The magnitudes of electric fields are:
+          $$E_{+q} = E_{-q} = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2 + a^2}$$
+          • Resolving components: Vertical components $E\sin\theta$ are equal and opposite, hence they cancel out. Horizontal components $E\cos\theta$ reinforce each other along a direction anti-parallel to $\vec{p}$:
+          $$E_{\text{eq}} = 2E\cos\theta = 2 \left(\frac{1}{4\pi\varepsilon_0}\frac{q}{r^2+a^2}\right) \left(\frac{a}{\sqrt{r^2+a^2}}\right) = \mathbf{\frac{1}{4\pi\varepsilon_0}\frac{p}{(r^2+a^2)^{3/2}}}$$
+          For a short dipole ($r \gg a$), $a^2$ is neglected: $\vec{E}_{\text{eq}} = -\frac{1}{4\pi\varepsilon_0}\frac{\vec{p}}{r^3}$.
+        </div>
+        <div class="step-item">
+          <strong>Part (b): Numerical at Midpoint $O$ (2 Marks):</strong><br>
+          • Given: $q_A = 3\,\mu\text{C} = 3 \times 10^{-6}\text{ C}$, $q_B = -3\,\mu\text{C} = -3 \times 10^{-6}\text{ C}$, total distance $AB = 20\text{ cm} = 0.2\text{ m}$.<br>
+          • Distance from midpoint $O$ to each charge is $r = 10\text{ cm} = 0.1\text{ m}$.<br>
+          • Electric field at $O$ due to $q_A$ (positive charge points away from $A$, i.e., towards $B$):
+          $$E_A = \frac{9 \times 10^9 \times 3 \times 10^{-6}}{(0.1)^2} = \frac{27 \times 10^3}{0.01} = 2.7 \times 10^6\text{ N/C} \quad (\text{towards } B)$$
+          • Electric field at $O$ due to $q_B$ (negative charge points towards $B$):
+          $$E_B = \frac{9 \times 10^9 \times 3 \times 10^{-6}}{(0.1)^2} = 2.7 \times 10^6\text{ N/C} \quad (\text{towards } B)$$
+          • Since both vectors act in the same direction (towards $B$):
+          $$E_{\text{resultant}} = E_A + E_B = 2.7 \times 10^6 + 2.7 \times 10^6 = \mathbf{5.4 \times 10^6\text{ N/C}} \quad (\text{from } A \text{ to } B)$$
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2: Axial Line Derivation & Cube Flux Numerical -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">5 Marks</span>
+          <span class="pyq-tag-year">CBSE Board Exam Classic</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q2. (a) An electric dipole consisting of charges $\pm q$ separated by $2a$ is placed. Deduce an expression for electric field $\vec{E}$ at distance $x$ on its axial line. Hence show that for $x \gg a$, $\vec{E} \to \frac{2\vec{p}}{4\pi\varepsilon_0 x^3}$.<br>
+        (b) Given electric field in a region is $\vec{E} = 2x\hat{i}$, find the net electric flux through a cube of side $a$ placed in this region and determine the total charge enclosed by it. OR.<br>
+        (c) Define torque acting on a dipole in uniform field and explain behavior in non-uniform field.
+      </div>
+      <button class="btn-action" onclick="toggleSolution('sol_p41_q2')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p41_q2" class="solution-box">
+        <div class="step-item">
+          <strong>Part (a): Axial Line Derivation (3 Marks):</strong><br>
+          • Let observation point be at distance $x$ from the center on the axis.<br>
+          • Net axial field is sum of fields due to $+q$ and $-q$:
+          $$E_{\text{axial}} = \frac{q}{4\pi\varepsilon_0} \left[ \frac{1}{(x-a)^2} - \frac{1}{(x+a)^2} \right] = \frac{1}{4\pi\varepsilon_0}\frac{q \cdot (4ax)}{(x^2 - a^2)^2} = \frac{1}{4\pi\varepsilon_0}\frac{2(q \cdot 2a)x}{(x^2 - a^2)^2} = \frac{1}{4\pi\varepsilon_0}\frac{2px}{(x^2 - a^2)^2}$$
+          • For short dipole ($x \gg a$): $(x^2 - a^2)^2 \approx x^4$, hence:
+          $$\vec{E}_{\text{axial}} = \mathbf{\frac{1}{4\pi\varepsilon_0}\frac{2\vec{p}}{x^3}}$$
+        </div>
+        <div class="step-item">
+          <strong>Part (b): Cube Flux & Enclosed Charge (2 Marks):</strong><br>
+          • Field is $\vec{E} = 2x\hat{i}$. Only the faces perpendicular to the $x$-axis contribute to the flux.<br>
+          • At left face ($x = 0$): $\Phi_{\text{left}} = 0$ since $E = 0$.<br>
+          • At right face ($x = a$): $\vec{E} = 2a\hat{i}$ and area vector $\vec{A} = a^2\hat{i}$. Thus $\Phi_{\text{right}} = (2a)(a^2) = 2a^3$.<br>
+          • Total net flux $\Phi = \Phi_{\text{right}} - \Phi_{\text{left}} = \mathbf{2a^3}$.<br>
+          • By Gauss's Law, enclosed charge $q_{\text{enc}} = \varepsilon_0 \Phi = \mathbf{2a^3\varepsilon_0}$.
+        </div>
+      </div>
+    </div>
+    <!-- ================= CONTINUOUS CHARGE DISTRIBUTION & GAUSS'S LAW ================= -->
+    <div class="section-title">📐 Continuous Charge Distribution & Gauss's Law (PYQs)</div>
+
+    <!-- MCQ 1: Net Electric Flux is Zero -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">1 Mark</span>
+          <span class="pyq-tag-year">CBSE 2020</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q1. If the net electric flux passing through a closed Gaussian surface is strictly zero, then we can infer that:
+      </div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="p45_1" value="A"> (a) no net charge is enclosed by the surface.</label>
+        <label class="mcq-option"><input type="radio" name="p45_1" value="B"> (b) uniform electric field exists within the surface.</label>
+        <label class="mcq-option"><input type="radio" name="p45_1" value="C"> (c) electric potential varies from point to point inside the surface.</label>
+        <label class="mcq-option"><input type="radio" name="p45_1" value="D"> (d) charge is present inside the surface.</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('p45_1', 'A', 'sol_p45_1', 'By Gauss Theorem, total flux $\\Phi = \\frac{q_{\\text{enclosed}}}{\\varepsilon_0}$. If net flux is zero, it directly implies that the net algebraic charge enclosed inside the surface is zero ($q_{\\text{enclosed}} = 0$). Hence option (a) is correct.')">Verify Answer & Solution</button>
+      <div id="sol_p45_1" class="solution-box"></div>
+    </div>
+
+    <!-- MCQ 2: Infinite Line of Charge Force on Alpha Particle -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">1 Mark</span>
+          <span class="pyq-tag-year">CBSE ASQP 2023</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q2. An infinite line of charge has a linear charge density of $\lambda = 10^{-7}\text{ C/m}$. What will be the magnitude of the electrostatic force acting on an alpha particle placed at a perpendicular distance of $4\text{ cm}$ ($0.04\text{ m}$) from the line of charge?
+      </div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="p45_2" value="A"> (a) $14.4 \times 10^{-15}\text{ N}$</label>
+        <label class="mcq-option"><input type="radio" name="p45_2" value="B"> (b) $7.2 \times 10^{-15}\text{ N}$</label>
+        <label class="mcq-option"><input type="radio" name="p45_2" value="C"> (c) $4.5 \times 10^{-4}\text{ N}$</label>
+        <label class="mcq-option"><input type="radio" name="p45_2" value="D"> (d) $9 \times 10^{-4}\text{ N}$</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('p45_2', 'A', 'sol_p45_2', '1. Electric field due to infinite line charge: $E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r} = \\frac{2k\\lambda}{r}$.<br>Given: $\\lambda = 10^{-7}\\text{ C/m}$, $r = 0.04\\text{ m}$, $k = 9 \\times 10^9$.<br>$E = \\frac{2 \\times (9 \\times 10^9) \\times (10^{-7})}{0.04} = \\frac{1800}{0.04} = 4.5 \\times 10^4\\text{ N/C}$.<br>2. Alpha particle charge $q = 2e = 2 \\times (1.6 \\times 10^{-19}) = 3.2 \\times 10^{-19}\\text{ C}$.<br>3. Force $F = qE = (3.2 \\times 10^{-19}) \\times (4.5 \\times 10^4) = \\mathbf{14.4 \\times 10^{-15}\\text{ N}}$.')">Verify Answer & Solution</button>
+      <div id="sol_p45_2" class="solution-box"></div>
+    </div>
+
+    <!-- MCQ 3: Gaussian Surface Statements -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">1 Mark</span>
+          <span class="pyq-tag-year">CBSE CFPQ 2023</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q3. For a closed Gaussian surface through which the net electric flux is zero, analyze the following statements:<br>
+        <strong>P.</strong> No charges reside inside the Gaussian surface.<br>
+        <strong>Q.</strong> The net charge inside the surface is zero.<br>
+        <strong>R.</strong> The electric field is zero everywhere on the surface.<br>
+        <strong>S.</strong> The number of field lines entering the surface is equal to the number of lines exiting the surface.<br>
+        Identify which of the statements <strong>COULD BE TRUE</strong>:
+      </div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="p45_3" value="A"> (a) Only statement Q</label>
+        <label class="mcq-option"><input type="radio" name="p45_3" value="B"> (b) Both statements P and S</label>
+        <label class="mcq-option"><input type="radio" name="p45_3" value="C"> (c) Both statements Q and R</label>
+        <label class="mcq-option"><input type="radio" name="p45_3" value="D"> (d) Both statements Q and S</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('p45_3', 'D', 'sol_p45_3', 'Zero net flux means net enclosed charge is zero (Statement Q is definitely true). Also, total entering lines equal exiting lines (Statement S is true). Statement P is false because equal and opposite charges can exist inside. Statement R is false because field on the surface need not be zero. Thus <strong>both Q and S</strong> are valid.')">Verify Answer & Solution</button>
+      <div id="sol_p45_3" class="solution-box"></div>
+    </div>
+
+    <!-- MCQ 4: Lightning Conductor Principle -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">1 Mark</span>
+          <span class="pyq-tag-year">CBSE CFPQ 2023</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q4. A lightning rod is constructed from conducting material with sharp metal spikes on top connected to an earthing wire. Which statement from below <strong>DOES NOT</strong> contribute to the correct working principle of a lightning conductor?
+      </div>
+      
+      <!-- Clean SVG Lightning Rod Diagram -->
+      <div class="q-diagram-frame">
+        <svg viewBox="0 0 200 130" width="100%" height="130">
+          <path d="M 100 10 L 95 40 L 105 40 Z M 90 25 L 85 45 L 95 45 Z M 110 25 L 105 45 L 115 45 Z" fill="#2563eb" />
+          <rect x="95" y="40" width="10" height="70" fill="#64748b" rx="2" />
+          <line x1="60" y1="110" x2="140" y2="110" stroke="#0f172a" stroke-width="4" />
+          <text x="70" y="125" font-size="10" font-weight="800" fill="var(--text)">Earth Connection</text>
+        </svg>
+      </div>
+
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="p45_4" value="A"> (a) Charge density on the surface of metal spikes is inversely proportional to the radius of curvature.</label>
+        <label class="mcq-option"><input type="radio" name="p45_4" value="B"> (b) Charges are distributed uniformly on the surface of conductors irrespective of their shapes.</label>
+        <label class="mcq-option"><input type="radio" name="p45_4" value="C"> (c) The surface of a charged conductor behaves as an equipotential surface.</label>
+        <label class="mcq-option"><input type="radio" name="p45_4" value="D"> (d) Excess charges reside only on the outer surface of a charged conductor.</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('p45_4', 'B', 'sol_p45_4', 'Charge distribution on a conductor depends heavily on its shape (surface curvature), being maximum at sharp points (corona discharge). Statement (b) claims charges distribute <em>uniformly irrespective of shape</em>, which is <strong>false</strong> and does not contribute to lightning rod physics.')">Verify Answer & Solution</button>
+      <div id="sol_p45_4" class="solution-box"></div>
+    </div>
+    <!-- ================= GAUSS'S LAW & APPLICATIONS (PAGE 46) ================= -->
+    <div class="section-title">📐 Assertion-Reasoning & Gauss's Law Applications (PYQs)</div>
+
+    <!-- Assertion and Reason Section -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">1 Mark Each</span>
+          <span class="pyq-tag-year">CBSE Board Standard</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        <strong>1. Assertion (A):</strong> With the help of Gauss's theorem, we can find electric field at any point.<br>
+        <strong>Reason (R):</strong> Gauss's theorem cannot be applied for any type of charge distribution.
+      </div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="p46_ar1" value="A"> (a) Both A and R are true, and R is the correct explanation of A.</label>
+        <label class="mcq-option"><input type="radio" name="p46_ar1" value="B"> (b) Both A and R are true, but R is not the correct explanation of A.</label>
+        <label class="mcq-option"><input type="radio" name="p46_ar1" value="C"> (c) A is true, but R is false.</label>
+        <label class="mcq-option"><input type="radio" name="p46_ar1" value="D"> (d) A is false, but R is true.</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('p46_ar1', 'C', 'sol_p46_ar1', 'Correct Option is <strong>(c)</strong>. Gauss law is universally valid for any charge distribution, but it is useful for calculating electric field only when high symmetry exists. Hence A is true, while R is false.')">Verify Explanation</button>
+      <div id="sol_p46_ar1" class="solution-box"></div>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">1 Mark</span>
+          <span class="pyq-tag-year">CBSE Board Standard</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        <strong>2. Assertion (A):</strong> The electric flux emanating out and entering a closed surface are $8 \times 10^3\text{ V}\cdot\text{m}$ and $2 \times 10^3\text{ V}\cdot\text{m}$ respectively. The net charge enclosed by the surface is $0.053\,\mu\text{C}$.<br>
+        <strong>Reason (R):</strong> Gauss's theorem in electrostatics may be applied to verify this.
+      </div>
+      <div class="mcq-options">
+        <label class="mcq-option"><input type="radio" name="p46_ar2" value="A"> (a) Both A and R are true, and R is the correct explanation of A.</label>
+        <label class="mcq-option"><input type="radio" name="p46_ar2" value="B"> (b) Both A and R are true, but R is not the correct explanation of A.</label>
+        <label class="mcq-option"><input type="radio" name="p46_ar2" value="C"> (c) A is true, but R is false.</label>
+        <label class="mcq-option"><input type="radio" name="p46_ar2" value="D"> (d) A is false, but R is true.</label>
+      </div>
+      <button class="btn-action" onclick="verifyMCQ('p46_ar2', 'A', 'sol_p46_ar2', 'Correct Option is <strong>(a)</strong>. Net flux $\\Phi = \\Phi_{\\text{out}} - \\Phi_{\\text{in}} = 8\\times 10^3 - 2\\times 10^3 = 6\\times 10^3$. Charge $q = \\varepsilon_0 \\Phi = 8.85\\times 10^{-12} \\times 6\\times 10^3 \\approx 0.053\\,\\mu\\text{C}$.')">Verify Explanation</button>
+      <div id="sol_p46_ar2" class="solution-box"></div>
+    </div>
+
+
+    <!-- ================= SUBJECTIVE QUESTIONS ================= -->
+    <div class="section-title">📝 Subjective Questions (Very Short & Short Answer)</div>
+
+    <!-- Very Short Answer Q1 -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">2 Marks</span>
+          <span class="pyq-tag-year">CBSE Board Exam</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q1. A point charge causes an electric flux of $-3 \times 10^{-16}\text{ N}\cdot\text{m}^2/\text{C}$ to pass through a spherical Gaussian surface.<br>
+        (a) Calculate the value of the point charge.<br>
+        (b) If the radius of the Gaussian surface is doubled, how much flux would pass through the surface?
+      </div>
+      <button class="btn-action" onclick="toggleSolution('sol_p46_vsa1')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p46_vsa1" class="solution-box">
+        <div class="step-item">
+          <strong>(a) Value of Point Charge (1 Mark):</strong><br>
+          By Gauss's theorem, $\Phi = \frac{q}{\varepsilon_0} \implies q = \Phi \cdot \varepsilon_0$.
+          $$q = (-3 \times 10^{-16}) \times (8.854 \times 10^{-12}) = \mathbf{-2.655 \times 10^{-27}\text{ C}}$$
+        </div>
+        <div class="step-item">
+          <strong>(b) Effect of doubling radius (1 Mark):</strong><br>
+          The electric flux passing through a closed surface depends solely on the <strong>total net charge enclosed</strong> by the surface, not on its size or radius. Therefore, the flux remains **unchanged ($-\mathbf{3 \times 10^{-16}\text{ N}\cdot\text{m}^2/\text{C}}$)**.
+        </div>
+      </div>
+    </div>
+
+    <!-- Very Short Answer Q2: Metallic Shell Surface Charge Density -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">2 Marks</span>
+          <span class="pyq-tag-year">CBSE Board Exam</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q2. A metallic spherical shell has an inner radius $R_1$ and outer radius $R_2$. A charge $Q$ is placed at the center of the spherical cavity. What will be the surface charge density on (i) the inner surface, and (ii) the outer surface?
+      </div>
+      <button class="btn-action" onclick="toggleSolution('sol_p46_vsa2')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p46_vsa2" class="solution-box">
+        <div class="step-item">
+          <strong>(i) Inner Surface Charge Density (1 Mark):</strong><br>
+          Due to induction, a charge of $-Q$ is induced on the inner surface. Inner surface area is $4\pi R_1^2$.
+          $$\sigma_{\text{inner}} = \mathbf{-\frac{Q}{4\pi R_1^2}}$$
+        </div>
+        <div class="step-item">
+          <strong>(ii) Outer Surface Charge Density (1 Mark):</strong><br>
+          An equal and opposite charge $+Q$ is induced on the outer surface. Outer surface area is $4\pi R_2^2$.
+          $$\sigma_{\text{outer}} = \mathbf{+\frac{Q}{4\pi R_2^2}}$$
+        </div>
+      </div>
+    </div>
+
+    <!-- Short Answer Q3: Spherical Shell Field at P1 and P2 -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">3 Marks</span>
+          <span class="pyq-tag-year">CBSE Board Exam (Important)</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q3. A small metal sphere carrying charge $+Q$ is located at the center of a spherical cavity inside a large uncharged metallic spherical shell as shown. Use Gauss's law to find expressions for the electric field at points $P_1$ (inside cavity at distance $r_1$) and $P_2$ (outside shell at distance $r_2$).
+      </div>
+
+      <!-- Clean SVG Spherical Shell Diagram -->
+      <div class="q-diagram-frame">
+        <svg viewBox="0 0 200 200" width="100%" height="200">
+          <!-- Outer shell -->
+          <circle cx="100" cy="100" r="80" fill="none" stroke="var(--text-soft)" stroke-width="2" />
+          <circle cx="100" cy="100" r="50" fill="none" stroke="var(--text-soft)" stroke-width="2" stroke-dasharray="4,4" />
+          <!-- Center charge -->
+          <circle cx="100" cy="100" r="6" fill="#ef4444" />
+          <text x="108" y="98" font-size="11" font-weight="800" fill="#ef4444">+Q</text>
+          <!-- Points P1 and P2 -->
+          <circle cx="125" cy="85" r="4" fill="var(--primary)" />
+          <text x="133" y="85" font-size="10" font-weight="800" fill="var(--primary)">P₁</text>
+          <circle cx="60" cy="140" r="4" fill="var(--primary)" />
+          <text x="40" y="145" font-size="10" font-weight="800" fill="var(--primary)">P₂</text>
+        </svg>
+      </div>
+
+      <button class="btn-action" onclick="toggleSolution('sol_p46_q3')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p46_q3" class="solution-box">
+        <div class="step-item">
+          <strong>1. Electric Field at Point $P_1$ (Distance $r_1$ inside cavity - 1.5 Marks):</strong><br>
+          Applying Gaussian sphere of radius $r_1$ around center charge $+Q$:
+          $$\oint \vec{E}_1 \cdot d\vec{A} = E_1 (4\pi r_1^2) = \frac{Q}{\varepsilon_0} \implies \mathbf{E_1 = \frac{1}{4\pi\varepsilon_0}\frac{Q}{r_1^2}}$$
+        </div>
+        <div class="step-item">
+          <strong>2. Electric Field at Point $P_2$ (Distance $r_2$ outside shell - 1.5 Marks):</strong><br>
+          The total net charge enclosed by a Gaussian sphere of radius $r_2$ passing through point $P_2$ is $+Q$ (since induced charges on inner/outer shell surfaces cancel out algebraically).
+          $$\oint \vec{E}_2 \cdot d\vec{A} = E_2 (4\pi r_2^2) = \frac{Q}{\varepsilon_0} \implies \mathbf{E_2 = \frac{1}{4\pi\varepsilon_0}\frac{Q}{r_2^2}}$$
+        </div>
+      </div>
+    </div>
+    <!-- ================= GAUSS'S LAW APPLICATIONS & DERIVATIONS (PAGE 47) ================= -->
+    <div class="section-title">📐 Gauss's Law Applications & Charged Sheets (PYQs)</div>
+
+    <!-- Long Answer Q1: Hollow Sphere & Infinite Wire Derivation -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">3 Marks</span>
+          <span class="pyq-tag-year">CBSE Board Exam (2020)</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q1. (a) A hollow conducting sphere of inner radius $r_1$ and outer radius $r_2$ has a charge $Q$ on its surface. A point charge $q$ is also placed at the center of the sphere.<br>
+        (i) What is the surface charge density on the inner and outer surface of the sphere?<br>
+        (ii) Use Gauss' law of electrostatics to obtain the expression for the electric field at a point lying outside the sphere.<br>
+        <strong>OR</strong><br>
+        (b) (i) An infinitely long thin straight wire has uniform linear charge density $\lambda$. Obtain the expression for electric field $E$ at distance $x$ from the wire, using Gauss' law.<br>
+        (ii) Show graphically the variation of this electric field $E$ as a function of distance $x$ from the wire.
+      </div>
+
+      <!-- Clean SVG Infinite Wire Cylinder Diagram -->
+      <div class="q-diagram-frame">
+        <svg viewBox="0 0 200 160" width="100%" height="160">
+          <!-- Cylinder & Wire -->
+          <line x1="100" y1="10" x2="100" y2="150" stroke="#ef4444" stroke-width="3" />
+          <ellipse cx="100" cy="80" rx="40" ry="15" fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="3,3" />
+          <path d="M 60 80 L 60 120 A 40 15 0 0 0 140 120 L 140 80" fill="none" stroke="var(--primary)" stroke-width="1.5" />
+          <text x="148" y="85" font-size="11" font-weight="800" fill="var(--primary)">r</text>
+          <text x="105" y="105" font-size="11" fill="var(--text)">l</text>
+        </svg>
+      </div>
+
+      <button class="btn-action" onclick="toggleSolution('sol_p47_q1')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p47_q1" class="solution-box">
+        <div class="step-item">
+          <strong>(a) Hollow Conducting Sphere:</strong><br>
+          • (i) Due to charge $q$ at center, charge induced on inner surface is $-q$ and on outer surface is $Q + q$.<br>
+          Surface charge density: $\sigma_{\text{inner}} = \frac{-q}{4\pi r_1^2}$, $\sigma_{\text{outer}} = \frac{Q + q}{4\pi r_2^2}$.<br>
+          • (ii) For a point outside at distance $r$ ($r > r_2$), total net enclosed charge is $Q + q$. By Gauss Law:
+          $$E (4\pi r^2) = \frac{Q + q}{\varepsilon_0} \implies \mathbf{E = \frac{1}{4\pi\varepsilon_0}\frac{Q + q}{r^2}}$$
+        </div>
+        <div class="step-item">
+          <strong>(b) Infinitely Long Straight Wire (OR part):</strong><br>
+          • (i) Considering a cylindrical Gaussian surface of radius $x$ and length $l$:
+          $$\oint \vec{E} \cdot d\vec{A} = E \cdot (2\pi x l) = \frac{q_{\text{enclosed}}}{\varepsilon_0} = \frac{\lambda l}{\varepsilon_0} \implies \mathbf{E = \frac{\lambda}{2\pi\varepsilon_0 x}}$$
+          • (ii) Graph of $E$ versus $x$ shows a rectangular hyperbola curve where $E \propto \frac{1}{x}$.
+        </div>
+      </div>
+    </div>
+
+    <!-- Long Answer Q2: Two Large Charged Plane Sheets -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">3 Marks</span>
+          <span class="pyq-tag-year">CBSE Board Exam (2019)</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q2. Two large charged plane sheets of charge densities $+\sigma$ and $-2\sigma\text{ C/m}^2$ are arranged vertically with a separation $d$ between them. Deduce expressions for the electric field at points:<br>
+        (i) to the left of the first sheet,<br>
+        (ii) to the right of the second sheet, and<br>
+        (iii) between the two sheets.<br>
+        <strong>OR</strong><br>
+        (b) A spherical conducting shell of inner radius $r_1$ and outer radius $r_2$ has a charge $Q$.<br>
+        (i) Find surface charge density on inner and outer surfaces.<br>
+        (ii) Is electric field inside a cavity (with no charge) zero, independent of shell shape? Explain.
+      </div>
+      <button class="btn-action" onclick="toggleSolution('sol_p47_q2')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p47_q2" class="solution-box">
+        <div class="step-item">
+          <strong>Two Charged Sheets Regions:</strong><br>
+          Electric field due to single sheet of charge density $\sigma$ is $E = \frac{\sigma}{2\varepsilon_0}$.<br>
+          • <strong>(i) Region I (Left of Sheet 1):</strong> Fields point outwards from $+\sigma$ and inwards to $-2\sigma$:
+          $$E_I = -\frac{\sigma}{2\varepsilon_0} - \frac{2\sigma}{2\varepsilon_0} = \mathbf{-\frac{3\sigma}{2\varepsilon_0}} \quad (\text{towards left})$$
+          • <strong>(ii) Region II (Right of Sheet 2):</strong>
+          $$E_{II} = +\frac{\sigma}{2\varepsilon_0} + \frac{2\sigma}{2\varepsilon_0} = \mathbf{+\frac{3\sigma}{2\varepsilon_0}} \quad (\text{towards right})$$
+          • <strong>(iii) Region III (Between sheets):</strong>
+          $$E_{III} = \frac{\sigma}{2\varepsilon_0} - \frac{2\sigma}{2\varepsilon_0} = \mathbf{-\frac{\sigma}{2\varepsilon_0}}$$
+        </div>
+        <div class="step-item">
+          <strong>OR Part (Spherical Shell):</strong><br>
+          • (i) Inner surface charge density = $0$ (since no cavity charge). Outer surface charge density = $\frac{Q}{4\pi r_2^2}$.<br>
+          • (ii) Yes, electric field inside an empty cavity of a conductor is always zero due to electrostatic shielding, completely independent of the outer shape of the shell.
+        </div>
+      </div>
+    </div>
+    <!-- ================= PAGE 48: GAUSS LAW APPLICATIONS & ELECTRON REVOLVING ================= -->
+    <div class="section-title">📐 Gauss's Law Applications & Circular Orbit Derivations (PYQs)</div>
+
+    <!-- Long Answer Q1: Infinite Wire Derivation & Electron Revolving Kinetic Energy -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">5 Marks</span>
+          <span class="pyq-tag-year">CBSE Board Exam (2023)</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q1. (a) Use Gauss' law to obtain an expression for the electric field due to an infinitely long thin straight wire with uniform linear charge density $\lambda$.<br>
+        (b) An infinitely long positively charged straight wire has a linear charge density $\lambda$. An electron is revolving in a circle with a constant speed $v$ such that the wire passes through the center, and is perpendicular to the plane of the circle. Find the kinetic energy of the electron in terms of magnitude of its charge ($e$) and linear charge density $\lambda$ on the wire.<br>
+        (c) Draw a graph of kinetic energy as a function of linear charge density $\lambda$.
+      </div>
+
+      <!-- Clean SVG Infinite Wire Diagram -->
+      <div class="q-diagram-frame">
+        <svg viewBox="0 0 200 150" width="100%" height="150">
+          <line x1="100" y1="10" x2="100" y2="140" stroke="#ef4444" stroke-width="3" />
+          <ellipse cx="100" cy="75" rx="35" ry="12" fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="3,3" />
+          <path d="M 65 75 L 65 110 A 35 12 0 0 0 135 110 L 135 75" fill="none" stroke="var(--primary)" stroke-width="1.5" />
+          <circle cx="135" cy="75" r="4" fill="var(--text)" />
+          <text x="142" y="78" font-size="10" font-weight="800" fill="var(--text)">P</text>
+          <text x="105" y="95" font-size="10" fill="var(--text)">r</text>
+        </svg>
+      </div>
+
+      <button class="btn-action" onclick="toggleSolution('sol_p48_q1')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p48_q1" class="solution-box">
+        <div class="step-item">
+          <strong>(a) Electric Field Derivation (2 Marks):</strong><br>
+          • Consider a cylindrical Gaussian surface of radius $r$ and length $l$ around the infinite wire.<br>
+          • Flux through flat end faces is zero (since $\vec{E} \perp d\vec{A}$). Flux passes only through curved surface:
+          $$\oint \vec{E} \cdot d\vec{A} = E \cdot (2\pi r l) = \frac{q_{\text{enclosed}}}{\varepsilon_0} = \frac{\lambda l}{\varepsilon_0}$$
+          $$E \cdot (2\pi r l) = \frac{\lambda l}{\varepsilon_0} \implies \mathbf{E = \frac{\lambda}{2\pi\varepsilon_0 r}}$$
+        </div>
+        <div class="step-item">
+          <strong>(b) Kinetic Energy of Revolving Electron (2 Marks):</strong><br>
+          • The electrostatic force provides the necessary centripetal force for circular motion:
+          $$F_e = \frac{m v^2}{r} \implies e \cdot E = \frac{m v^2}{r}$$
+          • Substituting $E = \frac{\lambda}{2\pi\varepsilon_0 r}$:
+          $$e \left(\frac{\lambda}{2\pi\varepsilon_0 r}\right) = \frac{m v^2}{r} \implies m v^2 = \frac{e \lambda}{2\pi\varepsilon_0}$$
+          • Kinetic Energy ($K$) is given by $K = \frac{1}{2}m v^2$:
+          $$K = \frac{1}{2} \left(\frac{e \lambda}{2\pi\varepsilon_0}\right) = \mathbf{\frac{e \lambda}{4\pi\varepsilon_0}}$$
+          Notice that the radius $r$ cancels out completely, showing that kinetic energy is independent of the orbital radius.
+        </div>
+        <div class="step-item">
+          <strong>(c) Graph of Kinetic Energy vs $\lambda$ (1 Mark):</strong><br>
+          Since $K = \left(\frac{e}{4\pi\varepsilon_0}\right) \lambda$, the graph of Kinetic Energy ($K$) versus linear charge density ($\lambda$) is a <strong>straight line passing through the origin</strong> with a positive slope.
+        </div>
+      </div>
+    </div>
+    <!-- ================= PAGE 49: SPHERICAL SHELL DERIVATION & CYLINDER FLUX NUMERICAL ================= -->
+    <div class="section-title">📐 Spherical Shell Derivations & Flux Numericals (PYQs)</div>
+
+    <!-- Long Answer Q2: Spherical Shell Derivation & Cylinder Flux Calculation -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">5 Marks</span>
+          <span class="pyq-tag-year">CBSE Board Exam (2020)</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q1. (a) Using Gauss' law, derive the expression for electric field due to a spherical shell of uniform charge distribution $\sigma$ and radius $R$ at a point lying at a distance $x$ from the center of the shell, such that:<br>
+        (i) $0 < x < R$, and (ii) $x > R$.<br>
+        (b) An electric field is uniform and acts along $+x$ direction for $x > 0$ and along $-x$ direction for $x < 0$ with magnitude $E = 200\text{ N/C}$. A right circular cylinder of length $20\text{ cm}$ ($0.2\text{ m}$) and radius $5\text{ cm}$ ($0.05\text{ m}$) is centered at the origin along $x$-axis (flat faces at $x = +10\text{ cm}$ and $x = -10\text{ cm}$). Find:<br>
+        (i) The net outward flux through the cylinder.<br>
+        (ii) The net charge present inside the cylinder.
+      </div>
+
+      <!-- Clean SVG Spherical Shell & Gaussian Surface Diagram -->
+      <div class="q-diagram-frame">
+        <svg viewBox="0 0 200 160" width="100%" height="160">
+          <!-- Shell of radius R -->
+          <circle cx="100" cy="80" r="40" fill="none" stroke="var(--primary)" stroke-width="2" />
+          <circle cx="100" cy="80" r="4" fill="var(--primary)" />
+          <text x="105" y="78" font-size="10" font-weight="800" fill="var(--primary)">O</text>
+          <text x="115" y="102" font-size="10" fill="var(--primary)">R</text>
+          <line x1="100" y1="80" x2="140" y2="80" stroke="var(--primary)" stroke-width="1.2" stroke-dasharray="2,2" />
+          
+          <!-- Gaussian sphere of radius r (x > R) -->
+          <circle cx="100" cy="80" r="70" fill="none" stroke="var(--text-soft)" stroke-width="1.5" stroke-dasharray="4,4" />
+          <circle cx="170" cy="80" r="4" fill="#ef4444" />
+          <text x="175" y="83" font-size="11" font-weight="800" fill="#ef4444">P</text>
+          <line x1="100" y1="80" x2="170" y2="80" stroke="var(--text-soft)" stroke-width="1" />
+          <text x="130" y="72" font-size="10" fill="var(--text)">r (x)</text>
+        </svg>
+      </div>
+
+      <button class="btn-action" onclick="toggleSolution('sol_p49_q1')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p49_q1" class="solution-box">
+        <div class="step-item">
+          <strong>(a) Spherical Shell Derivations (3 Marks):</strong><br>
+          • <strong>(i) Inside the shell ($0 < x < R$):</strong> A Gaussian sphere of radius $r < R$ encloses zero net charge ($q_{\text{in}} = 0$). By Gauss's Law, $\oint \vec{E} \cdot d\vec{A} = \frac{0}{\varepsilon_0} \implies \mathbf{E = 0}$.<br>
+          • <strong>(ii) Outside the shell ($x > R$):</strong> Total charge on shell $q = \sigma \cdot (4\pi R^2)$. Applying Gaussian sphere of radius $r = x$:
+          $$E \cdot (4\pi x^2) = \frac{q}{\varepsilon_0} \implies \mathbf{E = \frac{1}{4\pi\varepsilon_0}\frac{q}{x^2} = \frac{\sigma R^2}{\varepsilon_0 x^2}}$$
+        </div>
+        <div class="step-item">
+          <strong>(b) Cylinder Numerical Calculation (2 Marks):</strong><br>
+          • <strong>(i) Net outward flux ($\Phi$):</strong> Field is directed outwards on both flat circular faces of area $A = \pi r^2 = 3.14 \times (0.05)^2 = 0.00785\text{ m}^2$.<br>
+          $$\Phi = 2 \cdot (E \cdot A) = 2 \times (200\text{ N/C}) \times (3.14 \times 0.0025\text{ m}^2) = \mathbf{3.14\text{ N}\cdot\text{m}^2/\text{C}}$$
+          • <strong>(ii) Net Charge Enclosed ($Q_{\text{enc}}$):</strong>
+          $$Q_{\text{enc}} = \varepsilon_0 \cdot \Phi = (8.854 \times 10^{-12}) \times 3.14 = \mathbf{2.78 \times 10^{-11}\text{ C}}$$
+        </div>
+      </div>
+    </div>
+
+    <!-- Graph Question: Kinetic Energy vs Linear Charge Density -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">1 Mark</span>
+          <span class="pyq-tag-year">CBSE Board Exam</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q2. Draw a clean, precise graph showing the variation of Kinetic Energy ($K$) of the revolving electron as a function of the linear charge density ($\lambda$) on the straight wire.
+      </div>
+
+      <!-- Clean SVG Precision Graph -->
+      <div class="q-diagram-frame">
+        <svg viewBox="0 0 220 150" width="100%" height="150">
+          <!-- Axes -->
+          <line x1="30" y1="120" x2="200" y2="120" stroke="var(--text)" stroke-width="1.5" marker-end="url(#arr)" />
+          <line x1="30" y1="120" x2="30" y2="15" stroke="var(--text)" stroke-width="1.5" marker-end="url(#arr)" />
+          <text x="205" y="124" font-size="11" font-weight="800" fill="var(--text)">λ</text>
+          <text x="20" y="15" font-size="11" font-weight="800" fill="var(--text)">K</text>
+          <text x="20" y="125" font-size="10" fill="var(--text)">O</text>
+          <!-- Straight line graph K proportional to lambda -->
+          <line x1="30" y1="120" x2="180" y2="35" stroke="var(--primary)" stroke-width="2.5" />
+          <text x="130" y="65" font-size="10" font-weight="700" fill="var(--primary)">K ∝ λ</text>
+        </svg>
+      </div>
+
+      <button class="btn-action" onclick="toggleSolution('sol_p49_graph')">Show Step-by-Step Explanation</button>
+      <div id="sol_p49_graph" class="solution-box">
+        <div class="step-item">
+          <strong>Explanation:</strong><br>
+          From the derivation $K = \frac{e\lambda}{4\pi\varepsilon_0}$, kinetic energy $K$ is directly proportional to linear charge density $\lambda$ ($K \propto \lambda$). Hence, the graph is a <strong>straight line passing through the origin</strong> with a constant positive slope $\frac{e}{4\pi\varepsilon_0}$.
+        </div>
+      </div>
+    </div>
+    <!-- ================= PAGE 50: SPHERICAL SHELL OUTSIDE FIELD DERIVATION & FIELD LINES ================= -->
+    <div class="section-title">📐 Electric Field Outside a Spherical Shell & Field Lines (PYQs)</div>
+
+    <!-- Long Answer Q3: Spherical Shell Derivation & Field Lines Illustration -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">5 Marks</span>
+          <span class="pyq-tag-year">CBSE Board Exam (Standard)</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q1. (a) Apply Gauss's law to derive an expression for the electric field strength at any location outside a uniformly charged thin spherical shell with a radius of $R$ and a charge density of $\sigma\text{ C/m}^2$.<br>
+        (b) Illustrate the field lines when the sphere's charge density is (i) positive and (ii) negative.
+      </div>
+
+      <!-- Clean SVG Spherical Shell & Gaussian Surface Diagram -->
+      <div class="q-diagram-frame">
+        <svg viewBox="0 0 220 160" width="100%" height="160">
+          <!-- Inner Shell of radius R -->
+          <circle cx="110" cy="80" r="40" fill="none" stroke="var(--primary)" stroke-width="2" />
+          <circle cx="110" cy="80" r="4" fill="var(--primary)" />
+          <text x="115" y="78" font-size="10" font-weight="800" fill="var(--primary)">O</text>
+          <text x="125" y="102" font-size="10" fill="var(--primary)">R</text>
+          <line x1="110" y1="80" x2="150" y2="80" stroke="var(--primary)" stroke-width="1.2" stroke-dasharray="2,2" />
+          
+          <!-- Outer Gaussian Sphere of radius r -->
+          <circle cx="110" cy="80" r="70" fill="none" stroke="var(--text-soft)" stroke-width="1.5" stroke-dasharray="4,4" />
+          <circle cx="180" cy="80" r="4" fill="#ef4444" />
+          <text x="185" y="83" font-size="11" font-weight="800" fill="#ef4444">P</text>
+          <line x1="110" y1="80" x2="180" y2="80" stroke="var(--text-soft)" stroke-width="1" />
+          <text x="140" y="72" font-size="10" fill="var(--text)">r</text>
+        </svg>
+      </div>
+
+      <button class="btn-action" onclick="toggleSolution('sol_p50_q1')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p50_q1" class="solution-box">
+        <div class="step-item">
+          <strong>(a) Derivation for Outside Point ($r > R$) (3 Marks):<br></strong>
+          • Let a thin spherical shell of radius $R$ carry total charge $q$. To find electric field at an outside point $P$ at distance $r$ from center $O$, we construct a concentric spherical Gaussian surface of radius $r$.<br>
+          • At every point on the Gaussian surface, electric field $\vec{E}$ is directed radially outward, parallel to area vector $d\vec{A}$ ($\theta = 0^\circ$).<br>
+          • According to Gauss's Theorem:
+          $$\oint \vec{E} \cdot d\vec{A} = \frac{q}{\varepsilon_0} \implies E \cdot (4\pi r^2) = \frac{q}{\varepsilon_0}$$
+          $$E = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}$$
+          • In terms of surface charge density $\sigma$ ($q = \sigma \cdot 4\pi R^2$):
+          $$\mathbf{E = \frac{\sigma R^2}{\varepsilon_0 r^2} \quad \text{or} \quad \vec{E} = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\hat{n}}$$
+        </div>
+        <div class="step-item">
+          <strong>(b) Field Lines Illustration (2 Marks):<br></strong>
+          • <strong>(i) Positive Charge Density ($\sigma > 0$):</strong> Electric field lines radiate outwards uniformly in all directions from the spherical surface.<br>
+          • <strong>(ii) Negative Charge Density ($\sigma < 0$):</strong> Electric field lines point radially inwards perpendicularly toward the spherical surface from infinity.
+        </div>
+      </div>
+    </div>
+    <!-- ================= PAGE 50 (PART b): CONDUCTING SPHERE NUMERICAL ================= -->
+    <div class="pyq-card">
+      <div class="pyq-top">
+        <div class="tag-group">
+          <span class="pyq-tag-marks">3 Marks</span>
+          <span class="pyq-tag-year">CBSE Board Exam Numerical</span>
+        </div>
+      </div>
+      <div class="pyq-question">
+        Q2. Determine the following for a uniformly charged conducting sphere with a diameter of $2.5\text{ m}$ and a surface charge density of $100\,\mu\text{C/m}^2$:<br>
+        (i) The total charge present on the sphere.<br>
+        (ii) The overall electric flux passing through the sphere.
+      </div>
+
+      <button class="btn-action" onclick="toggleSolution('sol_p50_num')">Show Step-by-Step Marking Scheme</button>
+      <div id="sol_p50_num" class="solution-box">
+        <div class="step-item">
+          <strong>Given Data:</strong><br>
+          • Diameter $D = 2.5\text{ m} \implies \text{Radius } R = \frac{D}{2} = \frac{2.5}{2} = 1.25\text{ m}$.<br>
+          • Surface charge density $\sigma = 100\,\mu\text{C/m}^2 = 100 \times 10^{-6}\text{ C/m}^2 = 10^{-4}\text{ C/m}^2$.
+        </div>
+        <div class="step-item">
+          <strong>(i) Total Charge Present on the Sphere ($q$ - 1.5 Marks):<br></strong>
+          Formula: $q = \sigma \cdot A = \sigma \cdot (4\pi R^2)$
+          $$q = (10^{-4}\text{ C/m}^2) \times 4 \times 3.14 \times (1.25\text{ m})^2$$
+          $$q = 10^{-4} \times 12.56 \times 1.5625 = \mathbf{1.96 \times 10^{-3}\text{ C} \quad (\text{or } 1.96\text{ mC})}$$
+        </div>
+        <div class="step-item">
+          <strong>(ii) Overall Electric Flux Passing Through the Sphere ($\Phi$ - 1.5 Marks):<br></strong>
+          By Gauss's Law, total flux is determined by the total enclosed charge:
+          $$\Phi = \frac{q}{\varepsilon_0} = \frac{1.96 \times 10^{-3}\text{ C}}{8.854 \times 10^{-12}\text{ C}^2/\text{N}\cdot\text{m}^2}$$
+          $$\Phi \approx \mathbf{2.2 \times 10^8\text{ N}\cdot\text{m}^2/\text{C}}$$
+        </div>
+      </div>
+    </div>
+     <!-- ================= MULTILINGUAL DISCLAIMER NOTICE BOX ================= -->
+    <div class="pyq-card" style="border-left: 4px solid #f59e0b; background: color-mix(in srgb, #f59e0b 6%, var(--surface));">
+      <div class="pyq-top" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div class="tag-group">
+          <span class="pyq-tag-marks" style="background: rgba(245, 158, 11, 0.15); color: #d97706;">⚠️ Important Notice</span>
+          <span class="pyq-tag-year">Disclaimer & Cross-Check</span>
+        </div>
+        
+        <!-- Language Selector Dropdown -->
+        <div style="position: relative;">
+          <select id="disclaimerLang" onchange="translateDisclaimer(this.value)" style="padding: 6px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-solid); color: var(--text); font-size: 13px; font-weight: 650; cursor: pointer; outline: none; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+            <option value="en" selected>English ▾</option>
+            <option value="hi">हिंदी (Hindi)</option>
+            <option value="ta">தமிழ் (Tamil)</option>
+            <option value="te">తెలుగు (Telugu)</option>
+            <option value="mr">मराठी (Marathi)</option>
+            <option value="bn">বাংলা (Bengali)</option>
+            <option value="kn">ಕನ್ನಡ (Kannada)</option>
+            <option value="ml">മലയാളം (Malayalam)</option>
+            <option value="gu">ગુજરાતી (Gujarati)</option>
+            <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+            <option value="es">Español (Spanish)</option>
+            <option value="fr">Français (French)</option>
+            <option value="de">Deutsch (German)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="pyq-question" id="disclaimerText" style="font-size: 14.5px; font-weight: 500; line-height: 1.7; color: var(--text); margin-top: 12px;">
+        <strong>Special Advice & Warning for Students:</strong><br>
+        These notes and step-by-step PYQ solutions have been prepared with utmost care and accuracy, yet human error during typing or mathematical calculation is possible. Therefore, before accepting any numerical or formula as absolute truth, <strong>be sure to cross-check with your NCERT textbook and teachers</strong>. Shorveer Notes is not liable for any unexpected calculation errors. Use your own discretion and judgment.
+      </div>
+    </div>
+
+    <!-- Translation Dictionary & Function script -->
+    <script>
+      const translations = {
+        en: "<strong>Special Advice & Warning for Students:</strong><br>These notes and step-by-step PYQ solutions have been prepared with utmost care and accuracy, yet human error during typing or mathematical calculation is possible. Therefore, before accepting any numerical or formula as absolute truth, <strong>be sure to cross-check with your NCERT textbook and teachers</strong>. Shorveer Notes is not liable for any unexpected calculation errors. Use your own discretion and judgment.",
+        hi: "<strong>विद्यार्थियों के लिए विशेष सलाह एवं चेतावनी:</strong><br>इन नोट्स और PYQ के स्टेप-बाय-स्टेप सॉल्यूशंस को पूरी सावधानी और सटीकता से तैयार किया गया है, फिर भी टाइपिंग या गणितीय गणना के दौरान मानवीय भूल की संभावना हो सकती है। इसलिए, किसी भी न्यूमेरिकल या फॉर्मूले को अंतिम सत्य मानने से पहले अपनी <strong>NCERT पाठ्यपुस्तक और अपने शिक्षकों से क्रॉस-चेक अवश्य कर लें</strong>। Shorveer Notes किसी भी गणनात्मक त्रुटि के लिए उत्तरदायी नहीं है।",
+        ta: "<strong>மாணவர்களுக்கான சிறப்பு அறிவுரை மற்றும் எச்சரிக்கை:</strong><br>இந்த குறிப்புகள் மற்றும் PYQ தீர்வுகள் மிகுந்த கவனத்துடன் தயாரிக்கப்பட்டுள்ளன, இருப்பினும் தட்டச்சு அல்லது கணித கணக்கீடுகளில் மனித பிழை இருக்க வாய்ப்புள்ளது. எனவே, எந்தவொரு எண் மதிப்பையும் அல்லது சூத்திரத்தையும் முழுமையான உண்மையாக ஏற்றுக்கொள்வதற்கு முன், <strong>உங்கள் NCERT பாடநூல் மற்றும் ஆசிரியர்களுடன் சரிபார்க்கவும்</strong>. Shorveer Notes எந்தவொரு பிழைக்கும் பொறுப்பேற்காது.",
+        te: "<strong>విద్యార్థులకు ప్రత్యేక సలహా మరియు హెచ్చరిక:</strong><br>ఈ నోట్స్ మరియు PYQ పరిష్కారాలు చాలా జాగ్రత్తగా తయారు చేయబడ్డాయి, అయినప్పటికీ టైపింగ్ లేదా గణనలలో మానవ తప్పిదాలు జరిగే అవకాశం ఉంది. కాబట్టి, ఏదైనా ఫార్ములాను ఖచ్చితమైనదిగా నమ్మే ముందు, <strong>మీ NCERT పాఠ్యపుస్తకం మరియు ఉపాధ్యాయులతో క్రాస్-చెక్ చేసుకోండి</strong>.",
+        mr: "<strong>विद्यार्थ्यांसाठी विशेष सल्ला आणि इशारा:</strong><br>हे नोट्स आणि PYQ सोल्यूशन्स काळजीपूर्वक तयार केले आहेत, तरीही टायपिंग किंवा गणनेमध्ये मानवी चूक होण्याची शक्यता असू शकते. त्यामुळे, कोणतीही संख्या किंवा सूत्र अंतिम सत्य मानण्यापूर्वी, <strong>तुमच्या NCERT पाठ्यपुस्तकाशी आणि शिक्षकाలతో खात्री करा</strong>.",
+        bn: "<strong>ছাত্রছাত্রীদের জন্য বিশেষ পরামর্শ ও সতর্কতা:</strong><br>এই নোটগুলি অত্যন্ত যত্নের সাথে তৈরি করা হয়েছে, তবুও টাইপিং বা গণনায় মানুষের ভুল থাকা সম্ভব। তাই কোনো সূত্রকে চূড়ান্ত সত্য হিসেবে গ্রহণ করার আগে, <strong>আপনার NCERT পাঠ্যবই এবং শিক্ষকদের সাথে ক্রস-চেক করে নিন</strong>.",
+        kn: "<strong>ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ವಿಶೇಷ ಸಲಹೆ ಮತ್ತು ಎಚ್ಚರಿಕೆ:</strong><br>ಈ ಟಿಪ್ಪಣಿಗಳು ಮತ್ತು PYQ ಪರಿಹಾರಗಳನ್ನು ಎಚ್ಚರಿಕೆಯಿಂದ ಸಿದ್ಧಪಡಿಸಲಾಗಿದೆ, ಆದರೂ ಟೈಪಿಂಗ್ ಅಥವಾ ಗಣಣೆಯಲ್ಲಿ ಮಾನವ ದೋಷವಿರಬಹುದು. ಆದ್ದರಿಂದ, ಯಾವುದೇ ಸೂತ್ರವನ್ನು ಅಂತಿಮ ಸತ್ಯವೆಂದು ಒಪ್ಪಿಕೊಳ್ಳುವ ಮೊದಲು, <strong>ನಿಮ್ಮ NCERT ಪಠ್ಯಪುಸ್ತಕ ಮತ್ತು ಶಿಕ್ಷಕರೊಂದಿಗೆ ಕ್ರಾಸ್-ಚೆಕ್ ಮಾಡಿ</strong>.",
+        ml: "<strong>വിദ്യാർത്ഥികൾക്കുള്ള പ്രത്യേക ഉപദേശവും മുന്നറിയിപ്പും:</strong><br>ഈ കുറിപ്പുകളും PYQ പരിഹാരങ്ങളും ശ്രദ്ധയോടെ തയ്യാറാക്കിയതാണ്, എങ്കിലും ടൈപ്പിംഗിലോ ഗണിതത്തിലോ പിശകുകൾ വരാം. അതിനാൽ, ഏതെങ്കിലും സൂത്രവാക്യം പൂർണ്ണ സത്യമായി സ്വീകരിക്കുന്നതിന് മുമ്പ്, <strong>നിങ്ങളുടെ NCERT പാഠപുസ്തകവുമായി ക്രോസ്-ചെക്ക് ചെയ്യുക</strong>.",
+        gu: "<strong>વિદ્યાર્થીઓ માટે વિશેષ સલાહ અને ચેતવણી:</strong><br>આ નોટ્સ અને PYQ સોલ્યુશન્સ કાળજીપૂર્વક તૈયાર કરવામાં આવ્યા છે, છતાં ટાઈપિંગ અથવા ગણતરીમાં ભૂલ હોઈ શકે છે. તેથી, કોઈપણ સૂત્રને અંતિમ સત્ય માનતા પહેલા, <strong>તમારા NCERT પાઠ્યપુસ્તક અને શિક્ષકો સાથે ચોક્કસ ચકાસણી કરો</strong>.",
+        pa: "<strong>ਵਿਦਿਆਰਥੀਆਂ ਲਈ ਖਾਸ ਸਲਾਹ ਅਤੇ ਚੇਤਾਵਨੀ:</strong><br>ਇਹ ਨੋਟਸ ਬਹੁਤ ਸਾਵਧਾਨੀ ਨਾਲ ਤਿਆਰ ਕੀਤੇ ਗਏ ਹਨ, ਫਿਰ ਵੀ ਟਾਈਪਿੰਗ ਜਾਂ ਗਣਨਾ ਵਿੱਚ ਗਲਤੀ ਦੀ ਸੰਭਾਵਨਾ ਹੋ ਸਕਦੀ ਹੈ। ਇਸ ਲਈ, ਕਿਸੇ ਵੀ ਫਾਰਮੂਲੇ ਨੂੰ ਅੰਤਿਮ ਸੱਚ ਮੰਨਣ ਤੋਂ ਪਹਿਲਾਂ, <strong>ਆਪਣੀ NCERT ਪੁਸਤਕ ਅਤੇ ਅਧਿਆਪਕਾਂ ਨਾਲ ਕਰਾਸ-ਚੈੱਕ ਜ਼ਰੂਰ ਕਰੋ</strong>.",
+        es: "<strong>Aviso especial y advertencia para estudiantes:</strong><br>Estas notas se han preparado con sumo cuidado, pero es posible que haya errores humanos. Por lo tanto, antes de aceptar cualquier fórmula como verdad absoluta, <strong>asegúrese de verificarla con su libro de texto NCERT y profesores</strong>.",
+        fr: "<strong>Avis spécial et avertissement pour les étudiants :</strong><br>Ces notes ont été préparées avec soin, mais des erreurs humaines sont possibles. Par conséquent, avant d'accepter toute formule comme vérité absolue, <strong>assurez-vous de vérifier avec votre manuel NCERT et vos professeurs</strong>.",
+        de: "<strong>Besonderer Hinweis und Warnung für Schüler:</strong><br>Diese Notizen wurden sorgfältig erstellt, dennoch sind menschliche Fehler möglich. Überprüfen Sie daher vor der Annahme jeder Formel <strong>unbedingt Ihr NCERT-Lehrbuch und fragen Sie Ihre Lehrer</strong>."
+      };
+
+      function translateDisclaimer(lang) {
+        const textEl = document.getElementById("disclaimerText");
+        if (translations[lang]) {
+          textEl.innerHTML = translations[lang];
+        } else {
+          textEl.innerHTML = translations['en'];
+        }
+      }
+      </script>
+      
+    </div>
+    <!-- ================= MISSION BAR: NEXT-STEP NAVIGATION ================= -->
+    <section class="mission-bar">
+      <h3>🚀 Chapter 1 PYQ Practice Completed!</h3>
+      <p>Seamlessly continue your Class 12 preparation workflow without returning to the main menu:</p>
+
+      <div class="action-grid">
+        <!-- Detailed Notes -->
+        <div class="action-card">
+          <div>
+            <span class="action-badge">Theory & Derivations</span>
+            <h4>Chapter 1 Detailed Notes</h4>
+            <p>Review comprehensive theoretical explanations and 5-mark derivation proofs.</p>
+          </div>
+          <a href="/physics/chapter1.html" class="action-link">Open Long Notes →</a>
+        </div>
+
+        <!-- Quick Revision -->
+        <div class="action-card">
+          <div>
+            <span class="action-badge">Rapid Review</span>
+            <h4>Chapter 1 Visual Mind Map</h4>
+            <p>Brush up all formulas, dipole equations, and variation graphs in 10 minutes.</p>
+          </div>
+          <a href="/physics/ch1-short.html" class="action-link">Open Mind Map →</a>
+        </div>
+
+        <!-- Next Chapter -->
+        <div class="action-card" style="border-color: var(--primary);">
+          <div>
+            <span class="action-badge" style="color: var(--secondary);">Next Chapter</span>
+            <h4>Chapter 2: Potential & Capacitance</h4>
+            <p>Advance directly to Class 12 Chapter 2 Detailed Notes & Derivations.</p>
+          </div>
+          <a href="/physics/chapter2.html" class="action-link" style="color: var(--primary-dark);">Go to Chapter 2 Detailed Notes ➔</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Standardized Professional Dynamic Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/index.html" class="brand">
+            <div class="brand-icon">S</div>
+            <div class="brand-name">Shorveer<span>Notes</span></div>
+          </a>
+          <p>A dedicated academic platform providing structured study material, chapter notes, and revision resources for Class 12 Science students.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Subjects</h4>
+          <a href="/physics/index.html">Physics Notes</a>
+          <a href="/chemistry/index.html">Chemistry Notes</a>
+          <a href="/mathematics/index.html">Mathematics Notes</a>
+          <a href="/english/index.html">English Core</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <a href="/exam-info.html">Exam Blueprints & PYQs</a>
+          <a href="/about-notes.html">How Notes are Prepared</a>
+          <a href="/about.html">About Shorveer Notes</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Legal & Support</h4>
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/cookies.html">Cookies Policy</a>
+          <a href="mailto:contact@shorveernotes.com">Help & Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© <span class="current-year">2026</span> Shorveer Notes. All Rights Reserved.</div>
+        <div class="author-credit">
+          Crafted with Dedication by <span>Jatin Sandilya</span> • Founder of Shorveer Notes
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Dynamic Year Auto-Update
+    document.querySelectorAll(".current-year").forEach(el => {
+      el.textContent = new Date().getFullYear();
+    });
+
+    // 2. Persistent Dark/Light Theme Sync
+    const themeButton = document.getElementById("themeButton");
+    const savedTheme = localStorage.getItem("shorveer-theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+      themeButton.textContent = "☀️";
+    }
+    themeButton.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const isDark = document.body.classList.contains("dark");
+      localStorage.setItem("shorveer-theme", isDark ? "dark" : "light");
+      themeButton.textContent = isDark ? "☀️" : "🌙";
+    });
+
+    // 3. Interactive MCQ & Assertion Verification Engine
+    function verifyMCQ(groupName, correctVal, solId, explanation) {
+      const selected = document.querySelector(`input[name="${groupName}"]:checked`);
+      const solBox = document.getElementById(solId);
+      if (!selected) {
+        alert("कृपया उत्तर जांचने से पहले किसी एक विकल्प पर टिक करें!");
+        return;
+      }
+      solBox.classList.add("show");
+      if (selected.value === correctVal) {
+        solBox.className = "solution-box show correct";
+        solBox.innerHTML = `✓ <strong>शानदार! आपका जवाब बिल्कुल सही है।</strong><br><div style="margin-top:6px;">${explanation}</div>`;
+      } else {
+        solBox.className = "solution-box show incorrect";
+        solBox.innerHTML = `✗ <strong>गलत उत्तर।</strong> सही विकल्प <strong>(${correctVal})</strong> है।<br><div style="margin-top:6px;"><strong>विस्तृत समाधान:</strong> ${explanation}</div>`;
+      }
+      if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([solBox]);
+      }
+    }
+
+    // 4. Toggle Solution Dropdown for Subjective Questions
+    function toggleSolution(solId) {
+      const box = document.getElementById(solId);
+      box.classList.toggle("show");
+      if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([box]);
+      }
+    }
+  </script>
+</body>
+</html>
