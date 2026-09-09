@@ -1,0 +1,2131 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08111f">
+
+<!-- Advanced SEO Meta Tags for Top Ranking -->
+<meta name="description" content="Class 12 Physics Chapter 3 Current Electricity Quick Revision Notes. Get fast, structured summaries, formulas, and concepts curated by Shorveer Notes for CBSE Board exams.">
+<meta name="keywords" content="Current Electricity Quick Revision, Class 12 Physics Chapter 3 Short Notes, CBSE Physics Formulas, Drift Velocity, Kirchhoff Laws, Shorveer Notes, Jatin Sandilya, Physics Board Exam 2026, NCERT Physics Notes">
+<meta name="author" content="Jatin Sandilya">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Current Electricity - Quick Revision | Shorveer Notes">
+<meta property="og:description" content="Rapid revision formulas and core concepts for Class 12 Physics Chapter 3: Current Electricity.">
+<meta property="og:type" content="article">
+
+<title>Current Electricity - Quick Revision | Shorveer Notes</title>
+
+<!-- Google AdSense Auto-Ads & Verification Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9688496231973353" crossorigin="anonymous"></script>
+
+<style>
+/* Core Styles Retained from Main Index */
+:root {
+  --bg: #07111f;
+  --bg2: #0d1b2e;
+  --card: rgba(255, 255, 255, 0.075);
+  --card2: rgba(255, 255, 255, 0.11);
+  --text: #f5f8ff;
+  --muted: #a9b6ca;
+  --primary: #62a8ff;
+  --secondary: #9c7cff;
+  --accent: #5ee7c4;
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  --radius: 24px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(98, 168, 255, 0.16), transparent 28%),
+    radial-gradient(circle at 90% 20%, rgba(156, 124, 255, 0.14), transparent 28%),
+    radial-gradient(circle at 50% 90%, rgba(94, 231, 196, 0.08), transparent 25%),
+    linear-gradient(135deg, var(--bg), var(--bg2));
+  overflow-x: hidden;
+}
+
+/* Background & Loader */
+.background { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: -1; }
+.orb { position: absolute; border-radius: 50%; filter: blur(2px); opacity: 0.35; animation: float 12s ease-in-out infinite; }
+.orb.one { width: 260px; height: 260px; background: var(--primary); top: -100px; left: -80px; }
+.orb.two { width: 300px; height: 300px; background: var(--secondary); right: -120px; top: 25%; animation-delay: -4s; }
+.orb.three { width: 220px; height: 220px; background: var(--accent); bottom: -80px; left: 35%; animation-delay: -8s; }
+.grid { position: absolute; inset: 0; opacity: 0.035; background-image: linear-gradient(rgba(255, 255, 255, 0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.8) 1px, transparent 1px); background-size: 42px 42px; }
+@keyframes float { 0%, 100% { transform: translate3d(0, 0, 0) scale(1); } 50% { transform: translate3d(0, -30px, 0) scale(1.08); } }
+
+.loader { position: fixed; inset: 0; background: #06101d; display: flex; align-items: center; justify-content: center; z-index: 9999; transition: 0.7s ease; }
+.loader.hide { opacity: 0; visibility: hidden; }
+.loader-box { text-align: center; }
+.loader-symbol { width: 78px; height: 78px; margin: auto; border: 3px solid rgba(255, 255, 255, 0.1); border-top-color: var(--primary); border-right-color: var(--secondary); border-radius: 50%; animation: spin 1s linear infinite; }
+.loader-title { margin-top: 20px; font-size: 1rem; letter-spacing: 3px; color: var(--muted); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Header */
+header { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); background: rgba(7, 17, 31, 0.68); border-bottom: 1px solid var(--border); }
+.nav { width: min(1180px, 92%); margin: auto; height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+.logo { width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center; font-weight: 900; font-size: 1.2rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); box-shadow: 0 10px 35px rgba(98, 168, 255, 0.22); }
+.brand-text strong { display: block; font-size: 1rem; }
+.brand-text span { display: block; font-size: 0.72rem; color: var(--muted); }
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+.nav-btn { border: 1px solid var(--border); background: rgba(255, 255, 255, 0.06); color: var(--text); width: 42px; height: 42px; border-radius: 13px; cursor: pointer; transition: 0.25s ease; display: grid; place-items: center; text-decoration: none; }
+.nav-btn:hover { transform: translateY(-3px) rotate(3deg); background: rgba(255, 255, 255, 0.12); }
+
+/* Quick Notes Content Styles */
+.content-wrapper { width: min(900px, 92%); margin: 60px auto; }
+.page-header { margin-bottom: 40px; text-align: center; }
+.badge { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; border: 1px solid rgba(98, 168, 255, 0.25); background: rgba(98, 168, 255, 0.08); color: #c9e2ff; font-size: 0.78rem; font-weight: 700; margin-bottom: 20px; }
+.page-header h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); letter-spacing: -1.5px; margin-bottom: 15px; }
+.gradient-text { background: linear-gradient(100deg, #fff, #9fcaff 40%, #b9a5ff 70%, #70f0d2); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+.note-section { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 30px; margin-bottom: 30px; backdrop-filter: blur(10px); }
+.note-section h3 { font-size: 1.4rem; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+.note-section h3::before { content: ""; width: 8px; height: 24px; background: var(--accent); border-radius: 4px; }
+.note-section p, .note-section ul { color: var(--muted); font-size: 1rem; line-height: 1.7; margin-bottom: 15px; }
+.note-section ul { padding-left: 20px; }
+.note-section li { margin-bottom: 8px; }
+
+.formula-box { background: rgba(0, 0, 0, 0.2); border: 1px dashed rgba(156, 124, 255, 0.4); padding: 15px 20px; border-radius: 12px; margin: 15px 0; font-family: monospace; font-size: 1.1rem; color: #bcaeff; text-align: center; letter-spacing: 1px; }
+
+/* Disclaimer Section */
+.disclaimer { border-left: 4px solid var(--accent); background: rgba(94, 231, 196, 0.05); padding: 25px; border-radius: 12px; margin: 60px auto 30px; width: min(1180px, 92%); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.disclaimer h4 { color: var(--accent); margin-bottom: 10px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
+.disclaimer p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+/* Navigation Cards Section */
+.nav-cards-container { width: min(1180px, 92%); margin: 0 auto 60px; }
+.nav-cards-title { font-size: 1.5rem; margin-bottom: 25px; text-align: center; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+.chapter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.chapter { position: relative; overflow: hidden; border: 1px solid var(--border); border-radius: 23px; padding: 24px; background: linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035)); transition: transform 0.35s ease, border-color 0.35s ease; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: var(--text); }
+.chapter:hover { transform: translateY(-8px); border-color: rgba(98, 168, 255, 0.4); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25); }
+.chapter-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; }
+.chapter-number { color: #bcdcff; font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; }
+.chapter h4 { margin-top: 8px; font-size: 1.25rem; }
+.chapter p { color: var(--muted); font-size: 0.88rem; line-height: 1.65; margin: 12px 0 0; }
+.chapter-arrow { width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; background: rgba(255, 255, 255, 0.07); transition: 0.3s ease; }
+.chapter:hover .chapter-arrow { transform: translateX(5px); background: rgba(98, 168, 255, 0.15); }
+
+/* Footer */
+footer { border-top: 1px solid var(--border); background: rgba(0, 0, 0, 0.16); }
+.footer-inner { width: min(1180px, 92%); margin: auto; padding: 50px 0 25px; }
+.footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 35px; padding-bottom: 40px; }
+.footer-brand p { margin-top: 12px; color: var(--muted); line-height: 1.65; font-size: 0.86rem; max-width: 320px; }
+.footer-column h4 { font-size: 0.95rem; margin-bottom: 16px; color: #fff; letter-spacing: 0.5px; }
+.footer-column a { display: block; color: var(--muted); font-size: 0.85rem; margin-bottom: 10px; text-decoration: none; transition: 0.25s; }
+.footer-column a:hover { color: var(--primary); transform: translateX(3px); }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; color: var(--muted); font-size: 0.78rem; }
+.author-credit { font-weight: 700; color: var(--text); }
+.author-credit span { color: var(--primary); }
+
+@media (max-width: 900px) { .footer-top { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 650px) { .nav { height: 66px; } .brand-text span { display: none; } .footer-top { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
+</style>
+</head>
+
+<body>
+
+<!-- Background -->
+<div class="background">
+  <div class="grid"></div>
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+  <div class="orb three"></div>
+</div>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <div class="loader-box">
+    <div class="loader-symbol"></div>
+    <div class="loader-title">LOADING REVISION</div>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <nav class="nav">
+    <a class="brand" href="/index.html">
+      <div class="logo">⚡</div>
+      <div class="brand-text">
+        <strong>Shorveer Notes</strong>
+        <span>Class 12 • Physics</span>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <button class="nav-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
+      <a class="nav-btn" href="/index.html" aria-label="Home">⌂</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- Quick Revision Content -->
+  <div class="content-wrapper">
+    <div class="page-header">
+      <div class="badge">CHAPTER 03</div>
+      <h1>Current Electricity <br><span class="gradient-text">Quick Revision</span></h1>
+      <p style="color: var(--muted);">High-yield formulas and concepts for rapid exam preparation.</p>
+    </div>
+<body>
+  <div class="mindmap-container">
+    
+    <!-- Central Hub -->
+    <div class="central-node">
+      <h2>Current Electricity</h2>
+    </div>
+
+    <!-- Tree Branches Layout -->
+    <div class="map-tree">
+      
+      <!-- Branch 1: Electric Current -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>Electric Current</h3>
+          <p>It is a scalar quantity defined as the rate of flow of electric charge through an area in the time interval.</p>
+          <div class="formula">I = q / t</div>
+          <ul>
+            <li><strong>SI Unit:</strong> Ampere (A)</li>
+            <li>It is a scalar quantity.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Branch 2: Ohm's Law & Sub-branches -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>Ohm's Law</h3>
+          <p>Current flowing through a circuit is directly proportional to the voltage applied to it.</p>
+          <div class="formula">I ∝ V ⇒ V = IR &nbsp;(R = Resistance Ω)</div>
+          
+          <div class="sub-branch">
+            <h4>Limitations of Ohm's Law</h4>
+            <ul>
+              <li>Only applicable to ohmic conductors.</li>
+              <li>Accuracy can be affected by temperature change and low currents.</li>
+              <li>There can be more than one value of V for the same current I. GaAs exhibits same type of behaviour.</li>
+            </ul>
+          </div>
+
+          <div class="sub-branch">
+            <h4>Temperature dependence of Resistivity</h4>
+            <div class="formula">ρ = ρ₀ [1 + α(T - T₀)]</div>
+            <ul>
+              <li><strong>ρ:</strong> Resistivity at temperature T</li>
+              <li><strong>ρ₀:</strong> Resistivity at temperature T₀</li>
+              <li><strong>α:</strong> Temperature coefficient of resistivity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 3: Electric Cell, EMF & Internal Resistance -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>Electric Cell</h3>
+          <p>It is a device which maintains a potential difference between two terminals.</p>
+          
+          <div class="sub-branch">
+            <h4>EMF</h4>
+            <p>The work done per unit charge by the source in taking the charge from lower to higher potential energy is called electromotive force.</p>
+          </div>
+
+          <div class="sub-branch">
+            <h4>Internal Resistance</h4>
+            <div class="formula">V_A - V_B = E - ir</div>
+            <p><strong>r</strong> = Internal resistance of the cell</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 4: Power -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>Power</h3>
+          <p>The energy dissipated per unit time is known as power.</p>
+          <div class="formula">P = I²R = V² / R = VI</div>
+        </div>
+      </div>
+
+      <!-- Branch 5: Drift Velocity -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>Drift Velocity</h3>
+          <p>It is the average velocity, which is independent of time and is due to electric field.</p>
+          <div class="formula">v_d = -(eE / m) τ &nbsp;&nbsp;|&nbsp;&nbsp; v_d = I / (neA)</div>
+          <div class="formula">Vector form: J = ne v_d = σE &nbsp;&nbsp;|&nbsp;&nbsp; σ = (ne²τ) / m</div>
+          <div class="formula">Mobility: μ = v_d / E = eτ / m</div>
+          <ul>
+            <li><strong>τ:</strong> average collision time for electrons</li>
+            <li>Order of drift velocity of electrons ~ 10⁻⁴ ms⁻¹</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Branch 6: Kirchhoff's Law -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>Kirchhoff's Law</h3>
+          
+          <div class="sub-branch">
+            <h4>Current Law (Junction Law)</h4>
+            <p>It states that algebraic sum of all the currents directed towards a point (junction) is zero.</p>
+            <div class="formula">i₁ + i₂ + i₄ = i₃ + i₅ ⇒ ΣI = 0</div>
+          </div>
+
+          <div class="sub-branch">
+            <h4>Voltage Law (Loop Law)</h4>
+            <p>The algebraic sum of all the potential difference along a closed loop is zero.</p>
+            <div class="formula">ΣΔV = 0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 7: Wheatstone Bridge -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>Wheatstone Bridge</h3>
+          <p>To measure unknown resistance in electrical circuits.</p>
+          <ul>
+            <li>If R₁/R₂ = R₃/R₄, it is known as balance condition for galvanometer to give zero or null deflection.</li>
+            <li>No current will flow through S and V_C = V_D.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    /* True Mind Map Flowchart CSS Structure */
+    .mindmap-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .central-node {
+      background: linear-gradient(135deg, #62a8ff, #9c7cff);
+      color: #fff;
+      padding: 18px 36px;
+      border-radius: 40px;
+      font-size: 1.4rem;
+      font-weight: 800;
+      box-shadow: 0 0 30px rgba(98, 168, 255, 0.4);
+      margin-bottom: 50px;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .map-tree {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1200px;
+      position: relative;
+    }
+
+    /* Connecting lines from central map structure */
+    .map-tree::before {
+      content: '';
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      width: 2px;
+      height: 25px;
+      background: rgba(98, 168, 255, 0.5);
+      transform: translateX(-50%);
+    }
+
+    .map-branch {
+      position: relative;
+    }
+
+    .node-box {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .node-box:hover {
+      transform: translateY(-5px);
+      border-color: rgba(98, 168, 255, 0.5);
+    }
+
+    .node-box h3 {
+      color: #62a8ff;
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 8px;
+    }
+
+    .node-box p {
+      color: #a9b6ca;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .node-box ul {
+      padding-left: 16px;
+      color: #a9b6ca;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .node-box li {
+      margin-bottom: 5px;
+    }
+
+    .formula {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px dashed rgba(156, 124, 255, 0.4);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      color: #bcaeff;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .sub-branch {
+      margin-top: 15px;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+
+    .sub-branch h4 {
+      color: #5ee7c4;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+  </style>
+  <div class="mindmap-container">
+    
+    <!-- Central Hub -->
+    <div class="central-node">
+      <h2>Current Electricity Fundamentals</h2>
+    </div>
+
+    <!-- Tree Branches Layout with Expanded Explanations -->
+    <div class="map-tree">
+      
+      <!-- Branch 1: Introduction to Current Electricity -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>1. Current Electricity</h3>
+          <p><strong>Detailed Concept:</strong> The study of electric charges in motion is broadly classified as current electricity. Unlike electrostatics which deals with stationary charges, this branch analyzes continuous charge transfer, current carriers, circuits, and electrical energy dissipation.</p>
+          <ul>
+            <li><strong>Core Focus:</strong> Dynamics of charge flow in conductors, potential differences, and circuit laws.</li>
+            <li><strong>Practical Relevance:</strong> Powers all electronic devices, household wiring, and electrical machinery.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Branch 2: Electric Current & Mathematical Formulations -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>2. Electric Current</h3>
+          <p><strong>Detailed Concept:</strong> The systematic flow of electric charges through a given cross-section of a conductor constitutes an electric current. Quantitatively, it measures the volume of charge crossing a perpendicular area per unit time.</p>
+          
+          <div class="formula">For steady flow: I = Q / t</div>
+          <div class="formula">For variable flow: I = lim (ΔQ / Δt) = dQ / dt</div>
+          
+          <div class="sub-branch">
+            <h4>Units & Scale Definition</h4>
+            <div class="formula">1 ampere = 1 coulomb / 1 second &nbsp;⇒&nbsp; 1 A = 1 C s⁻¹</div>
+            <ul>
+              <li><strong>SI Unit:</strong> Ampere (A), named after André-Marie Ampère.</li>
+              <li><strong>Scalar Nature:</strong> Although current has both magnitude and a directional arrow indicating flow, it is a <strong>scalar quantity</strong> because electric currents do not obey the vector addition laws (like the parallelogram law). Instead, they follow simple algebraic addition.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 3: Conventional vs Electronic Currents -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>3. Conventional and Electronic Currents</h3>
+          <p><strong>Detailed Concept:</strong> Directional analysis of charge carriers inside circuits involves two perspectives:</p>
+          <ul>
+            <li><strong>Conventional Current:</strong> Historically assumed direction of motion of positive charge carriers. It flows externally from the positive terminal to the negative terminal of a cell.</li>
+            <li><strong>Electronic Current:</strong> Since electrons are negatively charged subatomic particles, their actual physical drift occurs in the opposite direction—flowing from the negative terminal to the positive terminal.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Branch 4: Electromotive Force (EMF) -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>4. Electromotive Force (EMF)</h3>
+          <p><strong>Detailed Concept:</strong> The total work done by a non-electrostatic source (like a chemical cell or generator) in carrying a unit positive charge completely around the entire circuit loop (including inside the source itself).</p>
+          
+          <div class="formula">EMF (E) = Work Done / Charge &nbsp;⇒&nbsp; E = W / q</div>
+          
+          <div class="sub-branch">
+            <h4>Detailed Breakdown & Volts</h4>
+            <p>It is numerically equal to the terminal potential difference measured across the cell terminals when no current is drawn in an open circuit.</p>
+            <ul>
+              <li><strong>SI Unit:</strong> Volt (V).</li>
+              <li><strong>Condition:</strong> If an electrochemical cell supplies 1 joule of energy to move 1 coulomb of charge through the complete circuit, its emf is exactly 1 volt.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 5: Ohm's Law -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>5. Ohm's Law</h3>
+          <p><strong>Detailed Concept:</strong> Formulated by Georg Simon Ohm, this fundamental law establishes that the current flowing through a metallic conductor is directly proportional to the potential difference across its extreme ends, provided physical conditions (temperature, mechanical strain) remain entirely constant.</p>
+          
+          <div class="formula">V ∝ I &nbsp;&nbsp;⇒&nbsp;&nbsp; V = RI &nbsp;&nbsp;⇒&nbsp;&nbsp; V / I = R</div>
+          
+          <div class="sub-branch">
+            <h4>Resistance Parameter</h4>
+            <p>Here, constant <strong>R</strong> is termed the electrical resistance of the conductor, acting as an opposition metric against charge carriers.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 6: Resistance & Material Resistivity -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>6. Resistance & Resistivity</h3>
+          <p><strong>Detailed Concept:</strong> Resistance is the intrinsic property of a conductor by virtue of which it resists or opposes the steady flow of electric charges. It depends directly on length and inversely on cross-sectional area.</p>
+          
+          <div class="formula">R = ρ (l / A) &nbsp;&nbsp;[where ρ = resistivity of material]</div>
+          
+          <div class="sub-branch">
+            <h4>SI Unit and Definition of Ohm</h4>
+            <div class="formula">1 ohm = 1 volt / 1 ampere &nbsp;⇒&nbsp; 1 Ω = 1 V A⁻¹</div>
+            <p>The resistance of a conductor is defined as 1 ohm if a current of 1 ampere flows through it when a potential difference of 1 volt is applied across its ends.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    /* Professional Mind Map Layout Styles */
+    .mindmap-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .central-node {
+      background: linear-gradient(135deg, #62a8ff, #9c7cff);
+      color: #fff;
+      padding: 20px 42px;
+      border-radius: 40px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      box-shadow: 0 0 35px rgba(98, 168, 255, 0.4);
+      margin-bottom: 50px;
+      z-index: 2;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .map-tree {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1250px;
+      position: relative;
+    }
+
+    .map-branch {
+      position: relative;
+    }
+
+    .node-box {
+      background: rgba(255, 255, 255, 0.075);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .node-box:hover {
+      transform: translateY(-6px);
+      border-color: rgba(98, 168, 255, 0.5);
+    }
+
+    .node-box h3 {
+      color: #62a8ff;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 8px;
+    }
+
+    .node-box p {
+      color: #a9b6ca;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .node-box ul {
+      padding-left: 18px;
+      color: #a9b6ca;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .node-box li {
+      margin-bottom: 6px;
+    }
+
+    .formula {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px dashed rgba(156, 124, 255, 0.45);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.92rem;
+      color: #bcaeff;
+      margin: 12px 0;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .sub-branch {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.12);
+    }
+
+    .sub-branch h4 {
+      color: #5ee7c4;
+      font-size: 0.98rem;
+      margin-bottom: 8px;
+    }
+  </style>
+<div class="mindmap-container">
+    
+    <!-- Central Hub -->
+    <div class="central-node">
+      <h2>Resistivity, Current Density & Conduction Dynamics</h2>
+    </div>
+
+    <!-- Tree Branches Layout with Expanded Detailed Explanations -->
+    <div class="map-tree">
+      
+      <!-- Branch 1: Resistivity or Specific Resistance -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>1. Resistivity or Specific Resistance</h3>
+          <p><strong>Detailed Concept:</strong> Resistivity is defined as the characteristic resistance offered by a unit cube of a material of a conductor when current passes perpendicular to opposite faces. Unlike absolute resistance, resistivity is independent of geometrical dimensions (length or area) and depends entirely on the material's internal atomic structure.</p>
+          
+          <div class="formula">ρ = (R × A) / l</div>
+          
+          <div class="sub-branch">
+            <h4>Units & Factors</h4>
+            <div class="formula">SI unit of ρ = Ω m (Ohm-meter)</div>
+            <ul>
+              <li><strong>Material Dependence:</strong> Depends directly on the nature/type of the conductor material.</li>
+              <li><strong>Physical Conditions:</strong> Varies significantly with external physical parameters like temperature and mechanical pressure.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 2: Current Density -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>2. Current Density (j)</h3>
+          <p><strong>Detailed Concept:</strong> Current density represents the amount of electric charge flowing per second per unit cross-sectional area held strictly normal (perpendicular) to the direction of charge flow. It is a fundamental vector quantity pointing in the identical direction of motion of positive charge carriers.</p>
+          
+          <div class="formula">For normal flow: j = (q / t) / A = I / A</div>
+          <div class="formula">General Vector Form: I = j A cos θ  ⇒  I = j · A</div>
+          
+          <div class="sub-branch">
+            <h4>SI Unit</h4>
+            <div class="formula">SI unit of current density = A m⁻²</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 3: Conductance -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>3. Conductance (G)</h3>
+          <p><strong>Detailed Concept:</strong> Conductance is an ease-of-flow metric, representing the exact reciprocal of electrical resistance. It measures how readily a material allows electric current to pass through its circuit paths.</p>
+          
+          <div class="formula">Conductance = 1 / Resistance  ⇒  G = 1 / R</div>
+          
+          <div class="sub-branch">
+            <h4>Units & Alternate Names</h4>
+            <div class="formula">SI unit = ohm⁻¹ = mho = siemen (S)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 4: Conductivity or Specific Conductance -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>4. Conductivity or Specific Conductance (σ)</h3>
+          <p><strong>Detailed Concept:</strong> Conductivity is the reciprocal of material resistivity, quantifying a substance's capability to conduct electricity under an electric field gradient.</p>
+          
+          <div class="formula">Conductivity = 1 / Resistivity  ⇒  σ = 1 / ρ</div>
+          
+          <div class="sub-branch">
+            <h4>SI Units</h4>
+            <div class="formula">SI unit = ohm⁻¹ m⁻¹ = mho m⁻¹ = S m⁻¹ (Siemens per meter)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 5: Resistivities of Different Substances -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>5. Resistivities Classification</h3>
+          <p><strong>Detailed Concept:</strong> Materials are classified into three major groups based on their resistivity ranges:</p>
+          <ul>
+            <li><strong>Metals (Conductors):</strong> Possess extremely low resistivities ranging from $10^{-8}\ \Omega\text{ m}$ to $10^{-6}\ \Omega\text{ m}$, ensuring high free electron mobility.</li>
+            <li><strong>Insulators:</strong> Exhibit very high resistivities greater than $10^{4}\ \Omega\text{ m}$, restricting any free charge movement.</li>
+            <li><strong>Semiconductors:</strong> Display intermediate resistivities lying between $10^{-6}\ \Omega\text{ m}$ and $10^{4}\ \Omega\text{ m}$ (e.g., Germanium, Silicon).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Branch 6: Carriers of Current -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>6. Charge Carriers of Current</h3>
+          <p><strong>Detailed Concept:</strong> Electric current is carried by different mobile charge carriers depending on the physical state and chemical nature of the medium:</p>
+          <ul>
+            <li><strong>Metals:</strong> Free valence electrons act as the primary mobile charge carriers.</li>
+            <li><strong>Ionised Gases:</strong> Free electrons and positively charged ions constitute the carriers.</li>
+            <li><strong>Electrolytes:</strong> Both positive ions (cations) and negative ions (anions) transport charge.</li>
+            <li><strong>Semiconductors (Ge, Si):</strong> Conduction happens via dual carriers—free electrons and <em>holes</em>. A hole represents a vacant electronic state left behind when an electron is removed, behaving effectively as a positive charge carrier.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Branch 7: Drift Velocity & Relaxation Time -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>7. Drift Velocity & Relaxation Time</h3>
+          <p><strong>Detailed Concept:</strong> Drift velocity ($v_d$) is the small average net velocity acquired by free electrons inside a conductor when an external electric field is applied, driving them opposite to the field lines.</p>
+          <ul>
+            <li><strong>Relaxation Time ($\tau$):</strong> The average time elapsed between two successive electronic collisions inside the atomic lattice.</li>
+            <li><strong>Magnitude:</strong> Thermal speeds are high, but the net drift velocity of electrons is very slow, roughly around $10^{-4}\text{ ms}^{-1}$.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    /* Professional Mind Map Layout Styles */
+    .mindmap-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .central-node {
+      background: linear-gradient(135deg, #62a8ff, #9c7cff);
+      color: #fff;
+      padding: 20px 42px;
+      border-radius: 40px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      box-shadow: 0 0 35px rgba(98, 168, 255, 0.4);
+      margin-bottom: 50px;
+      z-index: 2;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .map-tree {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1250px;
+      position: relative;
+    }
+
+    .map-branch {
+      position: relative;
+    }
+
+    .node-box {
+      background: rgba(255, 255, 255, 0.075);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .node-box:hover {
+      transform: translateY(-6px);
+      border-color: rgba(98, 168, 255, 0.5);
+    }
+
+    .node-box h3 {
+      color: #62a8ff;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 8px;
+    }
+
+    .node-box p {
+      color: #a9b6ca;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .node-box ul {
+      padding-left: 18px;
+      color: #a9b6ca;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .node-box li {
+      margin-bottom: 6px;
+    }
+
+    .formula {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px dashed rgba(156, 124, 255, 0.45);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.92rem;
+      color: #bcaeff;
+      margin: 12px 0;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .sub-branch {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.12);
+    }
+
+    .sub-branch h4 {
+      color: #5ee7c4;
+      font-size: 0.98rem;
+      margin-bottom: 8px;
+    }
+  </style>
+<div class="mindmap-container">
+    
+    <!-- Central Hub -->
+    <div class="central-node">
+      <h2>Mobility & Current Relations (Detailed Breakdown)</h2>
+    </div>
+
+    <!-- Tree Branches Layout with Crystal Clear Readability -->
+    <div class="map-tree">
+      
+      <!-- Branch 5: Mobility of a Charge Carrier (μ) -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>5. Mobility of Charge Carriers (μ)</h3>
+          <p><strong>Detailed Concept:</strong> Mobility defines how easily and fast a charge carrier moves through a conductor when an external electric field intensity is applied. It is quantitatively measured as the drift velocity acquired per unit electric field.</p>
+          
+          <div class="formula">μ = v<sub>d</sub> / E = (q τ) / m</div>
+          
+          <div class="sub-branch">
+            <h4>Specific Carriers & Units</h4>
+            <div class="formula">For Electrons: μ<sub>e</sub> = (e τ<sub>e</sub>) / m<sub>e</sub> &nbsp;&nbsp;|&nbsp;&nbsp; For Holes: μ<sub>h</sub> = (e τ<sub>h</sub>) / m<sub>h</sub></div>
+            <ul>
+              <li><strong>SI Unit:</strong> m<sup>2</sup> V<sup>-1</sup> s<sup>-1</sup></li>
+              <li><strong>Practical Unit:</strong> cm<sup>2</sup> V<sup>-1</sup> s<sup>-1</sup></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 6: Current & Conductivity with Mobility -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>6. Current & Conductivity with Mobility</h3>
+          <p><strong>Detailed Concept:</strong> Formulating the total bulk current and net material conductivity by scaling individual carrier densities with their respective mobilities:</p>
+          
+          <div class="formula">For Conductor: I = n e A μ<sub>e</sub> E</div>
+          <div class="formula">For Semiconductor: I = e A E (n μ<sub>e</sub> + p μ<sub>h</sub>)</div>
+          <div class="formula">Conductivity: σ = e (n μ<sub>e</sub> + p μ<sub>h</sub>)</div>
+          
+          <div class="sub-branch">
+            <h4>Variables Breakdown</h4>
+            <p>Here, <strong>n</strong> and <strong>p</strong> represent the free electron concentration and hole concentration per unit volume respectively.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    /* Professional Mind Map Layout Styles */
+    .mindmap-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .central-node {
+      background: linear-gradient(135deg, #62a8ff, #9c7cff);
+      color: #fff;
+      padding: 20px 42px;
+      border-radius: 40px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      box-shadow: 0 0 35px rgba(98, 168, 255, 0.4);
+      margin-bottom: 50px;
+      z-index: 2;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .map-tree {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1250px;
+      position: relative;
+    }
+
+    .map-branch {
+      position: relative;
+    }
+
+    .node-box {
+      background: rgba(255, 255, 255, 0.075);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .node-box:hover {
+      transform: translateY(-6px);
+      border-color: rgba(98, 168, 255, 0.5);
+    }
+
+    .node-box h3 {
+      color: #62a8ff;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 8px;
+    }
+
+    .node-box p {
+      color: #a9b6ca;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .node-box ul {
+      padding-left: 18px;
+      color: #a9b6ca;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .node-box li {
+      margin-bottom: 6px;
+    }
+
+    .formula {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px dashed rgba(156, 124, 255, 0.45);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: #bcaeff;
+      margin: 12px 0;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .sub-branch {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.12);
+    }
+
+    .sub-branch h4 {
+      color: #5ee7c4;
+      font-size: 0.98rem;
+      margin-bottom: 8px;
+    }
+  </style>
+  <div class="mindmap-container">
+    
+    <!-- Central Hub -->
+    <div class="central-node">
+      <h2>Resistances, Cell EMF & Terminal Voltage Dynamics</h2>
+    </div>
+
+    <!-- Tree Branches Layout with Detailed Mathematical Breakdown -->
+    <div class="map-tree">
+      
+      <!-- Branch 1: Resistances in Series -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>1. Resistances in Series</h3>
+          <p><strong>Mathematical Concept:</strong> When multiple resistors are connected end-to-end such that the same electric current flows through each of them, their equivalent (total) resistance is equal to the direct algebraic sum of individual resistances.</p>
+          
+          <div class="formula">R<sub>s</sub> = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub> + ...</div>
+          
+          <div class="sub-branch">
+            <h4>Symbolic Breakdown (Notations)</h4>
+            <ul>
+              <li><strong>R<sub>s</sub>:</strong> Equivalent or total resistance in Series combination.</li>
+              <li><strong>R<sub>1</sub>, R<sub>2</sub>, R<sub>3</sub>:</strong> Individual resistances connected sequentially in the circuit line.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 2: Resistances in Parallel -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>2. Resistances in Parallel</h3>
+          <p><strong>Mathematical Concept:</strong> When resistors are connected across two common points (nodes) so that the potential difference across each is the same, the reciprocal of the equivalent resistance equals the sum of reciprocals of individual resistances.</p>
+          
+          <div class="formula">1 / R<sub>p</sub> = (1 / R<sub>1</sub>) + (1 / R<sub>2</sub>) + (1 / R<sub>3</sub>) + ...</div>
+          <div class="formula">For two resistors: R<sub>p</sub> = (R<sub>1</sub> × R<sub>2</sub>) / (R<sub>1</sub> + R<sub>2</sub>)</div>
+          
+          <div class="sub-branch">
+            <h4>Symbolic Breakdown (Notations)</h4>
+            <ul>
+              <li><strong>R<sub>p</sub>:</strong> Equivalent or total resistance in Parallel combination.</li>
+              <li><strong>R<sub>1</sub>, R<sub>2</sub>:</strong> Individual branch resistances sharing the same voltage drop.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 3: Division of Current in Parallel Resistors -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>3. Current Division in Parallel Circuits</h3>
+          <p><strong>Mathematical Concept:</strong> Total current entering a parallel network divides among the parallel branches in the inverse ratio of their resistances (i.e., smaller resistance gets larger current).</p>
+          
+          <div class="formula">I<sub>1</sub> = [R<sub>2</sub> / (R<sub>1</sub> + R<sub>2</sub>)] × I</div>
+          <div class="formula">I<sub>2</sub> = [R<sub>1</sub> / (R<sub>1</sub> + R<sub>2</sub>)] × I</div>
+          
+          <div class="sub-branch">
+            <h4>Symbolic Breakdown (Notations)</h4>
+            <ul>
+              <li><strong>I:</strong> Total main-line current entering the parallel junction.</li>
+              <li><strong>I<sub>1</sub>, I<sub>2</sub>:</strong> Branch currents flowing through resistors R<sub>1</sub> and R<sub>2</sub> respectively.</li>
+              <li><strong>R<sub>1</sub>, R<sub>2</sub>:</strong> Resistor values in the parallel branches.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 4: Internal Resistance (r) of a Cell -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>4. Internal Resistance (r)</h3>
+          <p><strong>Mathematical Concept:</strong> The obstruction or resistance offered by the electrolytic solution and electrodes of a cell to the internal flow of ionic current is termed internal resistance (r).</p>
+          
+          <div class="sub-branch">
+            <h4>Factors Affecting Internal Resistance (r)</h4>
+            <ul>
+              <li>(i) <strong>Nature of electrolyte:</strong> Higher ionic viscosity increases r.</li>
+              <li>(ii) <strong>Concentration:</strong> Higher concentration raises r.</li>
+              <li>(iii) <strong>Distance between electrodes:</strong> Greater separation increases r.</li>
+              <li>(iv) <strong>Common area:</strong> Larger submerged electrode area decreases r.</li>
+              <li>(v) <strong>Temperature:</strong> Raising electrolyte temperature decreases r.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 5: EMF, Terminal Voltage & Internal Resistance Relations -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>5. EMF (ℰ) vs Terminal Voltage (V)</h3>
+          <p><strong>Mathematical Concept:</strong> When a cell is discharging in a closed circuit, its terminal voltage drops below its electromotive force (EMF) due to potential drop across its internal resistance.</p>
+          
+          <div class="formula">During Discharging: &nbsp; ℰ = V + I·r &nbsp;&nbsp;⇒&nbsp;&nbsp; V = ℰ - I·r</div>
+          <div class="formula">Ohmic Form: &nbsp; V = I·R = [ℰ·R] / [R + r]</div>
+          
+          <div class="sub-branch">
+            <h4>Determining Internal Resistance (r) & Current Formulas</h4>
+            <div class="formula">r = (ℰ - V) / I &nbsp;&nbsp;=οr=&nbsp;&nbsp; r = R · [(ℰ - V) / V]</div>
+            <div class="formula">Circuit Current: I = ℰ / (R + r) &nbsp;&nbsp;|&nbsp;&nbsp; Max Current: I<sub>max</sub> = ℰ / r</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 6: Terminal Potential During Charging -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>6. Cell Charging Condition</h3>
+          <p><strong>Mathematical Concept:</strong> When an external source forces current backward into a secondary cell to recharge it, current enters its positive terminal, causing the terminal voltage to exceed its EMF.</p>
+          
+          <div class="formula">During Charging: &nbsp; V = ℰ + I·r &nbsp;&nbsp;(where V > ℰ)</div>
+          
+          <div class="sub-branch">
+            <h4>Complete Variable Glossary (Master Legend)</h4>
+            <ul>
+              <li><strong>ℰ (EMF):</strong> Electromotive force; max open-circuit potential difference across cell terminals.</li>
+              <li><strong>V:</strong> Terminal potential difference across the load resistor when current flows.</li>
+              <li><strong>I:</strong> Total electric current circulating through the loop.</li>
+              <li><strong>r:</strong> Internal resistance belonging inside the electrochemical cell.</li>
+              <li><strong>R:</strong> External load resistance connected across the cell.</li>
+              <li><strong>I<sub>max</sub>:</strong> Maximum possible current drawn when external resistance R = 0 (short circuit).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    /* Professional Mind Map Layout Styles */
+    .mindmap-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .central-node {
+      background: linear-gradient(135deg, #62a8ff, #9c7cff);
+      color: #fff;
+      padding: 20px 42px;
+      border-radius: 40px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      box-shadow: 0 0 35px rgba(98, 168, 255, 0.4);
+      margin-bottom: 50px;
+      z-index: 2;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .map-tree {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1250px;
+      position: relative;
+    }
+
+    .map-branch {
+      position: relative;
+    }
+
+    .node-box {
+      background: rgba(255, 255, 255, 0.075);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .node-box:hover {
+      transform: translateY(-6px);
+      border-color: rgba(98, 168, 255, 0.5);
+    }
+
+    .node-box h3 {
+      color: #62a8ff;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 8px;
+    }
+
+    .node-box p {
+      color: #a9b6ca;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .node-box ul {
+      padding-left: 18px;
+      color: #a9b6ca;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .node-box li {
+      margin-bottom: 6px;
+    }
+
+    .formula {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px dashed rgba(156, 124, 255, 0.45);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: #bcaeff;
+      margin: 12px 0;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .sub-branch {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.12);
+    }
+
+    .sub-branch h4 {
+      color: #5ee7c4;
+      font-size: 0.98rem;
+      margin-bottom: 8px;
+    }
+  </style>
+  <div class="mindmap-container">
+    
+    <!-- Central Hub -->
+    <div class="central-node">
+      <h2>Cells Combination & Joule's Heating Effect (Simplified Guide)</h2>
+    </div>
+
+    <!-- Tree Branches Layout with Full Breakdown & Clear Notations -->
+    <div class="map-tree">
+      
+      <!-- Branch 1: Cells in Series -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>1. Cells in Series Grouping</h3>
+          <p><strong>Simple Explanation:</strong> When multiple identical cells are connected one after another (positive terminal of one connected to negative of the next) in a single path with an external load resistor, their total voltage (EMF) adds up.</p>
+          
+          <div class="formula">I = (n ℰ) / (R + n r)</div>
+          
+          <div class="sub-branch">
+            <h4>Sign / Notation Glossary (क्या-क्या है इसमें?)</h4>
+            <ul>
+              <li><strong>I:</strong> Total current flowing through the external circuit (अम्पीयर में कुल धारा).</li>
+              <li><strong>n:</strong> Total number of cells connected in series line (श्रेणी में जुड़े सेलों की कुल संख्या).</li>
+              <li><strong>ℰ (mathcal{E}):</strong> EMF of each individual cell (प्रत्येक सेल का विद्युत वाहक बल).</li>
+              <li><strong>R:</strong> External load resistance connected in the circuit (बाहरी प्रतिरोध).</li>
+              <li><strong>r:</strong> Internal resistance of each single cell (प्रत्येक सेल का आंतरिक प्रतिरोध).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 2: Cells in Parallel -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>2. Cells in Parallel Grouping</h3>
+          <p><strong>Simple Explanation:</strong> When all positive terminals of multiple cells are joined together at one common point and all negative terminals at another, they are in parallel. This helps provide higher current stability.</p>
+          
+          <div class="formula">I = (m ℰ) / (m R + r)</div>
+          
+          <div class="sub-branch">
+            <h4>Sign / Notation Glossary (क्या-क्या है इसमें?)</h4>
+            <ul>
+              <li><strong>I:</strong> Total circuit current.</li>
+              <li><strong>m:</strong> Total number of rows/cells connected in parallel (समानांतर शाखाओं की संख्या).</li>
+              <li><strong>ℰ:</strong> EMF of each cell.</li>
+              <li><strong>R:</strong> External resistance.</li>
+              <li><strong>r:</strong> Internal resistance of each cell.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 3: Cells in Mixed Grouping -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>3. Cells in Mixed Grouping</h3>
+          <p><strong>Simple Explanation:</strong> A combination where multiple cells are first connected in series in several rows, and all those rows are then connected in parallel with each other to get maximum efficiency.</p>
+          
+          <div class="formula">I = (m n ℰ) / (m R + n r)</div>
+          <div class="formula">For Maximum Current: R = (n r) / m &nbsp;⇒&nbsp; m R = n r</div>
+          
+          <div class="sub-branch">
+            <h4>Sign / Notation Glossary & Condition</h4>
+            <ul>
+              <li><strong>n:</strong> Number of cells connected in series per row.</li>
+              <li><strong>m:</strong> Number of parallel rows.</li>
+              <li><strong>Condition for Max Current:</strong> External resistance (R) must equal total internal resistance of the battery setup.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 4: Heating Effect of Current -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>4. Heating Effect (Joule Heating)</h3>
+          <p><strong>Simple Explanation:</strong> When electric current passes through a resistor, electrical energy is converted into heat energy due to collisions of moving electrons with lattice ions. This is an irreversible process.</p>
+          
+          <div class="sub-branch">
+            <h4>Key Features</h4>
+            <ul>
+              <li>It is completely <strong>irreversible</strong> (heat produced cannot automatically turn back into full electricity).</li>
+              <li>Found in everyday items like electric heaters, irons, and geysers.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 5: Joule's Law of Heating & Formulas -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>5. Joule's Law of Heating & Formulas</h3>
+          <p><strong>Mathematical Concept:</strong> The amount of heat ($H$) produced in a resistor depends directly on current square, resistance value, and flow time.</p>
+          
+          <div class="formula">H = V I t &nbsp;=&nbsp; I² R t &nbsp;=&nbsp; (V² t) / R &nbsp;&nbsp;(in Joules)</div>
+          <div class="formula">In Calories: &nbsp; H = (V I t) / 4.18 &nbsp;=&nbsp; (I² R t) / 4.18 &nbsp;=&nbsp; (V² t) / (4.18 R)</div>
+          
+          <div class="sub-branch">
+            <h4>Sign / Notation Glossary (हर एक संकेत का मतलब)</h4>
+            <ul>
+              <li><strong>H:</strong> Total heat energy produced (उत्पन्न ऊष्मा).</li>
+              <li><strong>V:</strong> Potential difference across the resistor (विभवांतर).</li>
+              <li><strong>I:</strong> Electric current flowing through the circuit (धारा).</li>
+              <li><strong>R:</strong> Resistance of the resistor (प्रतिरोध).</li>
+              <li><strong>t:</strong> Time duration for which current flows (समय सेकंड में).</li>
+              <li><strong>4.18:</strong> Joule's mechanical equivalent of heat constant (1 calorie = 4.18 Joules).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    /* Professional Mind Map Layout Styles */
+    .mindmap-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .central-node {
+      background: linear-gradient(135deg, #62a8ff, #9c7cff);
+      color: #fff;
+      padding: 20px 42px;
+      border-radius: 40px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      box-shadow: 0 0 35px rgba(98, 168, 255, 0.4);
+      margin-bottom: 50px;
+      z-index: 2;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .map-tree {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1250px;
+      position: relative;
+    }
+
+    .map-branch {
+      position: relative;
+    }
+
+    .node-box {
+      background: rgba(255, 255, 255, 0.075);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .node-box:hover {
+      transform: translateY(-6px);
+      border-color: rgba(98, 168, 255, 0.5);
+    }
+
+    .node-box h3 {
+      color: #62a8ff;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 8px;
+    }
+
+    .node-box p {
+      color: #a9b6ca;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .node-box ul {
+      padding-left: 18px;
+      color: #a9b6ca;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .node-box li {
+      margin-bottom: 6px;
+    }
+
+    .formula {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px dashed rgba(156, 124, 255, 0.45);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: #bcaeff;
+      margin: 12px 0;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .sub-branch {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.12);
+    }
+
+    .sub-branch h4 {
+      color: #5ee7c4;
+      font-size: 0.98rem;
+      margin-bottom: 8px;
+    }
+  </style>
+  <div class="mindmap-container">
+    
+    <!-- Central Hub -->
+    <div class="central-node">
+      <h2>Electric Power, Energy, Efficiency & Maximum Power Theorem</h2>
+    </div>
+
+    <!-- Tree Branches Layout with Detailed Explanations and Complete Variable Glossaries -->
+    <div class="map-tree">
+      
+      <!-- Branch 1: Electric Power -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>1. Electric Power (विद्युत शक्ति)</h3>
+          <p><strong>Simple Explanation:</strong> जिस दर से कोई विद्युत उपकरण (electrical appliance) विद्युत ऊर्जा को दूसरी ऊर्जा में बदलता है, या जिस दर से बैटरी/सेल सर्किट में करंट बनाए रखने के लिए काम करता है, उसे पावर कहते हैं।</p>
+          
+          <div class="formula">P = W / t &nbsp;=&nbsp; V · I &nbsp;=&nbsp; I² · R &nbsp;=&nbsp; V² / R</div>
+          
+          <div class="sub-branch">
+            <h4>Sign & Symbol Glossary (हर चिन्ह का मतलब समझें)</h4>
+            <ul>
+              <li><strong>P:</strong> Electric Power / विद्युत शक्ति (वाट में)।</li>
+              <li><strong>W:</strong> Work Done or Electrical Energy / किया गया कुल कार्य या ऊर्जा (जूल में)।</li>
+              <li><strong>t:</strong> Time / समय (सेकंड में)।</li>
+              <li><strong>V:</strong> Potential Difference / विभवांतर या वोल्टेज (वोल्ट में)।</li>
+              <li><strong>I:</strong> Electric Current / विद्युत धारा (एम्पियर में)।</li>
+              <li><strong>R:</strong> Resistance / प्रतिरोध (ओम में)।</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 2: SI Unit of Power -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>2. SI Unit of Power (वाट)</h3>
+          <p><strong>Simple Explanation:</strong> पावर की यूनिट वाट (Watt) होती है। यदि किसी उपकरण में 1 वोल्ट विभवांतर लगाने पर 1 एम्पियर धारा बहे, तो उसकी पावर 1 वाट होगी।</p>
+          
+          <div class="formula">1 watt = 1 joule / 1 second &nbsp;⇒&nbsp; 1 W = 1 J s⁻¹ = 1 V A</div>
+          <div class="formula">Commercial/Bigger Unit: &nbsp; 1 kilowatt (kW) = 1000 W</div>
+        </div>
+      </div>
+
+      <!-- Branch 3: Electric Energy -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>3. Electric Energy (विद्युत ऊर्जा)</h3>
+          <p><strong>Simple Explanation:</strong> किसी दिए गए समय में सर्किट में विद्युत धारा को बनाए रखने के लिए किया गया कुल कार्य ही विद्युत ऊर्जा है।</p>
+          
+          <div class="formula">Electric Energy (W) = P · t &nbsp;=&nbsp; V · I · t &nbsp;=&nbsp; I² · R · t &nbsp;=&nbsp; (V² · t) / R</div>
+          
+          <div class="sub-branch">
+            <h4>Commercial Units (व्यापारिक मात्रक)</h4>
+            <ul>
+              <li><strong>Kilowatt-hour (kWh / B.O.T. Unit):</strong> इसे ही 'यूनिट' कहते हैं (1 kWh = 1000 W बिजली 1 घंटे चलने पर खर्च ऊर्जा)।</li>
+              <li><strong>Calculation:</strong> $1\text{ kWh} = 1000\text{ W} \times 3600\text{ s} = 3.6 \times 10^6\text{ Joules}$.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 4: Power Rating & Combination of Appliances -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>4. Power Rating & Combination (उपकरणों की पावर)</h3>
+          <p><strong>Simple Explanation:</strong> किसी उपकरण पर लिखा पावर उसका रेटेड पावर होता है जो वह तय वोल्टेज पर खपत करता है। जब कई उपकरण जोड़े जाते हैं:</p>
+          
+          <div class="formula">Series Combination (श्रेणी क्रम): &nbsp; 1 / P = (1 / P₁) + (1 / P₂) + (1 / P₃) + ...</div>
+          <div class="formula">Parallel Combination (समानांतर क्रम): &nbsp; P = P₁ + P₂ + P₃ + ...</div>
+          
+          <div class="sub-branch">
+            <h4>Symbolic Glossary</h4>
+            <ul>
+              <li><strong>P₁, P₂, P₃:</strong> अलग-अलग उपकरणों की व्यक्तिगत पावर रेटिंग (Watt में)।</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 5: Efficiency of a Source of EMF ($\eta$) -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>5. Efficiency of a Cell/Source ($\eta$)</h3>
+          <p><strong>Simple Explanation:</strong> किसी सेल द्वारा दी गई कुल पावर (इनपुट) में से कितनी पावर बाहरी लोड को मिलती है (आउटपुट), उसका अनुपात दक्षता ($\eta$) कहलाता है।</p>
+          
+          <div class="formula">η = Output Power / Input Power &nbsp;=&nbsp; (V · I) / (ℰ · I) &nbsp;=&nbsp; V / ℰ &nbsp;=&nbsp; R / (R + r)</div>
+          
+          <div class="sub-branch">
+            <h4>Sign & Symbol Glossary</h4>
+            <ul>
+              <li><strong>η (Eta):</strong> Efficiency / दक्षता (प्रतिशत या अनुपात में)।</li>
+              <li><strong>ℰ (mathcal{E}):</strong> EMF of source / सेल का विद्युत वाहक बल।</li>
+              <li><strong>V:</strong> Terminal Voltage / सिरों के बीच का विभवांतर।</li>
+              <li><strong>R:</strong> External Resistance / बाहरी प्रतिरोध।</li>
+              <li><strong>r:</strong> Internal Resistance / सेल का आंतरिक प्रतिरोध।</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 6: Maximum Power Theorem -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>6. Maximum Power Theorem</h3>
+          <p><strong>Simple Explanation:</strong> किसी सोर्स से अधिकतम आउटपुट पावर तब मिलती है जब सर्किट का बाहरी प्रतिरोध (R) सेल के आंतरिक प्रतिरोध (r) के बिल्कुल बराबर हो जाता है ($R = r$)।</p>
+          
+          <div class="formula">Condition: R = r &nbsp;&nbsp;|&nbsp;&nbsp; Maximum Power: P<sub>max</sub> = ℰ² / (4r)</div>
+          
+          <div class="sub-branch">
+            <h4>Special Point</h4>
+            <p>जब सर्किट में अधिकतम पावर डिलीवर हो रही होती है, तब उस समय सेल की दक्षता ($\eta$) ठीक <strong>50%</strong> होती है।</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 7: Joule's Law of Heating -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>7. Joule's Law of Heating (जूल का ऊष्मीय नियम)</h3>
+          <p><strong>Simple Explanation:</strong> जब किसी प्रतिरोधक से धारा बहती है, तो ऊर्जा ऊष्मा (Heat) के रूप में नष्ट होती है। यह एक अपरिवर्तनीय (irreversible) प्रक्रिया है।</p>
+          
+          <div class="formula">H = V · I · t &nbsp;=&nbsp; I² · R · t &nbsp;=&nbsp; (V² · t) / R &nbsp;&nbsp;(Joules में)</div>
+          <div class="formula">In Calories: &nbsp; H = (I² · R · t) / 4.18 &nbsp;cal</div>
+          
+          <div class="sub-branch">
+            <h4>Symbolic Glossary</h4>
+            <ul>
+              <li><strong>H:</strong> Heat energy produced / उत्पन्न ऊष्मा।</li>
+              <li><strong>4.18:</strong> Joule's mechanical equivalent constant (1 cal = 4.18 J).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 8: Efficiency of Electric Motor -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>8. Efficiency of Electric Motor</h3>
+          <p><strong>Simple Explanation:</strong> मोटर में दी गई कुल विद्युत ऊर्जा का कितना हिस्सा यांत्रिक कार्य (Mechanical Work) में बदलता है।</p>
+          
+          <div class="formula">η = Output Mechanical Power / Input Electric Power</div>
+          <div class="formula">Input Power = Output Mechanical Power + Loss as Heat</div>
+          
+          <div class="sub-branch">
+            <h4>Important Condition</h4>
+            <p>किसी इलेक्ट्रिक मोटर की आउटपुट पावर अधिकतम तब होती है जब उसकी बैक-ईएमएफ (Back EMF), सोर्स ईएमएफ की ठीक आधी होती है (शर्त यह है कि मोटर की कॉइल का प्रतिरोध नगण्य हो)।</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    /* Professional Mind Map Layout Styles */
+    .mindmap-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .central-node {
+      background: linear-gradient(135deg, #62a8ff, #9c7cff);
+      color: #fff;
+      padding: 20px 42px;
+      border-radius: 40px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      box-shadow: 0 0 35px rgba(98, 168, 255, 0.4);
+      margin-bottom: 50px;
+      z-index: 2;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .map-tree {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1250px;
+      position: relative;
+    }
+
+    .map-branch {
+      position: relative;
+    }
+
+    .node-box {
+      background: rgba(255, 255, 255, 0.075);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .node-box:hover {
+      transform: translateY(-6px);
+      border-color: rgba(98, 168, 255, 0.5);
+    }
+
+    .node-box h3 {
+      color: #62a8ff;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 8px;
+    }
+
+    .node-box p {
+      color: #a9b6ca;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .node-box ul {
+      padding-left: 18px;
+      color: #a9b6ca;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .node-box li {
+      margin-bottom: 6px;
+    }
+
+    .formula {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px dashed rgba(156, 124, 255, 0.45);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: #bcaeff;
+      margin: 12px 0;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .sub-branch {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.12);
+    }
+
+    .sub-branch h4 {
+      color: #5ee7c4;
+      font-size: 0.98rem;
+      margin-bottom: 8px;
+    }
+  </style>
+  <div class="mindmap-container">
+    
+    <!-- Central Hub -->
+    <div class="central-node">
+      <h2>Kirchhoff's Laws, Potentiometer & Wheatstone Bridge Dynamics</h2>
+    </div>
+
+    <!-- Tree Branches Layout with Full Detailed Explanations & Complete Symbol Glossaries -->
+    <div class="map-tree">
+      
+      <!-- Branch 1: Kirchhoff's First Law (Junction Rule) -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>1. Kirchhoff's First Law (Junction Rule)</h3>
+          <p><strong>Detailed Concept:</strong> In an electric circuit, the algebraic sum of currents meeting at any junction is strictly zero. Alternatively, the total sum of currents entering a junction equals the total sum of currents leaving that junction.</p>
+          
+          <div class="formula">Mathematical Expression: &nbsp; ΣI = 0</div>
+          
+          <div class="sub-branch">
+            <h4>Fundamental Justification & Notations</h4>
+            <p>This law is founded upon the <strong>law of conservation of charge</strong>. When currents in a circuit are steady, electric charges cannot accumulate or originate at any point inside the circuit.</p>
+            <ul>
+              <li><strong>I:</strong> Electric current flowing through circuit branches (measured in Amperes, A).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 2: Kirchhoff's Second Law (Loop Rule) -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>2. Kirchhoff's Second Law (Loop Rule)</h3>
+          <p><strong>Detailed Concept:</strong> Around any closed loop of a network, the algebraic sum of changes in potential must be zero. Or, the algebraic sum of EMFs in any closed loop equals the sum of the products of currents and resistances in it.</p>
+          
+          <div class="formula">ΣΔV = 0 &nbsp;&nbsp;|&nbsp;&nbsp; Σℰ = Σ(I · R)</div>
+          
+          <div class="sub-branch">
+            <h4>Fundamental Justification & Notations</h4>
+            <p>This law is based on the <strong>law of conservation of energy</strong>. Since the electrostatic force field is conservative, the total work done by it along any closed path is identically zero.</p>
+            <ul>
+              <li><strong>ℰ (mathcal{E}):</strong> Electromotive force of source cells.</li>
+              <li><strong>I:</strong> Branch currents.</li>
+              <li><strong>R:</strong> Resistor values in respective branches.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 3: Galvanometer -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>3. Galvanometer</h3>
+          <p><strong>Detailed Concept:</strong> A highly sensitive electromechanical instrument utilized to detect the presence and direction of minute electric currents in a circuit.</p>
+          
+          <div class="sub-branch">
+            <h4>Working Characteristic</h4>
+            <p>It produces a mechanical pointer deflection directly proportional to the magnitude of the electric current flowing through its coil.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 4: Potentiometer & Principle -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>4. Potentiometer & Principle</h3>
+          <p><strong>Detailed Concept:</strong> A versatile laboratory device used primarily to compare the electromotive forces (EMFs) of two electrical sources accurately without drawing current.</p>
+          
+          <div class="formula">Principle: &nbsp; V ∝ l &nbsp;⇒&nbsp; V = k · l</div>
+          
+          <div class="sub-branch">
+            <h4>Principle & Notations</h4>
+            <p>When a steady current flows through a uniform resistance wire, the potential drop across any length is directly proportional to that length.</p>
+            <ul>
+              <li><strong>V:</strong> Potential difference across wire length.</li>
+              <li><strong>l:</strong> Balancing length of the wire.</li>
+              <li><strong>k:</strong> Potential drop per unit length, known as the <strong>potential gradient</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 5: Applications of Potentiometer -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>5. Applications of Potentiometer</h3>
+          <p><strong>Detailed Concept:</strong> Two primary practical uses of a potentiometer setup:</p>
+          
+          <div class="sub-branch">
+            <h4>(i) Comparison of Two Cell EMFs</h4>
+            <div class="formula">ℰ₁ / ℰ₂ = l₁ / l₂</div>
+            <p>Here, <em>l₁</em> and <em>l₂</em> are balancing lengths for source EMFs ℰ₁ and ℰ₂.</p>
+          </div>
+
+          <div class="sub-branch">
+            <h4>(ii) Finding Internal Resistance (r) of a Cell</h4>
+            <div class="formula">r = [(l₁ - l₂) / l₂] · R</div>
+            <p><strong>Notations:</strong> <em>l₁</em> = balancing length without external shunt; <em>l₂</em> = balancing length with shunt resistance <em>R</em> across the cell.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 6: Wheatstone Bridge -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>6. Wheatstone Bridge</h3>
+          <p><strong>Detailed Concept:</strong> An electrical bridge arrangement consisting of four resistive arms (P, Q, R, S) joined to form quadrilateral ABCD, with a battery across diagonal AC and a sensitive galvanometer across BD.</p>
+          
+          <div class="formula">Balanced Condition: &nbsp; P / Q = R / S</div>
+          
+          <div class="sub-branch">
+            <h4>Operational Details & Notations</h4>
+            <p>Resistances are adjusted until zero current flows through the galvanometer (null deflection). Knowing any three resistors allows precise calculation of the fourth. Maximum sensitivity is achieved when all four bridge arms have comparable resistance magnitudes.</p>
+            <ul>
+              <li><strong>P, Q, R, S:</strong> Bridge arm resistances.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 7: Slide Wire Bridge (Metre Bridge) -->
+      <div class="map-branch">
+        <div class="node-box">
+          <h3>7. Slide Wire Bridge (Metre Bridge)</h3>
+          <p><strong>Detailed Concept:</strong> A practical engineering realization of a Wheatstone bridge where wire length is 100 cm. Resistance <em>R</em> is fixed, and the balance point is located by sliding a jockey.</p>
+          
+          <div class="formula">P / Q = R / S = l / (100 - l) &nbsp;&nbsp;⇒&nbsp;&nbsp; S = [(100 - l) / l] · R</div>
+          <div class="formula">Material Resistivity: &nbsp; ρ = (S · A) / l_wire = (S · π · r²) / l</div>
+          
+          <div class="sub-branch">
+            <h4>Variable Glossary (Symbols Explained)</h4>
+            <ul>
+              <li><strong>l:</strong> Balancing length measured from the left end (in cm).</li>
+              <li><strong>(100 - l):</strong> Remaining length of the metre bridge wire.</li>
+              <li><strong>S:</strong> Unknown resistance to be measured.</li>
+              <li><strong>A:</strong> Cross-sectional area of wire ($\pi r^2$).</li>
+              <li><strong>ρ (rho):</strong> Material resistivity.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    /* Professional Mind Map Layout Styles */
+    .mindmap-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .central-node {
+      background: linear-gradient(135deg, #62a8ff, #9c7cff);
+      color: #fff;
+      padding: 20px 42px;
+      border-radius: 40px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      box-shadow: 0 0 35px rgba(98, 168, 255, 0.4);
+      margin-bottom: 50px;
+      z-index: 2;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .map-tree {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1250px;
+      position: relative;
+    }
+
+    .map-branch {
+      position: relative;
+    }
+
+    .node-box {
+      background: rgba(255, 255, 255, 0.075);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .node-box:hover {
+      transform: translateY(-6px);
+      border-color: rgba(98, 168, 255, 0.5);
+    }
+
+    .node-box h3 {
+      color: #62a8ff;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 8px;
+    }
+
+    .node-box p {
+      color: #a9b6ca;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .node-box ul {
+      padding-left: 18px;
+      color: #a9b6ca;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .node-box li {
+      margin-bottom: 6px;
+    }
+
+    .formula {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px dashed rgba(156, 124, 255, 0.45);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: #bcaeff;
+      margin: 12px 0;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .sub-branch {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.12);
+    }
+
+    .sub-branch h4 {
+      color: #5ee7c4;
+      font-size: 0.98rem;
+      margin-bottom: 8px;
+    }
+  </style>
+   
+  <!-- Disclaimer Section (Placed exactly above the navigation cards) -->
+  <div class="disclaimer">
+    <h4>⚠️ Important Disclaimer</h4>
+    <p>
+      Shorveer Notes has made every effort to ensure the accuracy and reliability of these quick revision notes. However, human errors, typographical mistakes, or misprints may occur during typing and formatting. <strong>Shorveer Notes will not be held responsible for any loss of marks or misunderstandings arising from such errors.</strong> We highly recommend cross-checking formulas and concepts with your official NCERT textbooks before your final board examinations.
+    </p>
+  </div>
+
+  <!-- Navigation Cards Section -->
+  <div class="nav-cards-container">
+    <h3 class="nav-cards-title">Continue Your Preparation</h3>
+    <div class="chapter-grid">
+      
+      <!-- Card 1: Chapter 3 Detailed Notes -->
+      <a href="/physics/chapter3.html" class="chapter">
+        <div class="chapter-top">
+          <div>
+            <div class="chapter-number">CHAPTER 03</div>
+            <h4>Detailed Notes</h4>
+          </div>
+          <div class="chapter-arrow">→</div>
+        </div>
+        <p>Explore in-depth derivations, complete theory, and microscopic properties of Current Electricity.</p>
+      </a>
+
+      <!-- Card 2: Chapter 3 PYQs -->
+      <a href="/physics/ch3-pyq.html" class="chapter">
+        <div class="chapter-top">
+          <div>
+            <div class="chapter-number">CHAPTER 03</div>
+            <h4>Solved PYQs</h4>
+          </div>
+          <div class="chapter-arrow">→</div>
+        </div>
+        <p>Practice past 10 years CBSE board questions from Current Electricity with step-by-step solutions.</p>
+      </a>
+
+      <!-- Card 3: Chapter 4 Detailed Notes -->
+      <a href="/physics/chapter4.html" class="chapter">
+        <div class="chapter-top">
+          <div>
+            <div class="chapter-number">NEXT UNIT</div>
+            <h4>Ch 4: Moving Charges & Magnetism</h4>
+          </div>
+          <div class="chapter-arrow">→</div>
+        </div>
+        <p>Start the next chapter: Biot-Savart Law, Ampere's Circuital Law, and magnetic fields.</p>
+      </a>
+
+    </div>
+  </div>
+
+<!-- Professional Standardized Footer (Exactly as requested) -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2 style="font-size: 1.4rem;">SHORVEER NOTES</h2>
+        <p>
+          A student-focused academic platform designed to make Class 12 Science learning
+          simpler, visual, and high-yielding for board examinations.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Core Subjects</h4>
+        <a href="/physics/index.html">Physics Hub</a>
+        <a href="/chemistry/index.html">Chemistry Notes</a>
+        <a href="/mathematics/index.html">Mathematics Hub</a>
+        <a href="/english/index.html">English Core</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Preparation</h4>
+        <a href="/exam-info.html">Exam Blueprints</a>
+        <a href="/about-notes.html">Notes Framework</a>
+        <a href="/about.html">About Shorveer</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Legal & Support</h4>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/cookies.html">Cookies Policy</a>
+        <a href="mailto:support.shorveernotes@gmail.com">Help & Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © <span id="year">2026</span> Shorveer Notes. All Rights Reserved.
+      </div>
+      <div class="author-credit">
+        Crafted with Dedication by <span>Jatin Sandilya</span> • Founder of Shorveer Notes
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Loader Logic
+window.addEventListener("load", () => {
+  setTimeout(() => { document.getElementById("loader").classList.add("hide"); }, 500);
+});
+
+// Dynamic Copyright Year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Dark / Light Theme Toggle Retained
+const themeBtn = document.getElementById("themeBtn");
+let lightMode = localStorage.getItem("shorveer_physics_theme") === "light";
+
+function applyTheme() {
+  if (lightMode) {
+    document.documentElement.style.setProperty("--bg", "#eef4ff");
+    document.documentElement.style.setProperty("--bg2", "#dce8f8");
+    document.documentElement.style.setProperty("--text", "#102039");
+    document.documentElement.style.setProperty("--muted", "#52637a");
+    document.documentElement.style.setProperty("--card", "rgba(255, 255, 255, 0.6)");
+    document.documentElement.style.setProperty("--card2", "rgba(255, 255, 255, 0.8)");
+    document.documentElement.style.setProperty("--border", "rgba(16, 32, 57, 0.12)");
+    document.querySelector("header").style.background = "rgba(238, 244, 255, 0.75)";
+    themeBtn.textContent = "☀";
+  } else {
+    document.documentElement.style.setProperty("--bg", "#07111f");
+    document.documentElement.style.setProperty("--bg2", "#0d1b2e");
+    document.documentElement.style.setProperty("--text", "#f5f8ff");
+    document.documentElement.style.setProperty("--muted", "#a9b6ca");
+    document.documentElement.style.setProperty("--card", "rgba(255, 255, 255, 0.075)");
+    document.documentElement.style.setProperty("--card2", "rgba(255, 255, 255, 0.11)");
+    document.documentElement.style.setProperty("--border", "rgba(255, 255, 255, 0.12)");
+    document.querySelector("header").style.background = "rgba(7, 17, 31, 0.68)";
+    themeBtn.textContent = "◐";
+  }
+}
+
+applyTheme();
+
+themeBtn.addEventListener("click", () => {
+  lightMode = !lightMode;
+  localStorage.setItem("shorveer_physics_theme", lightMode ? "light" : "dark");
+  applyTheme();
+});
+</script>
+
+</body>
+</html>
