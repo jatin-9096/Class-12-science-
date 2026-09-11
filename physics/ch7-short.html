@@ -1,0 +1,2137 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Class 12 Physics Chapter 7 Quick Revision. Enter the void of Alternating Current with interactive color themes and deep philosophical insights by Shorveer Notes.">
+<meta name="keywords" content="Chapter 7 Quick Revision, Alternating Current notes, Electric Machines, AC Circuit formulas, CBSE Class 12 Physics, Shorveer Notes, Jatin Sandilya">
+<meta name="author" content="Jatin Sandilya">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Social SEO -->
+<meta property="og:title" content="Chapter 7 Quick Revision: Alternating Current | Shorveer Notes">
+<meta property="og:description" content="Experience the oscillation of light and shadow with dynamic themes for Class 12 Physics Chapter 7.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shorveer Notes">
+
+<title>Chapter 7 Quick Rev: Alternating Current | Shorveer Notes</title>
+
+<!-- Google AdSense Auto-Ads Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9688496231973353" crossorigin="anonymous"></script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+<style>
+/* ========================================================= */
+/* --- DYNAMIC THEME SYSTEM (DEFAULT: THE VOID BLACK) ------ */
+/* ========================================================= */
+:root {
+  --bg: #030305;
+  --text: #d4dce8;
+  --text-glow: #ffffff;
+  --muted: #9aa4b2;
+  --card-bg: rgba(18, 22, 32, 0.75);
+  --border-color: rgba(255, 255, 255, 0.12);
+  --shadow-glow: rgba(255, 255, 255, 0.15);
+}
+
+/* Theme 1: Crimson Blood */
+[data-theme="crimson"] {
+  --bg: #080203;
+  --text: #e8d4d4;
+  --text-glow: #ff4d4d;
+  --muted: #b29a9a;
+  --card-bg: rgba(32, 14, 16, 0.8);
+  --border-color: rgba(255, 77, 77, 0.2);
+  --shadow-glow: rgba(255, 77, 77, 0.25);
+}
+
+/* Theme 2: Midnight Sapphire */
+[data-theme="sapphire"] {
+  --bg: #020408;
+  --text: #d4e2e8;
+  --text-glow: #4da6ff;
+  --muted: #9aaab2;
+  --card-bg: rgba(14, 22, 35, 0.8);
+  --border-color: rgba(77, 166, 255, 0.2);
+  --shadow-glow: rgba(77, 166, 255, 0.25);
+}
+
+/* Theme 3: Emerald Abyssal */
+[data-theme="emerald"] {
+  --bg: #020603;
+  --text: #d4e8d8;
+  --text-glow: #2ecc71;
+  --muted: #9ab2a0;
+  --card-bg: rgba(14, 32, 20, 0.8);
+  --border-color: rgba(46, 204, 113, 0.2);
+  --shadow-glow: rgba(46, 204, 113, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  overflow-x: hidden;
+  transition: background-color 0.8s ease;
+}
+
+/* ========================================================= */
+/* --- BACKGROUND SHADOW MOTION & VISIBILITY --------------- */
+/* ========================================================= */
+.background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  background: var(--bg);
+  transition: background 0.8s ease;
+}
+
+.void-vignette {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(20, 30, 48, 0.2) 0%, var(--bg) 85%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.shadow-entity {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  background: rgba(40, 60, 90, 0.25);
+  animation: shadow-crawl 35s linear infinite alternate;
+}
+
+.shadow-entity.one { width: 140vw; height: 90vh; top: -10%; left: -30%; animation-duration: 40s; }
+.shadow-entity.two { width: 110vw; height: 110vh; bottom: -20%; right: -20%; background: rgba(30, 45, 70, 0.2); animation-duration: 30s; animation-direction: alternate-reverse; }
+
+@keyframes shadow-crawl {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(8%, 12%) scale(1.08); }
+  100% { transform: translate(-8%, -8%) scale(0.92); }
+}
+
+/* ---------- Loader ---------- */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+.loader.hide { opacity: 0; visibility: hidden; }
+.loader-symbol {
+  width: 30px;
+  height: 30px;
+  background: var(--text-glow);
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 0 0 20px var(--text-glow);
+  animation: ghost-pulse 1.5s infinite alternate;
+}
+@keyframes ghost-pulse {
+  0% { transform: scale(0.5); opacity: 0.2; }
+  100% { transform: scale(1.5); opacity: 1; }
+}
+
+/* ---------- Header with Theme Switcher ---------- */
+.header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  padding: 15px 15px 0;
+}
+
+.nav {
+  width: min(780px, 100%);
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px 0 25px;
+  background: rgba(10, 12, 18, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--muted);
+  transition: color 0.3s ease;
+}
+.brand:hover { color: var(--text-glow); }
+.brand-text strong { display: block; font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-glow); }
+.brand-text span { display: block; font-size: 0.55rem; letter-spacing: 3px; color: var(--muted); }
+
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+
+/* Theme Selector Dropdown */
+.theme-select {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.theme-select:hover, .theme-select:focus {
+  border-color: var(--text-glow);
+  box-shadow: 0 0 10px var(--shadow-glow);
+}
+
+.nav-btn {
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.nav-btn:hover { 
+  color: var(--text-glow); 
+  text-shadow: 0 0 12px var(--text-glow); 
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+  width: min(850px, 92%);
+  margin: 70px auto 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: var(--text-glow);
+  text-shadow: 0 0 25px var(--shadow-glow);
+}
+.hero h1 span {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: var(--muted);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.hero p {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  max-width: 600px;
+  font-weight: 400;
+}
+
+/* ========================================================= */
+/* --- 3D POP-OUT & FADING FORMULA CARD (USER REQUESTED) ---- */
+/* ========================================================= */
+.hero-visual { display: grid; place-items: center; width: 100%; margin-top: 20px;}
+
+.sad-card {
+  width: min(440px, 100%);
+  padding: 45px 25px;
+  background: var(--card-bg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 20px var(--shadow-glow);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  /* 3D Transform & Fading Transition setup */
+  transform: perspective(1000px) translateZ(0);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.5s ease, 
+              border-color 0.5s ease,
+              opacity 0.5s ease;
+}
+
+/* Hover: Pops out in 3D and slightly fades/glows into the light */
+.sad-card:hover {
+  transform: perspective(1000px) translateZ(45px) translateY(-6px);
+  box-shadow: 0 35px 70px rgba(0,0,0,0.9), 0 0 35px var(--text-glow);
+  border-color: var(--text-glow);
+  opacity: 0.92; /* Fading effect requested */
+}
+
+.formula { text-align: center; }
+
+.formula-main {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2.6rem;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--text-glow);
+  text-shadow: 0 0 15px var(--shadow-glow);
+}
+
+.formula-sub {
+  color: var(--muted);
+  margin-top: 20px;
+  letter-spacing: 2px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* ========================================================= */
+/* --- INCREASED & EXPANDED QUOTE LOOP --------------------- */
+/* ========================================================= */
+.quote-loop-container {
+  width: min(750px, 90%);
+  margin: 50px auto 60px;
+  position: relative;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.quote-slide {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  animation: emerge-shadow 48s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 6 Quotes, 8s delay each (48s total loop) */
+.quote-slide:nth-child(1) { animation-delay: 0s; }
+.quote-slide:nth-child(2) { animation-delay: 8s; }
+.quote-slide:nth-child(3) { animation-delay: 16s; }
+.quote-slide:nth-child(4) { animation-delay: 24s; }
+.quote-slide:nth-child(5) { animation-delay: 32s; }
+.quote-slide:nth-child(6) { animation-delay: 40s; }
+
+@keyframes emerge-shadow {
+  0% { opacity: 0; filter: blur(8px); transform: translateY(15px); }
+  6% { opacity: 1; filter: blur(0px); transform: translateY(0); }
+  14% { opacity: 1; filter: blur(0px); transform: translateY(0); }
+  18% { opacity: 0; filter: blur(8px); transform: translateY(-15px); }
+  100% { opacity: 0; filter: blur(8px); transform: translateY(-15px); }
+}
+
+.quote-text {
+  font-size: 1.15rem;
+  font-family: 'Cinzel', serif;
+  font-style: italic;
+  color: var(--text-glow);
+  line-height: 1.8;
+  font-weight: 400;
+  text-shadow: 0 0 12px var(--shadow-glow);
+}
+
+.quote-author {
+  margin-top: 15px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+/* ---------- Main Content Injection Zone ---------- */
+.content-injection-zone {
+  width: min(850px, 92%);
+  margin: 60px auto;
+  min-height: 40vh; 
+  position: relative;
+  z-index: 2;
+}
+
+/* ========================================================= */
+/* --- 3D OUT-OF-SCREEN POP-OUT HOVER EFFECT --------------- */
+/* ========================================================= */
+.navigation-cards {
+  width: min(850px, 92%);
+  margin: 80px auto 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+  padding: 35px 25px;
+  transform: perspective(1000px) translateZ(0);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease,
+              background 0.4s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.nav-card:hover {
+  transform: perspective(1000px) translateZ(40px) translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 30px var(--shadow-glow);
+  border-color: var(--text-glow);
+  background: rgba(25, 32, 48, 0.95);
+}
+
+.card-title { color: var(--text-glow); font-size: 1.05rem; margin-bottom: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;}
+.card-desc { color: var(--text); font-size: 0.9rem; line-height: 1.8; margin-bottom: 25px; flex-grow: 1; font-weight: 400; }
+.card-link { font-size: 0.8rem; font-weight: 600; color: var(--text-glow); letter-spacing: 2px; text-transform: uppercase; transition: text-shadow 0.3s;}
+.nav-card:hover .card-link { text-shadow: 0 0 10px var(--text-glow); }
+
+/* ---------- Disclaimer ---------- */
+.disclaimer-section { width: min(850px, 92%); margin: 0 auto 60px; position: relative; z-index: 2;}
+.disclaimer-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 40px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+.disclaimer-text h4 { color: var(--text-glow); margin-bottom: 15px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 4px; font-weight: 600; }
+.disclaimer-text p { color: var(--text); font-size: 0.85rem; line-height: 1.9; max-width: 650px; margin: auto; font-weight: 400;}
+
+/* ---------- Footer ---------- */
+footer {
+  background: #020204;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+  position: relative;
+  z-index: 2;
+}
+.footer-inner { width: min(850px, 92%); margin: auto; padding: 60px 0 30px; }
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+  padding-bottom: 50px;
+}
+.footer-brand p { margin-top: 15px; color: var(--text); line-height: 1.8; font-size: 0.85rem; font-weight: 400;}
+.footer-column h4 { font-size: 0.8rem; margin-bottom: 20px; color: var(--text-glow); letter-spacing: 3px; text-transform: uppercase; font-weight: 600;}
+.footer-column a { display: block; color: var(--text); font-size: 0.85rem; margin-bottom: 12px; text-decoration: none; transition: 0.3s ease; font-weight: 400;}
+.footer-column a:hover { color: var(--text-glow); text-shadow: 0 0 10px var(--text-glow); }
+.footer-bottom {
+  border-top: 1px solid var(--border-color);
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.author-credit span { color: var(--text-glow); font-weight: 600;}
+
+/* ---------- Mobile Responsive Fixes ---------- */
+@media (max-width: 850px) {
+  .sad-card { width: min(320px, 90%); margin: 0 auto; padding: 35px 20px;}
+}
+@media (max-width: 600px) {
+  .header-wrapper { top: 10px; padding: 0 10px; }
+  .nav { height: 50px; padding: 0 15px; }
+  .brand-text span { display: none; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero h1 span { font-size: 0.95rem; }
+  .quote-loop-container { min-height: 180px; margin-top: 20px; }
+  .quote-text { font-size: 1rem; }
+  .footer-bottom { flex-column: column; text-align: center; }
+}
+</style>
+</head>
+<body data-theme="void">
+
+<!-- Background Motion -->
+<div class="background">
+  <div class="void-vignette"></div>
+  <div class="shadow-entity one"></div>
+  <div class="shadow-entity two"></div>
+</div>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <div class="loader-symbol"></div>
+</div>
+
+<!-- Header with Theme Selector -->
+<div class="header-wrapper">
+  <header class="nav">
+    <a class="brand" href="/index.html">
+      <div class="brand-text">
+        <strong>Shorveer Notes</strong>
+        <span>Physics • Quick Rev</span>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <!-- User Color Theme Switcher -->
+      <select class="theme-select" id="themeSwitcher" aria-label="Select Color Theme">
+        <option value="void">The Void (Black)</option>
+        <option value="crimson">Crimson Blood</option>
+        <option value="sapphire">Midnight Sapphire</option>
+        <option value="emerald">Emerald Abyssal</option>
+      </select>
+      <a class="nav-btn" href="/index.html" aria-label="Home">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+      </a>
+    </div>
+  </header>
+</div>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>
+      Alternating Current
+      <span>Chapter 7</span>
+    </h1>
+    <p>
+      There is no constant light, only the inevitable oscillation between the peak and the void. Surrender to the silent study of AC circuits and electric machines.
+    </p>
+
+    <!-- Visual Card with 3D Pop & Fading Effect -->
+    <div class="hero-visual">
+      <div class="sad-card">
+        <div class="formula">
+          <div class="formula-main">I = I<sub>0</sub> sin(&omega;t)</div>
+          <div class="formula-sub">
+            Alternating Current
+            <br>
+            <span style="font-size: 0.6rem; opacity: 0.85; display:block; margin-top:8px; text-transform:none; letter-spacing: 0.5px; color: var(--text-glow);">
+              Every downfall is the base of every prime time. The descent is merely preparation for the next ascent.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expanded Quote Loop (6 Deep Quotes) -->
+  <section class="quote-loop-container">
+    <div class="quote-slide">
+      <p class="quote-text">"We are just shadows in the current of time, rising to our peaks only to fade back into the dark."</p>
+      <div class="quote-author">— The Oscillation of Life</div>
+    </div>
+    <div class="quote-slide">
+      <p class="quote-text">"Machines do not weep for the resistance they must overcome. But we do."</p>
+      <div class="quote-author">— The Human Circuit</div>
+    </div>
+    <div class="quote-slide">
+      <p class="quote-text">"In resonance, we find our greatest amplitude, but even that must eventually die away."</p>
+      <div class="quote-author">— Fading Resonance</div>
+    </div>
+    <div class="quote-slide">
+      <p class="quote-text">"Look closely at the light. It is just darkness flickering at a frequency you cannot see."</p>
+      <div class="quote-author">— The Reality of AC</div>
+    </div>
+    <div class="quote-slide">
+      <p class="quote-text">"The lowest valley is mathematically required before you can witness the highest peak."</p>
+      <div class="quote-author">— Law of Sine Waves</div>
+    </div>
+    <div class="quote-slide">
+      <p class="quote-text">"Even when the current drops to zero, the potential remains waiting in the dark."</p>
+      <div class="quote-author">— Dormant Energy</div>
+    </div>
+  </section>
+<div class="ac-mindmap-wrapper">
+  
+  <!-- Central Hub Title -->
+  <div class="mindmap-center-hub">
+    <h2>Alternating Current</h2>
+    <p>Class 12 Physics • Quick Mind Map & Notations</p>
+  </div>
+
+  <!-- Mind Map Grid Container -->
+  <div class="mindmap-grid">
+
+    <!-- 1. Purely Inductive (L) Circuit -->
+    <div class="mindmap-node">
+      <div class="node-header">Purely Inductive (L) Circuit</div>
+      <div class="node-body">
+        <p class="formula-line">i = i<sub>m</sub> sin(ωt - π/2)</p>
+        <p class="formula-line">यहाँ, peak current i<sub>m</sub> = v<sub>m</sub> / X<sub>L</sub></p>
+        <p>• <strong>X<sub>L</sub> = ωL</strong> : Inductive Reactance (प्रेरकीय प्रतिघात)</p>
+        <p>• <strong>Phase difference (φ)</strong> = π/2 (Voltage leads current by 90°)</p>
+        <p>• Average power over a complete cycle = <strong>0</strong></p>
+        
+        <div class="notation-box">
+          <p class="notation-title">अक्षरों का मतलब (Notations):</p>
+          <p>• <strong>i</strong> = Instantaneous Current (तात्क्षणिक धारा)</p>
+          <p>• <strong>i<sub>m</sub></strong> = Peak Current / Maximum Current (शिखर धारा)</p>
+          <p>• <strong>ω</strong> = Angular Frequency (कोणीय आवृत्ति)</p>
+          <p>• <strong>t</strong> = Time (समय)</p>
+          <p>• <strong>L</strong> = Self-Inductance (स्व-प्रेरकत्व)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Purely Resistive (R) Circuit -->
+    <div class="mindmap-node">
+      <div class="node-header">Purely Resistive (R) Circuit</div>
+      <div class="node-body">
+        <p class="formula-line">i = i<sub>m</sub> sin(ωt)</p>
+        <p class="formula-line">यहाँ, i<sub>m</sub> = V<sub>m</sub> / R</p>
+        <p>• Phase difference (φ) = 0 (Same phase)</p>
+        <p class="formula-line">Power (P) = (1/2) * (i<sub>m</sub>^2) * R</p>
+        <p class="highlight-text">Current & voltage both are in the same phase.</p>
+        
+        <div class="notation-box">
+          <p class="notation-title">अक्षरों का मतलब (Notations):</p>
+          <p>• <strong>R</strong> = Resistance (प्रतिरोध)</p>
+          <p>• <strong>V<sub>m</sub></strong> = Peak Voltage (शिखर वोल्टेज)</p>
+          <p>• <strong>P</strong> = Average Power (औसत शक्ति)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Series LCR Circuit -->
+    <div class="mindmap-node lcr-node">
+      <div class="node-header">Series LCR Circuit</div>
+      <div class="node-body">
+        <p class="formula-line">i<sub>m</sub> = v<sub>m</sub> / √[ R² + (X<sub>c</sub> - X<sub>L</sub>)² ]</p>
+        <p class="formula-line">Impedance (Z) = √[ R² + (X<sub>c</sub> - X<sub>L</sub>)² ]</p>
+        <p class="formula-line">Phase angle (tan φ) = (X<sub>c</sub> - X<sub>L</sub>) / R</p>
+        <p>Note: Current (I) is the same for R, L, and C in series.</p>
+        
+        <div class="notation-box">
+          <p class="notation-title">अक्षरों का मतलब (Notations):</p>
+          <p>• <strong>Z</strong> = Impedance / Total Opposition (प्रतिबाधा)</p>
+          <p>• <strong>X<sub>c</sub></strong> = Capacitive Reactance (धारतीय प्रतिघात)</p>
+          <p>• <strong>X<sub>L</sub></strong> = Inductive Reactance (प्रेरकीय प्रतिघात)</p>
+          <p>• <strong>φ</strong> = Phase Angle (कला कोण)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Purely Capacitive (C) Circuit -->
+    <div class="mindmap-node">
+      <div class="node-header">Purely Capacitive (C) Circuit</div>
+      <div class="node-body">
+        <p class="formula-line">i = i<sub>m</sub> sin(ωt + π/2)</p>
+        <p class="formula-line">यहाँ, i<sub>m</sub> = v<sub>m</sub> / X<sub>c</sub></p>
+        <p>• <strong>X<sub>c</sub> = 1 / (ωC)</strong> : Capacitive Reactance</p>
+        <p>• Phase difference (φ) = π/2</p>
+        <p class="formula-line">Instantaneous Power (P<sub>c</sub>) = (I<sub>m</sub> V<sub>m</sub> sin 2ωt) / 2</p>
+        <p class="highlight-text">Current leads the voltage by π/2 (90°).</p>
+        
+        <div class="notation-box">
+          <p class="notation-title">अक्षरों का मतलब (Notations):</p>
+          <p>• <strong>C</strong> = Capacitance (धारिता)</p>
+          <p>• <strong>P<sub>c</sub></strong> = Instantaneous Power in Capacitor</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Power Factor -->
+    <div class="mindmap-node power-node">
+      <div class="node-header">Power Factor (शक्ति गुणांक)</div>
+      <div class="node-body">
+        <p class="formula-main-box">P = (v<sub>m</sub> i<sub>m</sub> / 2) cos φ = V * I * cos φ = I² Z cos φ</p>
+        <p>यहाँ, <strong>cos φ</strong> = Power Factor (शक्ति गुणांक) = R / Z</p>
+        <ul class="cases-list">
+          <li><strong>Case 1 (Resistive):</strong> φ = 0, cos φ = 1 (Maximum Power)</li>
+          <li><strong>Case 2 (Pure L or C):</strong> φ = 90°, cos φ = 0 (No power consumed, called <strong>Wattless Current / हीन शक्ति धारा</strong>)</li>
+          <li><strong>Case 3 (LCR Series):</strong> cos φ = R / Z</li>
+          <li><strong>Case 4 (Resonance):</strong> cos φ = 1 (Maximum power dissipation)</li>
+        </ul>
+        
+        <div class="notation-box">
+          <p class="notation-title">अक्षरों का मतलब (Notations):</p>
+          <p>• <strong>V & I</strong> = RMS Voltage and RMS Current (आरएमएस मान)</p>
+          <p>• <strong>cos φ</strong> = Power Factor (शक्ति गुणांक)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Resonance -->
+    <div class="mindmap-node">
+      <div class="node-header">Resonance (अनुनाद) in LCR</div>
+      <div class="node-body">
+        <p>जब सर्किट की प्रेरकिय बाधा और धारतीय बाधा बराबर हो जाती है (X<sub>L</sub> = X<sub>c</sub>)।</p>
+        <p class="formula-line">Resonant Frequency (ω<sub>0</sub>) = 1 / √(LC)</p>
+        <p class="highlight-text">At Resonance: X<sub>L</sub> = X<sub>c</sub>, Impedance Z = R (Minimum), Current becomes Maximum.</p>
+        
+        <div class="notation-box">
+          <p class="notation-title">अक्षरों का मतलब (Notations):</p>
+          <p>• <strong>ω<sub>0</sub></strong> = Resonant Angular Frequency (अनुनादी कोणीय आवृत्ति)</p>
+          <p>• <strong>L</strong> = Inductance, <strong>C</strong> = Capacitance</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Transformer -->
+    <div class="mindmap-node transformer-node">
+      <div class="node-header">Transformer (ट्रांसफॉर्मर)</div>
+      <div class="node-body">
+        <p>कम वोल्टेज को उच्च वोल्टेज (या इसके विपरीत) बदलने की युक्ति।</p>
+        <p class="formula-line">Induced EMF: ε = - (dΦ / dt)</p>
+        <p class="formula-line">Voltage Ratio: (ε<sub>s</sub> / ε<sub>p</sub>) = (N<sub>s</sub> / N<sub>p</sub>)</p>
+        <p class="formula-line">For 100% Efficiency: I<sub>s</sub> V<sub>s</sub> = I<sub>p</sub> V<sub>p</sub>  =&gt;  (I<sub>s</sub> / I<sub>p</sub>) = (N<sub>p</sub> / N<sub>s</sub>)</p>
+        
+        <div class="transformer-types-grid">
+          <div class="sub-box">
+            <strong>Step-up Transformer (उचायी)</strong>
+            <p>• Voltage बढ़ाता है</p>
+            <p>• N<sub>s</sub> > N_p , V<sub>s</sub> > V<sub>p</sub></p>
+          </div>
+          <div class="sub-box">
+            <strong>Step-down Transformer (अपचायी)</strong>
+            <p>• Voltage घटाता है</p>
+            <p>• N<sub>s</sub> < N<sub>p</sub> , V<sub>s</sub> < V<sub>p</sub></p>
+          </div>
+        </div>
+
+        <div class="notation-box" style="margin-top:12px;">
+          <p class="notation-title">अक्षरों का मतलब (Notations):</p>
+          <p>• <strong>ε<sub>s</sub> & ε<sub>p</sub></strong> = Secondary & Primary EMF (द्वितीयक और प्राथमिक विद्युत वाहक बल)</p>
+          <p>• <strong>N<sub>s</sub> & N<sub>p</sub></strong> = Number of Turns in Secondary & Primary Coil (कुंडली के फेरों की संख्या)</p>
+          <p>• <strong>I<sub>s</sub> & I<sub>p</sub></strong> = Secondary & Primary Current (धारा)</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CSS Styling for Clear Readability & 3D Hover -->
+<style>
+.ac-mindmap-wrapper {
+  width: 100%;
+  padding: 20px 0;
+  position: relative;
+}
+
+.mindmap-center-hub {
+  text-align: center;
+  background: var(--card-bg, rgba(18, 22, 32, 0.85));
+  border: 2px solid var(--text-glow, #ffffff);
+  box-shadow: 0 0 30px var(--shadow-glow, rgba(255,255,255,0.2));
+  padding: 20px 40px;
+  border-radius: 50px;
+  max-width: 450px;
+  margin: 0 auto 50px auto;
+  position: relative;
+  z-index: 5;
+}
+
+.mindmap-center-hub h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: var(--text-glow, #fff);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.mindmap-center-hub p {
+  font-size: 0.8rem;
+  color: var(--muted, #9aa4b2);
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+.mindmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.mindmap-node {
+  background: var(--card-bg, rgba(14, 18, 26, 0.85));
+  border: 1px solid var(--border-color, rgba(255,255,255,0.12));
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+  transform: perspective(1000px) translateZ(0);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease, 
+              background 0.4s ease;
+}
+
+/* 3D Pop-out Hover Effect */
+.mindmap-node:hover {
+  transform: perspective(1000px) translateZ(35px) translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.95), 0 0 25px var(--text-glow, rgba(255,255,255,0.3));
+  border-color: var(--text-glow, #fff);
+  background: rgba(22, 28, 42, 0.95);
+  z-index: 10;
+}
+
+.node-header {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-glow, #fff);
+  border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1));
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.node-body {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text, #d4dce8);
+}
+
+.node-body p {
+  margin-bottom: 6px;
+}
+
+.formula-line {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: rgba(255,255,255,0.06);
+  padding: 6px 10px;
+  border-radius: 4px;
+  border-left: 3px solid #60a5fa;
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.formula-main-box {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: rgba(255,255,255,0.06);
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  margin: 10px 0;
+  border: 1px dashed rgba(255,255,255,0.3);
+}
+
+.highlight-text {
+  color: #60a5fa;
+  font-weight: 500;
+}
+
+/* Notation Box Styling */
+.notation-box {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.8rem;
+}
+
+.notation-title {
+  color: #f59e0b !important;
+  font-weight: 600;
+  margin-bottom: 4px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.75rem;
+}
+
+.notation-box p {
+  margin-bottom: 3px !important;
+  color: #a1a1aa;
+}
+
+.cases-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 8px;
+  font-size: 0.85rem;
+}
+
+.cases-list li {
+  margin-bottom: 6px;
+  padding-left: 10px;
+  border-left: 2px solid #f59e0b;
+}
+
+.transformer-types-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.sub-box {
+  background: rgba(0,0,0,0.3);
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.sub-box strong {
+  display: block;
+  font-size: 0.82rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.sub-box p {
+  font-size: 0.75rem;
+  margin-bottom: 2px;
+  color: #a1a1aa;
+}
+
+@media (min-width: 900px) {
+  .lcr-node {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .transformer-types-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+<div class="quick-notes-container">
+  
+  <!-- Section Title Header -->
+  <div class="notes-main-header">
+    <h2>Chapter 7: Alternating Current</h2>
+    <p>Quick Revision Notes • Concepts, Definitions & Derivations</p>
+  </div>
+
+  <!-- Note Item 1 -->
+  <div class="revision-note-item">
+    <span class="note-number">01</span>
+    <div class="note-content">
+      <h3>Alternating Current (AC)</h3>
+      <p>It is that current which varies in magnitude continuously and reverses its direction periodically. Its value at any instant is given by:</p>
+      <div class="note-formula">
+        I = I<sub>0</sub> sin(&omega;t) = I<sub>0</sub> sin(2&pi;ft)
+      </div>
+      <div class="notation-block">
+        <p><strong>Notations:</strong></p>
+        <p>• <strong>I<sub>0</sub></strong> = Peak value of a.c. or Current Amplitude (शिखर मान या आयाम)</p>
+        <p>• <strong>f</strong> = Frequency of a.c. supplied to homes is 50 cps (हर्ट्ज)</p>
+        <p>• <em>Note:</em> The average value of a.c. over a complete cycle is always <strong>zero</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 2 -->
+  <div class="revision-note-item">
+    <span class="note-number">02</span>
+    <div class="note-content">
+      <h3>Direct Current (DC)</h3>
+      <p>It is that electric current which flows with a constant magnitude in the same fixed direction without changing polarity over time.</p>
+    </div>
+  </div>
+
+  <!-- Note Item 3 -->
+  <div class="revision-note-item">
+    <span class="note-number">03</span>
+    <div class="note-content">
+      <h3>Average or Mean Value of A.C. (I<sub>av</sub>)</h3>
+      <p>It is that value of direct current which sends the same charge in a circuit in the same time as is sent by the given alternating current in its half time period.</p>
+      <div class="note-formula">
+        I<sub>av</sub> = (2 / &pi;) I<sub>0</sub> = 0.637 I<sub>0</sub>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 4 -->
+  <div class="revision-note-item">
+    <span class="note-number">04</span>
+    <div class="note-content">
+      <h3>Effective, RMS, or Virtual Value of A.C. (I<sub>rms</sub>)</h3>
+      <p>It is that value of direct current which produces the same heating effect in a given resistor as is produced by the given alternating current when passed for the same time.</p>
+      <div class="note-formula">
+        I<sub>rms</sub> = I<sub>eff</sub> = I<sub>v</sub> = (1 / √2) I<sub>0</sub> = 0.707 I<sub>0</sub>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 5 -->
+  <div class="revision-note-item">
+    <span class="note-number">05</span>
+    <div class="note-content">
+      <h3>Alternating Voltage</h3>
+      <p>It is that voltage whose magnitude varies continuously and direction reverses periodically with time. Its equations are:</p>
+      <div class="note-formula">
+        &epsilon; = &epsilon;<sub>0</sub> sin(&omega;t) &nbsp;&nbsp;|&nbsp;&nbsp; &epsilon;<sub>av</sub> = 0.637 &epsilon;<sub>0</sub> &nbsp;&nbsp;|&nbsp;&nbsp; &epsilon;<sub>rms</sub> = (1 / √2) &epsilon;<sub>0</sub>
+      </div>
+      <div class="notation-block">
+        <p><strong>Notations:</strong></p>
+        <p>• <strong>&epsilon;<sub>0</sub></strong> = Peak value of alternating voltage (शिखर वोल्टेज)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 6 -->
+  <div class="revision-note-item">
+    <span class="note-number">06</span>
+    <div class="note-content">
+      <h3>Phasors and Phasor Diagrams</h3>
+      <p>A rotating vector that represents a sinusoidally varying quantity is called a <strong>phasor</strong>. A diagram representing alternating current and voltage of the same frequency as rotating vectors with proper phase angle between them is a <strong>phasor diagram</strong> or <strong>Argand diagram</strong>.</p>
+    </div>
+  </div>
+
+  <!-- Note Item 7 -->
+  <div class="revision-note-item">
+    <span class="note-number">07</span>
+    <div class="note-content">
+      <h3>A.C. Circuit Containing Resistor Only</h3>
+      <p>An alternating voltage &epsilon; = &epsilon;<sub>0</sub> sin(&omega;t) applied to a resistor R drives a current I = I<sub>0</sub> sin(&omega;t) in it. The current is <strong>in phase</strong> with the applied voltage.</p>
+      <div class="note-formula">
+        Peak value of current: I<sub>0</sub> = &epsilon;<sub>0</sub> / R
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 8 -->
+  <div class="revision-note-item">
+    <span class="note-number">08</span>
+    <div class="note-content">
+      <h3>A.C. Circuit Containing Inductor Only</h3>
+      <p>An alternating voltage applied to a pure inductor L drives a current that <strong>lags behind</strong> the voltage in phase by &pi;/2 radian (90°).</p>
+      <div class="note-formula">
+        I = I<sub>0</sub> sin(&omega;t - &pi;/2) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; I<sub>0</sub> = &epsilon;<sub>0</sub> / X<sub>L</sub> = &epsilon;<sub>0</sub> / (&omega;L)
+      </div>
+      <div class="note-formula">
+        I<sub>rms</sub> = &epsilon;<sub>rms</sub> / X<sub>L</sub> = &epsilon;<sub>rms</sub> / (&omega;L) = &epsilon;<sub>0</sub> / (√2 &middot; &omega;L)
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 9 -->
+  <div class="revision-note-item">
+    <span class="note-number">09</span>
+    <div class="note-content">
+      <h3>Reactance</h3>
+      <p>The non-resistive opposition to the flow of a.c. is called reactance. It may be inductive reactance (X<sub>L</sub>) or capacitive reactance (X<sub>c</sub>).</p>
+    </div>
+  </div>
+
+  <!-- Note Item 10 -->
+  <div class="revision-note-item">
+    <span class="note-number">10</span>
+    <div class="note-content">
+      <h3>Inductive Reactance (X<sub>L</sub>)</h3>
+      <p>It is the effective resistance or opposition offered by an inductor to the flow of a.c. through it.</p>
+      <div class="note-formula">
+        X<sub>L</sub> = &omega;L = 2&pi;fL
+      </div>
+      <div class="notation-block">
+        <p><strong>Key Points:</strong></p>
+        <p>• SI unit is ohm (&Omega;).</p>
+        <p>• For a.c.: X<sub>L</sub> &prop; f (Frequency ke direct proportional).</p>
+        <p>• For d.c.: f = 0, so X<sub>L</sub> = 0 (Direct current ke liye inductor zero resistance deta hai).</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CSS Styling with Animations & Unique Fonts -->
+<style>
+.quick-notes-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.notes-main-header {
+  text-align: center;
+  margin-bottom: 50px;
+  animation: fadeInDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.notes-main-header h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  color: var(--text-glow, #fff);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.notes-main-header p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted, #9aa4b2);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Revision Note Item Styling (No Cards, Clean Linear Flow) */
+.revision-note-item {
+  display: flex;
+  gap: 25px;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Staggered Animation Delays for each item */
+.revision-note-item:nth-child(2) { animation-delay: 0.1s; }
+.revision-note-item:nth-child(3) { animation-delay: 0.2s; }
+.revision-note-item:nth-child(4) { animation-delay: 0.3s; }
+.revision-note-item:nth-child(5) { animation-delay: 0.4s; }
+.revision-note-item:nth-child(6) { animation-delay: 0.5s; }
+.revision-note-item:nth-child(7) { animation-delay: 0.6s; }
+.revision-note-item:nth-child(8) { animation-delay: 0.7s; }
+.revision-note-item:nth-child(9) { animation-delay: 0.8s; }
+.revision-note-item:nth-child(10) { animation-delay: 0.9s; }
+.revision-note-item:nth-child(11) { animation-delay: 1.0s; }
+
+.note-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--text-glow, #fff);
+  opacity: 0.4;
+  min-width: 35px;
+}
+
+.note-content {
+  flex-grow: 1;
+}
+
+.note-content h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-glow, #fff);
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.note-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text, #d4dce8);
+  font-weight: 350;
+  margin-bottom: 12px;
+}
+
+.note-formula {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.05rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid var(--text-glow, #fff);
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin: 15px 0;
+  letter-spacing: 0.5px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+}
+
+.notation-block {
+  margin-top: 15px;
+  padding: 12px 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.notation-block p {
+  font-size: 0.85rem !important;
+  margin-bottom: 5px !important;
+  color: var(--muted, #9aa4b2) !important;
+}
+
+.notation-block strong {
+  color: var(--text-glow, #fff);
+}
+
+/* Keyframes for Smooth Slide-up Animation */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .revision-note-item {
+    gap: 15px;
+    padding: 20px 0;
+  }
+  .note-number {
+    font-size: 1rem;
+    min-width: 25px;
+  }
+  .note-content h3 {
+    font-size: 1.1rem;
+  }
+}
+</style>
+<div class="quick-notes-container">
+  <!-- Note Item 11: Capacitive Circuit -->
+  <div class="revision-note-item">
+    <span class="note-number">11</span>
+    <div class="note-content">
+      <h3>A.C. Circuit Containing Only a Capacitor</h3>
+      <p>When an alternating voltage &epsilon; = &epsilon;<sub>0</sub> sin(&omega;t) is applied across a pure capacitor C, it drives an alternating current. Here, the current <strong>leads the voltage</strong> in phase by a precise angle of &pi;/2 radians (90°).</p>
+      <div class="note-formula">
+        I = I<sub>0</sub> sin(&omega;t + &pi;/2) &nbsp;&nbsp;|&nbsp;&nbsp; Peak Current: I<sub>0</sub> = &epsilon;<sub>0</sub> / X<sub>c</sub> = &epsilon;<sub>0</sub> / (1 / &omega;C)
+      </div>
+      <div class="note-formula">
+        RMS Current: I<sub>rms</sub> = &epsilon;<sub>rms</sub> / X<sub>c</sub> = &epsilon;<sub>rms</sub> / (1 / &omega;C) = &epsilon;<sub>0</sub> / (√2 &middot; (1 / &omega;C))
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 12: Capacitive Reactance -->
+  <div class="revision-note-item">
+    <span class="note-number">12</span>
+    <div class="note-content">
+      <h3>Capacitive Reactance (X<sub>c</sub>)</h3>
+      <p>It is defined as the effective resistance or opposition offered by a capacitor to the smooth flow of alternating current (a.c.) through it.</p>
+      <div class="note-formula">
+        X<sub>c</sub> = 1 / (&omega;C) = 1 / (2&pi;fC)
+      </div>
+      <div class="notation-block">
+        <p><strong>Deep Insights & Behavior:</strong></p>
+        <p>• <strong>SI Unit:</strong> ohm (&Omega;)</p>
+        <p>• <strong>For A.C.:</strong> X<sub>c</sub> &prop; (1 / f) (Frequency ke inverse proportional hota hai).</p>
+        <p>• <strong>For D.C.:</strong> Frequency f = 0, hence X<sub>c</sub> = &infin; (Infinity). यानी capacitor direct current (d.c.) को पूरी तरह से <strong>block</strong> कर देता है और a.c. को आसानी से पास होने देता है।</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 13: Impedance -->
+  <div class="revision-note-item">
+    <span class="note-number">13</span>
+    <div class="note-content">
+      <h3>Impedance (Z) & Impedance Triangle</h3>
+      <p>Impedance is the total effective opposition offered by an a.c. circuit (containing R, L, or C in various combinations) to the flow of alternating current.</p>
+      <div class="note-formula">
+        Z<sup>2</sup> = R<sup>2</sup> + X<sup>2</sup> &nbsp;&nbsp;&implies;&nbsp;&nbsp; Z = √(R<sup>2</sup> + X<sup>2</sup>)
+      </div>
+      <div class="notation-block">
+        <p><strong>Impedance Triangle Concept:</strong></p>
+        <p>It is a right-angled triangle where the base represents Resistance (R), the perpendicular represents Reactance (X), and the hypotenuse represents Total Impedance (Z) of the circuit. The phase angle (&phi;) between voltage and current is given by:</p>
+        <p style="margin-top: 8px; color: var(--text-glow);">tan(&phi;) = X / R &nbsp;&nbsp;OR&nbsp;&nbsp; cos(&phi;) = R / Z</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 14: Series LR Circuit -->
+  <div class="revision-note-item">
+    <span class="note-number">14</span>
+    <div class="note-content">
+      <h3>A.C. Through a Series LR Circuit</h3>
+      <p>In an alternating circuit containing a resistor (R) and an inductor (L) connected in series, the alternating voltage <strong>leads the current</strong> by a definite phase angle (&phi;).</p>
+      <div class="note-formula">
+        Voltage: &epsilon; = &epsilon;<sub>0</sub> sin(&omega;t) &nbsp;&nbsp;|&nbsp;&nbsp; Current: I = I<sub>0</sub> sin(&omega;t - &phi;)
+      </div>
+      <div class="note-formula">
+        Peak Current: I<sub>0</sub> = &epsilon;<sub>0</sub> / Z &nbsp;&nbsp;|&nbsp;&nbsp; Impedance: Z = √(R<sup>2</sup> + X<sub>L</sub><sup>2</sup>) = √(R<sup>2</sup> + &omega;<sup>2</sup>L<sup>2</sup>)
+      </div>
+      <div class="notation-block">
+        <p><strong>Phase Angle Relationship:</strong></p>
+        <p>tan(&phi;) = X<sub>L</sub> / R &nbsp;&nbsp;OR&nbsp;&nbsp; cos(&phi;) = R / Z</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 15: Series CR Circuit -->
+  <div class="revision-note-item">
+    <span class="note-number">15</span>
+    <div class="note-content">
+      <h3>A.C. Through a Series CR Circuit</h3>
+      <p>In a circuit containing a capacitor (C) and a resistor (R) in series, the alternating voltage <strong>lags behind</strong> the current by a specific phase angle (&phi;).</p>
+      <div class="note-formula">
+        Voltage: &epsilon; = &epsilon;<sub>0</sub> sin(&omega;t) &nbsp;&nbsp;|&nbsp;&nbsp; Current: I = I<sub>0</sub> sin(&omega;t + &phi;)
+      </div>
+      <div class="note-formula">
+        Peak Current: I<sub>0</sub> = &epsilon;<sub>0</sub> / Z &nbsp;&nbsp;|&nbsp;&nbsp; Impedance: Z = √(R<sup>2</sup> + X<sub>c</sub><sup>2</sup>) = √(R<sup>2</sup> + (1 / &omega;<sup>2</sup>C<sup>2</sup>))
+      </div>
+      <div class="notation-block">
+        <p><strong>Phase Angle Relationship:</strong></p>
+        <p>tan(&phi;) = X<sub>c</sub> / R &nbsp;&nbsp;OR&nbsp;&nbsp; cos(&phi;) = R / Z</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 16: Series LCR Circuit -->
+  <div class="revision-note-item">
+    <span class="note-number">16</span>
+    <div class="note-content">
+      <h3>The Complete Series LCR Circuit</h3>
+      <p>When a resistor (R), an inductor (L), and a capacitor (C) are connected in series across an a.c. source &epsilon; = &epsilon;<sub>0</sub> sin(&omega;t), the net opposition (Impedance Z) combines all three components.</p>
+      <div class="note-formula">
+        Z = √[ R<sup>2</sup> + (X<sub>L</sub> - X<sub>c</sub>)<sup>2</sup> ] = √[ R<sup>2</sup> + (&omega;L - (1 / &omega;C))<sup>2</sup> ]
+      </div>
+      <div class="note-formula">
+        Phase Angle: tan(&phi;) = (X<sub>L</sub> - X<sub>c</sub>) / R &nbsp;&nbsp;|&nbsp;&nbsp; Power Factor: cos(&phi;) = R / Z
+      </div>
+      <div class="notation-block">
+        <p><strong>Nature of Circuit (Leads/Lags):</strong></p>
+        <p>• If <strong>X<sub>L</sub> > X<sub>c</sub></strong>, voltage <strong>leads</strong> the current (inductive nature).</p>
+        <p>• If <strong>X<sub>L</sub> < X<sub>c</sub></strong>, voltage <strong>lags behind</strong> the current (capacitive nature).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 17: Resonance Condition -->
+  <div class="revision-note-item">
+    <span class="note-number">17</span>
+    <div class="note-content">
+      <h3>Resonance Condition of LCR Circuit</h3>
+      <p>Resonance occurs in a series LCR circuit when the inductive reactance equals the capacitive reactance (<strong>X<sub>L</sub> = X<sub>c</sub></strong>).</p>
+      <div class="note-formula">
+        At Resonance: Z = √(R<sup>2</sup> + 0) = R (Impedance is minimum, Current is maximum!)
+      </div>
+      <div class="note-formula">
+        Resonant Frequency (f<sub>r</sub>): f<sub>r</sub> = 1 / (2&pi;√LC)
+      </div>
+      <div class="notation-block">
+        <p><strong>Core Characteristics at Resonance:</strong></p>
+        <p>• The circuit behaves as a purely resistive circuit.</p>
+        <p>• Voltage and current are completely in the same phase (&phi; = 0, cos(&phi;) = 1).</p>
+        <p>• Current amplitude reaches its absolute maximum value.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CSS Styling with Cinematic Fading, Glowing Typography & Smooth Animations -->
+<style>
+.quick-notes-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 15px;
+}
+
+.notes-main-header {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeInDown 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.notes-main-header h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.4rem;
+  color: var(--text-glow, #fff);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255,255,255,0.4);
+  margin-bottom: 10px;
+}
+
+.notes-main-header p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--muted, #9aa4b2);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Revision Note Item Styling with Fade-in Effect */
+.revision-note-item {
+  display: flex;
+  gap: 30px;
+  padding: 35px 20px;
+  margin-bottom: 20px;
+  background: rgba(10, 14, 22, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: cinematicFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+/* Hover glowing border effect to make it look alive */
+.revision-note-item:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(15, 20, 32, 0.7);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+/* Staggered Animation Delays */
+.revision-note-item:nth-child(2) { animation-delay: 0.15s; }
+.revision-note-item:nth-child(3) { animation-delay: 0.3s; }
+.revision-note-item:nth-child(4) { animation-delay: 0.45s; }
+.revision-note-item:nth-child(5) { animation-delay: 0.6s; }
+.revision-note-item:nth-child(6) { animation-delay: 0.75s; }
+.revision-note-item:nth-child(7) { animation-delay: 0.9s; }
+.revision-note-item:nth-child(8) { animation-delay: 1.05s; }
+
+.note-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--text-glow, #fff);
+  opacity: 0.35;
+  min-width: 40px;
+}
+
+.note-content {
+  flex-grow: 1;
+}
+
+.note-content h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-glow, #fff);
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.note-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: var(--text, #d4dce8);
+  font-weight: 350;
+  margin-bottom: 14px;
+}
+
+.note-formula {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #60a5fa;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin: 18px 0;
+  letter-spacing: 0.5px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+  text-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+}
+
+.notation-block {
+  margin-top: 18px;
+  padding: 15px 18px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.notation-block p {
+  font-size: 0.9rem !important;
+  margin-bottom: 6px !important;
+  color: var(--muted, #9aa4b2) !important;
+  line-height: 1.6 !important;
+}
+
+.notation-block strong {
+  color: var(--text-glow, #fff);
+}
+
+/* Keyframes for Cinematic Fade & Slide Up */
+@keyframes cinematicFadeUp {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .revision-note-item {
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 15px;
+  }
+  .note-number {
+    font-size: 1.1rem;
+  }
+  .note-content h3 {
+    font-size: 1.2rem;
+  }
+  .note-formula {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+}
+</style>
+   
+<div class="quick-notes-container">
+  
+ 
+  <!-- Note Item 18: Q-Factor -->
+  <div class="revision-note-item">
+    <span class="note-number">18</span>
+    <div class="note-content">
+      <h3>Q-Factor (Quality Factor)</h3>
+      <p>It indicates the sharpness of resonance in a series LCR circuit. It is fundamentally defined as the ratio of the resonant frequency to the bandwidth.</p>
+      <div class="note-formula">
+        Q-factor = Resonant Frequency / Bandwidth = (&omega;<sub>r</sub> / (&omega;<sub>2</sub> - &omega;<sub>1</sub>)) = (&omega;<sub>r</sub> L / R) = (1 / R) &radic;<span style="text-decoration: overline;">(L / C)</span>
+      </div>
+      <div class="notation-block">
+        <p><strong>Core Meaning:</strong></p>
+        <p>• Higher the Q-factor, sharper is the resonance curve and better is the selectivity of the circuit.</p>
+        <p>• <strong>&omega;<sub>r</sub></strong> = Resonant frequency, <strong>(&omega;<sub>2</sub> - &omega;<sub>1</sub>)</strong> = Bandwidth (half-power frequencies difference).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 19: Power in an A.C. Circuit -->
+  <div class="revision-note-item">
+    <span class="note-number">19</span>
+    <div class="note-content">
+      <h3>Average Power in an A.C. Circuit</h3>
+      <p>The true average power consumed per complete cycle in an a.c. circuit depends not just on voltage and current, but also on the phase angle between them.</p>
+      <div class="note-formula">
+        P<sub>av</sub> = &epsilon;<sub>rms</sub> &middot; I<sub>rms</sub> &middot; cos(&phi;) = (&epsilon;<sub>0</sub> I<sub>0</sub> / 2) cos(&phi;)
+      </div>
+      <div class="notation-block">
+        <p><strong>Power Factor & Special Cases:</strong></p>
+        <p>• <strong>Power Factor (cos &phi;):</strong> It is the ratio of true power (P<sub>av</sub>) to the apparent power (&epsilon;<sub>rms</sub> I<sub>rms</sub>). Formula: <code>cos(&phi;) = R / Z = R / &radic;<span style="text-decoration: overline;">(R<sup>2</sup> + (&omega;L - 1/&omega;C)<sup>2</sup>)</span></code></p>
+        <p>• <strong>(i) Pure Resistive Circuit:</strong> &phi; = 0 &nbsp;&implies;&nbsp; P<sub>av</sub> = &epsilon;<sub>rms</sub> I<sub>rms</sub> (Maximum power).</p>
+        <p>• <strong>(ii) Pure Inductive Circuit:</strong> &phi; = &pi;/2 &nbsp;&implies;&nbsp; P<sub>av</sub> = 0 (Zero power consumption).</p>
+        <p>• <strong>(iii) Pure Capacitive Circuit:</strong> &phi; = -&pi;/2 &nbsp;&implies;&nbsp; P<sub>av</sub> = 0 (Zero power consumption).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 20: Wattless Current -->
+  <div class="revision-note-item">
+    <span class="note-number">20</span>
+    <div class="note-content">
+      <h3>Wattless Current (हीन शक्ति धारा)</h3>
+      <p>The current in an a.c. circuit is said to be wattless if the average power consumed by it over a complete cycle is <strong>zero</strong>.</p>
+      <div class="note-formula">
+        Wattless Component = I<sub>rms</sub> sin(&phi;)
+      </div>
+      <div class="notation-block">
+        <p><strong>Condition:</strong> In a purely inductive or purely capacitive circuit, the phase difference is &phi; = &plusmn;&pi;/2. Since cos(&pi;/2) = 0, the power factor becomes zero, resulting in a completely wattless current.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 21: Energy Stored in an Inductor -->
+  <div class="revision-note-item">
+    <span class="note-number">21</span>
+    <div class="note-content">
+      <h3>Magnetic Energy Stored in an Inductor</h3>
+      <p>When the electric current flowing through an inductor grows from zero to a peak value I<sub>0</sub>, work is done against the back-EMF, which gets stored as magnetic potential energy inside the inductor field.</p>
+      <div class="note-formula">
+        U = (1 / 2) L I<sub>0</sub><sup>2</sup>
+      </div>
+      <div class="notation-block">
+        <p><strong>Notations:</strong> <strong>L</strong> = Self-inductance (स्व-प्रेरकत्व), <strong>I<sub>0</sub></strong> = Maximum current.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 22: Energy Stored in a Capacitor -->
+  <div class="revision-note-item">
+    <span class="note-number">22</span>
+    <div class="note-content">
+      <h3>Electrostatic Energy Stored in a Capacitor</h3>
+      <p>When a capacitor is charged from 0 to V volts, electrical energy is stored within its electric field between the conducting plates.</p>
+      <div class="note-formula">
+        U = (1 / 2) C V<sup>2</sup> = (1 / 2) Q V = (1 / 2) &middot; (Q<sup>2</sup> / C)
+      </div>
+      <div class="notation-block">
+        <p><strong>Notations:</strong> <strong>C</strong> = Capacitance, <strong>V</strong> = Potential difference, <strong>Q</strong> = Stored charge.</p>
+      </div>
+    </div>
+  </div>
+
+
+<!-- CSS Styling with Cinematic Fading & Overline Root Support -->
+<style>
+.quick-notes-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 15px;
+}
+
+.notes-main-header {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeInDown 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.notes-main-header h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.4rem;
+  color: var(--text-glow, #fff);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255,255,255,0.4);
+  margin-bottom: 10px;
+}
+
+.notes-main-header p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--muted, #9aa4b2);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.revision-note-item {
+  display: flex;
+  gap: 30px;
+  padding: 35px 20px;
+  margin-bottom: 20px;
+  background: rgba(10, 14, 22, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: cinematicFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+.revision-note-item:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(15, 20, 32, 0.7);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+.revision-note-item:nth-child(2) { animation-delay: 0.15s; }
+.revision-note-item:nth-child(3) { animation-delay: 0.3s; }
+.revision-note-item:nth-child(4) { animation-delay: 0.45s; }
+.revision-note-item:nth-child(5) { animation-delay: 0.6s; }
+.revision-note-item:nth-child(6) { animation-delay: 0.75s; }
+.revision-note-item:nth-child(7) { animation-delay: 0.9s; }
+
+.note-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--text-glow, #fff);
+  opacity: 0.35;
+  min-width: 40px;
+}
+
+.note-content {
+  flex-grow: 1;
+}
+
+.note-content h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-glow, #fff);
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.note-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: var(--text, #d4dce8);
+  font-weight: 350;
+  margin-bottom: 14px;
+}
+
+.note-formula {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.05rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #60a5fa;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin: 18px 0;
+  letter-spacing: 0.5px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+  text-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+  overflow-x: auto;
+}
+
+.notation-block {
+  margin-top: 18px;
+  padding: 15px 18px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.notation-block p {
+  font-size: 0.9rem !important;
+  margin-bottom: 6px !important;
+  color: var(--muted, #9aa4b2) !important;
+  line-height: 1.6 !important;
+}
+
+.notation-block strong {
+  color: var(--text-glow, #fff);
+}
+
+@keyframes cinematicFadeUp {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .revision-note-item {
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 15px;
+  }
+  .note-number {
+    font-size: 1.1rem;
+    min-width: 25px;
+  }
+  .note-content h3 {
+    font-size: 1.2rem;
+  }
+  .note-formula {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+}
+</style>
+<div class="quick-notes-container">
+  <!-- Note Item 23 (Continuation): LC-Oscillations & SHM -->
+  <div class="revision-note-item">
+    <span class="note-number">23</span>
+    <div class="note-content">
+      <h3>LC-Oscillations & Free Frequency</h3>
+      <p>When a charged capacitor is connected across an inductor, electrical oscillations of constant amplitude and frequency are produced. The charge (q) on the capacitor satisfies the simple harmonic motion (SHM) differential equation:</p>
+      <div class="note-formula">
+        (d<sup>2</sup>q / dt<sup>2</sup>) + (1 / LC) q = 0
+      </div>
+      <div class="note-formula">
+        Instantaneous Charge: q = q<sub>0</sub> cos(&omega;<sub>0</sub>t) &nbsp;&nbsp;|&nbsp;&nbsp; Current: I = - (dq / dt) = &omega;<sub>0</sub>q<sub>0</sub> sin(&omega;<sub>0</sub>t)
+      </div>
+      <div class="notation-block">
+        <p><strong>Frequencies of Free Oscillations:</strong></p>
+        <p>• <strong>Angular Frequency (&omega;<sub>0</sub>):</strong> &omega;<sub>0</sub> = 1 / &radic;<span style="text-decoration: overline;">(LC)</span></p>
+        <p>• <strong>Linear Frequency (f<sub>0</sub>):</strong> f<sub>0</sub> = &omega;<sub>0</sub> / (2&pi;) = 1 / (2&pi; &radic;<span style="text-decoration: overline;">(LC)</span>)</p>
+        <p>• <em>Note:</em> Total electromagnetic energy in an ideal LC circuit remains strictly constant, oscillating back and forth between the capacitor and inductor.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 24: Choke Coil -->
+  <div class="revision-note-item">
+    <span class="note-number">24</span>
+    <div class="note-content">
+      <h3>Choke Coil (चोक कुंडली)</h3>
+      <p>A choke coil is a specialized inductor possessing a very large self-inductance and negligible resistance. It is primarily used to control or reduce current in an a.c. circuit <strong>without any significant loss of power</strong> (since its power factor cos(&phi;) &approx; 0).</p>
+    </div>
+  </div>
+
+  <!-- Note Item 25: Transformer -->
+  <div class="revision-note-item">
+    <span class="note-number">25</span>
+    <div class="note-content">
+      <h3>Transformer (ट्रांसफॉर्मर)</h3>
+      <p>It is a static electrical device used to convert low alternating voltage at high current into high alternating voltage at low current (or vice-versa) based on mutual induction.</p>
+      <div class="note-formula">
+        For an Ideal Transformer: (&epsilon;<sub>2</sub> / &epsilon;<sub>1</sub>) = (I<sub>1</sub> / I<sub>2</sub>) = (N<sub>2</sub> / N<sub>1</sub>) = k
+      </div>
+      <div class="notation-block">
+        <p><strong>Core Parameters & Types:</strong></p>
+        <p>• <strong>k</strong> = Transformation ratio or turns ratio. Suffix 1 represents the primary coil and 2 represents the secondary coil.</p>
+        <p>• <strong>(i) Step-up Transformer (उचायी):</strong> k > 1 or N<sub>2</sub> > N<sub>1</sub> &nbsp;&implies;&nbsp; &epsilon;<sub>2</sub> > &epsilon;<sub>1</sub> and I<sub>2</sub> < I<sub>1</sub> (Voltage badhata hai).</p>
+        <p>• <strong>(ii) Step-down Transformer (अपचायी):</strong> k < 1 or N<sub>2</sub> < N<sub>1</sub> &nbsp;&implies;&nbsp; &epsilon;<sub>2</sub> < &epsilon;<sub>1</sub> and I<sub>2</sub> > I<sub>1</sub> (Voltage ghataata hai).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Item 26: A.C. Generator (Alternator) -->
+  <div class="revision-note-item">
+    <span class="note-number">26</span>
+    <div class="note-content">
+      <h3>A.C. Generator / Alternator</h3>
+      <p>It is an electromechanical device used to convert mechanical energy into electrical energy in the form of alternating current. It works on the principle of <strong>Electromagnetic Induction</strong>.</p>
+      <div class="note-formula">
+        Magnetic Flux Linked: &phi; = N B A cos(&omega;t) &nbsp;&nbsp;|&nbsp;&nbsp; Induced EMF: &epsilon; = N B A &omega; sin(&omega;t) = &epsilon;<sub>0</sub> sin(&omega;t)
+      </div>
+      <div class="note-formula">
+        Generated Current: I = (N B A &omega; / R) sin(&omega;t) = I<sub>0</sub> sin(&omega;t)
+      </div>
+      <div class="notation-block">
+        <p><strong>Notations:</strong></p>
+        <p>• <strong>N</strong> = Number of turns in the rotating armature coil.</p>
+        <p>• <strong>B</strong> = Uniform magnetic field strength, <strong>A</strong> = Area of the coil face.</p>
+        <p>• <strong>&omega;</strong> = Angular velocity of rotation, <strong>R</strong> = Total circuit resistance, <strong>&epsilon;<sub>0</sub></strong> = Peak EMF (= NBA&omega;).</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CSS Styling with Cinematic Fading & Overline Root Support -->
+<style>
+.quick-notes-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 15px;
+}
+
+.notes-main-header {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeInDown 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.notes-main-header h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.4rem;
+  color: var(--text-glow, #fff);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255,255,255,0.4);
+  margin-bottom: 10px;
+}
+
+.notes-main-header p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--muted, #9aa4b2);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.revision-note-item {
+  display: flex;
+  gap: 30px;
+  padding: 35px 20px;
+  margin-bottom: 20px;
+  background: rgba(10, 14, 22, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: cinematicFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+.revision-note-item:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(15, 20, 32, 0.7);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+.revision-note-item:nth-child(2) { animation-delay: 0.15s; }
+.revision-note-item:nth-child(3) { animation-delay: 0.3s; }
+.revision-note-item:nth-child(4) { animation-delay: 0.45s; }
+.revision-note-item:nth-child(5) { animation-delay: 0.6s; }
+
+.note-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--text-glow, #fff);
+  opacity: 0.35;
+  min-width: 40px;
+}
+
+.note-content {
+  flex-grow: 1;
+}
+
+.note-content h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-glow, #fff);
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.note-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: var(--text, #d4dce8);
+  font-weight: 350;
+  margin-bottom: 14px;
+}
+
+.note-formula {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.05rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #60a5fa;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin: 18px 0;
+  letter-spacing: 0.5px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+  text-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+  overflow-x: auto;
+}
+
+.notation-block {
+  margin-top: 18px;
+  padding: 15px 18px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.notation-block p {
+  font-size: 0.9rem !important;
+  margin-bottom: 6px !important;
+  color: var(--muted, #9aa4b2) !important;
+  line-height: 1.6 !important;
+}
+
+.notation-block strong {
+  color: var(--text-glow, #fff);
+}
+
+@keyframes cinematicFadeUp {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .revision-note-item {
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 15px;
+  }
+  .note-number {
+    font-size: 1.1rem;
+    min-width: 25px;
+  }
+  .note-content h3 {
+    font-size: 1.2rem;
+  }
+  .note-formula {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+}
+</style>
+
+  <!-- 3D Pop-out Navigation Cards -->
+  <section class="navigation-cards">
+    <a href="/physics/chapter7.html" class="nav-card">
+      <h3 class="card-title">Detailed Theory</h3>
+      <p class="card-desc">Venture deeper into the cold mathematics of phasor diagrams and LCR circuits.</p>
+      <div class="card-link">Enter the Dark &rarr;</div>
+    </a>
+    <a href="/physics/ch7-pyq.html" class="nav-card">
+      <h3 class="card-title">Chapter 7 PYQs</h3>
+      <p class="card-desc">Face the ghosts of the past. Solve the questions left behind by those before you.</p>
+      <div class="card-link">Face the Past &rarr;</div>
+    </a>
+    <a href="/physics/ch8-short.html" class="nav-card">
+      <h3 class="card-title">EM Waves Rev</h3>
+      <p class="card-desc">Leave this current behind. Step into the invisible void of Electromagnetic Waves.</p>
+      <div class="card-link">Fade Away &rarr;</div>
+    </a>
+  </section>
+
+  <!-- Expanded & Clear Disclaimer -->
+  <section class="disclaimer-section">
+    <div class="disclaimer-box">
+      <div class="disclaimer-text">
+        <h4>Private Disclaimer & Note</h4>
+        <p>
+          This isolated space was crafted by Shorveer Notes for deep, undisturbed revision. While maximum care has been taken to ensure absolute accuracy, typographical or formatting discrepancies may occur. Always verify core formulas and derivations against official NCERT textbooks and school faculties prior to final examinations.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2 style="font-size: 0.85rem; color: var(--text-glow); font-weight: 600; letter-spacing: 3px;">SHORVEER NOTES</h2>
+        <p>A minimalist, deeply focused academic void engineered for Class 12 Science board examination excellence.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Subjects</h4>
+        <a href="/physics/index.html">Physics</a>
+        <a href="/chemistry/index.html">Chemistry</a>
+        <a href="/mathematics/index.html">Mathematics</a>
+        <a href="/english/index.html">English</a>
+      </div>
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <a href="/exam-info.html">Exam Blueprints</a>
+        <a href="/about-notes.html">Study Framework</a>
+        <a href="/about.html">About</a>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/cookies.html">Cookies</a>
+        <a href="mailto:support.shorveernotes@gmail.com">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; <span id="year"></span> Shorveer Notes. All Rights Reserved.</div>
+      <div class="author-credit">Engineered by <span>Jatin Sandilya</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Loader hiding logic
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    const loader = document.getElementById("loader");
+    if(loader) loader.classList.add("hide");
+  }, 800);
+});
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  if(loader) loader.classList.add("hide");
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Interactive Color Theme Switcher Script
+const themeSwitcher = document.getElementById("themeSwitcher");
+const savedTheme = localStorage.getItem("shorveer_color_theme") || "void";
+
+// Apply saved theme on load
+document.documentElement.setAttribute("data-theme", savedTheme);
+themeSwitcher.value = savedTheme;
+
+themeSwitcher.addEventListener("change", (e) => {
+  const selectedTheme = e.target.value;
+  document.documentElement.setAttribute("data-theme", selectedTheme);
+  localStorage.setItem("shorveer_color_theme", selectedTheme);
+});
+</script>
+
+</body>
+</html>
