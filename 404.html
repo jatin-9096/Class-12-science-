@@ -1,32 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<html lang="en" data-theme="nebula">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="The page you're looking for could not be found on Shorveer Notes.">
     <meta name="robots" content="noindex, nofollow">
 
     <title>404 | Shorveer Notes</title>
 
+    <!-- Google Fonts for 5 Different Themes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Fira+Code:wght@400;600&family=Inter:wght@400;600;800&family=Orbitron:wght@650;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
     <style>
         /* =========================================================
-           SHORVEER NOTES — PREMIUM 404 PAGE
-           Designed for GitHub Pages
-           File name: 404.html
+           5 DIFFERENT THEME CONFIGURATIONS (COLORS, FONTS & BG)
         ========================================================= */
+        
+        /* Theme 1: Nebula Deep Space (Default) */
+        html[data-theme="nebula"] {
+            --font-main: 'Inter', sans-serif;
+            --bg-grad: radial-gradient(circle at 15% 20%, rgba(139, 92, 246, .20), transparent 32%), radial-gradient(circle at 85% 75%, rgba(236, 72, 153, .16), transparent 32%), linear-gradient(135deg, #070b18, #11172b);
+            --card-bg: rgba(255, 255, 255, 0.075);
+            --card-border: rgba(255, 255, 255, 0.13);
+            --text-main: #f8fafc;
+            --text-muted: #a8b1c5;
+            --primary-grad: linear-gradient(135deg, #8b5cf6, #ec4899);
+            --glow-color: rgba(139,92,246,.25);
+        }
 
-        :root {
-            --bg-1: #070b18;
-            --bg-2: #11172b;
-            --text: #f8fafc;
-            --muted: #a8b1c5;
-            --accent: #8b5cf6;
-            --accent-2: #ec4899;
-            --accent-3: #38bdf8;
-            --glass: rgba(255, 255, 255, 0.075);
-            --glass-border: rgba(255, 255, 255, 0.13);
-            --shadow: rgba(0, 0, 0, 0.45);
+        /* Theme 2: Cyberpunk Neon Matrix */
+        html[data-theme="cyberpunk"] {
+            --font-main: 'Orbitron', sans-serif;
+            --bg-grad: radial-gradient(circle at 20% 20%, rgba(0, 255, 204, 0.25), transparent 40%), radial-gradient(circle at 80% 80%, rgba(255, 0, 127, 0.25), transparent 40%), linear-gradient(135deg, #050505, #12001a);
+            --card-bg: rgba(0, 255, 204, 0.04);
+            --card-border: rgba(0, 255, 204, 0.3);
+            --text-main: #00ffcc;
+            --text-muted: #ff007f;
+            --primary-grad: linear-gradient(135deg, #00ffcc, #ff007f);
+            --glow-color: rgba(0,255,204,.4);
+        }
+
+        /* Theme 3: Royal Obsidian & Gold */
+        html[data-theme="obsidian"] {
+            --font-main: 'Cinzel', serif;
+            --bg-grad: radial-gradient(circle at 50% 10%, rgba(212, 175, 55, 0.15), transparent 50%), linear-gradient(135deg, #0b0b0b, #1a160d);
+            --card-bg: rgba(212, 175, 55, 0.04);
+            --card-border: rgba(212, 175, 55, 0.25);
+            --text-main: #f3e5ab;
+            --text-muted: #c5a059;
+            --primary-grad: linear-gradient(135deg, #d4af37, #aa771c);
+            --glow-color: rgba(212,175,55,.3);
+        }
+
+        /* Theme 4: Hacking Terminal (Fira Code) */
+        html[data-theme="terminal"] {
+            --font-main: 'Fira Code', monospace;
+            --bg-grad: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.12), transparent 60%), linear-gradient(135deg, #022014, #010c07);
+            --card-bg: rgba(16, 185, 129, 0.05);
+            --card-border: rgba(16, 185, 129, 0.3);
+            --text-main: #34d399;
+            --text-muted: #059669;
+            --primary-grad: linear-gradient(135deg, #10b981, #047857);
+            --glow-color: rgba(16,185,129,.35);
+        }
+
+        /* Theme 5: Classic Editorial / Academic Serif */
+        html[data-theme="academic"] {
+            --font-main: 'Playfair Display', serif;
+            --bg-grad: radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.15), transparent 40%), linear-gradient(135deg, #1e293b, #0f172a);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(56, 189, 248, 0.2);
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --primary-grad: linear-gradient(135deg, #38bdf8, #2563eb);
+            --glow-color: rgba(56,189,248,.3);
         }
 
         * {
@@ -35,126 +84,58 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             min-height: 100vh;
             width: 100%;
-            overflow: hidden;
-            font-family:
-                Inter,
-                "Segoe UI",
-                system-ui,
-                -apple-system,
-                BlinkMacSystemFont,
-                sans-serif;
-            color: var(--text);
-            background:
-                radial-gradient(circle at 15% 20%, rgba(139, 92, 246, .20), transparent 32%),
-                radial-gradient(circle at 85% 75%, rgba(236, 72, 153, .16), transparent 32%),
-                radial-gradient(circle at 50% 100%, rgba(56, 189, 248, .10), transparent 35%),
-                linear-gradient(135deg, var(--bg-1), var(--bg-2));
+            overflow-x: hidden;
+            font-family: var(--font-main);
+            color: var(--text-main);
+            background: var(--bg-grad);
+            transition: background .5s ease, color .5s ease;
         }
 
         /* =========================================================
-           BACKGROUND
+           BACKGROUND ELEMENTS
         ========================================================= */
-
         .background {
             position: fixed;
             inset: 0;
             overflow: hidden;
             pointer-events: none;
+            z-index: 1;
         }
 
         .orb {
             position: absolute;
             border-radius: 50%;
             filter: blur(2px);
-            opacity: .5;
+            opacity: .4;
             animation: orbFloat 9s ease-in-out infinite;
         }
 
-        .orb-one {
-            width: 260px;
-            height: 260px;
-            top: -90px;
-            left: -80px;
-            background: radial-gradient(circle, rgba(139,92,246,.35), transparent 70%);
-        }
-
-        .orb-two {
-            width: 340px;
-            height: 340px;
-            right: -120px;
-            bottom: -120px;
-            background: radial-gradient(circle, rgba(236,72,153,.28), transparent 70%);
-            animation-delay: -3s;
-        }
-
-        .orb-three {
-            width: 180px;
-            height: 180px;
-            left: 45%;
-            top: 10%;
-            background: radial-gradient(circle, rgba(56,189,248,.16), transparent 70%);
-            animation-delay: -6s;
-        }
-
-        .stars {
-            position: absolute;
-            inset: 0;
-            background-image:
-                radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1px),
-                radial-gradient(circle, rgba(255,255,255,.4) 1px, transparent 1px);
-            background-size: 90px 90px, 150px 150px;
-            background-position: 10px 20px, 50px 80px;
-            opacity: .16;
-            animation: starsMove 20s linear infinite;
-        }
+        .orb-one { width: 260px; height: 260px; top: -90px; left: -80px; background: var(--primary-grad); }
+        .orb-two { width: 340px; height: 340px; right: -120px; bottom: -120px; background: var(--primary-grad); animation-delay: -3s; }
 
         @keyframes orbFloat {
-            0%, 100% {
-                transform: translate3d(0, 0, 0) scale(1);
-            }
-
-            50% {
-                transform: translate3d(20px, -25px, 0) scale(1.08);
-            }
-        }
-
-        @keyframes starsMove {
-            from {
-                transform: translateY(0);
-            }
-
-            to {
-                transform: translateY(-90px);
-            }
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+            50% { transform: translate3d(20px, -25px, 0) scale(1.08); }
         }
 
         /* =========================================================
-           HEADER
+           TOPBAR / HEADER
         ========================================================= */
-
         .topbar {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: 72px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 5%;
             z-index: 20;
-
-            background: rgba(7, 11, 24, .48);
-            border-bottom: 1px solid rgba(255,255,255,.08);
+            background: rgba(7, 11, 24, 0.65);
+            border-bottom: 1px solid var(--card-border);
             backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
         }
 
         .brand {
@@ -162,63 +143,59 @@
             align-items: center;
             gap: 11px;
             text-decoration: none;
-            color: white;
+            color: var(--text-main);
         }
 
         .brand-mark {
-            width: 38px;
-            height: 38px;
-            display: grid;
-            place-items: center;
+            width: 38px; height: 38px;
+            display: grid; place-items: center;
             border-radius: 12px;
-
-            background:
-                linear-gradient(135deg, var(--accent), var(--accent-2));
-
+            background: var(--primary-grad);
             font-weight: 900;
-            box-shadow:
-                0 8px 25px rgba(139,92,246,.28);
+            color: white;
+            box-shadow: 0 8px 25px var(--glow-color);
         }
 
         .brand-name {
             font-weight: 800;
             letter-spacing: 1.2px;
-            font-size: 16px;
+            font-size: 15px;
         }
 
-        .status {
+        /* Theme Switcher Dropdown in Header */
+        .theme-switcher-container {
             display: flex;
             align-items: center;
             gap: 8px;
-            color: var(--muted);
-            font-size: 13px;
         }
 
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #34d399;
-            box-shadow: 0 0 12px rgba(52,211,153,.8);
-            animation: pulseDot 1.8s infinite;
+        .theme-switcher-container label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        @keyframes pulseDot {
-            0%, 100% {
-                opacity: 1;
-                transform: scale(1);
-            }
+        #themeSelect {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-family: var(--font-main);
+            font-size: 12px;
+            cursor: pointer;
+            outline: none;
+            transition: all .2s;
+        }
 
-            50% {
-                opacity: .5;
-                transform: scale(.75);
-            }
+        #themeSelect:hover {
+            border-color: var(--text-main);
         }
 
         /* =========================================================
-           MAIN
+           MAIN CARD
         ========================================================= */
-
         main {
             min-height: 100vh;
             display: grid;
@@ -232,130 +209,66 @@
             width: min(720px, 94vw);
             padding: 48px 42px;
             text-align: center;
-
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
             border-radius: 32px;
-
             backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-
-            box-shadow:
-                0 30px 90px var(--shadow),
-                inset 0 1px 0 rgba(255,255,255,.08);
-
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,.08);
             animation: cardEnter .9s cubic-bezier(.2,.8,.2,1) forwards;
-            opacity: 0;
-            transform: translateY(25px) scale(.97);
         }
 
         @keyframes cardEnter {
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+            from { opacity: 0; transform: translateY(25px) scale(.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* =========================================================
-           404 NUMBER
-        ========================================================= */
-
         .error-code {
-            position: relative;
-            display: inline-block;
-            font-size: clamp(6rem, 22vw, 10rem);
-            line-height: .85;
-            font-weight: 950;
-            letter-spacing: -8px;
-            margin-bottom: 25px;
-
-            background:
-                linear-gradient(
-                    120deg,
-                    #ffffff 5%,
-                    #c4b5fd 30%,
-                    #f472b6 58%,
-                    #7dd3fc 90%
-                );
-
+            font-size: clamp(5rem, 18vw, 9rem);
+            line-height: .9;
+            font-weight: 900;
+            letter-spacing: -4px;
+            margin-bottom: 20px;
+            background: var(--primary-grad);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-
-            filter:
-                drop-shadow(0 15px 30px rgba(139,92,246,.22));
-
-            animation: numberFloat 4s ease-in-out infinite;
-        }
-
-        .error-code::after {
-            content: "404";
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            color: rgba(139,92,246,.12);
-            filter: blur(25px);
-            transform: translateY(12px);
-        }
-
-        @keyframes numberFloat {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-9px);
-            }
+            filter: drop-shadow(0 15px 30px var(--glow-color));
         }
 
         .eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-
-            padding: 7px 13px;
+            padding: 6px 14px;
             margin-bottom: 16px;
-
-            border: 1px solid rgba(255,255,255,.10);
+            border: 1px solid var(--card-border);
             border-radius: 999px;
-
-            background: rgba(255,255,255,.055);
-            color: #c4b5fd;
-
+            background: var(--card-bg);
+            color: var(--text-muted);
             font-size: 12px;
             font-weight: 700;
             letter-spacing: 1.2px;
             text-transform: uppercase;
         }
 
-        .eyebrow::before {
-            content: "";
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--accent-2);
-            box-shadow: 0 0 12px var(--accent-2);
-        }
-
         h1 {
-            font-size: clamp(1.8rem, 5vw, 2.7rem);
-            line-height: 1.15;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            line-height: 1.2;
             margin-bottom: 14px;
-            font-weight: 850;
+            font-weight: 800;
         }
 
         .description {
             max-width: 570px;
             margin: 0 auto 30px;
-            color: var(--muted);
-            font-size: 15px;
+            color: var(--text-muted);
+            font-size: 14px;
             line-height: 1.7;
         }
 
         /* =========================================================
-           BUTTONS
+           BUTTONS (FIXED BROKEN LINKS)
         ========================================================= */
-
         .buttons {
             display: flex;
             justify-content: center;
@@ -368,66 +281,41 @@
             min-width: 170px;
             padding: 13px 20px;
             border-radius: 14px;
-
             display: inline-flex;
             justify-content: center;
             align-items: center;
             gap: 8px;
-
             font-size: 14px;
-            font-weight: 750;
+            font-weight: 700;
             text-decoration: none;
-
-            transition:
-                transform .25s ease,
-                box-shadow .25s ease,
-                background .25s ease,
-                border-color .25s ease;
+            transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
         }
 
-        .btn:hover {
-            transform: translateY(-4px);
-        }
+        .btn:hover { transform: translateY(-3px); }
 
         .btn-primary {
             color: white;
-            border: 1px solid rgba(255,255,255,.08);
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--accent),
-                    var(--accent-2)
-                );
-
-            box-shadow:
-                0 12px 30px rgba(139,92,246,.25);
-        }
-
-        .btn-primary:hover {
-            box-shadow:
-                0 16px 38px rgba(236,72,153,.28);
+            border: 1px solid var(--card-border);
+            background: var(--primary-grad);
+            box-shadow: 0 12px 30px var(--glow-color);
         }
 
         .btn-secondary {
-            color: #e2e8f0;
-            background: rgba(255,255,255,.055);
-            border: 1px solid rgba(255,255,255,.13);
+            color: var(--text-main);
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
         }
 
         .btn-secondary:hover {
-            background: rgba(255,255,255,.10);
-            border-color: rgba(255,255,255,.25);
+            background: rgba(255,255,255,.12);
         }
 
         /* =========================================================
-           QUICK LINKS
+           QUICK LINKS (FIXED PATHS TO ROOT RELATIVE)
         ========================================================= */
-
         .quick-links {
-            border-top: 1px solid rgba(255,255,255,.09);
+            border-top: 1px solid var(--card-border);
             padding-top: 22px;
-
             display: flex;
             justify-content: center;
             align-items: center;
@@ -436,46 +324,27 @@
         }
 
         .quick-links a {
-            color: #94a3b8;
+            color: var(--text-muted);
             font-size: 13px;
             text-decoration: none;
-            position: relative;
             transition: color .25s ease;
         }
 
         .quick-links a:hover {
-            color: #ddd6fe;
-        }
-
-        .quick-links a:not(:last-child)::after {
-            content: "•";
-            position: absolute;
-            right: -15px;
-            color: rgba(255,255,255,.18);
+            color: var(--text-main);
         }
 
         /* =========================================================
-           SEARCHING OVERLAY
+           LOADING SCREEN OVERLAY
         ========================================================= */
-
         #loadingScreen {
             position: fixed;
             inset: 0;
             z-index: 100;
-
             display: grid;
             place-items: center;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    #151b35 0%,
-                    #070b18 65%
-                );
-
-            transition:
-                opacity .65s ease,
-                visibility .65s ease;
+            background: var(--bg-grad);
+            transition: opacity .5s ease, visibility .5s ease;
         }
 
         #loadingScreen.hidden {
@@ -484,367 +353,128 @@
             pointer-events: none;
         }
 
-        .loader-content {
-            text-align: center;
-            padding: 20px;
-        }
-
         .loader-ring {
-            width: 82px;
-            height: 82px;
-            margin: 0 auto 25px;
-
+            width: 70px; height: 70px;
+            margin: 0 auto 20px;
             border-radius: 50%;
-            border: 2px solid rgba(255,255,255,.08);
-            border-top-color: var(--accent);
-            border-right-color: var(--accent-2);
-
+            border: 3px solid var(--card-border);
+            border-top-color: var(--text-main);
             animation: loaderSpin 1s linear infinite;
-
-            position: relative;
-        }
-
-        .loader-ring::after {
-            content: "";
-            position: absolute;
-            inset: 11px;
-
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,.08);
-            border-bottom-color: var(--accent-3);
-
-            animation: loaderSpin 1.8s linear infinite reverse;
         }
 
         @keyframes loaderSpin {
-            to {
-                transform: rotate(360deg);
-            }
+            to { transform: rotate(360deg); }
         }
-
-        .loader-title {
-            font-size: 19px;
-            font-weight: 750;
-            margin-bottom: 8px;
-        }
-
-        .loader-subtitle {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .dots span {
-            display: inline-block;
-            animation: dotBlink 1.4s infinite;
-        }
-
-        .dots span:nth-child(2) {
-            animation-delay: .2s;
-        }
-
-        .dots span:nth-child(3) {
-            animation-delay: .4s;
-        }
-
-        @keyframes dotBlink {
-            0%, 60%, 100% {
-                opacity: .25;
-            }
-
-            30% {
-                opacity: 1;
-            }
-        }
-
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
 
         @media (max-width: 600px) {
-
-            .topbar {
-                height: 64px;
-                padding: 0 18px;
-            }
-
-            .brand-name {
-                font-size: 14px;
-            }
-
-            .status {
-                font-size: 11px;
-            }
-
-            .error-card {
-                padding: 38px 20px 28px;
-                border-radius: 25px;
-            }
-
-            .error-code {
-                letter-spacing: -5px;
-                margin-bottom: 20px;
-            }
-
-            .description {
-                font-size: 14px;
-            }
-
-            .buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .quick-links {
-                gap: 12px 20px;
-            }
-
-            .quick-links a:not(:last-child)::after {
-                display: none;
-            }
-        }
-
-        /* =========================================================
-           ACCESSIBILITY
-        ========================================================= */
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
-                scroll-behavior: auto !important;
-            }
+            .topbar { padding: 0 15px; height: 60px; }
+            .theme-switcher-container label { display: none; }
+            .error-card { padding: 32px 18px; }
+            .buttons { flex-direction: column; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- =========================================================
-         BACKGROUND
-    ========================================================== -->
-
     <div class="background" aria-hidden="true">
-        <div class="stars"></div>
         <div class="orb orb-one"></div>
         <div class="orb orb-two"></div>
-        <div class="orb orb-three"></div>
     </div>
 
-
-    <!-- =========================================================
-         TOP BAR
-    ========================================================== -->
-
+    <!-- TOP BAR -->
     <header class="topbar">
-
-        <!-- Relative link keeps this compatible with GitHub Pages
-             repository/project sites. -->
-        <a href="./index.html" class="brand" aria-label="Shorveer Notes Home">
-
+        <!-- FIXED BROKEN LINK: Using root-relative link '/' for GitHub pages stability -->
+        <a href="/" class="brand" aria-label="Shorveer Notes Home">
             <span class="brand-mark">S</span>
-
-            <span class="brand-name">
-                SHORVEER NOTES
-            </span>
-
+            <span class="brand-name">SHORVEER NOTES</span>
         </a>
 
-        <div class="status">
-            <span class="status-dot"></span>
-            <span>Study Space Online</span>
+        <!-- 5-Different Themes Switcher Dropdown -->
+        <div class="theme-switcher-container">
+            <label for="themeSelect">🎨 Theme:</label>
+            <select id="themeSelect" aria-label="Choose Website Theme">
+                <option value="nebula">1. Nebula Space</option>
+                <option value="cyberpunk">2. Cyberpunk Neon</option>
+                <option value="obsidian">3. Royal Obsidian</option>
+                <option value="terminal">4. Hacker Terminal</option>
+                <option value="academic">5. Academic Serif</option>
+            </select>
         </div>
-
     </header>
 
-
-    <!-- =========================================================
-         LOADING / SEARCHING SCREEN
-    ========================================================== -->
-
+    <!-- LOADING SCREEN -->
     <div id="loadingScreen">
-
-        <div class="loader-content">
-
+        <div style="text-align: center;">
             <div class="loader-ring"></div>
-
-            <div class="loader-title">
-                Looking for your page
-                <span class="dots">
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                </span>
-            </div>
-
-            <div class="loader-subtitle">
-                Checking the Shorveer Notes universe
-            </div>
-
+            <div style="font-weight: 700; font-size: 16px;">Loading Universe...</div>
         </div>
-
     </div>
 
-
-    <!-- =========================================================
-         MAIN 404 CONTENT
-    ========================================================== -->
-
+    <!-- MAIN 404 CONTENT -->
     <main>
-
-        <section class="error-card" aria-labelledby="errorTitle">
-
-            <div class="eyebrow">
-                Navigation Error
-            </div>
-
-            <div class="error-code" aria-hidden="true">
-                404
-            </div>
-
-            <h1 id="errorTitle">
-                This page couldn't be found
-            </h1>
-
+        <section class="error-card">
+            <div class="eyebrow">404 Error - Page Missing</div>
+            <div class="error-code">404</div>
+            <h1>Lost in the Study Space?</h1>
             <p class="description">
-                Looks like the page you're trying to reach has been
-                moved, removed, renamed, or the link may be incorrect.
-                Don't worry — your study journey is still right here.
+                The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back on track with your notes.
             </p>
 
-
-            <!-- =================================================
-                 NAVIGATION BUTTONS
-            ================================================== -->
-
+            <!-- NAVIGATION BUTTONS (FIXED RELATIVE LINKS) -->
             <div class="buttons">
-
-                <a
-                    href="./index.html"
-                    class="btn btn-primary"
-                >
-                    <span>⌂</span>
-                    Back to Home
+                <a href="/" class="btn btn-primary">
+                    <span>⌂</span> Back to Home
                 </a>
-
-                <a
-                    href="javascript:void(0)"
-                    class="btn btn-secondary"
-                    id="backButton"
-                >
-                    <span>←</span>
-                    Go Back
+                <a href="javascript:void(0)" class="btn btn-secondary" id="backButton">
+                    <span>←</span> Go Back
                 </a>
-
             </div>
 
-
-            <!-- =================================================
-                 QUICK LINKS
-            ================================================== -->
-
+            <!-- QUICK LINKS (FIXED ABSOLUTE/ROOT PATHS TO PREVENT 404 ERRORS) -->
             <nav class="quick-links" aria-label="Quick navigation">
-
-                <a href="./about.html">
-                    About Us
-                </a>
-
-                <a href="./about-notes.html">
-                    About Our Notes
-                </a>
-
-                <a href="./exam-info.html">
-                    Exam Blueprint
-                </a>
-
-                <a href="./privacy.html">
-                    Privacy Policy
-                </a>
-
+                <a href="/about.html">About Us</a>
+                <a href="/about-notes.html">About Our Notes</a>
+                <a href="/exam-info.html">Exam Blueprint</a>
+                <a href="/privacy.html">Privacy Policy</a>
             </nav>
-
         </section>
-
     </main>
 
-
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================== -->
-
+    <!-- JAVASCRIPT FOR THEME SWITCHER & CONTROLS -->
     <script>
-
         document.addEventListener("DOMContentLoaded", function () {
+            const loadingScreen = document.getElementById("loadingScreen");
+            const backButton = document.getElementById("backButton");
+            const themeSelect = document.getElementById("themeSelect");
+            const htmlElement = document.documentElement;
 
-            const loadingScreen =
-                document.getElementById("loadingScreen");
-
-            const backButton =
-                document.getElementById("backButton");
-
-
-            /* -----------------------------------------------------
-               404 LOADING ANIMATION
-               ----------------------------------------------------- */
-
-            setTimeout(function () {
-
+            // 1. Hide loading screen smoothly after 1.2s
+            setTimeout(() => {
                 loadingScreen.classList.add("hidden");
+            }, 1200);
 
-            }, 1800);
-
-
-            /* -----------------------------------------------------
-               SAFE BACK BUTTON
-               ----------------------------------------------------- */
-
-            backButton.addEventListener("click", function () {
-
-                /*
-                 * If the visitor came from another page,
-                 * use browser history.
-                 *
-                 * Otherwise send them to the homepage.
-                 */
-
-                if (
-                    document.referrer &&
-                    document.referrer !== window.location.href
-                ) {
-
+            // 2. Safe Back Button Handler
+            backButton.addEventListener("click", () => {
+                if (document.referrer && document.referrer !== window.location.href) {
                     window.history.back();
-
                 } else {
-
-                    window.location.href = "./index.html";
-
+                    window.location.href = "/";
                 }
-
             });
 
+            // 3. Theme Switcher Logic (Saves user choice in localStorage)
+            const savedTheme = localStorage.getItem("shorveer_404_theme") || "nebula";
+            htmlElement.setAttribute("data-theme", savedTheme);
+            themeSelect.value = savedTheme;
 
-            /* -----------------------------------------------------
-               KEYBOARD SHORTCUT
-               Press Escape → Home
-               ----------------------------------------------------- */
-
-            document.addEventListener("keydown", function (event) {
-
-                if (event.key === "Escape") {
-
-                    window.location.href = "./index.html";
-
-                }
-
+            themeSelect.addEventListener("change", (e) => {
+                const selectedTheme = e.target.value;
+                htmlElement.setAttribute("data-theme", selectedTheme);
+                localStorage.setItem("shorveer_404_theme", selectedTheme);
             });
-
         });
-
     </script>
-
 </body>
 </html>
