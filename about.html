@@ -1,194 +1,265 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#07111f">
+  <meta name="theme-color" content="#0a0f1c">
   <meta name="description" content="About Shorveer Notes - Our mission, student-first vision, and academic framework founded by Jatin Sandilya.">
   <meta name="author" content="Jatin Sandilya">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Us | Shorveer Notes">
+  <meta property="og:description" content="Our mission, student-first vision, and academic framework founded by Jatin Sandilya.">
+  <meta property="og:url" content="./about.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1200&q=75">
 
   <title>About Us | Shorveer Notes</title>
 
+  <!-- Favicon (Geometric Shorveer "S" Crest) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230a0f1c'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23f3c969'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='42' fill='%230a0f1c'/%3E%3Cpath d='M124 56c-7-10-19.5-14-34-14-25 0-39 15.5-39 32.5 0 22.5 21 28 39 33.5 18 5.5 28 10 28 21 0 14-14 22.5-31 22.5-18 0-31-8.5-38-21l-11 12.5C48 157 65 168 87 168c31 0 50.5-18.5 50.5-42 0-25-22.5-32-40.5-37.5-17-5.5-26.5-8.5-26.5-18 0-11 11-17 26.5-17 12.5 0 22.5 4.5 29.5 12.5L124 56z' fill='%23f3c969'/%3E%3C/svg%3E">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
+    /* =========================================================
+       01. DESIGN TOKENS (SHORVEER PREMIUM DARK-GOLD IDENTITY)
+       ========================================================= */
     :root {
-      --bg: #07111f;
-      --bg2: #0d1b2e;
-      --card: rgba(255, 255, 255, 0.075);
-      --card2: rgba(255, 255, 255, 0.11);
-      --text: #f5f8ff;
-      --muted: #a9b6ca;
-      --primary: #62a8ff;
-      --secondary: #9c7cff;
-      --accent: #5ee7c4;
-      --border: rgba(255, 255, 255, 0.12);
-      --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
-      --radius: 24px;
+      --paper: #f6f3ed;
+      --paper-2: #efebe3;
+      --white: #ffffff;
+      --ink: #0a0f1c;
+      --ink-2: #111827;
+      --muted: #687080;
+      --muted-dark: #aeb7c5;
+      --line: rgba(10, 15, 28, .12);
+      --line-light: rgba(255, 255, 255, .14);
+      --gold: #f3c969;
+      --gold-dark: #d8ad46;
+      --blue: #3e78ff;
+      --cyan: #46c6d8;
+      --green: #5dbb91;
+      --pink: #ef7e78;
+      --shadow: 0 24px 70px rgba(10, 15, 28, .10);
+      --shadow-heavy: 0 35px 100px rgba(10, 15, 28, .18);
+      --ease: cubic-bezier(.2, .75, .2, 1);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 17px;
+      --max: 1240px;
     }
 
-    * {
+    body.dark {
+      --paper: #080d16;
+      --paper-2: #0f1624;
+      --white: #131c2e;
+      --ink: #f7f8fa;
+      --ink-2: #eef2f7;
+      --muted: #a2afc2;
+      --muted-dark: #cbd5e1;
+      --line: rgba(255, 255, 255, .12);
+      --shadow: 0 24px 70px rgba(0, 0, 0, .45);
+      --shadow-heavy: 0 35px 100px rgba(0, 0, 0, .65);
+    }
+
+    /* =========================================================
+       02. RESET & BASE
+       ========================================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 100px;
     }
 
     body {
       min-height: 100vh;
-      color: var(--text);
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 10% 10%, rgba(98, 168, 255, 0.16), transparent 28%),
-        radial-gradient(circle at 90% 20%, rgba(156, 124, 255, 0.14), transparent 28%),
-        radial-gradient(circle at 50% 90%, rgba(94, 231, 196, 0.08), transparent 25%),
-        linear-gradient(135deg, var(--bg), var(--bg2));
       overflow-x: hidden;
-      line-height: 1.7;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", system-ui, sans-serif;
+      line-height: 1.6;
+      transition: background .35s ease, color .35s ease;
+      perspective: 1400px;
     }
 
-    /* ---------- Background ---------- */
-    .background {
+    body::selection {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button, input {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+      background: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    /* =========================================================
+       03. 3D IMMERSIVE BACKGROUND & EDITORIAL IMAGES
+       ========================================================= */
+    .page-bg {
       position: fixed;
       inset: 0;
-      pointer-events: none;
+      z-index: -20;
       overflow: hidden;
-      z-index: -1;
+      pointer-events: none;
+      perspective: 1200px;
+      background:
+        radial-gradient(circle at 12% 15%, rgba(243, 201, 105, .14), transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(62, 120, 255, .11), transparent 32%),
+        var(--paper);
     }
 
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(2px);
-      opacity: 0.35;
-      animation: float 12s ease-in-out infinite;
-    }
-
-    .orb.one {
-      width: 260px;
-      height: 260px;
-      background: var(--primary);
-      top: -100px;
-      left: -80px;
-    }
-
-    .orb.two {
-      width: 300px;
-      height: 300px;
-      background: var(--secondary);
-      right: -120px;
-      top: 25%;
-      animation-delay: -4s;
-    }
-
-    .orb.three {
-      width: 220px;
-      height: 220px;
-      background: var(--accent);
-      bottom: -80px;
-      left: 35%;
-      animation-delay: -8s;
-    }
-
-    .grid {
+    .page-bg::before {
+      content: "";
       position: absolute;
       inset: 0;
-      opacity: 0.035;
+      opacity: .18;
       background-image:
-        linear-gradient(rgba(255, 255, 255, 0.8) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
-      background-size: 42px 42px;
+        linear-gradient(rgba(10, 15, 28, .05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10, 15, 28, .05) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, black, transparent 75%);
     }
 
-    @keyframes float {
-      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-      50% { transform: translate3d(0, -30px, 0) scale(1.08); }
+    body.dark .page-bg::before {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
     }
 
-    /* ---------- Loader ---------- */
-    .loader {
-      position: fixed;
-      inset: 0;
-      background: #06101d;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: 0.7s ease;
-    }
-
-    .loader.hide {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .loader-box { text-align: center; }
-
-    .loader-symbol {
-      width: 78px;
-      height: 78px;
-      margin: auto;
-      border: 3px solid rgba(255, 255, 255, 0.1);
-      border-top-color: var(--primary);
-      border-right-color: var(--secondary);
+    .bg-photo {
+      position: absolute;
+      width: min(48vw, 650px);
+      aspect-ratio: 1;
       border-radius: 50%;
-      animation: spin 1s linear infinite;
+      opacity: .13;
+      filter: saturate(.65) contrast(1.05);
+      background:
+        linear-gradient(135deg, rgba(10, 15, 28, .3), rgba(10, 15, 28, .75)),
+        url("https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1400&q=80")
+        center / cover;
+      box-shadow: inset 0 0 100px var(--paper);
+      animation: orbFloat3D 24s ease-in-out infinite alternate;
+      transform-style: preserve-3d;
+      will-change: transform;
     }
 
-    .loader-title {
-      margin-top: 20px;
-      font-size: 0.95rem;
-      letter-spacing: 3px;
-      color: var(--muted);
-      font-weight: 700;
+    .bg-photo.one { top: 5%; right: -15%; }
+    .bg-photo.two { 
+      width: min(38vw, 480px);
+      left: -14%; 
+      top: 55%; 
+      opacity: .09; 
+      background:
+        linear-gradient(135deg, rgba(10, 15, 28, .35), rgba(10, 15, 28, .8)),
+        url("https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80")
+        center / cover;
+      animation-delay: -8s; 
     }
 
-    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes orbFloat3D {
+      0% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+      50% { transform: translate3d(-40px, 30px, 60px) rotateX(14deg) rotateY(-15deg) rotateZ(5deg); }
+      100% { transform: translate3d(30px, -30px, -35px) rotateX(-12deg) rotateY(18deg) rotateZ(-4deg); }
+    }
 
-    /* ---------- Header ---------- */
-    header {
+    /* =========================================================
+       04. HEADER & NAVIGATION
+       ========================================================= */
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      background: rgba(7, 17, 31, 0.68);
-      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--paper) 86%, transparent);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      transition: background .35s ease, border-color .35s ease;
     }
 
     .nav {
-      width: min(1180px, 92%);
-      margin: auto;
-      height: 74px;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 25px;
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 12px;
-      text-decoration: none;
-      color: var(--text);
+      flex: 0 0 auto;
     }
 
-    .logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
+    .brand-mark {
+      position: relative;
+      width: 43px;
+      height: 43px;
       display: grid;
       place-items: center;
-      font-weight: 900;
-      font-size: 1.2rem;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      box-shadow: 0 10px 35px rgba(98, 168, 255, 0.22);
+      overflow: hidden;
+      border-radius: 13px;
+      background: var(--ink);
+      box-shadow: 0 12px 30px rgba(10, 15, 28, .16);
+      transition: transform .35s var(--ease);
     }
 
-    .brand-text strong { display: block; font-size: 1rem; }
-    .brand-text span { display: block; font-size: 0.72rem; color: var(--muted); }
+    .brand:hover .brand-mark {
+      transform: translateY(-2px) rotate(-4deg) scale(1.05);
+    }
+
+    .brand-mark svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .brand-name {
+      font-family: "Manrope", sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+
+    .brand-name span {
+      color: var(--gold-dark);
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
 
     .nav-actions {
       display: flex;
@@ -196,667 +267,848 @@
       gap: 10px;
     }
 
-    .nav-btn {
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--text);
-      width: 42px;
+    .nav-icon, .nav-btn {
       height: 42px;
-      border-radius: 13px;
-      cursor: pointer;
-      transition: 0.25s ease;
-      display: grid;
-      place-items: center;
-      text-decoration: none;
-    }
-
-    .nav-btn:hover {
-      transform: translateY(-3px) rotate(3deg);
-      background: rgba(255, 255, 255, 0.12);
-    }
-
-    /* ---------- Hero ---------- */
-    .hero {
-      width: min(1180px, 92%);
-      margin: auto;
-      min-height: 560px;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 50px;
-      padding: 60px 0 45px;
-    }
-
-    .badge {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(98, 168, 255, 0.25);
-      background: rgba(98, 168, 255, 0.08);
-      color: #c9e2ff;
-      font-size: 0.78rem;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: color-mix(in srgb, var(--white) 75%, transparent);
+      color: var(--ink);
+      font-size: 13px;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      transition: transform .25s var(--ease), border-color .25s ease, background .25s ease, color .25s ease;
     }
 
-    .badge-dot {
-      width: 7px;
-      height: 7px;
-      background: var(--accent);
-      border-radius: 50%;
-      box-shadow: 0 0 15px var(--accent);
+    .nav-icon {
+      width: 42px;
+      padding: 0;
+    }
+
+    .nav-icon:hover, .nav-btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold-dark);
+    }
+
+    /* =========================================================
+       05. HERO SECTION WITH 3D TILT & EDITORIAL VISUAL
+       ========================================================= */
+    .hero {
+      position: relative;
+      width: min(var(--max), calc(100% - 40px));
+      margin: 85px auto 65px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 60px;
+      perspective: 1200px;
+      animation: heroIn .8s var(--ease) both;
+    }
+
+    @keyframes heroIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .kicker-line {
+      width: 30px;
+      height: 1px;
+      background: var(--gold-dark);
     }
 
     .hero h1 {
-      margin-top: 22px;
-      font-size: clamp(2.8rem, 6.5vw, 5.5rem);
-      line-height: 0.95;
-      letter-spacing: -3.5px;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(40px, 5.5vw, 76px);
+      font-weight: 800;
+      letter-spacing: -.065em;
+      line-height: 1.02;
+      margin-bottom: 24px;
     }
 
     .gradient-text {
-      background: linear-gradient(100deg, #fff, #9fcaff 40%, #b9a5ff 70%, #70f0d2);
+      background: linear-gradient(135deg, var(--ink) 25%, var(--gold-dark) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    body.dark .gradient-text {
+      background: linear-gradient(135deg, #ffffff 25%, var(--gold) 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
     .hero p {
-      margin-top: 25px;
-      max-width: 650px;
+      max-width: 620px;
       color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.75;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 32px;
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 13px;
-      margin-top: 30px;
+      gap: 12px;
     }
 
     .btn {
-      position: relative;
-      overflow: hidden;
+      min-height: 50px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      min-height: 48px;
+      gap: 10px;
       padding: 0 22px;
-      border-radius: 15px;
-      text-decoration: none;
-      color: var(--text);
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.06);
-      cursor: pointer;
-      font-weight: 700;
-      transition: 0.3s ease;
+      border-radius: 13px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: transform .25s var(--ease), box-shadow .25s ease, background .25s ease, color .25s ease;
     }
 
-    .btn.primary {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      border: none;
-      box-shadow: 0 14px 35px rgba(98, 168, 255, 0.18);
+    .btn-dark {
+      background: var(--ink);
+      color: var(--white);
+      box-shadow: 0 13px 30px rgba(10, 15, 28, .15);
     }
 
-    .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
+    .btn-dark:hover {
+      transform: translateY(-3px) translateZ(10px);
+      box-shadow: 0 19px 38px rgba(10, 15, 28, .22);
     }
 
-    /* ---------- Mission Emblem 3D Card ---------- */
+    .btn-light {
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--white) 75%, transparent);
+      color: var(--ink);
+    }
+
+    .btn-light:hover {
+      transform: translateY(-3px) translateZ(10px);
+      border-color: var(--gold-dark);
+    }
+
+    /* Hero Visual Card with Realistic Study Photography */
     .hero-visual {
       position: relative;
-      min-height: 400px;
+      min-height: 440px;
       display: grid;
       place-items: center;
+      transform-style: preserve-3d;
     }
 
     .mission-card {
-      width: min(380px, 90%);
-      min-height: 380px;
-      border: 1px solid var(--border);
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.035));
-      border-radius: 35px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(22px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
+      width: min(100%, 440px);
+      aspect-ratio: 1;
+      border-radius: var(--radius-xl);
       overflow: hidden;
-      transform: rotate(2.5deg);
-      transition: 0.5s ease;
+      background:
+        linear-gradient(160deg, rgba(10, 15, 28, .15), rgba(10, 15, 28, .85)),
+        url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80")
+        center / cover;
+      box-shadow: var(--shadow-heavy);
+      border: 1px solid rgba(255, 255, 255, .2);
+      transform: rotate(2deg);
+      transition: transform .4s var(--ease);
     }
 
     .mission-card:hover {
-      transform: rotate(0) translateY(-10px);
+      transform: rotate(0deg) translateY(-8px) translateZ(15px);
     }
 
-    .mission-card::before {
-      content: "";
+    .mission-overlay {
       position: absolute;
-      inset: -50%;
-      background: conic-gradient(from 0deg, transparent, rgba(98, 168, 255, 0.2), transparent, rgba(156, 124, 255, 0.2), transparent);
-      animation: spin 9s linear infinite;
-    }
-
-    .mission-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .mission-shield {
-      font-size: clamp(3.5rem, 8vw, 5.5rem);
-      margin-bottom: 8px;
-      display: block;
-      filter: drop-shadow(0 10px 20px rgba(98, 168, 255, 0.3));
-    }
-
-    .mission-title {
-      font-size: 1.25rem;
-      font-weight: 900;
-      letter-spacing: 2px;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(10, 15, 28, .92) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 35px;
       color: #fff;
     }
 
-    .mission-sub {
-      color: var(--accent);
-      margin-top: 8px;
-      letter-spacing: 2px;
-      font-size: 0.76rem;
+    .mission-overlay small {
+      color: var(--gold);
+      font-size: 10px;
       font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
     }
 
-    .float-symbol {
-      position: absolute;
-      color: rgba(255, 255, 255, 0.2);
-      font-size: 1.7rem;
-      animation: drift 7s ease-in-out infinite;
+    .mission-overlay h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 26px;
+      line-height: 1.1;
+      letter-spacing: -.035em;
     }
 
-    .s1 { top: 35px; left: 35px; }
-    .s2 { right: 35px; top: 90px; animation-delay: -2s; }
-    .s3 { bottom: 50px; left: 55px; animation-delay: -4s; }
-    .s4 { right: 50px; bottom: 40px; animation-delay: -6s; }
-
-    @keyframes drift {
-      0%, 100% { transform: translateY(0) rotate(0); }
-      50% { transform: translateY(-18px) rotate(12deg); }
-    }
-
-    /* ---------- Stats Strip ---------- */
+    /* =========================================================
+       06. STATS STRIP
+       ========================================================= */
     .stats {
-      width: min(1180px, 92%);
-      margin: 0 auto 55px;
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto 80px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
+      perspective: 1200px;
     }
 
     .stat {
-      border: 1px solid var(--border);
-      background: var(--card);
-      border-radius: 20px;
-      padding: 22px;
+      padding: 28px;
       text-align: center;
-      transition: 0.3s ease;
+      border: 1px solid var(--line);
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      transform-style: preserve-3d;
+      transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .35s ease, background .35s ease;
     }
 
     .stat:hover {
-      background: var(--card2);
-      transform: translateY(-5px);
+      transform: translateY(-6px) rotateX(4deg) translateZ(10px);
+      box-shadow: 0 30px 75px rgba(10, 15, 28, .14);
+      border-color: var(--gold-dark);
     }
 
-    .stat strong { display: block; font-size: 1.7rem; }
-    .stat span { color: var(--muted); font-size: 0.82rem; font-weight: 600; }
-
-    /* ---------- Content Grid Section ---------- */
-    .section {
-      width: min(1180px, 92%);
-      margin: 0 auto;
-      padding: 45px 0 65px;
+    .stat strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--gold-dark);
+      letter-spacing: -.03em;
     }
 
-    .section-heading {
-      margin-bottom: 35px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      letter-spacing: -1.2px;
-    }
-
-    .section-heading p {
-      max-width: 600px;
+    .stat span {
+      display: block;
+      margin-top: 6px;
       color: var(--muted);
-      line-height: 1.65;
-      margin-top: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    /* =========================================================
+       07. NARRATIVE SECTIONS & CARDS
+       ========================================================= */
+    .section {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto 95px;
+    }
+
+    .section-head {
+      margin-bottom: 40px;
+    }
+
+    .section-kicker {
+      margin-bottom: 10px;
+      color: var(--gold-dark);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(32px, 4.5vw, 48px);
+      letter-spacing: -.055em;
+      line-height: 1.08;
+    }
+
+    .section-head p {
+      max-width: 620px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
     }
 
     .about-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
+      perspective: 1200px;
     }
 
     .story-card {
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 35px;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-      transition: 0.35s ease;
+      position: relative;
+      padding: 38px;
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transform-style: preserve-3d;
+      transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .35s ease, background .35s ease, color .35s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
     .story-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(98, 168, 255, 0.4);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+      transform: translateY(-8px) rotateX(4deg) translateZ(12px);
+      border-color: var(--gold-dark);
+      box-shadow: 0 35px 80px rgba(10, 15, 28, .16);
     }
 
     .card-tag {
-      color: var(--primary);
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 1.5px;
+      color: var(--gold-dark);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .15em;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       display: inline-block;
     }
 
     .story-card h3 {
-      font-size: 1.4rem;
-      letter-spacing: -0.5px;
-      margin-bottom: 15px;
-      color: #fff;
+      font-family: "Manrope", sans-serif;
+      font-size: 24px;
+      letter-spacing: -.035em;
+      margin-bottom: 16px;
     }
 
     .story-card p {
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: 14px;
       line-height: 1.8;
       margin-bottom: 15px;
     }
 
     .story-card p strong {
-      color: var(--text);
+      color: var(--ink);
     }
 
-    /* Highlight Banner */
+    /* Manifesto Box */
     .manifesto-box {
       margin-top: 30px;
-      padding: 35px;
-      border-radius: 24px;
-      border: 1px solid rgba(98, 168, 255, 0.25);
-      background: linear-gradient(135deg, rgba(98, 168, 255, 0.08), rgba(156, 124, 255, 0.05));
+      padding: 42px;
+      border-radius: var(--radius-xl);
+      background: var(--ink);
+      color: #fff;
+      box-shadow: var(--shadow-heavy);
+      border: 1px solid rgba(243, 201, 105, 0.2);
     }
 
     .manifesto-box h3 {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
+      font-family: "Manrope", sans-serif;
+      font-size: 26px;
+      margin-bottom: 14px;
+      letter-spacing: -.03em;
       color: #fff;
     }
 
     .manifesto-box p {
-      color: var(--muted);
-      font-size: 0.96rem;
-      line-height: 1.8;
-      max-width: 900px;
+      color: var(--muted-dark);
+      font-size: 15px;
+      line-height: 1.85;
+      max-width: 950px;
     }
 
-    /* ---------- Footer ---------- */
+    .manifesto-box p strong {
+      color: var(--gold);
+    }
+
+    /* =========================================================
+       08. FOOTER
+       ========================================================= */
     footer {
-      margin-top: 60px;
-      border-top: 1px solid var(--border);
-      background: rgba(0, 0, 0, 0.16);
+      border-top: 1px solid var(--line);
+      padding: 60px 0 30px;
+      background: color-mix(in srgb, var(--paper-2) 40%, transparent);
+      transition: background .35s ease, border-color .35s ease;
     }
 
     .footer-inner {
-      width: min(1180px, 92%);
+      width: min(var(--max), calc(100% - 40px));
       margin: auto;
-      padding: 50px 0 25px;
     }
 
-    .footer-top {
+    .footer-grid {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 35px;
-      padding-bottom: 40px;
+      gap: 40px;
+      padding-bottom: 50px;
     }
 
     .footer-brand p {
-      margin-top: 12px;
+      max-width: 350px;
+      margin-top: 16px;
       color: var(--muted);
-      line-height: 1.65;
-      font-size: 0.86rem;
-      max-width: 320px;
+      font-size: 12px;
+      line-height: 1.8;
     }
 
-    .footer-column h4 {
-      font-size: 0.95rem;
-      margin-bottom: 16px;
-      color: #fff;
-      letter-spacing: 0.5px;
+    .footer-column h3 {
+      margin-bottom: 17px;
+      font-family: "Manrope", sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .11em;
     }
 
     .footer-column a {
       display: block;
-      color: var(--muted);
-      font-size: 0.85rem;
+      width: fit-content;
       margin-bottom: 10px;
-      text-decoration: none;
-      transition: 0.25s;
+      color: var(--muted);
+      font-size: 12px;
+      transition: color .2s ease, transform .2s var(--ease);
     }
 
     .footer-column a:hover {
-      color: var(--primary);
+      color: var(--ink);
       transform: translateX(3px);
     }
 
     .footer-bottom {
-      border-top: 1px solid var(--border);
-      padding-top: 22px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
+      gap: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: 0.78rem;
+      font-size: 11px;
     }
 
-    .author-credit { font-weight: 700; color: var(--text); }
-    .author-credit span { color: var(--primary); }
+    .author-credit { font-weight: 700; color: var(--ink); }
+    .author-credit span { color: var(--gold-dark); }
+    body.dark .author-credit { color: var(--white); }
 
-    /* ---------- Responsive ---------- */
-    @media (max-width: 900px) {
+    /* =========================================================
+       09. BACK TO TOP
+       ========================================================= */
+    #topBtn {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--ink);
+      color: var(--gold);
+      box-shadow: var(--shadow-heavy);
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(15px);
+      transition: transform .3s var(--ease), opacity .3s ease;
+      z-index: 900;
+    }
+
+    #topBtn.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    #topBtn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* =========================================================
+       10. PRELOADER
+       ========================================================= */
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      transition: opacity .6s ease, visibility .6s ease;
+    }
+
+    #loader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-content {
+      text-align: center;
+      color: #fff;
+    }
+
+    .loader-logo {
+      width: 65px;
+      height: 65px;
+      margin: 0 auto 16px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 26px;
+      font-weight: 900;
+      animation: loaderBounce 1.2s ease-in-out infinite;
+    }
+
+    @keyframes loaderBounce {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-8px) scale(1.05); }
+    }
+
+    .loader-content p {
+      color: var(--muted-dark);
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       11. SCROLL REVEAL (3D Dynamics)
+       ========================================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px) rotateX(6deg);
+      transition: opacity .8s ease, transform .8s var(--ease);
+      will-change: opacity, transform;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0) rotateX(0deg);
+    }
+
+    /* =========================================================
+       12. RESPONSIVE DESIGN
+       ========================================================= */
+    @media (max-width: 950px) {
       .hero {
         grid-template-columns: 1fr;
         text-align: center;
-        padding-top: 50px;
+        gap: 40px;
       }
-      .hero p { margin-left: auto; margin-right: auto; }
-      .hero-buttons { justify-content: center; }
-      .about-grid { grid-template-columns: 1fr; }
-      .stats { grid-template-columns: 1fr; }
-      .footer-top { grid-template-columns: repeat(2, 1fr); }
+      .hero p {
+        margin-inline: auto;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .stats, .about-grid, .footer-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    @media (max-width: 650px) {
-      .nav { height: 66px; }
-      .brand-text span { display: none; }
-      .hero h1 { font-size: 3.2rem; letter-spacing: -2px; }
-      .story-card { padding: 25px; }
-      .footer-top { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .mission-card { min-height: 320px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
-
 <body>
 
-<!-- Background Ambient Elements -->
-<div class="background">
-  <div class="grid"></div>
-  <div class="orb one"></div>
-  <div class="orb two"></div>
-  <div class="orb three"></div>
-</div>
-
-<!-- Page Preloader -->
-<div class="loader" id="loader">
-  <div class="loader-box">
-    <div class="loader-symbol"></div>
-    <div class="loader-title">LOADING SHORVEER VISION</div>
+  <!-- =========================================================
+       BACKGROUND ORBS & GROWTH STUDY IMAGES
+       ========================================================= -->
+  <div class="page-bg" aria-hidden="true">
+    <div class="bg-photo one" id="bgOrb1"></div>
+    <div class="bg-photo two" id="bgOrb2"></div>
   </div>
-</div>
 
-<!-- Header -->
-<header>
-  <nav class="nav">
-    <a class="brand" href="/index.html">
-      <div class="logo">⚔️</div>
-      <div class="brand-text">
-        <strong>Shorveer Notes</strong>
-        <span>Discipline • Focus • Excellence</span>
-      </div>
-    </a>
-
-    <div class="nav-actions">
-      <button class="nav-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
-      <a class="nav-btn" href="/index.html" aria-label="Home">⌂</a>
+  <!-- =========================================================
+       PRELOADER
+       ========================================================= -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-content">
+      <div class="loader-logo">S</div>
+      <h3>Loading Shorveer Vision</h3>
+      <p>Shorveer Notes</p>
     </div>
-  </nav>
-</header>
+  </div>
 
-<main>
-
-<!-- Hero Section -->
-<section class="hero">
-  <div>
-    <div class="badge">
-      <span class="badge-dot"></span>
-      FOUNDER'S MISSION & VISION
-    </div>
-
-    <h1>
-      Built with
-      <br>
-      <span class="gradient-text">Warrior Discipline.</span>
-    </h1>
-
-    <p>
-      Shorveer Notes is not just another educational repository. It is a purposeful 
-      initiative built to provide Class 12 Science and competitive aspirants with 
-      clean, authentic, and high-yielding academic blueprints—entirely free of distractions.
-    </p>
-
-    <div class="hero-buttons">
-      <a class="btn primary" href="/physics/index.html">
-        Explore Physics Hub <span>→</span>
+  <!-- =========================================================
+       HEADER
+       ========================================================= -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Shorveer Notes home">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#F3C969"/>
+          </svg>
+        </div>
+        <div class="brand-name">
+          Shorveer<span>Notes</span>
+        </div>
       </a>
-      <a class="btn" href="#framework">
-        Our Framework
-      </a>
-    </div>
-  </div>
 
-  <div class="hero-visual">
-    <div class="mission-card">
-      <span class="float-symbol s1">🛡️</span>
-      <span class="float-symbol s2">⚡</span>
-      <span class="float-symbol s3">🎯</span>
-      <span class="float-symbol s4">💡</span>
-
-      <div class="mission-content">
-        <span class="mission-shield">⚔️</span>
-        <div class="mission-title">SHORVEER</div>
-        <div class="mission-sub">HONOR • CLARITY • EXECUTION</div>
+      <div class="nav-actions">
+        <a href="index.html" class="nav-btn" aria-label="Home page">
+          <span>🏠</span> Home
+        </a>
+        <button class="nav-icon" id="themeButton" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
       </div>
-    </div>
-  </div>
-</section>
+    </nav>
+  </header>
 
-<!-- Stats Strip -->
-<section class="stats">
-  <div class="stat">
-    <strong>100%</strong>
-    <span>Distraction-Free Architecture</span>
-  </div>
-  <div class="stat">
-    <strong>Zero</strong>
-    <span>Clutter or Unverified Claims</span>
-  </div>
-  <div class="stat">
-    <strong>Class XII</strong>
-    <span>High-Yield Core Focus</span>
-  </div>
-</section>
-
-<!-- Main Narrative Section -->
-<section class="section" id="framework">
-  <div class="section-heading">
-    <h2>The Origin & The Standard</h2>
-    <p>
-      Understanding the philosophy that powers every derivation, formula map, 
-      and verified solved paper on Shorveer Notes.
-    </p>
-  </div>
-
-  <div class="about-grid">
-    <!-- Card 1: The Vision -->
-    <article class="story-card">
+  <main>
+    <!-- =======================================================
+         HERO SECTION
+         ======================================================= -->
+    <section class="hero container">
       <div>
-        <span class="card-tag">Origin Story</span>
-        <h3>The Vision Behind Shorveer</h3>
+        <div class="kicker">
+          <span class="kicker-line"></span>
+          Founder's Mission & Vision
+        </div>
+        <h1>
+          Built with <br>
+          <span class="gradient-text">Warrior Discipline.</span>
+        </h1>
         <p>
-          Preparing for critical milestones like Class 12 Board Examinations and rigorous 
-          defense entrances teaches an undeniable truth: <strong>learning material must be precise, 
-          uncluttered, and mathematically sound</strong>.
+          Shorveer Notes is not just another educational repository. It is a purposeful initiative built to provide Class 12 Science and competitive aspirants with clean, authentic, and high-yielding academic blueprints—entirely free of distractions.
         </p>
-        <p>
-          Too many student platforms are overwhelmed by irrelevant noise, bloated summaries, 
-          or broken calculations. Shorveer Notes was created as an antidote—a disciplined study sanctuary 
-          where every chapter is broken down into structured theory, SVG-rendered visuals, and verified marking schemes.
-        </p>
-      </div>
-    </article>
-
-    <!-- Card 2: The Name & Philosophy -->
-    <article class="story-card">
-      <div>
-        <span class="card-tag">Philosophy</span>
-        <h3>Why "Shorveer"?</h3>
-        <p>
-          The name <strong>Shorveer</strong> (शूरवीर) represents the spirit of relentless perseverance, 
-          honor, and intellectual courage. A student facing difficult numerical problems or intensive 
-          exam pressure is no less than a warrior preparing for the arena.
-        </p>
-        <p>
-          The mission is to instill that exact mindset—approaching difficult physics concepts, 
-          complex calculus, and scientific challenges with methodical preparation and unwavering self-belief.
-        </p>
-      </div>
-    </article>
-  </div>
-
-  <!-- Full Width Academic Manifesto -->
-  <div class="manifesto-box">
-    <h3>The Academic Integrity Code</h3>
-    <p>
-      Every single page on this platform adheres to a strict standard of engineering and pedagogy: 
-      <strong>zero automated shortcuts, step-by-step verified derivations, mobile-first responsive interfaces, 
-      and transparent disclaimers</strong>. When you prepare here, you are studying with resources engineered 
-      with the same discipline that fuels officers and builders.
-    </p>
-  </div>
-</section>
-
-</main>
-
-<!-- Standardized Professional Footer -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <h2 style="font-size: 1.4rem;">SHORVEER NOTES</h2>
-        <p>
-          A student-focused academic platform designed to make Class 12 Science learning
-          simpler, visual, and high-yielding for board examinations.
-        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-dark" href="physics/index.html">
+            Explore Physics Hub <span>→</span>
+          </a>
+          <a class="btn btn-light" href="#framework">
+            Our Framework
+          </a>
+        </div>
       </div>
 
-      <div class="footer-column">
-        <h4>Core Subjects</h4>
-        <a href="/physics/index.html">Physics Hub</a>
-        <a href="/chemistry/index.html">Chemistry Notes</a>
-        <a href="/mathematics/index.html">Mathematics Hub</a>
-        <a href="/english/index.html">English Core</a>
+      <div class="hero-visual reveal">
+        <div class="mission-card">
+          <div class="mission-overlay">
+            <small>FOUNDED BY JATIN SANDILYA</small>
+            <h3>Honor • Clarity • Execution</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         STATS STRIP
+         ======================================================= -->
+    <section class="stats" aria-label="Platform highlights">
+      <div class="stat reveal">
+        <strong>100%</strong>
+        <span>Distraction-Free Architecture</span>
+      </div>
+      <div class="stat reveal">
+        <strong>Zero</strong>
+        <span>Clutter or Unverified Claims</span>
+      </div>
+      <div class="stat reveal">
+        <strong>Class XII</strong>
+        <span>High-Yield Core Focus</span>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         MAIN NARRATIVE SECTION
+         ======================================================= -->
+    <section class="section" id="framework">
+      <div class="section-head reveal">
+        <div class="section-kicker">The Origin & The Standard</div>
+        <h2>Our Purpose & Approach</h2>
+        <p>
+          Understanding the philosophy that powers every derivation, formula map, and verified material on Shorveer Notes.
+        </p>
       </div>
 
-      <div class="footer-column">
-        <h4>Preparation</h4>
-        <a href="/exam-info.html">Exam Blueprints</a>
-        <a href="/about-notes.html">Notes Framework</a>
-        <a href="/about.html">About Shorveer</a>
+      <div class="about-grid">
+        <!-- Card 1: The Vision -->
+        <article class="story-card reveal">
+          <div>
+            <span class="card-tag">Origin Story</span>
+            <h3>The Vision Behind Shorveer</h3>
+            <p>
+              Preparing for critical milestones like Class 12 Board Examinations and rigorous academic entrances teaches an undeniable truth: <strong>learning material must be precise, uncluttered, and mathematically sound</strong>.
+            </p>
+            <p>
+              Too many student platforms are overwhelmed by irrelevant noise, bloated summaries, or broken calculations. Shorveer Notes was created as an antidote—a disciplined study sanctuary where every chapter is broken down into structured theory, SVG-rendered visuals, and verified marking schemes.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 2: The Name & Philosophy -->
+        <article class="story-card reveal">
+          <div>
+            <span class="card-tag">Philosophy</span>
+            <h3>Why "Shorveer"?</h3>
+            <p>
+              The name <strong>Shorveer</strong> (शूरवीर) represents the spirit of relentless perseverance, honor, and intellectual courage. A student facing difficult numerical problems or intensive exam pressure is no less than a warrior preparing for the arena.
+            </p>
+            <p>
+              The mission is to instill that exact mindset—approaching difficult physics concepts, complex calculus, and scientific challenges with methodical preparation and unwavering self-belief.
+            </p>
+          </div>
+        </article>
       </div>
 
-      <div class="footer-column">
-        <h4>Legal & Support</h4>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/cookies.html">Cookies Policy</a>
-        <a href="mailto:contact@shorveernotes.com">Help & Contact</a>
+      <!-- Full Width Academic Manifesto -->
+      <div class="manifesto-box reveal">
+        <h3>The Academic Integrity Code</h3>
+        <p>
+          Every single page on this platform adheres to a strict standard of engineering and pedagogy: <strong>zero automated shortcuts, step-by-step verified derivations, mobile-first responsive interfaces, and transparent disclaimers</strong>. When you prepare here, you are studying with resources engineered with the same discipline that fuels officers and builders.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <div class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#F3C969"/>
+              </svg>
+            </div>
+            <div class="brand-name">Shorveer<span>Notes</span></div>
+          </a>
+          <p>
+            A student-focused academic platform designed to make Class 12 Science learning simpler, visual, and high-yielding for board examinations.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Core Subjects</h3>
+          <a href="physics/index.html">Physics Hub</a>
+          <a href="chemistry/index.html">Chemistry Notes</a>
+          <a href="mathematics/index.html">Mathematics Hub</a>
+          <a href="english/index.html">English Core</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Preparation</h3>
+          <a href="exam-info.html">Exam Blueprints</a>
+          <a href="about-notes.html">Notes Framework</a>
+          <a href="about.html">About Shorveer</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Legal & Support</h3>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="cookies.html">Cookies Policy</a>
+          <a href="mailto:contact@shorveernotes.com">Help & Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © <span id="year"></span> Shorveer Notes. All Rights Reserved.
+        </div>
+        <div class="author-credit">
+          Crafted with Dedication by <span>Jatin Sandilya</span> • Founder of Shorveer Notes
+        </div>
       </div>
     </div>
+  </footer>
 
-    <div class="footer-bottom">
-      <div>
-        © <span id="year">2026</span> Shorveer Notes. All Rights Reserved.
-      </div>
-      <div class="author-credit">
-        Crafted with Dedication by <span>Jatin Sandilya</span> • Founder of Shorveer Notes
-      </div>
-    </div>
-  </div>
-</footer>
+  <!-- BACK TO TOP -->
+  <button id="topBtn" aria-label="Back to top">↑</button>
 
-<script>
-  // 1. Loader Logic
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      document.getElementById("loader").classList.add("hide");
-    }, 450);
-  });
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+  <script>
+    // Preloader
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("loader").classList.add("hide");
+      }, 600);
+    });
 
-  // 2. Dynamic Year
-  document.getElementById("year").textContent = new Date().getFullYear();
+    // Copyright Year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-  // 3. Theme Toggle Engine
-  const themeBtn = document.getElementById("themeBtn");
-  let lightMode = localStorage.getItem("shorveer_theme") === "light";
+    // Theme Toggle Engine
+    const themeButton = document.getElementById("themeButton");
+    const savedTheme = localStorage.getItem("shorveer-theme");
 
-  function applyTheme() {
-    if (lightMode) {
-      document.documentElement.style.setProperty("--bg", "#eef4ff");
-      document.documentElement.style.setProperty("--bg2", "#dce8f8");
-      document.documentElement.style.setProperty("--text", "#102039");
-      document.documentElement.style.setProperty("--muted", "#52637a");
-      document.documentElement.style.setProperty("--card", "rgba(255, 255, 255, 0.6)");
-      document.documentElement.style.setProperty("--card2", "rgba(255, 255, 255, 0.8)");
-      document.documentElement.style.setProperty("--border", "rgba(16, 32, 57, 0.12)");
-      document.querySelector("header").style.background = "rgba(238, 244, 255, 0.75)";
-      themeBtn.textContent = "☀";
-    } else {
-      document.documentElement.style.setProperty("--bg", "#07111f");
-      document.documentElement.style.setProperty("--bg2", "#0d1b2e");
-      document.documentElement.style.setProperty("--text", "#f5f8ff");
-      document.documentElement.style.setProperty("--muted", "#a9b6ca");
-      document.documentElement.style.setProperty("--card", "rgba(255, 255, 255, 0.075)");
-      document.documentElement.style.setProperty("--card2", "rgba(255, 255, 255, 0.11)");
-      document.documentElement.style.setProperty("--border", "rgba(255, 255, 255, 0.12)");
-      document.querySelector("header").style.background = "rgba(7, 17, 31, 0.68)";
-      themeBtn.textContent = "◐";
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+      themeButton.textContent = "☀";
     }
-  }
 
-  applyTheme();
+    themeButton.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const isDark = document.body.classList.contains("dark");
+      localStorage.setItem("shorveer-theme", isDark ? "dark" : "light");
+      themeButton.textContent = isDark ? "☀" : "◐";
+    });
 
-  themeBtn.addEventListener("click", () => {
-    lightMode = !lightMode;
-    localStorage.setItem("shorveer_theme", lightMode ? "light" : "dark");
-    applyTheme();
-  });
-</script>
+    // Scroll Reveal Intersection Observer
+    const revealElements = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
 
+      revealElements.forEach((el) => observer.observe(el));
+    } else {
+      revealElements.forEach((el) => el.classList.add("show"));
+    }
+
+    // Back to Top Button
+    const topButton = document.getElementById("topBtn");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        topButton.classList.add("visible");
+      } else {
+        topButton.classList.remove("visible");
+      }
+    }, { passive: true });
+
+    topButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // 3D Background Scroll Parallax for Growth & Study Imagery
+    const bgOrb1 = document.getElementById("bgOrb1");
+    const bgOrb2 = document.getElementById("bgOrb2");
+
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      if (bgOrb1) {
+        bgOrb1.style.transform = `translate3d(0, ${scrollY * 0.12}px, ${scrollY * 0.05}px) rotate(${scrollY * 0.04}deg)`;
+      }
+      if (bgOrb2) {
+        bgOrb2.style.transform = `translate3d(0, -${scrollY * 0.08}px, ${scrollY * 0.03}px) rotate(-${scrollY * 0.03}deg)`;
+      }
+    }, { passive: true });
+  </script>
 </body>
 </html>
