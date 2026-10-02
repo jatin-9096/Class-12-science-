@@ -1,9 +1,10 @@
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" data-theme="notebook">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="How Shorveer Notes are researched, structured, reviewed and designed for Class 12 Science students. Read our process, sources, quality standards and disclaimers.">
   <meta name="author" content="Shorveer Notes">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -15,8 +16,9 @@
 
   <link rel="canonical" href="https://shorveernotes.website/about-notes.html">
 
+  <!-- Open Graph -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="About Our Notes | Shorveer Notes">
+  <meta property="og:title" content="About Our Notes — How Shorveer Notes are Built">
   <meta property="og:description" content="How each Class 12 Science chapter is researched, written, checked and structured before it goes up on Shorveer Notes.">
   <meta property="og:site_name" content="Shorveer Notes">
   <meta property="og:locale" content="en_IN">
@@ -26,13 +28,19 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About Our Notes | Shorveer Notes">
   <meta name="twitter:image" content="https://shorveernotes.website/og-image.jpg">
+  <meta name="twitter:site" content="@JSEDIZ">
 
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1c1a'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23e8b64c'/%3E%3C/svg%3E">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Global Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 
   <script>document.documentElement.classList.add('js');</script>
 
@@ -47,1166 +55,13 @@
   }
   </script>
 
-  <title>About Our Notes | Shorveer Notes</title>
-
-  <style>
-    /* ============================================================
-       THEMES
-       ============================================================ */
-    :root {
-      --r: 4px; --r-md: 8px; --r-lg: 12px;
-      --ease: cubic-bezier(.2,.8,.2,1);
-      --ease-spring: cubic-bezier(.34,1.56,.64,1);
-      --max: 1080px;
-      --font-display: "Fraunces", Georgia, serif;
-      --font-body: "Karla", system-ui, sans-serif;
-      --font-hand: "Caveat", cursive;
-      --font-mono: "JetBrains Mono", monospace;
-      --grain-opacity: .05;
-    }
-
-    :root[data-theme="notebook"] {
-      --paper: #fdfaf3; --paper-2: #f6efdf; --card: #ffffff;
-      --ink: #1c1c1a; --ink-2: #2e2e28; --muted: #6b6858;
-      --line: rgba(28,28,26,.13); --line-soft: rgba(28,28,26,.07);
-      --gold: #e8b64c; --gold-soft: #f5dfa0; --gold-dark: #a67823;
-      --rust: #bf5a3c; --plum: #7a4b8a; --teal: #2a7d7a; --green: #5a8c62;
-      --shadow-sm: 0 1px 2px rgba(28,28,26,.05);
-      --shadow: 0 1px 2px rgba(28,28,26,.05), 0 8px 20px -8px rgba(28,28,26,.10);
-      --shadow-lg: 0 2px 4px rgba(28,28,26,.06), 0 24px 48px -16px rgba(28,28,26,.16);
-      --shadow-3d: 0 30px 60px -20px rgba(28,28,26,.28);
-    }
-    :root[data-theme="chalkboard"] {
-      --paper: #1e2a24; --paper-2: #253429; --card: #22302a;
-      --ink: #ebe6d5; --ink-2: #ddd7c3; --muted: #9aa590;
-      --line: rgba(235,230,213,.14); --line-soft: rgba(235,230,213,.07);
-      --gold: #f0d97a; --gold-soft: #4a4324; --gold-dark: #f0d97a;
-      --rust: #e8a17a; --plum: #b8a0d9; --teal: #7bc3bf; --green: #a3d4a8;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,.30);
-      --shadow: 0 1px 2px rgba(0,0,0,.30), 0 8px 20px -8px rgba(0,0,0,.50);
-      --shadow-lg: 0 2px 4px rgba(0,0,0,.30), 0 24px 48px -16px rgba(0,0,0,.60);
-      --shadow-3d: 0 30px 60px -20px rgba(0,0,0,.65);
-    }
-    :root[data-theme="blueprint"] {
-      --paper: #0f2b4c; --paper-2: #133256; --card: #123055;
-      --ink: #e2eefb; --ink-2: #c7dcf1; --muted: #7fa3c9;
-      --line: rgba(214,232,248,.18); --line-soft: rgba(214,232,248,.09);
-      --gold: #7ec8f5; --gold-soft: #1e3f65; --gold-dark: #7ec8f5;
-      --rust: #ff9d7c; --plum: #c1a6f0; --teal: #7bd4d0; --green: #a3d9b0;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,.35);
-      --shadow: 0 1px 2px rgba(0,0,0,.35), 0 8px 20px -8px rgba(0,0,0,.55);
-      --shadow-lg: 0 2px 4px rgba(0,0,0,.35), 0 24px 48px -16px rgba(0,0,0,.65);
-      --shadow-3d: 0 30px 60px -20px rgba(0,0,0,.75);
-      --font-display: "JetBrains Mono", monospace;
-    }
-    :root[data-theme="blueprint"] body::before {
-      opacity: .12;
-      background-image:
-        linear-gradient(rgba(214,232,248,.5) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(214,232,248,.5) 1px, transparent 1px);
-      background-size: 40px 40px;
-      filter: none;
-    }
-    :root[data-theme="sunset"] {
-      --paper: #241226; --paper-2: #2f1933; --card: #2d1830;
-      --ink: #ffe9d6; --ink-2: #f4d4bc; --muted: #b48ba4;
-      --line: rgba(255,233,214,.15); --line-soft: rgba(255,233,214,.07);
-      --gold: #ffb87a; --gold-soft: #4a2a2f; --gold-dark: #ffb87a;
-      --rust: #ff8a5b; --plum: #d5a6ff; --teal: #7bd4d0; --green: #a8e0a8;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,.35);
-      --shadow: 0 1px 2px rgba(0,0,0,.35), 0 8px 20px -8px rgba(0,0,0,.55);
-      --shadow-lg: 0 2px 4px rgba(0,0,0,.35), 0 24px 48px -16px rgba(0,0,0,.7);
-      --shadow-3d: 0 30px 60px -20px rgba(0,0,0,.75);
-    }
-    :root[data-theme="sunset"] body::before {
-      opacity: .08;
-      background: radial-gradient(circle at 30% 10%, rgba(255,138,91,.28), transparent 40%),
-                  radial-gradient(circle at 75% 80%, rgba(213,166,255,.20), transparent 42%);
-      background-image: unset;
-      background-color: transparent;
-    }
-
-    /* ============================================================
-       BASE
-       ============================================================ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 100px;
-    }
-
-    body {
-      min-height: 100vh;
-      overflow-x: hidden;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--font-body);
-      font-size: 17px;
-      line-height: 1.6;
-      transition: background .5s ease, color .5s ease;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body::before {
-      content: "";
-      position: fixed; inset: 0; z-index: -2;
-      pointer-events: none;
-      opacity: var(--grain-opacity);
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      transition: opacity .5s ease;
-    }
-
-    ::selection { background: var(--gold-soft); color: var(--ink); }
-    img { display: block; max-width: 100%; }
-    button, input { font: inherit; color: inherit; }
-    button { border: 0; cursor: pointer; background: transparent; }
-    a { color: inherit; text-decoration: none; }
-
-    h1, h2, h3, h4 {
-      font-family: var(--font-display);
-      font-weight: 500;
-      letter-spacing: -.02em;
-      line-height: 1.1;
-      text-wrap: balance;
-    }
-    p { text-wrap: pretty; }
-
-    :where(a, button, input, [tabindex]):focus-visible {
-      outline: 2px solid var(--gold-dark);
-      outline-offset: 3px;
-      border-radius: 4px;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin-inline: auto;
-    }
-
-    .skip {
-      position: absolute; left: -9999px; top: 0; z-index: 9999;
-      padding: 12px 20px; background: var(--ink); color: var(--paper);
-      font-size: 14px; font-weight: 700;
-    }
-    .skip:focus { left: 0; }
-
-    /* ============================================================
-       PREMIUM: SCROLL PROGRESS BAR
-       ============================================================ */
-    .scroll-progress {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      z-index: 9999;
-      background: transparent;
-      pointer-events: none;
-    }
-    .scroll-progress::after {
-      content: "";
-      display: block;
-      height: 100%;
-      width: var(--progress, 0%);
-      background: linear-gradient(90deg, var(--rust), var(--gold), var(--teal));
-      background-size: 200% 100%;
-      animation: gradientFlow 6s linear infinite;
-      transition: width .1s linear;
-      box-shadow: 0 0 12px color-mix(in srgb, var(--gold) 60%, transparent);
-    }
-    @keyframes gradientFlow {
-      to { background-position: 200% 0; }
-    }
-
-    /* ============================================================
-       PREMIUM: CURSOR SPOTLIGHT
-       ============================================================ */
-    .cursor-spotlight {
-      position: fixed;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 0;
-      background: radial-gradient(circle, color-mix(in srgb, var(--gold) 10%, transparent), transparent 65%);
-      transform: translate(-50%, -50%);
-      transition: opacity .4s ease;
-      opacity: 0;
-      mix-blend-mode: multiply;
-    }
-    :root[data-theme="chalkboard"] .cursor-spotlight,
-    :root[data-theme="blueprint"] .cursor-spotlight,
-    :root[data-theme="sunset"] .cursor-spotlight {
-      mix-blend-mode: screen;
-      background: radial-gradient(circle, color-mix(in srgb, var(--gold) 12%, transparent), transparent 65%);
-    }
-
-    /* ============================================================
-       HEADER
-       ============================================================ */
-    .site-header {
-      position: sticky; top: 0; z-index: 1000;
-      background: color-mix(in srgb, var(--paper) 88%, transparent);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line-soft);
-      transition: background .5s ease, border-color .5s ease;
-    }
-
-    .nav {
-      min-height: 76px;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 24px;
-    }
-    .brand { display: inline-flex; align-items: center; gap: 11px; flex: 0 0 auto; }
-    .brand-mark {
-      width: 40px; height: 40px; display: grid; place-items: center;
-      border-radius: 10px; background: var(--ink);
-      transition: transform .4s var(--ease-spring);
-    }
-    .brand:hover .brand-mark { transform: rotate(-6deg) scale(1.08); }
-    .brand-mark svg { width: 24px; height: 24px; }
-
-    .brand-name {
-      font-family: var(--font-display);
-      font-size: 20px; font-weight: 600;
-      letter-spacing: -.025em; color: var(--ink);
-    }
-    .brand-name em { font-style: italic; font-weight: 400; color: var(--muted); }
-
-    .nav-links { display: flex; align-items: center; gap: 4px; }
-    .nav-links a {
-      padding: 8px 14px; color: var(--muted);
-      font-size: 15px; font-weight: 500; border-radius: 6px;
-      transition: color .2s ease, background .2s ease;
-    }
-    .nav-links a:hover { color: var(--ink); background: var(--paper-2); }
-    .nav-links a[aria-current="page"] { color: var(--ink); background: var(--paper-2); }
-
-    .nav-actions { display: flex; align-items: center; gap: 6px; }
-    .nav-icon {
-      width: 40px; height: 40px; display: grid; place-items: center;
-      border: 1px solid var(--line); border-radius: 10px;
-      background: var(--card); color: var(--ink);
-      transition: transform .3s var(--ease-spring), border-color .2s ease, background .5s ease;
-    }
-    .nav-icon:hover { transform: translateY(-2px) scale(1.04); border-color: var(--ink); }
-
-    .palette-dot {
-      width: 16px; height: 16px; border-radius: 50%;
-      background: conic-gradient(from 0deg, #bf5a3c, #e8b64c, #2a7d7a, #7a4b8a, #bf5a3c);
-    }
-    .mobile-toggle { display: none; }
-
-    /* Theme popover */
-    .theme-pop {
-      position: fixed; top: 92px; right: 20px; z-index: 2000;
-      width: 300px; padding: 16px;
-      background: var(--paper); border: 1px solid var(--line);
-      border-radius: 14px; box-shadow: var(--shadow-lg);
-      opacity: 0; transform: translateY(-8px) scale(.98);
-      pointer-events: none;
-      transition: opacity .3s ease, transform .3s var(--ease-spring);
-    }
-    .theme-pop.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
-    .theme-pop h4 {
-      font-family: var(--font-body);
-      font-size: 12px; font-weight: 700;
-      text-transform: uppercase; letter-spacing: .1em;
-      color: var(--muted); margin-bottom: 12px;
-    }
-    .theme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
-    .theme-opt {
-      display: flex; flex-direction: column; gap: 8px;
-      padding: 10px; border: 1.5px solid var(--line);
-      border-radius: 10px; background: var(--card);
-      cursor: pointer; text-align: left;
-      transition: transform .25s var(--ease-spring), border-color .2s ease;
-    }
-    .theme-opt:hover { transform: translateY(-2px) scale(1.02); }
-    .theme-opt[aria-pressed="true"] { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
-    .theme-swatch {
-      display: flex; height: 26px;
-      border-radius: 5px; overflow: hidden;
-      border: 1px solid rgba(0,0,0,.06);
-    }
-    .theme-swatch span { flex: 1; }
-    .theme-opt b { font-size: 12px; font-weight: 700; color: var(--ink); }
-    .theme-opt small { font-size: 10.5px; color: var(--muted); }
-
-    /* ============================================================
-       HERO with 3D stage
-       ============================================================ */
-    .page-hero {
-      position: relative;
-      padding: 70px 0 60px;
-      z-index: 1;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .page-hero .kicker {
-      display: inline-flex; align-items: center; gap: 10px;
-      margin-bottom: 24px; color: var(--muted);
-      font-size: 14px; font-weight: 500;
-      opacity: 0;
-      animation: fadeUp .8s .1s var(--ease) forwards;
-    }
-    .page-hero .kicker .dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--rust); flex: 0 0 auto;
-      animation: pulse 2.6s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: .5; transform: scale(.75); }
-    }
-
-    /* Text mask reveal — words slide up from behind a mask */
-    .mask-line {
-      display: block;
-      overflow: hidden;
-      line-height: 1.04;
-    }
-    .mask-line > span {
-      display: inline-block;
-      transform: translateY(110%);
-      animation: maskUp 1s var(--ease) forwards;
-    }
-    .mask-line:nth-child(1) > span { animation-delay: .18s; }
-    .mask-line:nth-child(2) > span { animation-delay: .30s; }
-    .mask-line:nth-child(3) > span { animation-delay: .42s; }
-    @keyframes maskUp {
-      to { transform: translateY(0); }
-    }
-
-    .page-hero h1 {
-      font-size: clamp(40px, 5.5vw, 72px);
-      font-weight: 400;
-      line-height: 1.04;
-      letter-spacing: -.03em;
-      margin-bottom: 26px;
-      color: var(--ink);
-    }
-    .page-hero h1 em { font-style: italic; color: var(--rust); }
-
-    .page-hero .lead {
-      max-width: 620px;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.7;
-      margin-bottom: 30px;
-      opacity: 0;
-      animation: fadeUp .9s .55s var(--ease) forwards;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Stat counters */
-    .stat-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line-soft);
-      max-width: 620px;
-      opacity: 0;
-      animation: fadeUp .9s .7s var(--ease) forwards;
-    }
-    .stat {
-      display: flex;
-      flex-direction: column;
-    }
-    .stat b {
-      font-family: var(--font-display);
-      font-size: 32px;
-      font-weight: 600;
-      letter-spacing: -.03em;
-      color: var(--ink);
-      line-height: 1;
-      display: flex;
-      align-items: baseline;
-      gap: 2px;
-    }
-    .stat b .suffix {
-      font-size: 20px;
-      color: var(--muted);
-      font-weight: 400;
-    }
-    .stat span {
-      margin-top: 6px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    /* Hero visual with 3D tilt */
-    .hero-visual {
-      position: relative;
-      min-height: 460px;
-      display: grid;
-      place-items: center;
-      perspective: 1400px;
-      opacity: 0;
-      animation: fadeUp 1s .4s var(--ease) forwards;
-    }
-
-    .visual-stage {
-      position: relative;
-      width: 100%;
-      max-width: 400px;
-      transform-style: preserve-3d;
-      transition: transform .5s var(--ease);
-      will-change: transform;
-    }
-
-    .visual-card {
-      position: relative;
-      padding: 16px 16px 70px;
-      background: var(--card);
-      border: 1px solid var(--line-soft);
-      box-shadow: var(--shadow-3d);
-      transform: rotate(2deg);
-      overflow: hidden;
-    }
-    .visual-card img {
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      filter: saturate(.85) contrast(.96);
-      transition: transform 1.2s var(--ease);
-    }
-    .visual-card:hover img { transform: scale(1.05); }
-
-    .visual-caption {
-      position: absolute;
-      left: 28px; right: 28px; bottom: 22px;
-      font-family: var(--font-hand);
-      font-size: 24px;
-      color: var(--ink);
-      line-height: 1.1;
-    }
-
-    /* Floating tag chips */
-    .visual-chip {
-      position: absolute;
-      display: flex; align-items: center; gap: 8px;
-      padding: 10px 14px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--ink);
-      box-shadow: var(--shadow-lg);
-      z-index: 3;
-      transform-style: preserve-3d;
-    }
-    .visual-chip .chip-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--rust);
-    }
-    .visual-chip.one {
-      top: 8%; left: -12%;
-      animation: chipFloat 6s ease-in-out infinite;
-      transform: translateZ(60px);
-    }
-    .visual-chip.two {
-      bottom: 18%; right: -10%;
-      animation: chipFloat 7s ease-in-out infinite -2s;
-      transform: translateZ(80px);
-    }
-    .visual-chip.two .chip-dot { background: var(--teal); }
-    .visual-chip.three {
-      top: 45%; right: -14%;
-      animation: chipFloat 8s ease-in-out infinite -4s;
-      transform: translateZ(50px);
-    }
-    .visual-chip.three .chip-dot { background: var(--plum); }
-
-    @keyframes chipFloat {
-      0%, 100% { transform: translateY(0) translateZ(60px); }
-      50% { transform: translateY(-12px) translateZ(80px); }
-    }
-
-    /* ============================================================
-       SECTIONS
-       ============================================================ */
-    .section { padding: 80px 0; position: relative; z-index: 1; }
-    .section-tight { padding: 50px 0; position: relative; z-index: 1; }
-
-    .section-head { max-width: 780px; margin-bottom: 44px; }
-    .section-eyebrow {
-      display: inline-block; margin-bottom: 16px;
-      font-family: var(--font-hand);
-      font-size: 24px; font-weight: 500; color: var(--rust);
-    }
-    .section-head h2 {
-      font-size: clamp(32px, 4vw, 52px);
-      font-weight: 400; letter-spacing: -.025em;
-      line-height: 1.06; color: var(--ink);
-    }
-    .section-head h2 em { font-style: italic; color: var(--muted); }
-    .section-head p {
-      margin-top: 16px;
-      font-size: 16px; line-height: 1.7;
-      color: var(--muted);
-      max-width: 620px;
-    }
-
-    /* ============================================================
-       PREMIUM: BLUR-IN REVEAL
-       ============================================================ */
-    .reveal { opacity: 1; transform: none; }
-    html.js .reveal {
-      opacity: 0;
-      transform: translateY(32px) scale(.985);
-      filter: blur(6px);
-      transition:
-        opacity 1s var(--ease),
-        transform 1s var(--ease),
-        filter 1s var(--ease);
-    }
-    html.js .reveal.visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      filter: blur(0);
-    }
-
-    /* Staggered children */
-    html.js .stagger > * {
-      opacity: 0;
-      transform: translateY(30px);
-      filter: blur(5px);
-      transition:
-        opacity .8s var(--ease),
-        transform .8s var(--ease),
-        filter .8s var(--ease);
-    }
-    html.js .stagger.visible > * {
-      opacity: 1;
-      transform: translateY(0);
-      filter: blur(0);
-    }
-    html.js .stagger.visible > *:nth-child(1) { transition-delay: .05s; }
-    html.js .stagger.visible > *:nth-child(2) { transition-delay: .13s; }
-    html.js .stagger.visible > *:nth-child(3) { transition-delay: .21s; }
-    html.js .stagger.visible > *:nth-child(4) { transition-delay: .29s; }
-    html.js .stagger.visible > *:nth-child(5) { transition-delay: .37s; }
-    html.js .stagger.visible > *:nth-child(6) { transition-delay: .45s; }
-
-    /* ============================================================
-       PROSE BLOCK
-       ============================================================ */
-    .prose-block { max-width: 720px; margin-inline: auto; }
-    .prose-block p {
-      font-size: 17px; line-height: 1.85;
-      color: var(--ink-2); margin-bottom: 20px;
-    }
-    .prose-block p:last-child { margin-bottom: 0; }
-    .prose-block p strong { color: var(--ink); font-weight: 600; }
-
-    .prose-block .pull {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 26px;
-      line-height: 1.35;
-      color: var(--ink);
-      padding: 24px 0 24px 28px;
-      border-left: 3px solid var(--gold);
-      margin: 36px 0;
-      letter-spacing: -.015em;
-      position: relative;
-    }
-    .prose-block .pull::before {
-      content: "";
-      position: absolute;
-      left: -3px; top: 24px;
-      width: 3px; height: 0;
-      background: var(--rust);
-      transition: height .8s var(--ease);
-    }
-    .prose-block.visible .pull::before { height: calc(100% - 48px); }
-
-    /* ============================================================
-       PROCESS STEPS with SVG path animation
-       ============================================================ */
-    .steps-wrap {
-      position: relative;
-      max-width: 860px;
-    }
-
-    .steps-svg {
-      position: absolute;
-      left: 36px; top: 20px; bottom: 20px;
-      width: 2px; height: calc(100% - 40px);
-      pointer-events: none;
-      overflow: visible;
-    }
-    .steps-svg path {
-      fill: none;
-      stroke: url(#lineGradient);
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      transition: stroke-dashoffset 2.5s var(--ease);
-    }
-    .steps-wrap.visible .steps-svg path {
-      stroke-dashoffset: 0;
-    }
-
-    .steps {
-      display: grid;
-      gap: 0;
-      list-style: none;
-    }
-
-    .step {
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 26px;
-      padding: 30px 0;
-      align-items: start;
-      position: relative;
-    }
-
-    .step-num {
-      position: relative;
-      font-family: var(--font-hand);
-      font-size: 44px;
-      font-weight: 700;
-      color: var(--rust);
-      line-height: .9;
-      margin-top: 4px;
-      background: var(--paper);
-      padding: 4px 8px 4px 0;
-      transition: transform .4s var(--ease-spring);
-      display: inline-block;
-      width: fit-content;
-    }
-    .step:hover .step-num {
-      transform: scale(1.15) rotate(-4deg);
-    }
-
-    .step h3 {
-      font-size: 22px;
-      font-weight: 600;
-      letter-spacing: -.02em;
-      color: var(--ink);
-      margin-bottom: 10px;
-      transition: color .3s ease;
-    }
-    .step:hover h3 { color: var(--rust); }
-
-    .step p {
-      font-size: 15.5px;
-      line-height: 1.7;
-      color: var(--muted);
-      max-width: 620px;
-    }
-
-    /* ============================================================
-       PREMIUM: 3D TILT CARDS
-       ============================================================ */
-    .tilt-card {
-      transform-style: preserve-3d;
-      transform: perspective(1000px) rotateX(0) rotateY(0);
-      transition: transform .5s var(--ease), box-shadow .5s var(--ease);
-      will-change: transform;
-    }
-
-    .tilt-card .tilt-inner {
-      transform: translateZ(30px);
-      transition: transform .5s var(--ease);
-    }
-
-    /* ============================================================
-       SOURCE CARDS (with images)
-       ============================================================ */
-    .source-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .source-card {
-      position: relative;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--r-md);
-      box-shadow: var(--shadow-sm);
-      overflow: hidden;
-      transition: box-shadow .5s var(--ease), border-color .3s ease;
-    }
-    .source-card:hover {
-      box-shadow: var(--shadow-lg);
-      border-color: color-mix(in srgb, var(--gold) 40%, var(--line));
-    }
-
-    .source-img {
-      position: relative;
-      aspect-ratio: 16/9;
-      overflow: hidden;
-      background: var(--paper-2);
-    }
-    .source-img img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      filter: saturate(.8) contrast(.95);
-      transition: transform 1.4s var(--ease), filter .6s ease;
-    }
-    .source-card:hover .source-img img {
-      transform: scale(1.06);
-      filter: saturate(1) contrast(1);
-    }
-    .source-img::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, transparent 45%, color-mix(in srgb, var(--card) 100%, transparent) 100%);
-      pointer-events: none;
-    }
-
-    .source-body {
-      padding: 0 26px 26px;
-      position: relative;
-      margin-top: -34px;
-      z-index: 2;
-    }
-
-    .source-icon {
-      width: 48px; height: 48px;
-      display: grid; place-items: center;
-      border-radius: 11px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      color: var(--ink);
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 16px;
-      transition: transform .5s var(--ease-spring);
-    }
-    .source-card:hover .source-icon {
-      transform: translateY(-3px) rotate(-6deg) scale(1.05);
-    }
-    .source-icon svg { width: 22px; height: 22px; }
-
-    .source-card h3 {
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: -.02em;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-    .source-card p {
-      font-size: 14.5px;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-
-    /* ============================================================
-       QUALITY GRID
-       ============================================================ */
-    .quality-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .quality-card {
-      padding: 26px 24px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--r-md);
-      box-shadow: var(--shadow-sm);
-      transition: box-shadow .5s var(--ease);
-    }
-
-    .quality-card .q-icon {
-      width: 40px; height: 40px;
-      display: grid; place-items: center;
-      border-radius: 9px;
-      background: var(--paper-2);
-      color: var(--ink);
-      margin-bottom: 16px;
-      transition: transform .4s var(--ease-spring), background .4s ease;
-    }
-    .quality-card:hover .q-icon {
-      transform: rotate(-8deg) scale(1.08);
-      background: color-mix(in srgb, var(--gold) 22%, var(--paper-2));
-    }
-    .quality-card .q-icon svg { width: 20px; height: 20px; }
-
-    .quality-card h3 {
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: -.015em;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-    .quality-card p {
-      font-size: 14px;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-
-    /* ============================================================
-       DISCLAIMER
-       ============================================================ */
-    .disclaimer-wrap {
-      padding: 46px 42px;
-      background: var(--paper-2);
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      box-shadow: var(--shadow-sm);
-      position: relative;
-      overflow: hidden;
-    }
-    .disclaimer-wrap::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--rust), var(--gold), var(--teal));
-    }
-
-    .disclaimer-head {
-      display: flex; align-items: center; gap: 14px;
-      margin-bottom: 28px;
-      padding-bottom: 22px;
-      border-bottom: 1px dashed var(--line);
-    }
-    .disclaimer-badge {
-      flex: 0 0 auto;
-      width: 48px; height: 48px;
-      display: grid; place-items: center;
-      border-radius: 50%;
-      background: color-mix(in srgb, var(--rust) 14%, transparent);
-      color: var(--rust);
-      animation: badgePulse 4s ease-in-out infinite;
-    }
-    @keyframes badgePulse {
-      0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--rust) 40%, transparent); }
-      50% { box-shadow: 0 0 0 12px color-mix(in srgb, var(--rust) 0%, transparent); }
-    }
-    .disclaimer-badge svg { width: 22px; height: 22px; }
-
-    .disclaimer-head h2 {
-      font-size: clamp(24px, 3vw, 32px);
-      font-weight: 500;
-      letter-spacing: -.02em;
-      color: var(--ink);
-    }
-    .disclaimer-head small {
-      display: block;
-      margin-top: 4px;
-      font-size: 13px;
-      color: var(--muted);
-      font-weight: 500;
-      letter-spacing: 0;
-      font-family: var(--font-body);
-    }
-
-    .disclaimer-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px 34px;
-    }
-
-    .disclaimer-item {
-      transition: transform .3s var(--ease);
-    }
-    .disclaimer-item:hover { transform: translateX(4px); }
-
-    .disclaimer-item h3 {
-      font-family: var(--font-body);
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: 0;
-      margin-bottom: 6px;
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-    }
-    .disclaimer-item h3::before {
-      content: "";
-      display: inline-block;
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--rust);
-      flex: 0 0 auto;
-      transform: translateY(-2px);
-      transition: transform .3s var(--ease-spring);
-    }
-    .disclaimer-item:hover h3::before { transform: translateY(-2px) scale(1.6); }
-
-    .disclaimer-item p {
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--muted);
-      padding-left: 14px;
-    }
-    .disclaimer-item p strong { color: var(--ink); font-weight: 600; }
-
-    .disclaimer-foot {
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px dashed var(--line);
-      font-size: 13.5px;
-      line-height: 1.7;
-      color: var(--muted);
-    }
-    .disclaimer-foot a {
-      color: var(--ink);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    /* ============================================================
-       PROMISE / CTA
-       ============================================================ */
-    .promise {
-      position: relative;
-      padding: 78px 50px;
-      background: var(--ink);
-      color: var(--paper);
-      border-radius: var(--r-lg);
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .promise::before, .promise::after {
-      content: ""; position: absolute;
-      width: 70px; height: 70px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60' fill='none' stroke='%23e8b64c' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M30 8 L30 52 M8 30 L52 30 M15 15 L45 45 M45 15 L15 45'/%3E%3C/svg%3E");
-      background-size: contain; background-repeat: no-repeat;
-      opacity: .3;
-    }
-    .promise::before { top: 30px; left: 40px; animation: spin-slow 24s linear infinite; }
-    .promise::after { bottom: 30px; right: 40px; animation: spin-slow 30s linear infinite reverse; }
-    @keyframes spin-slow { to { transform: rotate(360deg); } }
-
-    .promise-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
-    .promise h2 {
-      font-size: clamp(30px, 4vw, 50px);
-      font-weight: 400;
-      letter-spacing: -.03em;
-      line-height: 1.05;
-      margin-bottom: 18px;
-      color: var(--paper);
-    }
-    .promise h2 em { font-style: italic; color: var(--gold); }
-    .promise p {
-      font-size: 16px;
-      line-height: 1.75;
-      color: color-mix(in srgb, var(--paper) 75%, transparent);
-      margin-bottom: 12px;
-    }
-    .promise .sig {
-      margin-top: 26px;
-      font-family: var(--font-hand);
-      font-size: 26px;
-      color: var(--gold);
-    }
-    .promise .btn { margin-top: 30px; }
-
-    /* ============================================================
-       PREMIUM: MAGNETIC BUTTON
-       ============================================================ */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      gap: 8px; min-height: 50px; padding: 0 26px;
-      border-radius: 10px;
-      font-family: var(--font-body);
-      font-size: 15px; font-weight: 600;
-      transition: transform .35s var(--ease-spring), box-shadow .3s ease, background .3s ease;
-      position: relative;
-      overflow: hidden;
-      will-change: transform;
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      color: var(--ink);
-      font-weight: 700;
-      box-shadow: 0 8px 20px -8px color-mix(in srgb, var(--gold) 60%, transparent);
-    }
-    .btn-gold::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%);
-      transform: translateX(-120%);
-      transition: transform .8s var(--ease);
-    }
-    .btn-gold:hover::before { transform: translateX(120%); }
-    .btn-gold:hover {
-      box-shadow: 0 14px 30px -8px color-mix(in srgb, var(--gold) 70%, transparent);
-    }
-
-    .btn-arrow {
-      transition: transform .35s var(--ease-spring);
-      display: inline-block;
-    }
-    .btn:hover .btn-arrow { transform: translateX(5px); }
-
-    /* ============================================================
-       FOOTER
-       ============================================================ */
-    footer {
-      border-top: 1px solid var(--line-soft);
-      padding: 64px 0 26px;
-      margin-top: 90px;
-      position: relative;
-      z-index: 1;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.6fr 1fr 1fr 1fr;
-      gap: 40px; padding-bottom: 48px;
-    }
-    .footer-brand p {
-      max-width: 340px; margin-top: 16px;
-      font-size: 14.5px; line-height: 1.7; color: var(--muted);
-    }
-    .footer-column h3 {
-      font-family: var(--font-body);
-      font-size: 12px; font-weight: 700;
-      letter-spacing: .1em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 16px;
-    }
-    .footer-column a {
-      display: block; width: fit-content; margin-bottom: 9px;
-      font-size: 14.5px; color: var(--ink-2);
-      transition: color .2s ease, transform .3s var(--ease);
-    }
-    .footer-column a:hover { color: var(--rust); transform: translateX(3px); }
-    .footer-bottom {
-      display: flex; justify-content: space-between;
-      gap: 20px; padding-top: 22px;
-      border-top: 1px solid var(--line-soft);
-      font-size: 13px; color: var(--muted);
-    }
-
-    /* ============================================================
-       MOBILE MENU
-       ============================================================ */
-    .mobile-menu {
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 12px; right: 12px; z-index: 950;
-      display: none; padding: 8px;
-      border: 1px solid var(--line); border-radius: 12px;
-      background: var(--paper); box-shadow: var(--shadow-lg);
-    }
-    .mobile-menu.open { display: block; animation: menu-in .3s var(--ease-spring) both; }
-    @keyframes menu-in {
-      from { opacity: 0; transform: translateY(-8px) scale(.98); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-    .mobile-menu a {
-      display: block; padding: 12px 14px; border-radius: 8px;
-      color: var(--ink-2); font-size: 15px; font-weight: 500;
-    }
-    .mobile-menu a:hover { background: var(--paper-2); }
-
-    /* ============================================================
-       RESPONSIVE
-       ============================================================ */
-    @media (max-width: 1000px) {
-      .nav-links { display: none; }
-      .mobile-toggle { display: grid; }
-      .hero-grid { grid-template-columns: 1fr; gap: 50px; }
-      .hero-visual { min-height: 400px; }
-      .source-grid { grid-template-columns: 1fr; }
-      .quality-grid { grid-template-columns: repeat(2, 1fr); }
-      .disclaimer-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
-      .footer-brand { grid-column: 1 / -1; }
-    }
-
-    @media (max-width: 720px) {
-      .container { width: min(100% - 28px, var(--max)); }
-      body { font-size: 16px; }
-      .nav { min-height: 68px; }
-      .brand-name { font-size: 18px; }
-
-      .page-hero { padding: 40px 0 30px; }
-      .page-hero h1 { font-size: clamp(34px, 9vw, 52px); }
-      .page-hero .lead { font-size: 16.5px; }
-      .hero-visual { min-height: 340px; }
-      .visual-chip { font-size: 11px; padding: 8px 11px; }
-      .visual-chip.one { left: -6%; }
-      .visual-chip.two { right: -4%; }
-      .visual-chip.three { right: -8%; }
-
-      .stat-row { gap: 22px; }
-      .stat b { font-size: 26px; }
-
-      .section { padding: 60px 0; }
-      .section-head { margin-bottom: 32px; }
-
-      .steps-svg { left: 24px; }
-      .step { grid-template-columns: 54px 1fr; gap: 18px; padding: 24px 0; }
-      .step-num { font-size: 34px; }
-      .step h3 { font-size: 19px; }
-
-      .quality-grid { grid-template-columns: 1fr; }
-
-      .disclaimer-wrap { padding: 32px 24px; }
-      .disclaimer-head { flex-direction: column; align-items: flex-start; gap: 10px; }
-
-      .promise { padding: 52px 26px; }
-      .promise::before, .promise::after { display: none; }
-
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
-      .footer-brand { grid-column: 1 / -1; }
-      .footer-bottom { flex-direction: column; gap: 8px; }
-
-      .theme-pop { top: 84px; right: 12px; left: 12px; width: auto; }
-      .cursor-spotlight { display: none; }
-    }
-
-    @media (max-width: 440px) {
-      .nav-icon { width: 38px; height: 38px; }
-      .mobile-toggle { width: 38px; height: 38px; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-brand { grid-column: auto; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-        scroll-behavior: auto !important;
-      }
-      html.js .reveal,
-      html.js .stagger > * { opacity: 1; transform: none; filter: none; }
-      .mask-line > span { transform: translateY(0); }
-      .steps-svg path { stroke-dashoffset: 0; }
-      .visual-stage { transform: none !important; }
-    }
-  </style>
+  <title>About Our Notes — Class 12 Science Academic Framework | Shorveer Notes</title>
 </head>
 
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- PREMIUM: Scroll progress -->
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-  <!-- PREMIUM: Cursor spotlight -->
-  <div class="cursor-spotlight" id="cursorSpotlight" aria-hidden="true"></div>
-
-  <!-- ============ HEADER ============ -->
+  <!-- ============ HEADER (Matches Index & About) ============ -->
   <header class="site-header">
     <nav class="nav container" aria-label="Primary">
       <a class="brand" href="index.html" aria-label="Shorveer Notes home">
@@ -1221,14 +76,22 @@
       <div class="nav-links">
         <a href="index.html#subjects">Subjects</a>
         <a href="index.html#reallife">Real life</a>
-        <a href="about-notes.html" aria-current="page">About our notes</a>
-        <a href="about.html">About</a>
+        <a href="index.html#resources">Resources</a>
+        <a href="about-notes.html" style="color:var(--ink); font-weight:700;">About our notes</a>
+        <a href="about.html">About us</a>
       </div>
 
       <div class="nav-actions">
+        <button class="nav-icon" id="searchButton" aria-label="Open search" title="Search (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/>
+          </svg>
+        </button>
+
         <button class="nav-icon" id="themeButton" aria-label="Change theme" aria-expanded="false" title="Change theme">
           <span class="palette-dot" aria-hidden="true"></span>
         </button>
+
         <button class="nav-icon mobile-toggle" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
             <path d="M3 6h18M3 12h18M3 18h18"/>
@@ -1240,13 +103,14 @@
     <div class="mobile-menu" id="mobileMenu">
       <a href="index.html">Home</a>
       <a href="index.html#subjects">Subjects</a>
+      <a href="index.html#reallife">Real life</a>
       <a href="about-notes.html">About our notes</a>
-      <a href="about.html">About Shorveer</a>
       <a href="exam-info.html">Exam information</a>
+      <a href="about.html">About Shorveer</a>
     </div>
   </header>
 
-  <!-- ============ THEME PICKER ============ -->
+  <!-- ============ THEME PICKER POPOVER ============ -->
   <div class="theme-pop" id="themePop" role="dialog" aria-label="Choose a theme">
     <h4>Pick a look</h4>
     <div class="theme-grid">
@@ -1257,8 +121,10 @@
           <span style="background:#bf5a3c"></span>
           <span style="background:#1c1c1a"></span>
         </span>
-        <b>Notebook</b><small>Warm paper</small>
+        <b>Notebook</b>
+        <small>Warm paper, classic</small>
       </button>
+
       <button class="theme-opt" data-theme-value="chalkboard" aria-pressed="false">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#1e2a24"></span>
@@ -1266,8 +132,10 @@
           <span style="background:#7bc3bf"></span>
           <span style="background:#ebe6d5"></span>
         </span>
-        <b>Chalkboard</b><small>Dark green</small>
+        <b>Chalkboard</b>
+        <small>Dark green, chalk</small>
       </button>
+
       <button class="theme-opt" data-theme-value="blueprint" aria-pressed="false">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#0f2b4c"></span>
@@ -1275,8 +143,10 @@
           <span style="background:#ff9d7c"></span>
           <span style="background:#e2eefb"></span>
         </span>
-        <b>Blueprint</b><small>Navy technical</small>
+        <b>Blueprint</b>
+        <small>Navy, technical</small>
       </button>
+
       <button class="theme-opt" data-theme-value="sunset" aria-pressed="false">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#241226"></span>
@@ -1284,513 +154,457 @@
           <span style="background:#ffb87a"></span>
           <span style="background:#ffe9d6"></span>
         </span>
-        <b>Sunset</b><small>Plum warm</small>
+        <b>Sunset</b>
+        <small>Plum, warm glow</small>
       </button>
     </div>
-    <p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Saved for next time.</p>
+    <p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Saved across the entire website.</p>
   </div>
 
   <main id="main">
 
-    <!-- ============ HERO ============ -->
-    <section class="page-hero container">
-      <div class="hero-grid">
-        <div>
-          <div class="kicker">
-            <span class="dot"></span>
-            <span>Behind the notes</span>
-          </div>
-
-          <h1>
-            <span class="mask-line"><span>Notes are not</span></span>
-            <span class="mask-line"><span>just written.</span></span>
-            <span class="mask-line"><span>They're <em>built.</em></span></span>
-          </h1>
-
-          <p class="lead">
-            Every chapter goes through the same process: read the syllabus, break it down,
-            cross-check it, structure it for revision, then write it so a tired student at
-            11pm can actually follow it.
-          </p>
-
-          <div class="stat-row">
-            <div class="stat">
-              <b data-count="4">0<span class="suffix">subjects</span></b>
-              <span>covered in depth</span>
-            </div>
-            <div class="stat">
-              <b data-count="5">0<span class="suffix">steps</span></b>
-              <span>per chapter, always</span>
-            </div>
-            <div class="stat">
-              <b data-count="100">0<span class="suffix">%</span></b>
-              <span>free to read</span>
-            </div>
-          </div>
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="kicker">
+          <span class="dot"></span>
+          <span>Behind the notes · Quality & Engineering</span>
         </div>
 
-        <div class="hero-visual" id="heroVisual">
-          <div class="visual-stage" id="visualStage">
-            <div class="visual-card">
-              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=80" alt="An open textbook with study notes beside it" width="900" height="1125" loading="eager">
-              <div class="visual-caption">where the reading happens</div>
-            </div>
+        <h1>
+          Notes are not
+          <span style="position:relative;display:inline-block">
+            <span style="position:relative;z-index:1">just written.</span>
+          </span>
+          They are <em>built.</em>
+        </h1>
 
-            <div class="visual-chip one">
-              <span class="chip-dot"></span>
-              <span>NCERT aligned</span>
-            </div>
-            <div class="visual-chip two">
-              <span class="chip-dot"></span>
-              <span>Verified twice</span>
-            </div>
-            <div class="visual-chip three">
-              <span class="chip-dot"></span>
-              <span>Student checked</span>
-            </div>
+        <p class="hero-description">
+          Every chapter follows a strict 5-stage pipeline: curriculum analysis, concept deconstruction, rigorous cross-verification, revision structuring, and mobile readability testing. Designed so a tired student revising late at night can grasp derivations instantly.
+        </p>
+
+        <div class="motivation" aria-live="polite">
+          <svg class="motivation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+          <span class="motivation-text show">Step-by-step logic. Zero skipped derivations.</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#process">
+            See the 5-step process
+            <span class="btn-arrow">→</span>
+          </a>
+          <a class="btn btn-light" href="#sources">Our verified sources</a>
+        </div>
+
+        <div class="hero-note">
+          <span>Aligned strictly with <strong>NCERT</strong> & Latest <strong>CBSE Blueprints</strong></span>
+        </div>
+      </div>
+
+      <div class="hero-art" id="heroArt">
+        <div class="hero-stage" id="heroStage">
+          <div class="polaroid">
+            <img class="hero-img" id="heroImage"
+              src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=80"
+              alt="An open textbook with structured study notes beside it" loading="eager" width="900" height="1125">
+            <div class="polaroid-caption">drafted with textbook precision</div>
           </div>
+
+          <div class="sticky">
+            structure creates<br>instant recall ✍
+          </div>
+
+          <svg class="doodle" viewBox="0 0 130 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M6 12 C 40 4, 70 20, 96 50" stroke-dasharray="4 5"/>
+            <path d="M92 34 L 100 52 L 82 52" />
+          </svg>
         </div>
       </div>
     </section>
 
-    <!-- ============ WHY ============ -->
+    <!-- ============ TRUST / AUDIT STRIP ============ -->
+    <section class="trust" aria-label="Platform standards">
+      <div class="trust-inner container">
+        <div class="trust-item"><b>4 Core Subjects</b>Physics, Chemistry, Maths & English</div>
+        <div class="trust-item"><b>5 Quality Checks</b>Per chapter before publishing</div>
+        <div class="trust-item"><b>Dual Verification</b>NCERT + Marking Scheme</div>
+        <div class="trust-item"><b>100% Free Access</b>No paywalls, ever</div>
+      </div>
+    </section>
+
+    <!-- ============ WHY THIS MATTERS (SPLIT EDITORIAL NOTEBOOK) ============ -->
     <section class="section container reveal">
-      <div class="prose-block">
-        <span class="section-eyebrow">why this page exists</span>
-        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:400;letter-spacing:-.025em;margin-bottom:26px;color:var(--ink)">
-          A note that helps is a note that respects your time.
-        </h2>
+      <div class="notebook">
+        <figure class="notebook-photo">
+          <img
+            src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1000&q=80"
+            alt="Laboratory equipment and notes representing scientific rigor" loading="lazy" width="1000" height="800">
+          <figcaption>science verified in textbooks & labs</figcaption>
+        </figure>
 
-        <p>
-          Class 12 Science is the year everything gets bigger. Chapters go from
-          20 pages to 60. Concepts stop being standalone and start referring
-          back to chapters you did two months ago. Board exams don't just test
-          what you know — they test how well you can retrieve it under pressure.
-        </p>
-
-        <p>
-          Most students don't need more information. They already have the
-          NCERT textbook, a coaching module, a guide book, and probably three
-          YouTube playlists open. What they're missing is <strong>a single,
-          quiet place to check whether they actually understood something.</strong>
-        </p>
-
-        <p class="pull">
-          "The problem is rarely a lack of material. It's a lack of order."
-        </p>
-
-        <p>
-          Shorveer Notes exists to be that place. It isn't trying to replace your
-          teacher, your textbook, or your coaching class. It's the resource you
-          open the night before a test when you need the chapter compressed into
-          something readable in twenty minutes.
-        </p>
-      </div>
-    </section>
-
-    <!-- ============ PROCESS ============ -->
-    <section class="section container reveal">
-      <div class="section-head">
-        <span class="section-eyebrow">how a note gets made</span>
-        <h2>Five steps, <em>every chapter, every time.</em></h2>
-      </div>
-
-      <div class="steps-wrap" id="stepsWrap">
-        <svg class="steps-svg" viewBox="0 0 2 1000" preserveAspectRatio="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="lineGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#bf5a3c"/>
-              <stop offset="50%" stop-color="#e8b64c"/>
-              <stop offset="100%" stop-color="#2a7d7a"/>
-            </linearGradient>
-          </defs>
-          <path d="M1 0 L1 1000"/>
-        </svg>
-
-        <ol class="steps">
-          <li class="step">
-            <div class="step-num">01</div>
-            <div>
-              <h3>Start with the official syllabus</h3>
-              <p>
-                Every chapter begins by reading the CBSE curriculum document and
-                the corresponding NCERT chapter. This sets the boundary — what's
-                in scope, what's been removed, what's marked as "for
-                understanding only" versus what's explicitly examinable.
-              </p>
-            </div>
-          </li>
-
-          <li class="step">
-            <div class="step-num">02</div>
-            <div>
-              <h3>Break the chapter into readable units</h3>
-              <p>
-                A 40-page chapter is unusable as a study unit. It gets split into
-                sections small enough to read in one sitting — typically 5 to 8
-                per chapter. Each section has one clear job: define, explain,
-                derive, or apply. Nothing mixes.
-              </p>
-            </div>
-          </li>
-
-          <li class="step">
-            <div class="step-num">03</div>
-            <div>
-              <h3>Cross-check facts and figures</h3>
-              <p>
-                Definitions, formulas, constants, reaction conditions, dates and
-                names are checked against the NCERT textbook and at least one
-                second reliable reference. If a value has changed between editions,
-                the current one is used and the change is noted.
-              </p>
-            </div>
-          </li>
-
-          <li class="step">
-            <div class="step-num">04</div>
-            <div>
-              <h3>Structure it for revision, not reading</h3>
-              <p>
-                Key formulas, definitions and diagrams are pulled out of the body
-                text so they're findable. Common question patterns from previous
-                years are flagged. Each chapter ends with a short list of "if you
-                only remember three things" points.
-              </p>
-            </div>
-          </li>
-
-          <li class="step">
-            <div class="step-num">05</div>
-            <div>
-              <h3>Read it as a student would</h3>
-              <p>
-                The final pass is a plain read-through on a phone. If a sentence
-                needs to be re-read twice to make sense, it gets rewritten. If a
-                paragraph could be a bullet, it becomes one. If a section is only
-                there because it's in the textbook, it gets cut.
-              </p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ============ SOURCES ============ -->
-    <section class="section container reveal">
-      <div class="section-head">
-        <span class="section-eyebrow">what we lean on</span>
-        <h2>Sources, <em>and how we use them.</em></h2>
-      </div>
-
-      <div class="source-grid stagger">
-
-        <article class="source-card tilt-card">
-          <div class="tilt-inner">
-            <div class="source-img">
-              <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1000&q=80" alt="A stack of textbooks on a table" loading="lazy" width="1000" height="563">
-            </div>
-            <div class="source-body">
-              <div class="source-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3z"/>
-                  <path d="M18 20h2V7a3 3 0 0 0-3-3"/>
-                  <path d="M8 9h6M8 13h6"/>
-                </svg>
-              </div>
-              <h3>NCERT textbook</h3>
-              <p>
-                The primary reference for everything on this site. Chapter order,
-                terminology and scope follow NCERT, so the notes line up with what
-                you're already reading in class.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="source-card tilt-card">
-          <div class="tilt-inner">
-            <div class="source-img">
-              <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80" alt="A syllabus document on a desk" loading="lazy" width="1000" height="563">
-            </div>
-            <div class="source-body">
-              <div class="source-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 19V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/>
-                  <path d="M4 17h14"/>
-                </svg>
-              </div>
-              <h3>CBSE curriculum documents</h3>
-              <p>
-                The official syllabus for each subject tells us what's examinable
-                this year, what's been dropped, and how marks are distributed across
-                units. This shapes the emphasis in every chapter.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="source-card tilt-card">
-          <div class="tilt-inner">
-            <div class="source-img">
-              <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1000&q=80" alt="A student reviewing past exam papers" loading="lazy" width="1000" height="563">
-            </div>
-            <div class="source-body">
-              <div class="source-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="4" width="18" height="16" rx="2"/>
-                  <path d="M3 9h18M8 4v5"/>
-                </svg>
-              </div>
-              <h3>Previous-year question papers</h3>
-              <p>
-                Board papers from the last several years are read to identify how
-                often concepts are tested, what format they appear in, and which
-                topics students consistently lose marks on.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="source-card tilt-card">
-          <div class="tilt-inner">
-            <div class="source-img">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80" alt="Students collaborating on study material" loading="lazy" width="1000" height="563">
-            </div>
-            <div class="source-body">
-              <div class="source-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="9"/>
-                  <path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .9-1 1.7"/>
-                  <circle cx="12" cy="16.5" r=".5" fill="currentColor"/>
-                </svg>
-              </div>
-              <h3>Your feedback</h3>
-              <p>
-                If a chapter has a mistake, an unclear explanation, or is missing
-                something your teacher emphasised, tell us. Corrections from actual
-                students are the fastest way a note improves.
-              </p>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ============ QUALITY ============ -->
-    <section class="section container reveal">
-      <div class="section-head">
-        <span class="section-eyebrow">what we aim for</span>
-        <h2>Six things every note <em>should do.</em></h2>
-      </div>
-
-      <div class="quality-grid stagger">
-
-        <article class="quality-card">
-          <div class="q-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
-            </svg>
-          </div>
-          <h3>Respect your time</h3>
-          <p>If a paragraph doesn't help you understand, remember or apply something, it gets cut.</p>
-        </article>
-
-        <article class="quality-card">
-          <div class="q-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 4h16v16H4z"/><path d="M8 12l3 3 5-6"/>
-            </svg>
-          </div>
-          <h3>Be checkable</h3>
-          <p>Every claim, formula and definition should be verifiable against NCERT or the syllabus.</p>
-        </article>
-
-        <article class="quality-card">
-          <div class="q-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/>
-            </svg>
-          </div>
-          <h3>Separate what matters</h3>
-          <p>Not every paragraph is equally important. The notes make the hierarchy visible.</p>
-        </article>
-
-        <article class="quality-card">
-          <div class="q-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <path d="M9 9h6v6H9z"/>
-            </svg>
-          </div>
-          <h3>Stay consistent</h3>
-          <p>The same structure applies across Physics, Chemistry, Maths and English, so you don't relearn navigation every time.</p>
-        </article>
-
-        <article class="quality-card">
-          <div class="q-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 12a8 8 0 0 1 16 0M4 12v4M20 12v4M4 16a2 2 0 0 0 2 2h2v-6H6a2 2 0 0 0-2 2zM20 16a2 2 0 0 1-2 2h-2v-6h2a2 2 0 0 1 2 2z"/>
-            </svg>
-          </div>
-          <h3>Improve, don't stagnate</h3>
-          <p>Notes get revisited. If a chapter reads badly or a diagram is wrong, it gets fixed rather than left.</p>
-        </article>
-
-        <article class="quality-card">
-          <div class="q-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 21s-7-4.5-7-11a7 7 0 0 1 14 0c0 6.5-7 11-7 11z"/>
-              <circle cx="12" cy="10" r="2.5"/>
-            </svg>
-          </div>
-          <h3>Stay student-first</h3>
-          <p>No sign-ups, no paywalls, no pop-ups. The whole point is that you can open a chapter and read it.</p>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ============ DISCLAIMER ============ -->
-    <section class="section container reveal" id="disclaimer">
-      <div class="disclaimer-wrap">
-
-        <div class="disclaimer-head">
-          <div class="disclaimer-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 9v4M12 17h.01"/>
-              <path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
-            </svg>
-          </div>
-          <h2>
-            Disclaimer
-            <small>Please read this before relying on any note for exam preparation.</small>
-          </h2>
-        </div>
-
-        <div class="disclaimer-grid">
-
-          <div class="disclaimer-item">
-            <h3>Not affiliated with CBSE or NCERT</h3>
-            <p>
-              Shorveer Notes is an <strong>independent study resource</strong>.
-              It is not affiliated with, endorsed by, or connected to the Central
-              Board of Secondary Education (CBSE), the National Council of
-              Educational Research and Training (NCERT), or any school, board or
-              government body.
-            </p>
-          </div>
-
-          <div class="disclaimer-item">
-            <h3>Supplementary, not a replacement</h3>
-            <p>
-              These notes are meant to <strong>supplement</strong> your textbook,
-              your teacher's instruction and your classroom learning — not to
-              replace them. Always treat the official NCERT textbook and your
-              school's guidance as the primary source.
-            </p>
-          </div>
-
-          <div class="disclaimer-item">
-            <h3>Always verify against official sources</h3>
-            <p>
-              Syllabus content, marking schemes, exam patterns and chapter
-              inclusions can change between academic years. Before relying on
-              any specific detail, <strong>verify it against the current CBSE
-              syllabus and the latest NCERT edition.</strong>
-            </p>
-          </div>
-
-          <div class="disclaimer-item">
-            <h3>No guarantee of accuracy or completeness</h3>
-            <p>
-              While every effort is made to keep the material accurate and
-              up to date, no guarantee is made that it is <strong>error-free,
-              complete, or current at the time you read it.</strong> Errors can
-              and do happen. If you spot one, please report it.
-            </p>
-          </div>
-
-          <div class="disclaimer-item">
-            <h3>Not a substitute for professional guidance</h3>
-            <p>
-              Nothing on this site constitutes academic, career, legal or
-              professional advice. For decisions about subject choices, board
-              registration, exam eligibility or career paths, consult your
-              school, teachers or a qualified advisor.
-            </p>
-          </div>
-
-          <div class="disclaimer-item">
-            <h3>No liability for outcomes</h3>
-            <p>
-              Shorveer Notes accepts <strong>no responsibility or liability</strong>
-              for any loss, damage, or academic outcome — including marks,
-              grades or exam results — arising from the use of, or reliance on,
-              the material published on this site.
-            </p>
-          </div>
-
-          <div class="disclaimer-item">
-            <h3>Copyright and trademarks</h3>
-            <p>
-              "CBSE", "NCERT" and related marks belong to their respective
-              owners and are used here only for <strong>descriptive and
-              identification purposes.</strong> Any third-party content,
-              diagrams or references remain the property of their original
-              authors.
-            </p>
-          </div>
-
-          <div class="disclaimer-item">
-            <h3>External links</h3>
-            <p>
-              Where this site links to external websites or resources, we do
-              not control and are not responsible for their content, accuracy,
-              availability or privacy practices. Following external links is
-              at your own discretion.
-            </p>
-          </div>
-
-        </div>
-
-        <p class="disclaimer-foot">
-          <strong>To report an error or suggest a correction</strong>, email
-          <a href="mailto:support.shorveernotes@gmail.com">support.shorveernotes@gmail.com</a>
-          with the chapter name and page. Corrections from students are how
-          these notes actually get better.
-        </p>
-
-      </div>
-    </section>
-
-    <!-- ============ PROMISE + CTA ============ -->
-    <section class="section-tight container reveal">
-      <div class="promise">
-        <div class="promise-inner">
-          <h2>Built with a student's <em>perspective.</em></h2>
+        <div class="notebook-copy">
+          <span class="section-eyebrow">why this framework exists</span>
+          <h2>A good note respects your <em>limited time.</em></h2>
           <p>
-            Shorveer Notes isn't trying to be the biggest or the most
-            comprehensive. It's trying to be the one you actually open when
-            you're stuck on a chapter and just want a clear explanation.
+            In Class 12 Science, textbook chapters easily span 40 to 60 dense pages. Students already possess plenty of study material—what they lack is <strong>order, clarity, and rapid retrieval during revision</strong>.
           </p>
-          <p>
-            If it helps you understand one concept better than you did
-            yesterday, it's doing its job.
-          </p>
-          <div class="sig">— Shorveer Notes</div>
-          <a class="btn btn-gold" href="index.html#subjects" data-magnetic>
-            Browse subjects
+
+          <ul class="checklist">
+            <li><strong>Single, Quiet Space:</strong> No ads, no popups, no distracting video recommendations while you study.</li>
+            <li><strong>Unbroken Continuity:</strong> Intermediate calculation steps are written in full so you never get lost in derivations.</li>
+            <li><strong>Standout Formulas:</strong> Essential equations, dimensional units, and boundary limits are separated from running text.</li>
+            <li><strong>Exam Evaluation Focus:</strong> Structured specifically around how CBSE evaluators score answers.</li>
+          </ul>
+
+          <a class="btn btn-dark" href="#quality">
+            Explore quality standards
             <span class="btn-arrow">→</span>
           </a>
         </div>
       </div>
     </section>
 
+    <!-- ============ 5-STEP METHOD (PROCESS FLIP/STEPS) ============ -->
+    <section class="section container reveal" id="process">
+      <div class="section-head">
+        <span class="section-eyebrow">our drafting process</span>
+        <h2>Five steps. <em>Every single chapter.</em></h2>
+      </div>
+
+      <div class="method">
+        <div class="method-quote">
+          <blockquote>
+            "Good notes don't add noise.<br>
+            They <em>condense complexity</em> into crystal-clear logic."
+          </blockquote>
+          <cite>— the Shorveer drafting rule</cite>
+        </div>
+
+        <ol class="method-list">
+          <li>
+            <span class="method-num">01</span>
+            <div>
+              <h3>Curriculum Scope & Syllabus Mapping</h3>
+              <p>Every chapter begins by cross-referencing the official CBSE curriculum documents to identify what is examinable, what is marked for conceptual understanding only, and what has been rationalized.</p>
+            </div>
+          </li>
+          <li>
+            <span class="method-num">02</span>
+            <div>
+              <h3>Modular Breakdown into 5–8 Units</h3>
+              <p>A huge chapter is impossible to digest in one sitting. We divide each topic into focused, standalone study blocks with one clear job: define, prove, derive, or solve.</p>
+            </div>
+          </li>
+          <li>
+            <span class="method-num">03</span>
+            <div>
+              <h3>Dual-Layer Fact & Constant Verification</h3>
+              <p>Definitions, reaction pathways, physical constants, SI units, and chemical conditions are double-checked against latest NCERT editions to ensure total accuracy.</p>
+            </div>
+          </li>
+          <li>
+            <span class="method-num">04</span>
+            <div>
+              <h3>Revision-First Formatting & Formulas</h3>
+              <p>Derivations are styled with explicit reasons for each step. Critical laws, equations, and common question patterns from previous-year papers are highlighted prominently.</p>
+            </div>
+          </li>
+          <li>
+            <span class="method-num">05</span>
+            <div>
+              <h3>Mobile Screen Readability Audit</h3>
+              <p>The final pass is conducted on a 6-inch phone screen. If a sentence requires re-reading twice, it gets rewritten. Tables and equations wrap cleanly without horizontal friction.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ OUR SOURCES (IMAGE-RICH CARDS) ============ -->
+    <section class="section container reveal" id="sources">
+      <div class="section-head">
+        <span class="section-eyebrow">verified foundations</span>
+        <h2>What we build upon. <em>Four core pillars.</em></h2>
+      </div>
+
+      <div class="real-life">
+
+        <article class="rl-card" style="--rl-color: #bf5a3c">
+          <div class="rl-badge">NC</div>
+          <div class="rl-body">
+            <div class="rl-subject">Primary Anchor · Core Source</div>
+            <div class="rl-title">NCERT Textbooks (Latest Rationalized Editions)</div>
+            <p class="rl-text">
+              The benchmark for CBSE Class 12. Chapter sequence, terminology, official definitions, and standard diagrams match the exact books recommended by the National Council of Educational Research and Training.
+            </p>
+          </div>
+        </article>
+
+        <article class="rl-card" style="--rl-color: #2a7d7a">
+          <div class="rl-badge">CB</div>
+          <div class="rl-body">
+            <div class="rl-subject">Examination Scope · Guidelines</div>
+            <div class="rl-title">CBSE Curriculum & Marking Schemes</div>
+            <p class="rl-text">
+              Official annual curriculum releases dictate our topic emphasis, weightage distribution, and the exact step-marking conventions used by external examiners during board evaluation.
+            </p>
+          </div>
+        </article>
+
+        <article class="rl-card" style="--rl-color: #e8b64c">
+          <div class="rl-badge">PY</div>
+          <div class="rl-body">
+            <div class="rl-subject">Trend Analysis · 10-Year Database</div>
+            <div class="rl-title">Previous Year Board Question Papers</div>
+            <p class="rl-text">
+              Past decade board examination sets and official sample question papers are analyzed to isolate repetitive numerical patterns, frequent derivations, and high-yielding theory questions.
+            </p>
+          </div>
+        </article>
+
+        <article class="rl-card" style="--rl-color: #7a4b8a">
+          <div class="rl-badge">ST</div>
+          <div class="rl-body">
+            <div class="rl-subject">Continuous Audit · Real Input</div>
+            <div class="rl-title">Direct Student Feedback & Peer Audits</div>
+            <p class="rl-text">
+              When students or subject teachers spot a typo, ambiguous phrasing, or complex equation step, it is promptly reviewed and corrected across the live portal.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ IMAGE GALLERY / CAROUSEL PREVIEW (NOTEBOOK CRAFT) ============ -->
+    <section class="section container reveal">
+      <div class="section-head">
+        <span class="section-eyebrow">visual pedagogy</span>
+        <h2>How topics are <em>visualized for long-term memory.</em></h2>
+      </div>
+
+      <div class="resource-grid">
+
+        <div class="resource">
+          <div class="resource-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            </svg>
+          </div>
+          <div style="border-radius:6px; overflow:hidden; margin-bottom:14px;">
+            <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=700&q=80" alt="Textbooks and notes" style="width:100%; aspect-ratio:16/10; object-fit:cover;">
+          </div>
+          <h3>Conceptual Lineage</h3>
+          <p>Every concept links back to core prerequisites, helping you understand how electrostatic formulas build the foundation for current electricity and magnetism.</p>
+        </div>
+
+        <div class="resource">
+          <div class="resource-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+          </div>
+          <div style="border-radius:6px; overflow:hidden; margin-bottom:14px;">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=700&q=80" alt="Revision notes and stationery" style="width:100%; aspect-ratio:16/10; object-fit:cover;">
+          </div>
+          <h3>Mathematical Continuity</h3>
+          <p>Calculus integration steps and algebraic simplifications are spelled out step by step, eliminating confusing logical jumps.</p>
+        </div>
+
+        <div class="resource">
+          <div class="resource-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <div style="border-radius:6px; overflow:hidden; margin-bottom:14px;">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80" alt="Students studying together" style="width:100%; aspect-ratio:16/10; object-fit:cover;">
+          </div>
+          <h3>Real Life Analogies</h3>
+          <p>Complex scientific principles are paired with everyday observations—from car odometers to kitchen chemistry—so formulas make immediate intuitive sense.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ QUALITY STANDARDS ============ -->
+    <section class="section container reveal" id="quality">
+      <div class="section-head">
+        <span class="section-eyebrow">our standards</span>
+        <h2>Six benchmarks <em>every note must fulfill.</em></h2>
+      </div>
+
+      <div class="subject-list">
+
+        <div class="flip-card" style="--subject-color: #bf5a3c" tabindex="0" role="button" aria-label="Respect Time">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                  </div>
+                  <div class="subject-tag">efficiency</div>
+                </div>
+                <h3>Respects Your Time</h3>
+                <p>If a sentence does not help you understand, calculate, or score in an examination, it is ruthlessly removed.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Standard 01 <span class="arrow">→</span></span>
+                <span class="subject-count">Concise</span>
+              </div>
+              <span class="flip-hint">insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">The Pruning Rule</div>
+                <div class="back-rule">"No filler paragraphs, no fluff."</div>
+                <p class="back-example">We condense 40-page textbook units into high-density revision maps readable in 20 minutes before exams.</p>
+              </div>
+              <span class="subject-meta">Fast & Focused</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" style="--subject-color: #2a7d7a" tabindex="0" role="button" aria-label="Verifiable">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                  </div>
+                  <div class="subject-tag">accuracy</div>
+                </div>
+                <h3>100% Verifiable</h3>
+                <p>Every constant, formula, and theorem can be traced directly back to authorized NCERT and CBSE sources.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Standard 02 <span class="arrow">→</span></span>
+                <span class="subject-count">Reliable</span>
+              </div>
+              <span class="flip-hint">insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Academic Rigor</div>
+                <div class="back-rule">"No unverified shortcuts."</div>
+                <p class="back-example">If a numerical constant or notation changes across NCERT editions, we verify and document the current version.</p>
+              </div>
+              <span class="subject-meta">Fact Checked</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" style="--subject-color: #a67823" tabindex="0" role="button" aria-label="Hierarchy">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+                    </svg>
+                  </div>
+                  <div class="subject-tag">clarity</div>
+                </div>
+                <h3>Visual Hierarchy</h3>
+                <p>Crucial laws, definitions, and equations are styled distinctly so they jump off the page during quick scanning.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Standard 03 <span class="arrow">→</span></span>
+                <span class="subject-count">Scannable</span>
+              </div>
+              <span class="flip-hint">insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Clean Structure</div>
+                <div class="back-rule">"Spot the formula in under 3 seconds."</div>
+                <p class="back-example">No hunting through dense paragraphs to find Coulomb’s constant or Faraday’s laws.</p>
+              </div>
+              <span class="subject-meta">Effortless Navigation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" style="--subject-color: #7a4b8a" tabindex="0" role="button" aria-label="Ethics">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                  </div>
+                  <div class="subject-tag">ethics</div>
+                </div>
+                <h3>Completely Distraction-Free</h3>
+                <p>No paywalls, no forced email logins, and no deceptive popup ads to disrupt your academic flow.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Standard 04 <span class="arrow">→</span></span>
+                <span class="subject-count">Clean</span>
+              </div>
+              <span class="flip-hint">insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Student Respect</div>
+                <div class="back-rule">"Education should be accessible."</div>
+                <p class="back-example">Open the site, open the chapter, read the notes. As simple and frictionless as picking up a physical notebook.</p>
+              </div>
+              <span class="subject-meta">Pure Study Space</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ DISCLAIMER & DISCLOSURES ============ -->
+    <section class="section container reveal" id="disclaimer">
+      <div class="notebook" style="grid-template-columns: 1fr; padding: 40px;">
+        <div>
+          <span class="section-eyebrow">important notice</span>
+          <h2 style="font-size: clamp(26px, 3vw, 36px); margin-bottom: 20px;">
+            Official Academic <em>Disclaimer</em>
+          </h2>
+          <p style="font-size: 15.5px; line-height: 1.8; color: var(--muted); margin-bottom: 20px;">
+            <strong>Shorveer Notes is an independent academic resource</strong> and is not officially affiliated with, endorsed by, or connected to the Central Board of Secondary Education (CBSE), the National Council of Educational Research and Training (NCERT), or any governmental board.
+          </p>
+          <ul class="checklist" style="margin-bottom: 24px;">
+            <li><strong>Supplementary Use:</strong> These materials are designed to support and supplement your official NCERT textbook, classroom lectures, and laboratory work.</li>
+            <li><strong>Syllabus Verification:</strong> Because syllabus inclusions and marking schemes may update between academic sessions, students are advised to check official CBSE circulars.</li>
+            <li><strong>Correction Reporting:</strong> If you identify any typographical mistake or ambiguous derivation step, please reach out via <a href="mailto:support.shorveernotes@gmail.com" style="text-decoration: underline; color: var(--ink); font-weight: 600;">support.shorveernotes@gmail.com</a>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta container reveal">
+      <div class="cta-content">
+        <h2>Built with a student's <em>perspective.</em></h2>
+        <p>Pick the subject you are behind on. Open the chapter you are stuck on. That's it.</p>
+        <a class="btn btn-gold" href="index.html#subjects">
+          Browse Subject Notes
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
   </main>
 
-  <!-- ============ FOOTER ============ -->
+  <!-- ============ FOOTER (Matches Index & About) ============ -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -1803,7 +617,7 @@
             </span>
             <span class="brand-name">Shorveer<em>Notes</em></span>
           </a>
-          <p>A study platform for Class 12 Science students, built around the way chapters are actually taught in class.</p>
+          <p>A study platform for Class 12 Science students, built around clarity, discipline, and authentic academic resources.</p>
         </div>
 
         <div class="footer-column">
@@ -1831,46 +645,97 @@
       </div>
 
       <div class="footer-bottom">
-        <span>© <span id="year"></span> Shorveer Notes. Not affiliated with CBSE or NCERT.</span>
+        <span>© <span id="year"></span> Shorveer Notes · Not affiliated with CBSE or NCERT</span>
         <span>Made in India for Class 12 students</span>
       </div>
     </div>
   </footer>
 
+  <!-- ============ SEARCH MODAL ============ -->
+  <div class="search-layer" id="searchLayer" aria-hidden="true">
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search">
+      <div class="search-top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/>
+        </svg>
+        <input id="searchInput" type="search" placeholder="Search subjects, chapters, resources…" autocomplete="off">
+        <button class="search-close" id="searchClose" aria-label="Close search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- ============ JAVASCRIPT ============ -->
   <script>
-    /* ============================================================
-       Safe storage
-       ============================================================ */
+    /* Safe Storage */
     const store = {
       get(k) { try { return localStorage.getItem(k); } catch { return null; } },
       set(k, v) { try { localStorage.setItem(k, v); } catch {} }
     };
 
+    /* Year */
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    /* ============================================================
-       THEME SYSTEM
-       ============================================================ */
+    /* Theme Engine */
+    const THEMES = {
+      notebook: {
+        hero: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=80",
+        label: "drafted with textbook precision"
+      },
+      chalkboard: {
+        hero: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80",
+        label: "equations, one line at a time"
+      },
+      blueprint: {
+        hero: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=80",
+        label: "where the theory becomes engineering"
+      },
+      sunset: {
+        hero: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80",
+        label: "late-night study, warm lamp"
+      }
+    };
+
     const html = document.documentElement;
     const themeButton = document.getElementById("themeButton");
     const themePop = document.getElementById("themePop");
+    const heroImage = document.getElementById("heroImage");
+    const heroCaption = document.querySelector(".polaroid-caption");
     const themeOpts = document.querySelectorAll(".theme-opt");
 
     function applyTheme(name) {
-      if (!["notebook","chalkboard","blueprint","sunset"].includes(name)) name = "notebook";
+      if (!THEMES[name]) name = "notebook";
       html.setAttribute("data-theme", name);
       store.set("shorveer-theme-name", name);
+
       themeOpts.forEach(btn => {
         btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name));
       });
+
+      if (heroImage && heroCaption) {
+        const t = THEMES[name];
+        heroImage.classList.add("fading");
+        setTimeout(() => {
+          heroImage.src = t.hero;
+          heroCaption.textContent = t.label;
+          heroImage.classList.remove("fading");
+        }, 260);
+      }
     }
-    applyTheme(store.get("shorveer-theme-name") || "notebook");
+
+    const savedThemeName = store.get("shorveer-theme-name") || "notebook";
+    applyTheme(savedThemeName);
 
     themeButton.addEventListener("click", (e) => {
       e.stopPropagation();
       const open = themePop.classList.toggle("open");
       themeButton.setAttribute("aria-expanded", String(open));
     });
+
     themeOpts.forEach(btn => {
       btn.addEventListener("click", () => {
         applyTheme(btn.dataset.themeValue);
@@ -1878,6 +743,7 @@
         themeButton.setAttribute("aria-expanded", "false");
       });
     });
+
     document.addEventListener("click", (e) => {
       if (!themePop.contains(e.target) && !themeButton.contains(e.target)) {
         themePop.classList.remove("open");
@@ -1885,195 +751,133 @@
       }
     });
 
-    /* ============================================================
-       Mobile menu
-       ============================================================ */
+    /* Flip Cards Interaction */
+    const flipCards = document.querySelectorAll(".flip-card");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    flipCards.forEach(card => {
+      if (isTouch) {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("a")) return;
+          card.classList.toggle("flipped");
+        });
+      }
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          if (e.target.closest("a")) return;
+          e.preventDefault();
+          card.classList.toggle("flipped");
+        }
+      });
+    });
+
+    /* 3D Hero Parallax */
+    const heroArt = document.getElementById("heroArt");
+    const heroStage = document.getElementById("heroStage");
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (heroArt && heroStage && finePointer && !reduceMotion) {
+      heroArt.addEventListener("mousemove", (e) => {
+        const rect = heroArt.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        heroStage.style.transform =
+          `perspective(1200px) rotateX(${-y * 16}deg) rotateY(${x * 16}deg) translateZ(10px)`;
+      });
+      heroArt.addEventListener("mouseleave", () => {
+        heroStage.style.transform = "perspective(1200px) rotateX(0) rotateY(0) translateZ(0)";
+      });
+    }
+
+    /* Search Feature */
+    const searchData = [
+      { title: "Physics", description: "Class 12 Physics chapters and derivations", url: "physics/index.html" },
+      { title: "Chemistry", description: "Physical, organic, inorganic notes", url: "chemistry/index.html" },
+      { title: "Mathematics", description: "Calculus, vectors, probability practice", url: "mathematics/index.html" },
+      { title: "English", description: "Summaries and writing formats", url: "english/index.html" },
+      { title: "Exam information", description: "Syllabus and blueprint", url: "exam-info.html" },
+      { title: "About Shorveer", description: "Our mission, origin, and standard", url: "about.html" },
+      { title: "About our notes", description: "How chapters are built", url: "about-notes.html" }
+    ];
+
+    const searchButton = document.getElementById("searchButton");
+    const searchLayer = document.getElementById("searchLayer");
+    const searchClose = document.getElementById("searchClose");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    function openSearch() {
+      searchLayer.classList.add("active");
+      searchLayer.setAttribute("aria-hidden", "false");
+      setTimeout(() => searchInput.focus(), 60);
+      renderResults("");
+    }
+    function closeSearch() {
+      searchLayer.classList.remove("active");
+      searchLayer.setAttribute("aria-hidden", "true");
+      searchInput.value = "";
+    }
+    function renderResults(query) {
+      const q = query.trim().toLowerCase();
+      const matches = searchData.filter(item =>
+        !q || item.title.toLowerCase().includes(q) || item.description.toLowerCase().includes(q)
+      );
+      if (!matches.length) {
+        searchResults.innerHTML = '<div class="empty-result">Nothing found. Try "physics" or "exam".</div>';
+        return;
+      }
+      searchResults.innerHTML = matches.map(item => `
+        <a class="result" href="${item.url}">
+          <div>
+            <strong>${item.title}</strong>
+            <small>${item.description}</small>
+          </div>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+      `).join("");
+    }
+
+    searchButton.addEventListener("click", openSearch);
+    searchClose.addEventListener("click", closeSearch);
+    searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
+    searchInput.addEventListener("input", e => renderResults(e.target.value));
+
+    /* Mobile Menu */
     const menuButton = document.getElementById("menuButton");
     const mobileMenu = document.getElementById("mobileMenu");
     function setMenu(open) {
       mobileMenu.classList.toggle("open", open);
       menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     }
     menuButton.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
     mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+
+    /* Keyboard Shortcuts */
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") {
+        closeSearch();
         setMenu(false);
         themePop.classList.remove("open");
         themeButton.setAttribute("aria-expanded", "false");
       }
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault(); openSearch();
+      }
     });
 
-    /* ============================================================
-       PREMIUM: SCROLL PROGRESS
-       ============================================================ */
-    const progress = document.getElementById("scrollProgress");
-    let progressRaf = null;
-    function updateProgress() {
-      const h = document.documentElement;
-      const scrollTop = h.scrollTop || document.body.scrollTop;
-      const scrollHeight = h.scrollHeight - h.clientHeight;
-      const percent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-      progress.style.setProperty("--progress", percent + "%");
-      progressRaf = null;
-    }
-    window.addEventListener("scroll", () => {
-      if (!progressRaf) progressRaf = requestAnimationFrame(updateProgress);
-    }, { passive: true });
-    updateProgress();
-
-    /* ============================================================
-       PREMIUM: CURSOR SPOTLIGHT
-       ============================================================ */
-    const spotlight = document.getElementById("cursorSpotlight");
-    const finePointer = window.matchMedia("(pointer: fine)").matches;
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (spotlight && finePointer && !reduceMotion) {
-      let sx = 0, sy = 0, tx = 0, ty = 0;
-      let spotRaf = null;
-
-      document.addEventListener("mousemove", (e) => {
-        tx = e.clientX;
-        ty = e.clientY;
-        spotlight.style.opacity = "1";
-        if (!spotRaf) spotRaf = requestAnimationFrame(animateSpot);
-      });
-
-      document.addEventListener("mouseleave", () => {
-        spotlight.style.opacity = "0";
-      });
-
-      function animateSpot() {
-        sx += (tx - sx) * 0.18;
-        sy += (ty - sy) * 0.18;
-        spotlight.style.left = sx + "px";
-        spotlight.style.top = sy + "px";
-        if (Math.abs(tx - sx) > 0.5 || Math.abs(ty - sy) > 0.5) {
-          spotRaf = requestAnimationFrame(animateSpot);
-        } else {
-          spotRaf = null;
-        }
-      }
-    }
-
-    /* ============================================================
-       PREMIUM: STAT COUNTERS
-       ============================================================ */
-    const statEls = document.querySelectorAll("[data-count]");
-    const counterObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const target = parseInt(el.dataset.count, 10);
-        const suffix = el.querySelector(".suffix")?.outerHTML || "";
-        let current = 0;
-        const duration = 1400;
-        const start = performance.now();
-
-        function tick(now) {
-          const t = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - t, 3);
-          current = Math.round(target * eased);
-          el.innerHTML = current + suffix;
-          if (t < 1) requestAnimationFrame(tick);
-          else el.innerHTML = target + suffix;
-        }
-        requestAnimationFrame(tick);
-        counterObs.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-    statEls.forEach(el => counterObs.observe(el));
-
-    /* ============================================================
-       SCROLL REVEAL (blur-in + stagger)
-       ============================================================ */
-    const reveals = document.querySelectorAll(".reveal, .stagger");
+    /* Scroll Reveal */
+    const reveals = document.querySelectorAll(".reveal");
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver(entries => {
         entries.forEach(en => {
-          if (en.isIntersecting) {
-            en.target.classList.add("visible");
-            io.unobserve(en.target);
-          }
+          if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); }
         });
-      }, { threshold: .12, rootMargin: "0px 0px -40px 0px" });
+      }, { threshold: .1 });
       reveals.forEach(el => io.observe(el));
     } else {
       reveals.forEach(el => el.classList.add("visible"));
-    }
-
-    /* Steps SVG line draw */
-    const stepsWrap = document.getElementById("stepsWrap");
-    if (stepsWrap && "IntersectionObserver" in window) {
-      const svgIo = new IntersectionObserver(entries => {
-        entries.forEach(en => {
-          if (en.isIntersecting) {
-            en.target.classList.add("visible");
-            svgIo.unobserve(en.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      svgIo.observe(stepsWrap);
-    } else if (stepsWrap) {
-      stepsWrap.classList.add("visible");
-    }
-
-    /* ============================================================
-       PREMIUM: HERO 3D TILT (mouse follows)
-       ============================================================ */
-    const heroVisual = document.getElementById("heroVisual");
-    const visualStage = document.getElementById("visualStage");
-
-    if (heroVisual && visualStage && finePointer && !reduceMotion) {
-      heroVisual.addEventListener("mousemove", (e) => {
-        const r = heroVisual.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        visualStage.style.transform =
-          `perspective(1200px) rotateX(${-y * 14}deg) rotateY(${x * 14}deg)`;
-      });
-      heroVisual.addEventListener("mouseleave", () => {
-        visualStage.style.transform = "perspective(1200px) rotateX(0) rotateY(0)";
-      });
-    }
-
-    /* ============================================================
-       PREMIUM: 3D TILT ON CARDS
-       ============================================================ */
-    const tiltCards = document.querySelectorAll(".tilt-card");
-    if (finePointer && !reduceMotion) {
-      tiltCards.forEach(card => {
-        card.addEventListener("mousemove", (e) => {
-          const r = card.getBoundingClientRect();
-          const x = (e.clientX - r.left) / r.width - 0.5;
-          const y = (e.clientY - r.top) / r.height - 0.5;
-          card.style.transform =
-            `perspective(1000px) rotateX(${-y * 7}deg) rotateY(${x * 7}deg) translateY(-4px)`;
-        });
-        card.addEventListener("mouseleave", () => {
-          card.style.transform = "";
-        });
-      });
-    }
-
-    /* ============================================================
-       PREMIUM: MAGNETIC BUTTONS
-       ============================================================ */
-    const magneticBtns = document.querySelectorAll("[data-magnetic]");
-    if (finePointer && !reduceMotion) {
-      magneticBtns.forEach(btn => {
-        btn.addEventListener("mousemove", (e) => {
-          const r = btn.getBoundingClientRect();
-          const x = e.clientX - r.left - r.width / 2;
-          const y = e.clientY - r.top - r.height / 2;
-          btn.style.transform =
-            `translate(${x * 0.25}px, ${y * 0.25}px) scale(1.03)`;
-        });
-        btn.addEventListener("mouseleave", () => {
-          btn.style.transform = "";
-        });
-      });
     }
   </script>
 </body>
