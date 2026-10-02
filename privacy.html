@@ -1,1069 +1,787 @@
- <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="notebook">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#07111f">
-  <meta name="description" content="Shorveer Notes Privacy Policy — Learn how we handle information, storage, external links, and your privacy with multi-language support.">
+
+  <meta name="description" content="Shorveer Notes Privacy Policy — Transparency, data safety, zero tracking, and local storage standards established by founder Jatin Sandilya.">
   <meta name="author" content="Jatin Sandilya">
+  <meta name="robots" content="index, follow">
 
-  <title>Privacy Policy | Shorveer Notes</title>
+  <meta name="theme-color" content="#fdfaf3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171613" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
 
-  <style>
-    :root {
-      --bg: #07111f;
-      --bg2: #0d1b2e;
-      --card: rgba(255, 255, 255, 0.075);
-      --card2: rgba(255, 255, 255, 0.11);
-      --text: #f5f8ff;
-      --muted: #a9b6ca;
-      --primary: #62a8ff;
-      --secondary: #9c7cff;
-      --accent: #5ee7c4;
-      --border: rgba(255, 255, 255, 0.12);
-      --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
-      --radius: 24px;
-    }
+  <link rel="canonical" href="https://shorveernotes.website/privacy.html">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Privacy Policy | Shorveer Notes — Transparent & Secure">
+  <meta property="og:description" content="Learn how Shorveer Notes protects student privacy, handles local storage, and ensures a clean study sanctuary without surveillance.">
+  <meta property="og:site_name" content="Shorveer Notes">
+  <meta property="og:url" content="https://shorveernotes.website/privacy.html">
+  <meta property="og:image" content="https://shorveernotes.website/og-image.jpg">
 
-    html {
-      scroll-behavior: smooth;
-    }
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1c1a'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23e8b64c'/%3E%3C/svg%3E">
 
-    body {
-      min-height: 100vh;
-      color: var(--text);
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 10% 10%, rgba(98, 168, 255, 0.16), transparent 28%),
-        radial-gradient(circle at 90% 20%, rgba(156, 124, 255, 0.14), transparent 28%),
-        radial-gradient(circle at 50% 90%, rgba(94, 231, 196, 0.08), transparent 25%),
-        linear-gradient(135deg, var(--bg), var(--bg2));
-      overflow-x: hidden;
-      line-height: 1.7;
-    }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    /* ---------- Background ---------- */
-    .background {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: -1;
-    }
+  <!-- Global Design System -->
+  <link rel="stylesheet" href="style.css">
 
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(2px);
-      opacity: 0.35;
-      animation: float 12s ease-in-out infinite;
-    }
+  <script>document.documentElement.classList.add('js');</script>
 
-    .orb.one {
-      width: 260px;
-      height: 260px;
-      background: var(--primary);
-      top: -100px;
-      left: -80px;
-    }
-
-    .orb.two {
-      width: 300px;
-      height: 300px;
-      background: var(--secondary);
-      right: -120px;
-      top: 25%;
-      animation-delay: -4s;
-    }
-
-    .orb.three {
-      width: 220px;
-      height: 220px;
-      background: var(--accent);
-      bottom: -80px;
-      left: 35%;
-      animation-delay: -8s;
-    }
-
-    .grid {
-      position: absolute;
-      inset: 0;
-      opacity: 0.035;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.8) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
-      background-size: 42px 42px;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-      50% { transform: translate3d(0, -30px, 0) scale(1.08); }
-    }
-
-    /* ---------- Loader ---------- */
-    .loader {
-      position: fixed;
-      inset: 0;
-      background: #06101d;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: 0.7s ease;
-    }
-
-    .loader.hide {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .loader-box { text-align: center; }
-
-    .loader-symbol {
-      width: 78px;
-      height: 78px;
-      margin: auto;
-      border: 3px solid rgba(255, 255, 255, 0.1);
-      border-top-color: var(--primary);
-      border-right-color: var(--secondary);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    .loader-title {
-      margin-top: 20px;
-      font-size: 0.95rem;
-      letter-spacing: 3px;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    /* ---------- Header ---------- */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      background: rgba(7, 17, 31, 0.68);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav {
-      width: min(1180px, 92%);
-      margin: auto;
-      height: 74px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--text);
-    }
-
-    .logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 1.2rem;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      box-shadow: 0 10px 35px rgba(98, 168, 255, 0.22);
-    }
-
-    .brand-text strong { display: block; font-size: 1rem; }
-    .brand-text span { display: block; font-size: 0.72rem; color: var(--muted); }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .lang-select {
-      padding: 7px 12px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-size: 0.85rem;
-      font-weight: 650;
-      cursor: pointer;
-      outline: none;
-      transition: 0.25s ease;
-    }
-
-    .lang-select option {
-      background: #07111f;
-      color: #fff;
-    }
-
-    .nav-btn {
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--text);
-      width: 42px;
-      height: 42px;
-      border-radius: 13px;
-      cursor: pointer;
-      transition: 0.25s ease;
-      display: grid;
-      place-items: center;
-      text-decoration: none;
-    }
-
-    .nav-btn:hover, .lang-select:hover {
-      transform: translateY(-2px);
-      background: rgba(255, 255, 255, 0.12);
-    }
-
-    /* ---------- Hero ---------- */
-    .hero {
-      width: min(1180px, 92%);
-      margin: auto;
-      min-height: 480px;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 40px;
-      padding: 50px 0 35px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(94, 231, 196, 0.25);
-      background: rgba(94, 231, 196, 0.08);
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-
-    .badge-dot {
-      width: 7px;
-      height: 7px;
-      background: var(--accent);
-      border-radius: 50%;
-      box-shadow: 0 0 15px var(--accent);
-    }
-
-    .hero h1 {
-      margin-top: 18px;
-      font-size: clamp(2.5rem, 5.5vw, 4.8rem);
-      line-height: 1.05;
-      letter-spacing: -2.5px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(100deg, #fff, #9fcaff 40%, #b9a5ff 70%, #70f0d2);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      margin-top: 20px;
-      max-width: 600px;
-      color: var(--muted);
-      font-size: 1.02rem;
-      line-height: 1.7;
-    }
-
-    /* ---------- 3D Card Visual ---------- */
-    .hero-visual {
-      position: relative;
-      min-height: 350px;
-      display: grid;
-      place-items: center;
-    }
-
-    .mission-card {
-      width: min(350px, 90%);
-      min-height: 350px;
-      border: 1px solid var(--border);
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.035));
-      border-radius: 35px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(22px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      transform: rotate(-2.5deg);
-      transition: 0.5s ease;
-    }
-
-    .mission-card:hover {
-      transform: rotate(0) translateY(-8px);
-    }
-
-    .mission-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .mission-shield {
-      font-size: clamp(3.5rem, 7vw, 5rem);
-      margin-bottom: 8px;
-      display: block;
-      filter: drop-shadow(0 10px 20px rgba(94, 231, 196, 0.3));
-    }
-
-    .mission-title {
-      font-size: 1.2rem;
-      font-weight: 900;
-      letter-spacing: 2px;
-      color: #fff;
-    }
-
-    .mission-sub {
-      color: var(--accent);
-      margin-top: 6px;
-      letter-spacing: 2px;
-      font-size: 0.74rem;
-      font-weight: 800;
-    }
-
-    /* ---------- Layout Structure (Sidebar + Content) ---------- */
-    .page-layout {
-      width: min(1180px, 92%);
-      margin: 0 auto 60px;
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 30px;
-      align-items: start;
-    }
-
-    .toc {
-      position: sticky;
-      top: 95px;
-      padding: 22px;
-      border: 1px solid var(--border);
-      background: var(--card);
-      backdrop-filter: blur(18px);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .toc-title {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-weight: 900;
-      color: var(--accent);
-      margin-bottom: 14px;
-    }
-
-    .toc a {
-      display: block;
-      padding: 8px 10px;
-      border-radius: 9px;
-      color: var(--muted);
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.25s ease;
-      margin-bottom: 3px;
-    }
-
-    .toc a:hover {
-      background: rgba(94, 231, 196, 0.1);
-      color: var(--text);
-      transform: translateX(4px);
-    }
-
-    /* Policy Main Card */
-    .policy-wrapper {
-      background: var(--card);
-      border: 1px solid var(--border);
-      backdrop-filter: blur(20px);
-      border-radius: 28px;
-      padding: clamp(25px, 4vw, 50px);
-      box-shadow: var(--shadow);
-    }
-
-    .policy-section {
-      padding-bottom: 30px;
-      margin-bottom: 32px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .policy-section:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 14px;
-    }
-
-    .section-number {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 11px;
-      background: rgba(94, 231, 196, 0.12);
-      color: var(--accent);
-      font-weight: 900;
-      font-size: 0.82rem;
-      flex-shrink: 0;
-    }
-
-    .policy-section h2 {
-      font-size: clamp(1.15rem, 2vw, 1.45rem);
-      font-weight: 850;
-      color: #fff;
-    }
-
-    .policy-section p {
-      margin-bottom: 12px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .policy-section strong {
-      color: var(--text);
-    }
-
-    .policy-section ul {
-      margin: 12px 0 16px;
-      padding-left: 22px;
-    }
-
-    .policy-section li {
-      margin-bottom: 8px;
-      color: var(--muted);
-      font-size: 0.93rem;
-    }
-
-    .policy-section li::marker {
-      color: var(--accent);
-    }
-
-    .info-box {
-      margin: 18px 0;
-      padding: 18px;
-      border-radius: 16px;
-      background: rgba(94, 231, 196, 0.06);
-      border: 1px solid rgba(94, 231, 196, 0.2);
-    }
-
-    .info-box strong {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--accent);
-    }
-
-    .contact-card {
-      margin-top: 15px;
-      padding: 24px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, rgba(94, 231, 196, 0.08), rgba(98, 168, 255, 0.06));
-      border: 1px solid var(--border);
-    }
-
-    .contact-link {
-      display: inline-flex;
-      margin-top: 12px;
-      padding: 10px 18px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: #fff;
-      font-weight: 800;
-      font-size: 0.85rem;
-      text-decoration: none;
-      transition: 0.3s ease;
-      box-shadow: 0 10px 25px rgba(98, 168, 255, 0.2);
-    }
-
-    .contact-link:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 30px rgba(98, 168, 255, 0.3);
-    }
-
-    /* ---------- Footer ---------- */
-    footer {
-      border-top: 1px solid var(--border);
-      background: rgba(0, 0, 0, 0.2);
-    }
-
-    .footer-inner {
-      width: min(1180px, 92%);
-      margin: auto;
-      padding: 50px 0 25px;
-    }
-
-    .footer-top {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 35px;
-      padding-bottom: 40px;
-    }
-
-    .footer-brand p {
-      margin-top: 12px;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 0.86rem;
-      max-width: 320px;
-    }
-
-    .footer-column h4 {
-      font-size: 0.95rem;
-      margin-bottom: 16px;
-      color: #fff;
-      letter-spacing: 0.5px;
-    }
-
-    .footer-column a {
-      display: block;
-      color: var(--muted);
-      font-size: 0.85rem;
-      margin-bottom: 10px;
-      text-decoration: none;
-      transition: 0.25s;
-    }
-
-    .footer-column a:hover {
-      color: var(--primary);
-      transform: translateX(3px);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid var(--border);
-      padding-top: 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      color: var(--muted);
-      font-size: 0.78rem;
-    }
-
-    .author-credit { font-weight: 700; color: var(--text); }
-    .author-credit span { color: var(--primary); }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 40px;
-      }
-      .hero p { margin-left: auto; margin-right: auto; }
-      .page-layout { grid-template-columns: 1fr; }
-      .toc {
-        position: relative;
-        top: auto;
-        display: flex;
-        overflow-x: auto;
-        gap: 6px;
-        padding: 12px;
-        scrollbar-width: none;
-      }
-      .toc::-webkit-scrollbar { display: none; }
-      .toc-title { display: none; }
-      .toc a { white-space: nowrap; margin-bottom: 0; }
-      .footer-top { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 600px) {
-      .footer-top { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-    }
-  </style>
+  <title>Privacy Policy — Data Protection & Ethics | Shorveer Notes</title>
 </head>
 
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-<!-- Ambient Orbs & Grid -->
-<div class="background">
-  <div class="grid"></div>
-  <div class="orb one"></div>
-  <div class="orb two"></div>
-  <div class="orb three"></div>
-</div>
+  <!-- ============ HEADER (Matches Index, About & About-Notes) ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Shorveer Notes home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+          </svg>
+        </span>
+        <span class="brand-name">Shorveer<em>Notes</em></span>
+      </a>
 
-<!-- Page Preloader -->
-<div class="loader" id="loader">
-  <div class="loader-box">
-    <div class="loader-symbol"></div>
-    <div class="loader-title">LOADING PRIVACY POLICY</div>
-  </div>
-</div>
-
-<!-- Header -->
-<header>
-  <nav class="nav">
-    <a class="brand" href="/index.html">
-      <div class="logo">🛡️</div>
-      <div class="brand-text">
-        <strong>Shorveer Notes</strong>
-        <span>Secure & Transparent</span>
+      <div class="nav-links">
+        <a href="index.html#subjects">Subjects</a>
+        <a href="index.html#reallife">Real life</a>
+        <a href="about-notes.html">How it works</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html" style="color:var(--ink); font-weight:700;">Privacy</a>
       </div>
-    </a>
 
-    <div class="nav-actions">
-      <!-- Multi-Language Translator Dropdown -->
-      <select id="langSelect" class="lang-select" aria-label="Select language">
-        <option value="en" selected>English ▾</option>
-        <option value="hi">हिंदी (Hindi)</option>
-        <option value="ta">தமிழ் (Tamil)</option>
-        <option value="te">తెలుగు (Telugu)</option>
-        <option value="mr">मराठी (Marathi)</option>
-        <option value="bn">বাংলা (Bengali)</option>
-        <option value="kn">ಕನ್ನಡ (Kannada)</option>
-        <option value="ml">മലയാളം (Malayalam)</option>
-        <option value="gu">ગુજરાતી (Gujarati)</option>
-        <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
-        <option value="es">Español (Spanish)</option>
-        <option value="fr">Français (French)</option>
-        <option value="de">Deutsch (German)</option>
-      </select>
+      <div class="nav-actions">
+        <button class="nav-icon" id="searchButton" aria-label="Open search" title="Search (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/>
+          </svg>
+        </button>
 
-      <button class="nav-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
-      <a class="nav-btn" href="/index.html" aria-label="Home">⌂</a>
+        <button class="nav-icon" id="themeButton" aria-label="Change theme" aria-expanded="false" title="Change theme">
+          <span class="palette-dot" aria-hidden="true"></span>
+        </button>
+
+        <button class="nav-icon mobile-toggle" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <path d="M3 6h18M3 12h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="index.html#subjects">Subjects</a>
+      <a href="about-notes.html">About our notes</a>
+      <a href="about.html">About Shorveer</a>
+      <a href="exam-info.html">Exam information</a>
+      <a href="privacy.html">Privacy Policy</a>
     </div>
-  </nav>
-</header>
+  </header>
 
-<main>
+  <!-- ============ THEME PICKER POPOVER ============ -->
+  <div class="theme-pop" id="themePop" role="dialog" aria-label="Choose a theme">
+    <h4>Pick a look</h4>
+    <div class="theme-grid">
+      <button class="theme-opt" data-theme-value="notebook" aria-pressed="true">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#fdfaf3"></span>
+          <span style="background:#e8b64c"></span>
+          <span style="background:#bf5a3c"></span>
+          <span style="background:#1c1c1a"></span>
+        </span>
+        <b>Notebook</b>
+        <small>Warm paper, classic</small>
+      </button>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div>
-    <div class="badge">
-      <span class="badge-dot"></span>
-      DATA PROTECTION & TRANSPARENCY
+      <button class="theme-opt" data-theme-value="chalkboard" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#1e2a24"></span>
+          <span style="background:#f0d97a"></span>
+          <span style="background:#7bc3bf"></span>
+          <span style="background:#ebe6d5"></span>
+        </span>
+        <b>Chalkboard</b>
+        <small>Dark green, chalk</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="blueprint" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#0f2b4c"></span>
+          <span style="background:#7ec8f5"></span>
+          <span style="background:#ff9d7c"></span>
+          <span style="background:#e2eefb"></span>
+        </span>
+        <b>Blueprint</b>
+        <small>Navy, technical</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="sunset" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#241226"></span>
+          <span style="background:#ff8a5b"></span>
+          <span style="background:#ffb87a"></span>
+          <span style="background:#ffe9d6"></span>
+        </span>
+        <b>Sunset</b>
+        <small>Plum, warm glow</small>
+      </button>
     </div>
-
-    <h1>
-      Privacy
-      <br>
-      <span class="gradient-text">Policy.</span>
-    </h1>
-
-    <p id="heroDesc">
-      This page explains what information Shorveer Notes may collect, how it is used, 
-      how local browser storage works, and how external services and links are handled.
-    </p>
+    <p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Preferences are stored locally on your device.</p>
   </div>
 
-  <div class="hero-visual">
-    <div class="mission-card">
-      <div class="mission-content">
-        <span class="mission-shield">🛡️</span>
-        <div class="mission-title">SECURE DATA</div>
-        <div class="mission-sub">TRANSPARENCY • SAFETY</div>
-      </div>
-    </div>
-  </div>
-</section>
+  <main id="main">
 
-<!-- Main Policy Layout -->
-<div class="page-layout">
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="kicker">
+          <span class="dot"></span>
+          <span>Security, Trust & Privacy Guarantee</span>
+        </div>
 
-  <!-- Sidebar Table of Contents -->
-  <aside class="toc">
-    <div class="toc-title" id="tocTitleText">On this page</div>
-    <a href="#information" id="t1">1. Information We Collect</a>
-    <a href="#localstorage" id="t2">2. Local Storage</a>
-    <a href="#usage" id="t3">3. How We Use Data</a>
-    <a href="#cookies" id="t4">4. Cookies & Technologies</a>
-    <a href="#thirdparty" id="t5">5. Third-Party Services</a>
-    <a href="#links" id="t6">6. External Links</a>
-    <a href="#security" id="t7">7. Data Security</a>
-    <a href="#children" id="t8">8. Students & Minors</a>
-    <a href="#changes" id="t9">9. Policy Changes</a>
-    <a href="#contact" id="t10">10. Contact Us</a>
-  </aside>
+        <h1>
+          Study in peace.
+          <span style="position:relative;display:inline-block">
+            <span style="position:relative;z-index:1">Zero</span>
+          </span>
+          <em>tracking.</em>
+        </h1>
 
-  <!-- Policy Article Content -->
-  <article class="policy-wrapper" id="policyContent">
-
-    <!-- Section 1 -->
-    <section class="policy-section" id="information">
-      <div class="section-heading">
-        <span class="section-number">01</span>
-        <h2 id="s1Title">Information We Collect</h2>
-      </div>
-      <p id="s1Text1">Shorveer Notes is designed as a learning platform for Class 12 Science students. We aim to keep the amount of personal information we collect as low as reasonably possible.</p>
-      <p id="s1Text2">Depending on the features enabled on the website, information may include:</p>
-      <ul id="s1List">
-        <li>Information voluntarily entered, such as user display names.</li>
-        <li>Basic technical browser preferences like dark or light mode.</li>
-        <li>Study progress and interactive chapter completion records.</li>
-      </ul>
-      <div class="info-box">
-        <strong id="box1Title">Privacy-first approach</strong>
-        <span id="box1Text">We do not ask students to provide unnecessary personal information simply to access educational content.</span>
-      </div>
-    </section>
-
-    <!-- Section 2 -->
-    <section class="policy-section" id="localstorage">
-      <div class="section-heading">
-        <span class="section-number">02</span>
-        <h2 id="s2Title">Local Storage & Personalization</h2>
-      </div>
-      <p id="s2Text1">Some website features utilize your browser's <strong>LocalStorage</strong> to retain preferences directly on your device.</p>
-      <p id="s2Text2">This includes theme choices or interactive tracking variables. Clearing browser cache or storage removes these locally kept preferences instantly.</p>
-    </section>
-
-    <!-- Section 3 -->
-    <section class="policy-section" id="usage">
-      <div class="section-heading">
-        <span class="section-number">03</span>
-        <h2 id="s3Title">How Information Is Used</h2>
-      </div>
-      <p id="s3Text1">Collected data points are utilized solely to provide a smoother, customized, and responsive learning workflow across sessions.</p>
-      <ul id="s3List">
-        <li>Remembering user visual preferences across pages.</li>
-        <li>Maintaining interactive chapter completion states.</li>
-        <li>Optimizing platform performance for science learners.</li>
-      </ul>
-    </section>
-
-    <!-- Section 4 -->
-    <section class="policy-section" id="cookies">
-      <div class="section-heading">
-        <span class="section-number">04</span>
-        <h2 id="s4Title">Cookies & Similar Technologies</h2>
-      </div>
-      <p id="s4Text1">Shorveer Notes may employ minimal cookies or technical storage keys required strictly for basic functional integrity and theme controls.</p>
-    </section>
-
-    <!-- Section 5 -->
-    <section class="policy-section" id="thirdparty">
-      <div class="section-heading">
-        <span class="section-number">05</span>
-        <h2 id="s5Title">Third-Party Services</h2>
-      </div>
-      <p id="s5Text1">We utilize reliable cloud hosting providers (such as GitHub Pages or similar infrastructures) to deliver fast study pages worldwide. Standard server logs may process basic connection data automatically.</p>
-    </section>
-
-    <!-- Section 6 -->
-    <section class="policy-section" id="links">
-      <div class="section-heading">
-        <span class="section-number">06</span>
-        <h2 id="s6Title">External Links</h2>
-      </div>
-      <p id="s6Text1">Our notes pages may link out to educational videos, references, or external portals. Once you leave Shorveer Notes, their respective privacy guidelines apply.</p>
-    </section>
-
-    <!-- Section 7 -->
-    <section class="policy-section" id="security">
-      <div class="section-heading">
-        <span class="section-number">07</span>
-        <h2 id="s7Title">Data Security</h2>
-      </div>
-      <p id="s7Text1">We employ secure HTTPS standards and strict platform hygiene to protect user browsing interactions. Never input sensitive personal passwords or private data on educational resource portals.</p>
-    </section>
-
-    <!-- Section 8 -->
-    <section class="policy-section" id="children">
-      <div class="section-heading">
-        <span class="section-number">08</span>
-        <h2 id="s8Title">Students & Younger Users</h2>
-      </div>
-      <p id="s8Text1">Shorveer Notes is dedicated strictly to high school science learners. We never knowingly solicit private records from minors or younger students.</p>
-    </section>
-
-    <!-- Section 9 -->
-    <section class="policy-section" id="changes">
-      <div class="section-heading">
-        <span class="section-number">09</span>
-        <h2 id="s9Title">Changes to This Privacy Policy</h2>
-      </div>
-      <p id="s9Text1">This document may be revised periodically to reflect platform expansions or technical upgrades. Visitors are encouraged to check this page periodically.</p>
-    </section>
-
-    <!-- Section 10 -->
-    <section class="policy-section" id="contact">
-      <div class="section-heading">
-        <span class="section-number">10</span>
-        <h2 id="s10Title">Contact Us</h2>
-      </div>
-      <p id="s10Text1">If you have any questions or feedback regarding this policy, feel free to reach out directly to the founder.</p>
-      
-      <div class="contact-card">
-        <h3 style="color:#fff;">Shorveer Notes</h3>
-        <p id="contactDesc" style="color:var(--muted); font-size:0.9rem; margin-top:4px;">Educational study platform for Class 12 Science aspirants.</p>
-        <p style="color:var(--text); font-size:0.9rem; margin-top:8px;"><strong>Developer:</strong> Jatin Sandilya</p>
-        <a href="mailto:contact@shorveernotes.com" class="contact-link" id="contactBtn">✉ Contact Support</a>
-      </div>
-    </section>
-
-  </article>
-
-</div>
-
-</main>
-
-<!-- Standard Professional Footer -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <h2 style="font-size: 1.4rem;">SHORVEER NOTES</h2>
-        <p id="footerBrandDesc">
-          A student-focused academic platform designed to make Class 12 Science learning
-          simpler, visual, and high-yielding for board examinations.
+        <p class="hero-description">
+          Shorveer Notes was architected by founder <strong>Jatin Sandilya</strong> with a strict student-first charter. We believe learning should be clean, focused, and free from telemetry, aggressive tracking cookies, or paywalled profile forms.
         </p>
+
+        <div class="motivation" aria-live="polite">
+          <svg class="motivation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span class="motivation-text show">Your study habits are your own business.</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#flip-clauses">
+            Read privacy clauses
+            <span class="btn-arrow">→</span>
+          </a>
+          <a class="btn btn-light" href="#contact-founder">Contact founder</a>
+        </div>
+
+        <div class="hero-note">
+          <span>Charter maintained by <strong>Jatin Sandilya</strong> · Shorveer Platform Architect</span>
+        </div>
       </div>
 
-      <div class="footer-column">
-        <h4 id="fCol1Title">Core Subjects</h4>
-        <a href="/physics/index.html" id="f1">Physics Hub</a>
-        <a href="/chemistry/index.html" id="f2">Chemistry Notes</a>
-        <a href="/mathematics/index.html" id="f3">Mathematics Hub</a>
-        <a href="/english/index.html" id="f4">English Core</a>
+      <div class="hero-art" id="heroArt">
+        <div class="hero-stage" id="heroStage">
+          <div class="polaroid">
+            <img class="hero-img" id="heroImage"
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80"
+              alt="Cybersecurity and privacy shield illustration on screen" loading="eager" width="900" height="1125">
+            <div class="polaroid-caption">uncompromising student data safety</div>
+          </div>
+
+          <div class="sticky">
+            no ads, no tracking,<br>just pure notes 🛡
+          </div>
+
+          <svg class="doodle" viewBox="0 0 130 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M6 12 C 40 4, 70 20, 96 50" stroke-dasharray="4 5"/>
+            <path d="M92 34 L 100 52 L 82 52" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST / PRIVACY HIGHLIGHTS ============ -->
+    <section class="trust" aria-label="Privacy Commitments">
+      <div class="trust-inner container">
+        <div class="trust-item"><b>No Sign-Up Required</b>Direct access without creating an account</div>
+        <div class="trust-item"><b>Local Storage Only</b>Themes and reads stay on your device</div>
+        <div class="trust-item"><b>No Third-Party Brokers</b>We never sell, rent, or share telemetry</div>
+        <div class="trust-item"><b>SSL / HTTPS Enforced</b>256-bit encrypted data transit</div>
+      </div>
+    </section>
+
+    <!-- ============ 3D FLIP CARDS: CORE PRIVACY CLAUSES ============ -->
+    <section class="section container reveal" id="flip-clauses">
+      <div class="section-head">
+        <span class="section-eyebrow">interactive privacy breakdown</span>
+        <h2>Our privacy architecture.<br><em>Hover or tap to flip and inspect each rule.</em></h2>
       </div>
 
-      <div class="footer-column">
-        <h4 id="fCol2Title">Preparation</h4>
-        <a href="/exam-info.html" id="f5">Exam Blueprints</a>
-        <a href="/about-notes.html" id="f6">Notes Framework</a>
-        <a href="/about.html" id="f7">About Shorveer</a>
+      <div class="subject-list">
+
+        <!-- Card 1: Information Collection -->
+        <div class="flip-card" style="--subject-color: #bf5a3c" tabindex="0" role="button" aria-label="Information Collection card">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                      <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                  </div>
+                  <div class="subject-tag">clause 01</div>
+                </div>
+                <h3>Information We Collect</h3>
+                <p>We do not collect names, phone numbers, or school IDs simply to let you read revision material. Learning should be frictionless.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Flip to see details <span class="arrow">→</span></span>
+                <span class="subject-count">Minimal Data</span>
+              </div>
+              <span class="flip-hint">flip card</span>
+            </div>
+
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Zero Invasive Logging</div>
+                <div class="back-rule">"Education must never be traded for personal profiles."</div>
+                <p class="back-example">
+                  When you browse notes on physics derivations or chemistry reactions, only standard server diagnostic logs (IP, browser user agent) are handled securely by hosting providers like GitHub Pages to serve files.
+                </p>
+              </div>
+              <span class="subject-meta">Architected by Jatin Sandilya</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Browser Local Storage -->
+        <div class="flip-card" style="--subject-color: #2a7d7a" tabindex="0" role="button" aria-label="Local Storage card">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                      <line x1="8" y1="21" x2="16" y2="21"/>
+                      <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                  </div>
+                  <div class="subject-tag">clause 02</div>
+                </div>
+                <h3>Browser LocalStorage</h3>
+                <p>Your theme preference (Notebook, Chalkboard, Blueprint, Sunset) and cookie consent notice are stored locally inside your browser.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Flip to see mechanism <span class="arrow">→</span></span>
+                <span class="subject-count">Client-Side</span>
+              </div>
+              <span class="flip-hint">flip card</span>
+            </div>
+
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Device-Only Storage</div>
+                <div class="back-rule">"Your device keeps your preferences, not our servers."</div>
+                <p class="back-example">
+                  Data in <code>localStorage</code> stays on your phone or laptop. It never syncs to our databases. Clearing your browser cache or site storage erases it completely.
+                </p>
+              </div>
+              <span class="subject-meta">100% User Controlled</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Third Party Links & Ads -->
+        <div class="flip-card" style="--subject-color: #a67823" tabindex="0" role="button" aria-label="External Links card">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                      <polyline points="15 3 21 3 21 9"/>
+                      <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                  </div>
+                  <div class="subject-tag">clause 03</div>
+                </div>
+                <h3>External Links & YouTube</h3>
+                <p>Our notes link to reference resources, YouTube channels (like @JSEDIZ), and curriculum portals. How do external sites operate?</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Flip to see boundary <span class="arrow">→</span></span>
+                <span class="subject-count">External Scope</span>
+              </div>
+              <span class="flip-hint">flip card</span>
+            </div>
+
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Clear Boundary Policy</div>
+                <div class="back-rule">"External platforms govern their own policies."</div>
+                <p class="back-example">
+                  When you click an outbound link to YouTube or CBSE portals, their respective privacy policies apply. We do not embed hidden tracking beacons or tracking pixels across our articles.
+                </p>
+              </div>
+              <span class="subject-meta">Transparent Linking</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Minors & Student Protection -->
+        <div class="flip-card" style="--subject-color: #7a4b8a" tabindex="0" role="button" aria-label="Student Protection card">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                  </div>
+                  <div class="subject-tag">clause 04</div>
+                </div>
+                <h3>Protection for Students & Minors</h3>
+                <p>Because our audience consists primarily of Class 12 students, protecting younger learners from commercial profiling is our chief mandate.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Flip to read commitment <span class="arrow">→</span></span>
+                <span class="subject-count">High Standard</span>
+              </div>
+              <span class="flip-hint">flip card</span>
+            </div>
+
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Under-18 Safety Guarantee</div>
+                <div class="back-rule">"No commercial profiling of teenagers or exam aspirants."</div>
+                <p class="back-example">
+                  We never knowingly solicit identifiable data, financial information, or personal communications from minors. If a student contacts us via email for support, their address is only used to respond.
+                </p>
+              </div>
+              <span class="subject-meta">Guaranteed by Jatin Sandilya</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ EDITORIAL SPLIT: FOUNDER'S DATA MANIFESTO ============ -->
+    <section class="section container reveal">
+      <div class="notebook">
+        <figure class="notebook-photo">
+          <img
+            src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000&q=80"
+            alt="Data protection lock on digital matrix background" loading="lazy" width="1000" height="800">
+          <figcaption>integrity in both code and pedagogy</figcaption>
+        </figure>
+
+        <div class="notebook-copy">
+          <span class="section-eyebrow">founder's declaration</span>
+          <h2>A platform built on <em>honor and transparency.</em></h2>
+          <p>
+            When <strong>Jatin Sandilya</strong> created Shorveer Notes, the core goal was to eliminate the commercialization that plagues online educational resources. Students shouldn't have to give up their privacy to understand a physics law.
+          </p>
+
+          <ul class="checklist">
+            <li><strong>Encrypted Transport:</strong> Strict HTTPS and modern SSL certificates protect your session from ISP tampering.</li>
+            <li><strong>No Hidden Fingerprinting:</strong> No canvas fingerprinting or cross-site device graph building.</li>
+            <li><strong>No Paywalls:</strong> We don't ask for credit cards, bank accounts, or digital wallet permissions.</li>
+            <li><strong>Responsible Data Life Cycle:</strong> If you send an email with suggestions or corrections, it is kept strictly private.</li>
+          </ul>
+
+          <a class="btn btn-dark" href="#contact-founder">
+            Reach out to founder directly
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DETAILED LEGAL SECTIONS ============ -->
+    <section class="section container reveal" id="full-policy">
+      <div class="section-head">
+        <span class="section-eyebrow">legal documentation</span>
+        <h2>Complete Privacy Clauses & <em>Operating Terms.</em></h2>
       </div>
 
-      <div class="footer-column">
-        <h4 id="fCol3Title">Legal & Support</h4>
-        <a href="/privacy.html" id="f8">Privacy Policy</a>
-        <a href="/cookies.html" id="f9">Cookies Policy</a>
-        <a href="mailto:support.shorveernotes@gmail.com" id="f10">Help & Contact</a>
+      <div class="real-life">
+
+        <article class="rl-card" style="--rl-color: #bf5a3c">
+          <div class="rl-badge">01</div>
+          <div class="rl-body">
+            <div class="rl-subject">Hosting & Infrastructure · GitHub Pages</div>
+            <div class="rl-title">Server Log Files & Telemetry</div>
+            <p class="rl-text">
+              Like any web service deployed on modern content distribution networks (such as GitHub Pages and Cloudflare), incoming web requests automatically process server log files. These include IP addresses, browser versions, operating systems, referring URLs, and timestamps strictly to defend against DDoS attacks and maintain system uptime.
+            </p>
+          </div>
+        </article>
+
+        <article class="rl-card" style="--rl-color: #2a7d7a">
+          <div class="rl-badge">02</div>
+          <div class="rl-body">
+            <div class="rl-subject">Cookies & Browser Preferences · Storage</div>
+            <div class="rl-title">How We Use Browser Storage</div>
+            <p class="rl-text">
+              We use <code>localStorage</code> purely to remember your chosen aesthetic palette (e.g., Notebook, Chalkboard, Blueprint, Sunset) so the website renders in your favorite theme each time you open a new chapter. No personal identifiers or marketing profiles are written to storage.
+            </p>
+          </div>
+        </article>
+
+        <article class="rl-card" style="--rl-color: #a67823">
+          <div class="rl-badge">03</div>
+          <div class="rl-body">
+            <div class="rl-subject">Third-Party Scripts & Advertising · Strict Limits</div>
+            <div class="rl-title">AdSense & Verification Tags</div>
+            <p class="rl-text">
+              Where verified services or site verification headers are implemented, standard privacy disclosures apply. We do not run aggressive behavioral tracking, auto-playing video popups, or deceptive redirect links on any Class 12 notes page.
+            </p>
+          </div>
+        </article>
+
+        <article class="rl-card" style="--rl-color: #7a4b8a">
+          <div class="rl-badge">04</div>
+          <div class="rl-body">
+            <div class="rl-subject">Security & Updates · Continuous Audit</div>
+            <div class="rl-title">Security & Policy Revisions</div>
+            <p class="rl-text">
+              Founder <strong>Jatin Sandilya</strong> conducts regular security audits of all HTML markup and client scripts. This Privacy Policy is updated periodically to reflect architectural evolutions. Revisions take effect immediately upon being posted on this URL.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ CONTACT CARD FOR PRIVACY MATTERS ============ -->
+    <section class="section container reveal" id="contact-founder">
+      <div class="notebook" style="grid-template-columns: 1fr; padding: 40px;">
+        <div>
+          <span class="section-eyebrow">direct contact</span>
+          <h2 style="font-size: clamp(26px, 3vw, 36px); margin-bottom: 16px;">
+            Have Questions About <em>Your Privacy?</em>
+          </h2>
+          <p style="font-size: 15.5px; line-height: 1.8; color: var(--muted); margin-bottom: 24px;">
+            If you have questions regarding our data policies, wish to report an external link issue, or want to discuss security details directly with the founder, our communication channels are open.
+          </p>
+
+          <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
+            <a class="btn btn-dark" href="mailto:support.shorveernotes@gmail.com">
+              ✉ Email: support.shorveernotes@gmail.com
+            </a>
+            <a class="btn btn-light" href="https://www.youtube.com/@JSEDIZ" target="_blank" rel="noopener noreferrer">
+              YouTube: @JSEDIZ
+            </a>
+          </div>
+          <p style="margin-top:18px; font-size:13.5px; color:var(--muted);">
+            Founder & Architect: <strong>Jatin Sandilya</strong> · Shorveer Notes Platform
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta container reveal">
+      <div class="cta-content">
+        <h2>Safe, clean and ready when you are. <em>Start studying.</em></h2>
+        <p>No paywalls, no tracking hurdles. Pick the chapter you need and begin your revision.</p>
+        <a class="btn btn-gold" href="index.html#subjects">
+          Browse Subject Notes
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER (Matches Index, About & About-Notes) ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+              </svg>
+            </span>
+            <span class="brand-name">Shorveer<em>Notes</em></span>
+          </a>
+          <p>A student-focused platform for Class 12 Science aspirants, engineered by Jatin Sandilya with strict respect for academic clarity and user privacy.</p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Study</h3>
+          <a href="physics/index.html">Physics</a>
+          <a href="chemistry/index.html">Chemistry</a>
+          <a href="mathematics/index.html">Mathematics</a>
+          <a href="english/index.html">English</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Site</h3>
+          <a href="exam-info.html">Exam info</a>
+          <a href="about-notes.html">About the notes</a>
+          <a href="about.html">About us</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="cookies.html">Cookies</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Connect</h3>
+          <a href="mailto:support.shorveernotes@gmail.com">Contact us</a>
+          <a href="https://www.youtube.com/@JSEDIZ" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Shorveer Notes · Founded by <strong>Jatin Sandilya</strong></span>
+        <span>Secure & Privacy-First · Made in India for Class 12 students</span>
       </div>
     </div>
+  </footer>
 
-    <div class="footer-bottom">
-      <div>
-        © <span id="year">2026</span> Shorveer Notes. All Rights Reserved.
+  <!-- ============ SEARCH MODAL ============ -->
+  <div class="search-layer" id="searchLayer" aria-hidden="true">
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search">
+      <div class="search-top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/>
+        </svg>
+        <input id="searchInput" type="search" placeholder="Search subjects, chapters, resources…" autocomplete="off">
+        <button class="search-close" id="searchClose" aria-label="Close search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
       </div>
-      <div class="author-credit">
-        Crafted with Dedication by <span>Jatin Sandilya</span> • Founder of Shorveer Notes
-      </div>
+      <div class="search-results" id="searchResults"></div>
     </div>
   </div>
-</footer>
 
-<script>
-  // 1. Loader Logic
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      document.getElementById("loader").classList.add("hide");
-    }, 450);
-  });
+  <!-- ============ JAVASCRIPT ============ -->
+  <script>
+    /* Safe Storage */
+    const store = {
+      get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+      set(k, v) { try { localStorage.setItem(k, v); } catch {} }
+    };
 
-  // 2. Theme Toggle Engine
-  const themeBtn = document.getElementById("themeBtn");
-  let lightMode = localStorage.getItem("shorveer_theme") === "light";
+    /* Dynamic Year */
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-  function applyTheme() {
-    if (lightMode) {
-      document.documentElement.style.setProperty("--bg", "#eef4ff");
-      document.documentElement.style.setProperty("--bg2", "#dce8f8");
-      document.documentElement.style.setProperty("--text", "#102039");
-      document.documentElement.style.setProperty("--muted", "#52637a");
-      document.documentElement.style.setProperty("--card", "rgba(255, 255, 255, 0.6)");
-      document.documentElement.style.setProperty("--border", "rgba(16, 32, 57, 0.12)");
-      document.querySelector("header").style.background = "rgba(238, 244, 255, 0.75)";
-      themeBtn.textContent = "☀";
+    /* Theme Engine */
+    const THEMES = {
+      notebook: {
+        hero: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80",
+        label: "uncompromising student data safety"
+      },
+      chalkboard: {
+        hero: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80",
+        label: "equations, one line at a time"
+      },
+      blueprint: {
+        hero: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=80",
+        label: "where the theory becomes engineering"
+      },
+      sunset: {
+        hero: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80",
+        label: "late-night study, warm lamp"
+      }
+    };
+
+    const html = document.documentElement;
+    const themeButton = document.getElementById("themeButton");
+    const themePop = document.getElementById("themePop");
+    const heroImage = document.getElementById("heroImage");
+    const heroCaption = document.querySelector(".polaroid-caption");
+    const themeOpts = document.querySelectorAll(".theme-opt");
+
+    function applyTheme(name) {
+      if (!THEMES[name]) name = "notebook";
+      html.setAttribute("data-theme", name);
+      store.set("shorveer-theme-name", name);
+
+      themeOpts.forEach(btn => {
+        btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name));
+      });
+
+      if (heroImage && heroCaption) {
+        const t = THEMES[name];
+        heroImage.classList.add("fading");
+        setTimeout(() => {
+          heroImage.src = t.hero;
+          heroCaption.textContent = t.label;
+          heroImage.classList.remove("fading");
+        }, 260);
+      }
+    }
+
+    const savedThemeName = store.get("shorveer-theme-name") || "notebook";
+    applyTheme(savedThemeName);
+
+    themeButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = themePop.classList.toggle("open");
+      themeButton.setAttribute("aria-expanded", String(open));
+    });
+
+    themeOpts.forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyTheme(btn.dataset.themeValue);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!themePop.contains(e.target) && !themeButton.contains(e.target)) {
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    /* 3D Flip Cards Interaction */
+    const flipCards = document.querySelectorAll(".flip-card");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    flipCards.forEach(card => {
+      if (isTouch) {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("a")) return;
+          card.classList.toggle("flipped");
+        });
+      }
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          if (e.target.closest("a")) return;
+          e.preventDefault();
+          card.classList.toggle("flipped");
+        }
+      });
+    });
+
+    /* 3D Hero Parallax */
+    const heroArt = document.getElementById("heroArt");
+    const heroStage = document.getElementById("heroStage");
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (heroArt && heroStage && finePointer && !reduceMotion) {
+      heroArt.addEventListener("mousemove", (e) => {
+        const rect = heroArt.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        heroStage.style.transform =
+          `perspective(1200px) rotateX(${-y * 16}deg) rotateY(${x * 16}deg) translateZ(10px)`;
+      });
+      heroArt.addEventListener("mouseleave", () => {
+        heroStage.style.transform = "perspective(1200px) rotateX(0) rotateY(0) translateZ(0)";
+      });
+    }
+
+    /* Search Feature */
+    const searchData = [
+      { title: "Physics", description: "Class 12 Physics chapters and derivations", url: "physics/index.html" },
+      { title: "Chemistry", description: "Physical, organic, inorganic notes", url: "chemistry/index.html" },
+      { title: "Mathematics", description: "Calculus, vectors, probability practice", url: "mathematics/index.html" },
+      { title: "English", description: "Summaries and writing formats", url: "english/index.html" },
+      { title: "Exam information", description: "Syllabus and blueprint", url: "exam-info.html" },
+      { title: "About Shorveer", description: "Our mission, origin, and standard", url: "about.html" },
+      { title: "About our notes", description: "How chapters are built", url: "about-notes.html" },
+      { title: "Privacy policy", description: "How we protect student data", url: "privacy.html" }
+    ];
+
+    const searchButton = document.getElementById("searchButton");
+    const searchLayer = document.getElementById("searchLayer");
+    const searchClose = document.getElementById("searchClose");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    function openSearch() {
+      searchLayer.classList.add("active");
+      searchLayer.setAttribute("aria-hidden", "false");
+      setTimeout(() => searchInput.focus(), 60);
+      renderResults("");
+    }
+    function closeSearch() {
+      searchLayer.classList.remove("active");
+      searchLayer.setAttribute("aria-hidden", "true");
+      searchInput.value = "";
+    }
+    function renderResults(query) {
+      const q = query.trim().toLowerCase();
+      const matches = searchData.filter(item =>
+        !q || item.title.toLowerCase().includes(q) || item.description.toLowerCase().includes(q)
+      );
+      if (!matches.length) {
+        searchResults.innerHTML = '<div class="empty-result">Nothing found. Try "physics" or "privacy".</div>';
+        return;
+      }
+      searchResults.innerHTML = matches.map(item => `
+        <a class="result" href="${item.url}">
+          <div>
+            <strong>${item.title}</strong>
+            <small>${item.description}</small>
+          </div>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+      `).join("");
+    }
+
+    searchButton.addEventListener("click", openSearch);
+    searchClose.addEventListener("click", closeSearch);
+    searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
+    searchInput.addEventListener("input", e => renderResults(e.target.value));
+
+    /* Mobile Menu */
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    function setMenu(open) {
+      mobileMenu.classList.toggle("open", open);
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+    menuButton.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+
+    /* Keyboard Shortcuts */
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        closeSearch();
+        setMenu(false);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault(); openSearch();
+      }
+    });
+
+    /* Scroll Reveal */
+    const reveals = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); }
+        });
+      }, { threshold: .1 });
+      reveals.forEach(el => io.observe(el));
     } else {
-      document.documentElement.style.setProperty("--bg", "#07111f");
-      document.documentElement.style.setProperty("--bg2", "#0d1b2e");
-      document.documentElement.style.setProperty("--text", "#f5f8ff");
-      document.documentElement.style.setProperty("--muted", "#a9b6ca");
-      document.documentElement.style.setProperty("--card", "rgba(255, 255, 255, 0.075)");
-      document.documentElement.style.setProperty("--border", "rgba(255, 255, 255, 0.12)");
-      document.querySelector("header").style.background = "rgba(7, 17, 31, 0.68)";
-      themeBtn.textContent = "◐";
+      reveals.forEach(el => el.classList.add("visible"));
     }
-  }
-
-  applyTheme();
-
-  themeBtn.addEventListener("click", () => {
-    lightMode = !lightMode;
-    localStorage.setItem("shorveer_theme", lightMode ? "light" : "dark");
-    applyTheme();
-  });
-
-  // 3. Multi-Language Dictionary Engine
-  const translations = {
-    hi: {
-      heroDesc: "यह पृष्ठ बताता है कि Shorveer Notes कौन सी जानकारी एकत्र कर सकता है, उसका उपयोग कैसे किया जाता है, स्थानीय ब्राउज़र स्टोरेज कैसे काम करती है, और बाहरी सेवाओं को कैसे प्रबंधित किया जाता है।",
-      tocTitle: "इस पृष्ठ पर",
-      t1: "1. जानकारी जो हम एकत्र करते हैं",
-      t2: "2. लोकल स्टोरेज",
-      t3: "3. डेटा का उपयोग कैसे होता है",
-      t4: "4. कुकीज़ और तकनीक",
-      t5: "5. थर्ड-पार्टी सेवाएं",
-      t6: "6. बाहरी लिंक",
-      t7: "7. डेटा सुरक्षा",
-      t8: "8. छात्र और नाबालिग",
-      t9: "9. नीति में बदलाव",
-      t10: "10. संपर्क करें",
-      s1Title: "जानकारी जो हम एकत्र करते हैं",
-      s1Text1: "Shorveer Notes को कक्षा 12 विज्ञान के छात्रों के लिए एक शिक्षण मंच के रूप में डिज़ाइन किया गया है। हमारा उद्देश्य व्यक्तिगत जानकारी के संग्रह को न्यूनतम रखना है।",
-      s1Text2: "वेबसाइट पर उपलब्ध सुविधाओं के आधार पर, जानकारी में शामिल हो सकते हैं:",
-      b1: "अपनी मर्जी से दर्ज की गई जानकारी जैसे डिस्प्ले नाम।",
-      b2: "डार्क या लाइट मोड जैसी ब्राउज़र प्राथमिकताएं।",
-      b3: "अध्ययन प्रगति और चैप्टर पूर्ण होने का रिकॉर्ड।",
-      box1Title: "प्राइवेसी-फर्स्ट दृष्टिकोण",
-      box1Text: "हम छात्रों को केवल शैक्षणिक सामग्री देखने के लिए अनावश्यक व्यक्तिगत जानकारी प्रदान करने के लिए नहीं कहते हैं।",
-      s2Title: "लोकल स्टोरेज और वैयक्तिकरण",
-      s2Text1: "कुछ वेबसाइट सुविधाएं आपकी प्राथमिकताओं को सीधे आपके डिवाइस पर सहेजने के लिए <strong>LocalStorage</strong> का उपयोग करती हैं।",
-      s2Text2: "इसमें थीम विकल्प या स्टडी प्रोग्रेस शामिल हो सकती है। ब्राउज़र डेटा साफ़ करने से ये प्राथमिकताएं हट जाती हैं।",
-      s3Title: "डेटा का उपयोग कैसे होता है",
-      s3Text1: "एकत्रित डेटा का उपयोग केवल एक सुचारू और व्यक्तिगत शिक्षण अनुभव प्रदान करने के लिए किया जाता है।",
-      s4Title: "कुकीज़ और समान तकनीक",
-      s4Text1: "Shorveer Notes कार्यक्षमता और प्राथमिकताओं के लिए न्यूनतम कुकीज़ या ब्राउज़र स्टोरेज का उपयोग कर सकता है।",
-      s5Title: "थर्ड-पार्टी सेवाएं",
-      s5Text1: "हम होस्टिंग और बुनियादी ढांचे के लिए विश्वसनीय तृतीय-पक्ष सेवाओं का उपयोग कर सकते हैं।",
-      s6Title: "बाहरी लिंक",
-      s6Text1: "Shorveer Notes में बाहरी वेबसाइटों, शैक्षिक संसाधनों या वीडियो के लिंक हो सकते हैं। एक बार जब आप हमारी साइट छोड़ देते हैं, तो उन बाहरी साइटों की नीतियां लागू होती हैं।",
-      s7Title: "डेटा सुरक्षा",
-      s7Text1: "हम वेबसाइट और उसके सिस्टम को सुरक्षित रखने के लिए उचित कदम उठाते हैं। हालांकि, इंटरनेट पर कोई भी प्रणाली 100% सुरक्षित होने की गारंटी नहीं दे सकती।",
-      s8Title: "छात्र और छोटे उपयोगकर्ता",
-      s8Text1: "Shorveer Notes छात्रों के लिए एक शैक्षिक मंच है। हम जानबूझकर नाबालिगों से संवेदनशील व्यक्तिगत जानकारी एकत्र नहीं करते हैं।",
-      s9Title: "इस नीति में परिवर्तन",
-      s9Text1: "जब वेबसाइट की विशेषताएं या कानूनी आवश्यकताएं बदलती हैं, तो इस गोपनीयता नीति को अपडेट किया जा सकता है।",
-      s10Title: "संपर्क करें",
-      s10Text1: "यदि आपके पास Shorveer Notes से संबंधित कोई प्रश्न या गोपनीयता संबंधी समस्या है, तो आप हमारी टीम से संपर्क कर सकते हैं।",
-      contactDesc: "कक्षा 12 विज्ञान के छात्रों के लिए शैक्षिक अध्ययन मंच।",
-      contactBtn: "✉ संपर्क करें"
-    },
-    ta: {
-      heroDesc: "Shorveer Notes என்ன தகவலை சேகரிக்கலாம், அது எவ்வாறு பயன்படுத்தப்படுகிறது மற்றும் உங்கள் தனியுரிமை எவ்வாறு நிர்வகிக்கப்படுகிறது என்பதை இந்தப் பக்கம் விளக்குகிறது.",
-      tocTitle: "இந்த பக்கத்தில்",
-      t1: "1. நாங்கள் சேகரிக்கும் தகவல்",
-      t2: "2. உள்ளூர் சேமிப்பு (Local Storage)",
-      t3: "3. தரவு எவ்வாறு பயன்படுத்தப்படுகிறது",
-      t4: "4. குக்கீகள்",
-      t5: "5. மூன்றாம் தரப்பு சேவைகள்",
-      t6: "6. வெளிப்புற இணைப்புகள்",
-      t7: "7. தரவு பாதுகாப்பு",
-      t8: "8. மாணவர்கள்",
-      t9: "9. கொள்கை மாற்றங்கள்",
-      t10: "10. எங்களை தொடர்பு கொள்ள",
-      s1Title: "நாங்கள் சேகரிக்கும் தகவல்",
-      s1Text1: "Shorveer Notes என்பது 12 ஆம் வகுப்பு அறிவியல் மாணவர்களுக்கான கற்றல் தளமாகும்.",
-      s2Title: "உள்ளூர் சேமிப்பு மற்றும் தனிப்பயனாக்கம்",
-      s3Title: "தரவு எவ்வாறு பயன்படுத்தப்படுகிறது",
-      s4Title: "குக்கீகள்",
-      s5Title: "மூன்றாம் தரப்பு சேவைகள்",
-      s6Title: "வெளிப்புற இணைப்புகள்",
-      s7Title: "தரவு பாதுகாப்பு",
-      s8Title: "மாணவர்கள்",
-      s9Title: "கொள்கை மாற்றங்கள்",
-      s10Title: "எங்களை தொடர்பு கொள்ள",
-      contactDesc: "12 ஆம் வகுப்பு அறிவியல் மாணவர்களுக்கான கல்வி தளம்.",
-      contactBtn: "✉ எங்களை தொடர்பு கொள்ள"
-    },
-    es: {
-      heroDesc: "Esta página explica qué información puede recopilar Shorveer Notes, cómo se utiliza, cómo funciona el almacenamiento local del navegador y cómo se manejan los enlaces externos.",
-      tocTitle: "En esta página",
-      t1: "1. Información que recopilamos",
-      t2: "2. Almacenamiento local",
-      t3: "3. Cómo usamos los datos",
-      t4: "4. Cookies",
-      t5: "5. Servicios de terceros",
-      t6: "6. Enlaces externos",
-      t7: "7. Seguridad de datos",
-      t8: "8. Estudiantes",
-      t9: "9. Cambios de política",
-      t10: "10. Contacto",
-      s1Title: "Información que recopilamos",
-      s1Text1: "Shorveer Notes está diseñado como una plataforma de aprendizaje para estudiantes de ciencias de Clase 12.",
-      s2Title: "Almacenamiento local",
-      s3Title: "Cómo usamos los datos",
-      s4Title: "Cookies",
-      s5Title: "Servicios de terceros",
-      s6Title: "Enlaces externos",
-      s7Title: "Seguridad de datos",
-      s8Title: "Estudiantes",
-      s9Title: "Cambios de política",
-      s10Title: "Contacto",
-      contactDesc: "Plataforma de estudio educativo para estudiantes de ciencias de Clase 12.",
-      contactBtn: "✉ Contáctenos"
-    }
-  };
-
-  const langSelect = document.getElementById("langSelect");
-  langSelect.addEventListener("change", (e) => {
-    const lang = e.target.value;
-    if (translations[lang]) {
-      const t = translations[lang];
-      document.getElementById("heroDesc").textContent = t.heroDesc;
-      document.getElementById("tocTitleText").textContent = t.tocTitle;
-      document.getElementById("t1").textContent = t.t1;
-      document.getElementById("t2").textContent = t.t2;
-      document.getElementById("t3").textContent = t.t3;
-      document.getElementById("t4").textContent = t.t4;
-      document.getElementById("t5").textContent = t.t5;
-      document.getElementById("t6").textContent = t.t6;
-      document.getElementById("t7").textContent = t.t7;
-      document.getElementById("t8").textContent = t.t8;
-      document.getElementById("t9").textContent = t.t9;
-      document.getElementById("t10").textContent = t.t10;
-      
-      document.getElementById("s1Title").textContent = t.s1Title;
-      document.getElementById("s1Text1").textContent = t.s1Text1;
-      document.getElementById("s2Title").textContent = t.s2Title;
-      document.getElementById("s2Text1").textContent = t.s2Text1;
-      document.getElementById("s3Title").textContent = t.s3Title;
-      document.getElementById("s3Text1").textContent = t.s3Text1;
-      document.getElementById("s4Title").textContent = t.s4Title;
-      document.getElementById("s4Text1").textContent = t.s4Text1;
-      document.getElementById("s5Title").textContent = t.s5Title;
-      document.getElementById("s5Text1").textContent = t.s5Text1;
-      document.getElementById("s6Title").textContent = t.s6Title;
-      document.getElementById("s6Text1").textContent = t.s6Text1;
-      document.getElementById("s7Title").textContent = t.s7Title;
-      document.getElementById("s7Text1").textContent = t.s7Text1;
-      document.getElementById("s8Title").textContent = t.s8Title;
-      document.getElementById("s8Text1").textContent = t.s8Text1;
-      document.getElementById("s9Title").textContent = t.s9Title;
-      document.getElementById("s9Text1").textContent = t.s9Text1;
-      document.getElementById("s10Title").textContent = t.s10Title;
-      document.getElementById("s10Text1").textContent = t.s10Text1;
-      document.getElementById("contactDesc").textContent = t.contactDesc;
-      document.getElementById("contactBtn").textContent = t.contactBtn;
-    } else {
-      // Default English reload or simple fallback
-      location.reload();
-    }
-  });
-</script>
-
+  </script>
 </body>
 </html>
