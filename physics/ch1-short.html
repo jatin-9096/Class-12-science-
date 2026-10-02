@@ -1,14 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<html lang="en" data-theme="notebook">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Class 12 Physics Chapter 1: Electric Charges and Fields - Comprehensive Visual Mind Map, Rapid Formula Revision, Vector Diagrams and Graphs by Shorveer Notes.">
-  <meta name="author" content="Jatin Sandilya">
-  <meta name="theme-color" content="#07111f">
-  <title>Chapter 1: Quick Revision & Mind Map | Shorveer Notes</title>
 
-  <!-- MathJax Configuration for Mobile-Clean Rendering -->
+  <meta name="description" content="Class 12 Physics Chapter 1: Electric Charges and Fields — Visual Mind Map, Rapid Formula Revision, 3D Vector Cards, and Real-Life Connections by Shorveer Notes.">
+  <meta name="author" content="Jatin Sandilya">
+  <meta name="robots" content="index, follow">
+
+  <meta name="theme-color" content="#fdfaf3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171613" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+
+  <link rel="canonical" href="https://shorveernotes.website/physics/ch1-short.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Chapter 1: Quick Revision & Mind Map | Shorveer Notes">
+  <meta property="og:description" content="Synthesize Electric Charges and Fields into one visual framework with formulas, life connections, and 3D flip cards.">
+  <meta property="og:site_name" content="Shorveer Notes">
+  <meta property="og:url" content="https://shorveernotes.website/physics/ch1-short.html">
+  <meta property="og:image" content="https://shorveernotes.website/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1c1a'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23e8b64c'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global Design System Link -->
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- MathJax for clean math formulas -->
   <script>
     window.MathJax = {
       tex: {
@@ -20,697 +46,863 @@
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
+  <script>document.documentElement.classList.add('js');</script>
+
+  <title>Chapter 1: Quick Revision & Mind Map | Shorveer Notes</title>
+
   <style>
-    :root {
-      --bg: #f5f8fc;
-      --bg-secondary: #ffffff;
-      --surface: rgba(255, 255, 255, 0.85);
-      --surface-solid: #ffffff;
-      --text: #0f172a;
-      --text-soft: #64748b;
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --secondary: #7c3aed;
-      --accent: #06b6d4;
-      --border: rgba(15, 23, 42, 0.09);
-      --shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
-      --shadow-hover: 0 25px 65px rgba(37, 99, 235, 0.16);
-      --radius: 20px;
-      --transition: 0.3s cubic-bezier(.2,.8,.2,1);
-
-      /* Diagram Vars */
-      --svg-node-bg: #ffffff;
-      --svg-line: #cbd5e1;
-      --svg-charge-pos: #ef4444;
-      --svg-charge-neg: #3b82f6;
-    }
-
-    body.dark {
-      --bg: #050b14;
-      --bg-secondary: #08111f;
-      --surface: rgba(15, 23, 42, 0.82);
-      --surface-solid: #0f172a;
-      --text: #f8fafc;
-      --text-soft: #94a3b8;
-      --border: rgba(255, 255, 255, 0.09);
-      --shadow: 0 20px 55px rgba(0, 0, 0, 0.35);
-      --shadow-hover: 0 25px 70px rgba(37, 99, 235, 0.2);
-
-      --svg-node-bg: #1e293b;
-      --svg-line: #334155;
-      --svg-charge-pos: #f87171;
-      --svg-charge-neg: #60a5fa;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      transition: background .35s ease, color .35s ease;
-    }
-    a { color: inherit; text-decoration: none; }
-    button { cursor: pointer; font: inherit; }
-
-    /* BACKGROUND ORBS */
-    .background {
-      position: fixed; inset: 0; z-index: -5; overflow: hidden; pointer-events: none;
-    }
-    .orb {
-      position: absolute; width: 440px; height: 440px; border-radius: 50%;
-      filter: blur(80px); opacity: .16; animation: floatOrb 12s ease-in-out infinite;
-    }
-    .orb.one { background: #2563eb; top: -180px; left: -120px; }
-    .orb.two { background: #7c3aed; right: -160px; top: 25%; animation-delay: -4s; }
-    .orb.three { background: #06b6d4; bottom: -200px; left: 35%; animation-delay: -7s; }
-    @keyframes floatOrb {
-      0%,100% { transform: translate3d(0,0,0) scale(1); }
-      50% { transform: translate3d(35px,-25px,0) scale(1.08); }
-    }
-
-    /* HEADER */
-    header {
-      position: sticky; top: 0; z-index: 1000; width: 100%;
-      border-bottom: 1px solid var(--border);
-      background: color-mix(in srgb, var(--surface-solid) 76%, transparent);
-      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-    }
-    .nav {
-      width: min(1180px, 92%); margin: auto; min-height: 74px;
-      display: flex; align-items: center; justify-content: space-between; gap: 20px;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -.5px; }
-    .brand-icon {
-      width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; font-size: 20px; box-shadow: 0 10px 25px rgba(37,99,235,.25);
-    }
-    .brand-name { font-size: 20px; }
-    .brand-name span { color: var(--primary); }
-    .nav-links { display: flex; align-items: center; gap: 8px; }
-    .nav-links a {
-      padding: 10px 14px; border-radius: 10px; color: var(--text-soft);
-      font-size: 14px; font-weight: 650; transition: var(--transition);
-    }
-    .nav-links a:hover, .nav-links a.active {
-      color: var(--primary); background: rgba(37,99,235,.08);
-    }
-    .icon-btn {
-      width: 42px; height: 42px; border: 1px solid var(--border);
-      background: var(--surface); color: var(--text); border-radius: 12px;
-      transition: var(--transition);
-    }
-
-    /* HERO */
-    .article-header { width: min(1180px, 92%); margin: auto; padding: 45px 0 25px; }
-    .breadcrumb {
-      display: flex; align-items: center; gap: 8px; font-size: 13px;
-      font-weight: 700; color: var(--text-soft); margin-bottom: 16px;
-    }
-    .breadcrumb a:hover { color: var(--primary); }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px;
-      border-radius: 999px; background: rgba(37,99,235,.09); color: var(--primary);
-      font-size: 13px; font-weight: 800; border: 1px solid rgba(37,99,235,.12); margin-bottom: 14px;
-    }
-    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; }
-    .article-header h1 {
-      font-size: clamp(28px, 4.5vw, 44px); letter-spacing: -1.5px; margin-bottom: 10px; line-height: 1.15;
-    }
-    .gradient-text {
-      background: linear-gradient(100deg, #2563eb, #7c3aed, #06b6d4);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-
-    .container { width: min(1180px, 92%); margin: auto; padding-bottom: 80px; }
-
-    /* SECTION TITLE */
-    .section-title {
-      font-size: 24px; font-weight: 800; letter-spacing: -0.5px; margin: 45px 0 20px;
-      display: flex; align-items: center; gap: 10px;
-    }
-
-    /* =========================================================
-       SVG CONCEPT MAP OVERVIEW CANVAS
-       ========================================================= */
+    /* Specific enhancements for mobile mind-map container */
     .mindmap-viewport {
-      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 30px 20px; box-shadow: var(--shadow); backdrop-filter: blur(14px);
-      overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 40px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: 24px 16px;
+      box-shadow: var(--shadow);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 40px;
     }
     .mindmap-svg {
-      min-width: 950px; width: 100%; height: 520px; display: block; margin: auto;
+      min-width: 900px;
+      width: 100%;
+      height: 480px;
+      display: block;
+      margin: auto;
     }
     .node-rect {
-      rx: 14; ry: 14; fill: var(--svg-node-bg); stroke: var(--border); stroke-width: 2;
-      transition: var(--transition); filter: drop-shadow(0 4px 10px rgba(0,0,0,0.04));
+      rx: 12; ry: 12;
+      fill: var(--paper-2);
+      stroke: var(--line);
+      stroke-width: 1.5;
+      transition: transform .3s var(--ease);
     }
-    .node-rect:hover { stroke: var(--primary); transform: translateY(-2px); cursor: pointer; }
-    .node-core { fill: url(#coreGrad); stroke: none; }
-    .node-text-title { font-size: 13px; font-weight: 800; fill: var(--text); font-family: inherit; }
-    .node-text-sub { font-size: 11px; font-weight: 600; fill: var(--text-soft); font-family: inherit; }
-    .node-core-text { font-size: 15px; font-weight: 900; fill: #ffffff; text-anchor: middle; font-family: inherit; }
+    .node-rect:hover {
+      stroke: var(--rust);
+      cursor: pointer;
+    }
+    .node-text-title {
+      font-size: 13px; font-weight: 700; fill: var(--ink); font-family: var(--font-body);
+    }
+    .node-text-sub {
+      font-size: 11px; font-weight: 500; fill: var(--muted); font-family: var(--font-mono);
+    }
+    .node-core-text {
+      font-size: 14px; font-weight: 700; fill: var(--paper); text-anchor: middle; font-family: var(--font-display);
+    }
     .link-path {
-      fill: none; stroke: var(--svg-line); stroke-width: 2.5; stroke-dasharray: 4,4;
-      animation: dashMove 30s linear infinite;
+      fill: none; stroke: var(--line); stroke-width: 2; stroke-dasharray: 4,4;
     }
-    @keyframes dashMove { to { stroke-dashoffset: -200; } }
-
-    /* =========================================================
-       EXHAUSTIVE 4-PILLAR EXPANDED CARDS GRID
-       ========================================================= */
-    .mindmap-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 24px;
-    }
-    .mind-card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 28px; box-shadow: var(--shadow); backdrop-filter: blur(12px);
-      display: flex; flex-direction: column; justify-content: space-between;
-    }
-    .mind-card-header {
-      display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;
-    }
-    .mind-tag {
-      font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;
-      padding: 4px 10px; border-radius: 6px; background: rgba(37,99,235,0.08); color: var(--primary);
-    }
-    .mind-card h3 { font-size: 19px; margin-bottom: 14px; }
-    .mind-block {
-      background: color-mix(in srgb, var(--surface-solid) 90%, transparent);
-      border-left: 4px solid var(--primary); border-radius: 10px; padding: 12px 16px;
-      margin-bottom: 12px; font-size: 13.5px; line-height: 1.6;
-    }
-    .mind-block strong { color: var(--text); display: block; margin-bottom: 2px; }
-
-    /* FORMULA CHIPS */
-    .formula-badge {
-      display: inline-block; background: color-mix(in srgb, var(--primary) 10%, var(--surface));
-      border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; margin: 4px 0;
-      font-size: 14px; font-weight: 700; color: var(--primary); width: 100%; overflow-x: auto;
-    }
-
-    /* GRAPH VECTORS */
     .graph-frame {
-      background: color-mix(in srgb, var(--surface-solid) 92%, transparent);
-      border: 1px solid var(--border); border-radius: 14px; padding: 14px;
-      display: flex; justify-content: center; align-items: center; margin-top: 10px;
+      background: var(--paper-2);
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 12px;
     }
-    .axis { stroke: var(--text-soft); stroke-width: 2; stroke-linecap: round; }
-    .axis-label { font-size: 11px; font-weight: 700; fill: var(--text-soft); }
-    .curve-blue { stroke: var(--primary); stroke-width: 3; fill: none; stroke-linecap: round; }
-    .curve-red { stroke: #ef4444; stroke-width: 3; fill: none; stroke-linecap: round; }
-    .curve-dashed { stroke: #7c3aed; stroke-width: 2.5; fill: none; stroke-dasharray: 4,4; }
-
-    /* DIRECT MISSION SEAMLESS NAVIGATION BAR */
-    .mission-bar {
-      margin-top: 55px; padding: 35px; border-radius: 24px;
-      background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 10%, var(--surface)), var(--surface));
-      border: 1px solid var(--border); box-shadow: var(--shadow);
-    }
-    .mission-bar h3 { font-size: 22px; margin-bottom: 8px; }
-    .mission-bar p { color: var(--text-soft); font-size: 14px; margin-bottom: 24px; }
-    .action-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;
-    }
-    .action-card {
-      background: var(--surface-solid); border: 1px solid var(--border); border-radius: 16px;
-      padding: 20px; transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between;
-    }
-    .action-card:hover { transform: translateY(-4px); border-color: var(--primary); box-shadow: var(--shadow-hover); }
-    .action-badge {
-      display: inline-block; font-size: 11px; font-weight: 800; text-transform: uppercase;
-      color: var(--primary); margin-bottom: 8px;
-    }
-    .action-card h4 { font-size: 16px; margin-bottom: 6px; }
-    .action-card p { font-size: 13px; color: var(--text-soft); line-height: 1.5; margin-bottom: 15px; }
-    .action-link {
-      display: inline-flex; align-items: center; gap: 6px; font-weight: 800; font-size: 13.5px;
-      color: var(--primary);
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 60px 0 25px;
-    }
-    .footer-inner { width: min(1180px, 92%); margin: auto; }
-    .footer-grid {
-      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 35px; padding-bottom: 45px;
-    }
-    .footer-brand p { max-width: 330px; color: var(--text-soft); line-height: 1.7; font-size: 14px; margin-top: 15px; }
-    .footer-column h4 { margin-bottom: 17px; font-size: 15px; }
-    .footer-column a { display: block; color: var(--text-soft); font-size: 14px; margin-bottom: 11px; transition: var(--transition); }
-    .footer-column a:hover { color: var(--primary); transform: translateX(3px); }
-    .footer-bottom {
-      border-top: 1px solid var(--border); padding-top: 22px; display: flex;
-      justify-content: space-between; align-items: center; flex-wrap: wrap;
-      gap: 15px; color: var(--text-soft); font-size: 13px;
-    }
-    .author-credit { font-weight: 700; color: var(--text); }
-    .author-credit span { color: var(--primary); }
-
-    @media (max-width: 900px) {
-      .nav-links { display: none; }
-      .footer-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 600px) {
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-    }
+    .axis { stroke: var(--muted); stroke-width: 1.5; stroke-linecap: round; }
+    .axis-label { font-size: 11px; font-weight: 600; fill: var(--muted); font-family: var(--font-mono); }
+    .curve-rust { stroke: var(--rust); stroke-width: 2.5; fill: none; stroke-linecap: round; }
+    .curve-teal { stroke: var(--teal); stroke-width: 2.5; fill: none; stroke-linecap: round; }
   </style>
 </head>
+
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- Background Orbs -->
-  <div class="background">
-    <div class="orb one"></div>
-    <div class="orb two"></div>
-    <div class="orb three"></div>
-  </div>
-
-  <!-- Header -->
-  <header>
-    <nav class="nav">
-      <a href="/index.html" class="brand">
-        <div class="brand-icon">S</div>
-        <div class="brand-name">Shorveer<span>Notes</span></div>
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="../index.html" aria-label="Shorveer Notes home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+          </svg>
+        </span>
+        <span class="brand-name">Shorveer<em>Notes</em></span>
       </a>
+
       <div class="nav-links">
-        <a href="/index.html">Home</a>
-        <a href="/physics/index.html" class="active">Physics Hub</a>
-        <a href="/chemistry/index.html">Chemistry</a>
-        <a href="/mathematics/index.html">Mathematics</a>
-        <a href="/exam-info.html">Exam Info</a>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Physics Hub</a>
+        <a href="chapter1.html">Detailed Notes</a>
+        <a href="ch1-short.html" style="color:var(--ink); font-weight:700;">Mind Map</a>
+        <a href="../about.html">About</a>
       </div>
+
       <div class="nav-actions">
-        <button class="icon-btn" id="themeButton" aria-label="Toggle theme">🌙</button>
+        <button class="nav-icon" id="searchButton" aria-label="Open search" title="Search (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/>
+          </svg>
+        </button>
+
+        <button class="nav-icon" id="themeButton" aria-label="Change theme" aria-expanded="false" title="Change theme">
+          <span class="palette-dot" aria-hidden="true"></span>
+        </button>
+
+        <button class="nav-icon mobile-toggle" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <path d="M3 6h18M3 12h18M3 18h18"/>
+          </svg>
+        </button>
       </div>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Physics Hub</a>
+      <a href="chapter1.html">Chapter 1 Detailed Notes</a>
+      <a href="ch1-short.html">Chapter 1 Quick Revision</a>
+      <a href="ch1-pyq.html">Solved PYQs</a>
+      <a href="../about.html">About Shorveer</a>
+    </div>
   </header>
 
-  <!-- Hero Header -->
-  <div class="article-header">
-    <div class="breadcrumb">
-      <a href="/index.html">Home</a> <span>/</span>
-      <a href="/physics/index.html">Physics</a> <span>/</span>
-      <span>Chapter 1 Quick Revision</span>
+  <!-- ============ THEME PICKER POPOVER ============ -->
+  <div class="theme-pop" id="themePop" role="dialog" aria-label="Choose a theme">
+    <h4>Pick a look</h4>
+    <div class="theme-grid">
+      <button class="theme-opt" data-theme-value="notebook" aria-pressed="true">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#fdfaf3"></span>
+          <span style="background:#e8b64c"></span>
+          <span style="background:#bf5a3c"></span>
+          <span style="background:#1c1c1a"></span>
+        </span>
+        <b>Notebook</b>
+        <small>Warm paper, classic</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="chalkboard" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#1e2a24"></span>
+          <span style="background:#f0d97a"></span>
+          <span style="background:#7bc3bf"></span>
+          <span style="background:#ebe6d5"></span>
+        </span>
+        <b>Chalkboard</b>
+        <small>Dark green, chalk</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="blueprint" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#0f2b4c"></span>
+          <span style="background:#7ec8f5"></span>
+          <span style="background:#ff9d7c"></span>
+          <span style="background:#e2eefb"></span>
+        </span>
+        <b>Blueprint</b>
+        <small>Navy, technical</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="sunset" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#241226"></span>
+          <span style="background:#ff8a5b"></span>
+          <span style="background:#ffb87a"></span>
+          <span style="background:#ffe9d6"></span>
+        </span>
+        <b>Sunset</b>
+        <small>Plum, warm glow</small>
+      </button>
     </div>
-    <div class="badge">
-      <span class="badge-dot"></span> Visual Mind Map & Formula Architecture
-    </div>
-    <h1>Electric Charges and Fields: <span class="gradient-text">Complete Mind Map & Formulas</span></h1>
-    <p style="color: var(--text-soft); max-width: 760px; font-size: 15px; line-height: 1.6;">
-      The entire Chapter 1 synthesized into one interconnected visual framework. Covers charge properties, Coulomb vectors, field distributions, dipole orientations, and all Gauss law applications with variation graphs.
-    </p>
+    <p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Saved across all chapters.</p>
   </div>
 
-  <main class="container">
+  <main id="main">
 
-    <!-- ================= 1. INTERACTIVE FULL SVG CANVAS ================= -->
-    <div class="section-title">🧠 Chapter 1 Master Mind Map Architecture</div>
-    
-    <div class="mindmap-viewport">
-      <svg class="mindmap-svg" viewBox="0 0 950 500">
-        <defs>
-          <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#2563eb" />
-            <stop offset="100%" stop-color="#7c3aed" />
-          </linearGradient>
-        </defs>
-
-        <!-- Dynamic Branch Lines -->
-        <path class="link-path" d="M 475 250 C 350 250, 270 120, 185 120" />
-        <path class="link-path" d="M 475 250 C 350 250, 270 380, 185 380" />
-        <path class="link-path" d="M 475 250 C 600 250, 680 120, 765 120" />
-        <path class="link-path" d="M 475 250 C 600 250, 680 380, 765 380" />
-
-        <!-- Sub Branch Connectors -->
-        <path class="link-path" d="M 185 120 L 70 70" />
-        <path class="link-path" d="M 185 120 L 70 160" />
-        <path class="link-path" d="M 185 380 L 70 330" />
-        <path class="link-path" d="M 185 380 L 70 420" />
-
-        <path class="link-path" d="M 765 120 L 880 70" />
-        <path class="link-path" d="M 765 120 L 880 160" />
-        <path class="link-path" d="M 765 380 L 880 330" />
-        <path class="link-path" d="M 765 380 L 880 420" />
-
-        <!-- CENTRAL CORE NODE -->
-        <circle cx="475" cy="250" r="70" class="node-core" filter="drop-shadow(0 10px 25px rgba(37,99,235,0.4))" />
-        <text x="475" y="244" class="node-core-text">CHAPTER 01</text>
-        <text x="475" y="264" class="node-core-text" style="font-size:11px; opacity:0.85;">Charges & Fields</text>
-
-        <!-- BRANCH 1: PROPERTIES OF CHARGE & COULOMB -->
-        <g transform="translate(95, 80)">
-          <rect width="180" height="75" class="node-rect" />
-          <text x="14" y="28" class="node-text-title">⚡ 1. Electric Charges</text>
-          <text x="14" y="46" class="node-text-sub">Quantisation: Q = ±ne</text>
-          <text x="14" y="62" class="node-text-sub">Conservation & Additivity</text>
-        </g>
-        <g transform="translate(5, 50)">
-          <rect width="130" height="38" class="node-rect" />
-          <text x="10" y="22" class="node-text-sub" style="font-weight:700;">Coulomb: F=kq₁q₂/r²</text>
-        </g>
-        <g transform="translate(5, 140)">
-          <rect width="130" height="38" class="node-rect" />
-          <text x="10" y="22" class="node-text-sub" style="font-weight:700;">Vector: F₁₂ = -F₂₁</text>
-        </g>
-
-        <!-- BRANCH 2: ELECTRIC FIELD & FLUX -->
-        <g transform="translate(95, 345)">
-          <rect width="180" height="75" class="node-rect" />
-          <text x="14" y="28" class="node-text-title">🌐 2. Electric Field (E)</text>
-          <text x="14" y="46" class="node-text-sub">Point Charge: E = kQ/r²</text>
-          <text x="14" y="62" class="node-text-sub">Continuous: E = k∫dq/r²</text>
-        </g>
-        <g transform="translate(5, 310)">
-          <rect width="130" height="38" class="node-rect" />
-          <text x="10" y="22" class="node-text-sub" style="font-weight:700;">Field Line Axioms</text>
-        </g>
-        <g transform="translate(5, 400)">
-          <rect width="130" height="38" class="node-rect" />
-          <text x="10" y="22" class="node-text-sub" style="font-weight:700;">Flux: Φ = E·A cosθ</text>
-        </g>
-
-        <!-- BRANCH 3: ELECTRIC DIPOLE -->
-        <g transform="translate(675, 80)">
-          <rect width="180" height="75" class="node-rect" />
-          <text x="14" y="28" class="node-text-title">🏹 3. Electric Dipole</text>
-          <text x="14" y="46" class="node-text-sub">Moment: p = q(2a)</text>
-          <text x="14" y="62" class="node-text-sub">Direction: -q to +q</text>
-        </g>
-        <g transform="translate(815, 50)">
-          <rect width="130" height="38" class="node-rect" />
-          <text x="10" y="22" class="node-text-sub" style="font-weight:700;">Axial: E = 2kp/r³</text>
-        </g>
-        <g transform="translate(815, 140)">
-          <rect width="130" height="38" class="node-rect" />
-          <text x="10" y="22" class="node-text-sub" style="font-weight:700;">Equat: E = -kp/r³</text>
-        </g>
-
-        <!-- BRANCH 4: GAUSS'S THEOREM & APPLICATIONS -->
-        <g transform="translate(675, 345)">
-          <rect width="180" height="75" class="node-rect" />
-          <text x="14" y="28" class="node-text-title">📐 4. Gauss's Law</text>
-          <text x="14" y="46" class="node-text-sub">Total Flux: ∮E·ds = q/ε₀</text>
-          <text x="14" y="62" class="node-text-sub">3 Core Symmetries</text>
-        </g>
-        <g transform="translate(815, 310)">
-          <rect width="130" height="38" class="node-rect" />
-          <text x="10" y="22" class="node-text-sub" style="font-weight:700;">Wire: E = λ/(2πε₀r)</text>
-        </g>
-        <g transform="translate(815, 400)">
-          <rect width="130" height="38" class="node-rect" />
-          <text x="10" y="22" class="node-text-sub" style="font-weight:700;">Sheet: E = σ/(2ε₀)</text>
-        </g>
-      </svg>
-    </div>
-
-    <!-- ================= 2. THE 4 EXPANDED CONCEPT PILLARS ================= -->
-    <div class="section-title">📊 Detailed Formula Sheets & Vector Analysis</div>
-
-    <div class="mindmap-grid">
-
-      <!-- CARD 1: CHARGE & COULOMB -->
-      <div class="mind-card">
-        <div>
-          <div class="mind-card-header">
-            <span class="mind-tag">Pillar 1</span>
-            <span style="font-size:12px; font-weight:700; color:var(--text-soft);">NCERT Sec 1.2 - 1.6</span>
-          </div>
-          <h3>Electric Charge & Coulomb's Law</h3>
-          
-          <div class="mind-block">
-            <strong>Charge Properties:</strong>
-            • Quantisation: $Q = \pm ne$ ($e = 1.602 \times 10^{-19}\text{ C}$)<br>
-            • Additivity: $Q_{\text{total}} = \sum q_i$<br>
-            • Conservation: In an isolated system, net charge is invariant.
-          </div>
-
-          <div class="mind-block">
-            <strong>Coulomb's Law in Vector Form:</strong>
-            $$\vec{F}_{21} = \frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r^2}\hat{r}_{21} = -\vec{F}_{12}$$
-            • $k = \frac{1}{4\pi\varepsilon_0} \approx 9 \times 10^9\text{ N}\cdot\text{m}^2/\text{C}^2$<br>
-            • In medium: $F_{\text{med}} = \frac{F_{\text{vac}}}{K}$ where $K = \varepsilon_r$.
-          </div>
-
-          <div class="mind-block">
-            <strong>Superposition Principle:</strong>
-            $$\vec{F}_1 = \vec{F}_{12} + \vec{F}_{13} + \dots + \vec{F}_{1n} = \frac{q_1}{4\pi\varepsilon_0}\sum_{i=2}^n \frac{q_i}{r_{1i}^2}\hat{r}_{1i}$$
-          </div>
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="kicker">
+          <span class="dot"></span>
+          <span>Chapter 01 · 15-Minute Revision Blueprint</span>
         </div>
 
-        <div class="formula-badge">
-          Force Ratio in Dielectric: $F_{\text{med}} = \frac{F_{\text{air}}}{K}$
+        <h1>
+          Charges & Fields:
+          <span style="position:relative;display:inline-block">
+            <span style="position:relative;z-index:1">The Complete</span>
+          </span>
+          <em>Mind Map.</em>
+        </h1>
+
+        <p class="hero-description">
+          The entire chapter deconstructed into one interconnected roadmap. Master Coulomb vectors, dipole torque, Gauss surfaces, and the deep parallels between electrostatic balance and the ups & downs of student life.
+        </p>
+
+        <!-- Dynamic Motivational Quotes Rotator -->
+        <div class="motivation" aria-live="polite">
+          <svg class="motivation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27 8.91 8.26 12 2z"/>
+          </svg>
+          <span class="motivation-text show" id="motivationText">"Charge is conserved; so is the hard work you put in today." — Jatin Sandilya</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#interactive-map">
+            Explore Mind Map
+            <span class="btn-arrow">→</span>
+          </a>
+          <a class="btn btn-light" href="#pillars">Four Concept Pillars</a>
+        </div>
+
+        <div class="hero-note">
+          <span>Synthesized by <strong>Jatin Sandilya</strong> · High-Yield Formula Tree</span>
         </div>
       </div>
 
-      <!-- CARD 2: ELECTRIC FIELD & FLUX -->
-      <div class="mind-card">
-        <div>
-          <div class="mind-card-header">
-            <span class="mind-tag">Pillar 2</span>
-            <span style="font-size:12px; font-weight:700; color:var(--text-soft);">NCERT Sec 1.7 - 1.9</span>
-          </div>
-          <h3>Electric Field & Flux Dynamics</h3>
-
-          <div class="mind-block">
-            <strong>Electric Field Intensity ($\vec{E}$):</strong>
-            • Point Charge: $\vec{E} = \frac{\vec{F}}{q_0} = \frac{1}{4\pi\varepsilon_0}\frac{Q}{r^2}\hat{r}$<br>
-            • Unit: $\text{N/C}$ or $\text{V/m}$ | Dimensions: $[M^1L^1T^{-3}A^{-1}]$<br>
-            • Continuous System: $\vec{E} = \frac{1}{4\pi\varepsilon_0}\int \frac{dq}{r^2}\hat{r}$
+      <div class="hero-art" id="heroArt">
+        <div class="hero-stage" id="heroStage">
+          <div class="polaroid">
+            <img class="hero-img" id="heroImage"
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
+              alt="Electric circuit and electrostatic charge fields" loading="eager" width="900" height="1125">
+            <div class="polaroid-caption">unseen fields shaping reality</div>
           </div>
 
-          <div class="mind-block">
-            <strong>Electric Field Lines (5 Cardinal Rules):</strong>
-            1. Start at $+q$, terminate at $-q$ (no closed loops).<br>
-            2. Tangent gives direction of $\vec{E}$ at that point.<br>
-            3. Two lines NEVER intersect.<br>
-            4. Normal to conducting surfaces at static equilibrium.
+          <div class="sticky">
+            opposite charges attract,<br>tough times build grit ⚡
           </div>
 
-          <div class="mind-block">
-            <strong>Electric Flux ($\Phi_E$):</strong>
-            $$\Phi_E = \iint_S \vec{E}\cdot d\vec{A} = EA\cos\theta$$
-            Unit: $\text{N}\cdot\text{m}^2/\text{C}$ or $\text{V}\cdot\text{m}$ (Scalar Quantity).
-          </div>
-        </div>
-
-        <!-- Mini Graph: E vs r for point charge -->
-        <div class="graph-frame">
-          <svg viewBox="0 0 240 110" width="100%" height="110">
-            <line x1="30" y1="90" x2="220" y2="90" class="axis" />
-            <line x1="30" y1="90" x2="30" y2="15" class="axis" />
-            <text x="210" y="104" class="axis-label">r</text>
-            <text x="15" y="25" class="axis-label">E</text>
-            <path d="M 38 25 Q 55 70, 205 86" class="curve-blue" />
-            <text x="100" y="55" font-size="11" font-weight="700" fill="#2563eb">Point: E ∝ 1/r²</text>
+          <svg class="doodle" viewBox="0 0 130 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M6 12 C 40 4, 70 20, 96 50" stroke-dasharray="4 5"/>
+            <path d="M92 34 L 100 52 L 82 52" />
           </svg>
         </div>
       </div>
+    </section>
 
-      <!-- CARD 3: ELECTRIC DIPOLE -->
-      <div class="mind-card">
+    <!-- ============ TRUST BAR ============ -->
+    <section class="trust" aria-label="Chapter Coverage">
+      <div class="trust-inner container">
+        <div class="trust-item"><b>15 Minutes</b>Complete Review Time</div>
+        <div class="trust-item"><b>4 Core Pillars</b>Charges, Field, Dipole, Gauss</div>
+        <div class="trust-item"><b>100% Vector Focus</b>Directions & Boundary Proofs</div>
+        <div class="trust-item"><b>Life Analogies</b>Connecting Physics to Reality</div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 1: MASTER SVG MIND MAP ============ -->
+    <section class="section container reveal" id="interactive-map">
+      <div class="section-head">
+        <span class="section-eyebrow">visual synthesis</span>
+        <h2>Master Chapter Architecture.<br><em>Scroll horizontally on mobile to trace every branch.</em></h2>
+      </div>
+
+      <div class="mindmap-viewport">
+        <svg class="mindmap-svg" viewBox="0 0 920 480">
+          <defs>
+            <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#bf5a3c"/>
+              <stop offset="100%" stop-color="#e8b64c"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Branch connectors -->
+          <path class="link-path" d="M 460 240 C 340 240, 260 110, 180 110" />
+          <path class="link-path" d="M 460 240 C 340 240, 260 370, 180 370" />
+          <path class="link-path" d="M 460 240 C 580 240, 660 110, 740 110" />
+          <path class="link-path" d="M 460 240 C 580 240, 660 370, 740 370" />
+
+          <!-- Center Node -->
+          <circle cx="460" cy="240" r="65" fill="url(#coreGrad)" style="filter: drop-shadow(0 6px 18px rgba(191,90,60,.35));" />
+          <text x="460" y="235" class="node-core-text">CHAPTER 01</text>
+          <text x="460" y="255" class="node-core-text" style="font-size:11px; opacity:0.9;">Charges & Fields</text>
+
+          <!-- Node 1: Charges & Coulomb -->
+          <g transform="translate(90, 70)">
+            <rect width="180" height="75" class="node-rect" />
+            <text x="14" y="26" class="node-text-title">⚡ 1. Electric Charges</text>
+            <text x="14" y="44" class="node-text-sub">Quantisation: Q = ±ne</text>
+            <text x="14" y="60" class="node-text-sub">Coulomb: F = kq₁q₂/r²</text>
+          </g>
+
+          <!-- Node 2: Electric Field & Flux -->
+          <g transform="translate(90, 330)">
+            <rect width="180" height="75" class="node-rect" />
+            <text x="14" y="26" class="node-text-title">🌐 2. Electric Field (E)</text>
+            <text x="14" y="44" class="node-text-sub">Point Charge: E = kQ/r²</text>
+            <text x="14" y="60" class="node-text-sub">Flux: Φ = ∮E·dA = EA cosθ</text>
+          </g>
+
+          <!-- Node 3: Electric Dipole -->
+          <g transform="translate(650, 70)">
+            <rect width="180" height="75" class="node-rect" />
+            <text x="14" y="26" class="node-text-title">🏹 3. Electric Dipole</text>
+            <text x="14" y="44" class="node-text-sub">Moment: p = q(2a)</text>
+            <text x="14" y="60" class="node-text-sub">Torque: τ = p × E (pE sinθ)</text>
+          </g>
+
+          <!-- Node 4: Gauss's Law -->
+          <g transform="translate(650, 330)">
+            <rect width="180" height="75" class="node-rect" />
+            <text x="14" y="26" class="node-text-title">📐 4. Gauss's Law</text>
+            <text x="14" y="44" class="node-text-sub">Total Flux: ∮E·ds = q_encl/ε₀</text>
+            <text x="14" y="60" class="node-text-sub">Wire, Sheet, Spherical Shell</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 2: 4 PILLARS WITH 3D FLIP & LIFE ANALOGIES ============ -->
+    <section class="section container reveal" id="pillars">
+      <div class="section-head">
+        <span class="section-eyebrow">interactive 3d cards</span>
+        <h2>The 4 Pillars of Chapter 1.<br><em>Hover or tap to flip for physical formulas and profound life lessons.</em></h2>
+      </div>
+
+      <div class="subject-list">
+
+        <!-- Pillar 1: Charge & Coulomb -->
+        <div class="flip-card" style="--subject-color: #bf5a3c" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                  </div>
+                  <div class="subject-tag">Pillar 01 · Fundamentals</div>
+                </div>
+                <h3>Charge Properties & Coulomb Vectors</h3>
+                <p><strong>Quantisation:</strong> $Q = \pm ne$ ($e = 1.6 \times 10^{-19}\text{ C}$).<br>
+                   <strong>Coulomb's Law:</strong> $\vec{F}_{21} = \frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r^2}\hat{r}_{21} = -\vec{F}_{12}$.<br>
+                   In dielectric medium ($K$): $F_{\text{med}} = \frac{F_{\text{vac}}}{K}$.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Flip for life analogy <span class="arrow">→</span></span>
+                <span class="subject-count">Newton's 3rd Law Pair</span>
+              </div>
+              <span class="flip-hint">flip for wisdom</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Life Connection: Mutual Impact</div>
+                <div class="back-rule">"Just like $\vec{F}_{12} = -\vec{F}_{21}$, no action in life is one-sided." — Jatin Sandilya</div>
+                <p class="back-example">
+                  Whenever you put effort into the world, the universe pushes back. Resistance and friction are proof that you are moving forward, not that you are failing.
+                </p>
+              </div>
+              <span class="subject-meta">Charge is Conserved, Effort is Never Lost</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Field & Flux -->
+        <div class="flip-card" style="--subject-color: #2a7d7a" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+                  </div>
+                  <div class="subject-tag">Pillar 02 · Influence</div>
+                </div>
+                <h3>Electric Field & Flux Lines</h3>
+                <p><strong>Field Intensity:</strong> $\vec{E} = \frac{\vec{F}}{q_0} = \frac{kQ}{r^2}\hat{r}$.<br>
+                   <strong>Field Lines:</strong> Start at $+q$, end at $-q$. Never intersect (unambiguous direction).<br>
+                   <strong>Electric Flux:</strong> $\Phi_E = \iint \vec{E}\cdot d\vec{A} = EA\cos\theta$.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Flip for life analogy <span class="arrow">→</span></span>
+                <span class="subject-count">Scalar Flux</span>
+              </div>
+              <span class="flip-hint">flip for wisdom</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Life Connection: Invisible Aura</div>
+                <div class="back-rule">"A charge alters the space around it even before another enters." — Jatin Sandilya</div>
+                <p class="back-example">
+                  Your character and discipline create an invisible field of influence. People around you feel your standards and energy before you even speak a word.
+                </p>
+              </div>
+              <span class="subject-meta">Area Vector Matters: Align with Purpose</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Electric Dipole -->
+        <div class="flip-card" style="--subject-color: #a67823" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                  <div class="subject-tag">Pillar 03 · Balance</div>
+                </div>
+                <h3>Dipole Vectors & Equilibrium</h3>
+                <p><strong>Dipole Moment:</strong> $\vec{p} = q(2\vec{a})$ directed from $-q \to +q$.<br>
+                   <strong>Axial vs Equat:</strong> $E_{\text{axial}} = \frac{2kp}{r^3}$, $E_{\text{eq}} = -\frac{kp}{r^3}$ ($2:1$ ratio).<br>
+                   <strong>Torque & Energy:</strong> $\tau = pE\sin\theta$, $U = -pE\cos\theta$.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Flip for life analogy <span class="arrow">→</span></span>
+                <span class="subject-count">Rotational Force</span>
+              </div>
+              <span class="flip-hint">flip for wisdom</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Life Connection: Navigating Chaos</div>
+                <div class="back-rule">"When external torque rotates you, seek minimum potential energy." — Jatin Sandilya</div>
+                <p class="back-example">
+                  In a uniform field, the net force is zero, yet torque tries to twist the dipole. In life, external pressures will try to shake your balance. Align your internal vector with your long-term goals to find stability ($\theta=0^\circ$).
+                </p>
+              </div>
+              <span class="subject-meta">Equilibrium in the Storm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 4: Gauss's Law -->
+        <div class="flip-card" style="--subject-color: #7a4b8a" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+                  </div>
+                  <div class="subject-tag">Pillar 04 · Symmetry</div>
+                </div>
+                <h3>Gauss's Law & 3 Symmetries</h3>
+                <p><strong>Total Flux:</strong> $\oint \vec{E}\cdot d\vec{s} = \frac{q_{\text{enclosed}}}{\varepsilon_0}$.<br>
+                   • Infinite Wire: $E = \frac{\lambda}{2\pi\varepsilon_0 r}$ ($E \propto 1/r$).<br>
+                   • Infinite Plane Sheet: $E = \frac{\sigma}{2\varepsilon_0}$ (constant).<br>
+                   • Spherical Shell: Inside ($r < R$) $E=0$; Outside ($r > R$) $E = \frac{kQ}{r^2}$.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Flip for life analogy <span class="arrow">→</span></span>
+                <span class="subject-count">Electrostatic Shielding</span>
+              </div>
+              <span class="flip-hint">flip for wisdom</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Life Connection: Shield Your Mind</div>
+                <div class="back-rule">"Inside a closed conductor, electric field is always zero." — Jatin Sandilya</div>
+                <p class="back-example">
+                  Electrostatic shielding protects sensitive instruments from external lightning storms. Build a mental shield around your goals so negative noise and external opinions cannot perturb your inner focus.
+                </p>
+              </div>
+              <span class="subject-meta">Inner Peace Under Heavy External Flux</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ SECTION 3: ESSENTIAL GRAPHS ============ -->
+    <section class="section container reveal">
+      <div class="section-head">
+        <span class="section-eyebrow">graphical mastery</span>
+        <h2>Crucial Variation Curves.<br><em>CBSE examiners frequently award 2-3 marks for these exact sketches.</em></h2>
+      </div>
+
+      <div class="real-life">
+
+        <!-- Graph 1 -->
+        <article class="rl-card" style="--rl-color: #bf5a3c">
+          <div class="rl-badge">1/r²</div>
+          <div class="rl-body">
+            <div class="rl-subject">Point Charge & Dipole Comparison</div>
+            <div class="rl-title">Electric Field vs Distance ($r$)</div>
+            <p class="rl-text">
+              A point charge field drops as $E \propto \frac{1}{r^2}$, while an electric dipole field decays much faster as $E \propto \frac{1}{r^3}$. Notice the steeper slope of the dipole curve.
+            </p>
+            <div class="graph-frame">
+              <svg viewBox="0 0 240 100" width="100%" height="100">
+                <line x1="30" y1="85" x2="220" y2="85" class="axis" />
+                <line x1="30" y1="85" x2="30" y2="15" class="axis" />
+                <text x="210" y="96" class="axis-label">r</text>
+                <text x="15" y="22" class="axis-label">E</text>
+                <path d="M 38 22 Q 60 70, 210 82" class="curve-rust" />
+                <text x="110" y="52" font-size="10" font-weight="700" fill="#bf5a3c">Point: E ∝ 1/r²</text>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <!-- Graph 2 -->
+        <article class="rl-card" style="--rl-color: #2a7d7a">
+          <div class="rl-badge">Shell</div>
+          <div class="rl-body">
+            <div class="rl-subject">Thin Spherical Shell (Gauss Application)</div>
+            <div class="rl-title">Field Inside & Outside a Charged Shell</div>
+            <p class="rl-text">
+              For $r < R$, $E = 0$ (no enclosed charge). At $r = R$, field jumps sharply to $E_{\max} = \frac{\sigma}{\varepsilon_0}$. For $r > R$, it falls as $E \propto \frac{1}{r^2}$.
+            </p>
+            <div class="graph-frame">
+              <svg viewBox="0 0 240 100" width="100%" height="100">
+                <line x1="30" y1="85" x2="220" y2="85" class="axis" />
+                <line x1="30" y1="85" x2="30" y2="15" class="axis" />
+                <text x="210" y="96" class="axis-label">r</text>
+                <text x="15" y="22" class="axis-label">E</text>
+                <line x1="90" y1="85" x2="90" y2="25" stroke="var(--line)" stroke-dasharray="3,3" />
+                <text x="85" y="96" font-size="10" font-weight="700" fill="var(--ink)">R</text>
+                <line x1="30" y1="85" x2="90" y2="85" stroke="#2a7d7a" stroke-width="3" />
+                <path d="M 90 25 Q 120 72, 210 82" class="curve-teal" />
+                <circle cx="90" cy="25" r="3" fill="#2a7d7a" />
+                <text x="40" y="78" font-size="9" font-weight="800" fill="#2a7d7a">E = 0</text>
+                <text x="110" y="38" font-size="9" font-weight="700" fill="#2a7d7a">E_max</text>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ NAVIGATION PIPELINE (NEXT MISSION) ============ -->
+    <section class="section container reveal">
+      <div class="notebook" style="grid-template-columns: 1fr;">
         <div>
-          <div class="mind-card-header">
-            <span class="mind-tag">Pillar 3</span>
-            <span style="font-size:12px; font-weight:700; color:var(--text-soft);">NCERT Sec 1.10 - 1.12</span>
-          </div>
-          <h3>Electric Dipole in Fields</h3>
+          <span class="section-eyebrow">preparation workflow</span>
+          <h2 style="font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 12px;">
+            Chapter 1 Quick Revision <em>Completed?</em>
+          </h2>
+          <p style="color:var(--muted); font-size:15px; margin-bottom:24px;">
+            Advance to step-by-step proofs or test your exam readiness with previous year board questions:
+          </p>
 
-          <div class="mind-block">
-            <strong>Dipole Moment Vector ($\vec{p}$):</strong>
-            $$\vec{p} = q \cdot (2\vec{a}) \quad (\text{Conventionally directed } -q \to +q)$$
-            Unit: $\text{C}\cdot\text{m}$ | Scalar charge $\times$ Vector length.
-          </div>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
+            <div style="background:var(--card); border:1px solid var(--line); border-radius:10px; padding:20px;">
+              <span style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--rust);">Long Form Study</span>
+              <h4 style="font-size:17px; margin:6px 0;">Chapter 1 Detailed Notes</h4>
+              <p style="font-size:13.5px; color:var(--muted); margin-bottom:14px;">Step-by-step derivations for axial dipole and Gauss applications.</p>
+              <a href="chapter1.html" style="font-weight:700; color:var(--ink); text-decoration:underline;">Read Long Notes →</a>
+            </div>
 
-          <div class="mind-block">
-            <strong>Dipole Field Derivation Outcomes ($r \gg a$):</strong>
-            • Axial Line: $\vec{E}_{\text{axial}} = \frac{1}{4\pi\varepsilon_0}\frac{2\vec{p}}{r^3}$<br>
-            • Equatorial Line: $\vec{E}_{\text{eq}} = -\frac{1}{4\pi\varepsilon_0}\frac{\vec{p}}{r^3}$<br>
-            • Golden Ratio: $|\vec{E}_{\text{axial}}| = 2 \times |\vec{E}_{\text{eq}}|$
-          </div>
+            <div style="background:var(--card); border:1px solid var(--line); border-radius:10px; padding:20px;">
+              <span style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--teal);">Board Exam Drill</span>
+              <h4 style="font-size:17px; margin:6px 0;">Solved PYQs (2015–2024)</h4>
+              <p style="font-size:13.5px; color:var(--muted); margin-bottom:14px;">Chapter 1 board questions categorized with official marking keys.</p>
+              <a href="ch1-pyq.html" style="font-weight:700; color:var(--ink); text-decoration:underline;">Open Solved PYQs →</a>
+            </div>
 
-          <div class="mind-block">
-            <strong>Dipole in Uniform Electric Field ($\vec{E}$):</strong>
-            • Net Translatory Force: $\vec{F}_{\text{net}} = 0$<br>
-            • Torque: $\vec{\tau} = \vec{p} \times \vec{E} \implies \tau = pE\sin\theta$<br>
-            • Potential Energy: $U = -\vec{p}\cdot\vec{E} = -pE\cos\theta$<br>
-            • Stable: $\theta=0^\circ$ ($U = -pE$) | Unstable: $\theta=180^\circ$ ($U = +pE$)
+            <div style="background:var(--card); border:1.5px solid var(--rust); border-radius:10px; padding:20px;">
+              <span style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--rust);">Next Chapter</span>
+              <h4 style="font-size:17px; margin:6px 0;">Chapter 2: Potential & Capacitance</h4>
+              <p style="font-size:13.5px; color:var(--muted); margin-bottom:14px;">Continue the electrostatics journey into work and stored energy.</p>
+              <a href="chapter2.html" style="font-weight:700; color:var(--rust); text-decoration:underline;">Go to Chapter 02 ➔</a>
+            </div>
           </div>
-        </div>
-
-        <div class="formula-badge">
-          Dipole Falloff: $E \propto \frac{1}{r^3}$ (Faster than point charge)
         </div>
       </div>
+    </section>
 
-      <!-- CARD 4: GAUSS'S THEOREM & APPLICATIONS -->
-      <div class="mind-card">
-        <div>
-          <div class="mind-card-header">
-            <span class="mind-tag">Pillar 4</span>
-            <span style="font-size:12px; font-weight:700; color:var(--text-soft);">NCERT Sec 1.13 - 1.15</span>
-          </div>
-          <h3>Gauss's Theorem & Applications</h3>
-
-          <div class="mind-block">
-            <strong>Gauss's Law Statement:</strong>
-            $$\oint_S \vec{E}\cdot d\vec{s} = \frac{q_{\text{enclosed}}}{\varepsilon_0} = \Phi_{\text{net}}$$
-            Enclosed charge determines total flux regardless of geometry.
-          </div>
-
-          <div class="mind-block">
-            <strong>3 Continuous Charge Densities:</strong>
-            • Linear: $\lambda = dq/dl$ ($\text{C/m}$)<br>
-            • Surface: $\sigma = dq/dA$ ($\text{C/m}^2$)<br>
-            • Volume: $\rho = dq/dV$ ($\text{C/m}^3$)
-          </div>
-
-          <div class="mind-block">
-            <strong>Standard Applications Formulas:</strong>
-            1. Infinite Wire: $E = \frac{\lambda}{2\pi\varepsilon_0 r} \implies E \propto \frac{1}{r}$<br>
-            2. Infinite Sheet: $E = \frac{\sigma}{2\varepsilon_0}$ (Distance Independent)<br>
-            3. Charged Conductor: $E = \frac{\sigma}{\varepsilon_0}$<br>
-            4. Thin Spherical Shell (Radius $R$):<br>
-               - Inside ($r < R$): $E = 0$<br>
-               - Surface ($r = R$): $E = \frac{\sigma}{\varepsilon_0} = \frac{kQ}{R^2}$<br>
-               - Outside ($r > R$): $E = \frac{kQ}{r^2}$
-          </div>
-        </div>
-
-        <!-- Spherical Shell Graph -->
-        <div class="graph-frame">
-          <svg viewBox="0 0 240 110" width="100%" height="110">
-            <line x1="30" y1="90" x2="220" y2="90" class="axis" />
-            <line x1="30" y1="90" x2="30" y2="15" class="axis" />
-            <text x="210" y="104" class="axis-label">r</text>
-            <text x="15" y="25" class="axis-label">E</text>
-
-            <line x1="90" y1="90" x2="90" y2="25" stroke="var(--text-soft)" stroke-dasharray="3,3" />
-            <text x="85" y="104" font-size="10" font-weight="800" fill="var(--text)">R</text>
-
-            <!-- Inside E=0 -->
-            <line x1="30" y1="90" x2="90" y2="90" stroke="#ef4444" stroke-width="3.5" />
-            <text x="40" y="82" font-size="9" font-weight="800" fill="#ef4444">E=0</text>
-
-            <!-- Outside curve -->
-            <path d="M 90 28 Q 120 75, 210 88" class="curve-red" />
-            <circle cx="90" cy="28" r="3" fill="#ef4444" />
-            <text x="100" y="32" font-size="9" font-weight="800" fill="#ef4444">E_max</text>
-            <text x="140" y="70" font-size="9" font-weight="700" fill="var(--text-soft)">E ∝ 1/r²</text>
-          </svg>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ================= 3. SEAMLESS MISSION BAR ================= -->
-    <section class="mission-bar">
-      <div>
-        <h3>🚀 Completed Chapter 1 Quick Revision?</h3>
-        <p>Advance seamlessly through your Class 12 preparation workflow without returning to the main menu:</p>
-      </div>
-
-      <div class="action-grid">
-        <!-- Detailed Notes Link -->
-        <div class="action-card">
-          <div>
-            <span class="action-badge">Exhaustive Theory</span>
-            <h4>Chapter 1 Detailed Notes</h4>
-            <p>Read step-by-step derivations, NCERT explanations, and 5-mark solved problems.</p>
-          </div>
-          <a href="/chapter1.html" class="action-link">Open Long Notes →</a>
-        </div>
-
-        <!-- Solved PYQs Link -->
-        <div class="action-card">
-          <div>
-            <span class="action-badge">Exam Practice</span>
-            <h4>Chapter 1 Solved PYQs</h4>
-            <p>Practice 10 years of CBSE board questions with marking schemes.</p>
-          </div>
-          <a href="/physics/ch1-pyq.html" class="action-link">Open Solved PYQs →</a>
-        </div>
-
-        <!-- Next Chapter Link -->
-        <div class="action-card" style="border-color: var(--primary);">
-          <div>
-            <span class="action-badge" style="color: var(--secondary);">Next Chapter</span>
-            <h4>Chapter 2: Potential & Capacitance</h4>
-            <p>Advance directly to Chapter 2 Quick Revision and Mind Map.</p>
-          </div>
-          <a href="/physics/chapter2.html" class="action-link" style="color: var(--primary-dark);">Go to Chapter 2 Detailed Notes ➔</a>
-        </div>
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta container reveal">
+      <div class="cta-content">
+        <h2>"Master the basics, and the tough questions become routine."</h2>
+        <p>— Jatin Sandilya · Founder of Shorveer Notes</p>
+        <a class="btn btn-gold" href="chapter1.html">
+          Read Chapter 1 In Depth
+          <span class="btn-arrow">→</span>
+        </a>
       </div>
     </section>
 
   </main>
 
-  <!-- Standardized Professional Dynamic Footer -->
+  <!-- ============ FOOTER ============ -->
   <footer>
-    <div class="footer-inner">
+    <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="/index.html" class="brand">
-            <div class="brand-icon">S</div>
-            <div class="brand-name">Shorveer<span>Notes</span></div>
+          <a class="brand" href="../index.html">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+              </svg>
+            </span>
+            <span class="brand-name">Shorveer<em>Notes</em></span>
           </a>
-          <p>A dedicated academic platform providing structured study material, chapter notes, and revision resources for Class 12 Science students.</p>
+          <p>Class 12 Science simplified, visual, and high-yielding for CBSE Board Examinations. Founded by <strong>Jatin Sandilya</strong>.</p>
         </div>
 
         <div class="footer-column">
-          <h4>Subjects</h4>
-          <a href="/physics/index.html">Physics Notes</a>
-          <a href="/chemistry/index.html">Chemistry Notes</a>
-          <a href="/mathematics/index.html">Mathematics Notes</a>
-          <a href="/english/index.html">English Core</a>
+          <h3>Study Hub</h3>
+          <a href="index.html">Physics Hub</a>
+          <a href="../chemistry/index.html">Chemistry Notes</a>
+          <a href="../mathematics/index.html">Mathematics Hub</a>
+          <a href="../english/index.html">English Core</a>
         </div>
 
         <div class="footer-column">
-          <h4>Resources</h4>
-          <a href="/exam-info.html">Exam Blueprints & PYQs</a>
-          <a href="/about-notes.html">How Notes are Prepared</a>
-          <a href="/about.html">About Shorveer Notes</a>
+          <h3>Site</h3>
+          <a href="../exam-info.html">Exam Info</a>
+          <a href="../about-notes.html">About the Notes</a>
+          <a href="../about.html">About Shorveer</a>
+          <a href="../privacy.html">Privacy</a>
+          <a href="../cookies.html">Cookies</a>
         </div>
 
         <div class="footer-column">
-          <h4>Legal & Support</h4>
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/cookies.html">Cookies Policy</a>
-          <a href="mailto:contact@shorveernotes.com">Help & Contact</a>
+          <h3>Connect</h3>
+          <a href="mailto:support.shorveernotes@gmail.com">Contact Us</a>
+          <a href="https://www.youtube.com/@JSEDIZ" target="_blank" rel="noopener noreferrer">YouTube: @JSEDIZ</a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>© <span class="current-year">2026</span> Shorveer Notes. All Rights Reserved.</div>
-        <div class="author-credit">
-          Crafted with Dedication by <span>Jatin Sandilya</span> • Founder of Shorveer Notes
-        </div>
+        <span>© <span id="year"></span> Shorveer Notes · Founded by <strong>Jatin Sandilya</strong></span>
+        <span>Crafted with Warrior Discipline in India</span>
       </div>
     </div>
   </footer>
 
+  <!-- ============ SEARCH MODAL ============ -->
+  <div class="search-layer" id="searchLayer" aria-hidden="true">
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search">
+      <div class="search-top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+          <circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/>
+        </svg>
+        <input id="searchInput" type="search" placeholder="Search chapters, derivations, topics…" autocomplete="off">
+        <button class="search-close" id="searchClose" aria-label="Close search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- ============ JAVASCRIPT ENGINE ============ -->
   <script>
-    // 1. Dynamic Auto-Updating Year
-    document.querySelectorAll(".current-year").forEach(el => {
-      el.textContent = new Date().getFullYear();
+    /* Safe Storage */
+    const store = {
+      get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+      set(k, v) { try { localStorage.setItem(k, v); } catch {} }
+    };
+
+    /* Copyright Year */
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* Theme Engine */
+    const THEMES = {
+      notebook: {
+        hero: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+        label: "unseen fields shaping reality"
+      },
+      chalkboard: {
+        hero: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80",
+        label: "equations, one line at a time"
+      },
+      blueprint: {
+        hero: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=80",
+        label: "where the theory becomes engineering"
+      },
+      sunset: {
+        hero: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80",
+        label: "late-night physics, warm desk lamp"
+      }
+    };
+
+    const html = document.documentElement;
+    const themeButton = document.getElementById("themeButton");
+    const themePop = document.getElementById("themePop");
+    const heroImage = document.getElementById("heroImage");
+    const heroCaption = document.querySelector(".polaroid-caption");
+    const themeOpts = document.querySelectorAll(".theme-opt");
+
+    function applyTheme(name) {
+      if (!THEMES[name]) name = "notebook";
+      html.setAttribute("data-theme", name);
+      store.set("shorveer-theme-name", name);
+
+      themeOpts.forEach(btn => {
+        btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name));
+      });
+
+      if (heroImage && heroCaption) {
+        const t = THEMES[name];
+        heroImage.classList.add("fading");
+        setTimeout(() => {
+          heroImage.src = t.hero;
+          heroCaption.textContent = t.label;
+          heroImage.classList.remove("fading");
+        }, 260);
+      }
+    }
+
+    const savedThemeName = store.get("shorveer-theme-name") || "notebook";
+    applyTheme(savedThemeName);
+
+    themeButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = themePop.classList.toggle("open");
+      themeButton.setAttribute("aria-expanded", String(open));
     });
 
-    // 2. Persistent Dark/Light Theme Sync
-    const themeButton = document.getElementById("themeButton");
-    const savedTheme = localStorage.getItem("shorveer-theme");
-    if (savedTheme === "dark") {
-      document.body.classList.add("dark");
-      themeButton.textContent = "☀️";
-    }
-    themeButton.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      const isDark = document.body.classList.contains("dark");
-      localStorage.setItem("shorveer-theme", isDark ? "dark" : "light");
-      themeButton.textContent = isDark ? "☀️" : "🌙";
+    themeOpts.forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyTheme(btn.dataset.themeValue);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      });
     });
+
+    document.addEventListener("click", (e) => {
+      if (!themePop.contains(e.target) && !themeButton.contains(e.target)) {
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    /* Life Motivational Rotator */
+    const MOTIVATIONS = [
+      "\"Charge is conserved; so is the hard work you put in today.\" — Jatin Sandilya",
+      "\"Opposite charges attract; tough obstacles pull your hidden strength out.\" — Jatin Sandilya",
+      "\"Inside a closed shield, external lightning cannot hurt you. Guard your focus.\" — Jatin Sandilya",
+      "\"When life exerts a torque on you, align with your purpose to find stability.\" — Jatin Sandilya"
+    ];
+    const motivationText = document.getElementById("motivationText");
+    let motIdx = 0;
+    if (motivationText) {
+      setInterval(() => {
+        motivationText.classList.remove("show");
+        setTimeout(() => {
+          motIdx = (motIdx + 1) % MOTIVATIONS.length;
+          motivationText.textContent = MOTIVATIONS[motIdx];
+          motivationText.classList.add("show");
+        }, 400);
+      }, 5500);
+    }
+
+    /* 3D Flip Card Handling (Mobile tap + Keyboard) */
+    const flipCards = document.querySelectorAll(".flip-card");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    flipCards.forEach(card => {
+      if (isTouch) {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("a")) return;
+          card.classList.toggle("flipped");
+        });
+      }
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          if (e.target.closest("a")) return;
+          e.preventDefault();
+          card.classList.toggle("flipped");
+        }
+      });
+    });
+
+    /* 3D Hero Parallax */
+    const heroArt = document.getElementById("heroArt");
+    const heroStage = document.getElementById("heroStage");
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (heroArt && heroStage && finePointer && !reduceMotion) {
+      heroArt.addEventListener("mousemove", (e) => {
+        const rect = heroArt.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        heroStage.style.transform = `perspective(1200px) rotateX(${-y * 16}deg) rotateY(${x * 16}deg) translateZ(10px)`;
+      });
+      heroArt.addEventListener("mouseleave", () => {
+        heroStage.style.transform = "perspective(1200px) rotateX(0) rotateY(0) translateZ(0)";
+      });
+    }
+
+    /* Search Feature */
+    const searchData = [
+      { title: "Electric Charges & Fields", description: "Coulomb's Law, Dipole, Gauss's Law", url: "chapter1.html" },
+      { title: "Chapter 1 Mind Map", description: "Rapid formula revision and vector maps", url: "ch1-short.html" },
+      { title: "Chapter 1 Solved PYQs", description: "10-Year CBSE board examination drill", url: "ch1-pyq.html" },
+      { title: "Electrostatic Potential & Capacitance", description: "Equipotential surfaces, capacitors", url: "chapter2.html" },
+      { title: "Physics Hub", description: "All 14 chapters portal", url: "index.html" }
+    ];
+
+    const searchButton = document.getElementById("searchButton");
+    const searchLayer = document.getElementById("searchLayer");
+    const searchClose = document.getElementById("searchClose");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    function openSearch() {
+      searchLayer.classList.add("active");
+      searchLayer.setAttribute("aria-hidden", "false");
+      setTimeout(() => searchInput.focus(), 60);
+      renderResults("");
+    }
+    function closeSearch() {
+      searchLayer.classList.remove("active");
+      searchLayer.setAttribute("aria-hidden", "true");
+      searchInput.value = "";
+    }
+    function renderResults(query) {
+      const q = query.trim().toLowerCase();
+      const matches = searchData.filter(item =>
+        !q || item.title.toLowerCase().includes(q) || item.description.toLowerCase().includes(q)
+      );
+      if (!matches.length) {
+        searchResults.innerHTML = '<div class="empty-result">Nothing found. Try "Gauss" or "Dipole".</div>';
+        return;
+      }
+      searchResults.innerHTML = matches.map(item => `
+        <a class="result" href="${item.url}">
+          <div>
+            <strong>${item.title}</strong>
+            <small>${item.description}</small>
+          </div>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+      `).join("");
+    }
+
+    searchButton.addEventListener("click", openSearch);
+    searchClose.addEventListener("click", closeSearch);
+    searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
+    searchInput.addEventListener("input", e => renderResults(e.target.value));
+
+    /* Mobile Menu */
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    function setMenu(open) {
+      mobileMenu.classList.toggle("open", open);
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+    menuButton.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+
+    /* Keyboard Shortcuts */
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        closeSearch();
+        setMenu(false);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault(); openSearch();
+      }
+    });
+
+    /* Scroll Reveal */
+    const reveals = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); }
+        });
+      }, { threshold: .1 });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add("visible"));
+    }
   </script>
 </body>
 </html>
