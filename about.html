@@ -1,1114 +1,758 @@
-  <!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<html lang="en" data-theme="notebook">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0a0f1c">
-  <meta name="description" content="About Shorveer Notes - Our mission, student-first vision, and academic framework founded by Jatin Sandilya.">
+
+  <meta name="description" content="About Shorveer Notes — The mission, philosophy, and disciplined academic framework behind our student-first Class 12 Science notes.">
   <meta name="author" content="Jatin Sandilya">
   <meta name="robots" content="index, follow">
-  
+
+  <meta name="theme-color" content="#fdfaf3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171613" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+
+  <link rel="canonical" href="https://shorveernotes.website/about.html">
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="About Us | Shorveer Notes">
-  <meta property="og:description" content="Our mission, student-first vision, and academic framework founded by Jatin Sandilya.">
-  <meta property="og:url" content="./about.html">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1200&q=75">
+  <meta property="og:title" content="About Shorveer Notes — Built with Warrior Discipline">
+  <meta property="og:description" content="Explore the story, pedagogy, and student-focused mission behind Shorveer Notes for Class 12 Science.">
+  <meta property="og:site_name" content="Shorveer Notes">
+  <meta property="og:url" content="https://shorveernotes.website/about.html">
+  <meta property="og:image" content="https://shorveernotes.website/og-image.jpg">
 
-  <title>About Us | Shorveer Notes</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1c1a'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23e8b64c'/%3E%3C/svg%3E">
 
-  <!-- Favicon (Geometric Shorveer "S" Crest) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230a0f1c'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23f3c969'/%3E%3C/svg%3E">
-  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='42' fill='%230a0f1c'/%3E%3Cpath d='M124 56c-7-10-19.5-14-34-14-25 0-39 15.5-39 32.5 0 22.5 21 28 39 33.5 18 5.5 28 10 28 21 0 14-14 22.5-31 22.5-18 0-31-8.5-38-21l-11 12.5C48 157 65 168 87 168c31 0 50.5-18.5 50.5-42 0-25-22.5-32-40.5-37.5-17-5.5-26.5-8.5-26.5-18 0-11 11-17 26.5-17 12.5 0 22.5 4.5 29.5 12.5L124 56z' fill='%23f3c969'/%3E%3C/svg%3E">
-
-  <!-- Fonts -->
+  <!-- Fonts (Exact match with Index) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* =========================================================
-       01. DESIGN TOKENS (SHORVEER PREMIUM DARK-GOLD IDENTITY)
-       ========================================================= */
-    :root {
-      --paper: #f6f3ed;
-      --paper-2: #efebe3;
-      --white: #ffffff;
-      --ink: #0a0f1c;
-      --ink-2: #111827;
-      --muted: #687080;
-      --muted-dark: #aeb7c5;
-      --line: rgba(10, 15, 28, .12);
-      --line-light: rgba(255, 255, 255, .14);
-      --gold: #f3c969;
-      --gold-dark: #d8ad46;
-      --blue: #3e78ff;
-      --cyan: #46c6d8;
-      --green: #5dbb91;
-      --pink: #ef7e78;
-      --shadow: 0 24px 70px rgba(10, 15, 28, .10);
-      --shadow-heavy: 0 35px 100px rgba(10, 15, 28, .18);
-      --ease: cubic-bezier(.2, .75, .2, 1);
-      --radius-xl: 34px;
-      --radius-lg: 24px;
-      --radius-md: 17px;
-      --max: 1240px;
-    }
+  <!-- Core CSS File -->
+  <link rel="stylesheet" href="style.css">
 
-    body.dark {
-      --paper: #080d16;
-      --paper-2: #0f1624;
-      --white: #131c2e;
-      --ink: #f7f8fa;
-      --ink-2: #eef2f7;
-      --muted: #a2afc2;
-      --muted-dark: #cbd5e1;
-      --line: rgba(255, 255, 255, .12);
-      --shadow: 0 24px 70px rgba(0, 0, 0, .45);
-      --shadow-heavy: 0 35px 100px rgba(0, 0, 0, .65);
-    }
+  <script>document.documentElement.classList.add('js');</script>
 
-    /* =========================================================
-       02. RESET & BASE
-       ========================================================= */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 100px;
-    }
-
-    body {
-      min-height: 100vh;
-      overflow-x: hidden;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: "DM Sans", system-ui, sans-serif;
-      line-height: 1.6;
-      transition: background .35s ease, color .35s ease;
-      perspective: 1400px;
-    }
-
-    body::selection {
-      background: var(--gold);
-      color: var(--ink);
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    button, input {
-      font: inherit;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    button {
-      border: 0;
-      cursor: pointer;
-      background: none;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin-inline: auto;
-    }
-
-    /* =========================================================
-       03. 3D IMMERSIVE BACKGROUND & EDITORIAL IMAGES
-       ========================================================= */
-    .page-bg {
-      position: fixed;
-      inset: 0;
-      z-index: -20;
-      overflow: hidden;
-      pointer-events: none;
-      perspective: 1200px;
-      background:
-        radial-gradient(circle at 12% 15%, rgba(243, 201, 105, .14), transparent 30%),
-        radial-gradient(circle at 90% 80%, rgba(62, 120, 255, .11), transparent 32%),
-        var(--paper);
-    }
-
-    .page-bg::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: .18;
-      background-image:
-        linear-gradient(rgba(10, 15, 28, .05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(10, 15, 28, .05) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: linear-gradient(to bottom, black, transparent 75%);
-    }
-
-    body.dark .page-bg::before {
-      background-image:
-        linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
-    }
-
-    .bg-photo {
-      position: absolute;
-      width: min(48vw, 650px);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      opacity: .13;
-      filter: saturate(.65) contrast(1.05);
-      background:
-        linear-gradient(135deg, rgba(10, 15, 28, .3), rgba(10, 15, 28, .75)),
-        url("https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1400&q=80")
-        center / cover;
-      box-shadow: inset 0 0 100px var(--paper);
-      animation: orbFloat3D 24s ease-in-out infinite alternate;
-      transform-style: preserve-3d;
-      will-change: transform;
-    }
-
-    .bg-photo.one { top: 5%; right: -15%; }
-    .bg-photo.two { 
-      width: min(38vw, 480px);
-      left: -14%; 
-      top: 55%; 
-      opacity: .09; 
-      background:
-        linear-gradient(135deg, rgba(10, 15, 28, .35), rgba(10, 15, 28, .8)),
-        url("https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80")
-        center / cover;
-      animation-delay: -8s; 
-    }
-
-    @keyframes orbFloat3D {
-      0% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-      50% { transform: translate3d(-40px, 30px, 60px) rotateX(14deg) rotateY(-15deg) rotateZ(5deg); }
-      100% { transform: translate3d(30px, -30px, -35px) rotateX(-12deg) rotateY(18deg) rotateZ(-4deg); }
-    }
-
-    /* =========================================================
-       04. HEADER & NAVIGATION
-       ========================================================= */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--line);
-      background: color-mix(in srgb, var(--paper) 86%, transparent);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-      transition: background .35s ease, border-color .35s ease;
-    }
-
-    .nav {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      flex: 0 0 auto;
-    }
-
-    .brand-mark {
-      position: relative;
-      width: 43px;
-      height: 43px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      border-radius: 13px;
-      background: var(--ink);
-      box-shadow: 0 12px 30px rgba(10, 15, 28, .16);
-      transition: transform .35s var(--ease);
-    }
-
-    .brand:hover .brand-mark {
-      transform: translateY(-2px) rotate(-4deg) scale(1.05);
-    }
-
-    .brand-mark svg {
-      width: 26px;
-      height: 26px;
-    }
-
-    .brand-name {
-      font-family: "Manrope", sans-serif;
-      font-size: 17px;
-      font-weight: 800;
-      letter-spacing: -.04em;
-    }
-
-    .brand-name span {
-      color: var(--gold-dark);
-      display: block;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-icon, .nav-btn {
-      height: 42px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 0 16px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: color-mix(in srgb, var(--white) 75%, transparent);
-      color: var(--ink);
-      font-size: 13px;
-      font-weight: 700;
-      transition: transform .25s var(--ease), border-color .25s ease, background .25s ease, color .25s ease;
-    }
-
-    .nav-icon {
-      width: 42px;
-      padding: 0;
-    }
-
-    .nav-icon:hover, .nav-btn:hover {
-      transform: translateY(-2px);
-      border-color: var(--gold-dark);
-    }
-
-    /* =========================================================
-       05. HERO SECTION WITH 3D TILT & EDITORIAL VISUAL
-       ========================================================= */
-    .hero {
-      position: relative;
-      width: min(var(--max), calc(100% - 40px));
-      margin: 85px auto 65px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: 60px;
-      perspective: 1200px;
-      animation: heroIn .8s var(--ease) both;
-    }
-
-    @keyframes heroIn {
-      from { opacity: 0; transform: translateY(25px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-bottom: 20px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .kicker-line {
-      width: 30px;
-      height: 1px;
-      background: var(--gold-dark);
-    }
-
-    .hero h1 {
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(40px, 5.5vw, 76px);
-      font-weight: 800;
-      letter-spacing: -.065em;
-      line-height: 1.02;
-      margin-bottom: 24px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, var(--ink) 25%, var(--gold-dark) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    body.dark .gradient-text {
-      background: linear-gradient(135deg, #ffffff 25%, var(--gold) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      max-width: 620px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 32px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      min-height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 0 22px;
-      border-radius: 13px;
-      font-size: 13px;
-      font-weight: 800;
-      transition: transform .25s var(--ease), box-shadow .25s ease, background .25s ease, color .25s ease;
-    }
-
-    .btn-dark {
-      background: var(--ink);
-      color: var(--white);
-      box-shadow: 0 13px 30px rgba(10, 15, 28, .15);
-    }
-
-    .btn-dark:hover {
-      transform: translateY(-3px) translateZ(10px);
-      box-shadow: 0 19px 38px rgba(10, 15, 28, .22);
-    }
-
-    .btn-light {
-      border: 1px solid var(--line);
-      background: color-mix(in srgb, var(--white) 75%, transparent);
-      color: var(--ink);
-    }
-
-    .btn-light:hover {
-      transform: translateY(-3px) translateZ(10px);
-      border-color: var(--gold-dark);
-    }
-
-    /* Hero Visual Card with Realistic Study Photography */
-    .hero-visual {
-      position: relative;
-      min-height: 440px;
-      display: grid;
-      place-items: center;
-      transform-style: preserve-3d;
-    }
-
-    .mission-card {
-      position: relative;
-      width: min(100%, 440px);
-      aspect-ratio: 1;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      background:
-        linear-gradient(160deg, rgba(10, 15, 28, .15), rgba(10, 15, 28, .85)),
-        url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80")
-        center / cover;
-      box-shadow: var(--shadow-heavy);
-      border: 1px solid rgba(255, 255, 255, .2);
-      transform: rotate(2deg);
-      transition: transform .4s var(--ease);
-    }
-
-    .mission-card:hover {
-      transform: rotate(0deg) translateY(-8px) translateZ(15px);
-    }
-
-    .mission-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 30%, rgba(10, 15, 28, .92) 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 35px;
-      color: #fff;
-    }
-
-    .mission-overlay small {
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .mission-overlay h3 {
-      font-family: "Manrope", sans-serif;
-      font-size: 26px;
-      line-height: 1.1;
-      letter-spacing: -.035em;
-    }
-
-    /* =========================================================
-       06. STATS STRIP
-       ========================================================= */
-    .stats {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto 80px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      perspective: 1200px;
-    }
-
-    .stat {
-      padding: 28px;
-      text-align: center;
-      border: 1px solid var(--line);
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      transform-style: preserve-3d;
-      transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .35s ease, background .35s ease;
-    }
-
-    .stat:hover {
-      transform: translateY(-6px) rotateX(4deg) translateZ(10px);
-      box-shadow: 0 30px 75px rgba(10, 15, 28, .14);
-      border-color: var(--gold-dark);
-    }
-
-    .stat strong {
-      display: block;
-      font-family: "Manrope", sans-serif;
-      font-size: 30px;
-      font-weight: 800;
-      color: var(--gold-dark);
-      letter-spacing: -.03em;
-    }
-
-    .stat span {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    /* =========================================================
-       07. NARRATIVE SECTIONS & CARDS
-       ========================================================= */
-    .section {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto 95px;
-    }
-
-    .section-head {
-      margin-bottom: 40px;
-    }
-
-    .section-kicker {
-      margin-bottom: 10px;
-      color: var(--gold-dark);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: .17em;
-      text-transform: uppercase;
-    }
-
-    .section-head h2 {
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(32px, 4.5vw, 48px);
-      letter-spacing: -.055em;
-      line-height: 1.08;
-    }
-
-    .section-head p {
-      max-width: 620px;
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.75;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      perspective: 1200px;
-    }
-
-    .story-card {
-      position: relative;
-      padding: 38px;
-      border-radius: var(--radius-lg);
-      background: var(--white);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      transform-style: preserve-3d;
-      transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .35s ease, background .35s ease, color .35s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .story-card:hover {
-      transform: translateY(-8px) rotateX(4deg) translateZ(12px);
-      border-color: var(--gold-dark);
-      box-shadow: 0 35px 80px rgba(10, 15, 28, .16);
-    }
-
-    .card-tag {
-      color: var(--gold-dark);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-      display: inline-block;
-    }
-
-    .story-card h3 {
-      font-family: "Manrope", sans-serif;
-      font-size: 24px;
-      letter-spacing: -.035em;
-      margin-bottom: 16px;
-    }
-
-    .story-card p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
-
-    .story-card p strong {
-      color: var(--ink);
-    }
-
-    /* Manifesto Box */
-    .manifesto-box {
-      margin-top: 30px;
-      padding: 42px;
-      border-radius: var(--radius-xl);
-      background: var(--ink);
-      color: #fff;
-      box-shadow: var(--shadow-heavy);
-      border: 1px solid rgba(243, 201, 105, 0.2);
-    }
-
-    .manifesto-box h3 {
-      font-family: "Manrope", sans-serif;
-      font-size: 26px;
-      margin-bottom: 14px;
-      letter-spacing: -.03em;
-      color: #fff;
-    }
-
-    .manifesto-box p {
-      color: var(--muted-dark);
-      font-size: 15px;
-      line-height: 1.85;
-      max-width: 950px;
-    }
-
-    .manifesto-box p strong {
-      color: var(--gold);
-    }
-
-    /* =========================================================
-       08. FOOTER
-       ========================================================= */
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 60px 0 30px;
-      background: color-mix(in srgb, var(--paper-2) 40%, transparent);
-      transition: background .35s ease, border-color .35s ease;
-    }
-
-    .footer-inner {
-      width: min(var(--max), calc(100% - 40px));
-      margin: auto;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 40px;
-      padding-bottom: 50px;
-    }
-
-    .footer-brand p {
-      max-width: 350px;
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .footer-column h3 {
-      margin-bottom: 17px;
-      font-family: "Manrope", sans-serif;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .11em;
-    }
-
-    .footer-column a {
-      display: block;
-      width: fit-content;
-      margin-bottom: 10px;
-      color: var(--muted);
-      font-size: 12px;
-      transition: color .2s ease, transform .2s var(--ease);
-    }
-
-    .footer-column a:hover {
-      color: var(--ink);
-      transform: translateX(3px);
-    }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .author-credit { font-weight: 700; color: var(--ink); }
-    .author-credit span { color: var(--gold-dark); }
-    body.dark .author-credit { color: var(--white); }
-
-    /* =========================================================
-       09. BACK TO TOP
-       ========================================================= */
-    #topBtn {
-      position: fixed;
-      right: 25px;
-      bottom: 25px;
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: var(--ink);
-      color: var(--gold);
-      box-shadow: var(--shadow-heavy);
-      cursor: pointer;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(15px);
-      transition: transform .3s var(--ease), opacity .3s ease;
-      z-index: 900;
-    }
-
-    #topBtn.visible {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
-
-    #topBtn:hover {
-      transform: translateY(-3px);
-    }
-
-    /* =========================================================
-       10. PRELOADER
-       ========================================================= */
-    #loader {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: grid;
-      place-items: center;
-      background: var(--ink);
-      transition: opacity .6s ease, visibility .6s ease;
-    }
-
-    #loader.hide {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .loader-content {
-      text-align: center;
-      color: #fff;
-    }
-
-    .loader-logo {
-      width: 65px;
-      height: 65px;
-      margin: 0 auto 16px;
-      display: grid;
-      place-items: center;
-      border-radius: 18px;
-      background: var(--gold);
-      color: var(--ink);
-      font-size: 26px;
-      font-weight: 900;
-      animation: loaderBounce 1.2s ease-in-out infinite;
-    }
-
-    @keyframes loaderBounce {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-8px) scale(1.05); }
-    }
-
-    .loader-content p {
-      color: var(--muted-dark);
-      font-size: 12px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    /* =========================================================
-       11. SCROLL REVEAL (3D Dynamics)
-       ========================================================= */
-    .reveal {
-      opacity: 0;
-      transform: translateY(35px) rotateX(6deg);
-      transition: opacity .8s ease, transform .8s var(--ease);
-      will-change: opacity, transform;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0) rotateX(0deg);
-    }
-
-    /* =========================================================
-       12. RESPONSIVE DESIGN
-       ========================================================= */
-    @media (max-width: 950px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
-      }
-      .hero p {
-        margin-inline: auto;
-      }
-      .hero-buttons {
-        justify-content: center;
-      }
-      .stats, .about-grid, .footer-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-      }
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  </style>
+  <title>About Us — Shorveer Notes | Built with Warrior Discipline</title>
 </head>
+
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- =========================================================
-       BACKGROUND ORBS & GROWTH STUDY IMAGES
-       ========================================================= -->
-  <div class="page-bg" aria-hidden="true">
-    <div class="bg-photo one" id="bgOrb1"></div>
-    <div class="bg-photo two" id="bgOrb2"></div>
-  </div>
-
-  <!-- =========================================================
-       PRELOADER
-       ========================================================= -->
-  <div id="loader" aria-hidden="true">
-    <div class="loader-content">
-      <div class="loader-logo">S</div>
-      <h3>Loading Shorveer Vision</h3>
-      <p>Shorveer Notes</p>
-    </div>
-  </div>
-
-  <!-- =========================================================
-       HEADER
-       ========================================================= -->
+  <!-- ============ HEADER (Matches Index) ============ -->
   <header class="site-header">
-    <nav class="nav container" aria-label="Primary navigation">
+    <nav class="nav container" aria-label="Primary">
       <a class="brand" href="index.html" aria-label="Shorveer Notes home">
-        <div class="brand-mark" aria-hidden="true">
+        <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 64 64" fill="none">
-            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#F3C969"/>
+            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
           </svg>
-        </div>
-        <div class="brand-name">
-          Shorveer<span>Notes</span>
-        </div>
+        </span>
+        <span class="brand-name">Shorveer<em>Notes</em></span>
       </a>
 
+      <div class="nav-links">
+        <a href="index.html#subjects">Subjects</a>
+        <a href="index.html#reallife">Real life</a>
+        <a href="index.html#resources">Resources</a>
+        <a href="about-notes.html">Framework</a>
+        <a href="about.html" style="color:var(--ink); font-weight:700;">About</a>
+      </div>
+
       <div class="nav-actions">
-        <a href="index.html" class="nav-btn" aria-label="Home page">
-          <span>🏠</span> Home
-        </a>
-        <button class="nav-icon" id="themeButton" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
+        <button class="nav-icon" id="searchButton" aria-label="Open search" title="Search (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/>
+          </svg>
+        </button>
+
+        <button class="nav-icon" id="themeButton" aria-label="Change theme" aria-expanded="false" title="Change theme">
+          <span class="palette-dot" aria-hidden="true"></span>
+        </button>
+
+        <button class="nav-icon mobile-toggle" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <path d="M3 6h18M3 12h18M3 18h18"/>
+          </svg>
+        </button>
       </div>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#subjects">Subjects</a>
+      <a href="index.html#reallife">Real life</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="exam-info.html">Exam information</a>
+      <a href="about-notes.html">How notes are made</a>
+      <a href="about.html">About Shorveer</a>
+    </div>
   </header>
 
-  <main>
-    <!-- =======================================================
-         HERO SECTION
-         ======================================================= -->
+  <!-- ============ THEME PICKER POPOVER ============ -->
+  <div class="theme-pop" id="themePop" role="dialog" aria-label="Choose a theme">
+    <h4>Pick a look</h4>
+    <div class="theme-grid">
+      <button class="theme-opt" data-theme-value="notebook" aria-pressed="true">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#fdfaf3"></span>
+          <span style="background:#e8b64c"></span>
+          <span style="background:#bf5a3c"></span>
+          <span style="background:#1c1c1a"></span>
+        </span>
+        <b>Notebook</b>
+        <small>Warm paper, classic</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="chalkboard" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#1e2a24"></span>
+          <span style="background:#f0d97a"></span>
+          <span style="background:#7bc3bf"></span>
+          <span style="background:#ebe6d5"></span>
+        </span>
+        <b>Chalkboard</b>
+        <small>Dark green, chalk</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="blueprint" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#0f2b4c"></span>
+          <span style="background:#7ec8f5"></span>
+          <span style="background:#ff9d7c"></span>
+          <span style="background:#e2eefb"></span>
+        </span>
+        <b>Blueprint</b>
+        <small>Navy, technical</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="sunset" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#241226"></span>
+          <span style="background:#ff8a5b"></span>
+          <span style="background:#ffb87a"></span>
+          <span style="background:#ffe9d6"></span>
+        </span>
+        <b>Sunset</b>
+        <small>Plum, warm glow</small>
+      </button>
+    </div>
+    <p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Your choice is saved across pages.</p>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ HERO SECTION ============ -->
     <section class="hero container">
-      <div>
+      <div class="hero-copy">
         <div class="kicker">
-          <span class="kicker-line"></span>
-          Founder's Mission & Vision
+          <span class="dot"></span>
+          <span>Founder's Mission & Standard</span>
         </div>
+
         <h1>
-          Built with <br>
-          <span class="gradient-text">Warrior Discipline.</span>
+          Built with
+          <span style="position:relative;display:inline-block">
+            <span style="position:relative;z-index:1">warrior</span>
+          </span>
+          <em>discipline.</em>
         </h1>
-        <p>
-          Shorveer Notes is not just another educational repository. It is a purposeful initiative built to provide Class 12 Science and competitive aspirants with clean, authentic, and high-yielding academic blueprints—entirely free of distractions.
+
+        <p class="hero-description">
+          Shorveer Notes was founded with one stubborn purpose: to rescue Class 12 Science students from bloated textbooks, distracting ads, and paywalled PDFs. A study sanctuary engineered strictly for clarity, speed, and real retention.
         </p>
-        <div class="hero-buttons">
-          <a class="btn btn-dark" href="physics/index.html">
-            Explore Physics Hub <span>→</span>
+
+        <div class="motivation" aria-live="polite">
+          <svg class="motivation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span class="motivation-text show">Honor • Precision • Relentless Preparation.</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="index.html#subjects">
+            Browse notes
+            <span class="btn-arrow">→</span>
           </a>
-          <a class="btn btn-light" href="#framework">
-            Our Framework
-          </a>
+          <a class="btn btn-light" href="#philosophy">Read our philosophy</a>
+        </div>
+
+        <div class="hero-note">
+          <span>Founded by <strong>Jatin Sandilya</strong> · Independent Student Initiative</span>
         </div>
       </div>
 
-      <div class="hero-visual reveal">
-        <div class="mission-card">
-          <div class="mission-overlay">
-            <small>FOUNDED BY JATIN SANDILYA</small>
-            <h3>Honor • Clarity • Execution</h3>
+      <div class="hero-art" id="heroArt">
+        <div class="hero-stage" id="heroStage">
+          <div class="polaroid">
+            <img class="hero-img" id="heroImage"
+              src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=80"
+              alt="Disciplined workspace with textbook and pen" loading="eager" width="900" height="1125">
+            <div class="polaroid-caption">study like an officer in training</div>
+          </div>
+
+          <div class="sticky">
+            master the core,<br>ignore the noise ⚔
+          </div>
+
+          <svg class="doodle" viewBox="0 0 130 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M6 12 C 40 4, 70 20, 96 50" stroke-dasharray="4 5"/>
+            <path d="M92 34 L 100 52 L 82 52" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST / STATS STRIP ============ -->
+    <section class="trust" aria-label="Platform values">
+      <div class="trust-inner container">
+        <div class="trust-item"><b>100% Free</b>No subscription, no hidden sign-up</div>
+        <div class="trust-item"><b>Zero Noise</b>No popup banners, no tracking bloat</div>
+        <div class="trust-item"><b>CBSE Aligned</b>Strictly follows NCERT sequence</div>
+        <div class="trust-item"><b>Exam-Ready</b>Step-by-step verified derivations</div>
+      </div>
+    </section>
+
+    <!-- ============ THE STORY (FLIP CARDS 3D) ============ -->
+    <section class="section container reveal" id="philosophy">
+      <div class="section-head">
+        <span class="section-eyebrow">the core philosophy</span>
+        <h2>Why we do this differently.<br><em>Hover to see our operating principles.</em></h2>
+      </div>
+
+      <div class="subject-list">
+
+        <!-- Card 1: The Origin -->
+        <div class="flip-card" style="--subject-color: #bf5a3c" tabindex="0" role="button" aria-label="Origin Story card">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                  </div>
+                  <div class="subject-tag">the origin</div>
+                </div>
+                <h3>The Student Frustration</h3>
+                <p>When preparing for board exams, most websites feel like obstacle courses: forced email logins, broken equations, and chaotic summaries that miss the marking scheme.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Flip to see the answer <span class="arrow">→</span></span>
+                <span class="subject-count">01 / Foundation</span>
+              </div>
+              <span class="flip-hint">insight</span>
+            </div>
+
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">The Antidote</div>
+                <div class="back-rule">"Clarity is the ultimate competitive advantage."</div>
+                <p class="back-example">
+                  Shorveer Notes was created to strip out all non-essential clutter. We present each chapter exactly the way an experienced examiner expects you to write it down on an answer sheet.
+                </p>
+              </div>
+              <span class="subject-meta">Built by students for students</span>
+            </div>
           </div>
         </div>
+
+        <!-- Card 2: The Meaning of Shorveer -->
+        <div class="flip-card" style="--subject-color: #e8b64c" tabindex="0" role="button" aria-label="Meaning of Shorveer card">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                  </div>
+                  <div class="subject-tag">the name</div>
+                </div>
+                <h3>Why "Shorveer"?</h3>
+                <p>A student staring at an intimidating derivation or complex chemical kinetics problem late at night is fighting their own daily battle of grit and endurance.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Flip to read meaning <span class="arrow">→</span></span>
+                <span class="subject-count">02 / Mindset</span>
+              </div>
+              <span class="flip-hint">insight</span>
+            </div>
+
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">The Warrior Standard</div>
+                <div class="back-rule">"Shorveer (शूरवीर) represents courage in the face of pressure."</div>
+                <p class="back-example">
+                  Exam stress dissolves when preparation is calm, disciplined, and relentless. When you know your formulas and core principles cold, no question paper can shake your confidence.
+                </p>
+              </div>
+              <span class="subject-meta">Calm execution under pressure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Academic Framework -->
+        <div class="flip-card" style="--subject-color: #2a7d7a" tabindex="0" role="button" aria-label="Academic Framework card">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                      <line x1="16" y1="13" x2="8" y2="13"/>
+                      <line x1="16" y1="17" x2="8" y2="17"/>
+                      <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                  </div>
+                  <div class="subject-tag">methodology</div>
+                </div>
+                <h3>Derivations That Don't Skip Steps</h3>
+                <p>Most notes jump three algebra steps at once, leaving students baffled. We write out intermediate steps so the logic is impossible to misunderstand.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Flip to see methodology <span class="arrow">→</span></span>
+                <span class="subject-count">03 / Engineering</span>
+              </div>
+              <span class="flip-hint">insight</span>
+            </div>
+
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">The Step Rule</div>
+                <div class="back-rule">"Every equals sign must earn its place."</div>
+                <p class="back-example">
+                  Whether proving Gauss’s Law, integrating by parts, or calculating reaction rates, we maintain full arithmetic continuity. If an examiner awards step marks, you shouldn't skip them.
+                </p>
+              </div>
+              <span class="subject-meta">Zero skipped logic</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Open Academic Sanctuary -->
+        <div class="flip-card" style="--subject-color: #7a4b8a" tabindex="0" role="button" aria-label="Sanctuary card">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"/>
+                      <path d="M12 6v6l4 2"/>
+                    </svg>
+                  </div>
+                  <div class="subject-tag">open access</div>
+                </div>
+                <h3>Respecting Student Attention</h3>
+                <p>Your attention is sacred. You shouldn't have to dodge spinning wheels, intrusive popups, or countdown timers just to check a formula before an exam.</p>
+              </div>
+              <div class="subject-bottom">
+                <span class="subject-meta">Flip to read commitment <span class="arrow">→</span></span>
+                <span class="subject-count">04 / Ethics</span>
+              </div>
+              <span class="flip-hint">insight</span>
+            </div>
+
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Our Oath</div>
+                <div class="back-rule">"Fast to load, pleasant to read, always free."</div>
+                <p class="back-example">
+                  Optimized for budget smartphones on 4G networks. Pages load instantly, text wraps cleanly without sideways scrolling, and night themes protect tired eyes during late-night cram sessions.
+                </p>
+              </div>
+              <span class="subject-meta">Engineered for real study</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- =======================================================
-         STATS STRIP
-         ======================================================= -->
-    <section class="stats" aria-label="Platform highlights">
-      <div class="stat reveal">
-        <strong>100%</strong>
-        <span>Distraction-Free Architecture</span>
-      </div>
-      <div class="stat reveal">
-        <strong>Zero</strong>
-        <span>Clutter or Unverified Claims</span>
-      </div>
-      <div class="stat reveal">
-        <strong>Class XII</strong>
-        <span>High-Yield Core Focus</span>
+    <!-- ============ SPLIT SECTION (NOTEBOOK LOOK) ============ -->
+    <section class="section container reveal">
+      <div class="notebook">
+        <figure class="notebook-photo">
+          <img
+            src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1000&q=80"
+            alt="Study table with notebooks and warm lamp light" loading="lazy" width="1000" height="800">
+          <figcaption>crafted with care, not generated by bots</figcaption>
+        </figure>
+
+        <div class="notebook-copy">
+          <span class="section-eyebrow">behind the pages</span>
+          <h2>A platform built with <em>intent and craft.</em></h2>
+          <p>
+            Shorveer Notes is built by someone who walked through the exact same syllabus, experienced the same board pressure, and spent hours searching for notes that didn't feel robotic or rushed.
+          </p>
+
+          <ul class="checklist">
+            <li><strong>Pedagogical Flow:</strong> Topics strictly mirror the NCERT sequence so your school lessons and self-study stay synchronized.</li>
+            <li><strong>Formulas in Focus:</strong> Crucial formulas, boundary conditions, and SI units are boxed out for effortless revision.</li>
+            <li><strong>Real Life Context:</strong> Science isn't abstract formulas on a blackboard; we show where it runs in engines, circuits, and nature.</li>
+            <li><strong>Clean Engineering:</strong> Lightweight semantic HTML/CSS that consumes minimal phone battery and data.</li>
+          </ul>
+
+          <a class="btn btn-dark" href="about-notes.html">
+            Read note-making guidelines
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- =======================================================
-         MAIN NARRATIVE SECTION
-         ======================================================= -->
-    <section class="section" id="framework">
-      <div class="section-head reveal">
-        <div class="section-kicker">The Origin & The Standard</div>
-        <h2>Our Purpose & Approach</h2>
-        <p>
-          Understanding the philosophy that powers every derivation, formula map, and verified material on Shorveer Notes.
-        </p>
+    <!-- ============ PILLARS (METHOD CARDS) ============ -->
+    <section class="section container reveal">
+      <div class="section-head">
+        <span class="section-eyebrow">the four pillars</span>
+        <h2>How every page is <em>audited and prepared.</em></h2>
       </div>
 
-      <div class="about-grid">
-        <!-- Card 1: The Vision -->
-        <article class="story-card reveal">
-          <div>
-            <span class="card-tag">Origin Story</span>
-            <h3>The Vision Behind Shorveer</h3>
-            <p>
-              Preparing for critical milestones like Class 12 Board Examinations and rigorous academic entrances teaches an undeniable truth: <strong>learning material must be precise, uncluttered, and mathematically sound</strong>.
-            </p>
-            <p>
-              Too many student platforms are overwhelmed by irrelevant noise, bloated summaries, or broken calculations. Shorveer Notes was created as an antidote—a disciplined study sanctuary where every chapter is broken down into structured theory, SVG-rendered visuals, and verified marking schemes.
+      <div class="real-life">
+
+        <article class="rl-card" style="--rl-color: #bf5a3c">
+          <div class="rl-badge">01</div>
+          <div class="rl-body">
+            <div class="rl-subject">Pillar One · Concept Integrity</div>
+            <div class="rl-title">Zero Unverified Claims</div>
+            <p class="rl-text">
+              Every physics law, chemical reaction mechanism, and mathematical theorem is rigorously cross-checked against standard NCERT textbooks and official CBSE marking blueprints.
             </p>
           </div>
         </article>
 
-        <!-- Card 2: The Name & Philosophy -->
-        <article class="story-card reveal">
-          <div>
-            <span class="card-tag">Philosophy</span>
-            <h3>Why "Shorveer"?</h3>
-            <p>
-              The name <strong>Shorveer</strong> (शूरवीर) represents the spirit of relentless perseverance, honor, and intellectual courage. A student facing difficult numerical problems or intensive exam pressure is no less than a warrior preparing for the arena.
-            </p>
-            <p>
-              The mission is to instill that exact mindset—approaching difficult physics concepts, complex calculus, and scientific challenges with methodical preparation and unwavering self-belief.
+        <article class="rl-card" style="--rl-color: #e8b64c">
+          <div class="rl-badge">02</div>
+          <div class="rl-body">
+            <div class="rl-subject">Pillar Two · Visual Hierarchy</div>
+            <div class="rl-title">Clear Reading Typography</div>
+            <p class="rl-text">
+              We choose typefaces and contrast ratios that reduce eye fatigue during 3-hour revision sprints. Headers, formulas, and real-world examples each have distinct visual weights.
             </p>
           </div>
         </article>
-      </div>
 
-      <!-- Full Width Academic Manifesto -->
-      <div class="manifesto-box reveal">
-        <h3>The Academic Integrity Code</h3>
-        <p>
-          Every single page on this platform adheres to a strict standard of engineering and pedagogy: <strong>zero automated shortcuts, step-by-step verified derivations, mobile-first responsive interfaces, and transparent disclaimers</strong>. When you prepare here, you are studying with resources engineered with the same discipline that fuels officers and builders.
-        </p>
+        <article class="rl-card" style="--rl-color: #2a7d7a">
+          <div class="rl-badge">03</div>
+          <div class="rl-body">
+            <div class="rl-subject">Pillar Three · High-Yield Focus</div>
+            <div class="rl-title">Board-Exam Alignment</div>
+            <p class="rl-text">
+              No extra college-level fluff just to look fancy. We focus on the high-probability derivations, PYQs, and definition formats that directly earn marks in board evaluations.
+            </p>
+          </div>
+        </article>
+
+        <article class="rl-card" style="--rl-color: #7a4b8a">
+          <div class="rl-badge">04</div>
+          <div class="rl-body">
+            <div class="rl-subject">Pillar Four · Ethical Access</div>
+            <div class="rl-title">Completely Open Study</div>
+            <p class="rl-text">
+              Education should not be locked behind phone-number verifications or recurring subscriptions. If you have an internet browser, you have full access to everything we publish.
+            </p>
+          </div>
+        </article>
+
       </div>
     </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta container reveal">
+      <div class="cta-content">
+        <h2>Your preparation starts now. <em>Pick a subject.</em></h2>
+        <p>No account required. Jump straight into the chapter you find most challenging and start reading.</p>
+        <a class="btn btn-gold" href="index.html#subjects">
+          Explore Subjects
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
   </main>
 
-  <!-- =========================================================
-       FOOTER
-       ========================================================= -->
+  <!-- ============ FOOTER (Matches Index) ============ -->
   <footer>
-    <div class="footer-inner">
+    <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a class="brand" href="index.html">
-            <div class="brand-mark" aria-hidden="true">
+            <span class="brand-mark" aria-hidden="true">
               <svg viewBox="0 0 64 64" fill="none">
-                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#F3C969"/>
+                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
               </svg>
-            </div>
-            <div class="brand-name">Shorveer<span>Notes</span></div>
+            </span>
+            <span class="brand-name">Shorveer<em>Notes</em></span>
           </a>
-          <p>
-            A student-focused academic platform designed to make Class 12 Science learning simpler, visual, and high-yielding for board examinations.
-          </p>
+          <p>A student-focused platform for Class 12 Science aspirants, built around clarity, discipline, and authentic academic resources.</p>
         </div>
 
         <div class="footer-column">
-          <h3>Core Subjects</h3>
-          <a href="physics/index.html">Physics Hub</a>
-          <a href="chemistry/index.html">Chemistry Notes</a>
-          <a href="mathematics/index.html">Mathematics Hub</a>
-          <a href="english/index.html">English Core</a>
+          <h3>Study</h3>
+          <a href="physics/index.html">Physics</a>
+          <a href="chemistry/index.html">Chemistry</a>
+          <a href="mathematics/index.html">Mathematics</a>
+          <a href="english/index.html">English</a>
         </div>
 
         <div class="footer-column">
-          <h3>Preparation</h3>
-          <a href="exam-info.html">Exam Blueprints</a>
-          <a href="about-notes.html">Notes Framework</a>
-          <a href="about.html">About Shorveer</a>
+          <h3>Site</h3>
+          <a href="exam-info.html">Exam info</a>
+          <a href="about-notes.html">About the notes</a>
+          <a href="about.html">About us</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="cookies.html">Cookies</a>
         </div>
 
         <div class="footer-column">
-          <h3>Legal & Support</h3>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="cookies.html">Cookies Policy</a>
-          <a href="mailto:contact@shorveernotes.com">Help & Contact</a>
+          <h3>Connect</h3>
+          <a href="mailto:support.shorveernotes@gmail.com">Contact us</a>
+          <a href="https://www.youtube.com/@JSEDIZ" target="_blank" rel="noopener noreferrer">YouTube</a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>
-          © <span id="year"></span> Shorveer Notes. All Rights Reserved.
-        </div>
-        <div class="author-credit">
-          Crafted with Dedication by <span>Jatin Sandilya</span> • Founder of Shorveer Notes
-        </div>
+        <span>© <span id="year"></span> Shorveer Notes · Founded by Jatin Sandilya</span>
+        <span>Made with discipline in India for Class 12 students</span>
       </div>
     </div>
   </footer>
 
-  <!-- BACK TO TOP -->
-  <button id="topBtn" aria-label="Back to top">↑</button>
+  <!-- ============ SEARCH POPUP ============ -->
+  <div class="search-layer" id="searchLayer" aria-hidden="true">
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search">
+      <div class="search-top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/>
+        </svg>
+        <input id="searchInput" type="search" placeholder="Search subjects, chapters, resources…" autocomplete="off">
+        <button class="search-close" id="searchClose" aria-label="Close search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
 
-  <!-- =========================================================
-       JAVASCRIPT
-       ========================================================= -->
+  <!-- ============ JAVASCRIPT ============ -->
   <script>
-    // Preloader
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        document.getElementById("loader").classList.add("hide");
-      }, 600);
-    });
+    /* Safe LocalStorage */
+    const store = {
+      get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+      set(k, v) { try { localStorage.setItem(k, v); } catch {} }
+    };
 
-    // Copyright Year
+    /* Copyright Year */
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Theme Toggle Engine
+    /* Theme Management */
+    const THEMES = {
+      notebook: {
+        hero: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=80",
+        label: "study like an officer in training"
+      },
+      chalkboard: {
+        hero: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80",
+        label: "equations, one line at a time"
+      },
+      blueprint: {
+        hero: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=80",
+        label: "where the theory becomes engineering"
+      },
+      sunset: {
+        hero: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80",
+        label: "late-night study, warm lamp"
+      }
+    };
+
+    const html = document.documentElement;
     const themeButton = document.getElementById("themeButton");
-    const savedTheme = localStorage.getItem("shorveer-theme");
+    const themePop = document.getElementById("themePop");
+    const heroImage = document.getElementById("heroImage");
+    const heroCaption = document.querySelector(".polaroid-caption");
+    const themeOpts = document.querySelectorAll(".theme-opt");
 
-    if (savedTheme === "dark") {
-      document.body.classList.add("dark");
-      themeButton.textContent = "☀";
+    function applyTheme(name) {
+      if (!THEMES[name]) name = "notebook";
+      html.setAttribute("data-theme", name);
+      store.set("shorveer-theme-name", name);
+
+      themeOpts.forEach(btn => {
+        btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name));
+      });
+
+      if (heroImage && heroCaption) {
+        const t = THEMES[name];
+        heroImage.classList.add("fading");
+        setTimeout(() => {
+          heroImage.src = t.hero;
+          heroCaption.textContent = t.label;
+          heroImage.classList.remove("fading");
+        }, 260);
+      }
     }
 
-    themeButton.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      const isDark = document.body.classList.contains("dark");
-      localStorage.setItem("shorveer-theme", isDark ? "dark" : "light");
-      themeButton.textContent = isDark ? "☀" : "◐";
+    const savedThemeName = store.get("shorveer-theme-name") || "notebook";
+    applyTheme(savedThemeName);
+
+    themeButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = themePop.classList.toggle("open");
+      themeButton.setAttribute("aria-expanded", String(open));
     });
 
-    // Scroll Reveal Intersection Observer
-    const revealElements = document.querySelectorAll(".reveal");
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-            observer.unobserve(entry.target);
-          }
+    themeOpts.forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyTheme(btn.dataset.themeValue);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!themePop.contains(e.target) && !themeButton.contains(e.target)) {
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    /* Flip Cards Support */
+    const flipCards = document.querySelectorAll(".flip-card");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    flipCards.forEach(card => {
+      if (isTouch) {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("a")) return;
+          card.classList.toggle("flipped");
         });
-      }, { threshold: 0.12 });
-
-      revealElements.forEach((el) => observer.observe(el));
-    } else {
-      revealElements.forEach((el) => el.classList.add("show"));
-    }
-
-    // Back to Top Button
-    const topButton = document.getElementById("topBtn");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
-        topButton.classList.add("visible");
-      } else {
-        topButton.classList.remove("visible");
       }
-    }, { passive: true });
-
-    topButton.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          if (e.target.closest("a")) return;
+          e.preventDefault();
+          card.classList.toggle("flipped");
+        }
+      });
     });
 
-    // 3D Background Scroll Parallax for Growth & Study Imagery
-    const bgOrb1 = document.getElementById("bgOrb1");
-    const bgOrb2 = document.getElementById("bgOrb2");
+    /* 3D Hero Parallax */
+    const heroArt = document.getElementById("heroArt");
+    const heroStage = document.getElementById("heroStage");
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY;
-      if (bgOrb1) {
-        bgOrb1.style.transform = `translate3d(0, ${scrollY * 0.12}px, ${scrollY * 0.05}px) rotate(${scrollY * 0.04}deg)`;
+    if (heroArt && heroStage && finePointer && !reduceMotion) {
+      heroArt.addEventListener("mousemove", (e) => {
+        const rect = heroArt.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        heroStage.style.transform = `perspective(1200px) rotateX(${-y * 16}deg) rotateY(${x * 16}deg) translateZ(10px)`;
+      });
+      heroArt.addEventListener("mouseleave", () => {
+        heroStage.style.transform = "perspective(1200px) rotateX(0) rotateY(0) translateZ(0)";
+      });
+    }
+
+    /* Search Feature */
+    const searchData = [
+      { title: "Physics", description: "Class 12 Physics chapters and derivations", url: "physics/index.html" },
+      { title: "Chemistry", description: "Physical, organic, inorganic notes", url: "chemistry/index.html" },
+      { title: "Mathematics", description: "Calculus, vectors, probability practice", url: "mathematics/index.html" },
+      { title: "English", description: "Summaries and writing formats", url: "english/index.html" },
+      { title: "Exam information", description: "Syllabus and blueprint", url: "exam-info.html" },
+      { title: "About Shorveer", description: "Our mission, origin, and standard", url: "about.html" },
+      { title: "About our notes", description: "How chapters are built", url: "about-notes.html" }
+    ];
+
+    const searchButton = document.getElementById("searchButton");
+    const searchLayer = document.getElementById("searchLayer");
+    const searchClose = document.getElementById("searchClose");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    function openSearch() {
+      searchLayer.classList.add("active");
+      searchLayer.setAttribute("aria-hidden", "false");
+      setTimeout(() => searchInput.focus(), 60);
+      renderResults("");
+    }
+    function closeSearch() {
+      searchLayer.classList.remove("active");
+      searchLayer.setAttribute("aria-hidden", "true");
+      searchInput.value = "";
+    }
+    function renderResults(query) {
+      const q = query.trim().toLowerCase();
+      const matches = searchData.filter(item =>
+        !q || item.title.toLowerCase().includes(q) || item.description.toLowerCase().includes(q)
+      );
+      if (!matches.length) {
+        searchResults.innerHTML = '<div class="empty-result">Nothing found. Try "physics" or "exam".</div>';
+        return;
       }
-      if (bgOrb2) {
-        bgOrb2.style.transform = `translate3d(0, -${scrollY * 0.08}px, ${scrollY * 0.03}px) rotate(-${scrollY * 0.03}deg)`;
+      searchResults.innerHTML = matches.map(item => `
+        <a class="result" href="${item.url}">
+          <div>
+            <strong>${item.title}</strong>
+            <small>${item.description}</small>
+          </div>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+      `).join("");
+    }
+
+    searchButton.addEventListener("click", openSearch);
+    searchClose.addEventListener("click", closeSearch);
+    searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
+    searchInput.addEventListener("input", e => renderResults(e.target.value));
+
+    /* Mobile Menu */
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    function setMenu(open) {
+      mobileMenu.classList.toggle("open", open);
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+    menuButton.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+
+    /* Keyboard Shortcuts */
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        closeSearch();
+        setMenu(false);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
       }
-    }, { passive: true });
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault(); openSearch();
+      }
+    });
+
+    /* Scroll Reveal */
+    const reveals = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); }
+        });
+      }, { threshold: .1 });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add("visible"));
+    }
   </script>
 </body>
 </html>
