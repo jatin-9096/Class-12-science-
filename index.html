@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en" data-theme="notebook">
 <head>
   <meta charset="UTF-8">
@@ -43,7 +43,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
 
   <!-- External CSS Linked Here -->
   <link rel="stylesheet" href="style.css">
@@ -82,6 +82,320 @@
   </script>
 
   <title>Shorveer Notes — Class 12 Science, Clearly Organised</title>
+  
+  <style>
+    /* Meadow Footer Styles (Integrated directly with Shorveer design tokens) */
+    .footer {
+      --u: min(100vw / 1440, 100vh / 672);
+      --u: min(100vw / 1440, 100svh / 672);
+      position: relative;
+      height: 100vh;
+      height: 100svh;
+      background: var(--paper, #fdfaf3);
+      overflow: hidden;
+      isolation: isolate;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+    }
+    .footer__stage {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .footer__video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 100%;
+      transform: translateY(9%);
+    }
+    .footer__stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, var(--paper, #fdfaf3) 0%, rgb(253 250 243 / .96) 26%, rgb(253 250 243 / .72) 44%, rgb(253 250 243 / 0) 70%);
+      pointer-events: none;
+    }
+    .footer__wordmark {
+      position: absolute;
+      left: 50%;
+      bottom: calc(-2 * var(--u));
+      transform: translateX(-50%);
+      z-index: 1;
+      margin: 0;
+      font-size: calc(390 * var(--u));
+      font-weight: 600;
+      line-height: .74;
+      letter-spacing: -0.045em;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      color: rgb(232 234 250 / .4);
+      background: linear-gradient(to bottom, rgb(255 255 255 / .78), rgb(214 218 246 / .36) 48%, rgb(255 255 255 / .62));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 calc(-1 * var(--u)) 0 rgb(255 255 255 / .55)) drop-shadow(0 0 calc(18 * var(--u)) rgb(190 200 255 / .45));
+    }
+    .footer__fog {
+      position: absolute;
+      inset: auto 0 0 0;
+      z-index: 2;
+      height: 17%;
+      pointer-events: none;
+      background: linear-gradient(to top, #e2e3f1 0%, rgb(226 227 241 / .6) 30%, rgb(226 227 241 / 0) 100%);
+    }
+    .footer__content {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: calc(440 * var(--u)) calc(240 * var(--u)) calc(240 * var(--u)) 1fr;
+      align-items: start;
+      width: calc(1440 * var(--u));
+      margin: 0 auto;
+      padding: calc(86 * var(--u)) calc(100 * var(--u)) 0 calc(160 * var(--u));
+    }
+    .footer-brand .brand__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(10 * var(--u));
+      font-size: calc(17 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .footer-brand .brand__mark {
+      width: calc(30 * var(--u));
+      height: calc(30 * var(--u));
+      border-radius: calc(8 * var(--u));
+      background: linear-gradient(to bottom, #2b2b2b, #0a0a0a 55%);
+      box-shadow: 0 calc(1 * var(--u)) calc(2 * var(--u)) rgb(0 0 0 / .25);
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-brand .brand__mark svg {
+      width: 60%;
+      height: 60%;
+    }
+    .footer-brand .brand__title {
+      margin-top: calc(19 * var(--u));
+      font-size: calc(20 * var(--u));
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.045em;
+    }
+    .footer-brand .brand__text {
+      max-width: calc(412 * var(--u));
+      margin-top: calc(18 * var(--u));
+      color: #6f6f6c;
+      font-size: calc(13.7 * var(--u));
+      line-height: 1.43;
+      letter-spacing: -0.012em;
+    }
+    .footer-brand .brand__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(6 * var(--u));
+      height: calc(32.5 * var(--u));
+      margin-top: calc(20 * var(--u));
+      padding: 0 calc(16 * var(--u)) 0 calc(15 * var(--u));
+      border-radius: calc(7 * var(--u));
+      background: #0c0c0c;
+      color: #fff;
+      font-size: calc(11.8 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      transition: background .2s, transform .2s;
+      text-decoration: none;
+    }
+    .footer-brand .brand__cta:hover {
+      background: #262626;
+      transform: translateY(-1px);
+    }
+    .footer-brand .brand__cta svg {
+      width: calc(13 * var(--u));
+      height: calc(13 * var(--u));
+      margin-top: calc(-1.5 * var(--u));
+    }
+    .footer-brand .brand__copy {
+      margin-top: calc(23 * var(--u));
+      color: #9c9c98;
+      font-size: calc(12.2 * var(--u));
+      letter-spacing: 0.01em;
+    }
+    .footer-brand .brand__by {
+      display: flex;
+      align-items: center;
+      gap: calc(5 * var(--u));
+      margin-top: calc(21 * var(--u));
+      font-size: calc(11.8 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .footer-brand .brand__heart { font-size: .95em; }
+    .footer-brand .brand__author {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(6 * var(--u));
+      margin-left: calc(5 * var(--u));
+    }
+    .footer-brand .brand__avatar {
+      width: calc(23 * var(--u));
+      height: calc(23 * var(--u));
+      border-radius: 50%;
+      overflow: hidden;
+      background: #e3e3e0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-brand .brand__avatar svg { width: 100%; height: 100%; display: block; }
+    .footer-brand .brand__status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: calc(8 * var(--u));
+      margin-top: calc(16 * var(--u));
+      list-style: none;
+      padding: 0;
+    }
+    .footer-brand .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(6 * var(--u));
+      height: calc(25 * var(--u));
+      padding: 0 calc(10 * var(--u));
+      border: 1px solid rgb(12 12 12 / .12);
+      border-radius: 999px;
+      background: rgb(255 255 255 / .55);
+      font-size: calc(10.8 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    .footer-brand .chip svg {
+      width: calc(11 * var(--u));
+      height: calc(11 * var(--u));
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .footer-brand .chip__dot {
+      width: calc(6 * var(--u));
+      height: calc(6 * var(--u));
+      border-radius: 50%;
+      background: #2fb36a;
+      box-shadow: 0 0 0 calc(2.5 * var(--u)) rgb(47 179 106 / .18);
+    }
+    .footer .col__title {
+      font-size: calc(16 * var(--u));
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.045em;
+      margin: 0;
+    }
+    .footer .col__list {
+      display: grid;
+      gap: calc(20.5 * var(--u));
+      margin-top: calc(24 * var(--u));
+      font-size: calc(13.7 * var(--u));
+      line-height: 1.24;
+      letter-spacing: 0.022em;
+      color: #161616;
+      list-style: none;
+      padding: 0;
+    }
+    .footer .col--menu .col__list {
+      gap: calc(15 * var(--u));
+      margin-top: calc(21 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      color: #0c0c0c;
+    }
+    .footer .col__list a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    .footer .col__list a:hover {
+      opacity: .55;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .footer {
+        --u: min(100vw / 1040, 100svh / 672);
+      }
+      .footer__content {
+        grid-template-columns: calc(400 * var(--u)) calc(190 * var(--u)) calc(210 * var(--u)) 1fr;
+        width: calc(1040 * var(--u));
+        padding: calc(64 * var(--u)) calc(40 * var(--u)) 0;
+      }
+      .footer-brand .brand__text { max-width: calc(350 * var(--u)); }
+      .footer__wordmark {
+        font-size: calc(286 * var(--u));
+        bottom: calc(10 * var(--u));
+      }
+    }
+
+    @media (max-width: 767px) {
+      .footer {
+        --u: 1px;
+        height: auto;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .footer__stage::after {
+        background: linear-gradient(to bottom, var(--paper, #fdfaf3) 0%, rgb(253 250 243 / .95) 50%, rgb(253 250 243 / .8) 68%, rgb(253 250 243 / 0) 90%);
+      }
+      .footer__content {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: space-between;
+        gap: 36px 12px;
+        width: 100%;
+        padding: 40px 20px 0;
+        margin-bottom: max(34vw, 150px);
+      }
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+      .footer-brand .brand__title { font-size: 21px; margin-top: 19px; }
+      .footer-brand .brand__text { max-width: 34em; font-size: 14px; margin-top: 18px; }
+      .footer-brand .brand__cta { height: 38px; padding: 0 18px 0 16px; border-radius: 8px; font-size: 13px; margin-top: 20px; }
+      .footer-brand .brand__cta svg { width: 14px; height: 14px; }
+      .footer-brand .brand__copy, .footer-brand .brand__by { font-size: 12.5px; }
+      .footer-brand .brand__copy { margin-top: 23px; }
+      .footer-brand .brand__by { margin-top: 21px; }
+      .footer-brand .chip { height: 28px; font-size: 12px; padding: 0 10px; }
+      .footer .col__title { font-size: 15px; }
+      .footer .col__list { gap: 14px; margin-top: 20px; font-size: 13px; letter-spacing: 0; }
+      .footer .col--menu .col__list { gap: 14px; margin-top: 20px; }
+      .footer__wordmark {
+        bottom: 5vw;
+        font-size: 27vw;
+      }
+      .footer__fog { height: 7%; }
+    }
+
+    @media (max-width: 359px) {
+      .footer__content {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer .col:last-child {
+        grid-column: span 2;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .footer-brand .brand__cta, .footer .col__list a {
+        transition: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -629,50 +943,90 @@
 
   </main>
 
-  <!-- ============ FOOTER ============ -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href="/">
-            <span class="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 64 64" fill="none">
-                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+  <!-- ============ FOOTER (Driftbar Meadow Footer tailored for Shorveer Notes) ============ -->
+  <footer class="footer">
+    <div class="footer__stage" aria-hidden="true">
+      <video class="footer__video"
+        src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/4d01c727-d9c5-47c8-a778-35a451ffd39f.mp4"
+        poster="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261014_121838_c97d0940-f430-4304-8573-4f47ee44f447.png"
+        autoplay muted loop playsinline preload="auto"></video>
+    </div>
+
+    <p class="footer__wordmark" aria-hidden="true">Shorveer</p>
+    <div class="footer__fog" aria-hidden="true"></div>
+
+    <div class="footer__content">
+      <div class="footer-brand">
+        <a class="brand__logo" href="/" aria-label="Shorveer Notes home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none">
+              <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+            </svg>
+          </span>
+          Shorveer<em>Notes</em>
+        </a>
+        <h2 class="brand__title">Class 12 Science, Clearly Organised</h2>
+        <p class="brand__text">A student-focused learning platform for Class 12 Science notes, chapters, revision resources and examination preparation built around how chapters are actually taught.</p>
+        <a class="brand__cta" href="https://www.youtube.com/@JSEDIZ" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          Visit JS EDIZ on YouTube
+        </a>
+        <p class="brand__copy">&copy; <span id="year"></span> Shorveer Notes. Made in India.</p>
+        <p class="brand__by">
+          Built with <span class="brand__heart" aria-label="love">💙</span> by 
+          <span class="brand__author">
+            <span class="brand__avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect width="24" height="24" fill="#e6e6e3" />
+                <circle cx="12" cy="9.2" r="4.4" fill="#1b1b1b" />
+                <path d="M3 25c0-6 4-9.4 9-9.4S21 19 21 25Z" fill="#1b1b1b" />
               </svg>
-            </span>
-            <span class="brand-name">Shorveer<em>Notes</em></span>
-          </a>
-          <p>A study platform for Class 12 Science students, built around the way chapters are actually taught in class.</p>
-        </div>
-
-        <div class="footer-column">
-          <h3>Study</h3>
-          <a href="physics/index.html">Physics</a>
-          <a href="chemistry/index.html">Chemistry</a>
-          <a href="mathematics/index.html">Mathematics</a>
-          <a href="english/index.html">English</a>
-        </div>
-
-        <div class="footer-column">
-          <h3>Site</h3>
-          <a href="exam-info.html">Exam info</a>
-          <a href="about-notes.html">About the notes</a>
-          <a href="about.html">About us</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="cookies.html">Cookies</a>
-        </div>
-
-        <div class="footer-column">
-          <h3>Connect</h3>
-          <a href="mailto:support.shorveernotes@gmail.com">Contact us</a>
-          <a href="https://www.youtube.com/@JSEDIZ" target="_blank" rel="noopener noreferrer">YouTube</a>
-        </div>
+            </span>Jatin Sharma
+          </span>
+        </p>
+        <ul class="brand__status" aria-label="Platform status">
+          <li class="chip"><span class="chip__dot" aria-hidden="true"></span>CBSE Aligned</li>
+          <li class="chip">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7" /><path d="M20 4v7h-7" /></svg>
+            Updated for 2026-27
+          </li>
+          <li class="chip">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6-5.4-2.9-5.4 2.9 1.1-6L3.2 9.4l6.1-.8Z" /></svg>
+            Student Focused
+          </li>
+        </ul>
       </div>
 
-      <div class="footer-bottom">
-        <span>© <span id="year"></span> Shorveer Notes</span>
-        <span>Made in India for Class 12 students</span>
-      </div>
+      <nav class="col col--menu" aria-label="Study Menu">
+        <h3 class="col__title">Study</h3>
+        <ul class="col__list">
+          <li><a href="physics/index.html">Physics</a></li>
+          <li><a href="chemistry/index.html">Chemistry</a></li>
+          <li><a href="mathematics/index.html">Mathematics</a></li>
+          <li><a href="english/index.html">English</a></li>
+        </ul>
+      </nav>
+
+      <nav class="col" aria-label="Site Navigation">
+        <h3 class="col__title">Site</h3>
+        <ul class="col__list">
+          <li><a href="exam-info.html">Exam info</a></li>
+          <li><a href="about-notes.html">About the notes</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="cookies.html">Cookies</a></li>
+        </ul>
+      </nav>
+
+      <nav class="col" aria-label="Connect">
+        <h3 class="col__title">Connect</h3>
+        <ul class="col__list">
+          <li><a href="mailto:support.shorveernotes@gmail.com">Contact us</a></li>
+          <li><a href="https://www.youtube.com/@JSEDIZ" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        </ul>
+      </nav>
     </div>
   </footer>
 
@@ -708,21 +1062,21 @@
 
   <script>
     /* ----------------------------------------------------------
-       Safe storage
-       ---------------------------------------------------------- */
+        Safe storage
+        ---------------------------------------------------------- */
     const store = {
       get(k) { try { return localStorage.getItem(k); } catch { return null; } },
       set(k, v) { try { localStorage.setItem(k, v); } catch {} }
     };
 
     /* ----------------------------------------------------------
-       Year
-       ---------------------------------------------------------- */
+        Year
+        ---------------------------------------------------------- */
     document.getElementById("year").textContent = new Date().getFullYear();
 
     /* ----------------------------------------------------------
-       THEMES
-       ---------------------------------------------------------- */
+        THEMES
+        ---------------------------------------------------------- */
     const THEMES = {
       notebook: {
         hero: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=900&q=80",
@@ -794,8 +1148,8 @@
     });
 
     /* ----------------------------------------------------------
-       MOTIVATION ROTATOR
-       ---------------------------------------------------------- */
+        MOTIVATION ROTATOR
+        ---------------------------------------------------------- */
     const MOTIVATIONS = [
       "One chapter at a time.",
       "Understanding beats memorising.",
@@ -825,8 +1179,8 @@
     setInterval(nextMotivation, 6500);
 
     /* ----------------------------------------------------------
-       FLIP CARDS (tap on touch, keyboard accessible)
-       ---------------------------------------------------------- */
+        FLIP CARDS (tap on touch, keyboard accessible)
+        ---------------------------------------------------------- */
     const flipCards = document.querySelectorAll(".flip-card");
     const isTouch = window.matchMedia("(hover: none)").matches;
 
@@ -847,8 +1201,8 @@
     });
 
     /* ----------------------------------------------------------
-       HERO 3D PARALLAX (mouse-driven)
-       ---------------------------------------------------------- */
+        HERO 3D PARALLAX (mouse-driven)
+        ---------------------------------------------------------- */
     const heroArt = document.getElementById("heroArt");
     const heroStage = document.getElementById("heroStage");
     const finePointer = window.matchMedia("(pointer: fine)").matches;
@@ -871,8 +1225,8 @@
     }
 
     /* ----------------------------------------------------------
-       3D TILT ON RESOURCE CARDS
-       ---------------------------------------------------------- */
+        3D TILT ON RESOURCE CARDS
+        ---------------------------------------------------------- */
     const tiltEls = document.querySelectorAll("[data-tilt]");
     if (finePointer && !reduceMotion) {
       tiltEls.forEach(el => {
@@ -890,8 +1244,8 @@
     }
 
     /* ----------------------------------------------------------
-       SEARCH
-       ---------------------------------------------------------- */
+        SEARCH
+        ---------------------------------------------------------- */
     const searchData = [
       { title: "Physics", description: "Class 12 Physics chapters and resources", url: "physics/index.html" },
       { title: "Chemistry", description: "Class 12 Chemistry chapters and resources", url: "chemistry/index.html" },
@@ -947,8 +1301,8 @@
     searchInput.addEventListener("input", e => renderResults(e.target.value));
 
     /* ----------------------------------------------------------
-       MOBILE MENU
-       ---------------------------------------------------------- */
+        MOBILE MENU
+        ---------------------------------------------------------- */
     const menuButton = document.getElementById("menuButton");
     const mobileMenu = document.getElementById("mobileMenu");
     function setMenu(open) {
@@ -960,8 +1314,8 @@
     mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
 
     /* ----------------------------------------------------------
-       KEYBOARD SHORTCUTS
-       ---------------------------------------------------------- */
+        KEYBOARD SHORTCUTS
+        ---------------------------------------------------------- */
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") {
         closeSearch();
@@ -975,8 +1329,8 @@
     });
 
     /* ----------------------------------------------------------
-       SCROLL REVEAL
-       ---------------------------------------------------------- */
+        SCROLL REVEAL
+        ---------------------------------------------------------- */
     const reveals = document.querySelectorAll(".reveal");
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver(entries => {
@@ -990,8 +1344,8 @@
     }
 
     /* ----------------------------------------------------------
-       COOKIE CONSENT
-       ---------------------------------------------------------- */
+        COOKIE CONSENT
+        ---------------------------------------------------------- */
     const cookieBox = document.getElementById("cookieBox");
     const acceptCookies = document.getElementById("acceptCookies");
     if (!store.get("shorveer-cookie-consent")) {
