@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" data-theme="notebook">
 <head>
   <meta charset="UTF-8">
@@ -450,10 +450,11 @@
     </div>
   </header>
 
-  <!-- ============ THEME PICKER ============ -->
+  <!-- ============ THEME PICKER (9 Themes) ============ -->
   <div class="theme-pop" id="themePop" role="dialog" aria-label="Choose a theme">
     <h4>Pick a look</h4>
     <div class="theme-grid">
+      <!-- 1. Notebook -->
       <button class="theme-opt" data-theme-value="notebook" aria-pressed="true">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#fdfaf3"></span>
@@ -465,6 +466,7 @@
         <small>Warm paper, classic</small>
       </button>
 
+      <!-- 2. Chalkboard -->
       <button class="theme-opt" data-theme-value="chalkboard" aria-pressed="false">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#1e2a24"></span>
@@ -476,6 +478,7 @@
         <small>Dark green, chalk</small>
       </button>
 
+      <!-- 3. Blueprint -->
       <button class="theme-opt" data-theme-value="blueprint" aria-pressed="false">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#0f2b4c"></span>
@@ -487,6 +490,7 @@
         <small>Navy, technical</small>
       </button>
 
+      <!-- 4. Sunset -->
       <button class="theme-opt" data-theme-value="sunset" aria-pressed="false">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#241226"></span>
@@ -496,6 +500,66 @@
         </span>
         <b>Sunset</b>
         <small>Plum, warm glow</small>
+      </button>
+
+      <!-- 5. Emerald -->
+      <button class="theme-opt" data-theme-value="emerald" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#0b1d16"></span>
+          <span style="background:#34d399"></span>
+          <span style="background:#2dd4bf"></span>
+          <span style="background:#e3f7ed"></span>
+        </span>
+        <b>Emerald</b>
+        <small>Biology & Green</small>
+      </button>
+
+      <!-- 6. Cyberpunk -->
+      <button class="theme-opt" data-theme-value="cyberpunk" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#0f1016"></span>
+          <span style="background:#00f0ff"></span>
+          <span style="background:#ff007f"></span>
+          <span style="background:#f0f2ff"></span>
+        </span>
+        <b>Cyberpunk</b>
+        <small>Neon high-tech</small>
+      </button>
+
+      <!-- 7. Minimal -->
+      <button class="theme-opt" data-theme-value="minimal" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#f8fafc"></span>
+          <span style="background:#2563eb"></span>
+          <span style="background:#64748b"></span>
+          <span style="background:#0f172a"></span>
+        </span>
+        <b>Minimal</b>
+        <small>Clean white</small>
+      </button>
+
+      <!-- 8. Dracula -->
+      <button class="theme-opt" data-theme-value="dracula" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#191622"></span>
+          <span style="background:#bd93f9"></span>
+          <span style="background:#ff79c6"></span>
+          <span style="background:#f8f8f2"></span>
+        </span>
+        <b>Dracula</b>
+        <small>Night indigo</small>
+      </button>
+
+      <!-- 9. Solarized -->
+      <button class="theme-opt" data-theme-value="solarized" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#fdf6e3"></span>
+          <span style="background:#b58900"></span>
+          <span style="background:#2aa198"></span>
+          <span style="background:#073642"></span>
+        </span>
+        <b>Solarized</b>
+        <small>Warm study paper</small>
       </button>
     </div>
     <p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Your choice is saved for next time.</p>
@@ -943,7 +1007,7 @@
 
   </main>
 
-  <!-- ============ FOOTER (Driftbar Meadow Footer tailored for Shorveer Notes) ============ -->
+  <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="footer__stage" aria-hidden="true">
       <video class="footer__video"
@@ -1061,22 +1125,18 @@
   </aside>
 
   <script>
-    /* ----------------------------------------------------------
-        Safe storage
-        ---------------------------------------------------------- */
+    /* Safe storage */
     const store = {
       get(k) { try { return localStorage.getItem(k); } catch { return null; } },
       set(k, v) { try { localStorage.setItem(k, v); } catch {} }
     };
 
-    /* ----------------------------------------------------------
-        Year
-        ---------------------------------------------------------- */
+    /* Auto Year */
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    /* ----------------------------------------------------------
-        THEMES
-        ---------------------------------------------------------- */
+    /* ==========================================================
+       THEMES CONFIG (All 9 Themes)
+       ========================================================== */
     const THEMES = {
       notebook: {
         hero: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=900&q=80",
@@ -1093,6 +1153,26 @@
       sunset: {
         hero: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80",
         label: "late-night study, warm lamp"
+      },
+      emerald: {
+        hero: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=80",
+        label: "life sciences & the biology lab"
+      },
+      cyberpunk: {
+        hero: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+        label: "silicon, circuitry & quantum states"
+      },
+      minimal: {
+        hero: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80",
+        label: "pure focus, zero noise"
+      },
+      dracula: {
+        hero: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80",
+        label: "midnight coding & deep analysis"
+      },
+      solarized: {
+        hero: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=80",
+        label: "pages turn, ideas stick"
       }
     };
 
@@ -1112,14 +1192,16 @@
         btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name));
       });
 
-      // Swap hero image + caption with a fade
+      // Hero image swap with smooth fade
       const t = THEMES[name];
-      heroImage.classList.add("fading");
-      setTimeout(() => {
-        heroImage.src = t.hero;
-        heroCaption.textContent = t.label;
-        heroImage.classList.remove("fading");
-      }, 260);
+      if (heroImage && t) {
+        heroImage.classList.add("fading");
+        setTimeout(() => {
+          heroImage.src = t.hero;
+          if (heroCaption) heroCaption.textContent = t.label;
+          heroImage.classList.remove("fading");
+        }, 260);
+      }
     }
 
     // Restore saved theme
@@ -1147,9 +1229,7 @@
       }
     });
 
-    /* ----------------------------------------------------------
-        MOTIVATION ROTATOR
-        ---------------------------------------------------------- */
+    /* Motivation Rotator */
     const MOTIVATIONS = [
       "One chapter at a time.",
       "Understanding beats memorising.",
@@ -1169,6 +1249,7 @@
     let motivationIndex = 0;
 
     function nextMotivation() {
+      if (!motivationText) return;
       motivationText.classList.remove("show");
       setTimeout(() => {
         motivationIndex = (motivationIndex + 1) % MOTIVATIONS.length;
@@ -1178,9 +1259,7 @@
     }
     setInterval(nextMotivation, 6500);
 
-    /* ----------------------------------------------------------
-        FLIP CARDS (tap on touch, keyboard accessible)
-        ---------------------------------------------------------- */
+    /* Flip Cards */
     const flipCards = document.querySelectorAll(".flip-card");
     const isTouch = window.matchMedia("(hover: none)").matches;
 
@@ -1200,9 +1279,7 @@
       });
     });
 
-    /* ----------------------------------------------------------
-        HERO 3D PARALLAX (mouse-driven)
-        ---------------------------------------------------------- */
+    /* Hero Parallax */
     const heroArt = document.getElementById("heroArt");
     const heroStage = document.getElementById("heroStage");
     const finePointer = window.matchMedia("(pointer: fine)").matches;
@@ -1213,20 +1290,14 @@
         const rect = heroArt.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
-        const rotX = -y * 16;
-        const rotY = x * 16;
-        heroStage.style.transform =
-          `perspective(1200px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(10px)`;
+        heroStage.style.transform = `perspective(1200px) rotateX(${-y * 16}deg) rotateY(${x * 16}deg) translateZ(10px)`;
       });
       heroArt.addEventListener("mouseleave", () => {
-        heroStage.style.transform =
-          "perspective(1200px) rotateX(0) rotateY(0) translateZ(0)";
+        heroStage.style.transform = "perspective(1200px) rotateX(0) rotateY(0) translateZ(0)";
       });
     }
 
-    /* ----------------------------------------------------------
-        3D TILT ON RESOURCE CARDS
-        ---------------------------------------------------------- */
+    /* 3D Tilt */
     const tiltEls = document.querySelectorAll("[data-tilt]");
     if (finePointer && !reduceMotion) {
       tiltEls.forEach(el => {
@@ -1234,8 +1305,7 @@
           const r = el.getBoundingClientRect();
           const px = (e.clientX - r.left) / r.width - 0.5;
           const py = (e.clientY - r.top) / r.height - 0.5;
-          el.style.transform =
-            `perspective(900px) rotateX(${-py * 8}deg) rotateY(${px * 8}deg) translateY(-4px)`;
+          el.style.transform = `perspective(900px) rotateX(${-py * 8}deg) rotateY(${px * 8}deg) translateY(-4px)`;
         });
         el.addEventListener("mouseleave", () => {
           el.style.transform = "";
@@ -1243,9 +1313,7 @@
       });
     }
 
-    /* ----------------------------------------------------------
-        SEARCH
-        ---------------------------------------------------------- */
+    /* Search */
     const searchData = [
       { title: "Physics", description: "Class 12 Physics chapters and resources", url: "physics/index.html" },
       { title: "Chemistry", description: "Class 12 Chemistry chapters and resources", url: "chemistry/index.html" },
@@ -1295,14 +1363,12 @@
       `).join("");
     }
 
-    searchButton.addEventListener("click", openSearch);
-    searchClose.addEventListener("click", closeSearch);
-    searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
-    searchInput.addEventListener("input", e => renderResults(e.target.value));
+    if (searchButton) searchButton.addEventListener("click", openSearch);
+    if (searchClose) searchClose.addEventListener("click", closeSearch);
+    if (searchLayer) searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
+    if (searchInput) searchInput.addEventListener("input", e => renderResults(e.target.value));
 
-    /* ----------------------------------------------------------
-        MOBILE MENU
-        ---------------------------------------------------------- */
+    /* Mobile Menu */
     const menuButton = document.getElementById("menuButton");
     const mobileMenu = document.getElementById("mobileMenu");
     function setMenu(open) {
@@ -1310,12 +1376,12 @@
       menuButton.setAttribute("aria-expanded", String(open));
       menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     }
-    menuButton.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
-    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+      mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+    }
 
-    /* ----------------------------------------------------------
-        KEYBOARD SHORTCUTS
-        ---------------------------------------------------------- */
+    /* Keyboard Shortcuts */
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") {
         closeSearch();
@@ -1328,9 +1394,7 @@
       }
     });
 
-    /* ----------------------------------------------------------
-        SCROLL REVEAL
-        ---------------------------------------------------------- */
+    /* Scroll Reveal */
     const reveals = document.querySelectorAll(".reveal");
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver(entries => {
@@ -1343,18 +1407,18 @@
       reveals.forEach(el => el.classList.add("visible"));
     }
 
-    /* ----------------------------------------------------------
-        COOKIE CONSENT
-        ---------------------------------------------------------- */
+    /* Cookie Consent */
     const cookieBox = document.getElementById("cookieBox");
     const acceptCookies = document.getElementById("acceptCookies");
-    if (!store.get("shorveer-cookie-consent")) {
+    if (cookieBox && !store.get("shorveer-cookie-consent")) {
       setTimeout(() => cookieBox.classList.add("show"), 1400);
     }
-    acceptCookies.addEventListener("click", () => {
-      store.set("shorveer-cookie-consent", "accepted");
-      cookieBox.classList.remove("show");
-    });
+    if (acceptCookies) {
+      acceptCookies.addEventListener("click", () => {
+        store.set("shorveer-cookie-consent", "accepted");
+        cookieBox.classList.remove("show");
+      });
+    }
   </script>
 </body>
 </html>
