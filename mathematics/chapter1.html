@@ -1,908 +1,881 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="sunset">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 01: Relations and Functions | Mathematics | Shorveer Notes</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CBSE Class 12 Mathematics - Chapter1 (Part 1: In-Depth Theory & Complete Derivations). Comprehensive theory, derivations, formulas, and solved board PYQs by Jatin Sandilya at Shorveer Notes.">
+  <meta name="author" content="Jatin Sandilya">
+  <meta name="robots" content="index, follow">
+  <title>Chapter1 (Part 1) · Class 12 Mathematics | Shorveer Notes</title>
 
-
-    <style>
-        /* General Body Styling */
-        :root {
-            --paper: #fdfaf3;
-            --ink: #1c1c1a;
-        }
-
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            color: var(--ink);
-            background-color: var(--paper);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            color: #1a1a1a;
-            line-height: 1.2;
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-        }
-
-        a {
-            color: #2b2b2b;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navbar Styling */
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav .brand {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #1a1a1a;
-        }
-
-        .nav .brand-mark {
-            width: 30px;
-            height: 30px;
-            background-color: #1a1a1a;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nav .brand-mark svg {
-            width: 60%;
-            height: 60%;
-        }
-
-        .nav .brand-name em {
-            font-style: normal;
-            color: #6b6858;
-            font-weight: normal;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            color: #333;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: #e8b64c;
-        }
-
-        .nav-actions {
-            display: flex;
-            gap: 15px;
-        }
-
-        .nav-icon {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #333;
-            padding: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: color 0.2s;
-        }
-
-        .nav-icon:hover {
-            color: #e8b64c;
-        }
-
-        .mobile-toggle {
-            display: none; /* Hidden by default on larger screens */
-        }
-
-        .palette-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #e8b64c; /* Example color */
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-
-        /* Main Content Styling */
-        .chapter-content {
-            padding: 40px 0;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .chapter-content h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #2b2b2b;
-        }
-
-        .section {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            padding: 30px;
-            margin-bottom: 30px;
-        }
-
-        .section h2 {
-            font-size: 1.8em;
-            color: #bf5a3c;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-
-        .section h3 {
-            font-size: 1.4em;
-            color: #2b2b2b;
-            margin-top: 1.5em;
-        }
-
-        .section p, .section ul, .section ol {
-            margin-bottom: 1em;
-        }
-
-        .section ul {
-            list-style: disc;
-            padding-left: 25px;
-        }
-
-        .section ol {
-            list-style: decimal;
-            padding-left: 25px;
-        }
-
-        .definition {
-            background-color: #f9f9f9;
-            border-left: 4px solid #e8b64c;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-        }
-
-        .definition strong {
-            color: #e8b64c;
-        }
-
-        .formula-block {
-            background-color: #eff3f6;
-            border-left: 4px solid #4a90e2;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            font-family: 'Times New Roman', serif;
-        }
-
-        .question-block {
-            background-color: #e6f7ed;
-            border-left: 4px solid #2fb36a;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-        }
-
-        .solution-block {
-            background-color: #f5f5f5;
-            border-left: 4px solid #999;
-            padding: 15px;
-            margin-top: 10px;
-            border-radius: 4px;
-        }
-
-        .revision-block {
-            background-color: #fffbe6;
-            border: 1px solid #ffcc00;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
-        }
-
-        .revision-block h2 {
-            color: #ffcc00;
-            border-bottom: 1px solid #ffcc00;
-        }
-
-
-        /* --- Responsive Adjustments for Navbar --- */
-        @media (max-width: 768px) {
-            .nav {
-                flex-wrap: wrap;
-                padding-bottom: 0;
-            }
-            .nav .brand {
-                flex-grow: 1;
-            }
-            .nav-actions {
-                order: 3;
-                width: 100%;
-                justify-content: flex-end; /* Align actions to the right if needed */
-                padding: 10px 0;
-            }
-            .nav-links {
-                display: none; /* Hidden by default on mobile */
-                flex-direction: column;
-                width: 100%;
-                background-color: #fff;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                padding: 10px 0;
-                order: 4; /* Place below brand and actions */
-            }
-
-            .nav-links.active {
-                display: flex; /* Show when active */
-            }
-
-            .nav-links a {
-                padding: 10px 20px;
-                text-align: center;
-                border-bottom: 1px solid #eee;
-            }
-
-            .nav-links a:last-child {
-                border-bottom: none;
-            }
-
-            .mobile-toggle {
-                display: block; /* Show menu button on mobile */
-            }
-        }
-    </style>
-
-    <style>
-    /* Meadow Footer Styles (Integrated directly with Shorveer design tokens) */
-    .footer {
-      --u: min(100vw / 1440, 100vh / 672);
-      --u: min(100vw / 1440, 100svh / 672);
-      position: relative;
-      height: 100vh;
-      height: 100svh;
-      background: var(--paper, #fdfaf3);
-      overflow: hidden;
-      isolation: isolate;
-      font-family: "Inter", system-ui, -apple-system, sans-serif;
+  
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
     }
-    .footer__stage {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-    .footer__video {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 100%;
-      transform: translateY(9%);
-    }
-    .footer__stage::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, var(--paper, #fdfaf3) 0%, rgb(253 250 243 / .96) 26%, rgb(253 250 243 / .72) 44%, rgb(253 250 243 / 0) 70%);
-      pointer-events: none;
-    }
-    .footer__wordmark {
-      position: absolute;
-      left: 50%;
-      bottom: calc(-2 * var(--u));
-      transform: translateX(-50%);
-      z-index: 1;
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    body {
+      background: var(--bg, #241226);
+      color: var(--ink, #ffe9d6);
+      font-family: var(--font-body, 'Karla', sans-serif);
       margin: 0;
-      font-size: calc(390 * var(--u));
-      font-weight: 600;
-      line-height: .74;
-      letter-spacing: -0.045em;
-      white-space: nowrap;
-      pointer-events: none;
-      user-select: none;
-      color: rgb(232 234 250 / .4);
-      background: linear-gradient(to bottom, rgb(255 255 255 / .78), rgb(214 218 246 / .36) 48%, rgb(255 255 255 / .62));
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 calc(-1 * var(--u)) 0 rgb(255 255 255 / .55)) drop-shadow(0 0 calc(18 * var(--u)) rgb(190 200 255 / .45));
+      padding-top: 80px;
     }
-    .footer__fog {
-      position: absolute;
-      inset: auto 0 0 0;
-      z-index: 2;
-      height: 17%;
-      pointer-events: none;
-      background: linear-gradient(to top, #e2e3f1 0%, rgb(226 227 241 / .6) 30%, rgb(226 227 241 / 0) 100%);
-    }
-    .footer__content {
-      position: relative;
-      z-index: 3;
-      display: grid;
-      grid-template-columns: calc(440 * var(--u)) calc(240 * var(--u)) calc(240 * var(--u)) 1fr;
-      align-items: start;
-      width: calc(1440 * var(--u));
-      margin: 0 auto;
-      padding: calc(86 * var(--u)) calc(100 * var(--u)) 0 calc(160 * var(--u));
-    }
-    .footer-brand .brand__logo {
-      display: inline-flex;
-      align-items: center;
-      gap: calc(10 * var(--u));
-      font-size: calc(17 * var(--u));
-      font-weight: 500;
-      letter-spacing: -0.02em;
-    }
-    .footer-brand .brand__mark {
-      width: calc(30 * var(--u));
-      height: calc(30 * var(--u));
-      border-radius: calc(8 * var(--u));
-      background: linear-gradient(to bottom, #2b2b2b, #0a0a0a 55%);
-      box-shadow: 0 calc(1 * var(--u)) calc(2 * var(--u)) rgb(0 0 0 / .25);
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .footer-brand .brand__mark svg {
-      width: 60%;
-      height: 60%;
-    }
-    .footer-brand .brand__title {
-      margin-top: calc(19 * var(--u));
-      font-size: calc(20 * var(--u));
-      font-weight: 600;
-      line-height: 1.2;
-      letter-spacing: -0.045em;
-    }
-    .footer-brand .brand__text {
-      max-width: calc(412 * var(--u));
-      margin-top: calc(18 * var(--u));
-      color: #6f6f6c;
-      font-size: calc(13.7 * var(--u));
-      line-height: 1.43;
-      letter-spacing: -0.012em;
-    }
-    .footer-brand .brand__cta {
-      display: inline-flex;
-      align-items: center;
-      gap: calc(6 * var(--u));
-      height: calc(32.5 * var(--u));
-      margin-top: calc(20 * var(--u));
-      padding: 0 calc(16 * var(--u)) 0 calc(15 * var(--u));
-      border-radius: calc(7 * var(--u));
-      background: #0c0c0c;
-      color: #fff;
-      font-size: calc(11.8 * var(--u));
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      transition: background .2s, transform .2s;
-      text-decoration: none;
-    }
-    .footer-brand .brand__cta:hover {
-      background: #262626;
-      transform: translateY(-1px);
-    }
-    .footer-brand .brand__cta svg {
-      width: calc(13 * var(--u));
-      height: calc(13 * var(--u));
-      margin-top: calc(-1.5 * var(--u));
-    }
-    .footer-brand .brand__copy {
-      margin-top: calc(23 * var(--u));
-      color: #9c9c98;
-      font-size: calc(12.2 * var(--u));
-      letter-spacing: 0.01em;
-    }
-    .footer-brand .brand__by {
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      background: rgba(23, 22, 19, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.15));
+      z-index: 1000;
       display: flex;
       align-items: center;
-      gap: calc(5 * var(--u));
-      margin-top: calc(21 * var(--u));
-      font-size: calc(11.8 * var(--u));
-      font-weight: 500;
-      letter-spacing: -0.01em;
     }
-    .footer-brand .brand__heart { font-size: .95em; }
-    .footer-brand .brand__author {
-      display: inline-flex;
-      align-items: center;
-      gap: calc(6 * var(--u));
-      margin-left: calc(5 * var(--u));
-    }
-    .footer-brand .brand__avatar {
-      width: calc(23 * var(--u));
-      height: calc(23 * var(--u));
-      border-radius: 50%;
-      overflow: hidden;
-      background: #e3e3e0;
-      display: inline-flex;
+    .brand-mark, .sn-brand__mark {
+      width: 36px !important;
+      height: 36px !important;
+      max-width: 36px !important;
+      max-height: 36px !important;
+      background: #1c1c1a;
+      border-radius: 9px;
+      display: inline-flex !important;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
     }
-    .footer-brand .brand__avatar svg { width: 100%; height: 100%; display: block; }
-    .footer-brand .brand__status {
+    .brand-mark svg, .sn-brand__mark svg {
+      width: 24px !important;
+      height: 24px !important;
+    }
+    .toc-bar {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      border-radius: 12px;
+      padding: 16px 24px;
+      margin-bottom: 40px;
       display: flex;
       flex-wrap: wrap;
-      gap: calc(8 * var(--u));
-      margin-top: calc(16 * var(--u));
-      list-style: none;
-      padding: 0;
-    }
-    .footer-brand .chip {
-      display: inline-flex;
+      gap: 16px;
       align-items: center;
-      gap: calc(6 * var(--u));
-      height: calc(25 * var(--u));
-      padding: 0 calc(10 * var(--u));
-      border: 1px solid rgb(12 12 12 / .12);
-      border-radius: 999px;
-      background: rgb(255 255 255 / .55);
-      font-size: calc(10.8 * var(--u));
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      white-space: nowrap;
     }
-    .footer-brand .chip svg {
-      width: calc(11 * var(--u));
-      height: calc(11 * var(--u));
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+    .toc-title {
+      font-family: var(--font-mono, monospace);
+      font-size: 0.85rem;
+      color: var(--gold, #ff8a5b);
+      text-transform: uppercase;
+      font-weight: 700;
     }
-    .footer-brand .chip__dot {
-      width: calc(6 * var(--u));
-      height: calc(6 * var(--u));
-      border-radius: 50%;
-      background: #2fb36a;
-      box-shadow: 0 0 0 calc(2.5 * var(--u)) rgb(47 179 106 / .18);
-    }
-    .footer .col__title {
-      font-size: calc(16 * var(--u));
-      font-weight: 600;
-      line-height: 1;
-      letter-spacing: -0.045em;
-      margin: 0;
-    }
-    .footer .col__list {
-      display: grid;
-      gap: calc(20.5 * var(--u));
-      margin-top: calc(24 * var(--u));
-      font-size: calc(13.7 * var(--u));
-      line-height: 1.24;
-      letter-spacing: 0.022em;
-      color: #161616;
-      list-style: none;
-      padding: 0;
-    }
-    .footer .col--menu .col__list {
-      gap: calc(15 * var(--u));
-      margin-top: calc(21 * var(--u));
-      font-weight: 500;
-      letter-spacing: -0.025em;
-      color: #0c0c0c;
-    }
-    .footer .col__list a {
-      color: inherit;
+    .toc-link {
+      color: var(--ink, #ffe9d6);
       text-decoration: none;
-      transition: opacity .2s;
+      font-size: 0.92rem;
+      transition: color 0.2s;
     }
-    .footer .col__list a:hover {
-      opacity: .55;
+    .toc-link:hover {
+      color: var(--gold, #ff8a5b);
+      text-decoration: underline;
     }
-
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .footer {
-        --u: min(100vw / 1040, 100svh / 672);
-      }
-      .footer__content {
-        grid-template-columns: calc(400 * var(--u)) calc(190 * var(--u)) calc(210 * var(--u)) 1fr;
-        width: calc(1040 * var(--u));
-        padding: calc(64 * var(--u)) calc(40 * var(--u)) 0;
-      }
-      .footer-brand .brand__text { max-width: calc(350 * var(--u)); }
-      .footer__wordmark {
-        font-size: calc(286 * var(--u));
-        bottom: calc(10 * var(--u));
-      }
+    .sn-cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      max-width: 500px;
+      background: #1c1b18;
+      border: 1px solid var(--line, rgba(255, 255, 255, 0.2));
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      display: none;
     }
-
-    @media (max-width: 767px) {
-      .footer {
-        --u: 1px;
-        height: auto;
-        min-height: 100svh;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-      }
-      .footer__stage::after {
-        background: linear-gradient(to bottom, var(--paper, #fdfaf3) 0%, rgb(253 250 243 / .95) 50%, rgb(253 250 243 / .8) 68%, rgb(253 250 243 / 0) 90%);
-      }
-      .footer__content {
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        justify-content: space-between;
-        gap: 36px 12px;
-        width: 100%;
-        padding: 40px 20px 0;
-        margin-bottom: max(34vw, 150px);
-      }
-      .footer-brand {
-        grid-column: 1 / -1;
-      }
-      .footer-brand .brand__title { font-size: 21px; margin-top: 19px; }
-      .footer-brand .brand__text { max-width: 34em; font-size: 14px; margin-top: 18px; }
-      .footer-brand .brand__cta { height: 38px; padding: 0 18px 0 16px; border-radius: 8px; font-size: 13px; margin-top: 20px; }
-      .footer-brand .brand__cta svg { width: 14px; height: 14px; }
-      .footer-brand .brand__copy, .footer-brand .brand__by { font-size: 12.5px; }
-      .footer-brand .brand__copy { margin-top: 23px; }
-      .footer-brand .brand__by { margin-top: 21px; }
-      .footer-brand .chip { height: 28px; font-size: 12px; padding: 0 10px; }
-      .footer .col__title { font-size: 15px; }
-      .footer .col__list { gap: 14px; margin-top: 20px; font-size: 13px; letter-spacing: 0; }
-      .footer .col--menu .col__list { gap: 14px; margin-top: 20px; }
-      .footer__wordmark {
-        bottom: 5vw;
-        font-size: 27vw;
-      }
-      .footer__fog { height: 7%; }
+    .sn-cookie-banner.show {
+      display: block;
     }
-
-    @media (max-width: 359px) {
-      .footer__content {
-        grid-template-columns: 1fr 1fr;
-      }
-      .footer .col:last-child {
-        grid-column: span 2;
-      }
+    .sn-cookie-banner p {
+      margin: 0 0 12px;
+      font-size: 0.88rem;
+      color: var(--muted, #ffb87a);
+      line-height: 1.5;
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      .footer-brand .brand__cta, .footer .col__list a {
-        transition: none;
-      }
+    .sn-cookie-btn {
+      background: var(--gold, #ff8a5b);
+      color: #000;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .theme-pop {
+      position: fixed;
+      top: 80px;
+      right: 24px;
+      background: #1c1b18;
+      border: 1px solid var(--line, rgba(255,255,255,0.2));
+      border-radius: 12px;
+      padding: 16px;
+      z-index: 2000;
+      display: none;
+    }
+    .theme-pop.open {
+      display: block;
+    }
+    .theme-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .theme-opt {
+      background: #2a2824;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .sn-footer {
+      background: #141311 !important;
+      border-top: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      padding: 60px 0 35px;
+      margin-top: 80px;
+    }
+    .sn-footer__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+      .sn-footer__grid { grid-template-columns: 1fr; gap: 24px; }
     }
   </style>
-
-    <!-- MathJax Configuration -->
-    <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-            },
-            svg: {
-                fontCache: 'global'
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <header>
-        <nav aria-label="Primary" class="nav container">
-            <a aria-label="Shorveer Notes home" class="brand" href="/">
-                <span aria-hidden="true" class="brand-mark">
-                    <svg fill="none" viewbox="0 0 64 64">
-                        <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
-                    </svg>
-                </span>
-                <span class="brand-name">Shorveer<em>Notes</em></span>
-            </a>
-            <div class="nav-links">
-                <a href="/#subjects">Subjects</a>
-                <a href="/#reallife">Real life</a>
-                <a href="/#resources">Resources</a>
-                <a href="/#method">How it works</a>
-                <a href="../about.html">About</a>
-            </div>
-            <div class="nav-actions">
-                <button aria-label="Open search" class="nav-icon" id="searchButton" title="Search (Ctrl+K)">
-                    <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
-                        <circle cx="11" cy="11" r="7"></circle><path d="m20.5 20.5-4-4"></path>
-                    </svg>
-                </button>
-                <button aria-expanded="false" aria-label="Change theme" class="nav-icon" id="themeButton" title="Change theme">
-                    <span aria-hidden="true" class="palette-dot"></span>
-                </button>
-                <button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav-icon mobile-toggle" id="menuButton">
-                    <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
-                        <path d="M3 6h18M3 12h18M3 18h18"></path>
-                    </svg>
-                </button>
-            </div>
-        </nav>
-    </header>
 
-    <main class="chapter-content">
-        <h1>Chapter 01: Relations and Functions</h1>
+  <!-- ============ SITE HEADER ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+          </svg>
+        </span>
+        <span class="brand-name">Shorveer<em>Notes</em></span>
+      </a>
 
-        <section class="section">
-            <h2>Chapter Overview</h2>
-            <p>
-                In this chapter, we delve into the fundamental concepts of relations and functions, which form the bedrock of higher mathematics. We will explore various types of relations, including reflexive, symmetric, and transitive, leading to the definition of equivalence relations. Subsequently, we will study functions, their types (one-one, onto, bijective), and operations such as composition and inverse functions. These concepts are crucial for understanding calculus, algebra, and discrete mathematics.
-            </p>
-        </section>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="index.html" style="color:var(--ink); font-weight:700;">Mathematics Hub</a>
+        <a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ</a>
+      </div>
 
-        <section class="section">
-            <h2>Key Definitions</h2>
-            <div class="definition">
-                <h3><strong>Relation</strong></h3>
-                <p>A relation $R$ from a non-empty set $A$ to a non-empty set $B$ is a subset of the Cartesian product $A \times B$. If $(a,b) \in R$, we say that $a$ is related to $b$, written as $aRb$.</p>
-            </div>
-            <div class="definition">
-                <h3><strong>Domain, Codomain, and Range</strong></h3>
-                <ul>
-                    <li>The <strong>domain</strong> of a relation $R$ is the set of all first elements of the ordered pairs in $R$.</li>
-                    <li>The <strong>codomain</strong> of a relation from $A$ to $B$ is the entire set $B$.</li>
-                    <li>The <strong>range</strong> of a relation $R$ is the set of all second elements of the ordered pairs in $R$, which is a subset of the codomain.</li>
-                </ul>
-            </div>
-            <div class="definition">
-                <h3><strong>Types of Relations on a Set $A$</strong></h3>
-                <ul>
-                    <li><strong>Empty Relation:</strong> A relation $R = \emptyset \subseteq A \times A$. No element of $A$ is related to any element of $A$.</li>
-                    <li><strong>Universal Relation:</strong> A relation $R = A \times A$. Every element of $A$ is related to every element of $A$.</li>
-                    <li><strong>Reflexive Relation:</strong> A relation $R$ on $A$ is reflexive if $(a, a) \in R$ for every $a \in A$.</li>
-                    <li><strong>Symmetric Relation:</strong> A relation $R$ on $A$ is symmetric if $(a, b) \in R \implies (b, a) \in R$, for all $a, b \in A$.</li>
-                    <li><strong>Transitive Relation:</strong> A relation $R$ on $A$ is transitive if $(a, b) \in R$ and $(b, c) \in R \implies (a, c) \in R$, for all $a, b, c \in A$.</li>
-                    <li><strong>Equivalence Relation:</strong> A relation $R$ on $A$ is an equivalence relation if it is reflexive, symmetric, and transitive.</li>
-                </ul>
-            </div>
-            <div class="definition">
-                <h3><strong>Function</strong></h3>
-                <p>A relation $f$ from a set $A$ to a set $B$ is called a <strong>function</strong> (or mapping) if every element of set $A$ has one and only one image in set $B$. We write $f: A \to B$.</p>
-            </div>
-            <div class="definition">
-                <h3><strong>Types of Functions</strong></h3>
-                <ul>
-                    <li><strong>One-one (Injective) Function:</strong> A function $f: A \to B$ is one-one if $f(x_1) = f(x_2) \implies x_1 = x_2$ for all $x_1, x_2 \in A$.</li>
-                    <li><strong>Onto (Surjective) Function:</strong> A function $f: A \to B$ is onto if for every $y \in B$, there exists an $x \in A$ such that $f(x) = y$. The range of $f$ is equal to the codomain $B$.</li>
-                    <li><strong>Bijective Function:</strong> A function $f: A \to B$ is bijective if it is both one-one and onto.</li>
-                </ul>
-            </div>
-            <div class="definition">
-                <h3><strong>Composition of Functions</strong></h3>
-                <p>Let $f: A \to B$ and $g: B \to C$ be two functions. The composition of $f$ and $g$, denoted by $g \circ f$, is defined as the function $g \circ f: A \to C$ given by $(g \circ f)(x) = g(f(x))$ for all $x \in A$.</p>
-            </div>
-            <div class="definition">
-                <h3><strong>Inverse Function</strong></h3>
-                <p>A function $f: A \to B$ is invertible if there exists a function $g: B \to A$ such that $g \circ f = I_A$ and $f \circ g = I_B$, where $I_A$ and $I_B$ are identity functions on $A$ and $B$ respectively. The function $g$ is called the inverse of $f$ and is denoted by $f^{-1}$. A function is invertible if and only if it is bijective.</p>
-            </div>
-        </section>
+      <div class="nav-actions">
+        <button class="nav-icon" id="themeButton" aria-label="Change theme" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:8px; padding:8px; cursor:pointer;">
+          <span style="width:14px; height:14px; border-radius:50%; background:var(--gold, #ff8a5b); display:inline-block;"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-        <section class="section">
-            <h2>Essential Formulas and Theorems</h2>
-            <div class="formula-block">
-                <h3>Number of Relations</h3>
-                <p>If set $A$ has $m$ elements and set $B$ has $n$ elements, then the total number of relations from $A$ to $B$ is $2^{mn}$.</p>
-            </div>
-            <div class="formula-block">
-                <h3>Number of Functions</h3>
-                <p>If set $A$ has $m$ elements and set $B$ has $n$ elements, then the total number of functions from $A$ to $B$ is $n^m$.</p>
-            </div>
-            <div class="formula-block">
-                <h3>Composition Associativity</h3>
-                <p>If $f: A \to B$, $g: B \to C$, and $h: C \to D$ are functions, then $(h \circ g) \circ f = h \circ (g \circ f)$.</p>
-            </div>
-            <div class="formula-block">
-                <h3>Inverse Property</h3>
-                <p>If $f: A \to B$ is bijective, then $f^{-1}: B \to A$ exists and is unique. Also, $(f^{-1})^{-1} = f$.</p>
-            </div>
-        </section>
+  <!-- ============ THEME PICKER ============ -->
+  <div class="theme-pop" id="themePop">
+    <h4 style="margin:0 0 8px; color:#fff;">Pick a look</h4>
+    <div class="theme-grid">
+      <button class="theme-opt" data-theme-value="notebook">Notebook</button>
+      <button class="theme-opt" data-theme-value="chalkboard">Chalkboard</button>
+      <button class="theme-opt" data-theme-value="blueprint">Blueprint</button>
+      <button class="theme-opt" data-theme-value="sunset">Sunset</button>
+    </div>
+  </div>
 
-        <section class="section">
-            <h2>Important CBSE Board Exam Standard Questions</h2>
+  <main id="main">
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="kicker">
+          <span class="dot"></span>
+          <span>CBSE Class 12 · Mathematics Master Guide</span>
+        </div>
+        <h1>Chapter1</h1>
+        <p class="hero-description">Part 1: In-Depth Theory & Complete Derivations curated for rigorous CBSE Board Preparation.</p>
+        <div class="hero-note">
+          <span>Authored with Precision by <strong>Jatin Sandilya</strong> · Official 2026-27 Syllabus</span>
+        </div>
+      </div>
+    </section>
 
-            <div class="question-block">
-                <h3>Question 1: Relation Properties</h3>
-                <p>Show that the relation $R$ in the set $A = \{1, 2, 3, 4, 5, 6\}$ defined by $R = \{(a, b) : b = a + 1\}$ is neither reflexive, nor symmetric, nor transitive.</p>
-            </div>
-            <div class="solution-block">
-                <h3>Solution:</h3>
-                <p>For the given relation $R = \{(a, b) : b = a + 1\}$ on the set $A = \{1, 2, 3, 4, 5, 6\}$.</p>
-                <ul>
-                    <li><strong>Reflexivity:</strong> For $R$ to be reflexive, $(a, a) \in R$ for all $a \in A$. This means $a = a + 1$, which is false for any $a \in A$. For example, $(1, 1) \notin R$ as $1 \neq 1 + 1$.
-                        Therefore, $R$ is <strong>not reflexive</strong>.</li>
-                    <li><strong>Symmetry:</strong> For $R$ to be symmetric, if $(a, b) \in R$, then $(b, a) \in R$.
-                        Let $(a, b) \in R$. Then $b = a + 1$.
-                        For $(b, a)$ to be in $R$, we would need $a = b + 1$.
-                        Substituting $b = a + 1$ into $a = b + 1$, we get $a = (a + 1) + 1 \implies a = a + 2$, which is false.
-                        For example, $(1, 2) \in R$ since $2 = 1 + 1$, but $(2, 1) \notin R$ since $1 \neq 2 + 1$.
-                        Therefore, $R$ is <strong>not symmetric</strong>.</li>
-                    <li><strong>Transitivity:</strong> For $R$ to be transitive, if $(a, b) \in R$ and $(b, c) \in R$, then $(a, c) \in R$.
-                        Let $(a, b) \in R$ and $(b, c) \in R$.
-                        This implies $b = a + 1$ and $c = b + 1$.
-                        Substituting the value of $b$ from the first equation into the second, we get $c = (a + 1) + 1 \implies c = a + 2$.
-                        For $(a, c)$ to be in $R$, we would need $c = a + 1$.
-                        But we found $c = a + 2$. Thus, $a + 2 = a + 1 \implies 2 = 1$, which is false.
-                        For example, $(1, 2) \in R$ and $(2, 3) \in R$, but $(1, 3) \notin R$ since $3 \neq 1 + 1$.
-                        Therefore, $R$ is <strong>not transitive</strong>.</li>
-                </ul>
-            </div>
+    <div class="container">
+      <div class="toc-bar">
+        <span class="toc-title">Quick Navigation:</span>
+        <a class="toc-link" href="#theory">1. In-Depth Theory</a><a class="toc-link" href="#derivations">2. Complete Derivations & Formulas</a>
+      </div>
+    </div>
 
-            <div class="question-block">
-                <h3>Question 2: Invertibility of a Function</h3>
-                <p>Consider $f: \mathbb{R} \to \mathbb{R}$ given by $f(x) = 2x - 3$. Show that $f$ is invertible. Find $f^{-1}$.</p>
-            </div>
-            <div class="solution-block">
-                <h3>Solution:</h3>
-                <p>To show $f$ is invertible, we need to prove it is both one-one (injective) and onto (surjective).</p>
-                <ul>
-                    <li><strong>Injectivity (One-one):</strong>
-                        Let $x_1, x_2 \in \mathbb{R}$ such that $f(x_1) = f(x_2)$.
-                        $2x_1 - 3 = 2x_2 - 3$
-                        $2x_1 = 2x_2$
-                        $x_1 = x_2$.
-                        Since $f(x_1) = f(x_2) \implies x_1 = x_2$, the function $f$ is <strong>one-one</strong>.</li>
-                    <li><strong>Surjectivity (Onto):</strong>
-                        Let $y \in \mathbb{R}$ be an arbitrary element in the codomain. We need to find an $x \in \mathbb{R}$ such that $f(x) = y$.
-                        $f(x) = y \implies 2x - 3 = y$
-                        $2x = y + 3$
-                        $x = \frac{y + 3}{2}$.
-                        Since for every $y \in \mathbb{R}$, $x = \frac{y+3}{2}$ is also a real number, there exists an $x$ in the domain $\mathbb{R}$ for every $y$ in the codomain $\mathbb{R}$.
-                        Thus, the function $f$ is <strong>onto</strong>.</li>
-                </ul>
-                <p>Since $f$ is both one-one and onto, it is bijective, and hence <strong>invertible</strong>.</p>
-                <h3>Finding $f^{-1}$:</h3>
-                <p>From the surjectivity step, we have $x = \frac{y + 3}{2}$.
-                To find $f^{-1}(x)$, we simply replace $y$ with $x$.
-                Therefore, $f^{-1}(x) = \frac{x + 3}{2}$.</p>
-            </div>
-        </section>
+    <div class="container">
+      
+    <div style="margin: 30px 0; text-align: center;">
+      <a class="btn btn-gold" href="chapter1_part2.html" style="padding: 14px 28px; font-size: 1.05rem;">
+        Continue to Part 2: Solved CBSE PYQs & Case Studies →
+      </a>
+    </div>
+    
+    </div>
 
-        <section class="section revision-block">
-            <h2>Quick Revision Summary</h2>
-            <ul>
-                <li>A <strong>relation</strong> is any subset of a Cartesian product of two sets.</li>
-                <li><strong>Reflexive, Symmetric, Transitive</strong> properties define an <strong>Equivalence Relation</strong>.</li>
-                <li>A <strong>function</strong> is a special relation where each input has exactly one output.</li>
-                <li>A function is <strong>one-one (injective)</strong> if distinct elements in the domain map to distinct elements in the codomain.</li>
-                <li>A function is <strong>onto (surjective)</strong> if every element in the codomain is the image of at least one element in the domain.</li>
-                <li>A function is <strong>bijective</strong> if it is both one-one and onto.</li>
-                <li>A function is <strong>invertible</strong> if and only if it is bijective.</li>
-                <li><strong>Composition of functions</strong> involves applying one function after another, e.g., $(g \circ f)(x) = g(f(x))$.</li>
-            </ul>
-        </section>
-    </main>
+    <section class="section container" id="theory">
+  <div class="section-head">
+    <span class="section-eyebrow">Comprehensive Theory</span>
+    <h2>1. Complete Conceptual Framework & Definitions</h2>
+  </div>
+  <div class="real-life">
+    <article class="rl-card" style="--rl-color: #bf5a3c">
+      <div class="rl-body">
+        <div class="rl-title">Fundamental Theoretical Principles</div>
+        <p class="rl-text">
+          Mathematics, at its core, is the language of patterns and relationships. As we delve into Class 12 Mathematics, Chapter 1, 'Relations and Functions', we embark on a journey that lays the foundational bedrock for numerous advanced concepts, including Calculus, Abstract Algebra, and Discrete Mathematics. This chapter serves as a critical bridge, extending the foundational understanding of sets from Class 11 and rigorously defining the intricate ways in which elements within or between sets can be connected. A profound grasp of these principles is not merely for examination success but is indispensable for developing a coherent mathematical thought process and for modeling complex phenomena in science, engineering, economics, and computer science.
 
-    <footer class="footer">
-        <div aria-hidden="true" class="footer__stage">
-            <video autoplay="" class="footer__video" loop="" muted="" playsinline="" poster="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261014_121838_c97d0940-f430-4304-8573-4f47ee44f447.png" preload="auto" src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/4d01c727-d9c5-47c8-a778-35a451ffd39f.mp4"></video>
+          Our exploration begins with a revisit to the concept of **Cartesian Products**, which provides the universal framework for establishing any relationship between two sets. Recall that for any two non-empty sets A and B, the Cartesian product A × B is defined as the set of all possible ordered pairs (a, b) where 'a' is an element of A and 'b' is an element of B. Symbolically, A × B = {(a, b) : a ∈ A, b ∈ B}. This ordered pairing is crucial because it introduces directionality and distinguishes between (a, b) and (b, a) unless a = b. For instance, if A = {1, 2} and B = {x, y}, then A × B = {(1, x), (1, y), (2, x), (2, y)}. The cardinality of A × B is |A| × |B|. This fundamental concept underpins the very definition of a relation.
+
+          <h3>1.1. Relations: The Interconnections of Elements</h3>
+          A **Relation** is formally defined as any subset of the Cartesian product of two sets. If R is a relation from set A to set B, then R ⊆ A × B. If (a, b) ∈ R, we say that 'a' is related to 'b', often denoted as a R b. The set A is called the **domain** of the relation, and the set B is called the **codomain** of the relation. The set of all second elements of the ordered pairs in R is called the **range** of the relation. The range is always a subset of the codomain.
+
+          For example, let A = {1, 2, 3} and B = {2, 4, 6}.
+          Consider the relation R from A to B defined as "is half of".
+          Then R = {(1, 2), (2, 4), (3, 6)}.
+          Here, Domain = A = {1, 2, 3}. Codomain = B = {2, 4, 6}. Range = {2, 4, 6}.
+          Note that the range happens to be equal to the codomain in this specific example, but this is not always the case.
+
+          <h4>1.1.1. Types of Relations on a Set</h4>
+          When a relation R is defined from a set A to itself (i.e., R ⊆ A × A), it's called a relation 'on A'. Such relations are particularly significant and form the basis for classifying elements within a single set.
+
+          **Core Law 1: Reflexivity**
+          A relation R on a set A is said to be **Reflexive** if every element of A is related to itself.
+          **Condition:** For all a ∈ A, (a, a) ∈ R.
+          **Example:** Let A = {1, 2, 3}. R = {(1, 1), (2, 2), (3, 3), (1, 2)}. This relation is reflexive because (1,1), (2,2), and (3,3) are present.
+          **Counter-example:** R' = {(1, 1), (2, 2), (1, 2)} on A = {1, 2, 3}. This is not reflexive because (3, 3) ∉ R'.
+          **Real-world analogy:** "Is equal to" on a set of numbers (x = x). "Is a sibling of" is NOT reflexive (you are not your own sibling).
+
+          **Core Law 2: Symmetry**
+          A relation R on a set A is said to be **Symmetric** if whenever an element 'a' is related to an element 'b', then 'b' is also related to 'a'.
+          **Condition:** For all a, b ∈ A, if (a, b) ∈ R, then (b, a) ∈ R.
+          **Example:** Let A = {1, 2, 3}. R = {(1, 2), (2, 1), (1, 1)}. This is symmetric because for (1, 2) there is (2, 1), and (1, 1) is its own symmetric pair.
+          **Counter-example:** R' = {(1, 2), (2, 3)} on A = {1, 2, 3}. This is not symmetric because (1, 2) ∈ R' but (2, 1) ∉ R'.
+          **Real-world analogy:** "Is a sibling of" (if A is a sibling of B, then B is a sibling of A). "Is friends with" (often symmetric). "Is taller than" is NOT symmetric.
+
+          **Core Law 3: Transitivity**
+          A relation R on a set A is said to be **Transitive** if whenever an element 'a' is related to 'b' and 'b' is related to 'c', then 'a' is also related to 'c'.
+          **Condition:** For all a, b, c ∈ A, if (a, b) ∈ R and (b, c) ∈ R, then (a, c) ∈ R.
+          **Example:** Let A = {1, 2, 3}. R = {(1, 2), (2, 3), (1, 3), (1, 1)}. This is transitive. For (1, 2) and (2, 3), we have (1, 3) ∈ R. The reflexive pair (1,1) does not violate transitivity.
+          **Counter-example:** R' = {(1, 2), (2, 3)} on A = {1, 2, 3}. This is not transitive because (1, 2) ∈ R' and (2, 3) ∈ R', but (1, 3) ∉ R'.
+          **Real-world analogy:** "Is a descendant of" (if A is a descendant of B, and B is a descendant of C, then A is a descendant of C). "Is less than" on numbers (if a < b and b < c, then a < c). "Is friends with" is NOT necessarily transitive (A is friends with B, B is friends with C, but A might not be friends with C).
+
+          **Other Important Types of Relations:**
+          *   **Empty Relation (or Void Relation):** A relation R on set A is empty if no element of A is related to any element of A. R = ∅ ⊂ A × A.
+              **Example:** R = {(a, b) ∈ A × A : a + b = 100, where A = {1, 2, 3}}. This is an empty relation if no two elements sum to 100.
+          *   **Universal Relation:** A relation R on set A is universal if every element of A is related to every element of A. R = A × A.
+              **Example:** R = {(a, b) ∈ A × A : a + b > 0, where A = {1, 2, 3}}. This would be a universal relation if all sums are positive.
+
+          <h4>1.1.2. Equivalence Relations and Equivalence Classes</h4>
+          A relation R on a set A is called an **Equivalence Relation** if it is simultaneously reflexive, symmetric, and transitive. Equivalence relations are profoundly important as they partition a set into disjoint subsets, where all elements within a subset are considered "equivalent" to each other with respect to the given relation.
+
+          **Example:** Let L be the set of all lines in a plane. Consider the relation R on L defined as l₁ R l₂ if l₁ is parallel to l₂.
+          1.  **Reflexive:** Every line is parallel to itself (l || l). So, (l, l) ∈ R for all l ∈ L.
+          2.  **Symmetric:** If l₁ is parallel to l₂, then l₂ is parallel to l₁ (l₁ || l₂ ⇒ l₂ || l₁). So, if (l₁, l₂) ∈ R, then (l₂, l₁) ∈ R.
+          3.  **Transitive:** If l₁ is parallel to l₂ and l₂ is parallel to l₃, then l₁ is parallel to l₃ (l₁ || l₂ and l₂ || l₃ ⇒ l₁ || l₃). So, if (l₁, l₂) ∈ R and (l₂, l₃) ∈ R, then (l₁, l₃) ∈ R.
+          Since R is reflexive, symmetric, and transitive, it is an equivalence relation.
+
+          The concept of an **Equivalence Class** emerges directly from an equivalence relation. For an equivalence relation R on a set A, the equivalence class of an element a ∈ A, denoted by [a] or {a}R, is the set of all elements in A that are related to 'a'.
+          **Definition:** [a] = {x ∈ A : (x, a) ∈ R}.
+
+          **Properties of Equivalence Classes:**
+          1.  Every element 'a' belongs to its own equivalence class, i.e., a ∈ [a]. This follows from reflexivity.
+          2.  For any two elements a, b ∈ A, their equivalence classes [a] and [b] are either identical or disjoint. That is, [a] = [b] if (a, b) ∈ R, and [a] ∩ [b] = ∅ if (a, b) ∉ R.
+          3.  The union of all distinct equivalence classes is the entire set A.
+          These properties demonstrate that an equivalence relation **partitions** the set A into disjoint subsets, each of which is an equivalence class. This partitioning is a fundamental concept in abstract algebra and discrete mathematics.
+
+          **Example (continued):** For the relation "is parallel to" on the set of lines L, the equivalence class of a line 'l' ([l]) consists of all lines in the plane that are parallel to 'l'. Geometrically, these are all lines having the same slope.
+
+          <h3>1.2. Functions: Unique and Directed Mappings</h3>
+          While every function is a relation, not every relation is a function. A **Function** is a special type of relation that satisfies two crucial conditions for every element in its domain:
+          1.  Every element in the domain must be related to some element in the codomain.
+          2.  Each element in the domain must be related to *exactly one* element in the codomain.
+
+          Formally, a function f from a set A to a set B (denoted f: A → B) is a relation from A to B such that:
+          1.  For every x ∈ A, there exists some y ∈ B such that (x, y) ∈ f.
+          2.  If (x, y₁) ∈ f and (x, y₂) ∈ f, then y₁ = y₂.
+          The element y is called the image of x under f, denoted by f(x). The set A is the **domain** of f, B is the **codomain** of f, and the set of all images of elements of A under f is the **range** of f, denoted by R_f = {f(x) : x ∈ A}. The range is always a subset of the codomain.
+
+          **Graphical Interpretation of Functions (for Real-valued Functions):**
+          For functions where both domain and codomain are subsets of real numbers (f: R → R), the concept of a vertical line test is invaluable. A graph represents a function if and only if no vertical line intersects the graph at more than one point. This visually enforces the "exactly one output for each input" condition.
+
+          <h4>1.2.1. Types of Functions (Based on Mapping Properties)</h4>
+          The classification of functions is crucial for understanding their behavior and for operations like finding inverses.
+
+          **Core Law 4: Injectivity (One-to-One Function)**
+          A function f: A → B is said to be **Injective** or **One-to-One** if distinct elements in the domain A have distinct images in the codomain B.
+          **Condition:** For all x₁, x₂ ∈ A, if f(x₁) = f(x₂), then x₁ = x₂.
+          Equivalently, if x₁ ≠ x₂, then f(x₁) ≠ f(x₂).
+          **Example:** f: N → N defined by f(x) = x + 2.
+          Assume f(x₁) = f(x₂). Then x₁ + 2 = x₂ + 2, which implies x₁ = x₂. Thus, f is injective.
+          **Counter-example:** f: R → R defined by f(x) = x².
+          f(2) = 4 and f(-2) = 4. Here, 2 ≠ -2 but f(2) = f(-2). So, f is not injective.
+          **Graphical Test (Horizontal Line Test):** A function is injective if and only if no horizontal line intersects its graph at more than one point.
+
+          **Core Law 5: Surjectivity (Onto Function)**
+          A function f: A → B is said to be **Surjective** or **Onto** if every element in the codomain B is the image of at least one element in the domain A. In other words, the range of f is equal to its codomain (Range(f) = B).
+          **Condition:** For every y ∈ B, there exists at least one x ∈ A such that f(x) = y.
+          **Example:** f: R → R defined by f(x) = 2x - 3.
+          Let y be an arbitrary element in the codomain R. We need to find an x ∈ R such that f(x) = y.
+          2x - 3 = y ⇒ 2x = y + 3 ⇒ x = (y + 3)/2.
+          Since for every y, we can find a corresponding x in R, f is surjective.
+          **Counter-example:** f: R → R defined by f(x) = x².
+          If we take y = -1 in the codomain R, there is no real number x such that x² = -1. So, the range is [0, ∞), which is a proper subset of the codomain R. Thus, f is not surjective.
+
+          **Core Law 6: Bijectivity (One-to-One and Onto Function)**
+          A function f: A → B is said to be **Bijective** if it is both injective (one-to-one) and surjective (onto).
+          Bijective functions are exceptionally important because they establish a perfect pairing between the elements of the domain and codomain, implying that an inverse function exists.
+          **Example:** f: R → R defined by f(x) = ax + b, where a ≠ 0. This function is both injective and surjective, hence bijective.
+
+          **Other Classifications:**
+          *   **Into Function:** A function f: A → B is called an 'into' function if it is not surjective, meaning there is at least one element in the codomain B that is not an image of any element in A (Range(f) ⊂ B).
+
+          <h4>1.2.2. Composition of Functions</h4>
+          The idea of combining functions to create new functions is known as function composition.
+          Let f: A → B and g: B → C be two functions. The **composition of f and g**, denoted as g o f (read as "g circle f" or "g of f"), is a function from A to C defined by:
+          **(g o f)(x) = g(f(x)) for all x ∈ A.**
+
+          **Condition for Composition:** The composition g o f is defined only if the **range of f is a subset of the domain of g**. In the formal definition above, this condition is implicitly met since the codomain of f is B, which is the domain of g. If the codomain of f is a larger set than the domain of g, then the range of f must still be contained within the domain of g for g o f to be defined.
+
+          **Properties of Function Composition:**
+          1.  **Associativity:** If f: A → B, g: B → C, and h: C → D are three functions, then (h o g) o f = h o (g o f).
+          2.  **Not Commutative (Generally):** In general, f o g ≠ g o f. Even if both are defined, they usually yield different results.
+              **Example:** Let f(x) = x + 1 and g(x) = x².
+              (f o g)(x) = f(g(x)) = f(x²) = x² + 1.
+              (g o f)(x) = g(f(x)) = g(x + 1) = (x + 1)².
+              Clearly, x² + 1 ≠ (x + 1)².
+          3.  **Identity Function:** If f: A → B is a function, and I_A is the identity function on A (I_A(x) = x for all x ∈ A) and I_B is the identity function on B (I_B(y) = y for all y ∈ B), then f o I_A = f and I_B o f = f.
+
+          <h4>1.2.3. Inverse of a Function</h4>
+          The concept of an inverse function allows us to "undo" the action of a function.
+          A function f: A → B has an **inverse function** if and only if f is a **bijective function** (i.e., both one-to-one and onto). If f is bijective, its inverse is denoted by f⁻¹: B → A.
+
+          **Definition:** Let f: A → B be a bijective function. The inverse function f⁻¹: B → A is defined such that for every y ∈ B, f⁻¹(y) = x if and only if f(x) = y.
+          Essentially, if f maps x to y, then f⁻¹ maps y back to x.
+
+          **Properties of Inverse Functions:**
+          1.  If f is bijective, then f⁻¹ is also bijective.
+          2.  (f⁻¹ o f)(x) = x for all x ∈ A. This means f⁻¹ o f = I_A (the identity function on A).
+          3.  (f o f⁻¹)(y) = y for all y ∈ B. This means f o f⁻¹ = I_B (the identity function on B).
+          4.  The inverse of the inverse is the original function: (f⁻¹)⁻¹ = f.
+          5.  For composite functions, the inverse follows a "reverse order" rule: (g o f)⁻¹ = f⁻¹ o g⁻¹.
+
+          **Finding the Inverse of a Function (Algebraic Method):**
+          Let y = f(x).
+          1.  Rewrite the equation y = f(x) in terms of x. That is, solve for x in terms of y. This will give you x = f⁻¹(y).
+          2.  Replace y with x to express the inverse function in the standard variable form, i.e., f⁻¹(x).
+          **Example:** Find the inverse of f(x) = 2x + 3.
+          1.  Let y = 2x + 3.
+          2.  Solve for x: y - 3 = 2x ⇒ x = (y - 3) / 2.
+          3.  So, f⁻¹(y) = (y - 3) / 2. Replacing y with x, we get f⁻¹(x) = (x - 3) / 2.
+          (Before finding the inverse, it's crucial to verify that f(x) = 2x + 3 is indeed bijective from R to R. It is, as it's a linear function with non-zero slope).
+
+          **Graphical Interpretation of Inverse Functions:**
+          The graph of f⁻¹(x) is a reflection of the graph of f(x) across the line y = x. This is because if (a, b) is a point on the graph of f(x) (meaning f(a) = b), then (b, a) is a point on the graph of f⁻¹(x) (meaning f⁻¹(b) = a). Reflecting (a, b) across y = x yields (b, a).
+
+          <h3>1.3. Binary Operations: Structuring Sets</h3>
+          The final conceptual pillar of Chapter 1 often involves the introduction of **Binary Operations**. A binary operation on a set A is a rule that combines any two elements of A to produce another element of A.
+          Formally, a binary operation * on a non-empty set A is a function from A × A to A.
+          Symbolically, *: A × A → A. We typically denote *(a, b) as a * b.
+
+          **Core Law 7: Closure**
+          The definition itself implies **closure**: for any a, b ∈ A, the result a * b must also be an element of A. If it's not, then '*' is not a binary operation on A.
+          **Example:** Addition (+) is a binary operation on the set of natural numbers N because for any a, b ∈ N, a + b ∈ N.
+          **Counter-example:** Subtraction (-) is NOT a binary operation on N because, for example, 3 ∈ N and 5 ∈ N, but 3 - 5 = -2 ∉ N. Subtraction IS a binary operation on Z (integers), Q (rationals), R (reals).
+
+          <h4>1.3.1. Properties of Binary Operations</h4>
+          Binary operations possess several key properties that dictate their behavior and structure algebraic systems.
+
+          **Core Law 8: Commutativity**
+          A binary operation * on a set A is said to be **Commutative** if the order of the operands does not affect the result.
+          **Condition:** For all a, b ∈ A, a * b = b * a.
+          **Example:** Addition (+) on R is commutative (a + b = b + a). Multiplication (×) on R is commutative (a × b = b × a).
+          **Counter-example:** Subtraction (-) on R is not commutative (a - b ≠ b - a unless a = b). Division (÷) on R is not commutative. Matrix multiplication is generally not commutative.
+
+          **Core Law 9: Associativity**
+          A binary operation * on a set A is said to be **Associative** if, for three elements, the grouping of operands does not affect the result.
+          **Condition:** For all a, b, c ∈ A, (a * b) * c = a * (b * c).
+          **Example:** Addition (+) on R is associative ((a + b) + c = a + (b + c)). Multiplication (×) on R is associative ((a × b) × c = a × (b × c)).
+          **Counter-example:** Subtraction (-) on R is not associative ((5 - 3) - 1 = 2 - 1 = 1, but 5 - (3 - 1) = 5 - 2 = 3).
+
+          **Core Law 10: Existence of Identity Element**
+          An element e ∈ A is called an **Identity Element** for a binary operation * on A if, when combined with any element a ∈ A, it leaves 'a' unchanged.
+          **Condition:** For all a ∈ A, a * e = e * a = a.
+          An identity element, if it exists, is unique.
+          **Example:** For addition (+) on R, the identity element is 0 because a + 0 = 0 + a = a.
+          For multiplication (×) on R, the identity element is 1 because a × 1 = 1 × a = a.
+          **Counter-example:** For subtraction (-) on R, there is no identity element. If there were, a - e = a and e - a = a. From a - e = a, e = 0. But from e - a = a, 0 - a = a, which means -a = a, implying a = 0. This doesn't hold for all a.
+
+          **Core Law 11: Existence of Inverse Element**
+          Let * be a binary operation on A with an identity element 'e'. An element b ∈ A is called the **Inverse** of an element a ∈ A if, when 'a' is combined with 'b', the result is the identity element 'e'. The inverse of 'a' is often denoted as a⁻¹ (if the operation is multiplicative) or -a (if the operation is additive).
+          **Condition:** For all a ∈ A, there exists b ∈ A such that a * b = b * a = e.
+          **Example:** For addition (+) on R, for every a ∈ R, its inverse is -a ∈ R because a + (-a) = (-a) + a = 0 (the identity element).
+          For multiplication (×) on R (excluding 0), for every a ∈ R, a ≠ 0, its inverse is 1/a ∈ R because a × (1/a) = (1/a) × a = 1 (the identity element).
+          **Counter-example:** For multiplication on N (natural numbers), 1 is the identity. The inverse of 2 is 1/2, which is not in N. So, not all elements in N have an inverse under multiplication.
+
+          Understanding these properties allows mathematicians to categorize sets with binary operations into various algebraic structures (like groups, rings, fields), which are fundamental to higher mathematics.
+
+          <h3>1.4. Interplay and Applications</h3>
+          The concepts introduced in Chapter 1 are not isolated. Relations provide the general framework, functions specify a deterministic and unique relationship, and binary operations define how elements within a set interact.
+          *   **Computer Science:** Data structures like graphs and trees are essentially visual representations of relations. Functions are vital in programming (input-output mapping, algorithm design). Binary operations are fundamental to logic gates, arithmetic operations in CPUs, and cryptography.
+          *   **Physics:** Functions describe the motion of objects (position as a function of time), force fields, and wave propagation. Relations can describe causality or dependencies between physical quantities.
+          *   **Economics:** Supply-demand curves are functions. Cost and revenue are functions of production. Relations can model trade agreements or market interdependencies.
+          *   **Statistics:** Regression models establish functional relationships between variables. Correlation quantifies specific types of relations.
+
+          In essence, this chapter equips us with the precise language and analytical tools to describe connections, dependencies, and transformations—tools that are foundational for understanding, analyzing, and modeling the world around us with mathematical rigor. The emphasis on rigorous definitions, conditions, and proofs of properties for each type of relation, function, and binary operation is paramount. Mastery of these concepts will unlock the complexities of subsequent chapters, particularly calculus, where functions and their properties are central to understanding change and accumulation.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section container" id="derivations">
+  <div class="section-head">
+    <span class="section-eyebrow">Formula Repository</span>
+    <h2>2. Master Equation Bank & Step-by-Step Derivations (Chapter 1: Relations and Functions)</h2>
+  </div>
+  <div class="resource-grid">
+    <article class="resource">
+      <h3>Exhaustive Formula Table</h3>
+      <p>This table lists key definitions, formulas, and conditions relevant to Chapter 1: Relations and Functions in Class 12 Mathematics.</p>
+
+      <h4>Variables & Units</h4>
+      <ul>
+        <li>$A, B, C$: Sets</li>
+        <li>$R$: A relation (e.g., $R \subseteq A \times A$ for a relation on set $A$)</li>
+        <li>$f, g, h$: Functions</li>
+        <li>$x, y, z$: Elements of sets</li>
+        <li>$I_A, I_B$: Identity functions on sets $A, B$</li>
+        <li>$*$: A binary operation</li>
+        <li><strong>SI Units:</strong> Not applicable for these pure mathematical concepts.</li>
+      </ul>
+
+      <h4>Formulas & Definitions</h4>
+      <ol>
+        <li>
+          <strong>Relation ($R$ from $A$ to $B$):</strong>
+          <p>A subset of the Cartesian product $A \times B$.</p>
+          <ul>
+            <li><strong>Domain of $R$ (on $A \times B$):</strong> $\{a \in A \mid (a,b) \in R \text{ for some } b \in B\}$</li>
+            <li><strong>Range of $R$ (on $A \times B$):</strong> $\{b \in B \mid (a,b) \in R \text{ for some } a \in A\}$</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Types of Relations (on a set $A$):</strong>
+          <ul>
+            <li><strong>Empty Relation ($\emptyset$):</strong> $R = \emptyset \subseteq A \times A$.</li>
+            <li><strong>Universal Relation:</strong> $R = A \times A$.</li>
+            <li><strong>Reflexive:</strong> For every $a \in A$, $(a,a) \in R$.</li>
+            <li><strong>Symmetric:</strong> For every $a, b \in A$, if $(a,b) \in R$, then $(b,a) \in R$.</li>
+            <li><strong>Transitive:</strong> For every $a, b, c \in A$, if $(a,b) \in R$ and $(b,c) \in R$, then $(a,c) \in R$.</li>
+            <li><strong>Equivalence Relation:</strong> A relation that is reflexive, symmetric, and transitive.</li>
+            <li><strong>Equivalence Class of $a$ (denoted $[a]$):</strong> For an equivalence relation $R$ on $A$, the set of all elements $b \in A$ such that $(a,b) \in R$. $[a] = \{b \in A \mid (a,b) \in R\}$.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Function ($f: A \to B$):</strong>
+          <p>A relation from $A$ to $B$ such that every element of $A$ is related to exactly one element of $B$.</p>
+          <ul>
+            <li><strong>Domain of $f$:</strong> Set $A$.</li>
+            <li><strong>Codomain of $f$:</strong> Set $B$.</li>
+            <li><strong>Range of $f$:</strong> $\{f(x) \mid x \in A\}$. (The range is a subset of the codomain: Range $f \subseteq B$).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Types of Functions:</strong>
+          <ul>
+            <li><strong>One-to-One (Injective):</strong> A function $f: A \to B$ is injective if $f(x_1) = f(x_2) \implies x_1 = x_2$ for all $x_1, x_2 \in A$.</li>
+            <li><strong>Onto (Surjective):</strong> A function $f: A \to B$ is surjective if for every $y \in B$, there exists at least one $x \in A$ such that $f(x) = y$. (This means the Range of $f$ = Codomain $B$).</li>
+            <li><strong>Bijective (One-to-One and Onto):</strong> A function that is both injective and surjective.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Composition of Functions:</strong>
+          <ul>
+            <li>Given $f: A \to B$ and $g: B \to C$, the composite function $g \circ f: A \to C$ is defined as:
+              $$(g \circ f)(x) = g(f(x)) \quad \text{for all } x \in A$$
+            </li>
+            <li><strong>Condition:</strong> The codomain of the first function ($f$) must be the same as the domain of the second function ($g$) for $g \circ f$ to be defined.</li>
+            <li><strong>Property:</strong> Composition of functions is associative: $h \circ (g \circ f) = (h \circ g) \circ f$.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Inverse of a Function:</strong>
+          <ul>
+            <li>A function $f: A \to B$ is invertible if and only if it is bijective.</li>
+            <li>If $f$ is invertible, its inverse function $f^{-1}: B \to A$ satisfies:
+              <ul>
+                <li>$(f^{-1} \circ f)(x) = x$ for all $x \in A$ (i.e., $f^{-1} \circ f = I_A$, the identity function on $A$)</li>
+                <li>$(f \circ f^{-1})(y) = y$ for all $y \in B$ (i.e., $f \circ f^{-1} = I_B$, the identity function on $B$)</li>
+              </ul>
+            </li>
+            <li><strong>Key Property:</strong> $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$ (where $f$ and $g$ are bijective).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Binary Operations ($*: A \times A \to A$):</strong>
+          <ul>
+            <li>A binary operation $*$ on a set $A$ is a function that maps each ordered pair $(a,b)$ of elements of $A$ to a unique element $a*b \in A$.</li>
+            <li><strong>Commutative:</strong> An operation $*$ is commutative if $a * b = b * a$ for all $a, b \in A$.</li>
+            <li><strong>Associative:</strong> An operation $*$ is associative if $(a * b) * c = a * (b * c)$ for all $a, b, c \in A$.</li>
+            <li><strong>Identity Element ($e$):</strong> An element $e \in A$ is an identity element for $*$ if $a * e = e * a = a$ for all $a \in A$.</li>
+            <li><strong>Inverse Element ($b$ for $a$):</strong> Given an identity element $e$, an element $b \in A$ is the inverse of $a \in A$ if $a * b = b * a = e$. The inverse of $a$ is often denoted by $a^{-1}$.</li>
+          </ul>
+        </li>
+      </ol>
+    </article>
+
+    <article class="resource">
+      <h3>Step-by-Step Derivations</h3>
+
+      <h4>1. Proof of the inverse of a composite function: $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$</h4>
+      <p>This derivation proves a fundamental property of inverse functions for composite mappings.</p>
+      <p><strong>Given:</strong><br>
+      Let $f: A \to B$ and $g: B \to C$ be two bijective functions.
+      Since $f$ and $g$ are bijective, their inverses $f^{-1}: B \to A$ and $g^{-1}: C \to B$ exist.
+      The composite function $g \circ f: A \to C$ is also bijective (a standard result, implying its invertibility). Thus, $(g \circ f)^{-1}: C \to A$ exists.</p>
+      <p><strong>To Prove:</strong> $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$</p>
+      <p><strong>Proof:</strong><br>
+      To prove that two functions are equal, we must show they have the same domain, codomain, and map every element in their domain to the same element in their codomain. Both $(g \circ f)^{-1}$ and $(f^{-1} \circ g^{-1})$ have domain $C$ and codomain $A$. We need to show that for any arbitrary element $z \in C$, they produce the same output.</p>
+      <p>Let $z \in C$. We want to find $(g \circ f)^{-1}(z)$.
+      Let $(g \circ f)^{-1}(z) = x$.
+      By the definition of an inverse function ($h^{-1}(z) = x \iff h(x) = z$):
+      $$ (g \circ f)(x) = z $$
+      By the definition of composite function ($ (g \circ f)(x) = g(f(x)) $):
+      $$ g(f(x)) = z $$
+      Since $g^{-1}$ is the inverse of $g$, we can apply $g^{-1}$ to both sides. Recall that $g^{-1}(g(y)) = y$ for any $y$ in the domain of $g$. Here, $f(x)$ plays the role of $y$:
+      $$ g^{-1}(g(f(x))) = g^{-1}(z) $$
+      $$ f(x) = g^{-1}(z) $$
+      Now, since $f^{-1}$ is the inverse of $f$, we can apply $f^{-1}$ to both sides. Recall that $f^{-1}(f(y)) = y$ for any $y$ in the domain of $f$:
+      $$ f^{-1}(f(x)) = f^{-1}(g^{-1}(z)) $$
+      $$ x = f^{-1}(g^{-1}(z)) $$
+      By the definition of composition of functions ($ (h \circ k)(a) = h(k(a)) $), we can write $f^{-1}(g^{-1}(z))$ as $(f^{-1} \circ g^{-1})(z)$:
+      $$ x = (f^{-1} \circ g^{-1})(z) $$
+      Since we initially defined $x = (g \circ f)^{-1}(z)$, we have successfully shown that:
+      $$ (g \circ f)^{-1}(z) = (f^{-1} \circ g^{-1})(z) $$
+      As this holds for any arbitrary $z \in C$, and both functions have the same domain and codomain, we conclude that the functions themselves are equal:
+      $$ (g \circ f)^{-1} = f^{-1} \circ g^{-1} $$
+      Hence Proved.</p>
+
+      <h4>2. Derivation: Methodology for Proving a Relation is an Equivalence Relation</h4>
+      <p><strong>Concept:</strong> A relation $R$ on a non-empty set $A$ is an equivalence relation if it simultaneously satisfies three properties: reflexivity, symmetry, and transitivity.</p>
+      <p><strong>Methodology Steps:</strong><br>
+      Let $R$ be a relation defined on a non-empty set $A$. To prove $R$ is an equivalence relation, follow these three steps rigorously:</p>
+
+      <ul>
+        <li>
+          <h5>Step 1: Check for Reflexivity</h5>
+          <p><strong>Condition:</strong> For every element $a \in A$, the ordered pair $(a,a)$ must be an element of $R$.
+          Mathematically: $ \forall a \in A, (a,a) \in R $</p>
+          <p><strong>Proof Strategy:</strong><br>
+          Pick an arbitrary element $a$ from the set $A$. Then, demonstrate that $a$ satisfies the condition that defines the relation $R$ with respect to itself. If the defining property of $R$ holds when both components of the ordered pair are $a$, then $R$ is reflexive. Ensure this holds for <em>all</em> elements in $A$.</p>
+        </li>
+        <li>
+          <h5>Step 2: Check for Symmetry</h5>
+          <p><strong>Condition:</strong> For every pair of elements $a, b \in A$, if $(a,b) \in R$, then it must imply that $(b,a) \in R$.
+          Mathematically: $ \forall a, b \in A, (a,b) \in R \implies (b,a) \in R $</p>
+          <p><strong>Proof Strategy:</strong><br>
+          Assume that an arbitrary ordered pair $(a,b)$ is in $R$. This means $a$ and $b$ satisfy the specific defining property of the relation $R$. Based on this assumption, logically show that the property must also hold if the order of $a$ and $b$ is reversed (i.e., $(b,a) \in R$). If this implication holds, then $R$ is symmetric.</p>
+        </li>
+        <li>
+          <h5>Step 3: Check for Transitivity</h5>
+          <p><strong>Condition:</strong> For every triplet of elements $a, b, c \in A$, if $(a,b) \in R$ and $(b,c) \in R$, then it must imply that $(a,c) \in R$.
+          Mathematically: $ \forall a, b, c \in A, [(a,b) \in R \text{ and } (b,c) \in R] \implies (a,c) \in R $</p>
+          <p><strong>Proof Strategy:</strong><br>
+          Assume that two arbitrary pairs, $(a,b) \in R$ and $(b,c) \in R$, exist. This means $a,b$ satisfy the defining property of $R$, and $b,c$ also satisfy it. Using these two assumptions, logically derive and demonstrate that $a$ and $c$ must also satisfy the defining property of $R$ (i.e., $(a,c) \in R$). If this implication holds, then $R$ is transitive.</p>
+        </li>
+      </ul>
+      <p><strong>Conclusion:</strong> If and only if all three conditions (reflexive, symmetric, and transitive) are satisfied, then $R$ is classified as an equivalence relation. If any one of these conditions fails, $R$ is not an equivalence relation.</p>
+
+      <h4>3. Derivation: Methodology for Proving a Function is Injective (One-to-One)</h4>
+      <p><strong>Concept:</strong> A function $f: A \to B$ is injective if every distinct element in the domain $A$ maps to a distinct element in the codomain $B$. In simpler terms, no two different elements in the domain have the same image in the codomain.</p>
+      <p><strong>Mathematical Definition:</strong> A function $f$ is injective if for any $x_1, x_2 \in A$, whenever $f(x_1) = f(x_2)$, it must imply that $x_1 = x_2$.</p>
+      <p><strong>Methodology Steps:</strong><br>
+      Let $f: A \to B$ be a function defined by $f(x) = \text{expression in } x$. To prove its injectivity, follow these steps:</p>
+      <ul>
+        <li>
+          <h5>Step 1: Assume $f(x_1) = f(x_2)$</h5>
+          <p>Select two arbitrary elements, $x_1$ and $x_2$, from the domain $A$. Make the assumption that their images under the function $f$ are equal:
+          $$ f(x_1) = f(x_2) $$</p>
+        </li>
+        <li>
+          <h5>Step 2: Algebraically Manipulate the Equation</h5>
+          <p>Substitute the actual functional expression for $f(x_1)$ and $f(x_2)$ into the assumed equality. Then, perform valid algebraic operations (e.g., addition, subtraction, multiplication, division, squaring, taking roots, etc.) on both sides of the equation to simplify it.</p>
+        </li>
+        <li>
+          <h5>Step 3: Show that $x_1 = x_2$</h5>
+          <p>The primary goal of the algebraic manipulation in Step 2 is to logically deduce that $x_1$ must be equal to $x_2$. If you successfully arrive at the conclusion $x_1 = x_2$, then the function $f$ is injective.</p>
+        </li>
+      </ul>
+      <p><strong>Example Illustration:</strong> To prove $f(x) = 2x+3$ is injective for $f: \mathbb{R} \to \mathbb{R}$:</p>
+      <ol>
+        <li>Assume $f(x_1) = f(x_2)$ for $x_1, x_2 \in \mathbb{R}$.</li>
+        <li>Substitute the function definition:
+          $$ 2x_1 + 3 = 2x_2 + 3 $$
+        </li>
+        <li>Simplify the equation:
+          $$ 2x_1 = 2x_2 $$
+          $$ x_1 = x_2 $$
+        </li>
+      </ol>
+      <p>Since $x_1 = x_2$ was obtained from the assumption $f(x_1) = f(x_2)$, the function $f(x) = 2x+3$ is injective.</p>
+
+      <h4>4. Derivation: Methodology for Proving a Function is Surjective (Onto)</h4>
+      <p><strong>Concept:</strong> A function $f: A \to B$ is surjective if every element in the codomain $B$ has at least one pre-image in the domain $A$. In other words, the range of the function is equal to its codomain.</p>
+      <p><strong>Mathematical Definition:</strong> A function $f$ is surjective if for every $y \in B$, there exists at least one $x \in A$ such that $f(x) = y$.</p>
+      <p><strong>Methodology Steps:</strong><br>
+      Let $f: A \to B$ be a function defined by $f(x) = \text{expression in } x$. To prove its surjectivity, follow these steps:</p>
+      <ul>
+        <li>
+          <h5>Step 1: Take an arbitrary element $y$ from the codomain $B$</h5>
+          <p>Let $y$ be an arbitrary element belonging to the codomain $B$. The goal is to show that we can always find an $x \in A$ that maps to this $y$.</p>
+        </li>
+        <li>
+          <h5>Step 2: Set $f(x) = y$ and solve for $x$ in terms of $y$</h5>
+          <p>Write down the equation $y = f(x)$ using the specific definition of the function $f$. Then, algebraically rearrange this equation to express $x$ as a function of $y$. Let this derived expression be $x_0 = \text{expression in } y$.</p>
+        </li>
+        <li>
+          <h5>Step 3: Verify that $x_0$ exists in the domain $A$ for all $y \in B$</h5>
+          <p>Crucially, check two conditions for the derived expression $x_0$:
+            <ol>
+              <li>Ensure that the expression $x_0$ is mathematically well-defined (e.g., no division by zero, no square roots of negative numbers) for <em>all</em> possible values of $y$ within the given codomain $B$.</li>
+              <li>Confirm that this $x_0$ falls within the specified domain $A$ of the function.</li>
+            </ol>
+          </p>
+        </li>
+        <li>
+          <h5>Step 4: Verify that $f(x_0) = y$</h5>
+          <p>Substitute the expression for $x_0$ (found in Step 2) back into the original function $f(x)$ and confirm that the result is indeed $y$. If $f(x_0) = y$ is true, and the conditions in Step 3 are met, then the function $f$ is surjective.</p>
+        </li>
+      </ul>
+      <p><strong>Example Illustration:</strong> To prove $f(x) = 2x+3$ is surjective for $f: \mathbb{R} \to \mathbb{R}$:</p>
+      <ol>
+        <li>Let $y \in \mathbb{R}$ (the codomain) be an arbitrary element.</li>
+        <li>Set $f(x) = y$ and solve for $x$:
+          $$ 2x + 3 = y $$
+          $$ 2x = y - 3 $$
+          $$ x = \frac{y-3}{2} $$
+        </li>
+        <li>Verify existence in domain: For any $y \in \mathbb{R}$, $x = \frac{y-3}{2}$ is always a real number. Therefore, $x \in \mathbb{R}$ (the domain) exists for every $y \in \mathbb{R}$.</li>
+        <li>Verify $f(x) = y$: Substitute the expression for $x$ back into $f(x)$:
+          $$ f\left(\frac{y-3}{2}\right) = 2\left(\frac{y-3}{2}\right) + 3 $$
+          $$ = (y-3) + 3 $$
+          $$ = y $$
+        </li>
+      </ol>
+      <p>Since for every $y$ in the codomain $\mathbb{R}$, there exists an $x$ in the domain $\mathbb{R}$ such that $f(x)=y$, the function $f(x) = 2x+3$ is surjective.</p>
+
+      <h4>5. Derivation: Methodology for Finding the Inverse of a Bijective Function</h4>
+      <p><strong>Concept:</strong> If a function $f: A \to B$ is bijective (i.e., both one-to-one and onto), then an inverse function, denoted $f^{-1}: B \to A$, exists. The inverse function 'undoes' the action of the original function, meaning $f(f^{-1}(y)) = y$ for all $y \in B$ and $f^{-1}(f(x)) = x$ for all $x \in A$.</p>
+      <p><strong>Methodology Steps:</strong><br>
+      Let $f: A \to B$ be a bijective function defined by $f(x) = \text{expression in } x$. (The bijectivity of $f$ must be established or given before attempting to find its inverse).</p>
+      <ul>
+        <li>
+          <h5>Step 1: Set $y = f(x)$</h5>
+          <p>Replace the notation $f(x)$ with $y$ in the given functional definition. This helps in conceptualizing the input and output relationship for the inverse function.
+          $$ y = f(x) $$</p>
+        </li>
+        <li>
+          <h5>Step 2: Solve the equation for $x$ in terms of $y$</h5>
+          <p>Algebraically manipulate the equation $y = f(x)$ to isolate $x$ on one side. This means expressing $x$ solely as a function of $y$. The result will be in the form:
+          $$ x = \text{expression in } y $$</p>
+        </li>
+        <li>
+          <h5>Step 3: Replace $x$ with $f^{-1}(y)$</h5>
+          <p>By the definition of an inverse function, if $y = f(x)$, then $x = f^{-1}(y)$. Therefore, the expression for $x$ found in Step 2 is precisely the definition of the inverse function with $y$ as its independent variable:
+          $$ f^{-1}(y) = \text{expression in } y $$</p>
+        </li>
+        <li>
+          <h5>Step 4: (Optional but Customary) Replace $y$ with $x$</h5>
+          <p>It is standard practice to write functions using $x$ as the independent variable. To align with this convention, replace every instance of $y$ with $x$ in the expression for $f^{-1}(y)$ to obtain the inverse function in terms of $x$:
+          $$ f^{-1}(x) = \text{expression in } x $$</p>
+        </li>
+        <li>
+          <h5>Step 5: Verify the Inverse (Optional but Highly Recommended)</h5>
+          <p>To confirm that the derived function is indeed the inverse, perform the composition tests:
+            <ol>
+              <li>Check if $(f \circ f^{-1})(x) = x$.</li>
+              <li>Check if $(f^{-1} \circ f)(x) = x$.</li>
+            </ol>
+          If both compositions result in the identity function (i.e., return the input unchanged), then $f^{-1}$ is the correct inverse of $f$.</p>
+        </li>
+      </ul>
+      <p><strong>Example Illustration:</strong> To find the inverse of $f(x) = 2x+3$ for $f: \mathbb{R} \to \mathbb{R}$ (which is known to be bijective):</p>
+      <ol>
+        <li>Set $y = f(x)$:
+          $$ y = 2x + 3 $$
+        </li>
+        <li>Solve for $x$ in terms of $y$:
+          $$ y - 3 = 2x $$
+          $$ x = \frac{y-3}{2} $$
+        </li>
+        <li>Replace $x$ with $f^{-1}(y)$:
+          $$ f^{-1}(y) = \frac{y-3}{2} $$
+        </li>
+        <li>Replace $y$ with $x$:
+          $$ f^{-1}(x) = \frac{x-3}{2} $$
+        </li>
+        <li>Verification:
+          <ul>
+            <li>$(f \circ f^{-1})(x) = f(f^{-1}(x)) = f\left(\frac{x-3}{2}\right) = 2\left(\frac{x-3}{2}\right) + 3 = (x-3) + 3 = x$.</li>
+            <li>$(f^{-1} \circ f)(x) = f^{-1}(f(x)) = f^{-1}(2x+3) = \frac{(2x+3)-3}{2} = \frac{2x}{2} = x$.</li>
+          </ul>
+          Both compositions yield $x$, confirming that $f^{-1}(x) = \frac{x-3}{2}$ is the correct inverse function.</p>
+        </li>
+      </ol>
+    </article>
+  </div>
+</section>
+
+    <div class="container">
+      
+    <div style="margin: 30px 0; text-align: center;">
+      <a class="btn btn-gold" href="chapter1_part2.html" style="padding: 14px 28px; font-size: 1.05rem;">
+        Continue to Part 2: Solved CBSE PYQs & Case Studies →
+      </a>
+    </div>
+    
+    </div>
+
+    <section class="final-cta container reveal">
+      <div class="cta-content">
+        <h2>Mastered Chapter1? <em>Return to Mathematics Hub.</em></h2>
+        <a class="btn btn-gold" href="index.html">
+          Back to Mathematics Hub →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="sn-footer">
+    <div class="container sn-footer__container">
+      <div class="sn-footer__grid">
+        <div class="sn-footer__brand">
+          <div class="brand" style="margin-bottom:12px;">
+            <span class="sn-brand__mark">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+              </svg>
+            </span>
+            <span class="brand-name" style="color:#fff; margin-left:8px;">Shorveer<em>Notes</em></span>
+          </div>
+          <p style="color:var(--muted); font-size:0.95rem; line-height:1.6;">
+            A student-focused platform providing Class 12 Science notes, derivations, and board examination preparation.
+          </p>
+          <div style="margin-top:14px; color:var(--muted); font-size:0.9rem;">
+            Created with pride by <strong>Jatin Sandilya</strong>
+          </div>
         </div>
 
-        <p aria-hidden="true" class="footer__wordmark">Shorveer Notes</p>
-        <div aria-hidden="true" class="footer__fog"></div>
-
-        <div class="footer__content">
-            <!-- Brand & Founder Column -->
-            <div class="footer-brand">
-                <a aria-label="Shorveer Notes home" class="brand__logo" href="/">
-                    <span aria-hidden="true" class="brand__mark">
-                        <svg fill="none" viewbox="0 0 64 64">
-                            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
-                        </svg>
-                    </span>
-                    <span>Shorveer<em>Notes</em></span>
-                </a>
-                <h2 class="brand__title">Class 12 Science, Clearly Organised</h2>
-                <p class="brand__text">A student-focused learning platform for Class 12 Science notes, derivations, and board examination preparation.</p>
-
-                <a class="brand__cta" href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" target="_blank">
-                    <svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
-                    </svg>
-                    <span>JS EDIZ on YouTube</span>
-                </a>
-
-                <ul class="brand__status">
-                    <li class="chip"><span class="chip__dot"></span>CBSE Aligned</li>
-                    <li class="chip">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"></path><path d="M20 4v7h-7"></path></svg>
-                        Syllabus 2026-27
-                    </li>
-                    <li class="chip">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                        Student Focused
-                    </li>
-                </ul>
-                <p class="brand__copy">© <span id="year"></span> Shorveer Notes. All rights reserved.</p>
-                <div class="brand__by">
-                    Built with <span class="brand__heart">❤️</span> in India
-                    <span class="brand__author">
-                        <span class="brand__avatar">
-                            <svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 14c-6.63 0-12 2.5-12 5v1h24v-1c0-2.5-5.37-5-12-5z"></path></svg>
-                        </span>
-                        Jatin Sharma
-                    </span>
-                </div>
-            </div>
-
-            <!-- Links: Study -->
-            <div class="col">
-                <h3 class="col__title">Study</h3>
-                <ul class="col__list">
-                    <li><a href="../physics/index.html">Physics</a></li>
-                    <li><a href="../chemistry/index.html">Chemistry</a></li>
-                    <li><a href="../mathematics/index.html">Mathematics</a></li>
-                    <li><a href="../english/index.html">English</a></li>
-                </ul>
-            </div>
-
-            <!-- Links: Site -->
-            <div class="col">
-                <h3 class="col__title">Site</h3>
-                <ul class="col__list">
-                    <li><a href="../exam-info.html">Exam info</a></li>
-                    <li><a href="../about-notes.html">About the notes</a></li>
-                    <li><a href="../about.html">About us</a></li>
-                    <li><a href="../privacy.html">Privacy policy</a></li>
-                    <li><a href="../cookies.html">Cookies</a></li>
-                </ul>
-            </div>
-
-            <!-- Links: Connect -->
-            <div class="col">
-                <h3 class="col__title">Connect</h3>
-                <ul class="col__list">
-                    <li><a href="mailto:support.shorveernotes@gmail.com">Contact us</a></li>
-                    <li><a href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" target="_blank">YouTube Channel</a></li>
-                    <li><a href="../about.html#founder">Founder's Note</a></li>
-                </ul>
-            </div>
+        <div class="sn-nav-col">
+          <h3 style="color:#fff; font-size:1rem; margin-bottom:14px;">Subject Hubs</h3>
+          <ul style="list-style:none; padding:0; margin:0; line-height:2;">
+            <li><a href="../physics/index.html" style="color:var(--muted); text-decoration:none;">Physics Hub</a></li>
+            <li><a href="../chemistry/index.html" style="color:var(--muted); text-decoration:none;">Chemistry Hub</a></li>
+            <li><a href="../mathematics/index.html" style="color:var(--muted); text-decoration:none;">Mathematics Hub</a></li>
+          </ul>
         </div>
-    </footer>
 
-    <script>
-        // Script to set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+        <div class="sn-nav-col">
+          <h3 style="color:#fff; font-size:1rem; margin-bottom:14px;">Connect</h3>
+          <ul style="list-style:none; padding:0; margin:0; line-height:2;">
+            <li><a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer" style="color:var(--muted); text-decoration:none;">JS EDIZ on YouTube</a></li>
+            <li><a href="mailto:support.shorveernotes@gmail.com">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
 
-        // Mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuButton = document.getElementById('menuButton');
-            const navLinks = document.querySelector('.nav-links');
+      <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:20px; text-align:center; color:var(--muted); font-size:0.85rem;">
+        <p>&copy; 2026 Shorveer Notes · Built with pride in India 🇮🇳</p>
+      </div>
+    </div>
+  </footer>
 
-            if (menuButton && navLinks) {
-                menuButton.addEventListener('click', function () {
-                    const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-                    this.setAttribute('aria-expanded', !expanded);
-                    navLinks.classList.toggle('active');
-                });
-            }
-        });
-    </script>
+  <!-- ============ COOKIE BANNER ============ -->
+  <aside class="sn-cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie and Storage Notice">
+    <p>
+      🍪 <strong>Transparent Storage Notice:</strong> Shorveer Notes uses browser local storage exclusively to preserve your chosen theme settings (Notebook, Sunset, Chalkboard, Blueprint) across study sessions. We do not use intrusive tracking cookies.
+    </p>
+    <button class="sn-cookie-btn" id="cookieAcceptBtn">Got it, proceed</button>
+  </aside>
+
+  <script>
+    const themeBtn = document.getElementById("themeButton");
+    const themePop = document.getElementById("themePop");
+    const themeOpts = document.querySelectorAll(".theme-opt");
+    const cookieBanner = document.getElementById("cookieBanner");
+    const cookieAcceptBtn = document.getElementById("cookieAcceptBtn");
+
+    function applyTheme(name) {
+      document.documentElement.setAttribute("data-theme", name);
+      try { localStorage.setItem("shorveer-theme-name", name); } catch(e) {}
+    }
+
+    applyTheme(localStorage.getItem("shorveer-theme-name") || "sunset");
+
+    themeBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      themePop.classList.toggle("open");
+    });
+
+    themeOpts.forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyTheme(btn.dataset.themeValue);
+        themePop.classList.remove("open");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!themePop.contains(e.target) && !themeBtn.contains(e.target)) {
+        themePop.classList.remove("open");
+      }
+    });
+
+    try {
+      if (!localStorage.getItem("shorveer-cookie-ack")) {
+        cookieBanner.classList.add("show");
+      }
+    } catch(e) {}
+
+    cookieAcceptBtn.addEventListener("click", () => {
+      cookieBanner.classList.remove("show");
+      try { localStorage.setItem("shorveer-cookie-ack", "true"); } catch(e) {}
+    });
+  </script>
 </body>
 </html>
