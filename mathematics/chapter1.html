@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 01: Relations and Functions | Mathematics | Shorveer Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
+
+
+    <style>
+        /* General Body Styling */
+        :root {
+            --paper: #fdfaf3;
+            --ink: #1c1c1a;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--ink);
+            background-color: var(--paper);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        a {
+            color: #2b2b2b;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar Styling */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        .nav .brand-mark {
+            width: 30px;
+            height: 30px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav .brand-mark svg {
+            width: 60%;
+            height: 60%;
+        }
+
+        .nav .brand-name em {
+            font-style: normal;
+            color: #6b6858;
+            font-weight: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #e8b64c;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+        }
+
+        .nav-icon:hover {
+            color: #e8b64c;
+        }
+
+        .mobile-toggle {
+            display: none; /* Hidden by default on larger screens */
+        }
+
+        .palette-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #e8b64c; /* Example color */
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Main Content Styling */
+        .chapter-content {
+            padding: 40px 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .chapter-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2b2b2b;
+        }
+
+        .section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            color: #bf5a3c;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .section h3 {
+            font-size: 1.4em;
+            color: #2b2b2b;
+            margin-top: 1.5em;
+        }
+
+        .section p, .section ul, .section ol {
+            margin-bottom: 1em;
+        }
+
+        .section ul {
+            list-style: disc;
+            padding-left: 25px;
+        }
+
+        .section ol {
+            list-style: decimal;
+            padding-left: 25px;
+        }
+
+        .definition {
+            background-color: #f9f9f9;
+            border-left: 4px solid #e8b64c;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .definition strong {
+            color: #e8b64c;
+        }
+
+        .formula-block {
+            background-color: #eff3f6;
+            border-left: 4px solid #4a90e2;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .question-block {
+            background-color: #e6f7ed;
+            border-left: 4px solid #2fb36a;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .solution-block {
+            background-color: #f5f5f5;
+            border-left: 4px solid #999;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        .revision-block {
+            background-color: #fffbe6;
+            border: 1px solid #ffcc00;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .revision-block h2 {
+            color: #ffcc00;
+            border-bottom: 1px solid #ffcc00;
+        }
+
+
+        /* --- Responsive Adjustments for Navbar --- */
+        @media (max-width: 768px) {
+            .nav {
+                flex-wrap: wrap;
+                padding-bottom: 0;
+            }
+            .nav .brand {
+                flex-grow: 1;
+            }
+            .nav-actions {
+                order: 3;
+                width: 100%;
+                justify-content: flex-end; /* Align actions to the right if needed */
+                padding: 10px 0;
+            }
+            .nav-links {
+                display: none; /* Hidden by default on mobile */
+                flex-direction: column;
+                width: 100%;
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 10px 0;
+                order: 4; /* Place below brand and actions */
+            }
+
+            .nav-links.active {
+                display: flex; /* Show when active */
+            }
+
+            .nav-links a {
+                padding: 10px 20px;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+            .mobile-toggle {
+                display: block; /* Show menu button on mobile */
+            }
+        }
+    </style>
+
+    <style>
+    /* Meadow Footer Styles (Integrated directly with Shorveer design tokens) */
+    .footer {
+      --u: min(100vw / 1440, 100vh / 672);
+      --u: min(100vw / 1440, 100svh / 672);
+      position: relative;
+      height: 100vh;
+      height: 100svh;
+      background: var(--paper, #fdfaf3);
+      overflow: hidden;
+      isolation: isolate;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+    }
+    .footer__stage {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .footer__video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 100%;
+      transform: translateY(9%);
+    }
+    .footer__stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, var(--paper, #fdfaf3) 0%, rgb(253 250 243 / .96) 26%, rgb(253 250 243 / .72) 44%, rgb(253 250 243 / 0) 70%);
+      pointer-events: none;
+    }
+    .footer__wordmark {
+      position: absolute;
+      left: 50%;
+      bottom: calc(-2 * var(--u));
+      transform: translateX(-50%);
+      z-index: 1;
+      margin: 0;
+      font-size: calc(390 * var(--u));
+      font-weight: 600;
+      line-height: .74;
+      letter-spacing: -0.045em;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      color: rgb(232 234 250 / .4);
+      background: linear-gradient(to bottom, rgb(255 255 255 / .78), rgb(214 218 246 / .36) 48%, rgb(255 255 255 / .62));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 calc(-1 * var(--u)) 0 rgb(255 255 255 / .55)) drop-shadow(0 0 calc(18 * var(--u)) rgb(190 200 255 / .45));
+    }
+    .footer__fog {
+      position: absolute;
+      inset: auto 0 0 0;
+      z-index: 2;
+      height: 17%;
+      pointer-events: none;
+      background: linear-gradient(to top, #e2e3f1 0%, rgb(226 227 241 / .6) 30%, rgb(226 227 241 / 0) 100%);
+    }
+    .footer__content {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: calc(440 * var(--u)) calc(240 * var(--u)) calc(240 * var(--u)) 1fr;
+      align-items: start;
+      width: calc(1440 * var(--u));
+      margin: 0 auto;
+      padding: calc(86 * var(--u)) calc(100 * var(--u)) 0 calc(160 * var(--u));
+    }
+    .footer-brand .brand__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(10 * var(--u));
+      font-size: calc(17 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .footer-brand .brand__mark {
+      width: calc(30 * var(--u));
+      height: calc(30 * var(--u));
+      border-radius: calc(8 * var(--u));
+      background: linear-gradient(to bottom, #2b2b2b, #0a0a0a 55%);
+      box-shadow: 0 calc(1 * var(--u)) calc(2 * var(--u)) rgb(0 0 0 / .25);
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-brand .brand__mark svg {
+      width: 60%;
+      height: 60%;
+    }
+    .footer-brand .brand__title {
+      margin-top: calc(19 * var(--u));
+      font-size: calc(20 * var(--u));
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.045em;
+    }
+    .footer-brand .brand__text {
+      max-width: calc(412 * var(--u));
+      margin-top: calc(18 * var(--u));
+      color: #6f6f6c;
+      font-size: calc(13.7 * var(--u));
+      line-height: 1.43;
+      letter-spacing: -0.012em;
+    }
+    .footer-brand .brand__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(6 * var(--u));
+      height: calc(32.5 * var(--u));
+      margin-top: calc(20 * var(--u));
+      padding: 0 calc(16 * var(--u)) 0 calc(15 * var(--u));
+      border-radius: calc(7 * var(--u));
+      background: #0c0c0c;
+      color: #fff;
+      font-size: calc(11.8 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      transition: background .2s, transform .2s;
+      text-decoration: none;
+    }
+    .footer-brand .brand__cta:hover {
+      background: #262626;
+      transform: translateY(-1px);
+    }
+    .footer-brand .brand__cta svg {
+      width: calc(13 * var(--u));
+      height: calc(13 * var(--u));
+      margin-top: calc(-1.5 * var(--u));
+    }
+    .footer-brand .brand__copy {
+      margin-top: calc(23 * var(--u));
+      color: #9c9c98;
+      font-size: calc(12.2 * var(--u));
+      letter-spacing: 0.01em;
+    }
+    .footer-brand .brand__by {
+      display: flex;
+      align-items: center;
+      gap: calc(5 * var(--u));
+      margin-top: calc(21 * var(--u));
+      font-size: calc(11.8 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .footer-brand .brand__heart { font-size: .95em; }
+    .footer-brand .brand__author {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(6 * var(--u));
+      margin-left: calc(5 * var(--u));
+    }
+    .footer-brand .brand__avatar {
+      width: calc(23 * var(--u));
+      height: calc(23 * var(--u));
+      border-radius: 50%;
+      overflow: hidden;
+      background: #e3e3e0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-brand .brand__avatar svg { width: 100%; height: 100%; display: block; }
+    .footer-brand .brand__status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: calc(8 * var(--u));
+      margin-top: calc(16 * var(--u));
+      list-style: none;
+      padding: 0;
+    }
+    .footer-brand .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(6 * var(--u));
+      height: calc(25 * var(--u));
+      padding: 0 calc(10 * var(--u));
+      border: 1px solid rgb(12 12 12 / .12);
+      border-radius: 999px;
+      background: rgb(255 255 255 / .55);
+      font-size: calc(10.8 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    .footer-brand .chip svg {
+      width: calc(11 * var(--u));
+      height: calc(11 * var(--u));
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .footer-brand .chip__dot {
+      width: calc(6 * var(--u));
+      height: calc(6 * var(--u));
+      border-radius: 50%;
+      background: #2fb36a;
+      box-shadow: 0 0 0 calc(2.5 * var(--u)) rgb(47 179 106 / .18);
+    }
+    .footer .col__title {
+      font-size: calc(16 * var(--u));
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.045em;
+      margin: 0;
+    }
+    .footer .col__list {
+      display: grid;
+      gap: calc(20.5 * var(--u));
+      margin-top: calc(24 * var(--u));
+      font-size: calc(13.7 * var(--u));
+      line-height: 1.24;
+      letter-spacing: 0.022em;
+      color: #161616;
+      list-style: none;
+      padding: 0;
+    }
+    .footer .col--menu .col__list {
+      gap: calc(15 * var(--u));
+      margin-top: calc(21 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      color: #0c0c0c;
+    }
+    .footer .col__list a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    .footer .col__list a:hover {
+      opacity: .55;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .footer {
+        --u: min(100vw / 1040, 100svh / 672);
+      }
+      .footer__content {
+        grid-template-columns: calc(400 * var(--u)) calc(190 * var(--u)) calc(210 * var(--u)) 1fr;
+        width: calc(1040 * var(--u));
+        padding: calc(64 * var(--u)) calc(40 * var(--u)) 0;
+      }
+      .footer-brand .brand__text { max-width: calc(350 * var(--u)); }
+      .footer__wordmark {
+        font-size: calc(286 * var(--u));
+        bottom: calc(10 * var(--u));
+      }
+    }
+
+    @media (max-width: 767px) {
+      .footer {
+        --u: 1px;
+        height: auto;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .footer__stage::after {
+        background: linear-gradient(to bottom, var(--paper, #fdfaf3) 0%, rgb(253 250 243 / .95) 50%, rgb(253 250 243 / .8) 68%, rgb(253 250 243 / 0) 90%);
+      }
+      .footer__content {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: space-between;
+        gap: 36px 12px;
+        width: 100%;
+        padding: 40px 20px 0;
+        margin-bottom: max(34vw, 150px);
+      }
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+      .footer-brand .brand__title { font-size: 21px; margin-top: 19px; }
+      .footer-brand .brand__text { max-width: 34em; font-size: 14px; margin-top: 18px; }
+      .footer-brand .brand__cta { height: 38px; padding: 0 18px 0 16px; border-radius: 8px; font-size: 13px; margin-top: 20px; }
+      .footer-brand .brand__cta svg { width: 14px; height: 14px; }
+      .footer-brand .brand__copy, .footer-brand .brand__by { font-size: 12.5px; }
+      .footer-brand .brand__copy { margin-top: 23px; }
+      .footer-brand .brand__by { margin-top: 21px; }
+      .footer-brand .chip { height: 28px; font-size: 12px; padding: 0 10px; }
+      .footer .col__title { font-size: 15px; }
+      .footer .col__list { gap: 14px; margin-top: 20px; font-size: 13px; letter-spacing: 0; }
+      .footer .col--menu .col__list { gap: 14px; margin-top: 20px; }
+      .footer__wordmark {
+        bottom: 5vw;
+        font-size: 27vw;
+      }
+      .footer__fog { height: 7%; }
+    }
+
+    @media (max-width: 359px) {
+      .footer__content {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer .col:last-child {
+        grid-column: span 2;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .footer-brand .brand__cta, .footer .col__list a {
+        transition: none;
+      }
+    }
+  </style>
+
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <nav aria-label="Primary" class="nav container">
+            <a aria-label="Shorveer Notes home" class="brand" href="/">
+                <span aria-hidden="true" class="brand-mark">
+                    <svg fill="none" viewbox="0 0 64 64">
+                        <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
+                    </svg>
+                </span>
+                <span class="brand-name">Shorveer<em>Notes</em></span>
+            </a>
+            <div class="nav-links">
+                <a href="/#subjects">Subjects</a>
+                <a href="/#reallife">Real life</a>
+                <a href="/#resources">Resources</a>
+                <a href="/#method">How it works</a>
+                <a href="../about.html">About</a>
+            </div>
+            <div class="nav-actions">
+                <button aria-label="Open search" class="nav-icon" id="searchButton" title="Search (Ctrl+K)">
+                    <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+                        <circle cx="11" cy="11" r="7"></circle><path d="m20.5 20.5-4-4"></path>
+                    </svg>
+                </button>
+                <button aria-expanded="false" aria-label="Change theme" class="nav-icon" id="themeButton" title="Change theme">
+                    <span aria-hidden="true" class="palette-dot"></span>
+                </button>
+                <button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav-icon mobile-toggle" id="menuButton">
+                    <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+                        <path d="M3 6h18M3 12h18M3 18h18"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="chapter-content">
+        <h1>Chapter 01: Relations and Functions</h1>
+
+        <section class="section">
+            <h2>Chapter Overview</h2>
+            <p>
+                In this chapter, we delve into the fundamental concepts of relations and functions, which form the bedrock of higher mathematics. We will explore various types of relations, including reflexive, symmetric, and transitive, leading to the definition of equivalence relations. Subsequently, we will study functions, their types (one-one, onto, bijective), and operations such as composition and inverse functions. These concepts are crucial for understanding calculus, algebra, and discrete mathematics.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Key Definitions</h2>
+            <div class="definition">
+                <h3><strong>Relation</strong></h3>
+                <p>A relation $R$ from a non-empty set $A$ to a non-empty set $B$ is a subset of the Cartesian product $A \times B$. If $(a,b) \in R$, we say that $a$ is related to $b$, written as $aRb$.</p>
+            </div>
+            <div class="definition">
+                <h3><strong>Domain, Codomain, and Range</strong></h3>
+                <ul>
+                    <li>The <strong>domain</strong> of a relation $R$ is the set of all first elements of the ordered pairs in $R$.</li>
+                    <li>The <strong>codomain</strong> of a relation from $A$ to $B$ is the entire set $B$.</li>
+                    <li>The <strong>range</strong> of a relation $R$ is the set of all second elements of the ordered pairs in $R$, which is a subset of the codomain.</li>
+                </ul>
+            </div>
+            <div class="definition">
+                <h3><strong>Types of Relations on a Set $A$</strong></h3>
+                <ul>
+                    <li><strong>Empty Relation:</strong> A relation $R = \emptyset \subseteq A \times A$. No element of $A$ is related to any element of $A$.</li>
+                    <li><strong>Universal Relation:</strong> A relation $R = A \times A$. Every element of $A$ is related to every element of $A$.</li>
+                    <li><strong>Reflexive Relation:</strong> A relation $R$ on $A$ is reflexive if $(a, a) \in R$ for every $a \in A$.</li>
+                    <li><strong>Symmetric Relation:</strong> A relation $R$ on $A$ is symmetric if $(a, b) \in R \implies (b, a) \in R$, for all $a, b \in A$.</li>
+                    <li><strong>Transitive Relation:</strong> A relation $R$ on $A$ is transitive if $(a, b) \in R$ and $(b, c) \in R \implies (a, c) \in R$, for all $a, b, c \in A$.</li>
+                    <li><strong>Equivalence Relation:</strong> A relation $R$ on $A$ is an equivalence relation if it is reflexive, symmetric, and transitive.</li>
+                </ul>
+            </div>
+            <div class="definition">
+                <h3><strong>Function</strong></h3>
+                <p>A relation $f$ from a set $A$ to a set $B$ is called a <strong>function</strong> (or mapping) if every element of set $A$ has one and only one image in set $B$. We write $f: A \to B$.</p>
+            </div>
+            <div class="definition">
+                <h3><strong>Types of Functions</strong></h3>
+                <ul>
+                    <li><strong>One-one (Injective) Function:</strong> A function $f: A \to B$ is one-one if $f(x_1) = f(x_2) \implies x_1 = x_2$ for all $x_1, x_2 \in A$.</li>
+                    <li><strong>Onto (Surjective) Function:</strong> A function $f: A \to B$ is onto if for every $y \in B$, there exists an $x \in A$ such that $f(x) = y$. The range of $f$ is equal to the codomain $B$.</li>
+                    <li><strong>Bijective Function:</strong> A function $f: A \to B$ is bijective if it is both one-one and onto.</li>
+                </ul>
+            </div>
+            <div class="definition">
+                <h3><strong>Composition of Functions</strong></h3>
+                <p>Let $f: A \to B$ and $g: B \to C$ be two functions. The composition of $f$ and $g$, denoted by $g \circ f$, is defined as the function $g \circ f: A \to C$ given by $(g \circ f)(x) = g(f(x))$ for all $x \in A$.</p>
+            </div>
+            <div class="definition">
+                <h3><strong>Inverse Function</strong></h3>
+                <p>A function $f: A \to B$ is invertible if there exists a function $g: B \to A$ such that $g \circ f = I_A$ and $f \circ g = I_B$, where $I_A$ and $I_B$ are identity functions on $A$ and $B$ respectively. The function $g$ is called the inverse of $f$ and is denoted by $f^{-1}$. A function is invertible if and only if it is bijective.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Essential Formulas and Theorems</h2>
+            <div class="formula-block">
+                <h3>Number of Relations</h3>
+                <p>If set $A$ has $m$ elements and set $B$ has $n$ elements, then the total number of relations from $A$ to $B$ is $2^{mn}$.</p>
+            </div>
+            <div class="formula-block">
+                <h3>Number of Functions</h3>
+                <p>If set $A$ has $m$ elements and set $B$ has $n$ elements, then the total number of functions from $A$ to $B$ is $n^m$.</p>
+            </div>
+            <div class="formula-block">
+                <h3>Composition Associativity</h3>
+                <p>If $f: A \to B$, $g: B \to C$, and $h: C \to D$ are functions, then $(h \circ g) \circ f = h \circ (g \circ f)$.</p>
+            </div>
+            <div class="formula-block">
+                <h3>Inverse Property</h3>
+                <p>If $f: A \to B$ is bijective, then $f^{-1}: B \to A$ exists and is unique. Also, $(f^{-1})^{-1} = f$.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Important CBSE Board Exam Standard Questions</h2>
+
+            <div class="question-block">
+                <h3>Question 1: Relation Properties</h3>
+                <p>Show that the relation $R$ in the set $A = \{1, 2, 3, 4, 5, 6\}$ defined by $R = \{(a, b) : b = a + 1\}$ is neither reflexive, nor symmetric, nor transitive.</p>
+            </div>
+            <div class="solution-block">
+                <h3>Solution:</h3>
+                <p>For the given relation $R = \{(a, b) : b = a + 1\}$ on the set $A = \{1, 2, 3, 4, 5, 6\}$.</p>
+                <ul>
+                    <li><strong>Reflexivity:</strong> For $R$ to be reflexive, $(a, a) \in R$ for all $a \in A$. This means $a = a + 1$, which is false for any $a \in A$. For example, $(1, 1) \notin R$ as $1 \neq 1 + 1$.
+                        Therefore, $R$ is <strong>not reflexive</strong>.</li>
+                    <li><strong>Symmetry:</strong> For $R$ to be symmetric, if $(a, b) \in R$, then $(b, a) \in R$.
+                        Let $(a, b) \in R$. Then $b = a + 1$.
+                        For $(b, a)$ to be in $R$, we would need $a = b + 1$.
+                        Substituting $b = a + 1$ into $a = b + 1$, we get $a = (a + 1) + 1 \implies a = a + 2$, which is false.
+                        For example, $(1, 2) \in R$ since $2 = 1 + 1$, but $(2, 1) \notin R$ since $1 \neq 2 + 1$.
+                        Therefore, $R$ is <strong>not symmetric</strong>.</li>
+                    <li><strong>Transitivity:</strong> For $R$ to be transitive, if $(a, b) \in R$ and $(b, c) \in R$, then $(a, c) \in R$.
+                        Let $(a, b) \in R$ and $(b, c) \in R$.
+                        This implies $b = a + 1$ and $c = b + 1$.
+                        Substituting the value of $b$ from the first equation into the second, we get $c = (a + 1) + 1 \implies c = a + 2$.
+                        For $(a, c)$ to be in $R$, we would need $c = a + 1$.
+                        But we found $c = a + 2$. Thus, $a + 2 = a + 1 \implies 2 = 1$, which is false.
+                        For example, $(1, 2) \in R$ and $(2, 3) \in R$, but $(1, 3) \notin R$ since $3 \neq 1 + 1$.
+                        Therefore, $R$ is <strong>not transitive</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="question-block">
+                <h3>Question 2: Invertibility of a Function</h3>
+                <p>Consider $f: \mathbb{R} \to \mathbb{R}$ given by $f(x) = 2x - 3$. Show that $f$ is invertible. Find $f^{-1}$.</p>
+            </div>
+            <div class="solution-block">
+                <h3>Solution:</h3>
+                <p>To show $f$ is invertible, we need to prove it is both one-one (injective) and onto (surjective).</p>
+                <ul>
+                    <li><strong>Injectivity (One-one):</strong>
+                        Let $x_1, x_2 \in \mathbb{R}$ such that $f(x_1) = f(x_2)$.
+                        $2x_1 - 3 = 2x_2 - 3$
+                        $2x_1 = 2x_2$
+                        $x_1 = x_2$.
+                        Since $f(x_1) = f(x_2) \implies x_1 = x_2$, the function $f$ is <strong>one-one</strong>.</li>
+                    <li><strong>Surjectivity (Onto):</strong>
+                        Let $y \in \mathbb{R}$ be an arbitrary element in the codomain. We need to find an $x \in \mathbb{R}$ such that $f(x) = y$.
+                        $f(x) = y \implies 2x - 3 = y$
+                        $2x = y + 3$
+                        $x = \frac{y + 3}{2}$.
+                        Since for every $y \in \mathbb{R}$, $x = \frac{y+3}{2}$ is also a real number, there exists an $x$ in the domain $\mathbb{R}$ for every $y$ in the codomain $\mathbb{R}$.
+                        Thus, the function $f$ is <strong>onto</strong>.</li>
+                </ul>
+                <p>Since $f$ is both one-one and onto, it is bijective, and hence <strong>invertible</strong>.</p>
+                <h3>Finding $f^{-1}$:</h3>
+                <p>From the surjectivity step, we have $x = \frac{y + 3}{2}$.
+                To find $f^{-1}(x)$, we simply replace $y$ with $x$.
+                Therefore, $f^{-1}(x) = \frac{x + 3}{2}$.</p>
+            </div>
+        </section>
+
+        <section class="section revision-block">
+            <h2>Quick Revision Summary</h2>
+            <ul>
+                <li>A <strong>relation</strong> is any subset of a Cartesian product of two sets.</li>
+                <li><strong>Reflexive, Symmetric, Transitive</strong> properties define an <strong>Equivalence Relation</strong>.</li>
+                <li>A <strong>function</strong> is a special relation where each input has exactly one output.</li>
+                <li>A function is <strong>one-one (injective)</strong> if distinct elements in the domain map to distinct elements in the codomain.</li>
+                <li>A function is <strong>onto (surjective)</strong> if every element in the codomain is the image of at least one element in the domain.</li>
+                <li>A function is <strong>bijective</strong> if it is both one-one and onto.</li>
+                <li>A function is <strong>invertible</strong> if and only if it is bijective.</li>
+                <li><strong>Composition of functions</strong> involves applying one function after another, e.g., $(g \circ f)(x) = g(f(x))$.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div aria-hidden="true" class="footer__stage">
+            <video autoplay="" class="footer__video" loop="" muted="" playsinline="" poster="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261014_121838_c97d0940-f430-4304-8573-4f47ee44f447.png" preload="auto" src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/4d01c727-d9c5-47c8-a778-35a451ffd39f.mp4"></video>
+        </div>
+
+        <p aria-hidden="true" class="footer__wordmark">Shorveer Notes</p>
+        <div aria-hidden="true" class="footer__fog"></div>
+
+        <div class="footer__content">
+            <!-- Brand & Founder Column -->
+            <div class="footer-brand">
+                <a aria-label="Shorveer Notes home" class="brand__logo" href="/">
+                    <span aria-hidden="true" class="brand__mark">
+                        <svg fill="none" viewbox="0 0 64 64">
+                            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
+                        </svg>
+                    </span>
+                    <span>Shorveer<em>Notes</em></span>
+                </a>
+                <h2 class="brand__title">Class 12 Science, Clearly Organised</h2>
+                <p class="brand__text">A student-focused learning platform for Class 12 Science notes, derivations, and board examination preparation.</p>
+
+                <a class="brand__cta" href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" target="_blank">
+                    <svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+                    </svg>
+                    <span>JS EDIZ on YouTube</span>
+                </a>
+
+                <ul class="brand__status">
+                    <li class="chip"><span class="chip__dot"></span>CBSE Aligned</li>
+                    <li class="chip">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"></path><path d="M20 4v7h-7"></path></svg>
+                        Syllabus 2026-27
+                    </li>
+                    <li class="chip">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        Student Focused
+                    </li>
+                </ul>
+                <p class="brand__copy">© <span id="year"></span> Shorveer Notes. All rights reserved.</p>
+                <div class="brand__by">
+                    Built with <span class="brand__heart">❤️</span> in India
+                    <span class="brand__author">
+                        <span class="brand__avatar">
+                            <svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 14c-6.63 0-12 2.5-12 5v1h24v-1c0-2.5-5.37-5-12-5z"></path></svg>
+                        </span>
+                        Jatin Sharma
+                    </span>
+                </div>
+            </div>
+
+            <!-- Links: Study -->
+            <div class="col">
+                <h3 class="col__title">Study</h3>
+                <ul class="col__list">
+                    <li><a href="../physics/index.html">Physics</a></li>
+                    <li><a href="../chemistry/index.html">Chemistry</a></li>
+                    <li><a href="../mathematics/index.html">Mathematics</a></li>
+                    <li><a href="../english/index.html">English</a></li>
+                </ul>
+            </div>
+
+            <!-- Links: Site -->
+            <div class="col">
+                <h3 class="col__title">Site</h3>
+                <ul class="col__list">
+                    <li><a href="../exam-info.html">Exam info</a></li>
+                    <li><a href="../about-notes.html">About the notes</a></li>
+                    <li><a href="../about.html">About us</a></li>
+                    <li><a href="../privacy.html">Privacy policy</a></li>
+                    <li><a href="../cookies.html">Cookies</a></li>
+                </ul>
+            </div>
+
+            <!-- Links: Connect -->
+            <div class="col">
+                <h3 class="col__title">Connect</h3>
+                <ul class="col__list">
+                    <li><a href="mailto:support.shorveernotes@gmail.com">Contact us</a></li>
+                    <li><a href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" target="_blank">YouTube Channel</a></li>
+                    <li><a href="../about.html#founder">Founder's Note</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script to set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.getElementById('menuButton');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (menuButton && navLinks) {
+                menuButton.addEventListener('click', function () {
+                    const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+                    this.setAttribute('aria-expanded', !expanded);
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
