@@ -1,11 +1,13 @@
 import os
 import re
 import glob
+import time
 from bs4 import BeautifulSoup
 from google import genai
+from google.genai.errors import ServerError, APIError
 
-# Ek run me kitne missing chapters process karne hain
-BATCH_SIZE = 3
+# Ek run me sirf 1 single chapter banega (Fast & Limit-Safe)
+BATCH_SIZE = 1
 
 api_key = os.environ.get("GEMINI_API_KEY")
 if not api_key:
@@ -25,8 +27,26 @@ MATHJAX_HEADER = """
 </script>
 """
 
-# In non-educational links ko skip karega taaki tokens aur files waste na hon
 IGNORE_KEYWORDS = ["privacy", "terms", "cookie", "disclaimer", "about", "contact"]
+
+def call_gemini_with_fallback(prompt, max_retries=3):
+    models = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+    for model_name in models:
+        for attempt in range(max_retries):
+            try:
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=prompt
+                )
+                return response.text
+            except (ServerError, APIError) as e:
+                print(f"Warning: {model_name} attempt {attempt+1} failed ({e}). Retrying in 6s...")
+                time.sleep(6)
+            except Exception as e:
+                print(f"Unexpected error with {model_name}: {e}")
+                time.sleep(4)
+                break
+    raise RuntimeError("All Gemini models failed due to server demand.")
 
 def extract_site_template():
     existing_files = glob.glob("**/*.html", recursive=True)
@@ -77,14 +97,10 @@ def scan_website_links():
             if not clean_href.endswith(".html"):
                 continue
 
-            # Skip policy/legal pages
             if any(k in clean_href.lower() or k in chapter_name.lower() for k in IGNORE_KEYWORDS):
                 continue
 
-            # Leading slash remove karna zaroori hai taaki root folder error na de
             normalized_href = clean_href.lstrip("/\\")
-
-            # Hamesha repository ke base dir ke relative path banayega
             target_path = os.path.normpath(os.path.join(base_dir, normalized_href))
 
             if not os.path.exists(target_path) and target_path not in seen_paths:
@@ -127,11 +143,8 @@ def patch_file_errors(file_path):
         Snippet:
         {error_segment}
         """
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt
-        )
-        patch = clean_code(response.text)
+        raw_patch = call_gemini_with_fallback(prompt)
+        patch = clean_code(raw_patch)
         with open(file_path, "a", encoding="utf-8") as f:
             f.write("\n" + patch)
 
@@ -166,12 +179,8 @@ def build_missing_chapter(target, css_block, navbar_block, footer_block):
     Return ONLY valid, complete HTML.
     """
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
-    )
-
-    generated_html = clean_code(response.text)
+    raw_response = call_gemini_with_fallback(prompt)
+    generated_html = clean_code(raw_response)
 
     if "MathJax-script" not in generated_html:
         if "<head>" in generated_html:
@@ -190,14 +199,13 @@ def main():
         print("Koi missing chapter nahi mila.")
         return
 
+    # Har run me sirf 1 target process hoga
     targets_to_process = pending_list[:BATCH_SIZE]
     css_block, navbar_block, footer_block = extract_site_template()
 
-    print(f"Total missing: {len(pending_list)} | Is run me process ho rahe hain: {len(targets_to_process)}")
-
-    for idx, target in enumerate(targets_to_process, 1):
-        print(f"[{idx}/{len(targets_to_process)}] Generating: {target['chapter_name']} -> {target['target_path']}")
-        build_missing_chapter(target, css_block, navbar_block, footer_block)
+    target = targets_to_process[0]
+    print(f"Generating single page: {target['chapter_name']} -> {target['target_path']}")
+    build_missing_chapter(target, css_block, navbar_block, footer_block)
 
 if __name__ == "__main__":
     main()
