@@ -1,4 +1,4 @@
-import os
+ import os
 import re
 import glob
 import time
@@ -34,33 +34,17 @@ MATHJAX_HEADER = """
 </script>
 """
 
-# CBSE Class 12 Official Master Syllabus for Validation
-OFFICIAL_SYLLABUS = {
-    "Mathematics": [
-        "Relations and Functions", "Inverse Trigonometric Functions", "Matrices",
-        "Determinants", "Continuity and Differentiability", "Application of Derivatives",
-        "Integrals", "Application of Integrals", "Differential Equations",
-        "Vector Algebra", "Three Dimensional Geometry", "Linear Programming", "Probability"
-    ],
-    "Physics": [
-        "Electric Charges and Fields", "Electrostatic Potential and Capacitance",
-        "Current Electricity", "Moving Charges and Magnetism", "Magnetism and Matter",
-        "Electromagnetic Induction", "Alternating Current", "Electromagnetic Waves",
-        "Ray Optics and Optical Instruments", "Wave Optics", "Dual Nature of Radiation and Matter",
-        "Atoms", "Nuclei", "Semiconductor Electronics"
-    ],
-    "Chemistry": [
-        "Solutions", "Electrochemistry", "Chemical Kinetics", "d and f Block Elements",
-        "Coordination Compounds", "Haloalkanes and Haloarenes", "Alcohols, Phenols and Ethers",
-        "Aldehydes, Ketones and Carboxylic Acids", "Amines", "Biomolecules"
-    ],
-    "English": [
-        "The Last Lesson", "Lost Spring", "Deep Water", "The Rattrap", "Indigo",
-        "Poets and Pancakes", "The Interview", "Going Places", "My Mother at Sixty-Six",
-        "Keeping Quiet", "A Thing of Beauty", "A Roadside Stand", "Aunt Jennifer's Tigers",
-        "The Third Level", "The Tiger King", "Journey to the end of the Earth", "The Enemy",
-        "On the face of It", "Memories of Childhood"
-    ]
+# Subject signatures to catch mismatches across folders
+SUBJECT_SIGNATURES = {
+    "mathematics": {
+        "forbidden": ["arrhenius", "chemical kinetics", "activation energy", "reaction rate", "reactant", "haloalkane", "sn1", "sn2", "alcohols phenols", "aldehyde", "ketone"]
+    },
+    "physics": {
+        "forbidden": ["reaction mechanism", "organic chemistry", "haloalkanes", "aldol condensation", "coordination compounds"]
+    },
+    "chemistry": {
+        "forbidden": ["direction cosines", "shortest distance between skew lines", "matrix adjoint", "integration by parts dx"]
+    }
 }
 
 IGNORE_KEYWORDS = ["privacy", "terms", "cookie", "disclaimer", "about", "contact", "framework"]
@@ -106,62 +90,54 @@ def detect_subject(file_path):
         return "English"
     return "Science"
 
-def is_file_contaminated(content, subject):
-    content_lower = content.lower()
-    if subject == "Mathematics":
-        return any(w in content_lower for w in ["arrhenius", "chemical kinetics", "activation energy", "haloalkane", "sn1", "sn2"])
-    elif subject == "Physics":
-        return any(w in content_lower for w in ["organic chemistry", "reaction mechanism", "alcohols phenols", "carboxylic acid"])
-    elif subject == "Chemistry":
-        return any(w in content_lower for w in ["direction cosines", "shortest distance between skew lines", "integrate by parts dx"])
+def is_content_mismatched(file_path, subject):
+    sub_key = subject.lower()
+    if sub_key not in SUBJECT_SIGNATURES:
+        return False
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            text = f.read().lower()
+        forbidden = SUBJECT_SIGNATURES[sub_key]["forbidden"]
+        violations = [w for w in forbidden if w in text]
+        if len(violations) >= 2:
+            return True
+    except Exception:
+        pass
     return False
 
-def audit_file_health(file_path, subject):
-    if not os.path.exists(file_path):
-        return True, "Missing File"
-    
-    file_size = os.path.getsize(file_path)
-    if file_size < MIN_FILE_SIZE:
-        return True, f"File size too small ({file_size // 1024} KB < 250 KB target)"
-    
-    with open(file_path, "r", encoding="utf-8") as f:
-        content = f.read()
-
-    if is_file_contaminated(content, subject):
-        return True, f"Subject Contamination detected in {subject} file"
-    
-    if 'class="sn-wordmark-svg"' in content or ('viewBox="0 0 64 64"' in content and 'max-width: 36px' not in content):
-        return True, "Corrupt Giant Logo Bug detected"
-
-    return False, "Healthy"
-
 def target_in_place_patch(file_path):
-    """In-place localized patcher: fixes broken closing tags without rewriting 250KB content"""
-    with open(file_path, "r", encoding="utf-8") as f:
-        content = f.read()
+    """In-place localized patcher: fixes unclosed tags without rewriting 250KB content"""
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            content = f.read()
 
-    unclosed = []
-    for tag in ["html", "head", "body", "main", "article", "section", "div"]:
-        open_c = len(re.findall(rf"<{tag}\b", content, re.I))
-        close_c = len(re.findall(rf"</{tag}>", content, re.I))
-        if open_c > close_c:
-            unclosed.append(tag)
+        unclosed = []
+        for tag in ["html", "head", "body", "main", "article", "section", "div"]:
+            open_c = len(re.findall(rf"<{tag}\b", content, re.I))
+            close_c = len(re.findall(rf"</{tag}>", content, re.I))
+            if open_c > close_c:
+                unclosed.append(tag)
 
-    if unclosed:
-        print(f"Applying in-place patch for unclosed tags in {file_path}: {unclosed}")
-        patch_str = "\n" + "\n".join([f"</{tag}>" for tag in reversed(unclosed)]) + "\n"
-        with open(file_path, "a", encoding="utf-8") as f:
-            f.write(patch_str)
+        if unclosed:
+            print(f"Applying in-place tag patch in {file_path}: {unclosed}")
+            patch_str = "\n" + "\n".join([f"</{tag}>" for tag in reversed(unclosed)]) + "\n"
+            with open(file_path, "a", encoding="utf-8") as f:
+                f.write(patch_str)
+    except Exception as e:
+        print(f"Error in tag patching: {e}")
 
 def scan_and_audit_website():
-    pending_targets = []
-    seen = set()
+    """Scans whole website: detects missing files, small files, or mismatched content"""
+    seen_paths = set()
     html_files = glob.glob("**/*.html", recursive=True)
 
     for source_file in html_files:
         base_dir = os.path.dirname(source_file)
-        with open(source_file, "r", encoding="utf-8") as f:
-            soup = BeautifulSoup(f.read(), "html.parser")
+        try:
+            with open(source_file, "r", encoding="utf-8") as f:
+                soup = BeautifulSoup(f.read(), "html.parser")
+        except Exception:
+            continue
 
         for a_tag in soup.find_all("a", href=True):
             href = a_tag["href"].strip()
@@ -182,38 +158,63 @@ def scan_and_audit_website():
             if filename in ["index.html", "about.html", "about-notes.html", "exam-info.html"]:
                 continue
 
+            if target_path in seen_paths:
+                continue
+
+            seen_paths.add(target_path)
             subject = detect_subject(target_path)
-            corrupt, reason = audit_file_health(target_path, subject)
 
-            if corrupt and target_path not in seen:
-                seen.add(target_path)
-                
-                title_text = ""
-                parent_card = a_tag.find_parent(class_=re.compile(r"card|item|subject", re.I))
-                if parent_card:
-                    h_tag = parent_card.find(["h2", "h3", "h4"])
-                    if h_tag:
-                        title_text = h_tag.get_text(strip=True)
-                if not title_text:
-                    title_text = a_tag.get_text(strip=True)
+            title_text = ""
+            parent_card = a_tag.find_parent(class_=re.compile(r"card|item|subject", re.I))
+            if parent_card:
+                h_tag = parent_card.find(["h2", "h3", "h4"])
+                if h_tag:
+                    title_text = h_tag.get_text(strip=True)
+            if not title_text:
+                title_text = a_tag.get_text(strip=True)
 
-                if re.search(r"open\s+chapter|read\s+more|chapter\s+\d+", title_text, re.I) or not title_text:
-                    file_base = os.path.splitext(os.path.basename(normalized_href))[0]
-                    title_text = file_base.replace("-", " ").replace("_", " ").title()
+            if re.search(r"open\s+chapter|read\s+more|chapter\s+\d+", title_text, re.I) or not title_text:
+                file_base = os.path.splitext(os.path.basename(normalized_href))[0]
+                title_text = file_base.replace("-", " ").replace("_", " ").title()
 
-                # Determine Part 1 or Part 2
-                is_part_2 = "part2" in filename or "pyq" in filename
-                clean_title = re.sub(r"\s*\(?(Part\s*[12]|PYQs?)\)?", "", title_text, flags=re.I).strip()
+            is_part_2 = "part2" in filename or "pyq" in filename
+            clean_title = re.sub(r"\s*\(?(Part\s*[12]|PYQs?)\)?", "", title_text, flags=re.I).strip()
 
-                pending_targets.append({
+            # 1. Condition: Missing File
+            if not os.path.exists(target_path):
+                return {
+                    "action": "create",
                     "target_path": target_path,
                     "chapter_name": clean_title,
                     "subject": subject,
                     "is_part_2": is_part_2,
-                    "reason": reason
-                })
+                    "reason": "Missing File"
+                }
 
-    return pending_targets
+            # 2. Condition: Content Mismatch (e.g., Chemistry in Maths)
+            if is_content_mismatched(target_path, subject):
+                return {
+                    "action": "fix_mismatch",
+                    "target_path": target_path,
+                    "chapter_name": clean_title,
+                    "subject": subject,
+                    "is_part_2": is_part_2,
+                    "reason": "Subject Mismatch Detected (Replacing inner content)"
+                }
+
+            # 3. Condition: File too small (Under size target)
+            file_size = os.path.getsize(target_path)
+            if file_size < MIN_FILE_SIZE:
+                return {
+                    "action": "create",
+                    "target_path": target_path,
+                    "chapter_name": clean_title,
+                    "subject": subject,
+                    "is_part_2": is_part_2,
+                    "reason": f"File size too small ({file_size // 1024} KB < 250 KB target)"
+                }
+
+    return None
 
 def generate_part1_content(subject, chapter_name):
     """Generates 250KB+ Deep Academic Theory, Complete Derivations, and Comprehensive Laws"""
@@ -223,11 +224,10 @@ def generate_part1_content(subject, chapter_name):
     Write a massive, mathematically and scientifically rigorous conceptual breakdown for: '{chapter_name}'.
     
     Requirements:
-    1. Provide extensive introductory context, historical significance, definitions, and real-life physical relevance.
-    2. Comprehensive exploration of all laws, cases, properties, conditions, limitations, and graphical variations.
-    3. Ensure minimum 3500+ words of granular explanations. Do not skip details. Avoid any placeholder text.
+    1. Provide extensive introductory context, definitions, core laws, conditions, and graphical variations for Class 12 {subject}.
+    2. Write minimum 3500+ words of granular explanations. Avoid any placeholder text or short summaries.
     
-    Structure as clean HTML sections:
+    Structure:
     <section class="section container" id="theory">
       <div class="section-head">
         <span class="section-eyebrow">Comprehensive Theory</span>
@@ -254,9 +254,8 @@ def generate_part1_content(subject, chapter_name):
     Provide the exhaustive Derivation Bank and Formula/Equation Repository.
     
     Requirements:
-    1. Full multi-step mathematical proofs with reasonings for every single CBSE standard derivation using MathJax ($...$ for inline, $$...$$ for display equations).
-    2. A comprehensive formula table listing variables, SI units, dimensions, and operational constraints.
-    3. Include copy-code buttons wrappers around key equations.
+    1. Full multi-step mathematical proofs for all CBSE standard derivations using MathJax ($...$ for inline, $$...$$ for display equations).
+    2. A comprehensive formula table listing variables, SI units, and conditions.
     
     Structure:
     <section class="section container" id="derivations">
@@ -267,7 +266,7 @@ def generate_part1_content(subject, chapter_name):
       <div class="resource-grid">
         <article class="resource">
           <h3>Exhaustive Formula Table</h3>
-          <!-- Comprehensive list of all formulas -->
+          <!-- Comprehensive list of all formulas & derivations -->
         </article>
       </div>
     </section>
@@ -346,6 +345,42 @@ def generate_part2_content(subject, chapter_name):
 
     return f"{chunk1}\n\n{chunk2}"
 
+def fix_mismatch_in_place(target):
+    """Keeps the layout, header, footer intact and replaces ONLY the inner mismatched content"""
+    target_path = target["target_path"]
+    chapter_name = target["chapter_name"]
+    subject = target["subject"]
+    is_part_2 = target["is_part_2"]
+
+    print(f"\n[IN-PLACE FIX] Overwriting inner content for: {target_path} -> {subject}: {chapter_name}")
+    
+    if is_part_2:
+        new_content = generate_part2_content(subject, chapter_name)
+    else:
+        new_content = generate_part1_content(subject, chapter_name)
+
+    with open(target_path, "r", encoding="utf-8") as f:
+        soup = BeautifulSoup(f.read(), "html.parser")
+
+    main_tag = soup.find("main")
+    if main_tag:
+        hero = main_tag.find("section", class_="hero")
+        cta = main_tag.find("section", class_="final-cta")
+        main_tag.clear()
+        if hero: 
+            main_tag.append(hero)
+        main_tag.append(BeautifulSoup(new_content, "html.parser"))
+        if cta: 
+            main_tag.append(cta)
+
+        with open(target_path, "w", encoding="utf-8") as f:
+            f.write(str(soup))
+        target_in_place_patch(target_path)
+        print(f"Successfully fixed content mismatch in: {target_path}")
+    else:
+        # Fallback to full page build if main tag was broken
+        build_full_page(target)
+
 def build_full_page(target):
     target_path = target["target_path"]
     chapter_name = target["chapter_name"]
@@ -357,7 +392,6 @@ def build_full_page(target):
     hub_link = "index.html" if depth == 1 else "../index.html"
     root_link = "../index.html" if depth == 1 else "index.html"
 
-    # Part sibling links
     base_name = os.path.splitext(os.path.basename(target_path))[0]
     clean_base = re.sub(r"(_part[12]|\.html)", "", base_name, flags=re.I)
     part1_url = f"{clean_base}.html" if "part" not in base_name else f"{clean_base}_part1.html"
@@ -372,7 +406,6 @@ def build_full_page(target):
     </div>
     """
 
-    # Generate massive chunk content
     if is_part_2:
         body_content = generate_part2_content(subject, chapter_name)
     else:
@@ -435,7 +468,6 @@ def build_full_page(target):
       width: 24px !important;
       height: 24px !important;
     }}
-    /* Floating Table of Contents */
     .toc-bar {{
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
@@ -464,19 +496,6 @@ def build_full_page(target):
       color: var(--gold, #ff8a5b);
       text-decoration: underline;
     }}
-    /* Copy Equation Button */
-    .copy-btn {{
-      float: right;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: var(--gold, #ff8a5b);
-      border-radius: 6px;
-      font-size: 0.75rem;
-      padding: 4px 8px;
-      cursor: pointer;
-      font-family: var(--font-mono, monospace);
-    }}
-    /* Interactive Cookie Notice Banner */
     .sn-cookie-banner {{
       position: fixed;
       bottom: 20px;
@@ -509,7 +528,6 @@ def build_full_page(target):
       font-weight: 700;
       cursor: pointer;
     }}
-    /* Theme Picker Dropdown */
     .theme-pop {{
       position: fixed;
       top: 80px;
@@ -538,7 +556,6 @@ def build_full_page(target):
       color: #fff;
       cursor: pointer;
     }}
-    /* 3-Column Solid Footer */
     .sn-footer {{
       background: #141311 !important;
       border-top: 1px solid var(--line, rgba(255, 255, 255, 0.12));
@@ -610,7 +627,6 @@ def build_full_page(target):
       </div>
     </section>
 
-    <!-- Table of Contents -->
     <div class="container">
       <div class="toc-bar">
         <span class="toc-title">Quick Navigation:</span>
@@ -618,27 +634,21 @@ def build_full_page(target):
       </div>
     </div>
 
-    <!-- Top Part Switcher -->
     <div class="container">
       {switch_btn}
     </div>
 
-    <!-- Massive Chunk Body -->
     {body_content}
 
-    <!-- Bottom Part Switcher -->
     <div class="container">
       {switch_btn}
     </div>
 
-    <!-- Return to Subject Hub -->
     <section class="final-cta container reveal">
       <div class="cta-content">
         <h2>Mastered {chapter_name}? <em>Return to {subject} Hub.</em></h2>
-        <p>Explore formula cheat-sheets, other syllabus chapters, and high-yield study resources.</p>
         <a class="btn btn-gold" href="{hub_link}">
-          Back to {subject} Hub
-          <span class="btn-arrow">→</span>
+          Back to {subject} Hub →
         </a>
       </div>
     </section>
@@ -678,7 +688,7 @@ def build_full_page(target):
           <h3 style="color:#fff; font-size:1rem; margin-bottom:14px;">Connect</h3>
           <ul style="list-style:none; padding:0; margin:0; line-height:2;">
             <li><a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer" style="color:var(--muted); text-decoration:none;">JS EDIZ on YouTube</a></li>
-            <li><a href="mailto:support.shorveernotes@gmail.com" style="color:var(--muted); text-decoration:none;">Contact Support</a></li>
+            <li><a href="mailto:support.shorveernotes@gmail.com">Contact Support</a></li>
           </ul>
         </div>
       </div>
@@ -689,7 +699,7 @@ def build_full_page(target):
     </div>
   </footer>
 
-  <!-- ============ COOKIE TRANSPARENCY BANNER ============ -->
+  <!-- ============ COOKIE BANNER ============ -->
   <aside class="sn-cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie and Storage Notice">
     <p>
       🍪 <strong>Transparent Storage Notice:</strong> Shorveer Notes uses browser local storage exclusively to preserve your chosen theme settings (Notebook, Sunset, Chalkboard, Blueprint) across study sessions. We do not use intrusive tracking cookies.
@@ -698,7 +708,6 @@ def build_full_page(target):
   </aside>
 
   <script>
-    // Theme Switcher & Storage Engine
     const themeBtn = document.getElementById("themeButton");
     const themePop = document.getElementById("themePop");
     const themeOpts = document.querySelectorAll(".theme-opt");
@@ -730,7 +739,6 @@ def build_full_page(target):
       }}
     }});
 
-    // Cookie Notice Display Logic
     try {{
       if (!localStorage.getItem("shorveer-cookie-ack")) {{
         cookieBanner.classList.add("show");
@@ -752,33 +760,32 @@ def build_full_page(target):
     with open(target_path, "w", encoding="utf-8") as f:
         f.write(full_html)
     
-    # Run in-place tag closer to guarantee valid HTML without token waste
     target_in_place_patch(target_path)
     print(f"Generated Comprehensive {os.path.getsize(target_path) // 1024} KB Guide: {target_path}")
 
 def main():
-    pending_list = scan_and_audit_website()
-    if not pending_list:
-        print("All chapters across Mathematics, Physics, Chemistry, and English are 100% complete and healthy (250KB+ target met).")
+    target = scan_and_audit_website()
+    if not target:
+        print("All chapters across the entire website are 100% healthy, matched, and complete (250KB+ target met).")
         if "GITHUB_OUTPUT" in os.environ:
             with open(os.environ["GITHUB_OUTPUT"], "a") as f:
                 f.write("has_more=false\n")
         return
 
-    target = pending_list[0]
     print(f"\n==================================================")
-    print(f"Processing Target: [{target['subject']}] {target['chapter_name']}")
-    print(f"File Path: {target['target_path']}")
+    print(f"[ACTION: {target['action'].upper()}] -> {target['target_path']}")
+    print(f"Subject: {target['subject']} | Chapter: {target['chapter_name']}")
     print(f"Health Audit Reason: {target['reason']}")
     print(f"==================================================")
 
-    build_full_page(target)
+    if target["action"] == "fix_mismatch":
+        fix_mismatch_in_place(target)
+    else:
+        build_full_page(target)
 
-    remaining = len(pending_list) - 1
-    print(f"\nTask Finished. Remaining targets in queue: {remaining}")
     if "GITHUB_OUTPUT" in os.environ:
         with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-            f.write(f"has_more={'true' if remaining > 0 else 'false'}\n")
+            f.write("has_more=true\n")
 
 if __name__ == "__main__":
     main()
