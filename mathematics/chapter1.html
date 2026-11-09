@@ -248,806 +248,636 @@
     </div>
 
     <section class="section container" id="theory">
-      <div class="section-head">
-        <span class="section-eyebrow">Comprehensive Theory</span>
-        <h2>1. Complete Conceptual Framework & Definitions</h2>
+  <div class="section-head">
+    <span class="section-eyebrow">Comprehensive Theory</span>
+    <h2>1. Complete Conceptual Framework & Definitions</h2>
+  </div>
+  <div class="real-life">
+    <article class="rl-card" style="--rl-color: #bf5a3c">
+      <div class="rl-body">
+        <div class="rl-title">Fundamental Theoretical Principles</div>
+        <p class="rl-text">
+          As a Senior CBSE Board Examiner and Textbook Author for Class 12 Mathematics, it is imperative to establish a profoundly rigorous and conceptually robust foundation for the very first chapter. 'Chapter 1: Relations and Functions' is not merely an introductory topic; it is the bedrock upon which the entire edifice of higher mathematics, particularly Calculus, Discrete Mathematics, and Abstract Algebra, is constructed. A thorough understanding here ensures clarity in subsequent chapters involving continuity, differentiability, integration, and even advanced topics in engineering and computer science. This chapter transitions students from the concrete world of arithmetic and basic algebra to the more abstract realm of mathematical structures and mappings. Our objective is to dissect every nuance, every definition, and every implication with unparalleled precision.
+
+          <h3>1.1. Introduction to the Abstract Landscape: Sets as the Foundation</h3>
+
+          Before delving into relations and functions, it is crucial to revisit and solidify our understanding of 'sets'. In mathematics, a set is a well-defined collection of distinct objects. These objects are called elements or members of the set. The concept of 'well-defined' is paramount; it means that there is a clear criterion for determining whether an object belongs to the set or not. For instance, "the collection of all tall students in a class" is not a well-defined set because "tall" is subjective, whereas "the collection of all students in Class 12 scoring above 90% in Mathematics" is well-defined.
+
+          We typically denote sets using capital letters (A, B, C, etc.) and their elements using lowercase letters (a, b, c, etc.). The membership of an element 'x' in a set 'A' is denoted by 'x ∈ A', while 'x ∉ A' signifies that 'x' is not an an element of 'A'.
+
+          **Methods of Representing a Set:**
+          1.  **Roster or Tabular Form:** All the elements of the set are listed, separated by commas, and enclosed within curly braces.
+              *   Example: A = {1, 2, 3, 4, 5} (Set of first five natural numbers).
+              *   Example: B = {a, e, i, o, u} (Set of vowels in the English alphabet).
+              *   Note: The order of elements does not matter, and elements are not repeated.
+
+          2.  **Set-Builder Form (Property Method):** A descriptive property that uniquely defines the elements of the set is used.
+              *   Syntax: {x : P(x)} or {x | P(x)}, where 'x' represents an element and 'P(x)' is the property it satisfies.
+              *   Example: A = {x : x is a natural number and x ≤ 5}. This is equivalent to A = {1, 2, 3, 4, 5}.
+              *   Example: B = {x : x is a vowel in the English alphabet}. This is equivalent to B = {a, e, i, o, u}.
+              *   This method is particularly powerful for defining infinite sets or sets with complex membership rules.
+
+          **Types of Sets:**
+          *   **Empty Set (Null Set, Void Set):** A set containing no elements. Denoted by ∅ or {}.
+              *   Example: {x : x is an even prime number greater than 2} = ∅.
+          *   **Finite Set:** A set whose elements can be counted, meaning the process of counting its elements comes to an end.
+              *   Example: {1, 2, 3, 4, 5}.
+          *   **Infinite Set:** A set whose elements cannot be counted; the counting process would never end.
+              *   Example: The set of all natural numbers, N = {1, 2, 3, ...}.
+          *   **Singleton Set:** A set containing exactly one element.
+              *   Example: {x : x is an even prime number} = {2}.
+
+          **Subsets and Supersets:**
+          *   A set A is a **subset** of a set B, denoted by A ⊆ B, if every element of A is also an element of B.
+          *   If A ⊆ B and A ≠ B, then A is a **proper subset** of B, denoted by A ⊂ B.
+          *   If A ⊆ B, then B is a **superset** of A, denoted by B ⊇ A.
+          *   Every set is a subset of itself (A ⊆ A).
+          *   The empty set is a subset of every set (∅ ⊆ A).
+          *   **Power Set:** The collection of all subsets of a set A is called the power set of A, denoted by P(A). If a set A has 'n' elements, then its power set P(A) has 2<sup>n</sup> elements.
+              *   Example: If A = {1, 2}, then P(A) = {∅, {1}, {2}, {1, 2}}.
+
+          **Operations on Sets (Brief Recap):**
+          *   **Union (∪):** A ∪ B = {x : x ∈ A or x ∈ B}. (Elements belonging to A, or B, or both).
+          *   **Intersection (∩):** A ∩ B = {x : x ∈ A and x ∈ B}. (Elements common to both A and B).
+          *   **Difference (-):** A - B = {x : x ∈ A and x ∉ B}. (Elements in A but not in B).
+          *   **Complement (' or ᶜ):** A' = U - A, where U is the universal set. (Elements not in A but in the universal set).
+          These operations are visually represented using Venn diagrams, which provide an intuitive graphical understanding.
+
+          <h3>1.2. Ordered Pairs and the Cartesian Product</h3>
+
+          The concept of an 'ordered pair' is fundamental to understanding relations. Unlike elements in a set where order does not matter, an ordered pair specifies the order of its components. An ordered pair (a, b) is distinct from (b, a) unless a = b.
+          Formally, (a, b) = (c, d) if and only if a = c and b = d.
+
+          The **Cartesian Product** of two non-empty sets A and B, denoted by A × B, is the set of all possible ordered pairs (a, b) such that 'a' is an element of A and 'b' is an element of B.
+          Mathematically: A × B = {(a, b) | a ∈ A and b ∈ B}.
+
+          **Key Properties of Cartesian Product:**
+          1.  If n(A) is the number of elements in set A and n(B) is the number of elements in set B, then the number of elements in A × B is n(A × B) = n(A) × n(B).
+          2.  A × B ≠ B × A, unless A = B or A = ∅ or B = ∅. This implies that the Cartesian product is generally not commutative.
+          3.  If A or B is an empty set, then A × B = ∅.
+          4.  If A or B is an infinite set, and the other is non-empty, then A × B is also an infinite set.
+
+          **Examples:**
+          *   Let A = {1, 2} and B = {x, y}.
+              A × B = {(1, x), (1, y), (2, x), (2, y)}.
+              B × A = {(x, 1), (x, 2), (y, 1), (y, 2)}.
+              Notice A × B ≠ B × A.
+          *   The Cartesian product can be extended to three sets: A × B × C = {(a, b, c) | a ∈ A, b ∈ B, c ∈ C}. These are ordered triplets. For example, if A = B = C = R (set of real numbers), then R × R × R = R³ represents the set of all points in three-dimensional space, (x, y, z).
+          *   R × R = R² represents the Cartesian plane, where each point (x, y) is an ordered pair of real numbers.
+
+          The Cartesian product provides the universal set of all possible pairings between elements of two sets. This forms the domain from which relations are defined.
+
+          <h3>1.3. Relations: Linking Elements Across Sets</h3>
+
+          A **relation** is fundamentally a connection or association between elements of two or more sets. In the context of mathematics, a relation R from a non-empty set A to a non-empty set B is defined as any subset of the Cartesian product A × B.
+          Formally: R ⊆ A × B.
+
+          If (a, b) ∈ R, we say that 'a' is related to 'b' under the relation R, and we often write this as 'a R b'.
+          Conversely, if (a, b) ∉ R, then 'a' is not related to 'b'.
+
+          **Key Terminologies Associated with Relations:**
+          *   **Domain of R:** The set of all first components (elements from A) of the ordered pairs in R.
+              Domain(R) = {a ∈ A | (a, b) ∈ R for some b ∈ B}.
+          *   **Codomain of R:** The entire set B.
+          *   **Range of R:** The set of all second components (elements from B) of the ordered pairs in R.
+              Range(R) = {b ∈ B | (a, b) ∈ R for some a ∈ A}.
+              Note that Range(R) ⊆ Codomain(R).
+
+          **Number of Relations:**
+          If n(A) = p and n(B) = q, then n(A × B) = pq. Since a relation R is a subset of A × B, the total number of possible relations from A to B is 2<sup>n(A × B)</sup> = 2<sup>pq</sup>.
+
+          **Example:**
+          Let A = {1, 2, 3} and B = {x, y}.
+          A × B = {(1, x), (1, y), (2, x), (2, y), (3, x), (3, y)}.
+          A relation R from A to B could be R = {(1, x), (2, y)}.
+          Here, Domain(R) = {1, 2}, Range(R) = {x, y}, and Codomain(R) = {x, y}.
+          Another relation could be R₂ = {(a, b) ∈ A × B | a is odd}.
+          R₂ = {(1, x), (1, y), (3, x), (3, y)}.
+          Domain(R₂) = {1, 3}, Range(R₂) = {x, y}.
+
+          Often, relations are defined on a single set A, meaning the relation is a subset of A × A. This is particularly important for classifying types of relations.
+
+          <h4>1.3.1. Types of Relations on a Set A</h4>
+
+          Let R be a relation on a non-empty set A (i.e., R ⊆ A × A).
+
+          1.  **Empty Relation (Void Relation):** A relation R on set A is called an empty relation if no element of A is related to any element of A. In other words, R = ∅ ⊆ A × A.
+              *   Example: Let A = {1, 2, 3}. R = {(a, b) ∈ A × A | a + b = 7}. Since the maximum sum of any two elements in A is 3+3=6, no pair (a, b) will satisfy a+b=7. Thus, R = ∅.
+
+          2.  **Universal Relation:** A relation R on set A is called a universal relation if every element of A is related to every element of A. In other words, R = A × A.
+              *   Example: Let A = {1, 2, 3}. R = {(a, b) ∈ A × A | |a - b| ≥ 0}. Since the absolute difference between any two real numbers (and thus any two elements from A) is always non-negative, this condition is always satisfied. Thus, R = A × A.
+
+          The empty relation and the universal relation are sometimes referred to as **trivial relations**.
+
+          3.  **Reflexive Relation:** A relation R on set A is said to be reflexive if every element of A is related to itself. That is, for every a ∈ A, (a, a) ∈ R.
+              *   Example: Let A = {1, 2, 3}. R = {(1, 1), (2, 2), (3, 3), (1, 2)}. This relation is reflexive because (1, 1), (2, 2), and (3, 3) are all present in R.
+              *   Non-example: R' = {(1, 1), (2, 2)}. This is not reflexive on A because (3, 3) ∉ R'.
+              *   Example from Geometry: "is congruent to" on the set of all triangles. Any triangle is congruent to itself.
+
+          4.  **Symmetric Relation:** A relation R on set A is said to be symmetric if, whenever (a, b) ∈ R, then (b, a) ∈ R for all a, b ∈ A.
+              *   Example: Let A = {1, 2, 3}. R = {(1, 2), (2, 1), (1, 1)}. This is symmetric because for (1, 2) ∈ R, (2, 1) ∈ R. (1, 1) doesn't need a separate check as its reverse is itself.
+              *   Non-example: R' = {(1, 2), (2, 3)}. This is not symmetric because (1, 2) ∈ R' but (2, 1) ∉ R'.
+              *   Example from Everyday Life: "is a sibling of" on the set of people. If A is a sibling of B, then B is a sibling of A.
+
+          5.  **Transitive Relation:** A relation R on set A is said to be transitive if, whenever (a, b) ∈ R and (b, c) ∈ R, then (a, c) ∈ R for all a, b, c ∈ A.
+              *   Example: Let A = {1, 2, 3}. R = {(1, 2), (2, 3), (1, 3), (1, 1)}.
+                  *   (1, 2) ∈ R and (2, 3) ∈ R ⇒ (1, 3) ∈ R (satisfied).
+                  *   This relation is transitive.
+              *   Non-example: R' = {(1, 2), (2, 3)}. This is not transitive because (1, 2) ∈ R' and (2, 3) ∈ R' but (1, 3) ∉ R'.
+              *   Example from Set Theory: "is a subset of" on the power set of a given set. If A ⊆ B and B ⊆ C, then A ⊆ C.
+
+          <h4>1.3.2. Equivalence Relation and Equivalence Classes</h4>
+
+          A relation R on a set A is called an **Equivalence Relation** if it is simultaneously:
+          (i) Reflexive
+          (ii) Symmetric
+          (iii) Transitive
+
+          **Example:** Let A be the set of all triangles in a plane. Let R be the relation "is similar to" (denoted by ~).
+          *   **Reflexive:** Every triangle is similar to itself (ΔT ~ ΔT). So, R is reflexive.
+          *   **Symmetric:** If ΔT₁ ~ ΔT₂, then ΔT₂ ~ ΔT₁. So, R is symmetric.
+          *   **Transitive:** If ΔT₁ ~ ΔT₂ and ΔT₂ ~ ΔT₃, then ΔT₁ ~ ΔT₃. So, R is transitive.
+          Since R is reflexive, symmetric, and transitive, "is similar to" is an equivalence relation.
+
+          **Equivalence Classes:** An equivalence relation partitions the set A into disjoint subsets called **equivalence classes**. For an equivalence relation R on A, the equivalence class of an element a ∈ A, denoted by [a] or {a}<sub>R</sub>, is the set of all elements in A that are related to 'a'.
+          Formally: [a] = {x ∈ A | (x, a) ∈ R}.
+
+          **Properties of Equivalence Classes:**
+          1.  Every element 'a' belongs to its own equivalence class, i.e., a ∈ [a].
+          2.  Two equivalence classes [a] and [b] are either identical or disjoint. That is, [a] = [b] or [a] ∩ [b] = ∅.
+          3.  The union of all distinct equivalence classes is the entire set A.
+          Essentially, an equivalence relation divides the set into non-overlapping groups where all elements within a group are related to each other, and no element in one group is related to an element in another group.
+
+          **Example (Equivalence Classes):** Let A = {1, 2, 3, 4, 5, 6}. Let R be the relation "is congruent to modulo 2" on A. That is, (a, b) ∈ R if a - b is an even integer.
+          *   **Reflexive:** a - a = 0, which is even. So, R is reflexive.
+          *   **Symmetric:** If a - b is even, then b - a = -(a - b) is also even. So, R is symmetric.
+          *   **Transitive:** If a - b is even and b - c is even, then (a - b) + (b - c) = a - c is even. So, R is transitive.
+          Hence, R is an equivalence relation.
+          Now, let's find the equivalence classes:
+          *   [1] = {x ∈ A | x - 1 is even} = {1, 3, 5} (all odd numbers in A).
+          *   [2] = {x ∈ A | x - 2 is even} = {2, 4, 6} (all even numbers in A).
+          Notice that [1] = [3] = [5], and [2] = [4] = [6].
+          Also, [1] ∩ [2] = ∅, and [1] ∪ [2] = {1, 2, 3, 4, 5, 6} = A.
+          The equivalence relation partitions A into two disjoint sets: the set of odd numbers and the set of even numbers.
+
+          <h3>1.4. Functions: A Special Type of Relation</h3>
+
+          A **function** is a special kind of relation where each element in the domain set is mapped to exactly one element in the codomain set. This "one and only one" rule is what distinguishes a function from a general relation.
+          Formally, a relation f from a non-empty set A to a non-empty set B is called a function if:
+          1.  Every element of A is related to some element of B. (i.e., Domain(f) = A).
+          2.  Each element of A has a unique image in B. That is, if (x, y₁) ∈ f and (x, y₂) ∈ f, then y₁ = y₂.
+          We denote a function f from A to B as f: A → B.
+          *   The set A is called the **Domain** of the function.
+          *   The set B is called the **Codomain** of the function.
+          *   The set of all actual images of the elements of A under f is called the **Range** of the function.
+              Range(f) = {f(x) | x ∈ A}. Note that Range(f) ⊆ Codomain(f).
+
+          If f: A → B and (a, b) ∈ f, we write f(a) = b. Here, 'b' is called the image of 'a' under f, and 'a' is called the pre-image of 'b'.
+
+          **Distinction from Relations:**
+          *   Every function is a relation, but not every relation is a function.
+          *   A relation might have an element in its domain mapped to multiple elements in the codomain (e.g., {(1, 2), (1, 3)} is a relation but not a function).
+          *   A relation might not map all elements of its domain (i.e., its domain might be a proper subset of A). For a function, the domain must be the entire set A.
+
+          **Vertical Line Test (for functions represented graphically):** If every vertical line drawn through the graph intersects the graph at most once, then the graph represents a function. If any vertical line intersects the graph at more than one point, it is not a function. This visually demonstrates the "unique image" property.
+
+          <h4>1.4.1. Types of Functions</h4>
+
+          Functions are categorized based on how elements of the domain are mapped to elements of the codomain.
+
+          1.  **One-to-One Function (Injective Function):** A function f: A → B is said to be one-to-one if distinct elements of A have distinct images in B.
+              *   Formally: If f(x₁) = f(x₂), then x₁ = x₂ for all x₁, x₂ ∈ A.
+              *   Equivalently: If x₁ ≠ x₂, then f(x₁) ≠ f(x₂) for all x₁, x₂ ∈ A.
+              *   Example: f: N → N given by f(x) = x + 1. If f(x₁) = f(x₂), then x₁ + 1 = x₂ + 1 ⇒ x₁ = x₂. Thus, f is one-to-one.
+              *   **Horizontal Line Test (for injectivity):** If every horizontal line drawn through the graph intersects the graph at most once, then the function is one-to-one.
+
+          2.  **Many-to-One Function:** A function f: A → B is said to be many-to-one if two or more distinct elements of A have the same image in B.
+              *   Formally: There exist x₁, x₂ ∈ A such that x₁ ≠ x₂ but f(x₁) = f(x₂).
+              *   Example: f: Z → N given by f(x) = x². Here, f(2) = 4 and f(-2) = 4. Since 2 ≠ -2 but f(2) = f(-2), f is many-to-one.
+
+          3.  **Onto Function (Surjective Function):** A function f: A → B is said to be onto if every element in the codomain B is the image of at least one element in the domain A. In other words, the range of f is equal to its codomain (Range(f) = B).
+              *   Formally: For every y ∈ B, there exists at least one x ∈ A such that f(x) = y.
+              *   Example: f: N → {1, 4, 9, ...} (the set of perfect squares) given by f(x) = x². For every y in the codomain, its square root is in N, so it has a pre-image. Thus, f is onto.
+              *   Non-example: f: N → N given by f(x) = x + 1. The element 1 in the codomain N has no pre-image in N (x+1=1 ⇒ x=0, but 0 ∉ N). So, this function is not onto.
+
+          4.  **Into Function:** A function f: A → B is said to be an into function if there is at least one element in the codomain B that is not the image of any element in the domain A. In other words, the range of f is a proper subset of the codomain B (Range(f) ⊂ B).
+              *   Example: f: Z → N given by f(x) = x². The range is {0, 1, 4, 9, ...}. The codomain is N = {1, 2, 3, 4, ...}. Range(f) is a proper subset of N (e.g., 2 and 3 are in N but have no integer pre-image). Thus, f is into.
+
+          5.  **Bijective Function (One-to-One and Onto):** A function f: A → B is said to be bijective if it is both one-to-one (injective) and onto (surjective).
+              *   This means every element in A has a unique image in B, and every element in B has exactly one pre-image in A.
+              *   Example: f: R → R given by f(x) = 2x + 3.
+                  *   **Injectivity:** If f(x₁) = f(x₂), then 2x₁ + 3 = 2x₂ + 3 ⇒ 2x₁ = 2x₂ ⇒ x₁ = x₂. So, f is one-to-one.
+                  *   **Surjectivity:** For any y ∈ R (codomain), we need to find an x ∈ R (domain) such that f(x) = y. So, 2x + 3 = y ⇒ 2x = y - 3 ⇒ x = (y - 3) / 2. Since y ∈ R, (y - 3) / 2 is also in R. Thus, every y has a pre-image. So, f is onto.
+                  *   Since f is both one-to-one and onto, it is bijective.
+              *   Bijective functions are extremely important because they are precisely the functions that possess inverse functions.
+
+          <h3>1.5. Composition of Functions: Chaining Mappings</h3>
+
+          The concept of composing functions allows us to combine two or more functions to create a new function. If we have a function f that maps elements from set A to set B, and another function g that maps elements from set B to set C, we can define a composite function that maps directly from A to C.
+
+          Let f: A → B and g: B → C be two functions. The **composition of f and g**, denoted by g o f (read as "g composed with f" or "g of f"), is a function from A to C defined by:
+          (g o f)(x) = g(f(x)) for all x ∈ A.
+
+          **Conditions for Composition:**
+          For g o f to be defined, the range of the inner function f must be a subset of the domain of the outer function g. That is, Range(f) ⊆ Domain(g). In our definition, since Domain(g) is B and Codomain(f) is B, this condition is implicitly satisfied if the codomain of f is exactly the domain of g. If Range(f) is not a subset of Domain(g), then g o f is not defined for all x ∈ A.
+
+          **Example:**
+          Let A = {1, 2, 3}, B = {p, q, r}, C = {x, y, z}.
+          Let f: A → B be defined by f(1) = p, f(2) = q, f(3) = r.
+          Let g: B → C be defined by g(p) = x, g(q) = y, g(r) = z.
+          Then g o f: A → C is defined as:
+          (g o f)(1) = g(f(1)) = g(p) = x
+          (g o f)(2) = g(f(2)) = g(q) = y
+          (g o f)(3) = g(f(3)) = g(r) = z
+
+          **Properties of Function Composition:**
+          1.  **Non-Commutativity:** In general, f o g ≠ g o f. The order of composition matters.
+              *   Example: f(x) = x² and g(x) = x + 1.
+                  (f o g)(x) = f(g(x)) = f(x + 1) = (x + 1)² = x² + 2x + 1.
+                  (g o f)(x) = g(f(x)) = g(x²) = x² + 1.
+                  Clearly, (f o g)(x) ≠ (g o f)(x).
+              *   Furthermore, g o f might be defined while f o g is not, or vice versa, depending on domain/codomain compatibility.
+
+          2.  **Associativity:** If f: A → B, g: B → C, and h: C → D are three functions, then the composition is associative:
+              h o (g o f) = (h o g) o f.
+              This means the grouping of compositions doesn't change the final result.
+
+          3.  **Identity Function:** The identity function I_A: A → A is defined by I_A(x) = x for all x ∈ A.
+              If f: A → B is a function, then f o I_A = f and I_B o f = f. The identity function acts like the multiplicative identity '1' in numbers.
+
+          <h3>1.6. Invertible Functions and Inverse of a Function</h3>
+
+          An **invertible function** is a function that can be "undone" or "reversed" by another function. This reversal is possible only when the original function establishes a perfect one-to-one correspondence between its domain and codomain.
+
+          A function f: A → B is said to be **invertible** if there exists another function g: B → A such that:
+          1.  g o f = I_A (the identity function on set A), and
+          2.  f o g = I_B (the identity function on set B).
+          The function g is then called the **inverse** of f, and is uniquely denoted by f⁻¹.
+
+          **Condition for Invertibility:**
+          A function f: A → B is invertible if and only if it is **bijective** (i.e., both one-to-one and onto).
+          *   **Necessity (If f is invertible, then f is bijective):**
+              *   *Injectivity:* Assume f(x₁) = f(x₂). Since f is invertible, f⁻¹ exists. Apply f⁻¹ to both sides: f⁻¹(f(x₁)) = f⁻¹(f(x₂)). By definition of inverse, I_A(x₁) = I_A(x₂), which implies x₁ = x₂. Thus, f is injective.
+              *   *Surjectivity:* For any y ∈ B, we need to show there's an x ∈ A such that f(x) = y. Since f⁻¹: B → A, for any y ∈ B, f⁻¹(y) is an element in A. Let x = f⁻¹(y). Then f(x) = f(f⁻¹(y)) = I_B(y) = y. Thus, f is surjective.
+          *   **Sufficiency (If f is bijective, then f is invertible):**
+              If f is bijective, then for every y ∈ B, there exists a unique x ∈ A such that f(x) = y (one-to-one ensures uniqueness, onto ensures existence). We can define a function g: B → A by g(y) = x.
+              *   Then, (g o f)(x) = g(f(x)) = g(y) = x = I_A(x).
+              *   And, (f o g)(y) = f(g(y)) = f(x) = y = I_B(y).
+              Since g o f = I_A and f o g = I_B, f is invertible and g = f⁻¹.
+
+          **Steps to find the inverse of a function f(x):**
+          1.  Write y = f(x).
+          2.  Swap x and y: x = f(y). (This represents reflection across the line y=x).
+          3.  Solve the equation for y in terms of x. The resulting expression for y is f⁻¹(x).
+          4.  Verify that f is bijective in its given domain and codomain.
+
+          **Example:** Find the inverse of f: R → R given by f(x) = 2x + 3.
+          1.  Let y = 2x + 3.
+          2.  Swap x and y: x = 2y + 3.
+          3.  Solve for y:
+              x - 3 = 2y
+              y = (x - 3) / 2.
+              So, f⁻¹(x) = (x - 3) / 2.
+          We already showed f(x) = 2x+3 is bijective, so its inverse exists.
+          *   Verification:
+              (f o f⁻¹)(x) = f(f⁻¹(x)) = f((x - 3) / 2) = 2 * ((x - 3) / 2) + 3 = (x - 3) + 3 = x.
+              (f⁻¹ o f)(x) = f⁻¹(f(x)) = f⁻¹(2x + 3) = ((2x + 3) - 3) / 2 = 2x / 2 = x.
+              Both compositions yield the identity function, confirming f⁻¹(x) = (x - 3) / 2 is the inverse.
+
+          **Graphical Interpretation of Inverse Functions:**
+          The graph of an inverse function f⁻¹ is a reflection of the graph of f across the line y = x. This is because swapping x and y coordinates (which is what we do algebraically) corresponds to this geometric transformation.
+
+          <h3>1.7. Binary Operations: Structuring Sets with Operations</h3>
+
+          A **binary operation** on a set is a rule that combines two elements of the set to produce another element of the same set. It's essentially a function that takes two inputs from a set and returns an output that is also in the same set.
+
+          Formally, a binary operation * (often read as 'star') on a non-empty set A is a function *: A × A → A.
+          For any (a, b) ∈ A × A, we denote the image *(a, b) as a * b.
+
+          **Examples of Binary Operations:**
+          *   Addition (+) on the set of natural numbers N: For any a, b ∈ N, a + b ∈ N. So, + is a binary operation on N.
+          *   Multiplication (×) on the set of real numbers R: For any a, b ∈ R, a × b ∈ R. So, × is a binary operation on R.
+          *   Subtraction (-) on N is NOT a binary operation: 2 - 3 = -1 ∉ N.
+          *   Union (∪) on the power set P(S) of a set S: For any A, B ∈ P(S), A ∪ B ∈ P(S). So, ∪ is a binary operation on P(S).
+
+          <h4>1.7.1. Properties of Binary Operations</h4>
+
+          Let * be a binary operation on a set A.
+
+          1.  **Commutativity:** A binary operation * on a set A is said to be **commutative** if a * b = b * a for all a, b ∈ A.
+              *   Example: Addition (+) and multiplication (×) are commutative on R (e.g., 2 + 3 = 3 + 2, 2 × 3 = 3 × 2).
+              *   Non-example: Subtraction (-) is not commutative on Z (e.g., 2 - 3 ≠ 3 - 2).
+              *   Non-example: Matrix multiplication is generally not commutative.
+
+          2.  **Associativity:** A binary operation * on a set A is said to be **associative** if (a * b) * c = a * (b * c) for all a, b, c ∈ A.
+              *   Example: Addition (+) and multiplication (×) are associative on R (e.g., (2 + 3) + 4 = 2 + (3 + 4), (2 × 3) × 4 = 2 × (3 × 4)).
+              *   Non-example: Subtraction (-) is not associative on Z (e.g., (5 - 3) - 1 = 2 - 1 = 1, but 5 - (3 - 1) = 5 - 2 = 3. So, (5 - 3) - 1 ≠ 5 - (3 - 1)).
+
+          3.  **Identity Element:** An element e ∈ A is called an **identity element** for the binary operation * on A if a * e = e * a = a for all a ∈ A. An identity element, if it exists, is unique.
+              *   Example: For addition (+) on R, 0 is the identity element (a + 0 = 0 + a = a).
+              *   Example: For multiplication (×) on R, 1 is the identity element (a × 1 = 1 × a = a).
+              *   Example: For the operation 'max' (maximum) on R, there is no identity element.
+
+          4.  **Inverse Element:** Let * be a binary operation on A with an identity element e. An element b ∈ A is called the **inverse** of an element a ∈ A if a * b = b * a = e. The inverse of an element 'a' is usually denoted by a⁻¹.
+              *   Example: For addition (+) on R, the inverse of 'a' is '-a' because a + (-a) = (-a) + a = 0 (identity element).
+              *   Example: For multiplication (×) on R (excluding 0), the inverse of 'a' is '1/a' because a × (1/a) = (1/a) × a = 1 (identity element).
+              *   An element might not have an inverse. For example, in (N, +), 0 is not in N, so no inverse exists. For (Z, ×), only 1 and -1 have inverses (themselves).
+
+          <h3>1.8. Graphical Variations and Interpretations for Functions</h3>
+
+          Visualizing functions is crucial for developing an intuitive understanding of their properties. Graphs provide a powerful tool to analyze domain, range, injectivity, surjectivity, and invertibility.
+
+          1.  **Domain and Range on a Graph:**
+              *   The **domain** of a function y = f(x) is the set of all possible x-values for which the function is defined. Graphically, this corresponds to the projection of the graph onto the x-axis.
+              *   The **range** of a function y = f(x) is the set of all possible y-values that the function takes. Graphically, this corresponds to the projection of the graph onto the y-axis.
+
+          2.  **Vertical Line Test (Function Test):** As mentioned earlier, a curve in the Cartesian plane represents a function if and only if no vertical line intersects the curve at more than one point. This ensures that each input (x-value) has exactly one output (y-value).
+
+          3.  **Horizontal Line Test (Injectivity Test):** A function f is one-to-one (injective) if and only if no horizontal line intersects its graph at more than one point. If a horizontal line intersects the graph at two or more points, it means distinct x-values have the same y-value, hence it's many-to-one.
+
+          4.  **Surjectivity and Graph:** Determining surjectivity from a graph requires knowing the specified codomain. If the range of the function (projection onto the y-axis) covers the entire specified codomain, then the function is surjective. For example, if f: R → R, and the graph spans all possible y-values from -∞ to +∞, it is surjective. If the codomain was [0, ∞) for f(x) = x², then it would be surjective, but if the codomain was R, it would not be surjective.
+
+          5.  **Graphing Inverse Functions:** The graphs of f(x) and f⁻¹(x) are symmetric with respect to the line y = x. This means if you fold the paper along the line y = x, the graph of f will perfectly superimpose on the graph of f⁻¹. For example, the graph of y = eˣ and y = ln(x) (natural logarithm, the inverse of eˣ) are reflections across y = x.
+
+          6.  **Transformations of Graphs (Brief Overview for contextual understanding):** While not strictly part of Chapter 1, understanding how graphs transform helps in visualizing functions.
+              *   **Vertical Shifts:** f(x) + c moves the graph up by c units; f(x) - c moves it down.
+              *   **Horizontal Shifts:** f(x + c) moves the graph left by c units; f(x - c) moves it right.
+              *   **Vertical Stretches/Compressions:** c * f(x) stretches (c > 1) or compresses (0 < c < 1) vertically.
+              *   **Horizontal Stretches/Compressions:** f(c * x) compresses (c > 1) or stretches (0 < c < 1) horizontally.
+              *   **Reflections:** -f(x) reflects across the x-axis; f(-x) reflects across the y-axis.
+
+          This comprehensive breakdown of Relations and Functions forms the essential foundation for Class 12 Mathematics. Students must internalize these definitions, concepts, and their interrelations with utmost clarity. The rigor applied here will pay dividends in their journey through advanced mathematical topics. The ability to precisely define, identify properties, and apply these concepts is non-negotiable for success in board examinations and beyond.
+        </p>
       </div>
-      <div class="real-life">
-        <article class="rl-card" style="--rl-color: #bf5a3c">
-          <div class="rl-body">
-            <div class="rl-title">Fundamental Theoretical Principles</div>
-            <p class="rl-text">
-              **Introduction: The Unifying Language of Mathematics – Relations and Functions**
-
-              Welcome, aspiring mathematicians, to the foundational chapter of Class 12 Mathematics: Relations and Functions. As a Senior CBSE Board Examiner and Textbook Author, I cannot stress enough the profound significance of this chapter. It is not merely a collection of definitions and procedures; rather, it is the bedrock upon which the edifice of advanced mathematics, particularly calculus, linear algebra, and discrete mathematics, is constructed. The concepts explored here provide a rigorous framework for understanding how quantities interact, how patterns emerge, and how abstract ideas can be precisely modeled.
-
-              At its heart, mathematics is the study of relationships and patterns. From the simplest arithmetic operations to the most complex differential equations, every mathematical expression or concept fundamentally describes how elements or quantities relate to one another. 'Relations' give us a formal way to describe connections between objects, while 'Functions' represent a very special, deterministic kind of relationship, where each input has exactly one output. This deterministic nature makes functions invaluable tools for modeling phenomena across science, engineering, economics, and even social sciences. Mastering this chapter means acquiring a powerful conceptual toolkit that will unlock deeper insights throughout your mathematical journey.
-
-              **I. Recapitulation of Foundational Concepts from Class XI: Building Blocks of Abstract Thought**
-
-              Before delving into the intricacies of Class 12 topics, it is imperative to ensure a firm grasp of the fundamental concepts from Class XI, particularly those pertaining to sets and the Cartesian product. These are the elementary 'particles' of our mathematical universe in this context.
-
-              **1. Sets:**
-              A **set** is a well-defined collection of distinct objects. These objects are called **elements** or **members** of the set. The term "well-defined" is crucial; it means that given any object, we can definitively determine whether it belongs to the set or not. Sets are typically denoted by capital letters (e.g., A, B, C), and their elements are enclosed in curly braces {}.
-              *   **Examples:**
-                  *   The set of natural numbers, N = {1, 2, 3, ...}
-                  *   The set of integers, Z = {..., -2, -1, 0, 1, 2, ...}
-                  *   The set of real numbers, R
-                  *   A finite set, A = {apple, banana, cherry}
-              *   **Key Notations:**
-                  *   `a ∈ A` means 'a is an element of set A'.
-                  *   `a ∉ A` means 'a is not an element of set A'.
-                  *   `∅` or `{}` denotes the **empty set**, which contains no elements.
-                  *   `A ⊆ B` means 'A is a **subset** of B' (every element of A is also an element of B).
-                  *   `A ⊂ B` means 'A is a **proper subset** of B' (A is a subset of B, and A ≠ B).
-
-              **2. Cartesian Product of Sets:**
-              The **Cartesian product** of two non-empty sets A and B, denoted by `A × B` (read as "A cross B"), is the set of all possible ordered pairs `(a, b)` where `a ∈ A` and `b ∈ B`. The term "ordered pair" implies that the order of the elements matters; i.e., `(a, b)` is generally not the same as `(b, a)` unless `a = b`.
-              *   **Formal Definition:** `A × B = { (a, b) | a ∈ A and b ∈ B }`
-              *   **Example:** If A = {1, 2} and B = {x, y}, then:
-                  *   `A × B = { (1, x), (1, y), (2, x), (2, y) }`
-                  *   `B × A = { (x, 1), (x, 2), (y, 1), (y, 2) }`
-                  *   Observe that `A × B ≠ B × A`.
-              *   **Cardinality:** If a set A has `m` elements and a set B has `n` elements, then the Cartesian product `A × B` will have `m × n` ordered pairs. That is, `n(A × B) = n(A) × n(B)`.
-              *   **Cartesian Product of a Set with Itself:** For a set A, `A × A = { (a₁, a₂) | a₁, a₂ ∈ A }`. This is particularly important for defining relations 'on' a single set.
-
-              **3. Relations as Subsets of Cartesian Products:**
-              Having understood sets and their Cartesian product, we can now formally define a **relation**.
-              A **relation** R from a non-empty set A to a non-empty set B is a subset of the Cartesian product `A × B`.
-              *   **Formal Definition:** `R ⊆ A × B`.
-              *   If `(a, b) ∈ R`, we say that `a` is related to `b`, often denoted as `a R b`.
-              *   **Domain of a Relation:** The set of all first elements of the ordered pairs in R.
-                  *   `Domain(R) = { a | (a, b) ∈ R for some b ∈ B }`
-              *   **Codomain of a Relation:** The entire set B.
-              *   **Range of a Relation:** The set of all second elements of the ordered pairs in R.
-                  *   `Range(R) = { b | (a, b) ∈ R for some a ∈ A }`
-              *   **Maximum Number of Relations:** If `n(A) = m` and `n(B) = n`, then `n(A × B) = mn`. Since a relation is any subset of `A × B`, the total number of possible relations from A to B is `2^(mn)`.
-              *   **Example:** Let A = {1, 2, 3} and B = {2, 4, 6}.
-                  *   `A × B = { (1,2), (1,4), (1,6), (2,2), (2,4), (2,6), (3,2), (3,4), (3,6) }`
-                  *   Consider a relation `R` from A to B defined as "is a divisor of".
-                  *   `R = { (1,2), (1,4), (1,6), (2,2), (2,4), (2,6), (3,6) }`
-                  *   `Domain(R) = {1, 2, 3}`
-                  *   `Codomain(R) = {2, 4, 6}`
-                  *   `Range(R) = {2, 4, 6}`
-
-              **II. Types of Relations: Classifying Connections**
-
-              In Class 12, our focus shifts predominantly to relations defined 'on' a single set A, meaning `R ⊆ A × A`. This allows for a deeper exploration of internal structure and properties within a set. The classification of relations based on their intrinsic properties is a cornerstone of abstract algebra and discrete mathematics.
-
-              **1. Empty Relation (or Void Relation):**
-              A relation R on a set A is called an **empty relation** if no element of A is related to any element of A. In other words, R is the empty set `∅`.
-              *   **Formal Definition:** `R = ∅ ⊆ A × A`
-              *   **Conditions:** This occurs when the defining property of the relation can never be satisfied by any pair of elements from the set A.
-              *   **Example:** Let A = {1, 2, 3, 4}. Let `R` be the relation on A defined as `R = { (a, b) | a, b ∈ A, a - b = 10 }`.
-                  *   Since the maximum difference between any two elements in A is `4 - 1 = 3`, and the minimum difference is `1 - 4 = -3`, no pair `(a, b)` will satisfy `a - b = 10`.
-                  *   Thus, `R = ∅`, which is an empty relation.
-
-              **2. Universal Relation:**
-              A relation R on a set A is called a **universal relation** if every element of A is related to every element of A. In other words, `R = A × A`.
-              *   **Formal Definition:** `R = A × A`
-              *   **Conditions:** This occurs when the defining property of the relation is universally true for all possible pairs of elements from the set A.
-              *   **Example:** Let A = {1, 2, 3}. Let `R` be the relation on A defined as `R = { (a, b) | a, b ∈ A, |a - b| ≥ 0 }`.
-                  *   Since the absolute difference between any two real numbers (and thus any two integers) is always greater than or equal to 0, this condition is true for all possible pairs in `A × A`.
-                  *   Thus, `R = { (1,1), (1,2), (1,3), (2,1), (2,2), (2,3), (3,1), (3,2), (3,3) } = A × A`, which is a universal relation.
-
-              **3. Reflexive Relation:**
-              A relation R on a set A is said to be **reflexive** if every element of A is related to itself.
-              *   **Formal Definition:** For every `a ∈ A`, `(a, a) ∈ R`.
-              *   **Conditions/Implications:** This means that the "identity pairs" must be present for *all* elements in the domain set. If even one element `x ∈ A` does not have `(x, x) ∈ R`, the relation is not reflexive.
-              *   **Examples:**
-                  *   On the set of real numbers R, `R = { (a, b) | a = b }` (is equal to) is reflexive because `a = a` for all `a ∈ R`.
-                  *   On the set of lines in a plane, `R = { (l₁, l₂) | l₁ || l₂ }` (is parallel to) is reflexive because every line is parallel to itself.
-                  *   On the set of triangles, `R = { (T₁, T₂) | T₁ ≅ T₂ }` (is congruent to) is reflexive.
-              *   **Non-examples:**
-                  *   On the set of integers Z, `R = { (a, b) | a < b }` (is less than) is not reflexive because `a < a` is false for any integer `a`.
-                  *   On the set A = {1, 2, 3}, `R = { (1,1), (2,2), (1,3) }` is not reflexive because `(3,3) ∉ R`.
-
-              **4. Symmetric Relation:**
-              A relation R on a set A is said to be **symmetric** if, whenever an element `a` is related to an element `b`, then `b` is also related to `a`.
-              *   **Formal Definition:** For all `a, b ∈ A`, if `(a, b) ∈ R`, then `(b, a) ∈ R`.
-              *   **Conditions/Implications:** This property signifies a two-way connection. If the relation holds in one direction, it must also hold in the reverse direction.
-              *   **Examples:**
-                  *   On the set of real numbers R, `R = { (a, b) | a = b }` is symmetric because if `a = b`, then `b = a`.
-                  *   On the set of lines in a plane, `R = { (l₁, l₂) | l₁ || l₂ }` is symmetric because if `l₁ || l₂`, then `l₂ || l₁`.
-                  *   On the set of people, `R = { (P₁, P₂) | P₁ is a sibling of P₂ }` is symmetric (assuming "sibling" implies full or half sibling) because if P₁ is a sibling of P₂, then P₂ is a sibling of P₁.
-              *   **Non-examples:**
-                  *   On the set of integers Z, `R = { (a, b) | a < b }` is not symmetric because if `a < b`, then `b < a` is false. For example, `(2, 5) ∈ R` since `2 < 5`, but `(5, 2) ∉ R` since `5 < 2` is false.
-                  *   On the set of people, `R = { (P₁, P₂) | P₁ is a child of P₂ }` is not symmetric. If P₁ is a child of P₂, P₂ cannot be a child of P₁.
-
-              **5. Transitive Relation:**
-              A relation R on a set A is said to be **transitive** if, whenever an element `a` is related to `b`, and `b` is related to `c`, then `a` is also related to `c`.
-              *   **Formal Definition:** For all `a, b, c ∈ A`, if `(a, b) ∈ R` and `(b, c) ∈ R`, then `(a, c) ∈ R`.
-              *   **Conditions/Implications:** This property describes a "chaining" effect. If a connection exists from A to B, and from B to C, then a direct connection (or an implied connection) must exist from A to C.
-              *   **Examples:**
-                  *   On the set of real numbers R, `R = { (a, b) | a < b }` is transitive because if `a < b` and `b < c`, then `a < c`.
-                  *   On the set of lines in a plane, `R = { (l₁, l₂) | l₁ || l₂ }` is transitive because if `l₁ || l₂` and `l₂ || l₃`, then `l₁ || l₃`.
-                  *   On the set of sets, `R = { (S₁, S₂) | S₁ ⊆ S₂ }` (is a subset of) is transitive because if `S₁ ⊆ S₂` and `S₂ ⊆ S₃`, then `S₁ ⊆ S₃`.
-              *   **Non-examples:**
-                  *   On the set of people, `R = { (P₁, P₂) | P₁ is a friend of P₂ }` is generally not transitive. If A is a friend of B, and B is a friend of C, it does not necessarily mean A is a friend of C.
-                  *   On the set of integers Z, `R = { (a, b) | a + b = 5 }`.
-                      *   ` (1, 4) ∈ R` (since 1+4=5)
-                      *   ` (4, 1) ∈ R` (since 4+1=5)
-                      *   But `(1, 1) ∉ R` (since 1+1 ≠ 5), so it is not transitive. (Here `a=1, b=4, c=1`. If (1,4) in R and (4,1) in R, then (1,1) should be in R for transitivity).
-
-              **6. Equivalence Relation:**
-              A relation R on a set A is called an **equivalence relation** if it is simultaneously **reflexive, symmetric, and transitive**.
-              *   **Significance:** Equivalence relations are profoundly important in mathematics as they partition a set into disjoint subsets, where all elements within a given subset are "equivalent" to each other based on the relation. These subsets are called **equivalence classes**.
-              *   **Example 1:** On the set of integers Z, let `R = { (a, b) | a - b is an even integer }`.
-                  *   **Reflexive:** `a - a = 0`, which is an even integer. So `(a, a) ∈ R` for all `a ∈ Z`.
-                  *   **Symmetric:** If `(a, b) ∈ R`, then `a - b = 2k` for some integer `k`. Then `b - a = -(a - b) = -2k = 2(-k)`, which is also an even integer. So `(b, a) ∈ R`.
-                  *   **Transitive:** If `(a, b) ∈ R` and `(b, c) ∈ R`, then `a - b = 2k₁` and `b - c = 2k₂` for integers `k₁, k₂`.
-                      *   Adding these equations: `(a - b) + (b - c) = 2k₁ + 2k₂`
-                      *   `a - c = 2(k₁ + k₂)`
-                      *   Since `k₁ + k₂` is an integer, `a - c` is an even integer. So `(a, c) ∈ R`.
-                  *   Since R is reflexive, symmetric, and transitive, it is an equivalence relation.
-              *   **Example 2:** On the set of lines in a plane, `R = { (l₁, l₂) | l₁ || l₂ }` (is parallel to) is an equivalence relation.
-                  *   Reflexive: `l₁ || l₁`.
-                  *   Symmetric: If `l₁ || l₂`, then `l₂ || l₁`.
-                  *   Transitive: If `l₁ || l₂` and `l₂ || l₃`, then `l₁ || l₃`.
-
-              **7. Equivalence Classes and Partition of a Set:**
-              If R is an equivalence relation on a set A, then for any element `a ∈ A`, the set of all elements `x ∈ A` such that `x R a` (i.e., `(x, a) ∈ R`) is called the **equivalence class of a**, denoted by `[a]`.
-              *   **Formal Definition:** `[a] = { x ∈ A | (x, a) ∈ R }`
-              *   **Properties of Equivalence Classes:**
-                  1.  Every element `a ∈ A` belongs to some equivalence class (specifically, `a ∈ [a]` due to reflexivity). Thus, the union of all equivalence classes is A.
-                  2.  Any two distinct equivalence classes are disjoint. That is, if `[a] ≠ [b]`, then `[a] ∩ [b] = ∅`.
-                  3.  `[a] = [b]` if and only if `(a, b) ∈ R`.
-              *   These properties imply that an equivalence relation **partitions** the set A into disjoint, non-empty subsets, whose union is A. Each subset is an equivalence class.
-              *   **Continuing Example 1 (a - b is even):**
-                  *   `[0] = { x ∈ Z | x - 0 is even } = { ..., -4, -2, 0, 2, 4, ... }` (the set of even integers)
-                  *   `[1] = { x ∈ Z | x - 1 is even } = { ..., -3, -1, 1, 3, 5, ... }` (the set of odd integers)
-                  *   Notice that `[0] = [2] = [-4]`, etc. (all even integers belong to the same class).
-                  *   Notice that `[1] = [3] = [-1]`, etc. (all odd integers belong to the same class).
-                  *   The set Z is partitioned into two disjoint equivalence classes: the set of even integers and the set of odd integers. `Z = [0] ∪ [1]` and `[0] ∩ [1] = ∅`.
-
-              **III. Functions: Deep Dive into Special Relations**
-
-              As mentioned, functions are special types of relations that are fundamental to virtually all branches of mathematics and its applications. They represent a deterministic mapping from one set to another.
-
-              **1. Function: A Rigorous Definition:**
-              A relation `f` from a set A to a set B is called a **function** if every element of set A has one and only one image in set B.
-              *   **Notation:** `f: A → B` (read as "f is a function from A to B").
-              *   **Domain:** The set A is called the **domain** of the function f.
-              *   **Codomain:** The set B is called the **codomain** of the function f.
-              *   **Range:** The set of all images of elements of A under f is called the **range** of the function f.
-                  *   `Range(f) = { f(x) | x ∈ A }`.
-                  *   Note that `Range(f) ⊆ Codomain(f)`.
-              *   **Key Conditions for a Function (from relation R ⊆ A × B to be a function):**
-                  1.  **Existence:** Every element in the domain A must be associated with some element in the codomain B. (i.e., for every `x ∈ A`, there exists a `y ∈ B` such that `(x, y) ∈ f`).
-                  2.  **Uniqueness:** No element in the domain A can be associated with more than one element in the codomain B. (i.e., if `(x, y₁) ∈ f` and `(x, y₂) ∈ f`, then `y₁ = y₂`).
-              *   **Example:** Let A = {1, 2, 3}, B = {a, b, c, d}.
-                  *   `f = { (1, a), (2, b), (3, c) }` is a function.
-                      *   Domain = {1, 2, 3}
-                      *   Codomain = {a, b, c, d}
-                      *   Range = {a, b, c}
-                  *   `g = { (1, a), (1, b), (2, c) }` is NOT a function because element '1' from the domain has two images ('a' and 'b'). This violates the uniqueness condition.
-                  *   `h = { (1, a), (2, b) }` is NOT a function if the domain is specified as A = {1, 2, 3} because element '3' from the domain has no image. This violates the existence condition (every element in A must be mapped).
-
-              **2. Types of Functions (Class XII Specific): Classifying Mappings**
-
-              The classification of functions based on how elements of the domain and codomain are mapped is crucial for understanding their properties and applications, particularly for inverse functions.
-
-              **a. One-to-One Function (Injective Function):**
-              A function `f: A → B` is said to be **one-to-one** (or injective) if distinct elements of A have distinct images in B.
-              *   **Formal Definition:** For all `x₁, x₂ ∈ A`, if `f(x₁) = f(x₂)`, then `x₁ = x₂`. (The contrapositive is also useful: if `x₁ ≠ x₂`, then `f(x₁) ≠ f(x₂)`).
-              *   **Intuitive Explanation:** No two different elements in the domain map to the same element in the codomain. Each element in the range has a unique preimage in the domain.
-              *   **Algebraic Test/Proof Method:** To prove a function is injective, assume `f(x₁) = f(x₂)` and algebraically show that this implies `x₁ = x₂`. To show it's not injective, find two distinct values `x₁ ≠ x₂` such that `f(x₁) = f(x₂)`.
-              *   **Graphical Test (Horizontal Line Test):** A function `y = f(x)` is injective if and only if no horizontal line intersects its graph at more than one point.
-              *   **Examples:**
-                  *   `f: R → R` given by `f(x) = 2x + 3`.
-                      *   Assume `f(x₁) = f(x₂)`. Then `2x₁ + 3 = 2x₂ + 3`, which implies `2x₁ = 2x₂`, and thus `x₁ = x₂`. Hence, f is injective.
-                      *   Graphically, this is a straight line with a positive slope; any horizontal line intersects it exactly once.
-                  *   `f: N → N` given by `f(x) = x²`.
-                      *   Assume `f(x₁) = f(x₂)`. Then `x₁² = x₂²`. Since the domain is N (natural numbers, positive integers), `x₁` and `x₂` must be positive, so `x₁ = x₂`. Hence, f is injective.
-              *   **Non-examples:**
-                  *   `f: R → R` given by `f(x) = x²`.
-                      *   This is not injective because `f(-2) = 4` and `f(2) = 4`, but `-2 ≠ 2`.
-                      *   Graphically, a horizontal line (e.g., `y=4`) intersects the parabola `y=x²` at two points.
-                  *   `f: R → R` given by `f(x) = sin(x)`.
-                      *   Not injective, e.g., `sin(0) = 0` and `sin(π) = 0`, but `0 ≠ π`.
-
-              **b. Onto Function (Surjective Function):**
-              A function `f: A → B` is said to be **onto** (or surjective) if every element in the codomain B is the image of at least one element in the domain A. In other words, the range of the function is equal to its codomain (`Range(f) = B`).
-              *   **Formal Definition:** For every `y ∈ B`, there exists at least one `x ∈ A` such that `f(x) = y`.
-              *   **Intuitive Explanation:** Every element in the codomain "gets hit" by at least one arrow from the domain. There are no "unmapped" elements in the codomain.
-              *   **Algebraic Test/Proof Method:** To prove a function is surjective, take an arbitrary `y` from the codomain B and show that you can find an `x` in the domain A such that `f(x) = y`. This usually involves solving `y = f(x)` for `x` in terms of `y` and then verifying if that `x` is in the domain A. To show it's not surjective, find an element `y` in the codomain for which no `x` in the domain maps to it.
-              *   **Graphical Interpretation:** If the codomain is R, the graph of the function must extend infinitely in both positive and negative y-directions, covering all possible y-values. If the codomain is a restricted interval (e.g., `[0, ∞)`), the graph must cover exactly that interval on the y-axis.
-              *   **Examples:**
-                  *   `f: R → R` given by `f(x) = 2x + 3`.
-                      *   Let `y ∈ R` (codomain). We need to find `x ∈ R` (domain) such that `f(x) = y`.
-                      *   `2x + 3 = y`
-                      *   `2x = y - 3`
-                      *   `x = (y - 3) / 2`. Since `y` is a real number, `(y - 3) / 2` is always a real number. So for every `y` in the codomain, there is an `x` in the domain. Hence, f is surjective.
-                  *   `f: R → [0, ∞)` given by `f(x) = x²`.
-                      *   Let `y ∈ [0, ∞)` (codomain). We need to find `x ∈ R` (domain) such that `f(x) = y`.
-                      *   `x² = y`
-                      *   `x = ±√y`. Since `y ≥ 0`, `√y` is a real number. So `x = ±√y` are real numbers and are in the domain R. Hence, f is surjective for this specific codomain.
-              *   **Non-examples:**
-                  *   `f: R → R` given by `f(x) = x²`.
-                      *   This is not surjective because the range is `[0, ∞)`, which is a proper subset of the codomain R. For any negative `y` (e.g., `y = -4`), there is no real `x` such that `x² = -4`.
-                  *   `f: Z → Z` given by `f(x) = 2x`.
-                      *   This is not surjective because the range is the set of even integers `{..., -4, -2, 0, 2, 4, ...}`, which is a proper subset of the codomain Z. No odd integer in the codomain has a preimage in the domain.
-
-              **c. Bijective Function (One-to-One and Onto):**
-              A function `f: A → B` is said to be **bijective** if it is both **one-to-one (injective)** and **onto (surjective)**.
-              *   **Significance:** Bijective functions establish a perfect one-to-one correspondence between the elements of the domain A and the elements of the codomain B. This means each element in A maps to a unique element in B, and every element in B is mapped from a unique element in A.
-              *   **Crucial Implication:** A function is bijective if and only if its **inverse function exists**.
-              *   **Example:**
-                  *   `f: R → R` given by `f(x) = 2x + 3`. As demonstrated above, this function is both injective and surjective, hence it is bijective.
-                  *   `f: [0, ∞) → [0, ∞)` given by `f(x) = x²`.
-                      *   Injective for this restricted domain: If `x₁², x₂²` are in `[0, ∞)` and `x₁² = x₂²`, then `x₁ = x₂` since `x₁, x₂ ≥ 0`.
-                      *   Surjective for this restricted codomain: For any `y ∈ [0, ∞)`, `x = √y` is in `[0, ∞)` and `f(√y) = y`.
-                      *   Therefore, this function is bijective.
-
-              **IV. Composition of Functions: Chaining Operations**
-
-              Often, real-world problems or mathematical models involve applying one function after another. This concept is formalized through the **composition of functions**.
-
-              **1. Definition of Composite Function:**
-              Let `f: A → B` and `g: C → D` be two functions. The **composition of f and g**, denoted by `g o f` (read as "g composed with f" or "g of f"), is defined as the function `(g o f)(x) = g(f(x))`.
-              *   **Condition for Composition:** The function `g o f` is defined only if the **range of f is a subset of the domain of g** (i.e., `Range(f) ⊆ C`). If this condition is not met, `g(f(x))` would be undefined for some `x` where `f(x)` is not in the domain of `g`.
-              *   **Domain and Codomain of `g o f`:** If `f: A → B` and `g: B → C` (i.e., `B` is both codomain of `f` and domain of `g`), then `g o f: A → C`. The domain of `g o f` is A, and its codomain is C.
-              *   **Example:** Let `f: R → R` be `f(x) = x²` and `g: R → R` be `g(x) = x + 1`.
-                  *   `(g o f)(x) = g(f(x)) = g(x²) = x² + 1`.
-                  *   `(f o g)(x) = f(g(x)) = f(x + 1) = (x + 1)² = x² + 2x + 1`.
-                  *   Notice that `g o f ≠ f o g` in general.
-
-              **2. Properties of Composition of Functions:**
-              *   **Associativity:** Function composition is always associative. If `f: A → B`, `g: B → C`, and `h: C → D`, then `h o (g o f) = (h o g) o f`.
-                  *   Proof: `[h o (g o f)](x) = h((g o f)(x)) = h(g(f(x)))`.
-                  *   `[(h o g) o f](x) = (h o g)(f(x)) = h(g(f(x)))`.
-                  *   Since both yield the same result, `h o (g o f) = (h o g) o f`.
-              *   **Non-Commutativity:** As seen in the example above, function composition is generally NOT commutative. `f o g ≠ g o f`.
-              *   **Identity Function:** Let `I_A` be the identity function on set A (i.e., `I_A(x) = x` for all `x ∈ A`). If `f: A → B`, then `f o I_A = f` and `I_B o f = f`. The identity function acts as a neutral element for composition.
-              *   **Bijectivity of Composite Functions:**
-                  *   If `f` and `g` are both injective, then `g o f` is injective.
-                  *   If `f` and `g` are both surjective, then `g o f` is surjective.
-                  *   Consequently, if `f` and `g` are both bijective, then `g o f` is bijective.
-
-              **V. Inverse of a Function: Undoing the Mapping**
-
-              The concept of an inverse function is about reversing the mapping process of a function. It allows us to determine the input that produced a given output.
-
-              **1. Definition of Inverse Function:**
-              Let `f: A → B` be a function. A function `g: B → A` is said to be the **inverse of f** if:
-              *   `g o f = I_A` (where `I_A` is the identity function on set A, `I_A(x) = x`)
-              *   `f o g = I_B` (where `I_B` is the identity function on set B, `I_B(y) = y`)
-              The inverse of `f` is usually denoted by `f⁻¹`.
-
-              **2. Condition for Existence of an Inverse Function:**
-              A function `f: A → B` has an inverse function `f⁻¹: B → A` **if and only if f is a bijective function** (i.e., f is both one-to-one and onto).
-              *   **Why Bijectivity is Necessary:**
-                  *   **One-to-one (Injective):** If f is not injective, two distinct elements `x₁, x₂` in A map to the same `y` in B (`f(x₁) = f(x₂) = y`). Then `f⁻¹(y)` would have to map to both `x₁` and `x₂`, violating the uniqueness condition of a function.
-                  *   **Onto (Surjective):** If f is not surjective, there exists at least one `y` in B that is not an image of any `x` in A. Then `f⁻¹(y)` would be undefined, violating the existence condition of a function.
-              *   This condition is absolute. Without bijectivity, an inverse function cannot be rigorously defined.
-
-              **3. Finding the Inverse of a Function:**
-              If `f(x)` is a bijective function, its inverse `f⁻¹(x)` can be found using the following steps:
-              1.  Let `y = f(x)`.
-              2.  Swap `x` and `y` in the equation: `x = f(y)`. This reflects the idea that the domain and range are swapped for the inverse.
-              3.  Solve the new equation for `y` in terms of `x`.
-              4.  The resulting expression for `y` is `f⁻¹(x)`.
-              *   **Example:** Find the inverse of `f: R → R` given by `f(x) = 2x + 3`.
-                  1.  Let `y = 2x + 3`.
-                  2.  Swap `x` and `y`: `x = 2y + 3`.
-                  3.  Solve for `y`:
-                      *   `x - 3 = 2y`
-                      *   `y = (x - 3) / 2`
-                  4.  So, `f⁻¹(x) = (x - 3) / 2`.
-              *   **Verification:**
-                  *   `(f o f⁻¹)(x) = f(f⁻¹(x)) = f((x - 3) / 2) = 2((x - 3) / 2) + 3 = (x - 3) + 3 = x`. (Identity on R)
-                  *   `(f⁻¹ o f)(x) = f⁻¹(f(x)) = f⁻¹(2x + 3) = ((2x + 3) - 3) / 2 = 2x / 2 = x`. (Identity on R)
-                  *   This confirms `f⁻¹(x) = (x - 3) / 2` is indeed the inverse.
-
-              **4. Properties of Inverse Functions:**
-              *   The inverse of a bijection is unique.
-              *   ` (f⁻¹)⁻¹ = f `
-              *   **Reversal Law for Composition:** If `f: A → B` and `g: B → C` are two bijective functions, then `(g o f)⁻¹ = f⁻¹ o g⁻¹`. This is an important property that highlights the order reversal in inverse composition.
-              *   **Graphical Representation:** The graph of the inverse function `f⁻¹(x)` is a **reflection of the graph of f(x) about the line `y = x`**. This geometric property provides a powerful visual tool for understanding inverse relationships.
-                  *   For `f(x) = 2x + 3`, its graph is a straight line. Its inverse `f⁻¹(x) = (x - 3) / 2` is also a straight line. If you plot both, you will see they are symmetric with respect to the line `y=x`.
-                  *   For `f(x) = x²` defined on `[0, ∞)`, its inverse is `f⁻¹(x) = √x` defined on `[0, ∞)`. The graph of `y=x²` for `x ≥ 0` and `y=√x` for `x ≥ 0` are reflections of each other across `y=x`.
-
-              **VI. Binary Operations: Building Algebraic Structures**
-
-              The concept of a binary operation generalizes the familiar arithmetic operations like addition, subtraction, multiplication, and division to abstract sets. It forms the basis for defining algebraic structures such as groups, rings, and fields.
-
-              **1. Definition of a Binary Operation:**
-              A **binary operation** `*` on a non-empty set A is a function from `A × A` to A.
-              *   **Formal Definition:** `*: A × A → A`.
-              *   For every ordered pair `(a, b)` of elements in A, `a * b` is a unique element in A.
-              *   **Closure Property:** The definition itself implies that the set A is **closed** under the operation `*`. This means that if `a, b ∈ A`, then `a * b` must also be an element of A. If the result `a * b` falls outside the set A, then `*` is not a binary operation on A.
-              *   **Examples:**
-                  *   Addition `+` on the set of integers Z: `+ : Z × Z → Z`. For any `a, b ∈ Z`, `a + b ∈ Z`. This is a binary operation.
-                  *   Subtraction `-` on the set of natural numbers N: `- : N × N → N`. This is NOT a binary operation because, for example, `1 ∈ N` and `2 ∈ N`, but `1 - 2 = -1`, which is not in N.
-                  *   Union `∪` on the power set `P(S)` of a set S: `∪ : P(S) × P(S) → P(S)`. If A, B are subsets of S, then `A ∪ B` is also a subset of S. This is a binary operation.
-
-              **2. Properties of Binary Operations:**
-              For a binary operation `*` on a set A:
-
-              **a. Commutativity:**
-              A binary operation `*` on a set A is said to be **commutative** if the order of the operands does not affect the result.
-              *   **Formal Definition:** For all `a, b ∈ A`, `a * b = b * a`.
-              *   **Examples:**
-                  *   Addition `+` on R: `a + b = b + a`.
-                  *   Multiplication `×` on R: `a × b = b × a`.
-                  *   Union `∪` on `P(S)`: `A ∪ B = B ∪ A`.
-              *   **Non-examples:**
-                  *   Subtraction `-` on Z: `a - b ≠ b - a` (e.g., `5 - 3 = 2`, but `3 - 5 = -2`).
-                  *   Division `÷` on R (excluding 0): `a ÷ b ≠ b ÷ a`.
-
-              **b. Associativity:**
-              A binary operation `*` on a set A is said to be **associative** if the grouping of the operands does not affect the result when three or more elements are operated upon.
-              *   **Formal Definition:** For all `a, b, c ∈ A`, `(a * b) * c = a * (b * c)`.
-              *   **Examples:**
-                  *   Addition `+` on R: `(a + b) + c = a + (b + c)`.
-                  *   Multiplication `×` on R: `(a × b) × c = a × (b × c)`.
-                  *   Intersection `∩` on `P(S)`: `(A ∩ B) ∩ C = A ∩ (B ∩ C)`.
-              *   **Non-examples:**
-                  *   Subtraction `-` on Z: `(a - b) - c ≠ a - (b - c)`.
-                      *   E.g., `(5 - 3) - 1 = 2 - 1 = 1`.
-                      *   `5 - (3 - 1) = 5 - 2 = 3`. Here `1 ≠ 3`.
-                  *   Division `÷` on R (excluding 0): `(a ÷ b) ÷ c ≠ a ÷ (b ÷ c)`.
-
-              **c. Identity Element:**
-              An element `e ∈ A` is called an **identity element** for a binary operation `*` on A if, for every `a ∈ A`, operating `a` with `e` (in either order) leaves `a` unchanged.
-              *   **Formal Definition:** There exists `e ∈ A` such that for all `a ∈ A`, `a * e = e * a = a`.
-              *   An identity element, if it exists, is unique.
-              *   **Examples:**
-                  *   For addition `+` on R, the identity element is `0` because `a + 0 = 0 + a = a`.
-                  *   For multiplication `×` on R, the identity element is `1` because `a × 1 = 1 × a = a`.
-                  *   For union `∪` on `P(S)`, the identity element is `∅` (the empty set) because `A ∪ ∅ = ∅ ∪ A = A`.
-              *   **Non-examples:**
-                  *   Subtraction `-` on Z has no identity element. If `a - e = a`, then `e = 0`. But `e - a = a` would imply `0 - a = a`, so `a = 0`. This is only true for `a=0`, not for all `a`.
-
-              **d. Inverse Element:**
-              For a given binary operation `*` on a set A with an identity element `e`, an element `a' ∈ A` is called the **inverse of an element a ∈ A** if, when operated with `a`, it yields the identity element `e`.
-              *   **Formal Definition:** For an element `a ∈ A`, an inverse `a' ∈ A` exists if `a * a' = a' * a = e`.
-              *   The inverse of an element `a` (if it exists) is often denoted by `a⁻¹`.
-              *   **Examples:**
-                  *   For addition `+` on R (identity `e = 0`), the inverse of `a` is `-a` because `a + (-a) = (-a) + a = 0`.
-                  *   For multiplication `×` on R (identity `e = 1`), the inverse of `a` (for `a ≠ 0`) is `1/a` because `a × (1/a) = (1/a) × a = 1`. Note that 0 does not have a multiplicative inverse.
-                  *   For an invertible function `f` under composition (identity `I`), the inverse is `f⁻¹`.
-              *   **Non-examples:**
-                  *   For multiplication `×` on Z, the element `2` does not have an inverse in Z because `1/2 ∉ Z`.
-                  *   For multiplication `×` on N, only `1` has an inverse (itself).
-
-              **Conclusion: The Enduring Legacy of Relations and Functions**
-
-              This comprehensive exploration of 'Relations and Functions' equips you with the conceptual depth required not just to excel in your CBSE examinations but, more importantly, to think mathematically. From the fundamental idea of sets and their Cartesian product, we built up the sophisticated machinery of relations, classifying them by properties like reflexivity, symmetry, and transitivity, culminating in the powerful concept of equivalence relations and their ability to partition sets. We then refined relations into functions, introducing the critical distinctions of injectivity, surjectivity, and bijectivity, which are paramount for understanding composite and inverse functions. Finally, we abstracted operations themselves through binary operations, revealing the underlying algebraic structures of various number systems and mathematical constructs.
-
-              Every theorem in calculus, every solution in linear algebra, and every model in discrete mathematics critically relies on these foundational ideas. As you progress, you will recognize these structures and properties recurring in increasingly complex contexts. Embrace the rigor, appreciate the elegance, and build a strong conceptual foundation here, for it is indeed the gateway to higher mathematics."
-            </p>
-          </div>
-        </article>
-      </div>
-    </section>
+    </article>
+  </div>
+</section>
 
 <section class="section container" id="derivations">
   <div class="section-head">
     <span class="section-eyebrow">Formula Repository</span>
-    <h2>2. Master Equation Bank & Step-by-Step Derivations (Chapter: Inverse Trigonometric Functions)</h2>
+    <h2>2. Master Equation Bank & Step-by-Step Derivations</h2>
+    <p>
+      <em>Note: While this section is provided under 'Class 12 Mathematics notes for Chapter: Chapter1' as per the request, the concepts of SI units and physical derivations are typically associated with Class 12 Physics, especially Chapter 1: Electric Charges and Fields. We are providing content aligned with these requirements, assuming a potential overlap or specific need for physics-style derivations and unit discussions, as these are not standard for Class 12 Mathematics Chapter 1 (Relations and Functions).</em>
+    </p>
   </div>
   <div class="resource-grid">
     <article class="resource">
-      <h3>Exhaustive Formula Table</h3>
-      <p>This section provides a comprehensive list of all essential formulas and properties related to Inverse Trigonometric Functions, along with their detailed derivations. It is designed to be an exhaustive reference for Class 12 Mathematics students.</p>
-
-      <h4>2.1. Formula Table: Basic Definitions and Properties</h4>
-      
-      <h5>2.1.1. Domain, Range, and Principal Value Branch (PVB)</h5>
-      <p>The principal value branch (PVB) defines the specific range of output values for which the inverse trigonometric function is uniquely defined.</p>
+      <h3>Exhaustive Formula Table - Chapter 1: Electric Charges and Fields (Physics Context)</h3>
+      <p>This table provides a comprehensive list of key formulas from Electrostatics, including variables, their SI units, and specific conditions for applicability, relevant to Class 12 Physics Chapter 1.</p>
       <table>
         <thead>
           <tr>
-            <th>Function</th>
-            <th>Domain (D)</th>
-            <th>Range (PVB)</th>
-            <th>Graph Characteristics</th>
+            <th>Formula</th>
+            <th>Description</th>
+            <th>Variables</th>
+            <th>SI Units</th>
+            <th>Conditions/Remarks</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>$y = \sin^{-1}x$</td>
-            <td>$[-1, 1]$</td>
-            <td>$[-\pi/2, \pi/2]$</td>
-            <td>Odd function, symmetric about origin</td>
+            <td>$Q = \pm ne$</td>
+            <td>Quantization of Charge</td>
+            <td>$Q$: Total charge<br>$n$: Integer (1, 2, 3...)<br>$e$: Elementary charge</td>
+            <td>$Q$: Coulomb (C)<br>$e$: Coulomb (C)</td>
+            <td>Charge exists in discrete packets. $e = 1.6 \times 10^{-19}$ C.</td>
           </tr>
           <tr>
-            <td>$y = \cos^{-1}x$</td>
-            <td>$[-1, 1]$</td>
-            <td>$[0, \pi]$</td>
-            <td>Neither odd nor even</td>
+            <td>$F = k \frac{|q_1 q_2|}{r^2}$</td>
+            <td>Coulomb's Law (Magnitude)</td>
+            <td>$F$: Electrostatic force<br>$q_1, q_2$: Point charges<br>$r$: Distance between charges<br>$k$: Coulomb's constant</td>
+            <td>$F$: Newton (N)<br>$q$: Coulomb (C)<br>$r$: meter (m)<br>$k$: N m$^2$ C$^{-2}$</td>
+            <td>For point charges in vacuum or air. $k = \frac{1}{4\pi\epsilon_0} \approx 9 \times 10^9$ N m$^2$ C$^{-2}$.</td>
           </tr>
           <tr>
-            <td>$y = \tan^{-1}x$</td>
-            <td>$(-\infty, \infty)$ or $\mathbb{R}$</td>
-            <td>$(-\pi/2, \pi/2)$</td>
-            <td>Odd function, symmetric about origin</td>
+            <td>$\vec{F} = \frac{1}{4\pi\epsilon_0} \frac{q_1 q_2}{r^3} \vec{r}_{12}$</td>
+            <td>Coulomb's Law (Vector Form)</td>
+            <td>$\vec{r}_{12}$: Position vector from $q_1$ to $q_2$ (or vice-versa)</td>
+            <td>Units as above</td>
+            <td>$\epsilon_0$: Permittivity of free space ($8.854 \times 10^{-12}$ C$^2$ N$^{-1}$ m$^{-2}$).</td>
           </tr>
           <tr>
-            <td>$y = \cot^{-1}x$</td>
-            <td>$(-\infty, \infty)$ or $\mathbb{R}$</td>
-            <td>$(0, \pi)$</td>
-            <td>Neither odd nor even</td>
+            <td>$\vec{E} = \frac{\vec{F}}{q_0}$</td>
+            <td>Electric Field Definition</td>
+            <td>$\vec{E}$: Electric field<br>$\vec{F}$: Force on test charge<br>$q_0$: Test charge</td>
+            <td>$\vec{E}$: Newton/Coulomb (N/C) or Volt/meter (V/m)</td>
+            <td>$q_0$ must be infinitesimally small not to disturb the source field.</td>
           </tr>
           <tr>
-            <td>$y = \text{cosec}^{-1}x$</td>
-            <td>$\mathbb{R} - (-1, 1)$ or $(-\infty, -1] \cup [1, \infty)$</td>
-            <td>$[-\pi/2, \pi/2] - \{0\}$</td>
-            <td>Odd function, symmetric about origin</td>
+            <td>$E = k \frac{|q|}{r^2}$</td>
+            <td>Electric Field due to a Point Charge</td>
+            <td>$q$: Source charge<br>$r$: Distance from charge</td>
+            <td>$E$: N/C or V/m</td>
+            <td>Direction is radially outward for positive $q$, inward for negative $q$.</td>
           </tr>
           <tr>
-            <td>$y = \sec^{-1}x$</td>
-            <td>$\mathbb{R} - (-1, 1)$ or $(-\infty, -1] \cup [1, \infty)$</td>
-            <td>$[0, \pi] - \{\pi/2\}$</td>
-            <td>Neither odd nor even</td>
+            <td>$\vec{p} = q (2\vec{a})$</td>
+            <td>Electric Dipole Moment</td>
+            <td>$\vec{p}$: Electric dipole moment<br>$q$: Magnitude of either charge<br>$2\vec{a}$: Vector from $-q$ to $+q$</td>
+            <td>$p$: Coulomb-meter (C m)</td>
+            <td>$2a$ is the dipole length. $\vec{p}$ points from $-q$ to $+q$.</td>
+          </tr>
+          <tr>
+            <td>$E_{axial} = \frac{2kp}{r^3}$</td>
+            <td>Electric Field on Axial Line of Dipole (Magnitude)</td>
+            <td>$r$: Distance from center of dipole to point P</td>
+            <td>$E$: N/C or V/m</td>
+            <td>For $r \gg a$. Direction is along $\vec{p}$.</td>
+          </tr>
+          <tr>
+            <td>$E_{equatorial} = \frac{kp}{(r^2+a^2)^{3/2}} \approx \frac{kp}{r^3}$</td>
+            <td>Electric Field on Equatorial Line of Dipole (Magnitude)</td>
+            <td>$r$: Distance from center of dipole to point P</td>
+            <td>$E$: N/C or V/m</td>
+            <td>For $r \gg a$. Direction is anti-parallel to $\vec{p}$.</td>
+          </tr>
+          <tr>
+            <td>$\vec{\tau} = \vec{p} \times \vec{E}$</td>
+            <td>Torque on an Electric Dipole</td>
+            <td>$\vec{\tau}$: Torque<br>$\vec{p}$: Dipole moment<br>$\vec{E}$: External uniform electric field</td>
+            <td>$\tau$: Newton-meter (N m)</td>
+            <td>$\tau = pE\sin\theta$, where $\theta$ is angle between $\vec{p}$ and $\vec{E}$.</td>
+          </tr>
+          <tr>
+            <td>$U = -\vec{p} \cdot \vec{E}$</td>
+            <td>Potential Energy of an Electric Dipole</td>
+            <td>$U$: Potential energy</td>
+            <td>$U$: Joule (J)</td>
+            <td>$U = -pE\cos\theta$. Minimum for $\theta=0^\circ$, maximum for $\theta=180^\circ$.</td>
+          </tr>
+          <tr>
+            <td>$\Phi_E = \vec{E} \cdot \vec{A} = EA \cos\theta$</td>
+            <td>Electric Flux (Uniform Field)</td>
+            <td>$\Phi_E$: Electric flux<br>$\vec{A}$: Area vector (magnitude A, direction normal to surface)</td>
+            <td>$\Phi_E$: N m$^2$ C$^{-1}$ or V m</td>
+            <td>For a uniform electric field $\vec{E}$ passing through a planar area $\vec{A}$.</td>
+          </tr>
+          <tr>
+            <td>$\Phi_E = \oint \vec{E} \cdot d\vec{A}$</td>
+            <td>Electric Flux (General)</td>
+            <td>$d\vec{A}$: Infinitesimal area vector element</td>
+            <td>$\Phi_E$: N m$^2$ C$^{-1}$ or V m</td>
+            <td>Integral over a closed surface.</td>
+          </tr>
+          <tr>
+            <td>$\Phi_E = \frac{Q_{enclosed}}{\epsilon_0}$</td>
+            <td>Gauss's Law</td>
+            <td>$Q_{enclosed}$: Net charge enclosed by the closed surface</td>
+            <td>Units as above</td>
+            <td>Applicable for any closed surface (Gaussian surface).</td>
+          </tr>
+          <tr>
+            <td>$E = \frac{\lambda}{2\pi\epsilon_0 r}$</td>
+            <td>Field due to Infinite Line Charge</td>
+            <td>$\lambda$: Linear charge density<br>$r$: Perpendicular distance from wire</td>
+            <td>$\lambda$: C/m</td>
+            <td>For an infinitely long, uniformly charged straight wire. Direction is radially outward/inward.</td>
+          </tr>
+          <tr>
+            <td>$E = \frac{\sigma}{2\epsilon_0}$</td>
+            <td>Field due to Infinite Plane Sheet</td>
+            <td>$\sigma$: Surface charge density</td>
+            <td>$\sigma$: C/m$^2$</td>
+            <td>For an infinite, uniformly charged thin plane sheet. Direction perpendicular to the sheet.</td>
+          </tr>
+          <tr>
+            <td>$E_{shell, out} = \frac{Q}{4\pi\epsilon_0 r^2}$</td>
+            <td>Field outside Spherical Shell</td>
+            <td>$Q$: Total charge on shell<br>$r$: Distance from center ($r \ge R$)</td>
+            <td>$R$: Radius of shell</td>
+            <td>Acts as if all charge is concentrated at the center.</td>
+          </tr>
+          <tr>
+            <td>$E_{shell, in} = 0$</td>
+            <td>Field inside Spherical Shell</td>
+            <td></td>
+            <td></td>
+            <td>For $r < R$. Applicable for a uniformly charged thin spherical shell.</td>
           </tr>
         </tbody>
       </table>
 
-      <h5>2.1.2. Properties of Inverse Trigonometric Functions</h5>
-      
-      <h6>A. Properties involving Negative Arguments:</h6>
-      <table>
-        <thead>
-          <tr>
-            <th>Property</th>
-            <th>Conditions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>$\sin^{-1}(-x) = -\sin^{-1}x$</td>
-            <td>$x \in [-1, 1]$</td>
-          </tr>
-          <tr>
-            <td>$\tan^{-1}(-x) = -\tan^{-1}x$</td>
-            <td>$x \in \mathbb{R}$</td>
-          </tr>
-          <tr>
-            <td>$\text{cosec}^{-1}(-x) = -\text{cosec}^{-1}x$</td>
-            <td>$|x| \ge 1$</td>
-          </tr>
-          <tr>
-            <td>$\cos^{-1}(-x) = \pi - \cos^{-1}x$</td>
-            <td>$x \in [-1, 1]$</td>
-          </tr>
-          <tr>
-            <td>$\cot^{-1}(-x) = \pi - \cot^{-1}x$</td>
-            <td>$x \in \mathbb{R}$</td>
-          </tr>
-          <tr>
-            <td>$\sec^{-1}(-x) = \pi - \sec^{-1}x$</td>
-            <td>$|x| \ge 1$</td>
-          </tr>
-        </tbody>
-      </table>
+      <h3>Step-by-Step Derivations</h3>
 
-      <h6>B. Reciprocal Properties:</h6>
-      <table>
-        <thead>
-          <tr>
-            <th>Property</th>
-            <th>Conditions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>$\sin^{-1}x = \text{cosec}^{-1}(1/x)$</td>
-            <td>$x \in [-1, 1], x \ne 0$</td>
-          </tr>
-          <tr>
-            <td>$\cos^{-1}x = \sec^{-1}(1/x)$</td>
-            <td>$x \in [-1, 1], x \ne 0$</td>
-          </tr>
-          <tr>
-            <td>$\tan^{-1}x = \cot^{-1}(1/x)$</td>
-            <td>$x > 0$</td>
-          </tr>
-          <tr>
-            <td>$\tan^{-1}x = \cot^{-1}(1/x) - \pi$</td>
-            <td>$x < 0$ (This case ensures the range of $\tan^{-1}x$ is satisfied)</td>
-          </tr>
-          <tr>
-            <td>$\cot^{-1}x = \tan^{-1}(1/x)$</td>
-            <td>$x > 0$</td>
-          </tr>
-          <tr>
-            <td>$\cot^{-1}x = \tan^{-1}(1/x) + \pi$</td>
-            <td>$x < 0$ (This case ensures the range of $\cot^{-1}x$ is satisfied)</td>
-          </tr>
-        </tbody>
-      </table>
+      <h4>1. Derivation of Electric Field due to a Point Charge</h4>
+      <p>
+        To find the electric field at a point P due to a point charge $q$ located at the origin.
+      </p>
+      <p>
+        Let a source charge $q$ be placed at the origin. We want to find the electric field $\vec{E}$ at a point P located at a distance $r$ from the origin.
+        According to Coulomb's Law, if we place a small positive test charge $q_0$ at point P, the electrostatic force $\vec{F}$ exerted by $q$ on $q_0$ is given by:
+      </p>
+      $$ \vec{F} = \frac{1}{4\pi\epsilon_0} \frac{q q_0}{r^2} \hat{r} $$
+      <p>
+        where $\hat{r}$ is the unit vector pointing from $q$ to $q_0$.
+      </p>
+      <p>
+        The electric field $\vec{E}$ at point P is defined as the force per unit test charge:
+      </p>
+      $$ \vec{E} = \frac{\vec{F}}{q_0} $$
+      <p>
+        Substituting the expression for $\vec{F}$:
+      </p>
+      $$ \vec{E} = \frac{1}{q_0} \left( \frac{1}{4\pi\epsilon_0} \frac{q q_0}{r^2} \hat{r} \right) $$
+      <p>
+        The test charge $q_0$ cancels out:
+      </p>
+      $$ \vec{E} = \frac{1}{4\pi\epsilon_0} \frac{q}{r^2} \hat{r} $$
+      <p>
+        In terms of magnitude, the electric field is:
+      </p>
+      $$ E = \frac{1}{4\pi\epsilon_0} \frac{|q|}{r^2} $$
+      <p>
+        The direction of $\vec{E}$ is radially outward if $q$ is positive and radially inward if $q$ is negative.
+      </p>
 
-      <h6>C. Complementary Angle Properties:</h6>
-      <table>
-        <thead>
-          <tr>
-            <th>Property</th>
-            <th>Conditions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>$\sin^{-1}x + \cos^{-1}x = \pi/2$</td>
-            <td>$x \in [-1, 1]$</td>
-          </tr>
-          <tr>
-            <td>$\tan^{-1}x + \cot^{-1}x = \pi/2$</td>
-            <td>$x \in \mathbb{R}$</td>
-          </tr>
-          <tr>
-            <td>$\text{cosec}^{-1}x + \sec^{-1}x = \pi/2$</td>
-            <td>$|x| \ge 1$</td>
-          </tr>
-        </tbody>
-      </table>
+      <h4>2. Derivation of Electric Field on the Axial Line of an Electric Dipole</h4>
+      <p>
+        Consider an electric dipole consisting of two point charges, $-q$ and $+q$, separated by a small distance $2a$. Let the center of the dipole be at the origin. The charge $-q$ is at $(-a, 0)$ and $+q$ is at $(a, 0)$ along the x-axis.
+        We want to find the electric field at a point P on the axial line (x-axis) at a distance $r$ from the center of the dipole.
+      </p>
+      <p>
+        The electric field at P due to the charge $+q$ (located at $x=+a$) is $\vec{E}_{+q}$. The distance from $+q$ to P is $(r-a)$. Since P is on the right of $+q$, $\vec{E}_{+q}$ points along the positive x-axis.
+      </p>
+      $$ E_{+q} = \frac{1}{4\pi\epsilon_0} \frac{q}{(r-a)^2} $$
+      <p>
+        The electric field at P due to the charge $-q$ (located at $x=-a$) is $\vec{E}_{-q}$. The distance from $-q$ to P is $(r+a)$. Since P is on the right of $-q$, $\vec{E}_{-q}$ points along the negative x-axis (towards $-q$).
+      </p>
+      $$ E_{-q} = \frac{1}{4\pi\epsilon_0} \frac{q}{(r+a)^2} $$
+      <p>
+        The net electric field $\vec{E}_{axial}$ at point P is the vector sum of $\vec{E}_{+q}$ and $\vec{E}_{-q}$. Since they are along the same line but in opposite directions, we can subtract their magnitudes (assuming positive x-direction as positive):
+      </p>
+      $$ E_{axial} = E_{+q} - E_{-q} $$
+      $$ E_{axial} = \frac{q}{4\pi\epsilon_0} \left[ \frac{1}{(r-a)^2} - \frac{1}{(r+a)^2} \right] $$
+      <p>
+        Combine the terms in the bracket:
+      </p>
+      $$ E_{axial} = \frac{q}{4\pi\epsilon_0} \left[ \frac{(r+a)^2 - (r-a)^2}{(r-a)^2 (r+a)^2} \right] $$
+      $$ E_{axial} = \frac{q}{4\pi\epsilon_0} \left[ \frac{(r^2+a^2+2ra) - (r^2+a^2-2ra)}{((r-a)(r+a))^2} \right] $$
+      $$ E_{axial} = \frac{q}{4\pi\epsilon_0} \left[ \frac{r^2+a^2+2ra - r^2-a^2+2ra}{(r^2-a^2)^2} \right] $$
+      $$ E_{axial} = \frac{q}{4\pi\epsilon_0} \left[ \frac{4ra}{(r^2-a^2)^2} \right] $$
+      <p>
+        Rearrange the terms to introduce the electric dipole moment $p = q \cdot (2a)$:
+      </p>
+      $$ E_{axial} = \frac{1}{4\pi\epsilon_0} \frac{2 \cdot (2aq) \cdot r}{(r^2-a^2)^2} $$
+      $$ E_{axial} = \frac{1}{4\pi\epsilon_0} \frac{2pr}{(r^2-a^2)^2} $$
+      <p>
+        For an ideal or short dipole, where the distance $r$ is much larger than the half-length of the dipole $a$ ($r \gg a$), we can neglect $a^2$ in the denominator:
+      </p>
+      $$ r^2-a^2 \approx r^2 $$
+      <p>
+        So, the expression simplifies to:
+      </p>
+      $$ E_{axial} \approx \frac{1}{4\pi\epsilon_0} \frac{2pr}{(r^2)^2} = \frac{1}{4\pi\epsilon_0} \frac{2pr}{r^4} $$
+      $$ E_{axial} = \frac{1}{4\pi\epsilon_0} \frac{2p}{r^3} $$
+      <p>
+        The direction of the electric field on the axial line is along the direction of the dipole moment $\vec{p}$ (from $-q$ to $+q$).
+      </p>
 
-      <h6>D. Addition and Subtraction Formulas:</h6>
-      <table>
-        <thead>
-          <tr>
-            <th>Property</th>
-            <th>Conditions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>$\tan^{-1}x + \tan^{-1}y = \tan^{-1}\left(\frac{x+y}{1-xy}\right)$</td>
-            <td>$xy < 1$</td>
-          </tr>
-          <tr>
-            <td>$\tan^{-1}x + \tan^{-1}y = \pi + \tan^{-1}\left(\frac{x+y}{1-xy}\right)$</td>
-            <td>$x > 0, y > 0, xy > 1$</td>
-          </tr>
-          <tr>
-            <td>$\tan^{-1}x + \tan^{-1}y = -\pi + \tan^{-1}\left(\frac{x+y}{1-xy}\right)$</td>
-            <td>$x < 0, y < 0, xy > 1$</td>
-          </tr>
-          <tr>
-            <td>$\tan^{-1}x - \tan^{-1}y = \tan^{-1}\left(\frac{x-y}{1+xy}\right)$</td>
-            <td>$xy > -1$</td>
-          </tr>
-          <tr>
-            <td>$\sin^{-1}x + \sin^{-1}y = \sin^{-1}\left(x\sqrt{1-y^2} + y\sqrt{1-x^2}\right)$</td>
-            <td>$x, y \in [-1, 1]$ and $x^2+y^2 \le 1$ or $xy<0$</td>
-          </tr>
-          <tr>
-            <td>$\sin^{-1}x - \sin^{-1}y = \sin^{-1}\left(x\sqrt{1-y^2} - y\sqrt{1-x^2}\right)$</td>
-            <td>$x, y \in [-1, 1]$ (specific conditions for range adjustment exist but are complex for general CBSE)</td>
-          </tr>
-          <tr>
-            <td>$\cos^{-1}x + \cos^{-1}y = \cos^{-1}\left(xy - \sqrt{1-x^2}\sqrt{1-y^2}\right)$</td>
-            <td>$x, y \in [-1, 1]$ and $x+y \ge 0$</td>
-          </tr>
-          <tr>
-            <td>$\cos^{-1}x - \cos^{-1}y = \cos^{-1}\left(xy + \sqrt{1-x^2}\sqrt{1-y^2}\right)$</td>
-            <td>$x, y \in [-1, 1]$ and $x \le y$</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h6>E. Double and Triple Angle Formulas:</h6>
-      <table>
-        <thead>
-          <tr>
-            <th>Property</th>
-            <th>Conditions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>$2\tan^{-1}x = \tan^{-1}\left(\frac{2x}{1-x^2}\right)$</td>
-            <td>$|x| < 1$</td>
-          </tr>
-          <tr>
-            <td>$2\tan^{-1}x = \sin^{-1}\left(\frac{2x}{1+x^2}\right)$</td>
-            <td>$|x| \le 1$</td>
-          </tr>
-          <tr>
-            <td>$2\tan^{-1}x = \cos^{-1}\left(\frac{1-x^2}{1+x^2}\right)$</td>
-            <td>$x \ge 0$</td>
-          </tr>
-          <tr>
-            <td>$3\sin^{-1}x = \sin^{-1}(3x - 4x^3)$</td>
-            <td>$x \in [-1/2, 1/2]$</td>
-          </tr>
-          <tr>
-            <td>$3\cos^{-1}x = \cos^{-1}(4x^3 - 3x)$</td>
-            <td>$x \in [1/2, 1]$</td>
-          </tr>
-          <tr>
-            <td>$3\tan^{-1}x = \tan^{-1}\left(\frac{3x-x^3}{1-3x^2}\right)$</td>
-            <td>$|x| < 1/\sqrt{3}$</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h4>2.2. Formula Table: Derivatives of Inverse Trigonometric Functions</h4>
-      <table>
-        <thead>
-          <tr>
-            <th>Function $y$</th>
-            <th>Derivative $\frac{dy}{dx}$</th>
-            <th>Conditions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>$y = \sin^{-1}x$</td>
-            <td>$\frac{1}{\sqrt{1-x^2}}$</td>
-            <td>$|x| < 1$</td>
-          </tr>
-          <tr>
-            <td>$y = \cos^{-1}x$</td>
-            <td>$-\frac{1}{\sqrt{1-x^2}}$</td>
-            <td>$|x| < 1$</td>
-          </tr>
-          <tr>
-            <td>$y = \tan^{-1}x$</td>
-            <td>$\frac{1}{1+x^2}$</td>
-            <td>$x \in \mathbb{R}$</td>
-          </tr>
-          <tr>
-            <td>$y = \cot^{-1}x$</td>
-            <td>$-\frac{1}{1+x^2}$</td>
-            <td>$x \in \mathbb{R}$</td>
-          </tr>
-          <tr>
-            <td>$y = \text{cosec}^{-1}x$</td>
-            <td>$-\frac{1}{|x|\sqrt{x^2-1}}$</td>
-            <td>$|x| > 1$</td>
-          </tr>
-          <tr>
-            <td>$y = \sec^{-1}x$</td>
-            <td>$\frac{1}{|x|\sqrt{x^2-1}}$</td>
-            <td>$|x| > 1$</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h3>2.3. Step-by-Step Derivations</h3>
-      <p>Here we provide detailed proofs for some of the key identities and derivatives of inverse trigonometric functions.</p>
-
-      <h4>2.3.1. Derivation of $\sin^{-1}x + \cos^{-1}x = \pi/2$</h4>
-      <p><strong>Proof:</strong></p>
+      <h4>3. Derivation of Electric Field due to an Infinitely Long Straight Uniformly Charged Wire using Gauss's Law</h4>
+      <p>
+        Consider an infinitely long, thin, straight wire with a uniform linear charge density $\lambda$ (charge per unit length). We want to find the electric field at a distance $r$ from the wire.
+      </p>
       <ol>
-        <li>Let $y = \sin^{-1}x$.</li>
-        <li>By the definition of inverse sine, this implies $\sin y = x$.</li>
-        <li>The principal value branch for $\sin^{-1}x$ is $[-\pi/2, \pi/2]$, so $y \in [-\pi/2, \pi/2]$.</li>
-        <li>We know the trigonometric identity relating sine and cosine: $\sin \theta = \cos(\pi/2 - \theta)$.</li>
-        <li>Substituting $y$ for $\theta$, we get $\sin y = \cos(\pi/2 - y)$.</li>
-        <li>Therefore, from step 2, we have $x = \cos(\pi/2 - y)$.</li>
-        <li>Now, we need to check the range of $(\pi/2 - y)$ to safely apply $\cos^{-1}$. Since $y \in [-\pi/2, \pi/2]$:
-          $$ -\pi/2 \le y \le \pi/2 $$
-          Multiplying by $-1$ reverses the inequalities:
-          $$ -\pi/2 \le -y \le \pi/2 $$
-          Adding $\pi/2$ to all parts:
-          $$ 0 \le \pi/2 - y \le \pi $$
+        <li>
+          <strong>Symmetry:</strong> Due to the cylindrical symmetry of the wire, the electric field $\vec{E}$ must be radial (perpendicular to the wire) and its magnitude must be the same at all points equidistant from the wire.
         </li>
-        <li>The range $[0, \pi]$ is the principal value branch for $\cos^{-1}x$. Thus, we can apply $\cos^{-1}$ to both sides of $x = \cos(\pi/2 - y)$:
-          $$ \cos^{-1}x = \pi/2 - y $$
+        <li>
+          <strong>Gaussian Surface:</strong> To apply Gauss's Law, we choose a cylindrical Gaussian surface of radius $r$ (the distance at which we want to find $\vec{E}$) and length $L$, coaxial with the wire.
         </li>
-        <li>Substitute back $y = \sin^{-1}x$:
-          $$ \cos^{-1}x = \pi/2 - \sin^{-1}x $$
-        </li>
-        <li>Rearranging the terms, we get the desired result:
-          $$ \sin^{-1}x + \cos^{-1}x = \pi/2 $$
-        </li>
-        <li><strong>Conditions:</strong> This identity holds for $x \in [-1, 1]$.</li>
-      </ol>
-
-      <h4>2.3.2. Derivation of $\tan^{-1}x + \tan^{-1}y = \tan^{-1}\left(\frac{x+y}{1-xy}\right)$</h4>
-      <p><strong>Proof:</strong></p>
-      <ol>
-        <li>Let $A = \tan^{-1}x$ and $B = \tan^{-1}y$.</li>
-        <li>By the definition of inverse tangent, this implies $x = \tan A$ and $y = \tan B$.</li>
-        <li>The principal value branch for $\tan^{-1}$ is $(-\pi/2, \pi/2)$, so $A \in (-\pi/2, \pi/2)$ and $B \in (-\pi/2, \pi/2)$.</li>
-        <li>Recall the sum formula for tangent from trigonometry:
-          $$ \tan(A+B) = \frac{\tan A + \tan B}{1 - \tan A \tan B} $$
-        </li>
-        <li>Substitute $x = \tan A$ and $y = \tan B$ into the identity:
-          $$ \tan(A+B) = \frac{x+y}{1-xy} $$
-        </li>
-        <li>Now, we need to apply $\tan^{-1}$ to both sides. For this, $A+B$ must lie within the principal value branch of $\tan^{-1}$, i.e., $(-\pi/2, \pi/2)$.</li>
-        <li>Since $A, B \in (-\pi/2, \pi/2)$, it follows that $A+B \in (-\pi, \pi)$.</li>
-        <li>Consider the condition $xy < 1$:
+        <li>
+          <strong>Electric Flux Calculation:</strong> The Gaussian cylinder has three surfaces: two flat circular end caps and one curved cylindrical surface.
           <ul>
-            <li>If $x>0, y>0$ and $xy<1$, then $A \in (0, \pi/2)$ and $B \in (0, \pi/2)$. Since $xy < 1$, $1-xy > 0$. Also, the maximum value of $A+B$ would be just under $\pi/2$ (e.g., if $x=1/\sqrt{3}, y=1/\sqrt{3}$, $A=\pi/6, B=\pi/6 \implies A+B=\pi/3$). This holds for $A+B \in (0, \pi/2)$.</li>
-            <li>If $x<0, y<0$ and $xy<1$, then $A \in (-\pi/2, 0)$ and $B \in (-\pi/2, 0)$. Since $xy < 1$, $1-xy > 0$. The minimum value of $A+B$ would be just above $-\pi/2$. This holds for $A+B \in (-\pi/2, 0)$.</li>
-            <li>If $x$ and $y$ have opposite signs, then $xy < 0$, which automatically satisfies $xy < 1$. In this case, $A+B \in (-\pi/2, \pi/2)$.</li>
+            <li>For the end caps: The electric field $\vec{E}$ is radial (perpendicular to the wire), while the area vector $d\vec{A}$ for the end caps is parallel to the wire. Thus, $\vec{E} \cdot d\vec{A} = E dA \cos(90^\circ) = 0$. The flux through the end caps is zero.</li>
+            <li>For the curved cylindrical surface: The electric field $\vec{E}$ is everywhere perpendicular to the wire, which means it is parallel to the area vector $d\vec{A}$ of any small element on the curved surface. So, $\vec{E} \cdot d\vec{A} = E dA \cos(0^\circ) = E dA$.
+              Since $E$ is constant over the curved surface (by symmetry), the total flux through the curved surface is:
+              $$ \Phi_E = \int E dA = E \int dA = E (2\pi r L) $$
+              where $2\pi r L$ is the area of the curved surface of the cylinder.
+            </li>
           </ul>
+          The total electric flux through the entire Gaussian surface is:
+          $$ \Phi_E = 0 + 0 + E(2\pi r L) = E(2\pi r L) $$
         </li>
-        <li>Therefore, when $xy < 1$, $A+B$ lies in $(-\pi/2, \pi/2)$, and we can directly apply $\tan^{-1}$:
-          $$ A+B = \tan^{-1}\left(\frac{x+y}{1-xy}\right) $$
+        <li>
+          <strong>Charge Enclosed:</strong> The charge enclosed by the Gaussian cylinder of length $L$ is given by the linear charge density $\lambda$ multiplied by the length $L$:
+          $$ Q_{enclosed} = \lambda L $$
         </li>
-        <li>Substitute back $A = \tan^{-1}x$ and $B = \tan^{-1}y$:
-          $$ \tan^{-1}x + \tan^{-1}y = \tan^{-1}\left(\frac{x+y}{1-xy}\right) $$
+        <li>
+          <strong>Applying Gauss's Law:</strong> According to Gauss's Law, the total electric flux through a closed surface is equal to the total charge enclosed divided by the permittivity of free space ($\epsilon_0$):
+          $$ \Phi_E = \frac{Q_{enclosed}}{\epsilon_0} $$
+          Substitute the expressions for $\Phi_E$ and $Q_{enclosed}$:
+          $$ E(2\pi r L) = \frac{\lambda L}{\epsilon_0} $$
+          Cancel out $L$ from both sides:
+          $$ E(2\pi r) = \frac{\lambda}{\epsilon_0} $$
+          Finally, solve for $E$:
+          $$ E = \frac{\lambda}{2\pi\epsilon_0 r} $$
         </li>
-        <li><strong>Conditions:</strong> This identity primarily holds for $xy < 1$. For cases where $xy > 1$, additional $\pm \pi$ adjustments are needed, as listed in the formula table above.</li>
       </ol>
+      <p>
+        The direction of the electric field is radially outward for a positively charged wire and radially inward for a negatively charged wire.
+      </p>
 
-      <h4>2.3.3. Derivation of $2\tan^{-1}x = \sin^{-1}\left(\frac{2x}{1+x^2}\right)$</h4>
-      <p><strong>Proof:</strong></p>
-      <ol>
-        <li>Let $y = \tan^{-1}x$.</li>
-        <li>This implies $x = \tan y$.</li>
-        <li>The principal value branch for $\tan^{-1}x$ is $(-\pi/2, \pi/2)$, so $y \in (-\pi/2, \pi/2)$.</li>
-        <li>We know the trigonometric identity for $\sin(2y)$ in terms of $\tan y$:
-          $$ \sin(2y) = \frac{2\tan y}{1+\tan^2 y} $$
-        </li>
-        <li>Substitute $x = \tan y$ into this identity:
-          $$ \sin(2y) = \frac{2x}{1+x^2} $$
-        </li>
-        <li>Now, we need to apply $\sin^{-1}$ to both sides. For this, $2y$ must lie within the principal value branch of $\sin^{-1}$, i.e., $[-\pi/2, \pi/2]$.</li>
-        <li>Since $y \in (-\pi/2, \pi/2)$, multiplying by 2 gives $2y \in (-\pi, \pi)$.</li>
-        <li>For $\sin^{-1}$ to be directly applicable without range adjustment, we need $2y \in [-\pi/2, \pi/2]$. This corresponds to $y \in [-\pi/4, \pi/4]$.</li>
-        <li>The condition $y \in [-\pi/4, \pi/4]$ means $\tan y \in [-1, 1]$. Since $x = \tan y$, this implies $x \in [-1, 1]$, or $|x| \le 1$.</li>
-        <li>Under the condition $|x| \le 1$, we have $2y \in [-\pi/2, \pi/2]$. Thus, we can apply $\sin^{-1}$ to both sides of $\sin(2y) = \frac{2x}{1+x^2}$:
-          $$ 2y = \sin^{-1}\left(\frac{2x}{1+x^2}\right) $$
-        </li>
-        <li>Substitute back $y = \tan^{-1}x$:
-          $$ 2\tan^{-1}x = \sin^{-1}\left(\frac{2x}{1+x^2}\right) $$
-        </li>
-        <li><strong>Conditions:</strong> This identity holds for $|x| \le 1$. (For $x>1$ or $x<-1$, adjustments by $\pi$ are needed for the equality to hold.)</li>
-      </ol>
-
-      <h4>2.3.4. Derivation of $\frac{d}{dx}(\sin^{-1}x) = \frac{1}{\sqrt{1-x^2}}$</h4>
-      <p><strong>Proof (using Implicit Differentiation):</strong></p>
-      <ol>
-        <li>Let $y = \sin^{-1}x$.</li>
-        <li>By the definition of inverse sine, we can write $x = \sin y$.</li>
-        <li>Differentiate both sides of the equation $x = \sin y$ with respect to $x$:
-          $$ \frac{d}{dx}(x) = \frac{d}{dx}(\sin y) $$
-        </li>
-        <li>The left side is $1$. For the right side, we use the chain rule (since $y$ is a function of $x$):
-          $$ 1 = \cos y \cdot \frac{dy}{dx} $$
-        </li>
-        <li>Solve for $\frac{dy}{dx}$:
-          $$ \frac{dy}{dx} = \frac{1}{\cos y} $$
-        </li>
-        <li>We need to express $\cos y$ in terms of $x$. We know the fundamental trigonometric identity $\sin^2 y + \cos^2 y = 1$.</li>
-        <li>From this, $\cos^2 y = 1 - \sin^2 y$.</li>
-        <li>Since we established $x = \sin y$, substitute $x$ into the equation:
-          $$ \cos^2 y = 1 - x^2 $$
-        </li>
-        <li>Taking the square root of both sides:
-          $$ \cos y = \pm\sqrt{1-x^2} $$
-        </li>
-        <li>Consider the principal value branch of $\sin^{-1}x$, which is $y \in [-\pi/2, \pi/2]$. In this interval, the cosine function, $\cos y$, is always positive (or zero at the endpoints). Therefore, we must choose the positive square root:
-          $$ \cos y = \sqrt{1-x^2} $$
-        </li>
-        <li>Substitute this expression for $\cos y$ back into the equation for $\frac{dy}{dx}$:
-          $$ \frac{dy}{dx} = \frac{1}{\sqrt{1-x^2}} $$
-        </li>
-        <li><strong>Conditions:</strong> This derivation is valid for $|x| < 1$. The derivative is undefined at $x = \pm 1$ because the denominator becomes zero.</li>
-      </ol>
-
-      <h4>2.3.5. Derivation of $\frac{d}{dx}(\tan^{-1}x) = \frac{1}{1+x^2}$</h4>
-      <p><strong>Proof (using Implicit Differentiation):</strong></p>
-      <ol>
-        <li>Let $y = \tan^{-1}x$.</li>
-        <li>By the definition of inverse tangent, we can write $x = \tan y$.</li>
-        <li>Differentiate both sides of the equation $x = \tan y$ with respect to $x$:
-          $$ \frac{d}{dx}(x) = \frac{d}{dx}(\tan y) $$
-        </li>
-        <li>The left side is $1$. For the right side, we use the chain rule:
-          $$ 1 = \sec^2 y \cdot \frac{dy}{dx} $$
-        </li>
-        <li>Solve for $\frac{dy}{dx}$:
-          $$ \frac{dy}{dx} = \frac{1}{\sec^2 y} $$
-        </li>
-        <li>We need to express $\sec^2 y$ in terms of $x$. We know the trigonometric identity $1 + \tan^2 y = \sec^2 y$.</li>
-        <li>Since we established $x = \tan y$, substitute $x$ into the identity:
-          $$ \sec^2 y = 1 + x^2 $$
-        </li>
-        <li>Substitute this expression for $\sec^2 y$ back into the equation for $\frac{dy}{dx}$:
-          $$ \frac{dy}{dx} = \frac{1}{1+x^2} $$
-        </li>
-        <li><strong>Conditions:</strong> This derivation is valid for all $x \in \mathbb{R}$, as $1+x^2$ is always positive and non-zero.</li>
-      </ol>
-
-      <p>This concludes the exhaustive formula table and detailed derivations for the chapter on Inverse Trigonometric Functions.</p>
     </article>
   </div>
 </section>
