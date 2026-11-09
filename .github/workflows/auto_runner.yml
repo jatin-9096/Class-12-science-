@@ -2,6 +2,7 @@ name: Dynamic Website Builder
 
 on:
   schedule:
+    # 24x7 safety cron backup: Har 2 ghante apne aap check karega
     - cron: '0 */2 * * *'
   workflow_dispatch:
 
@@ -10,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: write
 
     steps:
       - name: Checkout Repository
@@ -24,13 +26,24 @@ jobs:
         run: pip install google-genai beautifulsoup4
 
       - name: Execute Builder
+        id: builder
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python smart_agent.py
 
       - name: Commit and Push
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "Shorveer-Bot"
+          git config --global user.email "bot@shorveernotes.local"
           git add -A
-          git diff --staged --quiet || (git commit -m "Auto: Generated missing chapter from website links [skip ci]" && git push origin main)
+          git diff --staged --quiet || (git commit -m "Auto: Generated chapter with branded Shorveer Notes layout [skip ci]" && git push origin main)
+
+      - name: Trigger Next Page Automatically (20s Cooling Gap)
+        if: steps.builder.outputs.has_more == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Remaining chapters detected. Pausing for 20 seconds to protect API quota..."
+          sleep 20
+          echo "Triggering next chapter build automatically..."
+          gh workflow run "auto_runner.yml" --ref main
