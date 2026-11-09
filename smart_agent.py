@@ -50,24 +50,31 @@ SUBJECT_SIGNATURES = {
 IGNORE_KEYWORDS = ["privacy", "terms", "cookie", "disclaimer", "about", "contact", "framework"]
 
 def call_gemini_with_fallback(prompt, max_retries=3):
-    models = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+    # Official verified Gemini model identifiers
+    models = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro"]
+    
     for model_name in models:
-        for attempt in range(max_retries):
+        for attempt in range(1, max_retries + 1):
             try:
+                print(f"Calling model: {model_name} (Attempt {attempt}/{max_retries})...")
                 response = client.models.generate_content(
                     model=model_name,
                     contents=prompt
                 )
-                return response.text
-            except (ServerError, APIError) as e:
-                print(f"Demand spike on {model_name} (Attempt {attempt+1}). Retrying in 10s...")
-                time.sleep(10)
+                if response and response.text:
+                    return response.text
             except Exception as e:
-                print(f"Error calling {model_name}: {e}")
-                time.sleep(5)
-                break
+                err_msg = str(e)
+                print(f"Error on {model_name} (Attempt {attempt}): {err_msg}")
+                # Rate limit (429) ya Server overload (503) par 15s ruk kar retry
+                if "429" in err_msg or "ResourceExhausted" in err_msg or "503" in err_msg or "Demand" in err_msg:
+                    print("Quota/Rate-limit hit, waiting 20s before retry...")
+                    time.sleep(20)
+                else:
+                    time.sleep(6)
+                    
     raise RuntimeError("All Gemini API models failed after retries.")
-
+    
 def clean_code(raw_text):
     text = raw_text.strip()
     if text.startswith("```html"):
