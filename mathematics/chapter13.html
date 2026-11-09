@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Jatin Sandilya">
+  <title>Chapter13 · Class 12 Mathematics | Shorveer Notes</title>
+
+  
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+  <!-- Fonts directly aligned with main site -->
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
+
+  <!-- Main Website Stylesheet: Pure styling without inline overrides -->
+  <link rel="stylesheet" href="../style.css">
+
+  <script>
+    // Theme Engine: Reads user choice from localStorage (notebook, chalkboard, blueprint, sunset)
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('shorveer-theme-name') || 'sunset';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.classList.add('js');
+      } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'sunset');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ============ SITE HEADER ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="../index.html" aria-label="Shorveer Notes home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+          </svg>
+        </span>
+        <span class="brand-name">Shorveer<em>Notes</em></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="index.html" style="color:var(--ink); font-weight:700;">Mathematics Hub</a>
+        <a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero Title -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="kicker">
+          <span class="dot"></span>
+          <span>CBSE Class 12 · Mathematics Hub</span>
+        </div>
+        <h1>Chapter13</h1>
+        <p class="hero-description">
+          Detailed theory breakdowns, verified derivations, and board examination questions curated for precision.
+        </p>
+        <div class="hero-note">
+          <span>Curated by <strong>Jatin Sandilya</strong> · High-Yield Board Solutions</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Generated Content Sections -->
+    <section class="section container">
+  <div class="section-head">
+    <span class="section-eyebrow">Concept Core</span>
+    <h2>1. Theoretical Principles & Definitions</h2>
+  </div>
+  <div class="real-life">
+    <article class="rl-card" style="--rl-color: #bf5a3c">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Fundamental Overview of Probability</div>
+        <p class="rl-text">Probability is a measure of the likelihood of an event occurring. In Class 12, we extend basic concepts to conditional probability, independent events, Bayes' Theorem, random variables, and probability distributions. These tools are crucial for understanding uncertain outcomes in various real-world scenarios.</p>
+      </div>
+    </article>
+    <article class="rl-card" style="--rl-color: #3cbfa2">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Conditional Probability</div>
+        <p class="rl-text">The probability of occurrence of an event A, given that another event B has already occurred, is called the conditional probability of A given B, denoted by $P(A|B)$. It's defined as $P(A|B) = \frac{P(A \cap B)}{P(B)}$, provided $P(B) \neq 0$. Similarly, $P(B|A) = \frac{P(A \cap B)}{P(A)}$ if $P(A) \neq 0$.</p>
+      </div>
+    </article>
+    <article class="rl-card" style="--rl-color: #5a3cbf">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Independent Events</div>
+        <p class="rl-text">Two events A and B are said to be independent if the occurrence or non-occurrence of one does not affect the probability of the occurrence of the other. Mathematically, A and B are independent if and only if $P(A \cap B) = P(A) \cdot P(B)$. If $P(A|B) = P(A)$ (given $P(B) \neq 0$) or $P(B|A) = P(B)$ (given $P(A) \neq 0$), the events are independent.</p>
+      </div>
+    </article>
+    <article class="rl-card" style="--rl-color: #bf9e3c">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Theorem of Total Probability</div>
+        <p class="rl-text">If $E_1, E_2, \dots, E_n$ are $n$ mutually exclusive and exhaustive events associated with a random experiment, and A is any event associated with the experiment, then $P(A) = P(E_1)P(A|E_1) + P(E_2)P(A|E_2) + \dots + P(E_n)P(A|E_n)$. This theorem is fundamental for calculating the probability of an event A that can occur under several different conditions.</p>
+      </div>
+    </article>
+    <article class="rl-card" style="--rl-color: #3c5abf">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Bayes' Theorem</div>
+        <p class="rl-text">Bayes' Theorem is a powerful result that provides a way to revise existing predictions or theories (update probabilities) given new or additional evidence. If $E_1, E_2, \dots, E_n$ are mutually exclusive and exhaustive events, and A is any event, then the posterior probability of $E_i$ given A is $P(E_i|A) = \frac{P(E_i)P(A|E_i)}{\sum_{j=1}^{n} P(E_j)P(A|E_j)}$.</p>
+      </div>
+    </article>
+    <article class="rl-card" style="--rl-color: #bf3c5a">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Random Variables and Probability Distributions</div>
+        <p class="rl-text">A <strong>random variable</strong> is a real-valued function whose domain is the sample space of a random experiment. It can be discrete (takes only a finite or countably infinite number of values) or continuous. A <strong>probability distribution</strong> of a random variable is a table or function that gives the probabilities of all possible values of the random variable. The sum of all probabilities in a distribution must be 1.</p>
+      </div>
+    </article>
+    <article class="rl-card" style="--rl-color: #7bbf3c">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Mean and Variance of a Random Variable</div>
+        <p class="rl-text">The <strong>mean</strong> (or expectation) of a discrete random variable X, denoted $E(X)$ or $\mu$, is a measure of its central tendency, calculated as $E(X) = \sum x_i P(X=x_i)$. The <strong>variance</strong> of X, denoted $Var(X)$ or $\sigma^2$, measures the spread or dispersion of the variable around its mean. It's calculated as $Var(X) = E(X^2) - [E(X)]^2$, where $E(X^2) = \sum x_i^2 P(X=x_i)$.</p>
+      </div>
+    </article>
+    <article class="rl-card" style="--rl-color: #3c7bbf">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Bernoulli Trials and Binomial Distribution</div>
+        <p class="rl-text">A <strong>Bernoulli trial</strong> is a random experiment which has only two possible outcomes, "success" or "failure", and the probability of success remains the same in every trial. A sequence of independent Bernoulli trials is a fundamental concept. The <strong>Binomial distribution</strong> describes the number of successes in a fixed number (n) of independent Bernoulli trials, where each trial has the same probability of success (p). It is denoted $B(n, p)$.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head">
+    <span class="section-eyebrow">High Yield Formulas</span>
+    <h2>2. Essential Equations & Derivations</h2>
+  </div>
+  <div class="resource-grid">
+    <article class="resource">
+      <h3>Conditional Probability</h3>
+      <p>Given events A and B with $P(B) > 0$, the conditional probability of A given B is:</p>
+      $$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
+      <p>Similarly, if $P(A) > 0$, then $P(B|A) = \frac{P(A \cap B)}{P(A)}$.</p>
+    </article>
+    <article class="resource">
+      <h3>Multiplication Theorem on Probability</h3>
+      <p>For any two events A and B, the probability of their simultaneous occurrence is:</p>
+      $$P(A \cap B) = P(A)P(B|A) = P(B)P(A|B)$$
+      <p>If A and B are independent events, then $P(B|A) = P(B)$ and $P(A|B) = P(A)$, so the formula simplifies to:</p>
+      $$P(A \cap B) = P(A)P(B)$$
+    </article>
+    <article class="resource">
+      <h3>Theorem of Total Probability</h3>
+      <p>Let $E_1, E_2, \dots, E_n$ be a partition of the sample space S (i.e., mutually exclusive and exhaustive events with $P(E_i) > 0$ for all i). For any event A associated with S:</p>
+      $$P(A) = \sum_{j=1}^{n} P(E_j)P(A|E_j)$$
+      $$P(A) = P(E_1)P(A|E_1) + P(E_2)P(A|E_2) + \dots + P(E_n)P(A|E_n)$$
+    </article>
+    <article class="resource">
+      <h3>Bayes' Theorem</h3>
+      <p>Let $E_1, E_2, \dots, E_n$ be a partition of the sample space S. Let A be any event with $P(A) > 0$. The probability of event $E_i$ occurring, given that event A has occurred, is:</p>
+      $$P(E_i|A) = \frac{P(E_i)P(A|E_i)}{\sum_{j=1}^{n} P(E_j)P(A|E_j)}$$
+    </article>
+    <article class="resource">
+      <h3>Probability Distribution of a Discrete Random Variable</h3>
+      <p>For a discrete random variable X with values $x_1, x_2, \dots, x_n$ and corresponding probabilities $P(X=x_1), P(X=x_2), \dots, P(X=x_n)$, the following conditions must hold:</p>
+      <ol>
+        <li>$0 \le P(X=x_i) \le 1$ for all i</li>
+        <li>$\sum_{i=1}^{n} P(X=x_i) = 1$</li>
+      </ol>
+    </article>
+    <article class="resource">
+      <h3>Mean (Expectation) of a Discrete Random Variable</h3>
+      <p>For a discrete random variable X with probability distribution $P(X=x_i)$, its mean (or expectation) is:</p>
+      $$E(X) = \sum_{i=1}^{n} x_i P(X=x_i)$$
+    </article>
+    <article class="resource">
+      <h3>Variance of a Discrete Random Variable</h3>
+      <p>The variance of a discrete random variable X is given by:</p>
+      $$Var(X) = E(X^2) - [E(X)]^2$$
+      <p>where $E(X^2) = \sum_{i=1}^{n} x_i^2 P(X=x_i)$. The standard deviation is $\sigma_X = \sqrt{Var(X)}$.</p>
+    </article>
+    <article class="resource">
+      <h3>Binomial Distribution</h3>
+      <p>If X follows a Binomial distribution $B(n, p)$ (n trials, p probability of success), the probability of getting exactly k successes is:</p>
+      $$P(X=k) = C(n, k) p^k (1-p)^{n-k}, \quad k = 0, 1, \dots, n$$
+      <p>where $C(n, k) = \frac{n!}{k!(n-k)!}$.</p>
+      <p>The mean of a Binomial distribution is:</p>
+      $$E(X) = np$$
+      <p>The variance of a Binomial distribution is:</p>
+      $$Var(X) = np(1-p)$$
+    </article>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head">
+    <span class="section-eyebrow">Board Examination Questions</span>
+    <h2>3. Solved High-Yield CBSE PYQs</h2>
+  </div>
+  <div class="resource-grid">
+    <article class="resource">
+      <div class="resource-icon">Q1</div>
+      <h3>Conditional Probability and Independent Events</h3>
+      <p><strong>Problem:</strong> A die is thrown. Let E be the event that 'the number appearing is a multiple of 3' and F be the event that 'the number appearing is even'. Are E and F independent?</p>
+      <p><strong>Step-by-step Solution:</strong><br>
+        The sample space S = {1, 2, 3, 4, 5, 6}.<br>
+        Event E: 'number is a multiple of 3' = {3, 6}. So, $P(E) = \frac{2}{6} = \frac{1}{3}$.<br>
+        Event F: 'number is even' = {2, 4, 6}. So, $P(F) = \frac{3}{6} = \frac{1}{2}$.<br>
+        Event $E \cap F$: 'number is a multiple of 3 and even' = {6}. So, $P(E \cap F) = \frac{1}{6}$.<br>
+        For E and F to be independent, $P(E \cap F)$ must be equal to $P(E)P(F)$.<br>
+        $P(E)P(F) = \frac{1}{3} \times \frac{1}{2} = \frac{1}{6}$.<br>
+        Since $P(E \cap F) = P(E)P(F)$, the events E and F are independent.</p>
+    </article>
+    <article class="resource">
+      <div class="resource-icon">Q2</div>
+      <h3>Bayes' Theorem Application</h3>
+      <p><strong>Problem:</strong> A speaks truth in 75% of the cases, and B in 80% of the cases. In what percentage of cases are they likely to contradict each other in stating the same fact?</p>
+      <p><strong>Step-by-step Solution:</strong><br>
+        Let A be the event that A speaks truth, and B be the event that B speaks truth.<br>
+        $P(A) = 0.75 \implies P(\text{A lies}) = 1 - 0.75 = 0.25$.<br>
+        $P(B) = 0.80 \implies P(\text{B lies}) = 1 - 0.80 = 0.20$.<br>
+        They contradict each other when:
+        <br>(i) A speaks truth and B lies, OR
+        <br>(ii) A lies and B speaks truth.<br>
+        Since A and B speaking truth are independent events:
+        <br>Case (i): $P(\text{A speaks truth and B lies}) = P(A) \cdot P(\text{B lies}) = 0.75 \times 0.20 = 0.15$.
+        <br>Case (ii): $P(\text{A lies and B speaks truth}) = P(\text{A lies}) \cdot P(B) = 0.25 \times 0.80 = 0.20$.<br>
+        The probability that they contradict each other is the sum of these probabilities (mutually exclusive outcomes):<br>
+        $P(\text{Contradiction}) = 0.15 + 0.20 = 0.35$.<br>
+        Therefore, they are likely to contradict each other in 35% of the cases.</p>
+    </article>
+    <article class="resource">
+      <div class="resource-icon">Q3</div>
+      <h3>Binomial Distribution</h3>
+      <p><strong>Problem:</strong> A pair of dice is thrown 4 times. If getting a doublet is considered a success, find the probability of 2 successes.</p>
+      <p><strong>Step-by-step Solution:</strong><br>
+        When a pair of dice is thrown, the total number of outcomes is $6 \times 6 = 36$.<br>
+        A doublet means getting the same number on both dice: {(1,1), (2,2), (3,3), (4,4), (5,5), (6,6)}. There are 6 doublets.<br>
+        Probability of getting a doublet (success), $p = \frac{6}{36} = \frac{1}{6}$.<br>
+        Probability of not getting a doublet (failure), $q = 1 - p = 1 - \frac{1}{6} = \frac{5}{6}$.<br>
+        The number of times the dice are thrown, $n = 4$.<br>
+        We need to find the probability of 2 successes, so $k = 2$.<br>
+        Using the Binomial distribution formula $P(X=k) = C(n, k) p^k q^{n-k}$:<br>
+        $P(X=2) = C(4, 2) \left(\frac{1}{6}\right)^2 \left(\frac{5}{6}\right)^{4-2}$<br>
+        $P(X=2) = \frac{4!}{2!(4-2)!} \left(\frac{1}{6}\right)^2 \left(\frac{5}{6}\right)^2$<br>
+        $P(X=2) = \frac{4 \times 3}{2 \times 1} \times \frac{1}{36} \times \frac{25}{36}$<br>
+        $P(X=2) = 6 \times \frac{1}{36} \times \frac{25}{36}$<br>
+        $P(X=2) = \frac{1}{6} \times \frac{25}{36} = \frac{25}{216}$.<br>
+        The probability of 2 successes is $\frac{25}{216}$.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head">
+    <span class="section-eyebrow">Fast Revision</span>
+    <h2>4. Quick Mind-Map & Summary</h2>
+  </div>
+  <div class="trust">
+    <div class="trust-inner container">
+      <div class="trust-item"><b>Conditional Probability</b> Remember $P(A|B) = P(A \cap B) / P(B)$ is for 'A given B'. If A and B are independent, $P(A \cap B) = P(A)P(B)$, and $P(A|B) = P(A)$.</div>
+      <div class="trust-item"><b>Total Probability & Bayes' Theorem</b> Use Total Probability to find $P(A)$ when A depends on several prior events ($E_i$). Use Bayes' Theorem to find inverse probability $P(E_i|A)$, i.e., probability of a cause given an effect.</div>
+      <div class="trust-item"><b>Random Variables & Distributions</b> Discrete random variables map outcomes to numbers. A probability distribution lists all outcomes and their probabilities ($\sum P(x_i) = 1$). Calculate Mean ($E(X) = \sum x_i P(x_i)$) and Variance ($Var(X) = E(X^2) - [E(X)]^2$) to describe central tendency and spread.</div>
+      <div class="trust-item"><b>Binomial Distribution</b> Applied to fixed number (n) of independent Bernoulli trials with constant success probability (p). Use $P(X=k) = C(n, k) p^k (1-p)^{n-k}$. Know mean ($np$) and variance ($np(1-p)$) formulas.</div>
+      <div class="trust-item"><b>Board Tip</b> Distinguish between 'mutually exclusive' ($P(A \cap B) = 0$) and 'independent' ($P(A \cap B) = P(A)P(B)$). They are not the same! If two events are mutually exclusive and have non-zero probabilities, they cannot be independent.</div>
+    </div>
+  </div>
+</section>
+
+    <!-- Bottom Hub Navigation -->
+    <section class="final-cta container reveal">
+      <div class="cta-content">
+        <h2>Completed this chapter? <em>Return to the hub.</em></h2>
+        <p>Check formula sheets, other syllabus chapters, and high-yield study resources.</p>
+        <a class="btn btn-gold" href="index.html">
+          Back to Mathematics Hub
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="sn-footer">
+    <div class="sn-footer__container container">
+      <div class="sn-footer__grid">
+        
+        <div class="sn-footer__brand">
+          <a class="sn-brand__logo" href="../index.html" aria-label="Shorveer Notes home">
+            <span class="sn-brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+              </svg>
+            </span>
+            <span class="sn-brand__title-txt">Shorveer<em>Notes</em></span>
+          </a>
+
+          <h2 class="sn-brand__heading">Class 12 Science, Clearly Organised</h2>
+          <p class="sn-brand__sub">A student-focused learning platform for Class 12 Science notes, derivations, and board examination preparation.</p>
+
+          <div class="sn-brand__badge-box">
+            <div class="sn-founder-pill">
+              <span class="sn-founder-tag">JS</span>
+              <span class="sn-founder-name">Created by <strong>Jatin Sandilya</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sn-nav-col">
+          <h3 class="sn-col-head">Portals</h3>
+          <ul class="sn-col-links">
+            <li><a href="../physics/index.html">Physics Hub</a></li>
+            <li><a href="../chemistry/index.html">Chemistry Hub</a></li>
+            <li><a href="../mathematics/index.html">Mathematics Hub</a></li>
+          </ul>
+        </div>
+
+        <div class="sn-nav-col">
+          <h3 class="sn-col-head">Connect</h3>
+          <ul class="sn-col-links">
+            <li><a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ on YouTube</a></li>
+            <li><a href="mailto:support.shorveernotes@gmail.com">Contact Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="sn-bottom-bar">
+      <div class="sn-bottom-container container">
+        <p>&copy; 2026 Shorveer Notes. All rights reserved.</p>
+        <p>Built with pride in India 🇮🇳</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
