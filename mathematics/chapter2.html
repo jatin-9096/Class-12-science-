@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics: Chapter 02 – Inverse Trigonometric Functions</title>
+    <meta name="description" content="Detailed notes and CBSE board exam questions for Class 12 Mathematics Chapter 02: Inverse Trigonometric Functions. Includes formulas, definitions, and step-by-step solutions.">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts for Inter (used in footer) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Georgia&display=swap" rel="stylesheet">
+
+    <!-- MathJax Configuration -->
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+
+    <!-- Global Styles (Minimal, for overall page structure) -->
+    <style>
+        :root {
+            --paper: #fdfaf3; /* Light cream/paper color */
+            --ink: #1c1c1a;   /* Dark almost black text */
+            --primary-accent: #e8b64c; /* ShorveerNotes logo color */
+            --secondary-accent: #bf5a3c; /* Link hover color */
+        }
+        body {
+            font-family: "Inter", system-ui, -apple-system, sans-serif;
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--ink);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            line-height: 1.2;
+        }
+        h1 { font-size: 2.5em; }
+        h2 { font-size: 2em; }
+        h3 { font-size: 1.5em; }
+        a {
+            color: var(--primary-accent);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: var(--secondary-accent);
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+        strong {
+            font-weight: 600;
+        }
+        em {
+            font-style: italic;
+            color: #6b6858;
+        }
+
+        /* Navbar Specific Styles */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: var(--paper);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--ink);
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+        .nav .brand-mark {
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            background: #1c1c1a;
+            display: grid;
+            place-items: center;
+        }
+        .nav .brand-mark svg {
+            width: 18px;
+            height: 18px;
+        }
+        .nav .brand-name em {
+            font-weight: 400;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        .nav-links a {
+            color: var(--ink);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: var(--primary-accent);
+            text-decoration: none;
+        }
+        .nav-actions {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--ink);
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+        }
+        .nav-icon:hover {
+            color: var(--primary-accent);
+        }
+        .palette-dot {
+            display: block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary-accent); /* Example color */
+            border: 2px solid var(--ink);
+        }
+        .mobile-toggle {
+            display: none; /* Hide on larger screens */
+        }
+
+        /* Basic Responsive Navbar */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide main links on mobile */
+            }
+            .nav-actions {
+                gap: 10px;
+            }
+            .mobile-toggle {
+                display: block; /* Show mobile toggle button */
+            }
+        }
+
+        /* Content Specific Styles for better readability */
+        .chapter-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .chapter-section h2 {
+            color: var(--primary-accent);
+            border-bottom: 2px solid rgba(0,0,0,0.05);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .definition, .theorem, .example, .summary {
+            background: #fdfdfd;
+            border-left: 4px solid var(--primary-accent);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+        .definition h3, .theorem h3, .example h3, .summary h3 {
+            color: var(--primary-accent);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .solution {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .solution strong {
+            color: #007bff; /* A nice blue for solution header */
+        }
+        .math {
+            font-family: 'KaTeX_Main', serif; /* Use MathJax's font for consistency */
+        }
+        .quick-revision ul {
+            list-style: disc;
+            padding-left: 25px;
+        }
+        .quick-revision li {
+            margin-bottom: 8px;
+        }
+
+    </style>
+
+    <!-- Meadow Footer Styles (Integrated directly with Shorveer design tokens) -->
+    <style>
+    /* Meadow Footer Styles (Integrated directly with Shorveer design tokens) */
+    .footer {
+      --u: min(100vw / 1440, 100vh / 672);
+      --u: min(100vw / 1440, 100svh / 672);
+      position: relative;
+      height: 100vh;
+      height: 100svh;
+      background: var(--paper, #fdfaf3);
+      overflow: hidden;
+      isolation: isolate;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+    }
+    .footer__stage {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .footer__video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 100%;
+      transform: translateY(9%);
+    }
+    .footer__stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, var(--paper, #fdfaf3) 0%, rgb(253 250 243 / .96) 26%, rgb(253 250 243 / .72) 44%, rgb(253 250 243 / 0) 70%);
+      pointer-events: none;
+    }
+    /* Original .footer__wordmark is text-based. Keeping it but not applying the class to the SVG element. */
+    .footer__wordmark {
+      position: absolute;
+      left: 50%;
+      bottom: calc(-2 * var(--u));
+      transform: translateX(-50%);
+      z-index: 1;
+      margin: 0;
+      font-size: calc(390 * var(--u));
+      font-weight: 600;
+      line-height: .74;
+      letter-spacing: -0.045em;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      color: rgb(232 234 250 / .4);
+      background: linear-gradient(to bottom, rgb(255 255 255 / .78), rgb(214 218 246 / .36) 48%, rgb(255 255 255 / .62));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 calc(-1 * var(--u)) 0 rgb(255 255 255 / .55)) drop-shadow(0 0 calc(18 * var(--u)) rgb(190 200 255 / .45));
+    }
+
+    /* Custom styles for the SVG Wordmark to match the original .footer__wordmark's positioning and visual intent */
+    .footer-wordmark-svg-wrap {
+      position: absolute;
+      left: 50%;
+      /* Adjust bottom positioning to visually align with the original text wordmark */
+      bottom: calc(min(-2 * var(--u), -20px)); /* min value for small screens */
+      transform: translateX(-50%);
+      z-index: 1;
+      width: 100%;
+      max-width: calc(1200 * var(--u)); /* Scale with --u */
+      height: auto;
+      pointer-events: none;
+      user-select: none;
+    }
+    .footer-wordmark-svg-wrap .svg-text {
+      font-family: "Georgia", serif; /* Ensure Georgia font is used for SVG text */
+      font-size: calc(116 * var(--u)); /* Scale font size with --u */
+      font-weight: 700;
+      letter-spacing: calc(-3 * var(--u)); /* Scale letter spacing */
+      text-anchor: middle;
+      fill: url(#snWordmarkGrad); /* Use the gradient defined in the SVG */
+      filter: drop-shadow(0 calc(4 * var(--u)) calc(20 * var(--u)) rgba(0, 0, 0, 0.15)); /* Scale shadow */
+    }
+
+
+    .footer__fog {
+      position: absolute;
+      inset: auto 0 0 0;
+      z-index: 2;
+      height: 17%;
+      pointer-events: none;
+      background: linear-gradient(to top, #e2e3f1 0%, rgb(226 227 241 / .6) 30%, rgb(226 227 241 / 0) 100%);
+    }
+    .footer__content {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: calc(440 * var(--u)) calc(240 * var(--u)) calc(240 * var(--u)) 1fr;
+      align-items: start;
+      width: calc(1440 * var(--u));
+      margin: 0 auto;
+      padding: calc(86 * var(--u)) calc(100 * var(--u)) 0 calc(160 * var(--u));
+    }
+    .footer-brand .brand__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(10 * var(--u));
+      font-size: calc(17 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      text-decoration: none; /* Add for consistency */
+      color: inherit; /* Add for consistency */
+    }
+    /* Specific styling for the actual text in the logo */
+    .footer-brand .brand__logo span:first-of-type { /* ShorveerNotes */
+        font-size: calc(22 * var(--u)); /* Adjusted to match original sn-brand__title-txt */
+        font-weight: 700;
+        letter-spacing: -0.02em;
+    }
+    .footer-brand .brand__logo span:first-of-type em { /* em within ShorveerNotes */
+        font-style: italic;
+        color: #6b6858;
+        font-weight: 400;
+    }
+    .footer-brand .brand__mark {
+      width: calc(30 * var(--u));
+      height: calc(30 * var(--u));
+      border-radius: calc(8 * var(--u));
+      background: linear-gradient(to bottom, #2b2b2b, #0a0a0a 55%);
+      box-shadow: 0 calc(1 * var(--u)) calc(2 * var(--u)) rgb(0 0 0 / .25);
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-brand .brand__mark svg {
+      width: 60%;
+      height: 60%;
+    }
+    .footer-brand .brand__title { /* This maps to sn-brand__heading */
+      margin-top: calc(19 * var(--u));
+      font-size: calc(20 * var(--u)); /* Adjusted to calc(22 * var(--u)) from sn-brand__heading */
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.045em; /* Adjusted to -0.02em from sn-brand__heading */
+    }
+    .footer-brand .brand__text { /* This maps to sn-brand__sub */
+      max-width: calc(412 * var(--u));
+      margin-top: calc(18 * var(--u));
+      color: #6f6f6c; /* Adjusted to #55534c */
+      font-size: calc(13.7 * var(--u)); /* Adjusted to calc(14 * var(--u)) */
+      line-height: 1.43; /* Adjusted to 1.55 */
+      letter-spacing: -0.012em;
+    }
+
+    /* Custom elements from the provided footer structure that don't have direct matches */
+    .footer-brand .brand__badge-box { /* Container for CTA and founder pill */
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: calc(12 * var(--u));
+        margin-bottom: calc(16 * var(--u));
+    }
+    .footer-brand .brand__cta { /* Maps to sn-yt-btn */
+      display: inline-flex;
+      align-items: center;
+      gap: calc(7 * var(--u)); /* Adjusted from 6 to 7 */
+      height: calc(32.5 * var(--u)); /* Adjusted from 32.5 to 34 (based on 8px padding) */
+      padding: calc(8 * var(--u)) calc(15 * var(--u)); /* Changed from 0 to 8px padding */
+      border-radius: calc(8 * var(--u)); /* Adjusted from 7 to 8 */
+      background: #0c0c0c; /* Adjusted to #0f0f0f */
+      color: #fff !important; /* Important for white text */
+      font-size: calc(11.8 * var(--u)); /* Adjusted to calc(13 * var(--u)) */
+      font-weight: 500; /* Adjusted to 600 */
+      letter-spacing: -0.01em;
+      transition: background .2s, transform .2s;
+      text-decoration: none;
+    }
+    .footer-brand .brand__cta:hover {
+      background: #262626; /* Adjusted to #222 */
+      transform: translateY(calc(-2 * var(--u))); /* Adjusted from -1px to -2px */
+    }
+    .footer-brand .brand__cta svg {
+      width: calc(13 * var(--u)); /* Adjusted to calc(16 * var(--u)) */
+      height: calc(13 * var(--u)); /* Adjusted to calc(16 * var(--u)) */
+      fill: #ff0000; /* Specific YouTube color */
+      margin-top: 0; /* No negative margin */
+    }
+
+    .footer-brand .footer-founder-pill { /* Custom element based on sn-founder-pill */
+        display: inline-flex;
+        align-items: center;
+        gap: calc(8 * var(--u));
+        padding: calc(6 * var(--u)) calc(14 * var(--u));
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: calc(30 * var(--u));
+        font-size: calc(13 * var(--u));
+        backdrop-filter: blur(8px);
+    }
+    .footer-brand .founder-tag {
+        background: #1c1c1a;
+        color: #ffffff;
+        font-size: calc(10 * var(--u));
+        font-weight: 800;
+        padding: calc(3 * var(--u)) calc(6 * var(--u));
+        border-radius: calc(5 * var(--u));
+    }
+    .footer-brand .founder-name strong {
+        color: #000000;
+    }
+
+    /* Original styles for elements below. No direct mapping for brand__copy, brand__by, etc. */
+    .footer-brand .brand__copy {
+      margin-top: calc(23 * var(--u));
+      color: #9c9c98;
+      font-size: calc(12.2 * var(--u));
+      letter-spacing: 0.01em;
+      display: none; /* Hide as it's not in the new structure */
+    }
+    .footer-brand .brand__by {
+      display: flex;
+      align-items: center;
+      gap: calc(5 * var(--u));
+      margin-top: calc(21 * var(--u));
+      font-size: calc(11.8 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      display: none; /* Hide as it's not in the new structure */
+    }
+    .footer-brand .brand__heart { font-size: .95em; }
+    .footer-brand .brand__author {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(6 * var(--u));
+      margin-left: calc(5 * var(--u));
+    }
+    .footer-brand .brand__avatar {
+      width: calc(23 * var(--u));
+      height: calc(23 * var(--u));
+      border-radius: 50%;
+      overflow: hidden;
+      background: #e3e3e0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-brand .brand__avatar svg { width: 100%; height: 100%; display: block; }
+    .footer-brand .brand__status { /* Maps to sn-chips-row */
+      display: flex;
+      flex-wrap: wrap;
+      gap: calc(8 * var(--u)); /* Matched from sn-chips-row */
+      margin-top: calc(16 * var(--u));
+      list-style: none;
+      padding: 0;
+    }
+    .footer-brand .chip { /* Maps to sn-chip */
+      display: inline-flex;
+      align-items: center;
+      gap: calc(6 * var(--u));
+      height: calc(25 * var(--u)); /* Adjusted to calc(28 * var(--u)) from 25 */
+      padding: 0 calc(10 * var(--u)); /* Adjusted to calc(5 * var(--u)) calc(12 * var(--u)) from 0 */
+      border: 1px solid rgb(12 12 12 / .12); /* Adjusted to rgb(0 0 0 / .1) from rgb(12 12 12 / .12) */
+      border-radius: 999px; /* Adjusted to calc(20 * var(--u)) from 999px */
+      background: rgb(255 255 255 / .55); /* Adjusted to rgb(255 255 255 / .75) */
+      font-size: calc(10.8 * var(--u)); /* Adjusted to calc(11.5 * var(--u)) */
+      font-weight: 500; /* Adjusted to 600 */
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      color: #333; /* Specific color */
+      backdrop-filter: blur(8px); /* Specific filter */
+    }
+    .footer-brand .chip svg {
+      width: calc(11 * var(--u)); /* Adjusted to calc(12 * var(--u)) */
+      height: calc(11 * var(--u)); /* Adjusted to calc(12 * var(--u)) */
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .footer-brand .chip__dot { /* Maps to sn-chip-dot */
+      width: calc(6 * var(--u));
+      height: calc(6 * var(--u));
+      border-radius: 50%;
+      background: #2fb36a; /* Adjusted to #10b981 */
+      box-shadow: 0 0 0 calc(2.5 * var(--u)) rgb(47 179 106 / .18);
+    }
+    .footer .col__title { /* Maps to sn-col-head */
+      font-size: calc(16 * var(--u));
+      font-weight: 600; /* Adjusted to 700 */
+      line-height: 1;
+      letter-spacing: -0.045em; /* Adjusted to -0.01em */
+      margin: 0;
+    }
+    .footer .col__list { /* Maps to sn-col-links */
+      display: grid;
+      gap: calc(20.5 * var(--u)); /* Adjusted to calc(12 * var(--u)) */
+      margin-top: calc(24 * var(--u)); /* Adjusted to calc(16 * var(--u)) */
+      font-size: calc(13.7 * var(--u)); /* Adjusted to calc(14.5 * var(--u)) */
+      line-height: 1.24;
+      letter-spacing: 0.022em;
+      color: #161616; /* Adjusted to #2e2e28 */
+      list-style: none;
+      padding: 0;
+    }
+    .footer .col--menu .col__list { /* Keeping this for the default menu styling, though it might not be strictly needed for all columns */
+      gap: calc(15 * var(--u));
+      margin-top: calc(21 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      color: #0c0c0c;
+    }
+    .footer .col__list a {
+      color: inherit; /* Adjusted to #2e2e28 */
+      text-decoration: none;
+      transition: opacity .2s; /* Adjusted to color .2s, transform .2s */
+      font-weight: 500; /* Added */
+      display: inline-block; /* Added for transform */
+    }
+    .footer .col__list a:hover {
+      opacity: .55; /* Adjusted to color #bf5a3c, transform translateX(3px) */
+      color: var(--secondary-accent);
+      transform: translateX(calc(3 * var(--u)));
+    }
+
+    /* Custom Footer Bottom Bar */
+    .footer-bottom-bar {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      background: rgba(253, 250, 243, 0.4);
+      backdrop-filter: blur(8px);
+      padding: calc(16 * var(--u)) 0;
+      margin-top: calc(40 * var(--u)); /* Gap between wordmark and bottom bar */
+    }
+    .footer-bottom-container {
+      max-width: calc(1180 * var(--u));
+      margin: 0 auto;
+      padding: 0 calc(24 * var(--u));
+      display: flex;
+      justify-content: space-between;
+      font-size: calc(13 * var(--u));
+      color: #6b6858;
+    }
+
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .footer {
+        --u: min(100vw / 1040, 100svh / 672);
+      }
+      .footer__content {
+        grid-template-columns: calc(400 * var(--u)) calc(190 * var(--u)) calc(210 * var(--u)) 1fr;
+        width: calc(1040 * var(--u));
+        padding: calc(64 * var(--u)) calc(40 * var(--u)) 0;
+      }
+      .footer-brand .brand__text { max-width: calc(350 * var(--u)); }
+      /* .footer__wordmark text style, not applicable to SVG but kept */
+      .footer__wordmark {
+        font-size: calc(286 * var(--u));
+        bottom: calc(10 * var(--u));
+      }
+      .footer-wordmark-svg-wrap { /* Adjusted for tablet */
+        max-width: calc(900 * var(--u));
+        bottom: calc(min(10 * var(--u), 10px));
+      }
+      .footer-wordmark-svg-wrap .svg-text {
+        font-size: calc(96 * var(--u));
+      }
+    }
+
+    @media (max-width: 767px) {
+      .footer {
+        --u: 1px; /* Fixed unit for mobile */
+        height: auto;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .footer__stage::after {
+        background: linear-gradient(to bottom, var(--paper, #fdfaf3) 0%, rgb(253 250 243 / .95) 50%, rgb(253 250 243 / .8) 68%, rgb(253 250 243 / 0) 90%);
+      }
+      .footer__content {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: space-between;
+        gap: 36px 12px;
+        width: 100%;
+        padding: 40px 20px 0;
+        margin-bottom: max(34vw, 150px);
+      }
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+      .footer-brand .brand__title { font-size: 21px; margin-top: 19px; }
+      .footer-brand .brand__text { max-width: 34em; font-size: 14px; margin-top: 18px; }
+      .footer-brand .brand__cta { height: 38px; padding: 0 18px 0 16px; border-radius: 8px; font-size: 13px; margin-top: 20px; }
+      .footer-brand .brand__cta svg { width: 14px; height: 14px; }
+      .footer-brand .brand__copy, .footer-brand .brand__by { font-size: 12.5px; }
+      .footer-brand .brand__copy { margin-top: 23px; }
+      .footer-brand .brand__by { margin-top: 21px; }
+      .footer-brand .chip { height: 28px; font-size: 12px; padding: 0 10px; }
+      .footer .col__title { font-size: 15px; }
+      .footer .col__list { gap: 14px; margin-top: 20px; font-size: 13px; letter-spacing: 0; }
+      .footer .col--menu .col__list { gap: 14px; margin-top: 20px; }
+      /* .footer__wordmark text style, not applicable to SVG but kept */
+      .footer__wordmark {
+        bottom: 5vw;
+        font-size: 27vw;
+      }
+      .footer-wordmark-svg-wrap { /* Adjusted for mobile */
+        max-width: 90vw;
+        bottom: 5vw;
+      }
+      .footer-wordmark-svg-wrap .svg-text {
+        font-size: 27vw;
+        letter-spacing: -1px;
+      }
+      .footer__fog { height: 7%; }
+
+      .footer-bottom-bar {
+          padding: 16px 0;
+          margin-top: 40px;
+      }
+      .footer-bottom-container {
+          flex-direction: column;
+          gap: 6px;
+          text-align: center;
+          font-size: 13px;
+          padding: 0 20px;
+      }
+    }
+
+    @media (max-width: 359px) {
+      .footer__content {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer .col:last-child {
+        grid-column: span 2;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .footer-brand .brand__cta, .footer .col__list a {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <nav aria-label="Primary" class="nav container">
+        <a aria-label="Shorveer Notes home" class="brand" href="/">
+            <span aria-hidden="true" class="brand-mark">
+                <svg fill="none" viewbox="0 0 64 64">
+                    <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
+                </svg>
+            </span>
+            <span class="brand-name">Shorveer<em>Notes</em></span>
+        </a>
+        <div class="nav-links">
+            <a href="#subjects">Subjects</a>
+            <a href="#reallife">Real life</a>
+            <a href="#resources">Resources</a>
+            <a href="#method">How it works</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="nav-actions">
+            <button aria-label="Open search" class="nav-icon" id="searchButton" title="Search (Ctrl+K)">
+                <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+                    <circle cx="11" cy="11" r="7"></circle><path d="m20.5 20.5-4-4"></path>
+                </svg>
+            </button>
+            <button aria-expanded="false" aria-label="Change theme" class="nav-icon" id="themeButton" title="Change theme">
+                <span aria-hidden="true" class="palette-dot"></span>
+            </button>
+            <button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav-icon mobile-toggle" id="menuButton">
+                <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+                    <path d="M3 6h18M3 12h18M3 18h18"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Open Chapter 02: Inverse Trigonometric Functions</h1>
+
+        <section id="overview" class="chapter-section">
+            <h2>Chapter Overview</h2>
+            <p>Inverse Trigonometric Functions are essential tools in higher mathematics, providing a way to find angles when the trigonometric ratios are known. Unlike trigonometric functions which output a ratio for a given angle, inverse trigonometric functions take a ratio as input and return the corresponding angle. Since trigonometric functions are periodic, their inverses are multi-valued. To make them functions, their domains are restricted to their 'principal value branches'. This chapter explores these functions, their properties, graphs, and applications, crucial for CBSE board examinations.</p>
+        </section>
+
+        <section id="definitions" class="chapter-section">
+            <h2>Key Definitions & Principal Value Branches</h2>
+            <div class="definition">
+                <h3>1. Inverse Sine Function ($\sin^{-1}x$)</h3>
+                <p>The function $f(x) = \sin^{-1}x$ (also written as $\arcsin x$) is the inverse of the sine function. Its domain is $[-1, 1]$ and its principal value branch (range) is $[-\frac{\pi}{2}, \frac{\pi}{2}]$.</p>
+                <p>i.e., if $\sin y = x$, then $y = \sin^{-1}x$, where $y \in [-\frac{\pi}{2}, \frac{\pi}{2}]$ and $x \in [-1, 1]$.</p>
+            </div>
+            <div class="definition">
+                <h3>2. Inverse Cosine Function ($\cos^{-1}x$)</h3>
+                <p>The function $f(x) = \cos^{-1}x$ (or $\arccos x$) is the inverse of the cosine function. Its domain is $[-1, 1]$ and its principal value branch (range) is $[0, \pi]$.</p>
+                <p>i.e., if $\cos y = x$, then $y = \cos^{-1}x$, where $y \in [0, \pi]$ and $x \in [-1, 1]$.</p>
+            </div>
+            <div class="definition">
+                <h3>3. Inverse Tangent Function ($\tan^{-1}x$)</h3>
+                <p>The function $f(x) = \tan^{-1}x$ (or $\arctan x$) is the inverse of the tangent function. Its domain is $(-\infty, \infty)$ and its principal value branch (range) is $(-\frac{\pi}{2}, \frac{\pi}{2})$.</p>
+                <p>i.e., if $\tan y = x$, then $y = \tan^{-1}x$, where $y \in (-\frac{\pi}{2}, \frac{\pi}{2})$ and $x \in \mathbb{R}$.</p>
+            </div>
+            <div class="definition">
+                <h3>4. Inverse Cosecant Function ($\csc^{-1}x$)</h3>
+                <p>The domain of $f(x) = \csc^{-1}x$ is $(-\infty, -1] \cup [1, \infty)$ and its principal value branch (range) is $[-\frac{\pi}{2}, \frac{\pi}{2}] - \{0\}$.</p>
+            </div>
+            <div class="definition">
+                <h3>5. Inverse Secant Function ($\sec^{-1}x$)</h3>
+                <p>The domain of $f(x) = \sec^{-1}x$ is $(-\infty, -1] \cup [1, \infty)$ and its principal value branch (range) is $[0, \pi] - \{\frac{\pi}{2}\}$.</p>
+            </div>
+            <div class="definition">
+                <h3>6. Inverse Cotangent Function ($\cot^{-1}x$)</h3>
+                <p>The domain of $f(x) = \cot^{-1}x$ is $(-\infty, \infty)$ and its principal value branch (range) is $(0, \pi)$.</p>
+            </div>
+        </section>
+
+        <section id="formulas" class="chapter-section">
+            <h2>Essential Formulas & Theorems</h2>
+            <h3>Properties of Inverse Trigonometric Functions</h3>
+            <div class="theorem">
+                <h3>I. Inverse Identities with Negative Arguments:</h3>
+                <ul>
+                    <li>$\sin^{-1}(-x) = -\sin^{-1}x$, for $x \in [-1, 1]$</li>
+                    <li>$\tan^{-1}(-x) = -\tan^{-1}x$, for $x \in \mathbb{R}$</li>
+                    <li>$\csc^{-1}(-x) = -\csc^{-1}x$, for $|x| \ge 1$</li>
+                    <li>$\cos^{-1}(-x) = \pi - \cos^{-1}x$, for $x \in [-1, 1]$</li>
+                    <li>$\sec^{-1}(-x) = \pi - \sec^{-1}x$, for $|x| \ge 1$</li>
+                    <li>$\cot^{-1}(-x) = \pi - \cot^{-1}x$, for $x \in \mathbb{R}$</li>
+                </ul>
+            </div>
+            <div class="theorem">
+                <h3>II. Complementary Identities:</h3>
+                <ul>
+                    <li>$\sin^{-1}x + \cos^{-1}x = \frac{\pi}{2}$, for $x \in [-1, 1]$</li>
+                    <li>$\tan^{-1}x + \cot^{-1}x = \frac{\pi}{2}$, for $x \in \mathbb{R}$</li>
+                    <li>$\csc^{-1}x + \sec^{-1}x = \frac{\pi}{2}$, for $|x| \ge 1$</li>
+                </ul>
+            </div>
+            <div class="theorem">
+                <h3>III. Conversion Identities:</h3>
+                <ul>
+                    <li>$\sin^{-1}x = \csc^{-1}\frac{1}{x}$, for $x \in [-1, 1], x \ne 0$</li>
+                    <li>$\cos^{-1}x = \sec^{-1}\frac{1}{x}$, for $x \in [-1, 1], x \ne 0$</li>
+                    <li>$\tan^{-1}x = \cot^{-1}\frac{1}{x}$, for $x > 0$</li>
+                    <li>$\tan^{-1}x = \sin^{-1}\left(\frac{x}{\sqrt{1+x^2}}\right) = \cos^{-1}\left(\frac{1}{\sqrt{1+x^2}}\right)$</li>
+                </ul>
+            </div>
+            <div class="theorem">
+                <h3>IV. Sum and Difference Formulas (for $\tan^{-1}x$):</h3>
+                <ul>
+                    <li>$\tan^{-1}x + \tan^{-1}y = \tan^{-1}\left(\frac{x+y}{1-xy}\right)$, for $xy < 1$</li>
+                    <li>$\tan^{-1}x - \tan^{-1}y = \tan^{-1}\left(\frac{x-y}{1+xy}\right)$, for $xy > -1$</li>
+                    <li>$2\tan^{-1}x = \tan^{-1}\left(\frac{2x}{1-x^2}\right)$, for $|x| < 1$</li>
+                    <li>$2\tan^{-1}x = \sin^{-1}\left(\frac{2x}{1+x^2}\right)$, for $|x| \le 1$</li>
+                    <li>$2\tan^{-1}x = \cos^{-1}\left(\frac{1-x^2}{1+x^2}\right)$, for $x \ge 0$</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="board-questions" class="chapter-section">
+            <h2>Important CBSE Board Exam Standard Questions</h2>
+
+            <div class="example">
+                <h3>Question 1: Prove that $2\tan^{-1}\frac{1}{2} + \tan^{-1}\frac{1}{7} = \tan^{-1}\frac{31}{17}$.</h3>
+                <div class="solution">
+                    <strong>Solution:</strong>
+                    <p>We use the formula $2\tan^{-1}x = \tan^{-1}\left(\frac{2x}{1-x^2}\right)$ and $\tan^{-1}x + \tan^{-1}y = \tan^{-1}\left(\frac{x+y}{1-xy}\right)$.</p>
+                    <p>LHS $= 2\tan^{-1}\frac{1}{2} + \tan^{-1}\frac{1}{7}$</p>
+                    <p>First, apply the double angle formula for $\tan^{-1}x$ with $x = \frac{1}{2}$:</p>
+                    $$2\tan^{-1}\frac{1}{2} = \tan^{-1}\left(\frac{2 \times \frac{1}{2}}{1 - (\frac{1}{2})^2}\right)$$
+                    $$ = \tan^{-1}\left(\frac{1}{1 - \frac{1}{4}}\right)$$
+                    $$ = \tan^{-1}\left(\frac{1}{\frac{3}{4}}\right)$$
+                    $$ = \tan^{-1}\frac{4}{3}$$
+                    <p>Now substitute this back into the LHS:</p>
+                    $$\text{LHS} = \tan^{-1}\frac{4}{3} + \tan^{-1}\frac{1}{7}$$
+                    <p>Next, apply the sum formula for $\tan^{-1}x + \tan^{-1}y$ with $x = \frac{4}{3}$ and $y = \frac{1}{7}$. Since $xy = \frac{4}{3} \times \frac{1}{7} = \frac{4}{21} < 1$, the formula is applicable:</p>
+                    $$ = \tan^{-1}\left(\frac{\frac{4}{3} + \frac{1}{7}}{1 - \frac{4}{3} \times \frac{1}{7}}\right)$$
+                    $$ = \tan^{-1}\left(\frac{\frac{28+3}{21}}{1 - \frac{4}{21}}\right)$$
+                    $$ = \tan^{-1}\left(\frac{\frac{31}{21}}{\frac{21-4}{21}}\right)$$
+                    $$ = \tan^{-1}\left(\frac{\frac{31}{21}}{\frac{17}{21}}\right)$$
+                    $$ = \tan^{-1}\frac{31}{17}$$
+                    <p>Thus, LHS = RHS. Hence Proved.</p>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Question 2: Solve for $x$: $\tan^{-1}(2x) + \tan^{-1}(3x) = \frac{\pi}{4}$.</h3>
+                <div class="solution">
+                    <strong>Solution:</strong>
+                    <p>Given equation is $\tan^{-1}(2x) + \tan^{-1}(3x) = \frac{\pi}{4}$.</p>
+                    <p>Apply the formula $\tan^{-1}A + \tan^{-1}B = \tan^{-1}\left(\frac{A+B}{1-AB}\right)$:</p>
+                    $$\tan^{-1}\left(\frac{2x + 3x}{1 - (2x)(3x)}\right) = \frac{\pi}{4}$$
+                    $$\tan^{-1}\left(\frac{5x}{1 - 6x^2}\right) = \frac{\pi}{4}$$
+                    <p>Take $\tan$ on both sides:</p>
+                    $$\frac{5x}{1 - 6x^2} = \tan\left(\frac{\pi}{4}\right)$$
+                    $$\frac{5x}{1 - 6x^2} = 1$$
+                    <p>Cross-multiply:</p>
+                    $$5x = 1 - 6x^2$$
+                    $$6x^2 + 5x - 1 = 0$$
+                    <p>This is a quadratic equation. We can solve it by factoring:</p>
+                    $$6x^2 + 6x - x - 1 = 0$$
+                    $$6x(x+1) - 1(x+1) = 0$$
+                    $$(6x-1)(x+1) = 0$$
+                    <p>This gives two possible solutions for $x$:</p>
+                    $$6x - 1 = 0 \Rightarrow x = \frac{1}{6}$$
+                    $$x + 1 = 0 \Rightarrow x = -1$$
+                    <p>We must check these solutions in the original equation to ensure they are valid (i.e., satisfy the condition $AB < 1$ for the formula used, and the arguments of $\tan^{-1}$ are within their domains, which is always true for real numbers). The condition for $\tan^{-1}A + \tan^{-1}B = \tan^{-1}\left(\frac{A+B}{1-AB}\right)$ is $AB < 1$. Here $A=2x, B=3x$, so $AB=6x^2$.</p>
+                    <p>For $x = \frac{1}{6}$:</p>
+                    $$6x^2 = 6\left(\frac{1}{6}\right)^2 = 6 \times \frac{1}{36} = \frac{1}{6}$$
+                    Since $\frac{1}{6} < 1$, $x = \frac{1}{6}$ is a valid solution.
+                    <p>For $x = -1$:</p>
+                    $$6x^2 = 6(-1)^2 = 6$$
+                    Since $6 \not< 1$, $x = -1$ is not a valid solution for the principal value branch application of the formula which results in $\pi/4$.
+                    Alternatively, plugging $x=-1$ into the original equation: $\tan^{-1}(-2) + \tan^{-1}(-3) = -\tan^{-1}(2) - \tan^{-1}(3)$, which is a negative angle, not $\pi/4$.
+                    <p>Therefore, the only valid solution is $x = \frac{1}{6}$.</p>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Question 3: Find the principal value of $\cos^{-1}\left(-\frac{1}{2}\right)$.</h3>
+                <div class="solution">
+                    <strong>Solution:</strong>
+                    <p>Let $y = \cos^{-1}\left(-\frac{1}{2}\right)$.</p>
+                    <p>By definition, this means $\cos y = -\frac{1}{2}$.</p>
+                    <p>The principal value branch of $\cos^{-1}x$ is $[0, \pi]$.</p>
+                    <p>We know that $\cos\left(\frac{\pi}{3}\right) = \frac{1}{2}$.</p>
+                    <p>Since $\cos y$ is negative, $y$ must lie in the second quadrant where cosine is negative.
+                    We use the property $\cos^{-1}(-x) = \pi - \cos^{-1}x$.</p>
+                    <p>So, $\cos^{-1}\left(-\frac{1}{2}\right) = \pi - \cos^{-1}\left(\frac{1}{2}\right)$.</p>
+                    <p>Since $\cos^{-1}\left(\frac{1}{2}\right) = \frac{\pi}{3}$, we have:</p>
+                    $$y = \pi - \frac{\pi}{3}$$
+                    $$y = \frac{3\pi - \pi}{3}$$
+                    $$y = \frac{2\pi}{3}$$
+                    <p>Since $\frac{2\pi}{3} \in [0, \pi]$, this is the principal value.</p>
+                    <p>The principal value of $\cos^{-1}\left(-\frac{1}{2}\right)$ is $\frac{2\pi}{3}$.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="revision" class="chapter-section quick-revision">
+            <h2>Quick Revision Summary</h2>
+            <ul>
+                <li><strong>Principal Value Branches:</strong> Remember the restricted ranges for each inverse trigonometric function. These are crucial for solving problems and finding principal values.</li>
+                <li><strong>Negative Argument Identities:</strong> Pay attention to the difference between $\sin^{-1}(-x) = -\sin^{-1}x$ type identities and $\cos^{-1}(-x) = \pi - \cos^{-1}x$ type identities.</li>
+                <li><strong>Complementary & Conversion Formulas:</strong> Understand how $\sin^{-1}x + \cos^{-1}x = \pi/2$ and how to convert between different inverse functions (e.g., $\tan^{-1}x$ to $\sin^{-1}$ or $\cos^{-1}$ using a right-angled triangle).</li>
+                <li><strong>Sum/Difference Formulas:</strong> The $\tan^{-1}x \pm \tan^{-1}y$ formulas are frequently tested. Always check the condition $xy < 1$ (or $xy > -1$) for these formulas to directly yield the principal value.</li>
+                <li><strong>Solving Equations:</strong> When solving equations involving inverse trigonometric functions, remember to verify the solutions against the domain restrictions and conditions for the formulas used.</li>
+                <li><strong>$2\tan^{-1}x$ Formulas:</strong> Know the three equivalent forms for $2\tan^{-1}x$ in terms of $\tan^{-1}$, $\sin^{-1}$, and $\cos^{-1}$.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div aria-hidden="true" class="footer__stage">
+            <video autoplay="" class="footer__video" loop="" muted="" playsinline="" poster="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261014_121838_c97d0940-f430-4304-8573-4f47ee44f447.png" preload="auto" src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/4d01c727-d9c5-47c8-a778-35a451ffd39f.mp4"></video>
+            <!-- The ::after pseudo-element from .footer__stage CSS handles the overlay -->
+        </div>
+
+        <!-- Big Watermark Wordmark (Ekdum Screen ke hisab se Fitted, Kabhi Cut Nahi Hoga) -->
+        <div aria-hidden="true" class="footer-wordmark-svg-wrap">
+            <svg class="sn-wordmark-svg" preserveaspectratio="xMidYMid meet" viewbox="0 0 1200 160">
+                <defs>
+                    <lineargradient id="snWordmarkGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"></stop>
+                        <stop offset="50%" stop-color="#ffffff" stop-opacity="0.35"></stop>
+                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"></stop>
+                    </lineargradient>
+                </defs>
+                <text class="svg-text" text-anchor="middle" x="50%" y="125">Shorveer Notes</text>
+            </svg>
+        </div>
+        <div aria-hidden="true" class="footer__fog"></div>
+
+        <!-- Top Content Grid -->
+        <div class="footer__content">
+            <!-- Brand & Founder Column -->
+            <div class="footer-brand">
+                <a aria-label="Shorveer Notes home" class="brand__logo" href="/">
+                    <span aria-hidden="true" class="brand__mark">
+                        <svg fill="none" viewbox="0 0 64 64">
+                            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
+                        </svg>
+                    </span>
+                    <span>Shorveer<em>Notes</em></span>
+                </a>
+                <h2 class="brand__title">Class 12 Science, Clearly Organised</h2>
+                <p class="brand__text">A student-focused learning platform for Class 12 Science notes, derivations, and board examination preparation.</p>
+                <div class="brand__badge-box">
+                    <a class="brand__cta" href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" target="_blank">
+                        <svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+                        </svg>
+                        <span>JS EDIZ on YouTube</span>
+                    </a>
+                    <div class="footer-founder-pill">
+                        <span class="founder-tag">JS</span>
+                        <span class="founder-name">Created by <strong>Jatin Sharma</strong></span>
+                    </div>
+                </div>
+                <ul class="brand__status">
+                    <li class="chip"><span class="chip__dot"></span>CBSE Aligned</li>
+                    <li class="chip">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"></path><path d="M20 4v7h-7"></path></svg>
+                        Syllabus 2026-27
+                    </li>
+                    <li class="chip">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        Student Focused
+                    </li>
+                </ul>
+            </div>
+            <!-- Links: Study -->
+            <div class="col">
+                <h3 class="col__title">Study</h3>
+                <ul class="col__list">
+                    <li><a href="physics/index.html">Physics</a></li>
+                    <li><a href="chemistry/index.html">Chemistry</a></li>
+                    <li><a href="mathematics/index.html">Mathematics</a></li>
+                    <li><a href="english/index.html">English</a></li>
+                </ul>
+            </div>
+            <!-- Links: Site -->
+            <div class="col">
+                <h3 class="col__title">Site</h3>
+                <ul class="col__list">
+                    <li><a href="exam-info.html">Exam info</a></li>
+                    <li><a href="about-notes.html">About the notes</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="privacy.html">Privacy policy</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                </ul>
+            </div>
+            <!-- Links: Connect -->
+            <div class="col">
+                <h3 class="col__title">Connect</h3>
+                <ul class="col__list">
+                    <li><a href="mailto:support.shorveernotes@gmail.com">Contact us</a></li>
+                    <li><a href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" target="_blank">YouTube Channel</a></li>
+                    <li><a href="about.html#founder">Founder's Note</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="footer-bottom-bar">
+            <div class="footer-bottom-container">
+                <p>© <span id="year"></span> Shorveer Notes. All rights reserved.</p>
+                <p>Built with pride in India 🇮🇳</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Update year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Basic Navbar Mobile Toggle (not fully functional without JS for menu open/close)
+        const menuButton = document.getElementById('menuButton');
+        menuButton.addEventListener('click', () => {
+            const expanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', !expanded);
+            // In a real implementation, you'd toggle a mobile menu's visibility here
+            console.log('Mobile menu toggle clicked. (Functionality to open/close menu not implemented)');
+        });
+
+        // Theme Toggle (placeholder)
+        const themeButton = document.getElementById('themeButton');
+        themeButton.addEventListener('click', () => {
+            console.log('Theme toggle clicked. (Functionality not implemented)');
+            // In a real implementation, you'd toggle dark/light mode
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+
+</body>
+</html>
