@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="sunset">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Chapter 08→ | Shorveer Notes</title>
+  
+  
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    body {
+      background: var(--bg, #241226);
+      color: var(--ink, #ffe9d6);
+      font-family: var(--font-body, 'Karla', sans-serif);
+      margin: 0;
+      padding-top: 76px;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      background: rgba(36, 18, 38, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .brand-title {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+    .brand-title em {
+      color: var(--gold, #ff8a5b);
+      font-style: normal;
+    }
+    .nav-links a {
+      color: var(--muted, #a090a0);
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 20px;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover {
+      color: var(--gold, #ff8a5b);
+    }
+    .chapter-hero {
+      padding: 35px 0 20px;
+      border-bottom: 1px dashed var(--line, rgba(255, 255, 255, 0.15));
+      margin-bottom: 30px;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--gold, #ff8a5b);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .chapter-hero h1 {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      font-size: 2.4rem;
+      margin: 0 0 10px 0;
+      color: #fff;
+    }
+    .content-card {
+      background: var(--card, rgba(255, 255, 255, 0.04));
+      border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .content-card h2, .content-card h3 {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      color: var(--gold, #ff8a5b);
+      margin-top: 0;
+    }
+    .formula-box {
+      background: rgba(0, 0, 0, 0.35);
+      border-left: 4px solid var(--gold, #ff8a5b);
+      padding: 18px;
+      border-radius: 8px;
+      margin: 18px 0;
+      overflow-x: auto;
+    }
+    /* Clean Solid Footer */
+    .sn-footer {
+      background: #190c1a;
+      border-top: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      padding: 50px 0 30px;
+      margin-top: 60px;
+    }
+    .sn-footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 36px;
+    }
+    .sn-brand h3 {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      font-size: 1.4rem;
+      margin: 0 0 10px 0;
+      color: #fff;
+    }
+    .sn-brand p {
+      color: var(--muted, #a090a0);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .footer-col h4 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      color: #fff;
+      margin: 0 0 14px 0;
+      letter-spacing: 0.5px;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-col li {
+      margin-bottom: 8px;
+    }
+    .footer-col a {
+      color: var(--muted, #a090a0);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .footer-col a:hover {
+      color: var(--gold, #ff8a5b);
+    }
+    .bottom-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 20px;
+      text-align: center;
+      color: var(--muted, #a090a0);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 768px) {
+      .sn-footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .chapter-hero h1 { font-size: 1.9rem; }
+      .content-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand-title" href="index.html">Shorveer<em>Notes</em></a>
+      <nav class="nav-links">
+        <a href="index.html">Portal Hub</a>
+        <a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="chapter-hero">
+      <a class="back-btn" href="index.html">← Back to Hub</a>
+      <h1>Open Chapter 08→</h1>
+      <p style="color:var(--muted, #a090a0); margin:0;">Class 12 Science · Authored by <strong>Jatin Sandilya</strong></p>
+    </div>
+
+    <div class="chapter-notes">
+    <h1 class="text-center">Chapter 08: Dual Nature of Radiation and Matter</h1>
+    <p class="author-attribution text-right">Authored by: Jatin Sandilya</p>
+
+    <section class="card chapter-overview-card">
+        <h2 class="card-title">1. Comprehensive Chapter Overview & Core Concepts</h2>
+        <div class="card-content">
+            <p>This chapter delves into one of the most revolutionary concepts in modern physics: the idea that light and matter can exhibit both wave-like and particle-like properties, a phenomenon known as <strong>wave-particle duality</strong>. It challenges our classical understanding and lays the foundation for quantum mechanics.</p>
+
+            <h3>1.1. The Photoelectric Effect</h3>
+            <p>The photoelectric effect is the phenomenon of emission of electrons from a metal surface when electromagnetic radiation of sufficiently high frequency falls on it. Key observations and explanations:</p>
+            <ul>
+                <li><strong>Hertz's Observation (1887):</strong> Observed that sparks produced across the detector loop of his electromagnetic wave experiment were enhanced when UV light fell on the metal electrodes.</li>
+                <li><strong>Hallwachs' Experiment (1888):</strong> Showed that a negatively charged zinc plate lost its charge when illuminated by UV light, while a positively charged plate did not. This suggested emission of negatively charged particles (electrons).</li>
+                <li><strong>Lenard's Experiment (1899):</strong> Studied the variation of photocurrent with collector plate potential, intensity, and frequency of incident radiation.</li>
+            </ul>
+
+            <h4>Observations from Photoelectric Effect Experiments:</h4>
+            <ol>
+                <li><strong>Effect of Intensity:</strong> For a given photosensitive material and frequency of incident radiation, the photocurrent is directly proportional to the intensity of incident light.</li>
+                <li><strong>Effect of Potential:</strong>
+                    <ul>
+                        <li>Photocurrent increases with positive potential of the collector plate, eventually saturating.</li>
+                        <li>For negative potentials, the photocurrent decreases and becomes zero at a certain negative potential, called the <strong>stopping potential (V<sub>s</sub>)</strong>. This potential is independent of the intensity of light but depends on the frequency.</li>
+                    </ul>
+                </li>
+                <li><strong>Effect of Frequency:</strong>
+                    <ul>
+                        <li>For a given photosensitive material, there exists a certain minimum frequency, called the <strong>threshold frequency (ν<sub>0</sub>)</strong>, below which no photoemission takes place, no matter how high the intensity of incident light.</li>
+                        <li>Above the threshold frequency, the maximum kinetic energy of the emitted photoelectrons is directly proportional to the frequency of the incident radiation and is independent of its intensity.</li>
+                    </ul>
+                </li>
+                <li><strong>Time Lag:</strong> The photoelectric emission is an instantaneous process. There is no measurable time delay between the incidence of radiation and the emission of photoelectrons (less than $10^{-9}$ s).</li>
+            </ol>
+
+            <h4>Einstein's Photoelectric Equation:</h4>
+            <p>In 1905, Albert Einstein explained the photoelectric effect based on Planck's quantum theory of radiation, proposing that light consists of discrete energy packets called <strong>photons</strong>. Each photon has energy $E = h\nu$, where $h$ is Planck's constant and $\nu$ is the frequency of light.</p>
+            <p>When a photon strikes a metal surface, it transfers its entire energy to an electron. A part of this energy ($\phi_0$) is used to liberate the electron from the metal surface (called the <strong>work function</strong>), and the remaining energy appears as the maximum kinetic energy ($K_{max}$) of the emitted electron.</p>
+
+            <h3>1.2. Wave Nature of Matter (de Broglie Hypothesis)</h3>
+            <p>In 1924, Louis de Broglie proposed that just as light exhibits wave-particle duality, matter particles (like electrons, protons, atoms) also possess wave-like properties. He hypothesized that a moving particle is associated with a wave, now called the <strong>de Broglie wave</strong> or <strong>matter wave</strong>.</p>
+            <p>The wavelength of this matter wave ($\lambda$) is related to the momentum ($p$) of the particle by the relation:</p>
+
+            <h3>1.3. Davisson-Germer Experiment (1927)</h3>
+            <p>This experiment provided experimental evidence for the wave nature of electrons. Davisson and Germer observed diffraction patterns when a beam of electrons was scattered by a nickel crystal. The diffraction patterns were similar to those obtained with X-rays (which are waves), confirming de Broglie's hypothesis for electrons.</p>
+            <p>The wavelength calculated from the diffraction pattern matched the de Broglie wavelength for electrons accelerated through the same potential difference.</p>
+
+            <h3>1.4. Wave-Particle Duality</h3>
+            <p>This concept states that light and matter can simultaneously exhibit characteristics of both waves and particles. This duality is inherent in nature and applies to all entities. The wave nature is dominant for microscopic particles and small momentum, while particle nature is dominant for macroscopic objects and large momentum.</p>
+        </div>
+    </section>
+
+    <section class="card formulas-card">
+        <h2 class="card-title">2. Key Theorems / Core Formulas</h2>
+        <div class="card-content">
+            <div class="formula-box">
+                <h4>Energy of a Photon</h4>
+                <p>The energy of a photon of frequency $\nu$ and wavelength $\lambda$ is given by:</p>
+                $$E = h\nu = \frac{hc}{\lambda}$$
+                <p>where $h = 6.626 \times 10^{-34}$ J s (Planck's constant) and $c = 3 \times 10^8$ m/s (speed of light).</p>
+            </div>
+
+            <div class="formula-box">
+                <h4>Einstein's Photoelectric Equation</h4>
+                <p>The energy of an incident photon ($h\nu$) is used to overcome the work function ($\phi_0$) and provide kinetic energy ($K_{max}$) to the emitted electron:</p>
+                $$h\nu = \phi_0 + K_{max}$$
+                <p>Where $\phi_0 = h\nu_0$ (work function, $\nu_0$ is threshold frequency) and $K_{max} = \frac{1}{2}mv_{max}^2 = eV_s$ (maximum kinetic energy, $V_s$ is stopping potential).</p>
+            </div>
+
+            <div class="formula-box">
+                <h4>Threshold Frequency and Work Function</h4>
+                <p>The minimum frequency of incident radiation required for photoelectric emission:</p>
+                $$\nu_0 = \frac{\phi_0}{h}$$
+                <p>The minimum energy required to liberate an electron from a metal surface:</p>
+                $$\phi_0 = h\nu_0$$
+            </div>
+
+            <div class="formula-box">
+                <h4>De Broglie Wavelength</h4>
+                <p>The wavelength associated with a moving particle of momentum $p$ (mass $m$, velocity $v$):</p>
+                $$\lambda = \frac{h}{p} = \frac{h}{mv}$$
+            </div>
+
+            <div class="formula-box">
+                <h4>De Broglie Wavelength for an Accelerated Electron</h4>
+                <p>If an electron is accelerated through a potential difference $V$ (in volts), its kinetic energy is $K = eV$.</p>
+                $$K = \frac{1}{2}mv^2 = \frac{p^2}{2m} \implies p = \sqrt{2mK} = \sqrt{2me V}$$
+                <p>So, the de Broglie wavelength for an electron accelerated through $V$ volts is:</p>
+                $$\lambda = \frac{h}{\sqrt{2me V}}$$
+                <p>Substituting values ($h, m_e, e$):</p>
+                $$\lambda \approx \frac{1.227}{\sqrt{V}} \text{ nm}$$
+            </div>
+        </div>
+    </section>
+
+    <section class="card pyq-card">
+        <h2 class="card-title">3. Solved High-Yield CBSE Board PYQs</h2>
+        <div class="card-content">
+            <div class="question-block">
+                <h3>Question 1 (CBSE 2018)</h3>
+                <p>The work function of a photosensitive material is 3.0 eV. The light of frequency $1.0 \times 10^{15}$ Hz is incident on it. Calculate the maximum kinetic energy of the emitted photoelectrons and the stopping potential. Given $h = 6.626 \times 10^{-34}$ J s, $1 \text{ eV} = 1.6 \times 10^{-19}$ J.</p>
+
+                <h4>Solution:</h4>
+                <p><strong>Step 1: Convert work function to Joules.</strong></p>
+                <p>Given work function, $\phi_0 = 3.0 \text{ eV}$</p>
+                <p>$\phi_0 = 3.0 \times 1.6 \times 10^{-19} \text{ J} = 4.8 \times 10^{-19} \text{ J}$</p>
+                <p><strong>Step 2: Calculate the energy of the incident photon.</strong></p>
+                <p>Energy of incident photon, $E = h\nu$</p>
+                <p>$E = (6.626 \times 10^{-34} \text{ J s}) \times (1.0 \times 10^{15} \text{ Hz})$</p>
+                <p>$E = 6.626 \times 10^{-19} \text{ J}$</p>
+                <p><strong>Step 3: Calculate the maximum kinetic energy of the emitted photoelectrons.</strong></p>
+                <p>Using Einstein's photoelectric equation: $K_{max} = E - \phi_0$</p>
+                <p>$K_{max} = (6.626 \times 10^{-19} \text{ J}) - (4.8 \times 10^{-19} \text{ J})$</p>
+                <p>$K_{max} = 1.826 \times 10^{-19} \text{ J}$</p>
+                <p><strong>Step 4: Calculate the stopping potential.</strong></p>
+                <p>We know $K_{max} = eV_s$</p>
+                <p>$V_s = \frac{K_{max}}{e} = \frac{1.826 \times 10^{-19} \text{ J}}{1.6 \times 10^{-19} \text{ C}}$</p>
+                <p>$V_s \approx 1.14 \text{ V}$</p>
+
+                <h4>Marking Scheme:</h4>
+                <ul>
+                    <li>Conversion of work function to Joules: 0.5 mark</li>
+                    <li>Calculation of incident photon energy: 0.5 mark</li>
+                    <li>Using Einstein's photoelectric equation to find $K_{max}$: 1 mark</li>
+                    <li>Calculation of stopping potential: 1 mark</li>
+                    <li>Final answers with correct units: 0.5 mark</li>
+                </ul>
+            </div>
+
+            <div class="question-block">
+                <h3>Question 2 (CBSE 2019)</h3>
+                <p>An electron is accelerated through a potential difference of 100 V. What is the de Broglie wavelength associated with it?</p>
+                <p>Given: Mass of electron $m_e = 9.1 \times 10^{-31}$ kg, Charge of electron $e = 1.6 \times 10^{-19}$ C, Planck's constant $h = 6.626 \times 10^{-34}$ J s.</p>
+
+                <h4>Solution:</h4>
+                <p><strong>Step 1: Write down the formula for de Broglie wavelength of an accelerated electron.</strong></p>
+                <p>The de Broglie wavelength for an electron accelerated through a potential difference $V$ is:</p>
+                <p>$\lambda = \frac{h}{\sqrt{2me V}}$</p>
+                <p><strong>Step 2: Substitute the given values into the formula.</strong></p>
+                <p>$V = 100 \text{ V}$</p>
+                <p>$\lambda = \frac{6.626 \times 10^{-34}}{\sqrt{2 \times (9.1 \times 10^{-31}) \times (1.6 \times 10^{-19}) \times 100}}$</p>
+                <p>$\lambda = \frac{6.626 \times 10^{-34}}{\sqrt{2 \times 9.1 \times 1.6 \times 10^{-31 - 19 + 2}}}$</p>
+                <p>$\lambda = \frac{6.626 \times 10^{-34}}{\sqrt{29.12 \times 10^{-48}}}$</p>
+                <p>$\lambda = \frac{6.626 \times 10^{-34}}{5.396 \times 10^{-24}}$</p>
+                <p><strong>Step 3: Calculate the wavelength.</strong></p>
+                <p>$\lambda \approx 1.228 \times 10^{-10} \text{ m}$</p>
+                <p>Or, using the simplified formula for electrons:</p>
+                <p>$\lambda = \frac{1.227}{\sqrt{V}} \text{ nm} = \frac{1.227}{\sqrt{100}} \text{ nm} = \frac{1.227}{10} \text{ nm} = 0.1227 \text{ nm}$</p>
+                <p>$\lambda = 0.1227 \times 10^{-9} \text{ m} = 1.227 \times 10^{-10} \text{ m}$</p>
+
+                <h4>Marking Scheme:</h4>
+                <ul>
+                    <li>Writing the correct de Broglie wavelength formula: 1 mark</li>
+                    <li>Correct substitution of values: 1 mark</li>
+                    <li>Correct calculation and final answer with units: 1 mark</li>
+                </ul>
+            </div>
+
+            <div class="question-block">
+                <h3>Question 3 (CBSE 2020)</h3>
+                <p>Plot a graph showing the variation of stopping potential with the frequency of incident radiation for two different photosensitive materials having work functions $\phi_1$ and $\phi_2$ ($\phi_1 > \phi_2$). Explain the features of the graph.</p>
+
+                <h4>Solution:</h4>
+                <p><strong>Step 1: Recall Einstein's photoelectric equation and relate it to stopping potential.</strong></p>
+                <p>From Einstein's photoelectric equation: $h\nu = \phi_0 + K_{max}$</p>
+                <p>We know $K_{max} = eV_s$, so $h\nu = \phi_0 + eV_s$</p>
+                <p>Rearranging for stopping potential $V_s$: $V_s = \frac{h}{e}\nu - \frac{\phi_0}{e}$</p>
+                <p>This equation is of the form $y = mx + c$, where $y = V_s$, $x = \nu$, slope $m = h/e$, and y-intercept $c = -\phi_0/e$.</p>
+
+                <p><strong>Step 2: Draw the graph.</strong></p>
+                <p>The graph will be a straight line with a positive slope ($h/e$) and a negative y-intercept ($-\phi_0/e$).</p>
+                <p>Since $\phi_1 > \phi_2$, it implies $-\phi_1/e < -\phi_2/e$. So, the material with higher work function will have a more negative y-intercept and a higher threshold frequency.</p>
+                <p>The two lines will be parallel as their slope ($h/e$) is constant for all materials.</p>
+
+                <p class="image-placeholder">[Insert image of graph here: two parallel lines on V_s vs nu graph, both starting from negative V_s, with the line for phi_1 having a larger positive nu-intercept (threshold frequency) and more negative V_s intercept than the line for phi_2]</p>
+                <p>*(Self-correction: Since I can't generate images, I will describe it clearly in text)*</p>
+                <p>The graph will show two straight lines, parallel to each other. The x-axis represents frequency ($\nu$), and the y-axis represents stopping potential ($V_s$).</p>
+                <p>Both lines start from negative $V_s$ values (y-intercepts) and cross the x-axis at their respective threshold frequencies ($\nu_0$).</p>
+                <p>For material 1 (work function $\phi_1$): $V_{s1} = \frac{h}{e}\nu - \frac{\phi_1}{e}$. Threshold frequency $\nu_{01} = \frac{\phi_1}{h}$.</p>
+                <p>For material 2 (work function $\phi_2$): $V_{s2} = \frac{h}{e}\nu - \frac{\phi_2}{e}$. Threshold frequency $\nu_{02} = \frac{\phi_2}{h}$.</p>
+                <p>Since $\phi_1 > \phi_2$, it follows that $\nu_{01} > \nu_{02}$. This means the line for material 1 will intercept the frequency axis (x-axis) at a higher frequency than material 2. Also, the y-intercept $(-\phi_0/e)$ for material 1 will be more negative than for material 2.</p>
+
+                <p><strong>Step 3: Explain the features of the graph.</strong></p>
+                <ol>
+                    <li><strong>Linear Relationship:</strong> The graph of stopping potential ($V_s$) versus frequency ($\nu$) is a straight line.</li>
+                    <li><strong>Slope:</strong> The slope of the line, $h/e$, is constant for all photosensitive materials. It gives the ratio of Planck's constant to the charge of an electron. This is a universal constant.</li>
+                    <li><strong>Threshold Frequency:</strong> The intercept on the frequency axis (x-axis) gives the threshold frequency ($\nu_0$) for the respective material. Below this frequency, no photoemission occurs, and hence stopping potential is zero or negative.</li>
+                    <li><strong>Work Function:</strong> The intercept on the stopping potential axis (y-axis) gives $-\phi_0/e$. From this, the work function ($\phi_0$) of the material can be determined.</li>
+                    <li><strong>Parallel Lines:</strong> For different photosensitive materials, the graphs are parallel straight lines, indicating that the slope ($h/e$) is independent of the nature of the material.</li>
+                </ol>
+
+                <h4>Marking Scheme:</h4>
+                <ul>
+                    <li>Derivation of $V_s = \frac{h}{e}\nu - \frac{\phi_0}{e}$: 1 mark</li>
+                    <li>Correct plot showing two parallel lines with correct intercepts for $\phi_1 > \phi_2$: 1.5 marks</li>
+                    <li>Explanation of two features of the graph (e.g., slope, threshold frequency, work function, parallel lines): 1.5 marks</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="card summary-card">
+        <h2 class="card-title">4. Quick Revision Summary Box</h2>
+        <div class="card-content">
+            <ul>
+                <li><strong>Photoelectric Effect:</strong> Emission of electrons from a metal surface when light of suitable frequency falls on it.</li>
+                <li><strong>Observations:</strong> Instantaneous process, photocurrent $\propto$ intensity, $K_{max}$ depends on frequency (not intensity), existence of threshold frequency ($\nu_0$).</li>
+                <li><strong>Einstein's Photoelectric Equation:</strong> $h\nu = \phi_0 + K_{max}$</li>
+                <li><strong>Work Function ($\phi_0$):</strong> Minimum energy required to eject an electron, $\phi_0 = h\nu_0$.</li>
+                <li><strong>Stopping Potential ($V_s$):</strong> Minimum negative potential applied to stop the most energetic photoelectrons, $K_{max} = eV_s$.</li>
+                <li><strong>De Broglie Hypothesis:</strong> Moving particles exhibit wave-like properties.</li>
+                <li><strong>De Broglie Wavelength:</strong> $\lambda = \frac{h}{p} = \frac{h}{mv}$.</li>
+                <li><strong>For Electron Accelerated by V:</strong> $\lambda = \frac{h}{\sqrt{2me V}} \approx \frac{1.227}{\sqrt{V}} \text{ nm}$.</li>
+                <li><strong>Davisson-Germer Experiment:</strong> Provided experimental verification of electron wave nature (diffraction of electrons).</li>
+                <li><strong>Wave-Particle Duality:</strong> Light and matter exhibit both wave and particle characteristics.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="card mindmap-card">
+        <h2 class="card-title">5. Concept Mind-Map Points List</h2>
+        <div class="card-content">
+            <ul>
+                <li><strong>Dual Nature of Radiation and Matter</strong>
+                    <ul>
+                        <li><strong>Radiation (Light)</strong>
+                            <ul>
+                                <li><strong>Wave Nature (Classical):</strong> Interference, Diffraction, Polarization.</li>
+                                <li><strong>Particle Nature (Quantum):</strong> Photoelectric Effect (Photon concept)
+                                    <ul>
+                                        <li>Hertz, Hallwachs, Lenard observations</li>
+                                        <li>Experimental Results (Intensity, Frequency, Potential, Time delay)</li>
+                                        <li>Einstein's Explanation (Photon as energy quanta)</li>
+                                        <li>Key Terms: Work Function ($\phi_0$), Threshold Frequency ($\nu_0$), Stopping Potential ($V_s$)</li>
+                                        <li>Equation: $h\nu = \phi_0 + K_{max} = \phi_0 + eV_s$</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Matter (Particles like electrons, protons)</strong>
+                            <ul>
+                                <li><strong>Particle Nature (Classical):</strong> Mass, Momentum, Kinetic Energy.</li>
+                                <li><strong>Wave Nature (Quantum):</strong> De Broglie Hypothesis
+                                    <ul>
+                                        <li>Matter Waves (de Broglie waves)</li>
+                                        <li>De Broglie Wavelength: $\lambda = h/p = h/(mv)$</li>
+                                        <li>For accelerated electron: $\lambda = h/\sqrt{2meV}$</li>
+                                        <li>Experimental Verification: Davisson-Germer Experiment (Electron Diffraction)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Wave-Particle Duality:</strong> Inherent property of all entities, observed differently at macroscopic vs. microscopic scales.</li>
+                        <li><strong>Heisenberg's Uncertainty Principle (Brief mention for context, not primary topic for CBSE Class 12):</strong> Impossible to simultaneously determine position and momentum accurately.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+  </main>
+
+  <footer class="sn-footer">
+    <div class="container">
+      <div class="sn-footer-grid">
+        <div class="sn-brand">
+          <h3>Shorveer<em>Notes</em></h3>
+          <p>High-yield Class 12 Science & Mathematics preparation. Concept breakdowns, verified formulas, and board derivations created with precision by <strong>Jatin Sandilya</strong>.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Subjects</h4>
+          <ul>
+            <li><a href="../physics/index.html">Physics</a></li>
+            <li><a href="../chemistry/index.html">Chemistry</a></li>
+            <li><a href="../mathematics/index.html">Mathematics</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ YouTube</a></li>
+            <li><a href="mailto:support.shorveernotes@gmail.com">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <p>&copy; 2026 Shorveer Notes · Built with pride in India 🇮🇳</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
