@@ -1,494 +1,1270 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="notebook">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Complete Class 12th English Notes, Summaries, and PYQs by Shorveer Notes.">
-    <title>English | Shorveer Notes</title>
-    
-    <style>
-        /* --- CSS Variables --- */
-        :root {
-            --bg-color: #f0f4f8;
-            --text-color: #1e293b;
-            --primary-color: #0f172a; 
-            --accent-color: #d4af37; 
-            --card-bg: rgba(255, 255, 255, 0.9);
-            --transition: all 0.3s ease;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .dark-mode {
-            --bg-color: #0f172a;
-            --text-color: #f1f5f9;
-            --primary-color: #1e293b;
-            --card-bg: rgba(30, 41, 59, 0.95);
-        }
+  <meta name="description" content="Class 12 Mathematics Complete Portal — Unit-wise Chapters, Formula Sheets, and Solved PYQs by Shorveer Notes.">
+  <meta name="author" content="Jatin Sandilya">
+  <meta name="robots" content="index, follow">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); transition: var(--transition); overflow-x: hidden; }
-        a { text-decoration: none; color: inherit; }
+  <meta name="theme-color" content="#fdfaf3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171613" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
 
-        /* --- English Special Preloader (Flipping Book Animation) --- */
-        #english-preloader {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-            background: var(--primary-color); z-index: 9999; 
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            transition: opacity 0.5s ease; color: white;
-        }
-        
-        .book-loader {
-            width: 80px; height: 60px; position: relative; margin-bottom: 25px;
-            background: transparent; border: 4px solid var(--accent-color); border-radius: 4px;
-            perspective: 250px;
-        }
-        .book-loader:before {
-            content: ''; position: absolute; width: 4px; height: 100%;
-            background: var(--accent-color); left: 50%; transform: translateX(-50%);
-        }
-        .page-loader {
-            position: absolute; width: 50%; height: 100%;
-            background: rgba(212, 175, 55, 0.6); right: 0;
-            transform-origin: left; animation: flipPage 1.2s infinite ease-in-out;
-        }
-        
-        @keyframes flipPage {
-            0% { transform: rotateY(0deg); opacity: 1; }
-            100% { transform: rotateY(-180deg); opacity: 0; }
-        }
+  <link rel="canonical" href="https://shorveernotes.website/mathematics/index.html">
 
-        /* --- Header --- */
-        header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 5%; background-color: var(--card-bg); backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;
-        }
-        .back-btn { font-weight: bold; cursor: pointer; color: var(--accent-color); font-size: 16px; }
-        .page-title { font-size: 20px; font-weight: 800; text-align: center; }
-        .theme-toggle { cursor: pointer; font-size: 22px; background: none; border: none; }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Class 12 Mathematics Portal | Shorveer Notes">
+  <meta property="og:description" content="Master 13 Class 12 Mathematics chapters with step-by-step solutions, formulas, and interactive learning.">
+  <meta property="og:site_name" content="Shorveer Notes">
+  <meta property="og:url" content="https://shorveernotes.website/mathematics/index.html">
+  <meta property="og:image" content="https://shorveernotes.website/og-image.jpg">
 
-        /* --- Main Container & Chapters --- */
-        .container { padding: 40px 5%; max-width: 1000px; margin: 0 auto; min-height: 70vh; }
-        .section-heading { font-size: 2rem; font-weight: 800; margin-bottom: 10px; border-bottom: 3px solid var(--accent-color); display: inline-block; padding-bottom: 5px; }
-        .sub-heading { margin: 30px 0 20px 0; color: var(--accent-color); font-size: 1.5rem; }
-        
-        .chapter-card {
-            background: var(--card-bg); padding: 25px; border-radius: 16px;
-            margin-bottom: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            display: flex; flex-direction: column; gap: 15px; 
-            border-left: 6px solid var(--accent-color); transition: transform 0.2s;
-        }
-        .chapter-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
-        .chapter-info h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--text-color); }
-        .chapter-info p { font-size: 0.95rem; opacity: 0.8; }
-        
-        /* Mobile Optimized Buttons */
-        .chapter-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-        .action-btn { 
-            padding: 10px 15px; border-radius: 8px; font-size: 13px; font-weight: 600; 
-            border: none; cursor: pointer; transition: 0.3s; flex-grow: 1; text-align: center;
-        }
-        .btn-long { background: var(--primary-color); color: white; }
-        .btn-quick { background: #3b82f6; color: white; } 
-        .btn-pyq { background: #ef4444; color: white; } 
-        .action-btn:hover { opacity: 0.8; transform: scale(1.02); }
-        .done-check { width: 22px; height: 22px; cursor: pointer; accent-color: var(--accent-color); margin-left: 10px; }
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1c1a'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23e8b64c'/%3E%3C/svg%3E">
 
-        /* --- Sample Papers Section --- */
-        .sample-papers-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(0,0,0,0.1); }
-        .sp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
-        .sp-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px dashed var(--accent-color); text-align: center; }
-        .sp-card h4 { margin-bottom: 15px; font-size: 1.1rem; }
-        .sp-card button { background: var(--accent-color); color: black; padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
-        
-        /* --- Footer --- */
-        footer { background: var(--primary-color); color: white; text-align: center; padding: 30px 20px; margin-top: 50px; font-size: 0.9rem; }
-        .support-btn { background: #ffdd00; color: black; padding: 8px 15px; border-radius: 20px; font-weight: bold; display: inline-block; margin-top: 15px; }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        /* --- Cookie Consent Banner --- */
-        #cookieConsent {
-            position: fixed; bottom: -100px; left: 0; width: 100%; background: var(--primary-color); color: white;
-            padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.2); transition: bottom 0.5s ease; z-index: 10000;
-        }
-        #cookieConsent p { font-size: 14px; margin-right: 20px; flex-grow: 1; }
-        #cookieConsent button { background: var(--accent-color); color: black; padding: 10px 25px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; white-space: nowrap; margin-top: 10px; }
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="../style.css">
 
-        /* --- Media Queries --- */
-        @media (min-width: 768px) {
-            .chapter-card { flex-direction: row; justify-content: space-between; align-items: center; }
-            .chapter-actions { flex-grow: 0; justify-content: flex-end; }
-            .action-btn { flex-grow: 0; }
-            #cookieConsent button { margin-top: 0; }
-        }
-    </style>
+  <style>
+    /* Footer & System Alignment Rules */
+    .sn-footer {
+      position: relative;
+      background: #0f1115;
+      color: #e2e8f0;
+      overflow: hidden;
+      margin-top: 80px;
+      border-top: 1px solid var(--line-soft);
+    }
+    .sn-footer__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .sn-footer__video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.16;
+      filter: saturate(1.2);
+    }
+    .sn-footer__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(15,17,21,0.85) 0%, rgba(15,17,21,0.96) 100%);
+    }
+    .sn-footer__container {
+      position: relative;
+      z-index: 2;
+      width: min(var(--max), calc(100% - 40px));
+      margin-inline: auto;
+      padding: 72px 0 40px;
+    }
+    .sn-footer__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+    }
+    .sn-brand__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .sn-brand__mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      background: #1c1c1a;
+      border-radius: 8px;
+    }
+    .sn-brand__mark svg {
+      width: 22px;
+      height: 22px;
+    }
+    .sn-brand__title-txt {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    .sn-brand__title-txt em {
+      color: var(--gold);
+      font-style: italic;
+    }
+    .sn-brand__heading {
+      font-size: 19px;
+      color: #f1f5f9;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .sn-brand__sub {
+      font-size: 14.5px;
+      color: #94a3b8;
+      max-width: 420px;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+    .sn-brand__badge-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .sn-yt-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      background: #dc2626;
+      color: #ffffff !important;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .sn-yt-btn:hover {
+      background: #b91c1c;
+      transform: translateY(-2px);
+    }
+    .sn-yt-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+    .sn-founder-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      font-size: 13px;
+      color: #cbd5e1;
+    }
+    .sn-founder-tag {
+      background: var(--gold);
+      color: #171613;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .sn-chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .sn-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      padding: 5px 10px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      color: #94a3b8;
+    }
+    .sn-chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+    }
+    .sn-chip svg {
+      width: 14px;
+      height: 14px;
+    }
+    .sn-col-head {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .sn-col-links {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .sn-col-links a {
+      font-size: 14.5px;
+      color: #94a3b8;
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+    .sn-col-links a:hover {
+      color: #f8fafc;
+      transform: translateX(3px);
+    }
+    .sn-wordmark-wrap {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 30px 0 10px;
+    }
+    .sn-wordmark-svg {
+      width: 100%;
+      height: 60px;
+    }
+    .sn-svg-text {
+      font-family: var(--font-display);
+      font-size: 80px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      fill: url(#snWordmarkGrad);
+      text-transform: uppercase;
+    }
+    .sn-bottom-bar {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 20px 0;
+      background: rgba(10,12,16,0.6);
+    }
+    .sn-bottom-container {
+      width: min(var(--max), calc(100% - 40px));
+      margin-inline: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #64748b;
+    }
+    @media (max-width: 900px) {
+      .sn-footer__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .sn-footer__brand {
+        grid-column: 1 / -1;
+      }
+    }
+    @media (max-width: 600px) {
+      .sn-footer__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .sn-bottom-container {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <script>document.documentElement.classList.add('js');</script>
+  <title>Class 12 Mathematics Complete Hub | Shorveer Notes</title>
 </head>
+
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <div id="english-preloader">
-        <div class="book-loader">
-            <div class="page-loader"></div>
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="../index.html" aria-label="Shorveer Notes home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+          </svg>
+        </span>
+        <span class="brand-name">Shorveer<em>Notes</em></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="index.html" style="color:var(--ink); font-weight:700;">Math Hub</a>
+        <a href="../about-notes.html">Framework</a>
+        <a href="../about.html">About us</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="nav-icon" id="searchButton" aria-label="Open search" title="Search (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/>
+          </svg>
+        </button>
+
+        <button class="nav-icon" id="themeButton" aria-label="Change theme" aria-expanded="false" title="Change theme">
+          <span class="palette-dot" aria-hidden="true"></span>
+        </button>
+
+        <button class="nav-icon mobile-toggle" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <path d="M3 6h18M3 12h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Math Hub</a>
+      <a href="../about-notes.html">How notes are made</a>
+      <a href="../about.html">About Shorveer</a>
+      <a href="../exam-info.html">Exam info</a>
+    </div>
+  </header>
+
+  <!-- ============ THEME PICKER POPOVER ============ -->
+  <div class="theme-pop" id="themePop" role="dialog" aria-label="Choose a theme">
+    <h4>Pick a look</h4>
+    <div class="theme-grid">
+      <button class="theme-opt" data-theme-value="notebook" aria-pressed="true">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#fdfaf3"></span>
+          <span style="background:#e8b64c"></span>
+          <span style="background:#bf5a3c"></span>
+          <span style="background:#1c1c1a"></span>
+        </span>
+        <b>Notebook</b>
+        <small>Warm paper, classic</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="chalkboard" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#1e2a24"></span>
+          <span style="background:#f0d97a"></span>
+          <span style="background:#7bc3bf"></span>
+          <span style="background:#ebe6d5"></span>
+        </span>
+        <b>Chalkboard</b>
+        <small>Dark green, chalk</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="blueprint" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#0f2b4c"></span>
+          <span style="background:#7ec8f5"></span>
+          <span style="background:#ff9d7c"></span>
+          <span style="background:#e2eefb"></span>
+        </span>
+        <b>Blueprint</b>
+        <small>Navy, technical</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="sunset" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#241226"></span>
+          <span style="background:#ff8a5b"></span>
+          <span style="background:#ffb87a"></span>
+          <span style="background:#ffe9d6"></span>
+        </span>
+        <b>Sunset</b>
+        <small>Plum, warm glow</small>
+      </button>
+    </div>
+    <p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Saved across pages.</p>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="kicker">
+          <span class="dot"></span>
+          <span>CBSE Class 12 · 80 Marks Theory Portal</span>
         </div>
-        <h2>Loading English Literature...</h2>
+
+        <h1>
+          Mathematics mastered with
+          <span style="position:relative;display:inline-block">
+            <span style="position:relative;z-index:1">absolute</span>
+          </span>
+          <em>precision.</em>
+        </h1>
+
+        <p class="hero-description">
+          13 chapters across 6 major units. Step-by-step calculus, clean algebra matrices, vectors, 3D geometry, and probability explained clearly for board exams.
+        </p>
+
+        <div class="motivation" aria-live="polite">
+          <svg class="motivation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6z"/>
+          </svg>
+          <span class="motivation-text show" id="motivationText">Practice every integral until it becomes second nature.</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#chapter-list">
+            Explore 13 Chapters
+            <span class="btn-arrow">→</span>
+          </a>
+          <a class="btn btn-light" href="#real-math">Real life mathematics</a>
+        </div>
+
+        <div class="hero-note">
+          <span>Curated by <strong>Jatin Sandilya</strong> · High-Yield Board Solutions</span>
+        </div>
+      </div>
+
+      <div class="hero-art" id="heroArt">
+        <div class="hero-stage" id="heroStage">
+          <div class="polaroid">
+            <img class="hero-img" id="heroImage"
+              src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80"
+              alt="Mathematical equations and calculus" loading="eager" width="900" height="1125">
+            <div class="polaroid-caption">calculus and algebra in motion</div>
+          </div>
+
+          <div class="sticky">
+            master calculus,<br>score full marks! ∑
+          </div>
+
+          <svg class="doodle" viewBox="0 0 130 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M6 12 C 40 4, 70 20, 96 50" stroke-dasharray="4 5"/>
+            <path d="M92 34 L 100 52 L 82 52" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS BAR ============ -->
+    <section class="trust" aria-label="Curriculum metrics">
+      <div class="trust-inner container">
+        <div class="trust-item"><b>13 Chapters</b>Complete NCERT Syllabus</div>
+        <div class="trust-item"><b>6 Units</b>Structured Weightage</div>
+        <div class="trust-item"><b>80 Marks Theory</b>CBSE Board Pattern</div>
+        <div class="trust-item"><b>Zero Paywalls</b>100% Free Study Hub</div>
+      </div>
+    </section>
+
+    <!-- ============ REAL-LIFE MATHEMATICS ============ -->
+    <section class="section container reveal" id="real-math">
+      <div class="section-head">
+        <span class="section-eyebrow">mathematics in reality</span>
+        <h2>Calculus and algebra aren't just for exams.<br><em>They power modern technology.</em></h2>
+      </div>
+
+      <div class="real-life">
+        <article class="rl-card" style="--rl-color: #2a7d7a">
+          <div class="rl-badge">∫</div>
+          <div class="rl-body">
+            <div class="rl-subject">Calculus · Integrals & Derivatives</div>
+            <div class="rl-title">How GPS navigation computes your exact route</div>
+            <p class="rl-text">
+              Satellite signals measure time delays to calculate distances. Continuous rate of change and integration algorithms compute your instantaneous velocity and predicted arrival time on your dashboard.
+            </p>
+          </div>
+        </article>
+
+        <article class="rl-card" style="--rl-color: #bf5a3c">
+          <div class="rl-badge">[M]</div>
+          <div class="rl-body">
+            <div class="rl-subject">Algebra · Matrices & Determinants</div>
+            <div class="rl-title">How 3D video games render graphics instantly</div>
+            <p class="rl-text">
+              Every 3D object rotation, scaling, and camera viewpoint shift in modern gaming engines relies entirely on massive multi-dimensional <strong>matrix transformations</strong> computed thousands of times per second.
+            </p>
+          </div>
+        </article>
+
+        <article class="rl-card" style="--rl-color: #7a4b8a">
+          <div class="rl-badge">P</div>
+          <div class="rl-body">
+            <div class="rl-subject">Probability · Bayes' Theorem</div>
+            <div class="rl-title">How spam filters detect unwanted emails</div>
+            <p class="rl-text">
+              Email filters apply <strong>Bayes' Theorem</strong> to calculate the mathematical probability that a message containing specific keywords is spam versus legitimate correspondence.
+            </p>
+          </div>
+        </article>
+
+        <article class="rl-card" style="--rl-color: #e8b64c">
+          <div class="rl-badge">V</div>
+          <div class="rl-body">
+            <div class="rl-subject">Vectors & 3D Geometry</div>
+            <div class="rl-title">How weather forecasting models map wind currents</div>
+            <p class="rl-text">
+              Meteorologists use 3D vector fields to simulate atmospheric pressure gradients, wind velocity vectors, and storm trajectories across global coordinates.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CHAPTERS SECTION (FLIP CARDS) ============ -->
+    <section class="section container reveal" id="chapter-list">
+      <div class="section-head">
+        <span class="section-eyebrow">class 12 curriculum</span>
+        <h2>Explore all 13 chapters.<br><em>Hover or tap to flip for practical applications & exam formulas.</em></h2>
+        <p>Type below to instantly filter any chapter or math topic.</p>
+
+        <div style="margin-top:20px; max-width:480px; position:relative;">
+          <input id="chapterSearch" type="search" placeholder="Quick search chapters (e.g. Integrals, Matrices, Probability)…" 
+                 style="width:100%; height:48px; padding:0 16px; border:1px solid var(--line); border-radius:10px; background:var(--card); color:var(--ink); outline:none;">
+        </div>
+      </div>
+
+      <div class="subject-list" id="chaptersContainer">
+
+        <!-- Chapter 1 -->
+        <div class="flip-card chapter-item" data-keywords="relations functions one-one onto bijective equivalence" style="--subject-color: #bf5a3c" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.5 10.5 15.5 7.5M8.5 13.5 15.5 16.5"/></svg>
+                  </div>
+                  <div class="subject-tag">Chapter 01 · Unit I</div>
+                </div>
+                <h3>Relations and Functions</h3>
+                <p>Reflexive, symmetric, transitive relations, equivalence classes, and one-one (injective) onto (surjective) function proofs.</p>
+              </div>
+              <div class="subject-bottom">
+                <a class="subject-meta" href="chapter1.html">Open Chapter 01 <span class="arrow">→</span></a>
+                <span class="subject-count">08 Marks</span>
+              </div>
+              <span class="flip-hint">flip for practical insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Real Life: Database Relationship Mappings</div>
+                <div class="back-rule">"Mapping elements from domain to co-domain."</div>
+                <p class="back-example">Relational databases link tables (users to orders) using precise mathematical mapping principles defined in set theory and functions.</p>
+              </div>
+              <a class="subject-meta" href="chapter1.html" style="text-decoration:underline">Open Chapter 01 <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 2 -->
+        <div class="flip-card chapter-item" data-keywords="inverse trigonometric functions principal value domain range" style="--subject-color: #2a7d7a" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M12 3v18"/></svg>
+                  </div>
+                  <div class="subject-tag">Chapter 02 · Unit I</div>
+                </div>
+                <h3>Inverse Trig Functions</h3>
+                <p>Principal value branches, domain and range restrictions, and essential inverse trigonometric simplification formulas.</p>
+              </div>
+              <div class="subject-bottom">
+                <a class="subject-meta" href="chapter2.html">Open Chapter 02 <span class="arrow">→</span></a>
+                <span class="subject-count">04 Marks</span>
+              </div>
+              <span class="flip-hint">flip for practical insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Real Life: Robotics & Navigation Angles</div>
+                <div class="back-rule">"Finding angles from coordinate ratios."</div>
+                <p class="back-example">Robotic arms use inverse trigonometric functions to calculate exact joint rotation angles needed to reach objects in 3D space.</p>
+              </div>
+              <a class="subject-meta" href="chapter2.html" style="text-decoration:underline">Open Chapter 02 <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 3 -->
+        <div class="flip-card chapter-item" data-keywords="matrices symmetric skew-symmetric inverse multiplication" style="--subject-color: #7a4b8a" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+                  </div>
+                  <div class="subject-tag">Chapter 03 · Unit II</div>
+                </div>
+                <h3>Matrices</h3>
+                <p>Matrix operations, symmetric & skew-symmetric properties, elementary row transformations, and invertible matrices.</p>
+              </div>
+              <div class="subject-bottom">
+                <a class="subject-meta" href="chapter3.html">Open Chapter 03 <span class="arrow">→</span></a>
+                <span class="subject-count">Algebra Unit</span>
+              </div>
+              <span class="flip-hint">flip for practical insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Real Life: Cryptography & Data Encryption</div>
+                <div class="back-rule">"Encoding messages via matrix multiplication."</div>
+                <p class="back-example">Secure online messaging encrypts text messages by multiplying character matrices with secret cryptographic key matrices.</p>
+              </div>
+              <a class="subject-meta" href="chapter3.html" style="text-decoration:underline">Open Chapter 03 <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 4 -->
+        <div class="flip-card chapter-item" data-keywords="determinants area of triangle minors cofactors adjoint inverse" style="--subject-color: #e8b64c" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3v18M19 3v18M5 12h14"/></svg>
+                  </div>
+                  <div class="subject-tag">Chapter 04 · Unit II</div>
+                </div>
+                <h3>Determinants</h3>
+                <p>Properties of determinants, area of triangles, minors, cofactors, adjoint method for inverse, and solving linear equation systems.</p>
+              </div>
+              <div class="subject-bottom">
+                <a class="subject-meta" href="chapter4.html">Open Chapter 04 <span class="arrow">→</span></a>
+                <span class="subject-count">10 Marks Total</span>
+              </div>
+              <span class="flip-hint">flip for practical insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Real Life: Solving Multi-Variable Systems</div>
+                <div class="back-rule">"Simultaneous linear equations solved efficiently."</div>
+                <p class="back-example">Engineers use determinant matrix inverses to solve complex electrical circuit mesh equations with multiple unknown loop currents simultaneously.</p>
+              </div>
+              <a class="subject-meta" href="chapter4.html" style="text-decoration:underline">Open Chapter 04 <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 5 -->
+        <div class="flip-card chapter-item" data-keywords="continuity differentiability chain rule logarithmic differentiation" style="--subject-color: #2a7d7a" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  </div>
+                  <div class="subject-tag">Chapter 05 · Unit III</div>
+                </div>
+                <h3>Continuity & Differentiability</h3>
+                <p>Algebra of continuous functions, derivative theorems, chain rule, implicit functions, logarithmic differentiation, and second-order derivatives.</p>
+              </div>
+              <div class="subject-bottom">
+                <a class="subject-meta" href="chapter5.html">Open Chapter 05 <span class="arrow">→</span></a>
+                <span class="subject-count">Calculus Core</span>
+              </div>
+              <span class="flip-hint">flip for practical insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Real Life: Smooth Curve Transitions in Civil Engineering</div>
+                <div class="back-rule">"No abrupt jumps in slopes on highways."</div>
+                <p class="back-example">Highway and railway tracks use smooth continuous curves designed with differentiable transitions to prevent sudden jerks in vehicles.</p>
+              </div>
+              <a class="subject-meta" href="chapter5.html" style="text-decoration:underline">Open Chapter 05 <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 6 -->
+        <div class="flip-card chapter-item" data-keywords="application of derivatives tangents normals maxima minima rate of change" style="--subject-color: #bf5a3c" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                  </div>
+                  <div class="subject-tag">Chapter 06 · Unit III</div>
+                </div>
+                <h3>Application of Derivatives</h3>
+                <p>Rate of change of quantities, increasing/decreasing functions, tangents and normals, approximations, and maxima & minima optimization.</p>
+              </div>
+              <div class="subject-bottom">
+                <a class="subject-meta" href="chapter6.html">Open Chapter 06 <span class="arrow">→</span></a>
+                <span class="subject-count">Optimization</span>
+              </div>
+              <span class="flip-hint">flip for practical insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Real Life: Maximizing Manufacturing Profit</div>
+                <div class="back-rule">"Setting derivative to zero for optimal peaks."</div>
+                <p class="back-example">Businesses use derivative optimization to determine exact pricing and production volume that minimizes costs and maximizes total revenue.</p>
+              </div>
+              <a class="subject-meta" href="chapter6.html" style="text-decoration:underline">Open Chapter 06 <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 7 -->
+        <div class="flip-card chapter-item" data-keywords="integrals integration substitution partial fractions definite" style="--subject-color: #7a4b8a" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+                  </div>
+                  <div class="subject-tag">Chapter 07 · Unit III</div>
+                </div>
+                <h3>Integrals</h3>
+                <p>Indefinite & definite integrals, integration by substitution, partial fractions, integration by parts, and fundamental theorem of calculus properties.</p>
+              </div>
+              <div class="subject-bottom">
+                <a class="subject-meta" href="chapter7.html">Open Chapter 07 <span class="arrow">→</span></a>
+                <span class="subject-count">Extensive Unit</span>
+              </div>
+              <span class="flip-hint">flip for practical insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Real Life: Calculating Total Work and Distance</div>
+                <div class="back-rule">"Accumulating continuous variable rates over time."</div>
+                <p class="back-example">Physics engines in simulations use integration to calculate total distance traveled under variable acceleration or total work done by variable forces.</p>
+              </div>
+              <a class="subject-meta" href="chapter7.html" style="text-decoration:underline">Open Chapter 07 <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 8 -->
+        <div class="flip-card chapter-item" data-keywords="application of integrals area under curves bounded regions" style="--subject-color: #2a7d7a" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16c3-8 7-8 10 0"/></svg>
+                  </div>
+                  <div class="subject-tag">Chapter 08 · Unit III</div>
+                </div>
+                <h3>Application of Integrals</h3>
+                <p>Finding areas under simple curves, lines, parabolas, ellipses, and calculating bounded regions between two curves.</p>
+              </div>
+              <div class="subject-bottom">
+                <a class="subject-meta" href="chapter8.html">Open Chapter 08 <span class="arrow">→</span></a>
+                <span class="subject-count">Area Calculation</span>
+              </div>
+              <span class="flip-hint">flip for practical insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Real Life: Land Surveying & Blueprint Estimation</div>
+                <div class="back-rule">"Computing irregular land parcel boundaries."</div>
+                <p class="back-example">Architects and civil engineers calculate irregularly shaped land plots or curved architectural roof surfaces using definite integral area formulas.</p>
+              </div>
+              <a class="subject-meta" href="chapter8.html" style="text-decoration:underline">Open Chapter 08 <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 9 -->
+        <div class="flip-card chapter-item" data-keywords="differential equations order degree separable homogeneous linear" style="--subject-color: #e8b64c" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  </div>
+                  <div class="subject-tag">Chapter 09 · Unit III</div>
+                </div>
+                <h3>Differential Equations</h3>
+                <p>Order and degree, general & particular solutions, variables separable, homogeneous differential equations, and linear differential equations.</p>
+              </div>
+              <div class="subject-bottom">
+                <a class="subject-meta" href="chapter9.html">Open Chapter 09 <span class="arrow">→</span></a>
+                <span class="subject-count">Calculus Final</span>
+              </div>
+              <span class="flip-hint">flip for practical insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Real Life: Population Growth & Epidemic Modeling</div>
+                <div class="back-rule">"Rates governed by current population size."</div>
+                <p class="back-example">Epidemiologists use differential equations to model how contagious diseases spread through communities over time based on infection rates.</p>
+              </div>
+              <a class="subject-meta" href="chapter9.html" style="text-decoration:underline">Open Chapter 09 <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 10 -->
+        <div class="flip-card chapter-item" data-keywords="vector algebra dot product cross product magnitude direction" style="--subject-color: #bf5a3c" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+                  </div>
+                  <div class="subject-tag">Chapter 10 · Unit IV</div>
+                </div>
+                <h3>Vector Algebra</h3>
+                <p>Types of vectors, addition, scalar multiplication, position vectors, scalar (dot) product, vector (cross) product, and projection.</p>
+              </div>
+              <div class="subject-bottom">
+                <a class="subject-meta" href="chapter10.html">Open Chapter 10 <span class="arrow">→</span></a>
+                <span class="subject-count">14 Marks Total</span>
+              </div>
+              <span class="flip-hint">flip for practical insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Real Life: Physics Velocity & Force Vectors</div>
+                <div class="back-rule">"Magnitude and directional components combined."</div>
+                <p class="back-example">Navigation systems calculate airplane flight vectors by combining wind velocity vectors with aircraft airspeed vectors to determine true ground tracks.</p>
+              </div>
+              <a class="subject-meta" href="chapter10.html" style="text-decoration:underline">Open Chapter 10 <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 11 -->
+        <div class="flip-card chapter-item" data-keywords="three dimensional geometry direction cosines line plane shortest distance" style="--subject-color: #2a7d7a" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                  </div>
+                  <div class="subject-tag">Chapter 11 · Unit IV</div>
+                </div>
+                <h3>Three-Dimensional Geometry</h3>
+                <p>Direction cosines and ratios, equations of a line in space, angle between two lines, shortest distance between skew lines, and equations of a plane.</p>
+              </div>
+              <div class="subject-bottom">
+                <a class="subject-meta" href="chapter11.html">Open Chapter 11 <span class="arrow">→</span></a>
+                <span class="subject-count">3D Space</span>
+              </div>
+              <span class="flip-hint">flip for practical insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Real Life: Air Traffic Control Collision Avoidance</div>
+                <div class="back-rule">"Calculating closest approach between flight paths."</div>
+                <p class="back-example">Air traffic control systems use 3D line intersection and shortest distance formulas to ensure airplanes flying at different altitudes maintain safe horizontal and vertical separation.</p>
+              </div>
+              <a class="subject-meta" href="chapter11.html" style="text-decoration:underline">Open Chapter 11 <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 12 -->
+        <div class="flip-card chapter-item" data-keywords="linear programming lpp constraints objective function feasible region" style="--subject-color: #7a4b8a" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                  </div>
+                  <div class="subject-tag">Chapter 12 · Unit V</div>
+                </div>
+                <h3>Linear Programming</h3>
+                <p>Introduction, related terminology such as constraints, objective function, optimization, graphical method of solving LPP, and bounded/unbounded regions.</p>
+              </div>
+              <div class="subject-bottom">
+                <a class="subject-meta" href="chapter12.html">Open Chapter 12 <span class="arrow">→</span></a>
+                <span class="subject-count">05 Marks</span>
+              </div>
+              <span class="flip-hint">flip for practical insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Real Life: Supply Chain & Resource Allocation</div>
+                <div class="back-rule">"Maximizing output under strict resource limits."</div>
+                <p class="back-example">Logistics companies like Amazon use linear programming models to determine the most cost-effective shipping routes and warehouse inventory distributions.</p>
+              </div>
+              <a class="subject-meta" href="chapter12.html" style="text-decoration:underline">Open Chapter 12 <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 13 -->
+        <div class="flip-card chapter-item" data-keywords="probability conditional bayes theorem random variable binomial distribution" style="--subject-color: #e8b64c" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div>
+                <div class="subject-top">
+                  <div class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  </div>
+                  <div class="subject-tag">Chapter 13 · Unit VI</div>
+                </div>
+                <h3>Probability</h3>
+                <p>Conditional probability, multiplication theorem, independent events, total probability, Bayes' theorem, random variables, and probability distributions.</p>
+              </div>
+              <div class="subject-bottom">
+                <a class="subject-meta" href="chapter13.html">Open Chapter 13 <span class="arrow">→</span></a>
+                <span class="subject-count">08 Marks</span>
+              </div>
+              <span class="flip-hint">flip for practical insight</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div>
+                <div class="back-label">Real Life: Medical Testing & Diagnostic Accuracy</div>
+                <div class="back-rule">"Updating disease probabilities given test results."</div>
+                <p class="back-example">Doctors use Bayes' theorem to determine the actual probability that a patient has a specific condition given positive screening test results and population baseline rates.</p>
+              </div>
+              <a class="subject-meta" href="chapter13.html" style="text-decoration:underline">Open Chapter 13 <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ STUDY RESOURCES ============ -->
+    <section class="section container reveal" id="resources">
+      <div class="section-head">
+        <span class="section-eyebrow">supplementary tools</span>
+        <h2>Enhance your practice with <em>focused resources.</em></h2>
+      </div>
+
+      <div class="resource-grid">
+        <article class="resource">
+          <div class="resource-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3z"/><path d="M18 20h2V7a3 3 0 0 0-3-3"/><path d="M8 9h6M8 13h6"/></svg>
+          </div>
+          <h3>Formula Sheets</h3>
+          <p>All calculus, algebra, and 3D geometry formulas compiled for lightning-fast final revision.</p>
+          <a class="resource-link" href="#">View Formulas <span>→</span></a>
+        </article>
+
+        <article class="resource">
+          <div class="resource-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+          </div>
+          <h3>Solved PYQs</h3>
+          <p>Past 10 years board question papers with step-by-step marking scheme solutions.</p>
+          <a class="resource-link" href="#">Browse PYQs <span>→</span></a>
+        </article>
+
+        <article class="resource">
+          <div class="resource-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+          </div>
+          <h3>Quick Mind Maps</h3>
+          <p>Visual concept summaries designed to connect chapters before exam day.</p>
+          <a class="resource-link" href="#">Open Mind Maps <span>→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta container reveal">
+      <div class="cta-content">
+        <h2>Ready to master Mathematics? <em>Start with Chapter 1.</em></h2>
+        <p>No paywalls, no clutter. Jump straight into Relations and Functions and level up your preparation.</p>
+        <a class="btn btn-gold" href="chapter1.html">
+          Start Reading Chapter 01
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="sn-footer">
+    <div class="sn-footer__bg" aria-hidden="true">
+      <video class="sn-footer__video"
+        src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/4d01c727-d9c5-47c8-a778-35a451ffd39f.mp4"
+        poster="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261014_121838_c97d0940-f430-4304-8573-4f47ee44f447.png"
+        autoplay muted loop playsinline preload="auto"></video>
     </div>
 
-    <header>
-        <a href="../index.html" class="back-btn">⬅ Home</a>
-        <div class="page-title">CLASS 12 ENGLISH</div>
-        <button class="theme-toggle" onclick="toggleTheme()" id="themeIcon">🌙</button>
-    </header>
+    <div class="sn-footer__overlay" aria-hidden="true"></div>
 
-    <div class="container">
-        <h2 class="section-heading">All Chapters</h2>
-
-        <!-- ================= BOOK 1: FLAMINGO PROSE ================= -->
-        <h3 class="sub-heading">📚 Book 1: Flamingo (Prose)</h3>
+    <div class="sn-footer__container">
+      <div class="sn-footer__grid">
         
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>1. The Last Lesson</h3>
-                <p>Alphonse Daudet - Importance of mother tongue, patriotism, and the impacts of war on education.</p>
+        <div class="sn-footer__brand">
+          <a class="sn-brand__logo" href="/" aria-label="Shorveer Notes home">
+            <span class="sn-brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+              </svg>
+            </span>
+            <span class="sn-brand__title-txt">Shorveer<em>Notes</em></span>
+          </a>
+
+          <h2 class="sn-brand__heading">Class 12 Science, Clearly Organised</h2>
+          <p class="sn-brand__sub">A student-focused learning platform for Class 12 Science notes, derivations, and board examination preparation.</p>
+
+          <div class="sn-brand__badge-box">
+            <a class="sn-yt-btn" href="https://www.youtube.com/@JSEDIZ" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              <span>JS EDIZ on YouTube</span>
+            </a>
+
+            <div class="sn-founder-pill">
+              <span class="sn-founder-tag">JS</span>
+              <span class="sn-founder-name">Created by <strong>Jatin Sandilya</strong></span>
             </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Character Sketch</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
+          </div>
+
+          <div class="sn-chips-row">
+            <span class="sn-chip"><span class="sn-chip-dot"></span>CBSE Aligned</span>
+            <span class="sn-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>
+              Syllabus 2026-27
+            </span>
+            <span class="sn-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Student Focused
+            </span>
+          </div>
         </div>
 
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>2. Lost Spring</h3>
-                <p>Anees Jung - Stories of stolen childhood, grinding poverty, and traditions trapping children in labor.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Character Sketch</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
+        <div class="sn-nav-col">
+          <h3 class="sn-col-head">Study</h3>
+          <ul class="sn-col-links">
+            <li><a href="../physics/index.html">Physics</a></li>
+            <li><a href="../chemistry/index.html">Chemistry</a></li>
+            <li><a href="index.html">Mathematics</a></li>
+            <li><a href="../english/index.html">English</a></li>
+          </ul>
         </div>
 
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>3. Deep Water</h3>
-                <p>William Douglas - An autobiographical account of overcoming fear through sheer willpower and determination.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Character Sketch</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
+        <div class="sn-nav-col">
+          <h3 class="sn-col-head">Site</h3>
+          <ul class="sn-col-links">
+            <li><a href="../exam-info.html">Exam info</a></li>
+            <li><a href="../about-notes.html">About the notes</a></li>
+            <li><a href="../about.html">About us</a></li>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../cookies.html">Cookies</a></li>
+          </ul>
         </div>
 
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>4. The Rattrap</h3>
-                <p>Selma Lagerlöf - Universal theme that essential goodness in a human can be awakened through love and understanding.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Character Sketch</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-        
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>5. Indigo</h3>
-                <p>Louis Fischer - Mahatma Gandhi's struggle for the poor sharecroppers of Champaran against British landlordism.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Character Sketch</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
+        <div class="sn-nav-col">
+          <h3 class="sn-col-head">Connect</h3>
+          <ul class="sn-col-links">
+            <li><a href="mailto:support.shorveernotes@gmail.com">Contact us</a></li>
+            <li><a href="https://www.youtube.com/@JSEDIZ" target="_blank" rel="noopener noreferrer">YouTube Channel</a></li>
+            <li><a href="../about.html#founder">Founder's Note</a></li>
+          </ul>
         </div>
 
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>6. Poets and Pancakes</h3>
-                <p>Asokamitran - A look inside Gemini Studios, sub-castes of film production, and political undercurrents.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Character Sketch</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>7. The Interview</h3>
-                <p>Christopher Silvester - Dual perspectives on interviews and an insightful excerpt with Umberto Eco.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Character Sketch</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>8. Going Places</h3>
-                <p>A.R. Barton - Teenage fantasies, hero-worshiping, and the reality-check of lower-middle-class life.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Character Sketch</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-
-        <!-- ================= BOOK 1: FLAMINGO POETRY ================= -->
-        <h3 class="sub-heading">📖 Book 1: Flamingo (Poetry)</h3>
-
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>Poem 1: My Mother at Sixty-Six</h3>
-                <p>Kamala Das - A moving exploration of human relationships, aging, and the painful fear of loss.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Poetic Devices</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>Poem 2: An Elementary School Classroom in a Slum</h3>
-                <p>Stephen Spender - Social injustice, class inequalities, and the bleak reality of slum children.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Poetic Devices</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-        
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>Poem 3: Keeping Quiet</h3>
-                <p>Pablo Neruda - An emphasis on quiet introspection, universal brotherhood, and halting mindless actions.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Poetic Devices</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>Poem 4: A Thing of Beauty</h3>
-                <p>John Keats - Nature's endless treasures providing a perennial source of joy and healing power.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Poetic Devices</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>Poem 5: A Roadside Stand</h3>
-                <p>Robert Frost - The economic divide between city dwellers and the pleading rural poor struggling for basic cash flow.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Poetic Devices</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>Poem 6: Aunt Jennifer's Tigers</h3>
-                <p>Adrienne Rich - Patriarchal constraints, struggles of a married woman, and art as an escape mechanism.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Poetic Devices</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-
-        <!-- ================= BOOK 2: VISTAS ================= -->
-        <h3 class="sub-heading">📘 Book 2: Vistas (Supplementary Reader)</h3>
-
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>1. The Third Level</h3>
-                <p>Jack Finney - Psychological escape from modern day stress, insecurity, and psychological anxieties.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Character Sketch</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>2. The Tiger King</h3>
-                <p>Kalki - Political satire aimed at the eccentricity, pride, and ultimate helplessness of those in high power.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Character Sketch</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-        
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>3. Journey to the End of the Earth</h3>
-                <p>Tishani Doshi - First-hand geological experience in Antarctica, shedding light on severe climate change threats.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Important Q&A</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>4. The Enemy</h3>
-                <p>Pearl S. Buck - Conflict between national loyalty and humanitarian duty during wartime through Dr. Sadao's dilemma.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Character Sketch</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-
-            <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>5. On the Face of It</h3>
-                <p>Susan Hill - Deep psychological effects of physical disability, loneliness, and the power of supportive bonding.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Character Sketch</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>6. Memories of Childhood</h3>
-                <p>Zitkala-Sa & Bama - Dual autobiographical tales exploring marginalization, racism, and social untouchability.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Summary</button>
-                <button class="action-btn btn-quick">Important Q&A</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-
-        <!-- ================= WRITING SKILLS ================= -->
-        <h3 class="sub-heading">✍️ Advanced Writing Skills</h3>
-
-        <div class="chapter-card">
-            <div class="chapter-info">
-                <h3>Formats & Examples</h3>
-                <p>Official CBSE layouts for Notice, Formal/Informal Invitations, Letter to the Editor, Job Application, and Article/Report Writing.</p>
-            </div>
-            <div class="chapter-actions">
-                <button class="action-btn btn-long">Formats</button>
-                <button class="action-btn btn-quick">Sample Formats</button>
-                <button class="action-btn btn-pyq">PYQs</button>
-                <input type="checkbox" class="done-check" title="Mark as Done">
-            </div>
-        </div>
-
-        <!-- Sample Papers Section -->
-        <div class="sample-papers-section">
-            <h2 class="section-heading">CBSE Sample Papers & Solutions</h2>
-            <p>Practice with previous year papers and official sample papers to boost your score.</p>
-            <div class="sp-grid">
-                <div class="sp-card">
-                    <h4>Sample Paper 2025-26</h4>
-                    <button>Download Paper + Solution</button>
-                </div>
-                <div class="sp-card">
-                    <h4>Previous Year Paper (2024)</h4>
-                    <button>Download Paper + Solution</button>
-                </div>
-                <div class="sp-card">
-                    <h4>Previous Year Paper (2023)</h4>
-                    <button>Download Paper + Solution</button>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookieConsent">
-        <p>🍪 We use cookies to enhance your experience, track your progress, and analyze our traffic.</p>
-        <button onclick="acceptCookies()">Accept Cookies</button>
+    <div class="sn-wordmark-wrap" aria-hidden="true">
+      <svg class="sn-wordmark-svg" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="snWordmarkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+            <stop offset="50%" stop-color="#ffffff" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+          </linearGradient>
+        </defs>
+        <text x="50%" y="125" text-anchor="middle" class="sn-svg-text">Shorveer Notes</text>
+      </svg>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Shorveer Notes. All Rights Reserved.</p>
-        <a href="#" class="support-btn">☕ Support Shorveer Notes</a>
-    </footer>
+    <div class="sn-bottom-bar">
+      <div class="sn-bottom-container">
+        <p>&copy; <span id="year"></span> Shorveer Notes. All rights reserved.</p>
+        <p>Built with pride in India 🇮🇳</p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Scripts -->
-    <script>
-        // 1. English Preloader Logic
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                document.getElementById('english-preloader').style.opacity = '0';
-                setTimeout(() => { document.getElementById('english-preloader').style.display = 'none'; }, 500);
-            }, 1200); 
+  <!-- ============ SEARCH POPUP ============ -->
+  <div class="search-layer" id="searchLayer" aria-hidden="true">
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search">
+      <div class="search-top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+          <circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/>
+        </svg>
+        <input id="searchInput" type="search" placeholder="Search math chapters, formulas, topics…" autocomplete="off">
+        <button class="search-close" id="searchClose" aria-label="Close search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- ============ JAVASCRIPT ENGINE ============ -->
+  <script>
+    const store = {
+      get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+      set(k, v) { try { localStorage.setItem(k, v); } catch {} }
+    };
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* Reveal Sections on Scroll (Fix for Invisible Content) */
+    const revealElements = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
         });
+      }, { rootMargin: '0px 0px -40px 0px', threshold: 0.1 });
 
-        // 2. Dark Mode Logic
-        function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-            const icon = document.getElementById('themeIcon');
-            icon.innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-        }
+      revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('visible'));
+    }
 
-        // 3. Cookie Consent Logic
-        window.onload = function() {
-            if (!localStorage.getItem('cookiesAccepted')) {
-                setTimeout(() => {
-                    document.getElementById('cookieConsent').style.bottom = '0';
-                }, 3000); 
-            }
-        };
+    const THEMES = {
+      notebook: { hero: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80", label: "calculus and algebra in motion" },
+      chalkboard: { hero: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80", label: "equations, one line at a time" },
+      blueprint: { hero: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=80", label: "where theory meets precision" },
+      sunset: { hero: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80", label: "late night problem solving" }
+    };
 
-        function acceptCookies() {
-            localStorage.setItem('cookiesAccepted', 'true');
-            document.getElementById('cookieConsent').style.bottom = '-100px'; 
-        }
-    </script>
+    const html = document.documentElement;
+    const themeButton = document.getElementById("themeButton");
+    const themePop = document.getElementById("themePop");
+    const heroImage = document.getElementById("heroImage");
+    const heroCaption = document.querySelector(".polaroid-caption");
+    const themeOpts = document.querySelectorAll(".theme-opt");
+
+    function applyTheme(name) {
+      if (!THEMES[name]) name = "notebook";
+      html.setAttribute("data-theme", name);
+      store.set("shorveer-theme-name", name);
+      themeOpts.forEach(btn => btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name)));
+      if (heroImage && heroCaption) {
+        const t = THEMES[name];
+        heroImage.classList.add("fading");
+        setTimeout(() => {
+          heroImage.src = t.hero;
+          heroCaption.textContent = t.label;
+          heroImage.classList.remove("fading");
+        }, 260);
+      }
+    }
+
+    applyTheme(store.get("shorveer-theme-name") || "notebook");
+
+    themeButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = themePop.classList.toggle("open");
+      themeButton.setAttribute("aria-expanded", String(open));
+    });
+
+    themeOpts.forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyTheme(btn.dataset.themeValue);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!themePop.contains(e.target) && !themeButton.contains(e.target)) {
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    /* Live Chapter Search Filter */
+    const chapterSearchInput = document.getElementById("chapterSearch");
+    const chapterItems = document.querySelectorAll(".chapter-item");
+    if (chapterSearchInput) {
+      chapterSearchInput.addEventListener("input", (e) => {
+        const q = e.target.value.toLowerCase().trim();
+        chapterItems.forEach(item => {
+          const text = item.innerText.toLowerCase();
+          const keywords = (item.dataset.keywords || "").toLowerCase();
+          item.style.display = (text.includes(q) || keywords.includes(q)) ? "block" : "none";
+        });
+      });
+    }
+
+    /* Flip Card Tap for Mobile/Touch */
+    const flipCards = document.querySelectorAll(".flip-card");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+    flipCards.forEach(card => {
+      if (isTouch) {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("a")) return;
+          card.classList.toggle("flipped");
+        });
+      }
+    });
+
+    /* Search Modal */
+    const searchButton = document.getElementById("searchButton");
+    const searchLayer = document.getElementById("searchLayer");
+    const searchClose = document.getElementById("searchClose");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+    
+    const searchData = [
+      { title: "Relations and Functions", description: "Equivalence relations, types of functions", url: "chapter1.html" },
+      { title: "Inverse Trigonometric Functions", description: "Principal value branches", url: "chapter2.html" },
+      { title: "Matrices", description: "Matrix algebra, symmetric, inverse", url: "chapter3.html" },
+      { title: "Determinants", description: "Properties, area, system of linear equations", url: "chapter4.html" },
+      { title: "Continuity and Differentiability", description: "Chain rule, logarithmic diff", url: "chapter5.html" },
+      { title: "Application of Derivatives", description: "Tangents, normals, maxima, minima", url: "chapter6.html" },
+      { title: "Integrals", description: "Substitution, parts, partial fractions", url: "chapter7.html" },
+      { title: "Application of Integrals", description: "Area under curves", url: "chapter8.html" },
+      { title: "Differential Equations", description: "Homogeneous, linear differential equations", url: "chapter9.html" },
+      { title: "Vector Algebra", description: "Dot product, cross product", url: "chapter10.html" },
+      { title: "Three-Dimensional Geometry", description: "Lines, planes, shortest distance", url: "chapter11.html" },
+      { title: "Linear Programming", description: "Feasible region, objective function", url: "chapter12.html" },
+      { title: "Probability", description: "Bayes' theorem, random variables", url: "chapter13.html" }
+    ];
+
+    function openSearch() {
+      searchLayer.classList.add("active");
+      searchLayer.setAttribute("aria-hidden", "false");
+      setTimeout(() => searchInput.focus(), 60);
+      renderResults("");
+    }
+    function closeSearch() {
+      searchLayer.classList.remove("active");
+      searchLayer.setAttribute("aria-hidden", "true");
+      searchInput.value = "";
+    }
+    function renderResults(query) {
+      const q = query.trim().toLowerCase();
+      const matches = searchData.filter(item => !q || item.title.toLowerCase().includes(q) || item.description.toLowerCase().includes(q));
+      if (!matches.length) {
+        searchResults.innerHTML = '<div class="empty-result">No matching math topic found.</div>';
+        return;
+      }
+      searchResults.innerHTML = matches.map(item => `
+        <a class="result" href="${item.url}">
+          <div>
+            <strong>${item.title}</strong>
+            <small>${item.description}</small>
+          </div>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+      `).join("");
+    }
+
+    searchButton.addEventListener("click", openSearch);
+    searchClose.addEventListener("click", closeSearch);
+    searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
+    searchInput.addEventListener("input", e => renderResults(e.target.value));
+
+    /* Mobile Menu */
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuButton.addEventListener("click", () => mobileMenu.classList.toggle("open"));
+  </script>
 </body>
 </html>
-
-        
