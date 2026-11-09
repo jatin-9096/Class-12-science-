@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 from google import genai
 from google.genai.errors import ServerError, APIError
 
-# API Quota Safe: Ek run me ek page
 BATCH_SIZE = 1
 
 api_key = os.environ.get("GEMINI_API_KEY")
@@ -15,7 +14,6 @@ if not api_key:
 
 client = genai.Client(api_key=api_key)
 
-# Clean MathJax with proper Delimiters & processEscapes
 MATHJAX_HEADER = """
 <script>
   window.MathJax = {
@@ -34,7 +32,7 @@ MATHJAX_HEADER = """
 </script>
 """
 
-IGNORE_KEYWORDS = ["privacy", "terms", "cookie", "disclaimer", "about", "contact"]
+IGNORE_KEYWORDS = ["privacy", "terms", "cookie", "disclaimer", "about", "contact", "framework"]
 
 def call_gemini_with_fallback(prompt, max_retries=3):
     models = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
@@ -47,13 +45,25 @@ def call_gemini_with_fallback(prompt, max_retries=3):
                 )
                 return response.text
             except (ServerError, APIError) as e:
-                print(f"Server demand spike ({e}). Waiting 10s for retry...")
-                time.sleep(10)
+                print(f"Demand spike on {model_name}. Retrying in 8s...")
+                time.sleep(8)
             except Exception as e:
                 print(f"Error calling {model_name}: {e}")
-                time.sleep(5)
+                time.sleep(4)
                 break
-    raise RuntimeError("All Gemini model attempts exhausted.")
+    raise RuntimeError("All Gemini attempts failed.")
+
+def detect_subject_from_path(file_path):
+    lower = file_path.lower()
+    if "physic" in lower:
+        return "Physics"
+    elif "chem" in lower:
+        return "Chemistry"
+    elif "math" in lower:
+        return "Mathematics"
+    elif "bio" in lower:
+        return "Biology"
+    return "Science"
 
 def scan_website_links():
     pending_targets = []
@@ -67,7 +77,17 @@ def scan_website_links():
 
         for a_tag in soup.find_all("a", href=True):
             href = a_tag["href"].strip()
-            chapter_name = a_tag.get_text(strip=True)
+            
+            # Card ya item se meaningful heading nikaalna
+            title_text = ""
+            parent_card = a_tag.find_parent(class_=re.compile(r"card|item|subject", re.I))
+            if parent_card:
+                h_tag = parent_card.find(["h2", "h3", "h4"])
+                if h_tag:
+                    title_text = h_tag.get_text(strip=True)
+            
+            if not title_text:
+                title_text = a_tag.get_text(strip=True)
 
             if not href or href.startswith(("#", "http://", "https://", "mailto:", "tel:", "javascript:")):
                 continue
@@ -76,7 +96,7 @@ def scan_website_links():
             if not clean_href.endswith(".html"):
                 continue
 
-            if any(k in clean_href.lower() or k in chapter_name.lower() for k in IGNORE_KEYWORDS):
+            if any(k in clean_href.lower() for k in IGNORE_KEYWORDS):
                 continue
 
             normalized_href = clean_href.lstrip("/\\")
@@ -84,11 +104,19 @@ def scan_website_links():
 
             if not os.path.exists(target_path) and target_path not in seen_paths:
                 seen_paths.add(target_path)
+                
+                subject_name = detect_subject_from_path(target_path)
+                
+                clean_title = title_text
+                if re.search(r"open\s+chapter|click\s+here|read\s+more", clean_title, re.I) or not clean_title:
+                    file_base = os.path.splitext(os.path.basename(normalized_href))[0]
+                    clean_title = file_base.replace("-", " ").replace("_", " ").title()
+
                 pending_targets.append({
                     "target_path": target_path,
-                    "chapter_name": chapter_name if chapter_name else os.path.splitext(os.path.basename(normalized_href))[0],
-                    "clean_href": normalized_href,
-                    "source_file": source_file
+                    "chapter_name": clean_title,
+                    "subject": subject_name,
+                    "clean_href": normalized_href
                 })
 
     return pending_targets
@@ -103,271 +131,240 @@ def clean_code(raw_text):
         text = text[:-3]
     return text.strip()
 
-def patch_file_errors(file_path):
-    """Puri file rewrite nahi karega; sirf broken closing tags patch karega"""
-    with open(file_path, "r", encoding="utf-8") as f:
-        content = f.read()
-
-    unclosed = []
-    for tag in ["html", "head", "body", "main", "article", "section", "div"]:
-        open_c = len(re.findall(rf"<{tag}\b", content, re.I))
-        close_c = len(re.findall(rf"</{tag}>", content, re.I))
-        if open_c > close_c:
-            unclosed.append(tag)
-
-    if unclosed:
-        print(f"Patching unclosed structural tags in {file_path}: {unclosed}")
-        patch_str = ""
-        for tag in reversed(unclosed):
-            patch_str += f"</{tag}>\n"
-        with open(file_path, "a", encoding="utf-8") as f:
-            f.write("\n" + patch_str)
-
 def build_chapter_page(target):
     target_path = target["target_path"]
     chapter_name = target["chapter_name"]
+    subject = target["subject"]
 
-    # Calculate correct relative path to style.css based on folder depth
+    # Calculate exact relative path to the root style.css
     depth = len(os.path.normpath(target_path).split(os.sep)) - 1
     css_rel = ("../" * depth) + "style.css" if depth > 0 else "style.css"
     hub_link = "index.html" if depth == 1 else "../index.html"
+    root_link = "../index.html" if depth == 1 else "index.html"
 
+    # Gemini sirf pure semantic HTML content generate karega
     prompt = f"""
-    Write detailed, structured Class 12 educational chapter notes in HTML for: '{chapter_name}'.
-    
-    Required Components inside HTML cards:
-    1. Comprehensive Chapter Overview & Core Concepts.
-    2. Key Theorems / Reaction Mechanisms / Core Formulas (wrap in <div class="formula-box">, use valid inline $...$ and display $$...$$ LaTeX math).
-    3. Solved High-Yield CBSE Board PYQs (3 standard questions with clear step-by-step marking steps).
-    4. Quick Revision Summary Box.
-    5. Concept Mind-Map points list.
+    Generate comprehensive Class 12 CBSE revision notes in semantic HTML for:
+    Subject: {subject}
+    Chapter: {chapter_name}
 
-    STRICT RULES:
-    - Output ONLY the HTML contents to be placed inside <main class="container">.
-    - DO NOT include <!DOCTYPE>, <html>, <head>, <header>, or <footer> tags.
-    - Author attribution must strictly be 'Jatin Sandilya'.
+    HTML Architecture Requirements:
+    Use clean sections and cards matching this structure:
+
+    <section class="section container">
+      <div class="section-head">
+        <span class="section-eyebrow">Concept Core</span>
+        <h2>1. Theoretical Principles & Definitions</h2>
+      </div>
+      <div class="real-life">
+        <article class="rl-card" style="--rl-color: #bf5a3c">
+          <div class="rl-badge">§</div>
+          <div class="rl-body">
+            <div class="rl-title">Fundamental Overview</div>
+            <p class="rl-text">Detailed explanation with definitions and principles...</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-head">
+        <span class="section-eyebrow">High Yield Formulas</span>
+        <h2>2. Essential Equations & Derivations</h2>
+      </div>
+      <!-- Use clean MathJax syntax ($...$ for inline and $$...$$ for display equations) -->
+      <div class="resource-grid">
+        <article class="resource">
+          <h3>Key Equations</h3>
+          <p>Equation proofs and expressions using MathJax.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-head">
+        <span class="section-eyebrow">Board Examination Questions</span>
+        <h2>3. Solved High-Yield CBSE PYQs</h2>
+      </div>
+      <div class="resource-grid">
+        <article class="resource">
+          <div class="resource-icon">Q1</div>
+          <h3>Question Title</h3>
+          <p><strong>Problem:</strong> ...</p>
+          <p><strong>Step-by-step Solution:</strong> ...</p>
+        </article>
+        <article class="resource">
+          <div class="resource-icon">Q2</div>
+          <h3>Question Title</h3>
+          <p><strong>Problem:</strong> ...</p>
+          <p><strong>Step-by-step Solution:</strong> ...</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-head">
+        <span class="section-eyebrow">Fast Revision</span>
+        <h2>4. Quick Mind-Map & Summary</h2>
+      </div>
+      <div class="trust">
+        <div class="trust-inner container">
+          <div class="trust-item"><b>Core Rule 1</b>Summary detail</div>
+          <div class="trust-item"><b>Core Rule 2</b>Summary detail</div>
+          <div class="trust-item"><b>Board Tip</b>Common mistake to avoid</div>
+        </div>
+      </div>
+    </section>
+
+    RULES:
+    1. Output pure HTML content ONLY.
+    2. Do NOT write <!DOCTYPE>, <html>, <head>, <header>, or <footer> tags.
+    3. Strictly write content relevant to '{subject}' only.
     """
 
     raw_body = call_gemini_with_fallback(prompt)
     main_body = clean_code(raw_body)
 
-    # Master Verified Branded Template with Stable Grid Footer
+    # Pure HTML template wired entirely to ../style.css and Dynamic Theme Engine
     full_html = f"""<!DOCTYPE html>
-<html lang="en" data-theme="sunset">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{chapter_name} | Shorveer Notes</title>
-  
+  <meta name="author" content="Jatin Sandilya">
+  <title>{chapter_name} · Class 12 {subject} | Shorveer Notes</title>
+
   {MATHJAX_HEADER}
 
-  <!-- Fonts -->
+  <!-- Fonts directly aligned with main site -->
   <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
   <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
+  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
 
+  <!-- Main Website Stylesheet: Pure styling without inline overrides -->
   <link rel="stylesheet" href="{css_rel}">
 
-  <style>
-    body {{
-      background: var(--bg, #241226);
-      color: var(--ink, #ffe9d6);
-      font-family: var(--font-body, 'Karla', sans-serif);
-      margin: 0;
-      padding-top: 76px;
-    }}
-    .container {{
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }}
-    .site-header {{
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 72px;
-      background: rgba(36, 18, 38, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.12));
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-    }}
-    .nav-inner {{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }}
-    .brand-title {{
-      font-family: var(--font-heading, 'Fraunces', serif);
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #fff;
-      text-decoration: none;
-    }}
-    .brand-title em {{
-      color: var(--gold, #ff8a5b);
-      font-style: normal;
-    }}
-    .nav-links a {{
-      color: var(--muted, #a090a0);
-      text-decoration: none;
-      font-weight: 600;
-      margin-left: 20px;
-      font-size: 0.95rem;
-    }}
-    .nav-links a:hover {{
-      color: var(--gold, #ff8a5b);
-    }}
-    .chapter-hero {{
-      padding: 35px 0 20px;
-      border-bottom: 1px dashed var(--line, rgba(255, 255, 255, 0.15));
-      margin-bottom: 30px;
-    }}
-    .back-btn {{
-      display: inline-block;
-      margin-bottom: 12px;
-      color: var(--gold, #ff8a5b);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }}
-    .chapter-hero h1 {{
-      font-family: var(--font-heading, 'Fraunces', serif);
-      font-size: 2.4rem;
-      margin: 0 0 10px 0;
-      color: #fff;
-    }}
-    .content-card {{
-      background: var(--card, rgba(255, 255, 255, 0.04));
-      border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
-      border-radius: 14px;
-      padding: 28px;
-      margin-bottom: 24px;
-    }}
-    .content-card h2, .content-card h3 {{
-      font-family: var(--font-heading, 'Fraunces', serif);
-      color: var(--gold, #ff8a5b);
-      margin-top: 0;
-    }}
-    .formula-box {{
-      background: rgba(0, 0, 0, 0.35);
-      border-left: 4px solid var(--gold, #ff8a5b);
-      padding: 18px;
-      border-radius: 8px;
-      margin: 18px 0;
-      overflow-x: auto;
-    }}
-    /* Clean Solid Footer */
-    .sn-footer {{
-      background: #190c1a;
-      border-top: 1px solid var(--line, rgba(255, 255, 255, 0.12));
-      padding: 50px 0 30px;
-      margin-top: 60px;
-    }}
-    .sn-footer-grid {{
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 36px;
-      margin-bottom: 36px;
-    }}
-    .sn-brand h3 {{
-      font-family: var(--font-heading, 'Fraunces', serif);
-      font-size: 1.4rem;
-      margin: 0 0 10px 0;
-      color: #fff;
-    }}
-    .sn-brand p {{
-      color: var(--muted, #a090a0);
-      font-size: 0.92rem;
-      line-height: 1.6;
-    }}
-    .footer-col h4 {{
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      color: #fff;
-      margin: 0 0 14px 0;
-      letter-spacing: 0.5px;
-    }}
-    .footer-col ul {{
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }}
-    .footer-col li {{
-      margin-bottom: 8px;
-    }}
-    .footer-col a {{
-      color: var(--muted, #a090a0);
-      text-decoration: none;
-      font-size: 0.9rem;
-    }}
-    .footer-col a:hover {{
-      color: var(--gold, #ff8a5b);
-    }}
-    .bottom-bar {{
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 20px;
-      text-align: center;
-      color: var(--muted, #a090a0);
-      font-size: 0.85rem;
-    }}
-    @media (max-width: 768px) {{
-      .sn-footer-grid {{ grid-template-columns: 1fr; gap: 24px; }}
-      .chapter-hero h1 {{ font-size: 1.9rem; }}
-      .content-card {{ padding: 20px; }}
-    }}
-  </style>
+  <script>
+    // Theme Engine: Reads user choice from localStorage (notebook, chalkboard, blueprint, sunset)
+    (function() {{
+      try {{
+        var savedTheme = localStorage.getItem('shorveer-theme-name') || 'sunset';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.classList.add('js');
+      }} catch(e) {{
+        document.documentElement.setAttribute('data-theme', 'sunset');
+      }}
+    }})();
+  </script>
 </head>
 <body>
 
+  <!-- ============ SITE HEADER ============ -->
   <header class="site-header">
-    <div class="container nav-inner">
-      <a class="brand-title" href="{hub_link}">Shorveer<em>Notes</em></a>
-      <nav class="nav-links">
-        <a href="{hub_link}">Portal Hub</a>
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="{root_link}" aria-label="Shorveer Notes home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+          </svg>
+        </span>
+        <span class="brand-name">Shorveer<em>Notes</em></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="{root_link}">Home</a>
+        <a href="{hub_link}" style="color:var(--ink); font-weight:700;">{subject} Hub</a>
         <a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ</a>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </header>
 
-  <main class="container">
-    <div class="chapter-hero">
-      <a class="back-btn" href="{hub_link}">← Back to Hub</a>
-      <h1>{chapter_name}</h1>
-      <p style="color:var(--muted, #a090a0); margin:0;">Class 12 Science · Authored by <strong>Jatin Sandilya</strong></p>
-    </div>
+  <main id="main">
 
-    {main_body}
-  </main>
-
-  <footer class="sn-footer">
-    <div class="container">
-      <div class="sn-footer-grid">
-        <div class="sn-brand">
-          <h3>Shorveer<em>Notes</em></h3>
-          <p>High-yield Class 12 Science & Mathematics preparation. Concept breakdowns, verified formulas, and board derivations created with precision by <strong>Jatin Sandilya</strong>.</p>
+    <!-- Hero Title -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="kicker">
+          <span class="dot"></span>
+          <span>CBSE Class 12 · {subject} Hub</span>
         </div>
-        <div class="footer-col">
-          <h4>Subjects</h4>
-          <ul>
-            <li><a href="../physics/index.html">Physics</a></li>
-            <li><a href="../chemistry/index.html">Chemistry</a></li>
-            <li><a href="../mathematics/index.html">Mathematics</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Platform</h4>
-          <ul>
-            <li><a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ YouTube</a></li>
-            <li><a href="mailto:support.shorveernotes@gmail.com">Contact</a></li>
-          </ul>
+        <h1>{chapter_name}</h1>
+        <p class="hero-description">
+          Detailed theory breakdowns, verified derivations, and board examination questions curated for precision.
+        </p>
+        <div class="hero-note">
+          <span>Curated by <strong>Jatin Sandilya</strong> · High-Yield Board Solutions</span>
         </div>
       </div>
-      <div class="bottom-bar">
-        <p>&copy; 2026 Shorveer Notes · Built with pride in India 🇮🇳</p>
+    </section>
+
+    <!-- AI Generated Content Sections -->
+    {main_body}
+
+    <!-- Bottom Hub Navigation -->
+    <section class="final-cta container reveal">
+      <div class="cta-content">
+        <h2>Completed this chapter? <em>Return to the hub.</em></h2>
+        <p>Check formula sheets, other syllabus chapters, and high-yield study resources.</p>
+        <a class="btn btn-gold" href="{hub_link}">
+          Back to {subject} Hub
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="sn-footer">
+    <div class="sn-footer__container container">
+      <div class="sn-footer__grid">
+        
+        <div class="sn-footer__brand">
+          <a class="sn-brand__logo" href="{root_link}" aria-label="Shorveer Notes home">
+            <span class="sn-brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+              </svg>
+            </span>
+            <span class="sn-brand__title-txt">Shorveer<em>Notes</em></span>
+          </a>
+
+          <h2 class="sn-brand__heading">Class 12 Science, Clearly Organised</h2>
+          <p class="sn-brand__sub">A student-focused learning platform for Class 12 Science notes, derivations, and board examination preparation.</p>
+
+          <div class="sn-brand__badge-box">
+            <div class="sn-founder-pill">
+              <span class="sn-founder-tag">JS</span>
+              <span class="sn-founder-name">Created by <strong>Jatin Sandilya</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sn-nav-col">
+          <h3 class="sn-col-head">Portals</h3>
+          <ul class="sn-col-links">
+            <li><a href="../physics/index.html">Physics Hub</a></li>
+            <li><a href="../chemistry/index.html">Chemistry Hub</a></li>
+            <li><a href="../mathematics/index.html">Mathematics Hub</a></li>
+          </ul>
+        </div>
+
+        <div class="sn-nav-col">
+          <h3 class="sn-col-head">Connect</h3>
+          <ul class="sn-col-links">
+            <li><a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ on YouTube</a></li>
+            <li><a href="mailto:support.shorveernotes@gmail.com">Contact Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="sn-bottom-bar">
+      <div class="sn-bottom-container container">
+        <p>&copy; 2026 Shorveer Notes. All rights reserved.</p>
+        <p>Built with pride in India 🇮🇳</p>
       </div>
     </div>
   </footer>
@@ -381,25 +378,23 @@ def build_chapter_page(target):
 
     with open(target_path, "w", encoding="utf-8") as f:
         f.write(full_html)
-
-    patch_file_errors(target_path)
-    print(f"Successfully generated: {target_path}")
+    print(f"Generated clean HTML page linked to style.css: {target_path}")
 
 def main():
     pending_list = scan_website_links()
     if not pending_list:
-        print("Saare chapters complete ho chuke hain! No more files pending.")
+        print("All chapters are complete!")
         if "GITHUB_OUTPUT" in os.environ:
             with open(os.environ["GITHUB_OUTPUT"], "a") as f:
                 f.write("has_more=false\n")
         return
 
     target = pending_list[0]
-    print(f"Target selected: {target['chapter_name']} -> {target['target_path']}")
+    print(f"Generating [{target['subject']}]: {target['chapter_name']} -> {target['target_path']}")
     build_chapter_page(target)
 
     remaining = len(pending_list) - 1
-    print(f"Done. Remaining chapters: {remaining}")
+    print(f"Remaining in queue: {remaining}")
     if "GITHUB_OUTPUT" in os.environ:
         with open(os.environ["GITHUB_OUTPUT"], "a") as f:
             f.write(f"has_more={'true' if remaining > 0 else 'false'}\n")
