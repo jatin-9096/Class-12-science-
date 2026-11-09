@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="sunset">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Chapter 10→ | Shorveer Notes</title>
+  
+  
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    body {
+      background: var(--bg, #241226);
+      color: var(--ink, #ffe9d6);
+      font-family: var(--font-body, 'Karla', sans-serif);
+      margin: 0;
+      padding-top: 76px;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      background: rgba(36, 18, 38, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .brand-title {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+    .brand-title em {
+      color: var(--gold, #ff8a5b);
+      font-style: normal;
+    }
+    .nav-links a {
+      color: var(--muted, #a090a0);
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 20px;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover {
+      color: var(--gold, #ff8a5b);
+    }
+    .chapter-hero {
+      padding: 35px 0 20px;
+      border-bottom: 1px dashed var(--line, rgba(255, 255, 255, 0.15));
+      margin-bottom: 30px;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--gold, #ff8a5b);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .chapter-hero h1 {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      font-size: 2.4rem;
+      margin: 0 0 10px 0;
+      color: #fff;
+    }
+    .content-card {
+      background: var(--card, rgba(255, 255, 255, 0.04));
+      border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .content-card h2, .content-card h3 {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      color: var(--gold, #ff8a5b);
+      margin-top: 0;
+    }
+    .formula-box {
+      background: rgba(0, 0, 0, 0.35);
+      border-left: 4px solid var(--gold, #ff8a5b);
+      padding: 18px;
+      border-radius: 8px;
+      margin: 18px 0;
+      overflow-x: auto;
+    }
+    /* Clean Solid Footer */
+    .sn-footer {
+      background: #190c1a;
+      border-top: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      padding: 50px 0 30px;
+      margin-top: 60px;
+    }
+    .sn-footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 36px;
+    }
+    .sn-brand h3 {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      font-size: 1.4rem;
+      margin: 0 0 10px 0;
+      color: #fff;
+    }
+    .sn-brand p {
+      color: var(--muted, #a090a0);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .footer-col h4 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      color: #fff;
+      margin: 0 0 14px 0;
+      letter-spacing: 0.5px;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-col li {
+      margin-bottom: 8px;
+    }
+    .footer-col a {
+      color: var(--muted, #a090a0);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .footer-col a:hover {
+      color: var(--gold, #ff8a5b);
+    }
+    .bottom-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 20px;
+      text-align: center;
+      color: var(--muted, #a090a0);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 768px) {
+      .sn-footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .chapter-hero h1 { font-size: 1.9rem; }
+      .content-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand-title" href="index.html">Shorveer<em>Notes</em></a>
+      <nav class="nav-links">
+        <a href="index.html">Portal Hub</a>
+        <a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="chapter-hero">
+      <a class="back-btn" href="index.html">← Back to Hub</a>
+      <h1>Open Chapter 10→</h1>
+      <p style="color:var(--muted, #a090a0); margin:0;">Class 12 Science · Authored by <strong>Jatin Sandilya</strong></p>
+    </div>
+
+    <main class="container">
+    <div class="card mb-4">
+        <div class="card-body">
+            <h1 class="text-center mb-4">Class 12 Physics: Chapter 10 - Wave Optics</h1>
+            <p class="text-muted text-end"><em>Author: Jatin Sandilya</em></p>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h2 class="h5 mb-0">1. Comprehensive Chapter Overview & Core Concepts</h2>
+        </div>
+        <div class="card-body">
+            <p>This chapter delves into the wave nature of light, explaining phenomena that cannot be accounted for by the particle (ray) model. It forms the foundation for understanding interference, diffraction, and polarization.</p>
+
+            <h3>1.1. Huygens' Principle</h3>
+            <ul>
+                <li>Every point on a primary wavefront acts as a source of secondary wavelets, which spread out in all directions with the speed of light in that medium.</li>
+                <li>The new wavefront at any later instant is the forward envelope (tangent) to all these secondary wavelets.</li>
+                <li>It successfully explains the laws of reflection and refraction of light.</li>
+            </ul>
+
+            <h3>1.2. Interference of Light</h3>
+            <ul>
+                <li><strong>Definition:</strong> The phenomenon of redistribution of light energy due to the superposition of two or more coherent light waves.</li>
+                <li><strong>Coherent Sources:</strong> Sources emitting light waves of the same frequency, same wavelength, nearly same amplitude, and a constant phase difference. Two independent sources cannot be coherent.</li>
+                <li><strong>Constructive Interference:</strong> Occurs when waves meet in phase ($\Delta \phi = 2n\pi$), resulting in maximum intensity (bright fringe). Path difference $\Delta x = n\lambda$.</li>
+                <li><strong>Destructive Interference:</strong> Occurs when waves meet out of phase ($\Delta \phi = (2n-1)\pi$), resulting in minimum intensity (dark fringe). Path difference $\Delta x = (2n-1)\frac{\lambda}{2}$.</li>
+                <li><strong>Young's Double Slit Experiment (YDSE):</strong> A classic experiment demonstrating interference, producing distinct bright and dark fringes on a screen.</li>
+            </ul>
+
+            <h3>1.3. Diffraction of Light</h3>
+            <ul>
+                <li><strong>Definition:</strong> The phenomenon of bending of light waves around the corners of an obstacle or aperture into the region of geometrical shadow.</li>
+                <li><strong>Fresnel Diffraction:</strong> Occurs when the source or screen (or both) are at finite distances from the obstacle/aperture.</li>
+                <li><strong>Fraunhofer Diffraction:</strong> Occurs when the source and screen are effectively at infinite distances from the obstacle/aperture (achieved using lenses).</li>
+                <li><strong>Single Slit Diffraction:</strong> Light passing through a narrow single slit produces a broad central maximum flanked by weaker, narrower secondary maxima and minima.</li>
+            </ul>
+
+            <h3>1.4. Polarization of Light</h3>
+            <ul>
+                <li><strong>Definition:</strong> The phenomenon of restricting the vibrations of light waves (transverse waves) to a single plane.</li>
+                <li><strong>Unpolarized Light:</strong> Vibrations occur in all possible planes perpendicular to the direction of propagation.</li>
+                <li><strong>Plane Polarized Light:</strong> Vibrations occur only in one specific plane.</li>
+                <li><strong>Polarizer:</strong> A device (e.g., Polaroid) used to produce plane-polarized light from unpolarized light.</li>
+                <li><strong>Analyzer:</strong> A device used to detect or verify plane-polarized light.</li>
+                <li><strong>Brewster's Law:</strong> When unpolarized light is incident on a transparent medium at the polarizing angle ($i_p$), the reflected light is completely plane-polarized. At this angle, the reflected and refracted rays are perpendicular to each other.</li>
+            </ul>
+
+            <h3>1.5. Resolving Power</h3>
+            <ul>
+                <li><strong>Definition:</strong> The ability of an optical instrument to distinguish between two closely spaced objects.</li>
+                <li><strong>Rayleigh's Criterion:</strong> Two objects are just resolved when the central maximum of the diffraction pattern of one coincides with the first minimum of the diffraction pattern of the other.</li>
+                <li><strong>Resolving Power of a Microscope:</strong> Dependent on wavelength, refractive index of medium, and angular aperture.</li>
+                <li><strong>Resolving Power of a Telescope:</strong> Dependent on wavelength and diameter of the objective lens.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header bg-success text-white">
+            <h2 class="h5 mb-0">2. Key Theorems / Reaction Mechanisms / Core Formulas</h2>
+        </div>
+        <div class="card-body">
+            <p>Here are the fundamental formulas and laws essential for solving problems related to Wave Optics:</p>
+
+            <h3>2.1. Huygens' Principle</h3>
+            <p>Every point on a wavefront is a source of secondary wavelets. The new wavefront is the forward envelope of these wavelets.</p>
+
+            <h3>2.2. Young's Double Slit Experiment (YDSE)</h3>
+            <ul>
+                <li>Path difference: $\Delta x = d \sin \theta \approx \frac{dy}{D}$ (for small $\theta$)</li>
+                <li>Condition for Bright Fringes (Constructive Interference): $\Delta x = n\lambda \Rightarrow \frac{dy}{D} = n\lambda$, where $n = 0, \pm 1, \pm 2, ...$</li>
+                <li>Condition for Dark Fringes (Destructive Interference): $\Delta x = (2n-1)\frac{\lambda}{2} \Rightarrow \frac{dy}{D} = (2n-1)\frac{\lambda}{2}$, where $n = \pm 1, \pm 2, ...$</li>
+                <li>Fringe Width ($\beta$): The distance between two consecutive bright or dark fringes.</li>
+                <div class="formula-box">
+                    $$ \beta = \frac{\lambda D}{d} $$
+                </div>
+                <li>Intensity distribution: $I = 4I_0 \cos^2(\frac{\phi}{2})$, where $\phi = \frac{2\pi}{\lambda}\Delta x$.</li>
+            </ul>
+
+            <h3>2.3. Diffraction from a Single Slit</h3>
+            <ul>
+                <li>Condition for Minima: $a \sin \theta = n\lambda$, where $n = \pm 1, \pm 2, ...$ ($a$ is slit width)</li>
+                <li>Condition for Secondary Maxima: $a \sin \theta = (2n+1)\frac{\lambda}{2}$, where $n = \pm 1, \pm 2, ...$</li>
+                <li>Angular width of central maximum: $2\theta \approx \frac{2\lambda}{a}$ (for small $\theta$)</li>
+                <li>Linear width of central maximum: $W = \frac{2\lambda D}{a}$</li>
+            </ul>
+
+            <h3>2.4. Malus's Law (for Polarization)</h3>
+            <p>When plane-polarized light of intensity $I_0$ is incident on an analyzer, the transmitted intensity $I$ is:</p>
+            <div class="formula-box">
+                $$ I = I_0 \cos^2 \theta $$
+            </div>
+            <p>where $\theta$ is the angle between the transmission axes of the polarizer and the analyzer.</p>
+
+            <h3>2.5. Brewster's Law</h3>
+            <p>The polarizing angle $i_p$ for a medium of refractive index $\mu$ is given by:</p>
+            <div class="formula-box">
+                $$ \mu = \tan i_p $$
+            </div>
+            <p>At this angle, the reflected and refracted rays are perpendicular ($i_p + r = 90^\circ$).</p>
+
+            <h3>2.6. Resolving Power</h3>
+            <ul>
+                <li>**Microscope:**</li>
+                <div class="formula-box">
+                    $$ RP = \frac{2\mu \sin \theta}{\lambda} $$
+                </div>
+                <p>where $\mu$ is refractive index of medium between object and objective, $2\theta$ is angle subtended by objective lens at object.</p>
+                <li>**Telescope:**</li>
+                <div class="formula-box">
+                    $$ RP = \frac{D}{1.22\lambda} $$
+                </div>
+                <p>where $D$ is the diameter of the objective lens, $\lambda$ is the wavelength of light. Angular resolution $\Delta \theta = \frac{1.22\lambda}{D}$.</p>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header bg-info text-white">
+            <h2 class="h5 mb-0">3. Solved High-Yield CBSE Board PYQs</h2>
+        </div>
+        <div class="card-body">
+            <div class="pyq-question mb-4">
+                <h4>Question 1 (CBSE 2018): Young's Double Slit Experiment</h4>
+                <p>In Young's double-slit experiment, the slits are separated by 0.28 mm and the screen is placed 1.4 m away. The distance between the central bright fringe and the fourth dark fringe is 1.2 cm. Determine the wavelength of light used.</p>
+                <div class="solution-box border p-3 rounded bg-light">
+                    <h5>Solution:</h5>
+                    <p><strong>Step 1: Identify given values and formula for dark fringe position.</strong> (1 Mark)</p>
+                    <ul class="list-unstyled">
+                        <li>Slit separation, $d = 0.28 \text{ mm} = 0.28 \times 10^{-3} \text{ m}$</li>
+                        <li>Screen distance, $D = 1.4 \text{ m}$</li>
+                        <li>Position of 4th dark fringe ($n=4$), $y_4 = 1.2 \text{ cm} = 1.2 \times 10^{-2} \text{ m}$</li>
+                        <li>Formula for $n$-th dark fringe position from central maximum: $y_n = (2n-1)\frac{\lambda D}{2d}$</li>
+                    </ul>
+                    <p><strong>Step 2: Substitute values into the formula.</strong> (1 Mark)</p>
+                    <p>For the 4th dark fringe ($n=4$):</p>
+                    <div class="formula-box">
+                        $$ 1.2 \times 10^{-2} = (2 \times 4 - 1)\frac{\lambda (1.4)}{2 \times (0.28 \times 10^{-3})} $$
+                        $$ 1.2 \times 10^{-2} = (7)\frac{\lambda (1.4)}{0.56 \times 10^{-3}} $$
+                    </div>
+                    <p><strong>Step 3: Solve for the wavelength $\lambda$.</strong> (1 Mark)</p>
+                    <div class="formula-box">
+                        $$ \lambda = \frac{(1.2 \times 10^{-2}) \times (0.56 \times 10^{-3})}{7 \times 1.4} $$
+                        $$ \lambda = \frac{0.672 \times 10^{-5}}{9.8} $$
+                        $$ \lambda = 0.06857 \times 10^{-5} \text{ m} $$
+                        $$ \lambda = 6.857 \times 10^{-7} \text{ m} \approx 686 \text{ nm} $$
+                    </div>
+                    <p><strong>Final Answer:</strong> The wavelength of light used is $6.86 \times 10^{-7} \text{ m}$ (or $686 \text{ nm}$).</p>
+                </div>
+            </div>
+
+            <div class="pyq-question mb-4">
+                <h4>Question 2 (CBSE 2019): Single-Slit Diffraction</h4>
+                <p>Draw the intensity distribution curve for single-slit diffraction. Explain briefly why the central maximum is twice as wide as the other secondary maxima.</p>
+                <div class="solution-box border p-3 rounded bg-light">
+                    <h5>Solution:</h5>
+                    <p><strong>Step 1: Draw the intensity distribution curve.</strong> (1.5 Marks)</p>
+                    <p>The intensity distribution curve for single-slit diffraction typically looks like this (description, as an actual HTML drawing is not feasible here):</p>
+                    <pre style="font-family: monospace;">
+          ^ Intensity
+          |
+         /|\
+        / | \
+       /  |  \
+      /   |   \
+     /    |    \
+----|-----|-----|----|-----|----&gt; Position (Angle)
+    -3λ/a -2λ/a -λ/a 0 λ/a 2λ/a 3λ/a
+          (Minima positions)
+                    </pre>
+                    <p><em>(Diagram should show a very bright and broad central peak at $\theta=0$, followed by much weaker and narrower secondary maxima on either side. The intensity rapidly decreases for higher-order maxima. Minima occur at angles corresponding to $\pm\lambda/a, \pm2\lambda/a, \pm3\lambda/a$, etc.)</em></p>
+
+                    <p><strong>Step 2: Explain why the central maximum is twice as wide.</strong> (1.5 Marks)</p>
+                    <ul>
+                        <li>For single-slit diffraction, the positions of the minima are given by the condition $a \sin \theta = n\lambda$, where $n = \pm 1, \pm 2, ...$</li>
+                        <li>The first minima on either side of the central maximum occur at $\sin \theta = \pm \frac{\lambda}{a}$.</li>
+                        <li>Therefore, the angular width of the central maximum (from the first minimum on one side to the first minimum on the other side) is $2\theta \approx \frac{2\lambda}{a}$ (for small angles, $\sin \theta \approx \theta$).</li>
+                        <li>In contrast, the angular width of any secondary maximum (e.g., between the first minimum at $\frac{\lambda}{a}$ and the second minimum at $\frac{2\lambda}{a}$) is approximately $\frac{\lambda}{a}$. The width between consecutive minima (which defines the extent of secondary maxima/minima) is $\frac{\lambda}{a}$.</li>
+                        <li>Hence, the central maximum extends from $-\frac{\lambda}{a}$ to $+\frac{\lambda}{a}$, making its angular width $2\frac{\lambda}{a}$, which is precisely twice the angular width of the secondary maxima (each of width $\frac{\lambda}{a}$).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pyq-question mb-4">
+                <h4>Question 3 (CBSE 2017): Polarization and Brewster's Law</h4>
+                <p>Unpolarized light is incident on a plane glass surface. What is the angle of incidence if the reflected and refracted rays are perpendicular to each other? For glass, refractive index $\mu = 1.5$.</p>
+                <div class="solution-box border p-3 rounded bg-light">
+                    <h5>Solution:</h5>
+                    <p><strong>Step 1: State the condition and relevant law.</strong> (1 Mark)</p>
+                    <ul>
+                        <li>When the reflected and refracted rays are perpendicular to each other, the angle of incidence is known as the Brewster's angle (or polarizing angle), $i_p$.</li>
+                        <li>According to Brewster's Law, the refractive index $\mu$ is related to the polarizing angle $i_p$ by: $\mu = \tan i_p$.</li>
+                    </ul>
+                    <p><strong>Step 2: Substitute the given refractive index and solve for $i_p$.</strong> (1.5 Marks)</p>
+                    <ul class="list-unstyled">
+                        <li>Given refractive index of glass, $\mu = 1.5$</li>
+                        <li>$1.5 = \tan i_p$</li>
+                        <li>$i_p = \tan^{-1}(1.5)$</li>
+                        <li>Using a calculator, $i_p \approx 56.31^\circ$</li>
+                    </ul>
+                    <p><strong>Step 3: Conclude the angle of incidence.</strong> (0.5 Marks)</p>
+                    <p>The angle of incidence for which the reflected and refracted rays are perpendicular is $56.31^\circ$.</p>
+                    <p><strong>Final Answer:</strong> The angle of incidence is $56.31^\circ$.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header bg-warning text-dark">
+            <h2 class="h5 mb-0">4. Quick Revision Summary Box</h2>
+        </div>
+        <div class="card-body bg-light">
+            <ul>
+                <li><strong>Huygens' Principle:</strong> Wavefronts generate secondary wavelets; new wavefront is their envelope. Basis for wave propagation.</li>
+                <li><strong>Interference:</strong> Superposition of coherent waves leading to bright (constructive, $\Delta x = n\lambda$) and dark (destructive, $\Delta x = (2n-1)\lambda/2$) fringes. Coherent sources crucial.</li>
+                <li><strong>YDSE:</strong> Demonstrates interference; fringe width $\beta = \frac{\lambda D}{d}$. Intensity is $I = 4I_0 \cos^2(\phi/2)$.</li>
+                <li><strong>Diffraction:</strong> Bending of light around obstacles/apertures. Single-slit diffraction produces a broad central maximum ($2\lambda/a$) and weaker secondary maxima. Minima at $a \sin \theta = n\lambda$.</li>
+                <li><strong>Polarization:</strong> Restricting light vibrations to a single plane. Proof of transverse nature of light.</li>
+                <li><strong>Malus's Law:</strong> $I = I_0 \cos^2 \theta$, describes intensity through an analyzer.</li>
+                <li><strong>Brewster's Law:</strong> $\mu = \tan i_p$. At polarizing angle $i_p$, reflected light is fully polarized, and reflected/refracted rays are perpendicular.</li>
+                <li><strong>Resolving Power:</strong> Ability to distinguish close objects. Higher for shorter wavelength ($\lambda$), larger aperture ($D$) or Numerical Aperture ($2\mu \sin \theta$). Formulas: $RP_{Microscope} = \frac{2\mu \sin \theta}{\lambda}$, $RP_{Telescope} = \frac{D}{1.22\lambda}$.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header bg-danger text-white">
+            <h2 class="h5 mb-0">5. Concept Mind-Map Points List</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li><strong>Wave Optics</strong>
+                    <ul>
+                        <li><strong>Wave Nature of Light</strong>
+                            <ul>
+                                <li>Huygens' Principle (Wavefronts, Secondary Wavelets)</li>
+                                <li>Explains Reflection &amp; Refraction</li>
+                            </ul>
+                        </li>
+                        <li><strong>Interference</strong>
+                            <ul>
+                                <li>Coherent Sources (Constant Phase Diff, Same Freq, Same Wavelength)</li>
+                                <li>Constructive Interference (Bright Fringes, $\Delta x = n\lambda$)</li>
+                                <li>Destructive Interference (Dark Fringes, $\Delta x = (2n-1)\lambda/2$)</li>
+                                <li>Young's Double Slit Experiment (YDSE)
+                                    <ul>
+                                        <li>Fringe Width $\beta = \lambda D / d$</li>
+                                        <li>Intensity Distribution</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Diffraction</strong>
+                            <ul>
+                                <li>Bending of Light around Obstacles/Apertures</li>
+                                <li>Fresnel Diffraction (Finite Distances)</li>
+                                <li>Fraunhofer Diffraction (Infinite Distances)</li>
+                                <li>Single Slit Diffraction
+                                    <ul>
+                                        <li>Central Maximum (Widest, Brightest)</li>
+                                        <li>Secondary Maxima &amp; Minima</li>
+                                        <li>Minima: $a \sin \theta = n\lambda$</li>
+                                        <li>Angular Width of Central Max: $2\lambda/a$</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Polarization</strong>
+                            <ul>
+                                <li>Transverse Nature of Light</li>
+                                <li>Unpolarized Light vs. Plane Polarized Light</li>
+                                <li>Polarizer &amp; Analyzer</li>
+                                <li>Malus's Law: $I = I_0 \cos^2 \theta$</li>
+                                <li>Brewster's Law: $\mu = \tan i_p$
+                                    <ul>
+                                        <li>Reflected &amp; Refracted Rays Perpendicular</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Resolving Power</strong>
+                            <ul>
+                                <li>Rayleigh's Criterion</li>
+                                <li>Microscope: $RP = 2\mu \sin \theta / \lambda$</li>
+                                <li>Telescope: $RP = D / (1.22\lambda)$</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+  </main>
+
+  <footer class="sn-footer">
+    <div class="container">
+      <div class="sn-footer-grid">
+        <div class="sn-brand">
+          <h3>Shorveer<em>Notes</em></h3>
+          <p>High-yield Class 12 Science & Mathematics preparation. Concept breakdowns, verified formulas, and board derivations created with precision by <strong>Jatin Sandilya</strong>.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Subjects</h4>
+          <ul>
+            <li><a href="../physics/index.html">Physics</a></li>
+            <li><a href="../chemistry/index.html">Chemistry</a></li>
+            <li><a href="../mathematics/index.html">Mathematics</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ YouTube</a></li>
+            <li><a href="mailto:support.shorveernotes@gmail.com">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <p>&copy; 2026 Shorveer Notes · Built with pride in India 🇮🇳</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
