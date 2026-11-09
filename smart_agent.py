@@ -6,12 +6,13 @@ from bs4 import BeautifulSoup
 from google import genai
 from google.genai.errors import ServerError, APIError
 
-# Quota protection
 BATCH_SIZE = 1
+API_COOLDOWN = 20  # Rate-limit safety cooldown in seconds
+MIN_FILE_SIZE = 250 * 1024  # 250 KB minimum target
 
 api_key = os.environ.get("GEMINI_API_KEY")
 if not api_key:
-    raise ValueError("GEMINI_API_KEY environment variable missing.")
+    raise ValueError("GEMINI_API_KEY environment variable is missing.")
 
 client = genai.Client(api_key=api_key)
 
@@ -33,6 +34,35 @@ MATHJAX_HEADER = """
 </script>
 """
 
+# CBSE Class 12 Official Master Syllabus for Validation
+OFFICIAL_SYLLABUS = {
+    "Mathematics": [
+        "Relations and Functions", "Inverse Trigonometric Functions", "Matrices",
+        "Determinants", "Continuity and Differentiability", "Application of Derivatives",
+        "Integrals", "Application of Integrals", "Differential Equations",
+        "Vector Algebra", "Three Dimensional Geometry", "Linear Programming", "Probability"
+    ],
+    "Physics": [
+        "Electric Charges and Fields", "Electrostatic Potential and Capacitance",
+        "Current Electricity", "Moving Charges and Magnetism", "Magnetism and Matter",
+        "Electromagnetic Induction", "Alternating Current", "Electromagnetic Waves",
+        "Ray Optics and Optical Instruments", "Wave Optics", "Dual Nature of Radiation and Matter",
+        "Atoms", "Nuclei", "Semiconductor Electronics"
+    ],
+    "Chemistry": [
+        "Solutions", "Electrochemistry", "Chemical Kinetics", "d and f Block Elements",
+        "Coordination Compounds", "Haloalkanes and Haloarenes", "Alcohols, Phenols and Ethers",
+        "Aldehydes, Ketones and Carboxylic Acids", "Amines", "Biomolecules"
+    ],
+    "English": [
+        "The Last Lesson", "Lost Spring", "Deep Water", "The Rattrap", "Indigo",
+        "Poets and Pancakes", "The Interview", "Going Places", "My Mother at Sixty-Six",
+        "Keeping Quiet", "A Thing of Beauty", "A Roadside Stand", "Aunt Jennifer's Tigers",
+        "The Third Level", "The Tiger King", "Journey to the end of the Earth", "The Enemy",
+        "On the face of It", "Memories of Childhood"
+    ]
+}
+
 IGNORE_KEYWORDS = ["privacy", "terms", "cookie", "disclaimer", "about", "contact", "framework"]
 
 def call_gemini_with_fallback(prompt, max_retries=3):
@@ -46,13 +76,13 @@ def call_gemini_with_fallback(prompt, max_retries=3):
                 )
                 return response.text
             except (ServerError, APIError) as e:
-                print(f"Demand spike on {model_name}. Waiting 10s for retry...")
+                print(f"Demand spike on {model_name} (Attempt {attempt+1}). Retrying in 10s...")
                 time.sleep(10)
             except Exception as e:
                 print(f"Error calling {model_name}: {e}")
                 time.sleep(5)
                 break
-    raise RuntimeError("All Gemini attempts failed.")
+    raise RuntimeError("All Gemini API models failed after retries.")
 
 def clean_code(raw_text):
     text = raw_text.strip()
@@ -76,39 +106,58 @@ def detect_subject(file_path):
         return "English"
     return "Science"
 
-def is_file_corrupt_or_weak(file_path, subject):
-    """File quality & corrupt link checker"""
+def is_file_contaminated(content, subject):
+    content_lower = content.lower()
+    if subject == "Mathematics":
+        return any(w in content_lower for w in ["arrhenius", "chemical kinetics", "activation energy", "haloalkane", "sn1", "sn2"])
+    elif subject == "Physics":
+        return any(w in content_lower for w in ["organic chemistry", "reaction mechanism", "alcohols phenols", "carboxylic acid"])
+    elif subject == "Chemistry":
+        return any(w in content_lower for w in ["direction cosines", "shortest distance between skew lines", "integrate by parts dx"])
+    return False
+
+def audit_file_health(file_path, subject):
     if not os.path.exists(file_path):
         return True, "Missing File"
+    
+    file_size = os.path.getsize(file_path)
+    if file_size < MIN_FILE_SIZE:
+        return True, f"File size too small ({file_size // 1024} KB < 250 KB target)"
     
     with open(file_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # 1. Size check: In-depth notes must be at least 4.5 KB
-    if len(content) < 4500:
-        return True, "Content too short (needs deep notes)"
+    if is_file_contaminated(content, subject):
+        return True, f"Subject Contamination detected in {subject} file"
+    
+    if 'class="sn-wordmark-svg"' in content or ('viewBox="0 0 64 64"' in content and 'max-width: 36px' not in content):
+        return True, "Corrupt Giant Logo Bug detected"
 
-    # 2. Giant SVG bug check
-    if 'class="sn-wordmark-svg"' in content or 'viewBox="0 0 64 64" fill="none">\n            <path' in content and 'height: 36px;' not in content:
-        return True, "Corrupt Giant SVG Logo bug"
+    return False, "Healthy"
 
-    # 3. Subject Contamination Cross-Check
-    content_lower = content.lower()
-    if subject == "Mathematics":
-        if any(w in content_lower for w in ["arrhenius", "chemical kinetics", "activation energy", "haloalkane"]):
-            return True, "Cross-contamination: Chemistry found in Math"
-    elif subject == "Physics":
-        if any(w in content_lower for w in ["organic chemistry", "reaction mechanism"]):
-            return True, "Cross-contamination: Chemistry found in Physics"
+def target_in_place_patch(file_path):
+    """In-place localized patcher: fixes broken closing tags without rewriting 250KB content"""
+    with open(file_path, "r", encoding="utf-8") as f:
+        content = f.read()
 
-    return False, "OK"
+    unclosed = []
+    for tag in ["html", "head", "body", "main", "article", "section", "div"]:
+        open_c = len(re.findall(rf"<{tag}\b", content, re.I))
+        close_c = len(re.findall(rf"</{tag}>", content, re.I))
+        if open_c > close_c:
+            unclosed.append(tag)
 
-def scan_website_queue():
+    if unclosed:
+        print(f"Applying in-place patch for unclosed tags in {file_path}: {unclosed}")
+        patch_str = "\n" + "\n".join([f"</{tag}>" for tag in reversed(unclosed)]) + "\n"
+        with open(file_path, "a", encoding="utf-8") as f:
+            f.write(patch_str)
+
+def scan_and_audit_website():
     pending_targets = []
-    seen_paths = set()
+    seen = set()
     html_files = glob.glob("**/*.html", recursive=True)
 
-    # 1. Link extraction from index & navigation files
     for source_file in html_files:
         base_dir = os.path.dirname(source_file)
         with open(source_file, "r", encoding="utf-8") as f:
@@ -128,17 +177,17 @@ def scan_website_queue():
 
             normalized_href = clean_href.lstrip("/\\")
             target_path = os.path.normpath(os.path.join(base_dir, normalized_href))
+            filename = os.path.basename(target_path).lower()
 
-            # Exclude hub/index pages from generation queue
-            if os.path.basename(target_path).lower() in ["index.html", "about.html", "about-notes.html", "exam-info.html"]:
+            if filename in ["index.html", "about.html", "about-notes.html", "exam-info.html"]:
                 continue
 
             subject = detect_subject(target_path)
-            corrupt, reason = is_file_corrupt_or_weak(target_path, subject)
+            corrupt, reason = audit_file_health(target_path, subject)
 
-            if corrupt and target_path not in seen_paths:
-                seen_paths.add(target_path)
-
+            if corrupt and target_path not in seen:
+                seen.add(target_path)
+                
                 title_text = ""
                 parent_card = a_tag.find_parent(class_=re.compile(r"card|item|subject", re.I))
                 if parent_card:
@@ -152,136 +201,192 @@ def scan_website_queue():
                     file_base = os.path.splitext(os.path.basename(normalized_href))[0]
                     title_text = file_base.replace("-", " ").replace("_", " ").title()
 
+                # Determine Part 1 or Part 2
+                is_part_2 = "part2" in filename or "pyq" in filename
+                clean_title = re.sub(r"\s*\(?(Part\s*[12]|PYQs?)\)?", "", title_text, flags=re.I).strip()
+
                 pending_targets.append({
                     "target_path": target_path,
-                    "chapter_name": title_text,
+                    "chapter_name": clean_title,
                     "subject": subject,
+                    "is_part_2": is_part_2,
                     "reason": reason
                 })
 
     return pending_targets
 
-def generate_deep_content(subject, chapter_name):
-    """Multi-stage in-depth content generation for textbook-grade length"""
-    print(f"-> Generating Stage 1: Theory & Core Concepts for {chapter_name}...")
+def generate_part1_content(subject, chapter_name):
+    """Generates 250KB+ Deep Academic Theory, Complete Derivations, and Comprehensive Laws"""
+    print(f"--> [Chunk 1/2] Drafting In-depth Theory for {chapter_name} ({subject})...")
     p1 = f"""
-    Act as a Senior CBSE Examiner and Subject Master in Class 12 {subject}.
-    Write an exhaustive, deeply detailed academic Section 1 for the chapter: '{chapter_name}'.
+    Act as a Senior CBSE Board Examiner and Textbook Author in Class 12 {subject}.
+    Write a massive, mathematically and scientifically rigorous conceptual breakdown for: '{chapter_name}'.
     
-    Structure:
-    <section class="section container">
+    Requirements:
+    1. Provide extensive introductory context, historical significance, definitions, and real-life physical relevance.
+    2. Comprehensive exploration of all laws, cases, properties, conditions, limitations, and graphical variations.
+    3. Ensure minimum 3500+ words of granular explanations. Do not skip details. Avoid any placeholder text.
+    
+    Structure as clean HTML sections:
+    <section class="section container" id="theory">
       <div class="section-head">
-        <span class="section-eyebrow">Exhaustive Theory</span>
-        <h2>1. Fundamental Principles, Core Definitions & Complete Theory</h2>
+        <span class="section-eyebrow">Comprehensive Theory</span>
+        <h2>1. Complete Conceptual Framework & Definitions</h2>
       </div>
       <div class="real-life">
         <article class="rl-card" style="--rl-color: #bf5a3c">
           <div class="rl-body">
-            <div class="rl-title">In-Depth Theoretical Framework</div>
-            <p class="rl-text">
-              Explain every single theorem, law, condition, and graphical variation. Provide multi-paragraph analysis. No brief summaries or placeholders.
-            </p>
+            <div class="rl-title">Fundamental Theoretical Principles</div>
+            <p class="rl-text"><!-- Massive theoretical body --></p>
           </div>
         </article>
       </div>
     </section>
-    Return ONLY this HTML section.
+    Return ONLY this valid HTML section.
     """
-    sec1 = clean_code(call_gemini_with_fallback(p1))
-    time.sleep(3)
+    chunk1 = clean_code(call_gemini_with_fallback(p1))
+    print(f"Waiting {API_COOLDOWN}s for API cooldown...")
+    time.sleep(API_COOLDOWN)
 
-    print(f"-> Generating Stage 2: Formulas, Proofs & Solved PYQs...")
+    print(f"--> [Chunk 2/2] Drafting Complete Derivation Bank & Exhaustive Formula Tables...")
     p2 = f"""
-    Continue Class 12 {subject} notes for: '{chapter_name}'.
-    Write Section 2 (Complete Formula & Derivations) and Section 3 (CBSE 5-Marker Solved PYQs).
+    Continue Class 12 {subject} notes for Chapter: '{chapter_name}'.
+    Provide the exhaustive Derivation Bank and Formula/Equation Repository.
     
     Requirements:
-    1. Formulas & Derivations: Use MathJax LaTeX ($...$ for inline, $$...$$ for blocks). Provide full step-by-step proofs.
-    2. 3 Solved High-Yield CBSE Board PYQs with full marking step solutions.
+    1. Full multi-step mathematical proofs with reasonings for every single CBSE standard derivation using MathJax ($...$ for inline, $$...$$ for display equations).
+    2. A comprehensive formula table listing variables, SI units, dimensions, and operational constraints.
+    3. Include copy-code buttons wrappers around key equations.
     
     Structure:
-    <section class="section container">
+    <section class="section container" id="derivations">
       <div class="section-head">
-        <span class="section-eyebrow">Formulas & Derivations</span>
-        <h2>2. High-Yield Equations & Step-by-Step Proofs</h2>
+        <span class="section-eyebrow">Formula Repository</span>
+        <h2>2. Master Equation Bank & Step-by-Step Derivations</h2>
       </div>
       <div class="resource-grid">
         <article class="resource">
-          <h3>Full Mathematical Framework</h3>
-          <p><!-- formulas & derivations --></p>
+          <h3>Exhaustive Formula Table</h3>
+          <!-- Comprehensive list of all formulas -->
         </article>
       </div>
     </section>
-
-    <section class="section container">
-      <div class="section-head">
-        <span class="section-eyebrow">CBSE Examination Focus</span>
-        <h2>3. Solved Board PYQs (5-Mark & 3-Mark Standards)</h2>
-      </div>
-      <div class="resource-grid">
-        <article class="resource">
-          <div class="resource-icon">PYQ 1</div>
-          <h3>Question 1 (5-Marker)</h3>
-          <p><strong>Problem:</strong> ...</p>
-          <p><strong>Marking Scheme Solution:</strong> ...</p>
-        </article>
-        <article class="resource">
-          <div class="resource-icon">PYQ 2</div>
-          <h3>Question 2 (4-Marker)</h3>
-          <p><strong>Problem:</strong> ...</p>
-          <p><strong>Marking Scheme Solution:</strong> ...</p>
-        </article>
-      </div>
-    </section>
-    Return ONLY these HTML sections.
+    Return ONLY this valid HTML section.
     """
-    sec2_3 = clean_code(call_gemini_with_fallback(p2))
-    time.sleep(3)
+    chunk2 = clean_code(call_gemini_with_fallback(p2))
 
-    print(f"-> Generating Stage 3: Mind Map & Fast Revision Checklist...")
-    p3 = f"""
-    Finalize Class 12 {subject} notes for: '{chapter_name}'.
-    Write Section 4: Mind-Map & Summary Checklist.
+    return f"{chunk1}\n\n{chunk2}"
+
+def generate_part2_content(subject, chapter_name):
+    """Generates 250KB+ Solved Board PYQs, Competency Case Studies, and Mind-Maps"""
+    print(f"--> [Chunk 1/2] Drafting Solved CBSE Board PYQs for {chapter_name} ({subject})...")
+    p1 = f"""
+    Act as a CBSE Chief Head Evaluator in Class 12 {subject}.
+    Write a comprehensive Solved Board Question Bank for: '{chapter_name}'.
+    
+    Requirements:
+    1. Exactly 8 full-length solved CBSE Board Past 10-Year Questions:
+       - 2 Long Answer Questions (5-Markers) with step-by-step marking scheme allocations.
+       - 3 Medium Application Questions (3-Markers).
+       - 3 Conceptual & Numerical Traps (2-Markers).
+    2. Write every mathematical equation with MathJax.
     
     Structure:
-    <section class="section container">
+    <section class="section container" id="pyqs">
       <div class="section-head">
-        <span class="section-eyebrow">Visual Framework</span>
-        <h2>4. High-Yield Mind-Map & Fast Revision Checklist</h2>
+        <span class="section-eyebrow">Board Examination Archive</span>
+        <h2>1. Solved CBSE Board Past Year Questions (Marking Scheme Aligned)</h2>
+      </div>
+      <div class="resource-grid">
+        <!-- 8 solved question articles with .resource-icon and .qa-box -->
+      </div>
+    </section>
+    Return ONLY this valid HTML section.
+    """
+    chunk1 = clean_code(call_gemini_with_fallback(p1))
+    print(f"Waiting {API_COOLDOWN}s for API cooldown...")
+    time.sleep(API_COOLDOWN)
+
+    print(f"--> [Chunk 2/2] Drafting Competency-Based Case Studies & Visual Mind-Map...")
+    p2 = f"""
+    Continue Part 2 of Class 12 {subject} notes for: '{chapter_name}'.
+    
+    Requirements:
+    1. 2 Competency-Based Case-Study Questions with paragraph passages, multiple sub-parts, and detailed solutions.
+    2. High-Yield Visual Mind-Map and Fast Revision Checklist.
+    3. Common student blunders and examiner traps warning box.
+    
+    Structure:
+    <section class="section container" id="case-studies">
+      <div class="section-head">
+        <span class="section-eyebrow">Competency Assessment</span>
+        <h2>2. Case-Study Scenarios & Application Problems</h2>
+      </div>
+      <div class="resource-grid">
+        <!-- 2 extensive case study articles -->
+      </div>
+    </section>
+
+    <section class="section container" id="mindmap">
+      <div class="section-head">
+        <span class="section-eyebrow">Revision Framework</span>
+        <h2>3. Concept Mind-Map & Examiner Traps Checklist</h2>
       </div>
       <div class="trust">
         <div class="trust-inner container">
-          <div class="trust-item"><b>Core Rule</b>Exhaustive summary point</div>
-          <div class="trust-item"><b>Board Trap</b>Common error where students lose marks</div>
-          <div class="trust-item"><b>Scoring Strategy</b>Key formulas to write for step-marking</div>
+          <div class="trust-item"><b>Visual Framework</b>Mindmap steps</div>
+          <div class="trust-item"><b>Examiner Traps</b>Common mistakes</div>
+          <div class="trust-item"><b>Scoring Strategy</b>Step-marking tips</div>
         </div>
       </div>
     </section>
-    Return ONLY this HTML section.
+    Return ONLY these valid HTML sections.
     """
-    sec4 = clean_code(call_gemini_with_fallback(p3))
+    chunk2 = clean_code(call_gemini_with_fallback(p2))
 
-    return f"{sec1}\n\n{sec2_3}\n\n{sec4}"
+    return f"{chunk1}\n\n{chunk2}"
 
-def build_chapter_page(target):
+def build_full_page(target):
     target_path = target["target_path"]
     chapter_name = target["chapter_name"]
     subject = target["subject"]
+    is_part_2 = target["is_part_2"]
 
     depth = len(os.path.normpath(target_path).split(os.sep)) - 1
     css_rel = ("../" * depth) + "style.css" if depth > 0 else "style.css"
     hub_link = "index.html" if depth == 1 else "../index.html"
     root_link = "../index.html" if depth == 1 else "index.html"
 
-    main_body = generate_deep_content(subject, chapter_name)
+    # Part sibling links
+    base_name = os.path.splitext(os.path.basename(target_path))[0]
+    clean_base = re.sub(r"(_part[12]|\.html)", "", base_name, flags=re.I)
+    part1_url = f"{clean_base}.html" if "part" not in base_name else f"{clean_base}_part1.html"
+    part2_url = f"{clean_base}_part2.html"
+
+    part_subtitle = "Part 2: Solved Board PYQs & Case Studies" if is_part_2 else "Part 1: In-Depth Theory & Complete Derivations"
+    switch_btn = f"""
+    <div style="margin: 30px 0; text-align: center;">
+      <a class="btn btn-gold" href="{part1_url if is_part_2 else part2_url}" style="padding: 14px 28px; font-size: 1.05rem;">
+        {'← Back to Part 1: Theory & Formulas' if is_part_2 else 'Continue to Part 2: Solved CBSE PYQs & Case Studies →'}
+      </a>
+    </div>
+    """
+
+    # Generate massive chunk content
+    if is_part_2:
+        body_content = generate_part2_content(subject, chapter_name)
+    else:
+        body_content = generate_part1_content(subject, chapter_name)
 
     full_html = f"""<!DOCTYPE html>
 <html lang="en" data-theme="sunset">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CBSE Class 12 {subject} - {chapter_name} ({part_subtitle}). Comprehensive theory, derivations, formulas, and solved board PYQs by Jatin Sandilya at Shorveer Notes.">
   <meta name="author" content="Jatin Sandilya">
-  <title>{chapter_name} · Class 12 {subject} | Shorveer Notes</title>
+  <meta name="robots" content="index, follow">
+  <title>{chapter_name} ({'Part 2' if is_part_2 else 'Part 1'}) · Class 12 {subject} | Shorveer Notes</title>
 
   {MATHJAX_HEADER}
 
@@ -293,7 +398,6 @@ def build_chapter_page(target):
   <link rel="stylesheet" href="{css_rel}">
 
   <style>
-    /* Strict Layout Alignment & Responsive Safeguards */
     body {{
       background: var(--bg, #241226);
       color: var(--ink, #ffe9d6);
@@ -307,36 +411,13 @@ def build_chapter_page(target):
       left: 0;
       width: 100%;
       height: 72px;
-      background: rgba(23, 22, 19, 0.94);
+      background: rgba(23, 22, 19, 0.95);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.15));
       z-index: 1000;
       display: flex;
       align-items: center;
     }}
-    .nav-actions {{
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }}
-    .palette-dot {{
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--gold, #ff8a5b);
-      display: inline-block;
-    }}
-    .nav-icon {{
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--line, rgba(255, 255, 255, 0.15));
-      border-radius: 8px;
-      padding: 8px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }}
-    /* Fixed Brand Mark Constraints (Stops the giant S bug) */
     .brand-mark, .sn-brand__mark {{
       width: 36px !important;
       height: 36px !important;
@@ -353,8 +434,82 @@ def build_chapter_page(target):
     .brand-mark svg, .sn-brand__mark svg {{
       width: 24px !important;
       height: 24px !important;
-      max-width: 24px !important;
     }}
+    /* Floating Table of Contents */
+    .toc-bar {{
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      border-radius: 12px;
+      padding: 16px 24px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }}
+    .toc-title {{
+      font-family: var(--font-mono, monospace);
+      font-size: 0.85rem;
+      color: var(--gold, #ff8a5b);
+      text-transform: uppercase;
+      font-weight: 700;
+    }}
+    .toc-link {{
+      color: var(--ink, #ffe9d6);
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: color 0.2s;
+    }}
+    .toc-link:hover {{
+      color: var(--gold, #ff8a5b);
+      text-decoration: underline;
+    }}
+    /* Copy Equation Button */
+    .copy-btn {{
+      float: right;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--gold, #ff8a5b);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      cursor: pointer;
+      font-family: var(--font-mono, monospace);
+    }}
+    /* Interactive Cookie Notice Banner */
+    .sn-cookie-banner {{
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      max-width: 500px;
+      background: #1c1b18;
+      border: 1px solid var(--line, rgba(255, 255, 255, 0.2));
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      display: none;
+    }}
+    .sn-cookie-banner.show {{
+      display: block;
+    }}
+    .sn-cookie-banner p {{
+      margin: 0 0 12px;
+      font-size: 0.88rem;
+      color: var(--muted, #ffb87a);
+      line-height: 1.5;
+    }}
+    .sn-cookie-btn {{
+      background: var(--gold, #ff8a5b);
+      color: #000;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+    }}
+    /* Theme Picker Dropdown */
     .theme-pop {{
       position: fixed;
       top: 80px;
@@ -365,7 +520,6 @@ def build_chapter_page(target):
       padding: 16px;
       z-index: 2000;
       display: none;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }}
     .theme-pop.open {{
       display: block;
@@ -383,15 +537,13 @@ def build_chapter_page(target):
       padding: 8px 12px;
       color: #fff;
       cursor: pointer;
-      text-align: left;
     }}
-    /* Solid Aligned Footer */
+    /* 3-Column Solid Footer */
     .sn-footer {{
       background: #141311 !important;
       border-top: 1px solid var(--line, rgba(255, 255, 255, 0.12));
       padding: 60px 0 35px;
       margin-top: 80px;
-      position: relative;
     }}
     .sn-footer__grid {{
       display: grid;
@@ -406,7 +558,7 @@ def build_chapter_page(target):
 </head>
 <body>
 
-  <!-- ============ HEADER ============ -->
+  <!-- ============ SITE HEADER ============ -->
   <header class="site-header">
     <nav class="nav container" aria-label="Primary">
       <a class="brand" href="{root_link}">
@@ -425,21 +577,21 @@ def build_chapter_page(target):
       </div>
 
       <div class="nav-actions">
-        <button class="nav-icon" id="themeButton" aria-label="Change theme" title="Pick Theme">
-          <span class="palette-dot"></span>
+        <button class="nav-icon" id="themeButton" aria-label="Change theme" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:8px; padding:8px; cursor:pointer;">
+          <span style="width:14px; height:14px; border-radius:50%; background:var(--gold, #ff8a5b); display:inline-block;"></span>
         </button>
       </div>
     </nav>
   </header>
 
-  <!-- ============ THEME PICKER POPOVER ============ -->
+  <!-- ============ THEME PICKER ============ -->
   <div class="theme-pop" id="themePop">
     <h4 style="margin:0 0 8px; color:#fff;">Pick a look</h4>
     <div class="theme-grid">
-      <button class="theme-opt" data-theme-value="notebook"><b>Notebook</b></button>
-      <button class="theme-opt" data-theme-value="chalkboard"><b>Chalkboard</b></button>
-      <button class="theme-opt" data-theme-value="blueprint"><b>Blueprint</b></button>
-      <button class="theme-opt" data-theme-value="sunset"><b>Sunset</b></button>
+      <button class="theme-opt" data-theme-value="notebook">Notebook</button>
+      <button class="theme-opt" data-theme-value="chalkboard">Chalkboard</button>
+      <button class="theme-opt" data-theme-value="blueprint">Blueprint</button>
+      <button class="theme-opt" data-theme-value="sunset">Sunset</button>
     </div>
   </div>
 
@@ -448,24 +600,42 @@ def build_chapter_page(target):
       <div class="hero-copy">
         <div class="kicker">
           <span class="dot"></span>
-          <span>CBSE Class 12 · {subject} Comprehensive Notes</span>
+          <span>CBSE Class 12 · {subject} Master Guide</span>
         </div>
         <h1>{chapter_name}</h1>
-        <p class="hero-description">
-          Exhaustive conceptual breakdowns, complete derivations, and step-by-step solved CBSE board exam questions.
-        </p>
+        <p class="hero-description">{part_subtitle} curated for rigorous CBSE Board Preparation.</p>
         <div class="hero-note">
-          <span>Curated with Precision by <strong>Jatin Sandilya</strong> · 100% Board Aligned</span>
+          <span>Authored with Precision by <strong>Jatin Sandilya</strong> · Official 2026-27 Syllabus</span>
         </div>
       </div>
     </section>
 
-    {main_body}
+    <!-- Table of Contents -->
+    <div class="container">
+      <div class="toc-bar">
+        <span class="toc-title">Quick Navigation:</span>
+        {'<a class="toc-link" href="#theory">1. In-Depth Theory</a><a class="toc-link" href="#derivations">2. Complete Derivations & Formulas</a>' if not is_part_2 else '<a class="toc-link" href="#pyqs">1. Solved CBSE PYQs</a><a class="toc-link" href="#case-studies">2. Competency Case Studies</a><a class="toc-link" href="#mindmap">3. Mind-Map Checklist</a>'}
+      </div>
+    </div>
 
+    <!-- Top Part Switcher -->
+    <div class="container">
+      {switch_btn}
+    </div>
+
+    <!-- Massive Chunk Body -->
+    {body_content}
+
+    <!-- Bottom Part Switcher -->
+    <div class="container">
+      {switch_btn}
+    </div>
+
+    <!-- Return to Subject Hub -->
     <section class="final-cta container reveal">
       <div class="cta-content">
-        <h2>Completed {chapter_name}? <em>Return to the hub.</em></h2>
-        <p>Explore formula cards, high-yield mind-maps, and next chapter solutions.</p>
+        <h2>Mastered {chapter_name}? <em>Return to {subject} Hub.</em></h2>
+        <p>Explore formula cheat-sheets, other syllabus chapters, and high-yield study resources.</p>
         <a class="btn btn-gold" href="{hub_link}">
           Back to {subject} Hub
           <span class="btn-arrow">→</span>
@@ -474,11 +644,10 @@ def build_chapter_page(target):
     </section>
   </main>
 
-  <!-- ============ FULL SOLID FOOTER ============ -->
+  <!-- ============ FOOTER ============ -->
   <footer class="sn-footer">
     <div class="container sn-footer__container">
       <div class="sn-footer__grid">
-        
         <div class="sn-footer__brand">
           <div class="brand" style="margin-bottom:12px;">
             <span class="sn-brand__mark">
@@ -497,7 +666,7 @@ def build_chapter_page(target):
         </div>
 
         <div class="sn-nav-col">
-          <h3 style="color:#fff; font-size:1rem; margin-bottom:14px;">Portals</h3>
+          <h3 style="color:#fff; font-size:1rem; margin-bottom:14px;">Subject Hubs</h3>
           <ul style="list-style:none; padding:0; margin:0; line-height:2;">
             <li><a href="../physics/index.html" style="color:var(--muted); text-decoration:none;">Physics Hub</a></li>
             <li><a href="../chemistry/index.html" style="color:var(--muted); text-decoration:none;">Chemistry Hub</a></li>
@@ -512,7 +681,6 @@ def build_chapter_page(target):
             <li><a href="mailto:support.shorveernotes@gmail.com" style="color:var(--muted); text-decoration:none;">Contact Support</a></li>
           </ul>
         </div>
-
       </div>
 
       <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:20px; text-align:center; color:var(--muted); font-size:0.85rem;">
@@ -521,11 +689,21 @@ def build_chapter_page(target):
     </div>
   </footer>
 
+  <!-- ============ COOKIE TRANSPARENCY BANNER ============ -->
+  <aside class="sn-cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie and Storage Notice">
+    <p>
+      🍪 <strong>Transparent Storage Notice:</strong> Shorveer Notes uses browser local storage exclusively to preserve your chosen theme settings (Notebook, Sunset, Chalkboard, Blueprint) across study sessions. We do not use intrusive tracking cookies.
+    </p>
+    <button class="sn-cookie-btn" id="cookieAcceptBtn">Got it, proceed</button>
+  </aside>
+
   <script>
-    // Theme Switcher Engine
+    // Theme Switcher & Storage Engine
     const themeBtn = document.getElementById("themeButton");
     const themePop = document.getElementById("themePop");
     const themeOpts = document.querySelectorAll(".theme-opt");
+    const cookieBanner = document.getElementById("cookieBanner");
+    const cookieAcceptBtn = document.getElementById("cookieAcceptBtn");
 
     function applyTheme(name) {{
       document.documentElement.setAttribute("data-theme", name);
@@ -551,6 +729,18 @@ def build_chapter_page(target):
         themePop.classList.remove("open");
       }}
     }});
+
+    // Cookie Notice Display Logic
+    try {{
+      if (!localStorage.getItem("shorveer-cookie-ack")) {{
+        cookieBanner.classList.add("show");
+      }}
+    }} catch(e) {{}}
+
+    cookieAcceptBtn.addEventListener("click", () => {{
+      cookieBanner.classList.remove("show");
+      try {{ localStorage.setItem("shorveer-cookie-ack", "true"); }} catch(e) {{}}
+    }});
   </script>
 </body>
 </html>"""
@@ -561,23 +751,31 @@ def build_chapter_page(target):
 
     with open(target_path, "w", encoding="utf-8") as f:
         f.write(full_html)
-    print(f"Generated deep, high-yield chapter: {target_path}")
+    
+    # Run in-place tag closer to guarantee valid HTML without token waste
+    target_in_place_patch(target_path)
+    print(f"Generated Comprehensive {os.path.getsize(target_path) // 1024} KB Guide: {target_path}")
 
 def main():
-    pending_list = scan_website_queue()
+    pending_list = scan_and_audit_website()
     if not pending_list:
-        print("All chapters are healthy, comprehensive, and up-to-date!")
+        print("All chapters across Mathematics, Physics, Chemistry, and English are 100% complete and healthy (250KB+ target met).")
         if "GITHUB_OUTPUT" in os.environ:
             with open(os.environ["GITHUB_OUTPUT"], "a") as f:
                 f.write("has_more=false\n")
         return
 
     target = pending_list[0]
-    print(f"Processing [{target['subject']}]: {target['chapter_name']} -> {target['target_path']} (Reason: {target['reason']})")
-    build_chapter_page(target)
+    print(f"\n==================================================")
+    print(f"Processing Target: [{target['subject']}] {target['chapter_name']}")
+    print(f"File Path: {target['target_path']}")
+    print(f"Health Audit Reason: {target['reason']}")
+    print(f"==================================================")
+
+    build_full_page(target)
 
     remaining = len(pending_list) - 1
-    print(f"Remaining in queue: {remaining}")
+    print(f"\nTask Finished. Remaining targets in queue: {remaining}")
     if "GITHUB_OUTPUT" in os.environ:
         with open(os.environ["GITHUB_OUTPUT"], "a") as f:
             f.write(f"has_more={'true' if remaining > 0 else 'false'}\n")
