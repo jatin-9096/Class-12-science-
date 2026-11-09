@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Jatin Sandilya">
+  <title>Mathematics · Class 12 Mathematics | Shorveer Notes</title>
+
+  
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+  <!-- Fonts directly aligned with main site -->
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
+
+  <!-- Main Website Stylesheet: Pure styling without inline overrides -->
+  <link rel="stylesheet" href="../../style.css">
+
+  <script>
+    // Theme Engine: Reads user choice from localStorage (notebook, chalkboard, blueprint, sunset)
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('shorveer-theme-name') || 'sunset';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.classList.add('js');
+      } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'sunset');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ============ SITE HEADER ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Shorveer Notes home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+          </svg>
+        </span>
+        <span class="brand-name">Shorveer<em>Notes</em></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="../index.html" style="color:var(--ink); font-weight:700;">Mathematics Hub</a>
+        <a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero Title -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="kicker">
+          <span class="dot"></span>
+          <span>CBSE Class 12 · Mathematics Hub</span>
+        </div>
+        <h1>Mathematics</h1>
+        <p class="hero-description">
+          Detailed theory breakdowns, verified derivations, and board examination questions curated for precision.
+        </p>
+        <div class="hero-note">
+          <span>Curated by <strong>Jatin Sandilya</strong> · High-Yield Board Solutions</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Generated Content Sections -->
+    <section class="section container">
+  <div class="section-head">
+    <span class="section-eyebrow">Concept Core</span>
+    <h2>1. Theoretical Principles & Definitions</h2>
+  </div>
+  <div class="real-life">
+    <article class="rl-card" style="--rl-color: #bf5a3c">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Relations & Functions</div>
+        <p class="rl-text">
+          A relation $R$ from a set $A$ to a set $B$ is a subset of $A \times B$.
+          A function $f: A \to B$ is a special type of relation where every element of $A$ has one and only one image in $B$.
+          Types of Relations:
+          <ul>
+            <li>**Reflexive:** $(a, a) \in R$ for all $a \in A$.</li>
+            <li>**Symmetric:** $(a, b) \in R \implies (b, a) \in R$.</li>
+            <li>**Transitive:** $(a, b) \in R$ and $(b, c) \in R \implies (a, c) \in R$.</li>
+            <li>**Equivalence Relation:** A relation that is reflexive, symmetric, and transitive.</li>
+          </ul>
+          Types of Functions:
+          <ul>
+            <li>**One-to-one (Injective):** Different elements of $A$ have different images in $B$.</li>
+            <li>**Onto (Surjective):** Every element in $B$ is the image of at least one element in $A$.</li>
+            <li>**Bijective:** A function that is both one-to-one and onto.</li>
+            <li>**Inverse Function:** If $f: A \to B$ is bijective, then $f^{-1}: B \to A$ exists.</li>
+          </ul>
+        </p>
+      </div>
+    </article>
+    <article class="rl-card" style="--rl-color: #3c9bbf">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Matrices & Determinants</div>
+        <p class="rl-text">
+          A **Matrix** is an ordered rectangular array of numbers or functions. An $m \times n$ matrix has $m$ rows and $n$ columns.
+          Types: Row, Column, Square, Diagonal, Scalar, Identity, Zero matrix.
+          Operations: Addition, Subtraction, Scalar Multiplication, Matrix Multiplication (not commutative).
+          <br>
+          A **Determinant** is a scalar value associated with a square matrix. Denoted by $\det(A)$ or $|A|$.
+          Properties of Determinants are crucial for evaluation and solving systems of linear equations.
+          <br>
+          **Adjoint of a matrix:** The transpose of the cofactor matrix. $\text{adj}(A) = (\text{cofactor}(A))^T$.
+          **Inverse of a matrix:** $A^{-1} = \frac{1}{|A|} \text{adj}(A)$, provided $|A| \neq 0$.
+        </p>
+      </div>
+    </article>
+    <article class="rl-card" style="--rl-color: #bf8d3c">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Calculus: Continuity & Differentiability, Integration</div>
+        <p class="rl-text">
+          A function $f(x)$ is **continuous** at a point $c$ if $\lim_{x \to c^-} f(x) = \lim_{x \to c^+} f(x) = f(c)$. Graphically, no breaks or jumps.
+          A function $f(x)$ is **differentiable** at a point $c$ if its derivative $f'(c)$ exists. This implies the left-hand derivative equals the right-hand derivative, and the function is continuous at $c$.
+          <br>
+          **Integration** is the inverse process of differentiation. It is finding an antiderivative.
+          Indefinite Integral: $\int f(x) dx = F(x) + C$, where $F'(x) = f(x)$ and $C$ is the constant of integration.
+          Definite Integral: $\int_a^b f(x) dx = F(b) - F(a)$. Represents the area under the curve from $a$ to $b$.
+        </p>
+      </div>
+    </article>
+    <article class="rl-card" style="--rl-color: #7abf3c">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Vectors & 3D Geometry</div>
+        <p class="rl-text">
+          A **Vector** is a quantity that has both magnitude and direction (e.g., displacement, velocity). Represented by $\vec{a} = a_1\hat{i} + a_2\hat{j} + a_3\hat{k}$.
+          Magnitude: $|\vec{a}| = \sqrt{a_1^2 + a_2^2 + a_3^2}$.
+          Types of vector products:
+          <ul>
+            <li>**Scalar (Dot) Product:** $\vec{a} \cdot \vec{b} = |\vec{a}| |\vec{b}| \cos\theta$. Result is a scalar.</li>
+            <li>**Vector (Cross) Product:** $\vec{a} \times \vec{b} = |\vec{a}| |\vec{b}| \sin\theta \hat{n}$. Result is a vector perpendicular to both $\vec{a}$ and $\vec{b}$.</li>
+          </ul>
+          **3D Geometry:** Deals with points, lines, and planes in three dimensions.
+          Direction Cosines: Cosines of angles made by a line with positive $x, y, z$ axes ($l, m, n$). $l^2+m^2+n^2=1$.
+          Direction Ratios: Any numbers proportional to direction cosines ($a, b, c$).
+        </p>
+      </div>
+    </article>
+    <article class="rl-card" style="--rl-color: #bf3c7a">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Probability</div>
+        <p class="rl-text">
+          **Conditional Probability:** The probability of event $A$ occurring, given that event $B$ has already occurred.
+          $P(A|B) = \frac{P(A \cap B)}{P(B)}$, provided $P(B) > 0$.
+          <br>
+          **Independent Events:** Two events $A$ and $B$ are independent if $P(A \cap B) = P(A)P(B)$. This implies $P(A|B) = P(A)$ and $P(B|A) = P(B)$.
+          <br>
+          **Bayes' Theorem:** Relates conditional probabilities. It's used to find the probability of a cause, given that an effect has occurred.
+          $P(E_i|A) = \frac{P(A|E_i)P(E_i)}{\sum_{j=1}^{n} P(A|E_j)P(E_j)}$, where $E_1, E_2, \dots, E_n$ are a partition of the sample space.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head">
+    <span class="section-eyebrow">High Yield Formulas</span>
+    <h2>2. Essential Equations & Derivations</h2>
+  </div>
+  <div class="resource-grid">
+    <article class="resource">
+      <h3>Differentiation Rules & Derivatives</h3>
+      <p>
+        **Product Rule:** If $y = u \cdot v$, then $\frac{dy}{dx} = u \frac{dv}{dx} + v \frac{du}{dx}$.
+        <br>
+        **Quotient Rule:** If $y = \frac{u}{v}$, then $\frac{dy}{dx} = \frac{v \frac{du}{dx} - u \frac{dv}{dx}}{v^2}$.
+        <br>
+        **Chain Rule:** If $y = f(g(x))$, then $\frac{dy}{dx} = f'(g(x)) \cdot g'(x)$.
+        <br>
+        **Inverse Trigonometric Derivatives:**
+        $$ \frac{d}{dx}(\sin^{-1} x) = \frac{1}{\sqrt{1 - x^2}} $$
+        $$ \frac{d}{dx}(\tan^{-1} x) = \frac{1}{1 + x^2} $$
+      </p>
+    </article>
+    <article class="resource">
+      <h3>Integration Techniques & Properties</h3>
+      <p>
+        **Integration by Parts:** $\int u \, dv = uv - \int v \, du$. A mnemonic is LIATE for choosing $u$.
+        <br>
+        **Important Standard Integrals:**
+        $$ \int \frac{1}{x^2 + a^2} dx = \frac{1}{a} \tan^{-1}\left(\frac{x}{a}\right) + C $$
+        $$ \int \frac{1}{\sqrt{a^2 - x^2}} dx = \sin^{-1}\left(\frac{x}{a}\right) + C $$
+        **Definite Integral Property:** $\int_a^b f(x) dx = \int_a^b f(a+b-x) dx$. Used for simplifying many definite integrals.
+      </p>
+    </article>
+    <article class="resource">
+      <h3>Matrices & Determinants</h3>
+      <p>
+        **Inverse of a Matrix:** For a square matrix $A$, if $|A| \neq 0$, then $A^{-1} = \frac{1}{|A|} \text{adj}(A)$.
+        <br>
+        **Properties of Determinants (Examples):**
+        *   $|AB| = |A||B|$
+        *   $|A^T| = |A|$
+        *   If two rows/columns are identical or proportional, $|A|=0$.
+        *   If a row/column is multiplied by $k$, determinant is multiplied by $k$.
+      </p>
+    </article>
+    <article class="resource">
+      <h3>Vectors & 3D Geometry</h3>
+      <p>
+        **Scalar (Dot) Product:** For $\vec{a} = a_1\hat{i} + a_2\hat{j} + a_3\hat{k}$ and $\vec{b} = b_1\hat{i} + b_2\hat{j} + b_3\hat{k}$:
+        $$ \vec{a} \cdot \vec{b} = a_1b_1 + a_2b_2 + a_3b_3 = |\vec{a}||\vec{b}|\cos\theta $$
+        **Vector (Cross) Product:**
+        $$ \vec{a} \times \vec{b} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \end{vmatrix} $$
+        **Shortest Distance between Skew Lines:** If lines are $\vec{r} = \vec{a_1} + \lambda \vec{b_1}$ and $\vec{r} = \vec{a_2} + \mu \vec{b_2}$:
+        $$ d = \left| \frac{(\vec{b_1} \times \vec{b_2}) \cdot (\vec{a_2} - \vec{a_1})}{|\vec{b_1} \times \vec{b_2}|} \right| $$
+      </p>
+    </article>
+    <article class="resource">
+      <h3>Probability: Bayes' Theorem</h3>
+      <p>
+        For events $E_1, E_2, \dots, E_n$ forming a partition of the sample space, and $A$ is any event with $P(A) \neq 0$:
+        $$ P(E_i|A) = \frac{P(A|E_i)P(E_i)}{\sum_{j=1}^{n} P(A|E_j)P(E_j)} $$
+        This formula is central to problems involving inverse probability.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head">
+    <span class="section-eyebrow">Board Examination Questions</span>
+    <h2>3. Solved High-Yield CBSE PYQs</h2>
+  </div>
+  <div class="resource-grid">
+    <article class="resource">
+      <div class="resource-icon">Q1</div>
+      <h3>Application of Derivatives: Maxima/Minima</h3>
+      <p>
+        <strong>Problem:</strong> Find the maximum profit that a company can make, if the profit function is given by $P(x) = 41 - 72x - 18x^2$, where $x$ is the number of units produced.
+      </p>
+      <p>
+        <strong>Step-by-step Solution:</strong>
+        <ol>
+          <li>Given profit function: $P(x) = 41 - 72x - 18x^2$.</li>
+          <li>To find maximum profit, differentiate $P(x)$ with respect to $x$ and set to zero ($P'(x) = 0$).
+            $P'(x) = \frac{d}{dx}(41 - 72x - 18x^2) = -72 - 36x$.</li>
+          <li>Set $P'(x) = 0$: $-72 - 36x = 0 \implies 36x = -72 \implies x = -2$.</li>
+          <li>To confirm it's a maximum, find the second derivative $P''(x)$.
+            $P''(x) = \frac{d}{dx}(-72 - 36x) = -36$.</li>
+          <li>Since $P''(-2) = -36 < 0$, the profit is maximum at $x = -2$.</li>
+          <li>Substitute $x = -2$ into the profit function to find the maximum profit:
+            $P(-2) = 41 - 72(-2) - 18(-2)^2 = 41 + 144 - 18(4) = 41 + 144 - 72 = 113$.</li>
+        </ol>
+        **Answer:** The maximum profit the company can make is $113$ units (assuming appropriate monetary units).
+        *(Note: In real-world problems, $x$ must be non-negative. This problem is illustrative of the calculus process.)*
+      </p>
+    </article>
+    <article class="resource">
+      <div class="resource-icon">Q2</div>
+      <h3>Vectors: Area of a Parallelogram</h3>
+      <p>
+        <strong>Problem:</strong> Find the area of the parallelogram whose adjacent sides are given by the vectors $\vec{a} = 3\hat{i} + \hat{j} + 4\hat{k}$ and $\vec{b} = \hat{i} - \hat{j} + \hat{k}$.
+      </p>
+      <p>
+        <strong>Step-by-step Solution:</strong>
+        <ol>
+          <li>The area of a parallelogram with adjacent sides $\vec{a}$ and $\vec{b}$ is given by the magnitude of their cross product, i.e., $|\vec{a} \times \vec{b}|$.</li>
+          <li>Calculate the cross product $\vec{a} \times \vec{b}$:
+            $$ \vec{a} \times \vec{b} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 3 & 1 & 4 \\ 1 & -1 & 1 \end{vmatrix} $$
+            $= \hat{i}(1 \cdot 1 - 4 \cdot (-1)) - \hat{j}(3 \cdot 1 - 4 \cdot 1) + \hat{k}(3 \cdot (-1) - 1 \cdot 1)$
+            $= \hat{i}(1 + 4) - \hat{j}(3 - 4) + \hat{k}(-3 - 1)$
+            $= 5\hat{i} + \hat{j} - 4\hat{k}$.
+          </li>
+          <li>Calculate the magnitude of the resulting vector:
+            $$ |\vec{a} \times \vec{b}| = \sqrt{5^2 + 1^2 + (-4)^2} = \sqrt{25 + 1 + 16} = \sqrt{42} $$
+          </li>
+        </ol>
+        **Answer:** The area of the parallelogram is $\sqrt{42}$ square units.
+      </p>
+    </article>
+    <article class="resource">
+      <div class="resource-icon">Q3</div>
+      <h3>Probability: Bayes' Theorem</h3>
+      <p>
+        <strong>Problem:</strong> A bag contains 4 red and 4 black balls, another bag contains 2 red and 6 black balls. One of the bags is selected at random and a ball is drawn from it. If the ball drawn is red, what is the probability that it was drawn from the first bag?
+      </p>
+      <p>
+        <strong>Step-by-step Solution:</strong>
+        <ol>
+          <li>Let $E_1$ be the event that bag I is selected, and $E_2$ be the event that bag II is selected.
+            $P(E_1) = P(E_2) = \frac{1}{2}$ (since one bag is selected at random).</li>
+          <li>Let $A$ be the event that a red ball is drawn.</li>
+          <li>Calculate $P(A|E_1)$ (probability of drawing a red ball from bag I):
+            Bag I has 4 red and 4 black balls (total 8).
+            $P(A|E_1) = \frac{4}{8} = \frac{1}{2}$.</li>
+          <li>Calculate $P(A|E_2)$ (probability of drawing a red ball from bag II):
+            Bag II has 2 red and 6 black balls (total 8).
+            $P(A|E_2) = \frac{2}{8} = \frac{1}{4}$.</li>
+          <li>We need to find $P(E_1|A)$ (probability that the ball was drawn from bag I, given it is red). Use Bayes' Theorem:
+            $$ P(E_1|A) = \frac{P(A|E_1)P(E_1)}{P(A|E_1)P(E_1) + P(A|E_2)P(E_2)} $$
+            $$ P(E_1|A) = \frac{\left(\frac{1}{2}\right)\left(\frac{1}{2}\right)}{\left(\frac{1}{2}\right)\left(\frac{1}{2}\right) + \left(\frac{1}{4}\right)\left(\frac{1}{2}\right)} $$
+            $$ P(E_1|A) = \frac{\frac{1}{4}}{\frac{1}{4} + \frac{1}{8}} = \frac{\frac{1}{4}}{\frac{2+1}{8}} = \frac{\frac{1}{4}}{\frac{3}{8}} = \frac{1}{4} \times \frac{8}{3} = \frac{2}{3} $$
+          </li>
+        </ol>
+        **Answer:** The probability that the red ball was drawn from the first bag is $\frac{2}{3}$.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head">
+    <span class="section-eyebrow">Fast Revision</span>
+    <h2>4. Quick Mind-Map & Summary</h2>
+  </div>
+  <div class="trust">
+    <div class="trust-inner container">
+      <div class="trust-item"><b>Core Rule 1 (Calculus)</b> Master differentiation and integration formulas. Practice substitution, by parts, and partial fractions extensively. Remember applications of derivatives (tangents/normals, maxima/minima, rate of change) and definite integral properties.</div>
+      <div class="trust-item"><b>Core Rule 2 (Algebra)</b> Understand matrix operations, especially multiplication and finding the inverse. For determinants, properties are key for quick evaluation. Solve systems of equations using matrix inversion or Cramer's rule (if taught).</div>
+      <div class="trust-item"><b>Core Rule 3 (Vectors & 3D)</b> Clearly distinguish between scalar and vector products and their geometric interpretations (area, volume). Memorize formulas for lines (vector & Cartesian forms), planes, shortest distance between skew/parallel lines, and angle between lines/planes.</div>
+      <div class="trust-item"><b>Core Rule 4 (Probability)</b> Focus on Conditional Probability, Independent Events, Total Probability Theorem, and Bayes' Theorem. Define events clearly and organize your steps for complex problems. Binomial distribution concepts are also important.</div>
+      <div class="trust-item"><b>Board Tip (General)</b> Show all steps clearly. Double-check calculations. Practice graphical representations for functions, LPP, and areas under curves. Don't forget Inverse Trigonometric Functions and their properties.</div>
+      <div class="trust-item"><b>Common Mistake</b> Misapplying chain rule in differentiation or forgetting the constant of integration ($C$) in indefinite integrals. Also, mixing up dot and cross product properties, or errors in matrix multiplication order.</div>
+    </div>
+  </div>
+</section>
+
+    <!-- Bottom Hub Navigation -->
+    <section class="final-cta container reveal">
+      <div class="cta-content">
+        <h2>Completed this chapter? <em>Return to the hub.</em></h2>
+        <p>Check formula sheets, other syllabus chapters, and high-yield study resources.</p>
+        <a class="btn btn-gold" href="../index.html">
+          Back to Mathematics Hub
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="sn-footer">
+    <div class="sn-footer__container container">
+      <div class="sn-footer__grid">
+        
+        <div class="sn-footer__brand">
+          <a class="sn-brand__logo" href="index.html" aria-label="Shorveer Notes home">
+            <span class="sn-brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+              </svg>
+            </span>
+            <span class="sn-brand__title-txt">Shorveer<em>Notes</em></span>
+          </a>
+
+          <h2 class="sn-brand__heading">Class 12 Science, Clearly Organised</h2>
+          <p class="sn-brand__sub">A student-focused learning platform for Class 12 Science notes, derivations, and board examination preparation.</p>
+
+          <div class="sn-brand__badge-box">
+            <div class="sn-founder-pill">
+              <span class="sn-founder-tag">JS</span>
+              <span class="sn-founder-name">Created by <strong>Jatin Sandilya</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sn-nav-col">
+          <h3 class="sn-col-head">Portals</h3>
+          <ul class="sn-col-links">
+            <li><a href="../physics/index.html">Physics Hub</a></li>
+            <li><a href="../chemistry/index.html">Chemistry Hub</a></li>
+            <li><a href="../mathematics/index.html">Mathematics Hub</a></li>
+          </ul>
+        </div>
+
+        <div class="sn-nav-col">
+          <h3 class="sn-col-head">Connect</h3>
+          <ul class="sn-col-links">
+            <li><a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ on YouTube</a></li>
+            <li><a href="mailto:support.shorveernotes@gmail.com">Contact Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="sn-bottom-bar">
+      <div class="sn-bottom-container container">
+        <p>&copy; 2026 Shorveer Notes. All rights reserved.</p>
+        <p>Built with pride in India 🇮🇳</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
