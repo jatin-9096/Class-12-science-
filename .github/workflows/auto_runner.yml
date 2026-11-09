@@ -1,21 +1,23 @@
-name: Dynamic Website Builder
+name: 24x7 Autonomous Builder
 
 on:
   schedule:
-    # 24x7 safety cron backup: Har 2 ghante apne aap check karega
     - cron: '0 */2 * * *'
   workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
 
 jobs:
   run-builder:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      actions: write
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -38,12 +40,12 @@ jobs:
           git add -A
           git diff --staged --quiet || (git commit -m "Auto: Generated chapter with branded Shorveer Notes layout [skip ci]" && git push origin main)
 
-      - name: Trigger Next Page Automatically (20s Cooling Gap)
+      - name: Trigger Next Page Automatically (25s Cooling Gap)
         if: steps.builder.outputs.has_more == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          echo "Remaining chapters detected. Pausing for 20 seconds to protect API quota..."
-          sleep 20
+          echo "Remaining chapters detected. Pausing for 25 seconds to protect API quota..."
+          sleep 25
           echo "Triggering next chapter build automatically..."
-          gh workflow run "auto_runner.yml" --ref main
+          gh workflow run "24x7 Autonomous Builder" --ref main || gh workflow run "auto_runner.yml" --ref main
