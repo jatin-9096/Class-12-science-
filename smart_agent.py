@@ -1,4 +1,4 @@
-import os
+ import os
 import re
 import glob
 from bs4 import BeautifulSoup
@@ -24,6 +24,9 @@ MATHJAX_HEADER = """
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 """
+
+# In non-educational links ko skip karega taaki tokens aur files waste na hon
+IGNORE_KEYWORDS = ["privacy", "terms", "cookie", "disclaimer", "about", "contact"]
 
 def extract_site_template():
     existing_files = glob.glob("**/*.html", recursive=True)
@@ -67,21 +70,29 @@ def scan_website_links():
             href = a_tag["href"].strip()
             chapter_name = a_tag.get_text(strip=True)
 
-            if not href or href.startswith(("#", "http://", "https://", "mailto:", "tel:")):
+            if not href or href.startswith(("#", "http://", "https://", "mailto:", "tel:", "javascript:")):
                 continue
             
             clean_href = href.split("?")[0].split("#")[0]
             if not clean_href.endswith(".html"):
                 continue
 
-            target_path = os.path.normpath(os.path.join(base_dir, clean_href))
+            # Skip policy/legal pages
+            if any(k in clean_href.lower() or k in chapter_name.lower() for k in IGNORE_KEYWORDS):
+                continue
+
+            # Leading slash remove karna zaroori hai taaki root folder error na de
+            normalized_href = clean_href.lstrip("/\\")
+
+            # Hamesha repository ke base dir ke relative path banayega
+            target_path = os.path.normpath(os.path.join(base_dir, normalized_href))
 
             if not os.path.exists(target_path) and target_path not in seen_paths:
                 seen_paths.add(target_path)
                 pending_targets.append({
                     "target_path": target_path,
-                    "chapter_name": chapter_name if chapter_name else os.path.splitext(os.path.basename(clean_href))[0],
-                    "clean_href": clean_href
+                    "chapter_name": chapter_name if chapter_name else os.path.splitext(os.path.basename(normalized_href))[0],
+                    "clean_href": normalized_href
                 })
 
     return pending_targets
@@ -179,7 +190,6 @@ def main():
         print("Koi missing chapter nahi mila.")
         return
 
-    # BATCH_SIZE ke hisaab se slice karega (default: 3 chapters per run)
     targets_to_process = pending_list[:BATCH_SIZE]
     css_block, navbar_block, footer_block = extract_site_template()
 
