@@ -50,8 +50,8 @@ SUBJECT_SIGNATURES = {
 IGNORE_KEYWORDS = ["privacy", "terms", "cookie", "disclaimer", "about", "contact", "framework"]
 
 def call_gemini_with_fallback(prompt, max_retries=3):
-    # Official verified Gemini model identifiers
-    models = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro"]
+    # Active & supported Gemini models
+    models = ["gemini-3.8-flash"]
     
     for model_name in models:
         for attempt in range(1, max_retries + 1):
@@ -66,7 +66,6 @@ def call_gemini_with_fallback(prompt, max_retries=3):
             except Exception as e:
                 err_msg = str(e)
                 print(f"Error on {model_name} (Attempt {attempt}): {err_msg}")
-                # Rate limit (429) ya Server overload (503) par 15s ruk kar retry
                 if "429" in err_msg or "ResourceExhausted" in err_msg or "503" in err_msg or "Demand" in err_msg:
                     print("Quota/Rate-limit hit, waiting 20s before retry...")
                     time.sleep(20)
