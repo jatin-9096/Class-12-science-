@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="sunset">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Chapter 05→ | Shorveer Notes</title>
+  
+  
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    body {
+      background: var(--bg, #241226);
+      color: var(--ink, #ffe9d6);
+      font-family: var(--font-body, 'Karla', sans-serif);
+      margin: 0;
+      padding-top: 76px;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      background: rgba(36, 18, 38, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .brand-title {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+    .brand-title em {
+      color: var(--gold, #ff8a5b);
+      font-style: normal;
+    }
+    .nav-links a {
+      color: var(--muted, #a090a0);
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 20px;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover {
+      color: var(--gold, #ff8a5b);
+    }
+    .chapter-hero {
+      padding: 35px 0 20px;
+      border-bottom: 1px dashed var(--line, rgba(255, 255, 255, 0.15));
+      margin-bottom: 30px;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--gold, #ff8a5b);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .chapter-hero h1 {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      font-size: 2.4rem;
+      margin: 0 0 10px 0;
+      color: #fff;
+    }
+    .content-card {
+      background: var(--card, rgba(255, 255, 255, 0.04));
+      border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .content-card h2, .content-card h3 {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      color: var(--gold, #ff8a5b);
+      margin-top: 0;
+    }
+    .formula-box {
+      background: rgba(0, 0, 0, 0.35);
+      border-left: 4px solid var(--gold, #ff8a5b);
+      padding: 18px;
+      border-radius: 8px;
+      margin: 18px 0;
+      overflow-x: auto;
+    }
+    /* Clean Solid Footer */
+    .sn-footer {
+      background: #190c1a;
+      border-top: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      padding: 50px 0 30px;
+      margin-top: 60px;
+    }
+    .sn-footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 36px;
+    }
+    .sn-brand h3 {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      font-size: 1.4rem;
+      margin: 0 0 10px 0;
+      color: #fff;
+    }
+    .sn-brand p {
+      color: var(--muted, #a090a0);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .footer-col h4 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      color: #fff;
+      margin: 0 0 14px 0;
+      letter-spacing: 0.5px;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-col li {
+      margin-bottom: 8px;
+    }
+    .footer-col a {
+      color: var(--muted, #a090a0);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .footer-col a:hover {
+      color: var(--gold, #ff8a5b);
+    }
+    .bottom-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 20px;
+      text-align: center;
+      color: var(--muted, #a090a0);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 768px) {
+      .sn-footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .chapter-hero h1 { font-size: 1.9rem; }
+      .content-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand-title" href="index.html">Shorveer<em>Notes</em></a>
+      <nav class="nav-links">
+        <a href="index.html">Portal Hub</a>
+        <a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="chapter-hero">
+      <a class="back-btn" href="index.html">← Back to Hub</a>
+      <h1>Open Chapter 05→</h1>
+      <p style="color:var(--muted, #a090a0); margin:0;">Class 12 Science · Authored by <strong>Jatin Sandilya</strong></p>
+    </div>
+
+    <div class="chapter-notes-container">
+
+    <h1>Open Chapter 05 &rarr; Magnetism and Matter</h1>
+    <p class="author-attribution">Authored by: Jatin Sandilya</p>
+
+    <div class="note-card">
+        <h2>1. Comprehensive Chapter Overview & Core Concepts</h2>
+        <p>This chapter delves into the fundamental aspects of magnetism, exploring the behavior of magnets, the Earth's magnetic field, and the magnetic properties of various materials. It builds upon the understanding of magnetic effects of current by focusing on the intrinsic magnetic properties of matter.</p>
+
+        <h3>1.1. The Bar Magnet</h3>
+        <ul>
+            <li><strong>Magnetic Field Lines:</strong> Lines representing the direction of the magnetic field, emerging from the North pole and entering the South pole, forming continuous closed loops. They never intersect.</li>
+            <li><strong>Magnetic Dipole Moment ($\vec{M}$):</strong> A vector quantity (similar to electric dipole moment) representing the strength and orientation of a magnet. For a bar magnet, its direction is from the South pole to the North pole.</li>
+            <li><strong>Magnetic Field of a Bar Magnet:</strong> Analogous to the electric field of an electric dipole. Expressions are derived for axial and equatorial points.</li>
+            <li><strong>Torque on a Bar Magnet in a Uniform Magnetic Field:</strong> A magnetic dipole experiences a torque $\vec{\tau} = \vec{M} \times \vec{B}$ when placed in a uniform magnetic field $\vec{B}$, tending to align it with the field.</li>
+            <li><strong>Potential Energy of a Bar Magnet:</strong> $U = -\vec{M} \cdot \vec{B}$. Minimum when aligned with the field, maximum when anti-aligned.</li>
+        </ul>
+
+        <h3>1.2. Earth's Magnetism</h3>
+        <ul>
+            <li><strong>Geomagnetism:</strong> The Earth behaves like a giant bar magnet, with its magnetic North pole near the geographic South pole and vice-versa.</li>
+            <li><strong>Elements of Earth's Magnetic Field:</strong>
+                <ol>
+                    <li><strong>Magnetic Declination ($\theta$ or $D$):</strong> The angle between the geographic meridian (true North) and the magnetic meridian (direction shown by a compass needle).</li>
+                    <li><strong>Magnetic Dip or Inclination ($\delta$ or $I$):</strong> The angle that the total magnetic field of the Earth makes with the horizontal at a given place. At magnetic poles, dip is $90^\circ$; at the magnetic equator, it is $0^\circ$.</li>
+                    <li><strong>Horizontal Component of Earth's Magnetic Field ($H_E$):</strong> The component of the Earth's total magnetic field ($B_E$) along the horizontal direction. $H_E = B_E \cos\delta$.</li>
+                </ol>
+            </li>
+            <li><strong>Causes of Earth's Magnetism:</strong> Primarily due to the "dynamo effect," involving the convection of molten metallic fluids (iron and nickel) in the Earth's outer core.</li>
+        </ul>
+
+        <h3>1.3. Magnetisation and Magnetic Intensity</h3>
+        <ul>
+            <li><strong>Magnetic Intensity ($\vec{H}$):</strong> A vector quantity representing the magnetizing field in a material. It's related to the current producing the field. Unit: A/m.</li>
+            <li><strong>Magnetisation ($\vec{M}$):</strong> The net magnetic dipole moment per unit volume induced in a material when placed in an external magnetic field. Unit: A/m.</li>
+            <li><strong>Magnetic Permeability ($\mu$):</strong> A measure of how easily a material can be magnetized. $\mu = \mu_0 \mu_r$.</li>
+            <li><strong>Relative Magnetic Permeability ($\mu_r$):</strong> Ratio of the magnetic permeability of a medium to that of free space. $\mu_r = \mu / \mu_0$.</li>
+            <li><strong>Magnetic Susceptibility ($\chi_m$):</strong> A dimensionless quantity that indicates how easily a material can be magnetized. It is the ratio of magnetisation ($M$) to the magnetic intensity ($H$). $\chi_m = M/H$.</li>
+            <li><strong>Relationship:</strong> $\mu_r = 1 + \chi_m$.</li>
+        </ul>
+
+        <h3>1.4. Magnetic Properties of Materials</h3>
+        <p>Materials are classified based on their response to an external magnetic field:</p>
+        <ul>
+            <li><strong>Diamagnetic Materials:</strong>
+                <ul>
+                    <li>Weakly repelled by magnetic fields.</li>
+                    <li>$\chi_m$ is small, negative ($ -1 \le \chi_m < 0$).</li>
+                    <li>$\mu_r < 1$.</li>
+                    <li>Independent of temperature.</li>
+                    <li>Examples: Bismuth, Copper, Water, Silver, Gold, Lead.</li>
+                </ul>
+            </li>
+            <li><strong>Paramagnetic Materials:</strong>
+                <ul>
+                    <li>Weakly attracted by magnetic fields.</li>
+                    <li>$\chi_m$ is small, positive ($ 0 < \chi_m < \epsilon$).</li>
+                    <li>$\mu_r > 1$.</li>
+                    <li>Follow Curie's Law: $\chi_m \propto 1/T$ (magnetization decreases with increasing temperature).</li>
+                    <li>Examples: Aluminium, Sodium, Calcium, Oxygen, Copper Chloride.</li>
+                </ul>
+            </li>
+            <li><strong>Ferromagnetic Materials:</strong>
+                <ul>
+                    <li>Strongly attracted by magnetic fields.</li>
+                    <li>$\chi_m$ is large, positive ($ \chi_m >> 1$).</li>
+                    <li>$\mu_r >> 1$.</li>
+                    <li>Exhibit magnetic domains (regions of aligned atomic magnetic moments).</li>
+                    <li>Show Hysteresis: Lagging of magnetization behind the magnetizing field.</li>
+                    <li>Become paramagnetic above Curie Temperature ($T_C$).</li>
+                    <li>Examples: Iron, Nickel, Cobalt, Gadolinium, Alnico.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>1.5. Permanent Magnets and Electromagnets</h3>
+        <ul>
+            <li><strong>Permanent Magnets:</strong> Made from hard ferromagnetic materials (high retentivity and high coercivity) like steel, alnico. They retain magnetism even after the external field is removed.</li>
+            <li><strong>Electromagnets:</strong> Made from soft ferromagnetic materials (low retentivity and low coercivity) like soft iron. They are magnetized only when current flows through the coil and lose magnetism once the current is switched off.</li>
+        </ul>
+    </div>
+
+    <div class="note-card">
+        <h2>2. Key Theorems / Core Formulas</h2>
+        <div class="formula-box">
+            <p><strong>1. Gauss's Law for Magnetism:</strong></p>
+            $$ \oint \vec{B} \cdot d\vec{A} = 0 $$
+            <p>This implies that magnetic monopoles do not exist; magnetic field lines always form closed loops.</p>
+
+            <p><strong>2. Magnetic Field of a Bar Magnet (Magnetic Dipole Moment $M$):</strong></p>
+            <ul>
+                <li><strong>On Axial Line (at distance $r$ from center, for $r \gg L$):</strong></li>
+                $$ B_{axial} = \frac{\mu_0}{4\pi} \frac{2M}{r^3} $$
+                <li><strong>On Equatorial Line (at distance $r$ from center, for $r \gg L$):</strong></li>
+                $$ B_{equatorial} = \frac{\mu_0}{4\pi} \frac{M}{r^3} $$
+            </ul>
+
+            <p><strong>3. Torque on a Magnetic Dipole in a Uniform Magnetic Field $\vec{B}$:</strong></p>
+            $$ \vec{\tau} = \vec{M} \times \vec{B} $$
+            <p>Magnitude: $ \tau = MB \sin\theta $</p>
+
+            <p><strong>4. Potential Energy of a Magnetic Dipole in a Uniform Magnetic Field $\vec{B}$:</strong></p>
+            $$ U = -\vec{M} \cdot \vec{B} = -MB \cos\theta $$
+
+            <p><strong>5. Relation between Magnetic Field ($B$), Magnetic Intensity ($H$), and Magnetisation ($M$):</strong></p>
+            $$ B = \mu_0 (H + M) $$
+            <p>where $\mu_0$ is the permeability of free space ($4\pi \times 10^{-7} \text{ T m/A}$).</p>
+
+            <p><strong>6. Magnetic Susceptibility ($\chi_m$):</strong></p>
+            $$ \chi_m = \frac{M}{H} $$
+
+            <p><strong>7. Relative Magnetic Permeability ($\mu_r$):</strong></p>
+            $$ \mu_r = 1 + \chi_m $$
+            <p>Also, $ \mu_r = \frac{\mu}{\mu_0} $, where $\mu$ is the permeability of the material.</p>
+            <p>Combining these: $ B = \mu_0 H (1 + \chi_m) = \mu_0 \mu_r H = \mu H $</p>
+
+            <p><strong>8. Curie's Law (for Paramagnetic Materials):</strong></p>
+            $$ \chi_m = \frac{C}{T} $$
+            <p>where $C$ is the Curie constant and $T$ is the absolute temperature.</p>
+        </div>
+    </div>
+
+    <div class="note-card">
+        <h2>3. Solved High-Yield CBSE Board PYQs</h2>
+
+        <h3>Question 1:</h3>
+        <p>Define the three magnetic elements of Earth's magnetic field. Explain how they help in specifying the Earth's magnetic field completely.</p>
+        <p><strong>Solution:</strong></p>
+        <ol class="marking-scheme">
+            <li><strong>Magnetic Declination ($\theta$ or $D$):</strong> It is the angle between the geographic meridian and the magnetic meridian at a place. <br>(1 mark)</li>
+            <li><strong>Magnetic Dip or Inclination ($\delta$ or $I$):</strong> It is the angle which the direction of the total intensity of the Earth's magnetic field ($B_E$) at any place makes with the horizontal line in the magnetic meridian. <br>(1 mark)</li>
+            <li><strong>Horizontal Component of Earth's Magnetic Field ($H_E$):</strong> It is the component of the Earth's total magnetic field ($B_E$) in the horizontal direction in the magnetic meridian. <br>(1 mark)</li>
+            <li><strong>How they specify the field:</strong>
+                <ul>
+                    <li>Declination specifies the plane in which the magnetic field lies (magnetic meridian) relative to the geographic meridian.</li>
+                    <li>Dip angle gives the direction of the total magnetic field relative to the horizontal.</li>
+                    <li>The horizontal component ($H_E$) along with the dip angle ($\delta$) allows us to determine the total intensity ($B_E = H_E / \cos\delta$) and its vertical component ($V_E = H_E \tan\delta$).</li>
+                </ul>
+                Together, these three elements provide the magnitude and direction of the Earth's magnetic field at any point. <br>(1 mark for explanation)
+            </li>
+        </ol>
+
+        <h3>Question 2:</h3>
+        <p>Distinguish between diamagnetic, paramagnetic, and ferromagnetic materials in terms of their magnetic susceptibility and their behavior in an external non-uniform magnetic field. Give one example of each.</p>
+        <p><strong>Solution:</strong></p>
+        <table class="marking-scheme table-bordered">
+            <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Diamagnetic</th>
+                    <th>Paramagnetic</th>
+                    <th>Ferromagnetic</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Magnetic Susceptibility ($\chi_m$)</strong></td>
+                    <td>Small and negative (e.g., -10<sup>-5</sup> to -10<sup>-6</sup>).</td>
+                    <td>Small and positive (e.g., 10<sup>-3</sup> to 10<sup>-5</sup>).</td>
+                    <td>Large and positive (e.g., 10<sup>2</sup> to 10<sup>5</sup>).</td>
+                </tr>
+                <tr>
+                    <td><strong>Behavior in Non-uniform B-field</strong></td>
+                    <td>Weakly repelled; move from stronger to weaker parts of the field.</td>
+                    <td>Weakly attracted; move from weaker to stronger parts of the field.</td>
+                    <td>Strongly attracted; move rapidly from weaker to stronger parts of the field.</td>
+                </tr>
+                <tr>
+                    <td><strong>Example</strong></td>
+                    <td>Bismuth, Copper, Water</td>
+                    <td>Aluminium, Sodium, Oxygen</td>
+                    <td>Iron, Nickel, Cobalt</td>
+                </tr>
+            </tbody>
+        </table>
+        (1 mark for each correct distinction across all three types, total 3 marks. 1 mark for correct examples for all three types, total 1 mark.)
+
+        <h3>Question 3:</h3>
+        <p>Explain the terms 'retentivity' and 'coercivity' of a magnetic material. Why are permanent magnets made of materials with high retentivity and high coercivity, while electromagnets are made of materials with low retentivity and low coercivity?</p>
+        <p><strong>Solution:</strong></p>
+        <ol class="marking-scheme">
+            <li><strong>Retentivity:</strong> It is the ability of a material to retain magnetism after the external magnetizing field is removed. On a B-H hysteresis curve, it is the value of magnetic induction ($B$) when the magnetizing field ($H$) is zero. <br>(1 mark)</li>
+            <li><strong>Coercivity:</strong> It is the amount of reverse magnetizing field required to reduce the residual magnetism (retentivity) of a material to zero. On a B-H hysteresis curve, it is the value of magnetizing field ($H$) when the magnetic induction ($B$) is zero. <br>(1 mark)</li>
+            <li><strong>Permanent Magnets:</strong>
+                <ul>
+                    <li>Require high retentivity so that they remain strongly magnetized even after the external field is removed.</li>
+                    <li>Require high coercivity to resist demagnetization by stray magnetic fields, temperature changes, or mechanical shocks.</li>
+                </ul>
+                <br>(1 mark)
+            </li>
+            <li><strong>Electromagnets:</strong>
+                <ul>
+                    <li>Require low retentivity so that they can be easily demagnetized (lose their magnetism) when the current is switched off.</li>
+                    <li>Require low coercivity so that their magnetization can be quickly reversed or removed without significant energy loss (narrow hysteresis loop).</li>
+                </ul>
+                <br>(1 mark)
+            </li>
+        </ol>
+    </div>
+
+    <div class="note-card quick-revision-summary">
+        <h2>4. Quick Revision Summary Box</h2>
+        <ul>
+            <li><strong>Gauss's Law for Magnetism:</strong> No magnetic monopoles exist ($\oint \vec{B} \cdot d\vec{A} = 0$).</li>
+            <li><strong>Earth's Magnetic Elements:</strong> Declination (angle between geographic and magnetic meridians), Dip (angle of $B_E$ with horizontal), Horizontal Component ($H_E = B_E \cos\delta$).</li>
+            <li><strong>Magnetic Quantities:</strong>
+                <ul>
+                    <li>Magnetic Intensity ($H$): External magnetizing field.</li>
+                    <li>Magnetisation ($M$): Induced dipole moment per unit volume.</li>
+                    <li>Susceptibility ($\chi_m = M/H$): Material's response to $H$.</li>
+                    <li>Relative Permeability ($\mu_r = 1 + \chi_m$): How easily B-field passes through.</li>
+                    <li>$B = \mu_0(H+M) = \mu_0 \mu_r H = \mu H$.</li>
+                </ul>
+            </li>
+            <li><strong>Magnetic Materials:</strong>
+                <ul>
+                    <li><strong>Diamagnetic:</strong> Weak repulsion, $\chi_m < 0$, $\mu_r < 1$. (e.g., Cu, Bi)</li>
+                    <li><strong>Paramagnetic:</strong> Weak attraction, $\chi_m > 0$, $\mu_r > 1$. Follows Curie's Law ($\chi_m \propto 1/T$). (e.g., Al, O$_2$)</li>
+                    <li><strong>Ferromagnetic:</strong> Strong attraction, $\chi_m >> 1$, $\mu_r >> 1$. Domains, Hysteresis. (e.g., Fe, Ni, Co)</li>
+                    <li>Curie Temperature: Above $T_C$, ferromagnetism changes to paramagnetism.</li>
+                </ul>
+            </li>
+            <li><strong>Hysteresis:</strong> Lagging of $B$ behind $H$.
+                <ul>
+                    <li><strong>Retentivity:</strong> Residual $B$ when $H=0$.</li>
+                    <li><strong>Coercivity:</strong> Reverse $H$ needed to demagnetize.</li>
+                </ul>
+            </li>
+            <li><strong>Permanent Magnets:</strong> High retentivity & coercivity (hard ferromagnets).</li>
+            <li><strong>Electromagnets:</strong> Low retentivity & coercivity (soft ferromagnets).</li>
+        </ul>
+    </div>
+
+    <div class="note-card">
+        <h2>5. Concept Mind-Map Points List</h2>
+        <ul>
+            <li><strong>Introduction to Magnetism</strong>
+                <ul>
+                    <li>Bar Magnet & Properties</li>
+                    <li>Magnetic Field Lines</li>
+                    <li>Magnetic Dipole Moment ($\vec{M}$)</li>
+                    <li>Torque on a Dipole ($\vec{\tau} = \vec{M} \times \vec{B}$)</li>
+                    <li>Potential Energy ($U = -\vec{M} \cdot \vec{B}$)</li>
+                    <li>Gauss's Law for Magnetism ($\oint \vec{B} \cdot d\vec{A} = 0$)</li>
+                </ul>
+            </li>
+            <li><strong>Earth's Magnetism</strong>
+                <ul>
+                    <li>Geomagnetism Concept</li>
+                    <li>Elements of Earth's Magnetic Field
+                        <ul>
+                            <li>Magnetic Declination ($D$)</li>
+                            <li>Magnetic Dip/Inclination ($\delta$)</li>
+                            <li>Horizontal Component ($H_E$)</li>
+                        </ul>
+                    </li>
+                    <li>Causes (Dynamo Effect)</li>
+                </ul>
+            </li>
+            <li><strong>Magnetisation of Materials</strong>
+                <ul>
+                    <li>Magnetic Intensity ($\vec{H}$)</li>
+                    <li>Magnetisation ($\vec{M}$)</li>
+                    <li>Magnetic Permeability ($\mu$, $\mu_r$)</li>
+                    <li>Magnetic Susceptibility ($\chi_m$)</li>
+                    <li>Relations: $B = \mu_0(H+M)$, $\mu_r = 1 + \chi_m$</li>
+                </ul>
+            </li>
+            <li><strong>Classification of Magnetic Materials</strong>
+                <ul>
+                    <li><strong>Diamagnetism</strong>
+                        <ul>
+                            <li>Properties: Weak repulsion, $\chi_m < 0$, $\mu_r < 1$</li>
+                            <li>Examples: Cu, Bi, H$_2$O</li>
+                        </ul>
+                    </li>
+                    <li><strong>Paramagnetism</strong>
+                        <ul>
+                            <li>Properties: Weak attraction, $\chi_m > 0$, $\mu_r > 1$</li>
+                            <li>Curie's Law ($\chi_m \propto 1/T$)</li>
+                            <li>Examples: Al, Na, O$_2$</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ferromagnetism</strong>
+                        <ul>
+                            <li>Properties: Strong attraction, $\chi_m \gg 1$, $\mu_r \gg 1$</li>
+                            <li>Magnetic Domains</li>
+                            <li>Hysteresis Loop (Retentivity, Coercivity)</li>
+                            <li>Curie Temperature ($T_C$)</li>
+                            <li>Examples: Fe, Ni, Co</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Applications</strong>
+                <ul>
+                    <li>Permanent Magnets (High retentivity & coercivity)</li>
+                    <li>Electromagnets (Low retentivity & coercivity)</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</div>
+  </main>
+
+  <footer class="sn-footer">
+    <div class="container">
+      <div class="sn-footer-grid">
+        <div class="sn-brand">
+          <h3>Shorveer<em>Notes</em></h3>
+          <p>High-yield Class 12 Science & Mathematics preparation. Concept breakdowns, verified formulas, and board derivations created with precision by <strong>Jatin Sandilya</strong>.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Subjects</h4>
+          <ul>
+            <li><a href="../physics/index.html">Physics</a></li>
+            <li><a href="../chemistry/index.html">Chemistry</a></li>
+            <li><a href="../mathematics/index.html">Mathematics</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ YouTube</a></li>
+            <li><a href="mailto:support.shorveernotes@gmail.com">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <p>&copy; 2026 Shorveer Notes · Built with pride in India 🇮🇳</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
