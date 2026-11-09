@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="sunset">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Chapter 11→ | Shorveer Notes</title>
+  
+  
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    body {
+      background: var(--bg, #241226);
+      color: var(--ink, #ffe9d6);
+      font-family: var(--font-body, 'Karla', sans-serif);
+      margin: 0;
+      padding-top: 76px;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      background: rgba(36, 18, 38, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .brand-title {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+    .brand-title em {
+      color: var(--gold, #ff8a5b);
+      font-style: normal;
+    }
+    .nav-links a {
+      color: var(--muted, #a090a0);
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 20px;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover {
+      color: var(--gold, #ff8a5b);
+    }
+    .chapter-hero {
+      padding: 35px 0 20px;
+      border-bottom: 1px dashed var(--line, rgba(255, 255, 255, 0.15));
+      margin-bottom: 30px;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--gold, #ff8a5b);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .chapter-hero h1 {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      font-size: 2.4rem;
+      margin: 0 0 10px 0;
+      color: #fff;
+    }
+    .content-card {
+      background: var(--card, rgba(255, 255, 255, 0.04));
+      border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .content-card h2, .content-card h3 {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      color: var(--gold, #ff8a5b);
+      margin-top: 0;
+    }
+    .formula-box {
+      background: rgba(0, 0, 0, 0.35);
+      border-left: 4px solid var(--gold, #ff8a5b);
+      padding: 18px;
+      border-radius: 8px;
+      margin: 18px 0;
+      overflow-x: auto;
+    }
+    /* Clean Solid Footer */
+    .sn-footer {
+      background: #190c1a;
+      border-top: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      padding: 50px 0 30px;
+      margin-top: 60px;
+    }
+    .sn-footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 36px;
+    }
+    .sn-brand h3 {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      font-size: 1.4rem;
+      margin: 0 0 10px 0;
+      color: #fff;
+    }
+    .sn-brand p {
+      color: var(--muted, #a090a0);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .footer-col h4 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      color: #fff;
+      margin: 0 0 14px 0;
+      letter-spacing: 0.5px;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-col li {
+      margin-bottom: 8px;
+    }
+    .footer-col a {
+      color: var(--muted, #a090a0);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .footer-col a:hover {
+      color: var(--gold, #ff8a5b);
+    }
+    .bottom-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 20px;
+      text-align: center;
+      color: var(--muted, #a090a0);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 768px) {
+      .sn-footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .chapter-hero h1 { font-size: 1.9rem; }
+      .content-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand-title" href="index.html">Shorveer<em>Notes</em></a>
+      <nav class="nav-links">
+        <a href="index.html">Portal Hub</a>
+        <a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="chapter-hero">
+      <a class="back-btn" href="index.html">← Back to Hub</a>
+      <h1>Open Chapter 11→</h1>
+      <p style="color:var(--muted, #a090a0); margin:0;">Class 12 Science · Authored by <strong>Jatin Sandilya</strong></p>
+    </div>
+
+    <main class="container">
+    <div class="card chapter-title-card">
+        <h1>Chapter 11: Alcohols, Phenols and Ethers</h1>
+        <p><strong>Subject:</strong> Chemistry | <strong>Class:</strong> 12</p>
+        <p>This chapter explores the structure, nomenclature, methods of preparation, physical and chemical properties, and uses of alcohols, phenols, and ethers. It is crucial for understanding organic reactions and synthesis.</p>
+    </div>
+
+    <div class="card overview-card">
+        <h2>1. Comprehensive Chapter Overview & Core Concepts</h2>
+        <p>Alcohols, phenols, and ethers are organic compounds characterized by the presence of a hydroxyl group (-OH) attached to an alkyl group (alcohols), an aryl group (phenols), or an oxygen atom bridging two alkyl/aryl groups (ethers), respectively.</p>
+
+        <h3>1.1. Alcohols</h3>
+        <ul>
+            <li><strong>Definition:</strong> Hydroxyl derivatives of alkanes, general formula $R-OH$. Classified as primary ($1^\circ$), secondary ($2^\circ$), or tertiary ($3^\circ$) based on the carbon atom to which the -OH group is attached.</li>
+            <li><strong>Nomenclature:</strong> IUPAC rules (longest carbon chain, -ol suffix, position of -OH) and common names (alkyl alcohol).</li>
+            <li><strong>Preparation:</strong>
+                <ul>
+                    <li>From Alkenes (acid-catalyzed hydration, hydroboration-oxidation, oxymercuration-demercuration).</li>
+                    <li>From Carbonyl Compounds (reduction of aldehydes/ketones by $LiAlH_4$ or $NaBH_4$; reduction of carboxylic acids/esters by $LiAlH_4$).</li>
+                    <li>From Grignard Reagents ($RMgX$ reacts with aldehydes/ketones to form $1^\circ, 2^\circ, 3^\circ$ alcohols).</li>
+                </ul>
+            </li>
+            <li><strong>Physical Properties:</strong> Higher boiling points than corresponding alkanes due to intermolecular H-bonding. Soluble in water (lower members) due to H-bonding with water.</li>
+            <li><strong>Chemical Reactions:</strong>
+                <ul>
+                    <li><strong>Acidity:</strong> Weakly acidic, acidity order $1^\circ > 2^\circ > 3^\circ$ (due to inductive effect). React with active metals (Na, K) to form alkoxides.</li>
+                    <li><strong>Esterification:</strong> Reaction with carboxylic acids or acid derivatives in presence of acid catalyst to form esters.</li>
+                    <li><strong>Reaction with HX:</strong> Formation of alkyl halides ($S_N1$ for $3^\circ$, $S_N2$ for $1^\circ$). Lucas test uses HCl/ZnCl₂.</li>
+                    <li><strong>Dehydration:</strong> Elimination of water to form alkenes (acid-catalyzed, $E_1$ mechanism for $2^\circ/3^\circ$, $E_2$ for $1^\circ$). Ease of dehydration: $3^\circ > 2^\circ > 1^\circ$.</li>
+                    <li><strong>Oxidation:</strong> $1^\circ$ alcohols $\to$ aldehydes $\to$ carboxylic acids; $2^\circ$ alcohols $\to$ ketones; $3^\circ$ alcohols are resistant to oxidation under mild conditions. Oxidizing agents: $PCC, CrO_3, KMnO_4, K_2Cr_2O_7$.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>1.2. Phenols</h3>
+        <ul>
+            <li><strong>Definition:</strong> Hydroxyl derivatives of arenes, where the -OH group is directly attached to an aromatic ring. General formula $Ar-OH$.</li>
+            <li><strong>Nomenclature:</strong> Simplest is phenol. Substituted phenols are named as derivatives of phenol.</li>
+            <li><strong>Preparation:</strong>
+                <ul>
+                    <li>From Haloarenes (Dow's process).</li>
+                    <li>From Benzene Sulphonic Acid (fusion with NaOH).</li>
+                    <li>From Diazonium Salts (hydrolysis).</li>
+                    <li>From Cumene (industrial method).</li>
+                </ul>
+            </li>
+            <li><strong>Physical Properties:</strong> Higher boiling points than aromatic hydrocarbons due to H-bonding. Sparingly soluble in water.</li>
+            <li><strong>Chemical Reactions:</strong>
+                <ul>
+                    <li><strong>Acidity:</strong> More acidic than alcohols due to resonance stabilization of phenoxide ion. Acidity is increased by electron-withdrawing groups (EWG) and decreased by electron-donating groups (EDG). React with NaOH (stronger base than Na, K).</li>
+                    <li><strong>Electrophilic Aromatic Substitution:</strong> -OH group is ortho-para directing and strongly activating.
+                        <ul>
+                            <li>Nitration (dilute $HNO_3$ gives o- and p-nitrophenol; conc. $HNO_3$ gives picric acid).</li>
+                            <li>Bromination (bromine water gives 2,4,6-tribromophenol; $Br_2/CS_2$ gives o- and p-bromophenol).</li>
+                            <li>Kolbe's Reaction: Formation of salicylic acid (o-hydroxybenzoic acid) by reaction with $CO_2$ and subsequent acidification.</li>
+                            <li>Reimer-Tiemann Reaction: Formation of salicylaldehyde by reaction with $CHCl_3/NaOH$ and subsequent acidification.</li>
+                            <li>Friedel-Crafts Alkylation/Acylation (not usually good due to complex formation with Lewis acid).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Oxidation:</strong> To quinones (e.g., with $Na_2Cr_2O_7/H_2SO_4$).</li>
+                    <li><strong>Reduction:</strong> To benzene (with Zinc dust).</li>
+                </ul>
+            </li>
+            <li><strong>Distinguishing Test:</strong> Ferric Chloride Test (phenols give characteristic violet, green, or blue coloration with neutral $FeCl_3$ solution).</li>
+        </ul>
+
+        <h3>1.3. Ethers</h3>
+        <ul>
+            <li><strong>Definition:</strong> Organic compounds where an oxygen atom is bonded to two alkyl or aryl groups. General formula $R-O-R'$, $Ar-O-R'$, or $Ar-O-Ar'$. Can be symmetrical ($R=R'$) or unsymmetrical ($R \ne R'$).</li>
+            <li><strong>Nomenclature:</strong> Common names (alkyl alkyl ether, e.g., diethyl ether). IUPAC names (alkoxyalkane, e.g., ethoxyethane).</li>
+            <li><strong>Preparation:</strong>
+                <ul>
+                    <li><strong>Williamson's Ether Synthesis:</strong> Reaction of an alkyl halide (preferably $1^\circ$) with a sodium alkoxide or phenoxide. Best for $1^\circ$ alkyl halides to avoid elimination.</li>
+                    <li>From Alcohols (dehydration of alcohols by conc. $H_2SO_4$ at specific temperatures, e.g., $140^\circ C$ for symmetrical ethers).</li>
+                </ul>
+            </li>
+            <li><strong>Physical Properties:</strong> Lower boiling points than corresponding alcohols (no H-bonding). Less soluble in water than alcohols. Highly volatile and flammable.</li>
+            <li><strong>Chemical Reactions:</strong>
+                <ul>
+                    <li><strong>Cleavage by HX:</strong> Ethers react with hot concentrated HX (HI, HBr, HCl) to form alkyl halides and alcohol (or phenol).
+                        <ul>
+                            <li>Mechanism depends on $1^\circ/2^\circ$ or $3^\circ$ nature: $S_N2$ for $1^\circ/2^\circ$ alkyl groups; $S_N1$ for $3^\circ$ alkyl groups.</li>
+                            <li>Aryl-alkyl ethers give phenol and alkyl halide.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Electrophilic Substitution (in aromatic ethers):</strong> -OR group is ortho-para directing and activating. (e.g., Anisole undergoes nitration, bromination, Friedel-Crafts reactions).</li>
+                    <li><strong>Peroxide Formation:</strong> Ethers slowly react with atmospheric oxygen to form highly explosive peroxides.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card mechanisms-card">
+        <h2>2. Key Reaction Mechanisms / Core Formulas</h2>
+
+        <h3>Core Formulas:</h3>
+        <ul>
+            <li><strong>Alcohols:</strong> $C_nH_{2n+1}OH$ or $R-OH$</li>
+            <li><strong>Phenols:</strong> $Ar-OH$ (e.g., $C_6H_5OH$)</li>
+            <li><strong>Ethers:</strong> $R-O-R'$, $Ar-O-R'$, or $Ar-O-Ar'$</li>
+        </ul>
+
+        <h3>Key Reaction Mechanisms:</h3>
+
+        <div class="formula-box">
+            <h4>2.1. Dehydration of Alcohols (e.g., $E_1$ for $2^\circ/3^\circ$ alcohols)</h4>
+            <p><strong>Step 1: Protonation of Alcohol</strong></p>
+            $$ CH_3-CH_2-OH + H^+ \rightleftharpoons CH_3-CH_2-\overset{+}{O}H_2 $$
+            <p><strong>Step 2: Formation of Carbocation (slow, rate-determining step)</strong></p>
+            $$ CH_3-CH_2-\overset{+}{O}H_2 \longrightarrow CH_3-\overset{+}{C}H_2 + H_2O $$
+            <p><strong>Step 3: Deprotonation to form Alkene</strong></p>
+            $$ CH_3-\overset{+}{C}H_2 \longrightarrow CH_2=CH_2 + H^+ $$
+        </div>
+
+        <div class="formula-box">
+            <h4>2.2. Williamson's Ether Synthesis</h4>
+            <p>This is an $S_N2$ reaction.</p>
+            $$ R-X + Na^+O^--R' \longrightarrow R-O-R' + NaX $$
+            <p>Example: $CH_3CH_2-Br + Na^+O^-CH_3 \longrightarrow CH_3CH_2-O-CH_3 + NaBr$</p>
+            <p>Mechanism (for $1^\circ$ alkyl halide): Nucleophilic attack of alkoxide on the primary alkyl halide, displacing the halide ion.</p>
+            <p>Best for $1^\circ$ alkyl halides. If $3^\circ$ alkyl halide is used, elimination ($E2$) predominates, forming alkenes.</p>
+        </div>
+
+        <div class="formula-box">
+            <h4>2.3. Cleavage of Ethers by HX (e.g., with HI)</h4>
+            <p><strong>Case 1: Primary/Secondary Alkyl Groups (predominantly $S_N2$)</strong></p>
+            $$ R-O-R' + HI \longrightarrow R-OH + R'-I $$
+            <p>Mechanism involves protonation of ether, followed by nucleophilic attack of $I^-$ on the less hindered carbon.</p>
+            <p><strong>Case 2: Tertiary Alkyl Group / Phenyl-Alkyl Ether (predominantly $S_N1$ for $3^\circ$ alkyl; Phenol for Aryl-alkyl ether)</strong></p>
+            $$ (CH_3)_3C-O-CH_3 + HI \longrightarrow (CH_3)_3C-I + CH_3OH $$
+            <p>Mechanism involves protonation, then carbocation formation ($3^\circ$ carbocation is stable), followed by $I^-$ attack.</p>
+            <p>For $Ar-O-R$: The $C_{aryl}-O$ bond is stable due to resonance and does not cleave. The $C_{alkyl}-O$ bond cleaves.</p>
+            $$ C_6H_5-O-CH_3 + HI \longrightarrow C_6H_5-OH + CH_3I $$
+        </div>
+
+        <div class="formula-box">
+            <h4>2.4. Kolbe's Reaction (Phenols)</h4>
+            <p>Phenoxide ion reacts with $CO_2$ (a weak electrophile) under pressure and heating, followed by acidification to yield salicylic acid.</p>
+            <ol>
+                <li>$C_6H_5OH + NaOH \longrightarrow C_6H_5O^-Na^+ + H_2O$</li>
+                <li>$C_6H_5O^-Na^+ + CO_2 \xrightarrow{140^\circ C, 4-7 atm} \text{Intermediate}$</li>
+                <li>$\text{Intermediate} + H^+ \longrightarrow \text{Salicylic Acid (o-hydroxybenzoic acid)}$</li>
+            </ol>
+            $$ \xrightarrow{1. NaOH, 2. CO_2/140^\circ C, 4-7 atm, 3. H_3O^+} $$
+            $$ C_6H_5OH \longrightarrow o-HOC_6H_4COOH $$
+        </div>
+    </div>
+
+    <div class="card pyq-card">
+        <h2>3. Solved High-Yield CBSE Board PYQs</h2>
+
+        <h3>Question 1: Conversions</h3>
+        <p><strong>Q:</strong> How will you convert:</p>
+        <p>(i) Propene to Propan-1-ol</p>
+        <p>(ii) Anisole to Phenol</p>
+        <p>(iii) Phenol to Salicylaldehyde</p>
+
+        <div class="solution-box">
+            <p><strong>Solution:</strong></p>
+            <p><strong>(i) Propene to Propan-1-ol (1 mark)</strong></p>
+            <p>This conversion requires anti-Markovnikov addition of water. Hydroboration-oxidation is the suitable method.</p>
+            $$ CH_3-CH=CH_2 \xrightarrow{1. (BH_3)_2, THF \\ 2. H_2O_2, OH^-} CH_3-CH_2-CH_2-OH $$
+            <p><strong>Marking Scheme:</strong> 1 mark for correct reagents and product.</p>
+
+            <p><strong>(ii) Anisole to Phenol (1 mark)</strong></p>
+            <p>Anisole ($C_6H_5-O-CH_3$) is a methoxybenzene. To convert it to phenol, we need to cleave the alkyl-oxygen bond.</p>
+            $$ C_6H_5-O-CH_3 \xrightarrow{HI (conc.), heat} C_6H_5-OH + CH_3I $$
+            <p><strong>Marking Scheme:</strong> 1 mark for correct reagent (HI/HBr) and product.</p>
+
+            <p><strong>(iii) Phenol to Salicylaldehyde (1 mark)</strong></p>
+            <p>This is a named reaction, Reimer-Tiemann reaction.</p>
+            $$ C_6H_5OH \xrightarrow{1. CHCl_3, NaOH(aq) \\ 2. H_3O^+} o-HOC_6H_4CHO \text{ (Salicylaldehyde)} $$
+            <p><strong>Marking Scheme:</strong> 1 mark for correct reagents and named reaction (if mentioned, optional but good).</p>
+        </div>
+
+        <h3>Question 2: Reasoning (Acidity)</h3>
+        <p><strong>Q:</strong> Arrange the following compounds in increasing order of their acidic strength: Propan-1-ol, 2,4,6-trinitrophenol, 3-nitrophenol, Phenol.</p>
+
+        <div class="solution-box">
+            <p><strong>Solution:</strong></p>
+            <p>The acidic strength of phenols depends on the stabilization of the phenoxide ion by electron-withdrawing groups (EWG). Nitro groups are strong EWGs, and their effect is more pronounced at ortho and para positions.</p>
+            <ul>
+                <li><strong>Propan-1-ol:</strong> A simple alcohol, very weakly acidic ($pK_a \approx 16-18$).</li>
+                <li><strong>Phenol:</strong> More acidic than alcohols due to resonance stabilization of phenoxide ion ($pK_a \approx 10$).</li>
+                <li><strong>3-nitrophenol:</strong> Nitro group at meta position is an EWG, but its resonance effect is not direct. It exerts an inductive electron-withdrawing effect, making it more acidic than phenol ($pK_a \approx 8.4$).</li>
+                <li><strong>2,4,6-trinitrophenol (Picric acid):</strong> Three strong nitro EWGs (two ortho, one para) strongly stabilize the phenoxide ion, making it highly acidic, even comparable to mineral acids ($pK_a \approx 0.3$).</li>
+            </ul>
+            <p><strong>Increasing order of acidic strength:</strong></p>
+            <p>Propan-1-ol &lt; Phenol &lt; 3-nitrophenol &lt; 2,4,6-trinitrophenol</p>
+            <p><strong>Marking Scheme:</strong></p>
+            <ul>
+                <li>1 mark for understanding the general trend (alcohol &lt; phenol).</li>
+                <li>1 mark for correctly comparing substituted phenols based on number and position of nitro groups.</li>
+                <li>1 mark for the final correct order.</li>
+            </ul>
+        </div>
+
+        <h3>Question 3: Mechanism / Distinguishing Test</h3>
+        <p><strong>Q:</strong> Give a chemical test to distinguish between phenol and ethanol. Write the mechanism of dehydration of ethanol to ethene.</p>
+
+        <div class="solution-box">
+            <p><strong>Solution:</strong></p>
+            <p><strong>Distinguishing Test (1.5 marks):</strong></p>
+            <p><strong>Ferric Chloride Test:</strong></p>
+            <ul>
+                <li>Add a few drops of neutral $FeCl_3$ solution to both ethanol and phenol.</li>
+                <li><strong>Phenol:</strong> Gives a characteristic violet/blue/green coloration due to the formation of a complex.</li>
+                $$ 6C_6H_5OH + FeCl_3 \longrightarrow [Fe(OC_6H_5)_6]^{3-} + 3H^+ + 3HCl $$
+                <li><strong>Ethanol:</strong> Does not give any characteristic coloration.</li>
+            </ul>
+            <p><strong>Marking Scheme:</strong> 0.5 mark for mentioning $FeCl_3$ test. 0.5 mark for observation with phenol. 0.5 mark for observation with ethanol.</p>
+
+            <p><strong>Mechanism of dehydration of ethanol to ethene (2.5 marks):</strong></p>
+            <p>Dehydration of ethanol to ethene occurs via an $E_1$ mechanism under acidic conditions (e.g., conc. $H_2SO_4$ at $170^\circ C$).</p>
+            <p><strong>Step 1: Protonation of Ethanol</strong> (Fast, reversible)</p>
+            <p>The oxygen atom of ethanol gets protonated by the acid, forming protonated alcohol (ethyloxonium ion).</p>
+            $$ CH_3-CH_2-OH + H^+ \rightleftharpoons CH_3-CH_2-\overset{+}{O}H_2 $$
+            <p><strong>Step 2: Formation of Carbocation</strong> (Slow, rate-determining step)</p>
+            <p>The protonated alcohol loses a water molecule to form a carbocation (ethyl carbocation).</p>
+            $$ CH_3-CH_2-\overset{+}{O}H_2 \longrightarrow CH_3-\overset{+}{C}H_2 + H_2O $$
+            <p><strong>Step 3: Deprotonation</strong> (Fast)</p>
+            <p>A proton is removed from the $\beta$-carbon by a base (like $H_2O$ or $HSO_4^-$) leading to the formation of ethene and regeneration of the acid catalyst.</p>
+            $$ CH_3-\overset{+}{C}H_2 \longrightarrow CH_2=CH_2 + H^+ $$
+            <p><strong>Marking Scheme:</strong> 0.5 mark for each step (protonation, carbocation formation, deprotonation). 1 mark for correctly showing electron movement/charges and products for each step.</p>
+        </div>
+    </div>
+
+    <div class="card revision-card">
+        <h2>4. Quick Revision Summary Box</h2>
+        <div class="revision-box">
+            <ul>
+                <li><strong>Alcohols (R-OH):</strong> Preparation from alkenes/carbonyls/Grignard. Acidity $1^\circ>2^\circ>3^\circ$. React with HX, dehydrate to alkenes, oxidize to aldehydes/ketones/acids.</li>
+                <li><strong>Phenols (Ar-OH):</strong> Preparation from haloarenes/diazonium salts/cumene. More acidic than alcohols (resonance stabilized phenoxide). Ortho-para directing in EAS. Key reactions: Kolbe's, Reimer-Tiemann, Bromination, Nitration. $FeCl_3$ test.</li>
+                <li><strong>Ethers (R-O-R'):</strong> Preparation by Williamson's synthesis ($1^\circ$ RX + NaOR'). Less reactive. Cleaved by conc. HI/HBr (alkyl halide + alcohol/phenol). Aromatic ethers undergo EAS.</li>
+                <li><strong>Key Mechanisms:</strong> Dehydration of alcohols ($E_1$), Williamson's ($S_N2$), Ether cleavage by HX ($S_N1/S_N2$ depending on groups).</li>
+                <li><strong>Acidity Order:</strong> 2,4,6-trinitrophenol &gt; 3-nitrophenol &gt; Phenol &gt; Alcohols. Electron-withdrawing groups increase acidity.</li>
+                <li><strong>Boiling Points:</strong> Alcohols &gt; Phenols &gt; Ethers &gt; Hydrocarbons (due to H-bonding).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mindmap-card">
+        <h2>5. Concept Mind-Map Points List</h2>
+        <ul>
+            <li><strong>Chapter 11: Alcohols, Phenols & Ethers</strong>
+                <ul>
+                    <li><strong>I. Alcohols (R-OH)</strong>
+                        <ul>
+                            <li>Nomenclature ($1^\circ, 2^\circ, 3^\circ$)</li>
+                            <li>Preparation
+                                <ul>
+                                    <li>Alkenes (Hydration, Hydroboration-Oxidation)</li>
+                                    <li>Carbonyls (Reduction)</li>
+                                    <li>Grignard Reagents</li>
+                                </ul>
+                            </li>
+                            <li>Properties
+                                <ul>
+                                    <li>Physical (BP, Solubility - H-bonding)</li>
+                                    <li>Chemical
+                                        <ul>
+                                            <li>Acidity ($R-OH + Na \to R-ONa$)</li>
+                                            <li>Reaction with HX (Alkyl Halides)</li>
+                                            <li>Esterification</li>
+                                            <li>Dehydration (Alkenes)</li>
+                                            <li>Oxidation ($1^\circ \to Aldehydes \to Acids; 2^\circ \to Ketones$)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>II. Phenols (Ar-OH)</strong>
+                        <ul>
+                            <li>Nomenclature</li>
+                            <li>Preparation
+                                <ul>
+                                    <li>Haloarenes (Dow's)</li>
+                                    <li>Benzene Sulphonic Acid</li>
+                                    <li>Diazonium Salts</li>
+                                    <li>Cumene</li>
+                                </ul>
+                            </li>
+                            <li>Properties
+                                <ul>
+                                    <li>Physical (BP, Solubility)</li>
+                                    <li>Chemical
+                                        <ul>
+                                            <li>Acidity (Resonance stabilization of Phenoxide ion)</li>
+                                            <li>Electrophilic Aromatic Substitution (o,p-directing, activating)
+                                                <ul>
+                                                    <li>Nitration (dilute, conc.)</li>
+                                                    <li>Bromination (water, $CS_2$)</li>
+                                                    <li>Kolbe's Reaction (Salicylic Acid)</li>
+                                                    <li>Reimer-Tiemann Reaction (Salicylaldehyde)</li>
+                                                </ul>
+                                            </li>
+                                            <li>Oxidation (Quinones)</li>
+                                            <li>Reduction (Benzene)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Distinguishing Test ($FeCl_3$ test)</li>
+                        </ul>
+                    </li>
+                    <li><strong>III. Ethers (R-O-R')</strong>
+                        <ul>
+                            <li>Nomenclature (Symmetrical/Unsymmetrical)</li>
+                            <li>Preparation
+                                <ul>
+                                    <li>Williamson's Ether Synthesis ($S_N2$)</li>
+                                    <li>Dehydration of Alcohols ($140^\circ C$)</li>
+                                </ul>
+                            </li>
+                            <li>Properties
+                                <ul>
+                                    <li>Physical (Low BP, Less soluble - No H-bonding)</li>
+                                    <li>Chemical
+                                        <ul>
+                                            <li>Cleavage by HX (HI, HBr) ($S_N1/S_N2$ depends on R groups)</li>
+                                            <li>Electrophilic Substitution (Aromatic Ethers)</li>
+                                            <li>Peroxide Formation</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="author-card">
+        <p>Notes by: Jatin Sandilya</p>
+    </div>
+</main>
+  </main>
+
+  <footer class="sn-footer">
+    <div class="container">
+      <div class="sn-footer-grid">
+        <div class="sn-brand">
+          <h3>Shorveer<em>Notes</em></h3>
+          <p>High-yield Class 12 Science & Mathematics preparation. Concept breakdowns, verified formulas, and board derivations created with precision by <strong>Jatin Sandilya</strong>.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Subjects</h4>
+          <ul>
+            <li><a href="../physics/index.html">Physics</a></li>
+            <li><a href="../chemistry/index.html">Chemistry</a></li>
+            <li><a href="../mathematics/index.html">Mathematics</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ YouTube</a></li>
+            <li><a href="mailto:support.shorveernotes@gmail.com">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <p>&copy; 2026 Shorveer Notes · Built with pride in India 🇮🇳</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
