@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="sunset">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Chapter 03→ | Shorveer Notes</title>
+  
+  
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+  <!-- Fonts matching Index -->
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
+
+  <!-- Master Global Stylesheet -->
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    /* In-page polish for chapter reading */
+    body {
+      background: var(--bg, #241226);
+      color: var(--ink, #ffe9d6);
+      font-family: var(--font-body, 'Karla', sans-serif);
+      margin: 0;
+      padding-top: 80px;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .chapter-hero {
+      padding: 40px 0 20px;
+      border-bottom: 1px dashed var(--line, rgba(255,255,255,0.15));
+      margin-bottom: 35px;
+    }
+    .chapter-hero h1 {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      font-size: 2.6rem;
+      color: var(--ink, #fff);
+      margin-bottom: 10px;
+    }
+    .content-card {
+      background: var(--card, rgba(255, 255, 255, 0.04));
+      border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(10px);
+    }
+    .content-card h2, .content-card h3 {
+      font-family: var(--font-heading, 'Fraunces', serif);
+      color: var(--gold, #ff8a5b);
+      margin-bottom: 14px;
+    }
+    .formula-highlight {
+      background: rgba(0,0,0,0.3);
+      border-left: 3px solid var(--gold, #ff8a5b);
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 16px 0;
+      overflow-x: auto;
+    }
+    a.back-nav {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--gold, #ff8a5b);
+      text-decoration: none;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+<nav aria-label="Primary" class="nav container">
+<a aria-label="Shorveer Notes home" class="brand" href="../index.html">
+<span aria-hidden="true" class="brand-mark">
+<svg fill="none" viewbox="0 0 64 64">
+<path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
+</svg>
+</span>
+<span class="brand-name">Shorveer<em>Notes</em></span>
+</a>
+<div class="nav-links">
+<a href="../index.html">Home</a>
+<a href="index.html" style="color:var(--ink); font-weight:700;">Math Hub</a>
+<a href="../about-notes.html">Framework</a>
+<a href="../about.html">About us</a>
+</div>
+<div class="nav-actions">
+<button aria-label="Open search" class="nav-icon" id="searchButton" title="Search (Ctrl+K)">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<circle cx="11" cy="11" r="7"></circle><path d="m20.5 20.5-4-4"></path>
+</svg>
+</button>
+<button aria-expanded="false" aria-label="Change theme" class="nav-icon" id="themeButton" title="Change theme">
+<span aria-hidden="true" class="palette-dot"></span>
+</button>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav-icon mobile-toggle" id="menuButton">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<path d="M3 6h18M3 12h18M3 18h18"></path>
+</svg>
+</button>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="../index.html">Home</a>
+<a href="index.html">Math Hub</a>
+<a href="../about-notes.html">How notes are made</a>
+<a href="../about.html">About Shorveer</a>
+<a href="../exam-info.html">Exam info</a>
+</div>
+</header>
+
+  <main id="main">
+    <div class="container">
+      <div class="chapter-hero">
+        <a class="back-nav" href="index.html">← Back to Mathematics Hub</a>
+        <h1>Open Chapter 03→</h1>
+        <p style="color:var(--muted, #a090a0);">Curated for CBSE Class 12 · High-Yield Revision</p>
+      </div>
+
+      <main id="main">
+    <section class="section container">
+        <h1 class="chapter-title">Chapter 3: Matrices</h1>
+        <p class="chapter-intro">
+            Welcome to Open Chapter 03! In this chapter, we will delve into the fundamental concepts of Matrices, a powerful mathematical tool used extensively in various fields like computer graphics, physics, engineering, and economics. Matrices provide a concise way to represent and work with systems of linear equations and linear transformations.
+        </p>
+    </section>
+
+    <!-- Section 1: Detailed Chapter Concept & Definitions -->
+    <section class="section container">
+        <h2 class="section-title">1. Detailed Chapter Concept & Definitions</h2>
+        <div class="content-card">
+            <h3>1.1 What is a Matrix?</h3>
+            <p>A matrix is a rectangular arrangement of numbers or functions. These numbers or functions are called the elements or entries of the matrix. We denote matrices by capital letters like $A, B, C$, etc.</p>
+            <p>General form of a matrix $A$ with $m$ rows and $n$ columns (an $m \times n$ matrix):</p>
+            $$ A = \begin{bmatrix}
+                a_{11} & a_{12} & \dots & a_{1n} \\
+                a_{21} & a_{22} & \dots & a_{2n} \\
+                \vdots & \vdots & \ddots & \vdots \\
+                a_{m1} & a_{m2} & \dots & a_{mn}
+            \end{bmatrix} $$
+            <p>The element $a_{ij}$ refers to the element in the $i^{th}$ row and $j^{th}$ column.</p>
+
+            <h3>1.2 Order of a Matrix</h3>
+            <p>The order of a matrix is defined by the number of rows and columns it has. An $m \times n$ matrix has $m$ rows and $n$ columns.</p>
+            <p>Example: A matrix with 2 rows and 3 columns has an order of $2 \times 3$.</p>
+
+            <h3>1.3 Types of Matrices</h3>
+            <ul>
+                <li><strong>Column Matrix:</strong> A matrix having only one column. Order is $m \times 1$. Example: $A = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}$ (order $3 \times 1$)</li>
+                <li><strong>Row Matrix:</strong> A matrix having only one row. Order is $1 \times n$. Example: $B = \begin{bmatrix} 1 & 2 & 3 \end{bmatrix}$ (order $1 \times 3$)</li>
+                <li><strong>Square Matrix:</strong> A matrix in which the number of rows is equal to the number of columns ($m=n$). Order is $n \times n$. Example: $C = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$ (order $2 \times 2$)</li>
+                <li><strong>Diagonal Matrix:</strong> A square matrix where all non-diagonal elements are zero. That is, $a_{ij} = 0$ for $i \neq j$. Example: $D = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{bmatrix}$</li>
+                <li><strong>Scalar Matrix:</strong> A diagonal matrix where all diagonal elements are equal. Example: $E = \begin{bmatrix} 5 & 0 & 0 \\ 0 & 5 & 0 \\ 0 & 0 & 5 \end{bmatrix}$</li>
+                <li><strong>Identity Matrix (Unit Matrix):</strong> A scalar matrix where all diagonal elements are 1. Denoted by $I$. Example: $I_3 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$</li>
+                <li><strong>Zero Matrix (Null Matrix):</strong> A matrix in which all elements are zero. Denoted by $O$. Example: $O = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$</li>
+                <li><strong>Symmetric Matrix:</strong> A square matrix $A$ is symmetric if $A^T = A$, i.e., $a_{ij} = a_{ji}$ for all $i,j$. Example: $F = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 4 & 5 \\ 3 & 5 & 6 \end{bmatrix}$</li>
+                <li><strong>Skew-Symmetric Matrix:</strong> A square matrix $A$ is skew-symmetric if $A^T = -A$, i.e., $a_{ij} = -a_{ji}$ for all $i,j$. Note that diagonal elements must be zero. Example: $G = \begin{bmatrix} 0 & 2 & 3 \\ -2 & 0 & 5 \\ -3 & -5 & 0 \end{bmatrix}$</li>
+            </ul>
+
+            <h3>1.4 Operations on Matrices</h3>
+            <ul>
+                <li><strong>Addition/Subtraction:</strong> Two matrices can be added or subtracted only if they are of the same order. If $A = [a_{ij}]$ and $B = [b_{ij}]$, then $A \pm B = [a_{ij} \pm b_{ij}]$.</li>
+                <li><strong>Scalar Multiplication:</strong> If $A = [a_{ij}]$ and $k$ is a scalar, then $kA = [ka_{ij}]$.</li>
+                <li><strong>Matrix Multiplication:</strong> If $A$ is an $m \times n$ matrix and $B$ is an $n \times p$ matrix, then their product $AB$ is an $m \times p$ matrix. The element $(AB)_{ij}$ is found by taking the dot product of the $i^{th}$ row of $A$ and the $j^{th}$ column of $B$.
+                    $$ (AB)_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj} $$
+                    Note: Matrix multiplication is generally not commutative, i.e., $AB \neq BA$.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 2: Important Derivations / Key Formulas -->
+    <section class="section container">
+        <h2 class="section-title">2. Important Derivations & Key Formulas</h2>
+
+        <div class="content-card info-box">
+            <h3>Determinant of a Matrix</h3>
+            <p>For a square matrix $A$, its determinant, denoted $|A|$ or $\det(A)$, is a scalar value.</p>
+            <ul>
+                <li><strong>For a $2 \times 2$ matrix:</strong>
+                    $$ A = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \implies |A| = ad - bc $$
+                </li>
+                <li><strong>For a $3 \times 3$ matrix:</strong>
+                    $$ A = \begin{bmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{bmatrix} \implies |A| = a_{11}(a_{22}a_{33} - a_{23}a_{32}) - a_{12}(a_{21}a_{33} - a_{23}a_{31}) + a_{13}(a_{21}a_{32} - a_{22}a_{31}) $$
+                    (This is expansion along the first row. Can be expanded along any row or column.)
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-card info-box">
+            <h3>Adjoint and Inverse of a Matrix</h3>
+            <p><strong>Cofactor ($C_{ij}$):</strong> The cofactor of an element $a_{ij}$ is $(-1)^{i+j}$ times the determinant of the submatrix obtained by deleting the $i^{th}$ row and $j^{th}$ column.</p>
+            <p><strong>Adjoint ($\text{adj}(A)$):</strong> The adjoint of a square matrix $A$ is the transpose of the matrix of cofactors of $A$.</p>
+            $$ \text{adj}(A) = (\text{Cofactor Matrix})^T $$
+            <p><strong>Inverse ($A^{-1}$):</strong> For a square matrix $A$, its inverse $A^{-1}$ exists if and only if $A$ is a non-singular matrix (i.e., $|A| \neq 0$).</p>
+            $$ A^{-1} = \frac{1}{|A|} \text{adj}(A) $$
+            <p>Properties:</p>
+            <ul>
+                <li>$AA^{-1} = A^{-1}A = I$</li>
+                <li>$(AB)^{-1} = B^{-1}A^{-1}$</li>
+                <li>$(A^T)^{-1} = (A^{-1})^T$</li>
+            </ul>
+        </div>
+
+        <div class="content-card info-box">
+            <h3>Properties of Determinants</h3>
+            <ul>
+                <li>$|A^T| = |A|$</li>
+                <li>If any two rows (or columns) of a matrix are interchanged, the sign of the determinant changes.</li>
+                <li>If any two rows (or columns) are identical, the determinant is zero.</li>
+                <li>If each element of a row (or column) is multiplied by a scalar $k$, the determinant is multiplied by $k$.
+                    $$ |kA| = k^n|A| \text{ (for an } n \times n \text{ matrix)} $$
+                </li>
+                <li>$|AB| = |A||B|$</li>
+                <li>A square matrix $A$ is singular if $|A|=0$, and non-singular if $|A| \neq 0$.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 3: 3 Most Repeated CBSE Board Solved Questions -->
+    <section class="section container">
+        <h2 class="section-title">3. CBSE Board Solved Questions</h2>
+
+        <div class="content-card question-card">
+            <h3>Question 1: Find the inverse of the matrix $A = \begin{bmatrix} 2 & 3 \\ 1 & 2 \end{bmatrix}$ using the adjoint method.</h3>
+            <div class="solution">
+                <h4>Solution:</h4>
+                <p>Given matrix $A = \begin{bmatrix} 2 & 3 \\ 1 & 2 \end{bmatrix}$.</p>
+                <p><strong>Step 1: Calculate the determinant of A.</strong></p>
+                $$ |A| = (2)(2) - (3)(1) = 4 - 3 = 1 $$
+                <p>Since $|A| = 1 \neq 0$, the inverse exists. (Marking: 1 mark)</p>
+
+                <p><strong>Step 2: Find the cofactors of each element.</strong></p>
+                <ul>
+                    <li>$C_{11} = (-1)^{1+1}(2) = 2$</li>
+                    <li>$C_{12} = (-1)^{1+2}(1) = -1$</li>
+                    <li>$C_{21} = (-1)^{2+1}(3) = -3$</li>
+                    <li>$C_{22} = (-1)^{2+2}(2) = 2$</li>
+                </ul>
+                <p>The cofactor matrix is $C = \begin{bmatrix} 2 & -1 \\ -3 & 2 \end{bmatrix}$. (Marking: 1.5 marks)</p>
+
+                <p><strong>Step 3: Find the adjoint of A.</strong></p>
+                $$ \text{adj}(A) = C^T = \begin{bmatrix} 2 & -3 \\ -1 & 2 \end{bmatrix} $$
+                (Marking: 1 mark)
+
+                <p><strong>Step 4: Calculate the inverse of A.</strong></p>
+                $$ A^{-1} = \frac{1}{|A|} \text{adj}(A) = \frac{1}{1} \begin{bmatrix} 2 & -3 \\ -1 & 2 \end{bmatrix} = \begin{bmatrix} 2 & -3 \\ -1 & 2 \end{bmatrix} $$
+                (Marking: 1.5 marks)
+                <p><strong>Total Marks: 5</strong></p>
+            </div>
+        </div>
+
+        <div class="content-card question-card">
+            <h3>Question 2: Express the matrix $A = \begin{bmatrix} 3 & 5 \\ 1 & -1 \end{bmatrix}$ as the sum of a symmetric and a skew-symmetric matrix.</h3>
+            <div class="solution">
+                <h4>Solution:</h4>
+                <p>Any square matrix $A$ can be expressed as $A = P + Q$, where $P$ is a symmetric matrix and $Q$ is a skew-symmetric matrix.
+                    $$ P = \frac{1}{2}(A + A^T) \quad \text{and} \quad Q = \frac{1}{2}(A - A^T) $$
+                </p>
+                <p>Given $A = \begin{bmatrix} 3 & 5 \\ 1 & -1 \end{bmatrix}$.</p>
+
+                <p><strong>Step 1: Find the transpose of A.</strong></p>
+                $$ A^T = \begin{bmatrix} 3 & 1 \\ 5 & -1 \end{bmatrix} $$
+                (Marking: 1 mark)
+
+                <p><strong>Step 2: Calculate P (the symmetric part).</strong></p>
+                $$ A + A^T = \begin{bmatrix} 3 & 5 \\ 1 & -1 \end{bmatrix} + \begin{bmatrix} 3 & 1 \\ 5 & -1 \end{bmatrix} = \begin{bmatrix} 3+3 & 5+1 \\ 1+5 & -1-1 \end{bmatrix} = \begin{bmatrix} 6 & 6 \\ 6 & -2 \end{bmatrix} $$
+                $$ P = \frac{1}{2}(A + A^T) = \frac{1}{2} \begin{bmatrix} 6 & 6 \\ 6 & -2 \end{bmatrix} = \begin{bmatrix} 3 & 3 \\ 3 & -1 \end{bmatrix} $$
+                (Marking: 1.5 marks for $A+A^T$, 1 mark for $P$)
+                <p>Check: $P^T = \begin{bmatrix} 3 & 3 \\ 3 & -1 \end{bmatrix} = P$, so $P$ is symmetric.</p>
+
+                <p><strong>Step 3: Calculate Q (the skew-symmetric part).</strong></p>
+                $$ A - A^T = \begin{bmatrix} 3 & 5 \\ 1 & -1 \end{bmatrix} - \begin{bmatrix} 3 & 1 \\ 5 & -1 \end{bmatrix} = \begin{bmatrix} 3-3 & 5-1 \\ 1-5 & -1-(-1) \end{bmatrix} = \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix} $$
+                $$ Q = \frac{1}{2}(A - A^T) = \frac{1}{2} \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 2 \\ -2 & 0 \end{bmatrix} $$
+                (Marking: 1.5 marks for $A-A^T$, 1 mark for $Q$)
+                <p>Check: $Q^T = \begin{bmatrix} 0 & -2 \\ 2 & 0 \end{bmatrix} = -Q$, so $Q$ is skew-symmetric.</p>
+
+                <p><strong>Step 4: Verify $A = P + Q$.</strong></p>
+                $$ P+Q = \begin{bmatrix} 3 & 3 \\ 3 & -1 \end{bmatrix} + \begin{bmatrix} 0 & 2 \\ -2 & 0 \end{bmatrix} = \begin{bmatrix} 3+0 & 3+2 \\ 3-2 & -1+0 \end{bmatrix} = \begin{bmatrix} 3 & 5 \\ 1 & -1 \end{bmatrix} = A $$
+                (Marking: 0.5 mark for verification)
+                <p><strong>Total Marks: 5</strong></p>
+            </div>
+        </div>
+
+        <div class="content-card question-card">
+            <h3>Question 3: If $A = \begin{bmatrix} 2 & 0 & 1 \\ 2 & 1 & 3 \\ 1 & -1 & 0 \end{bmatrix}$, find $A^2 - 5A + 6I$.</h3>
+            <div class="solution">
+                <h4>Solution:</h4>
+                <p>Given matrix $A = \begin{bmatrix} 2 & 0 & 1 \\ 2 & 1 & 3 \\ 1 & -1 & 0 \end{bmatrix}$. $I$ is the $3 \times 3$ identity matrix $I = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$.</p>
+
+                <p><strong>Step 1: Calculate $A^2 = A \cdot A$.</strong></p>
+                $$ A^2 = \begin{bmatrix} 2 & 0 & 1 \\ 2 & 1 & 3 \\ 1 & -1 & 0 \end{bmatrix} \begin{bmatrix} 2 & 0 & 1 \\ 2 & 1 & 3 \\ 1 & -1 & 0 \end{bmatrix} $$
+                $$ A^2 = \begin{bmatrix}
+                    (2 \cdot 2 + 0 \cdot 2 + 1 \cdot 1) & (2 \cdot 0 + 0 \cdot 1 + 1 \cdot (-1)) & (2 \cdot 1 + 0 \cdot 3 + 1 \cdot 0) \\
+                    (2 \cdot 2 + 1 \cdot 2 + 3 \cdot 1) & (2 \cdot 0 + 1 \cdot 1 + 3 \cdot (-1)) & (2 \cdot 1 + 1 \cdot 3 + 3 \cdot 0) \\
+                    (1 \cdot 2 + (-1) \cdot 2 + 0 \cdot 1) & (1 \cdot 0 + (-1) \cdot 1 + 0 \cdot (-1)) & (1 \cdot 1 + (-1) \cdot 3 + 0 \cdot 0)
+                \end{bmatrix} $$
+                $$ A^2 = \begin{bmatrix}
+                    (4+0+1) & (0+0-1) & (2+0+0) \\
+                    (4+2+3) & (0+1-3) & (2+3+0) \\
+                    (2-2+0) & (0-1+0) & (1-3+0)
+                \end{bmatrix} = \begin{bmatrix} 5 & -1 & 2 \\ 9 & -2 & 5 \\ 0 & -1 & -2 \end{bmatrix} $$
+                (Marking: 2 marks)
+
+                <p><strong>Step 2: Calculate $5A$.</strong></p>
+                $$ 5A = 5 \begin{bmatrix} 2 & 0 & 1 \\ 2 & 1 & 3 \\ 1 & -1 & 0 \end{bmatrix} = \begin{bmatrix} 10 & 0 & 5 \\ 10 & 5 & 15 \\ 5 & -5 & 0 \end{bmatrix} $$
+                (Marking: 1 mark)
+
+                <p><strong>Step 3: Calculate $6I$.</strong></p>
+                $$ 6I = 6 \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} = \begin{bmatrix} 6 & 0 & 0 \\ 0 & 6 & 0 \\ 0 & 0 & 6 \end{bmatrix} $$
+                (Marking: 0.5 mark)
+
+                <p><strong>Step 4: Calculate $A^2 - 5A + 6I$.</strong></p>
+                $$ A^2 - 5A + 6I = \begin{bmatrix} 5 & -1 & 2 \\ 9 & -2 & 5 \\ 0 & -1 & -2 \end{bmatrix} - \begin{bmatrix} 10 & 0 & 5 \\ 10 & 5 & 15 \\ 5 & -5 & 0 \end{bmatrix} + \begin{bmatrix} 6 & 0 & 0 \\ 0 & 6 & 0 \\ 0 & 0 & 6 \end{bmatrix} $$
+                $$ = \begin{bmatrix}
+                    (5-10+6) & (-1-0+0) & (2-5+0) \\
+                    (9-10+0) & (-2-5+6) & (5-15+0) \\
+                    (0-5+0) & (-1-(-5)+0) & (-2-0+6)
+                \end{bmatrix} $$
+                $$ = \begin{bmatrix}
+                    1 & -1 & -3 \\
+                    -1 & -1 & -10 \\
+                    -5 & 4 & 4
+                \end{bmatrix} $$
+                (Marking: 1.5 marks)
+                <p><strong>Total Marks: 5</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Quick Summary Mind-Map points -->
+    <section class="section container">
+        <h2 class="section-title">4. Quick Summary: Mind Map Points</h2>
+        <div class="content-card summary-card">
+            <ul class="mind-map-list">
+                <li><strong>Matrix:</strong> Rectangular array of numbers/functions.</li>
+                <li><strong>Order:</strong> Number of rows $\times$ Number of columns ($m \times n$).</li>
+                <li><strong>Types:</strong>
+                    <ul>
+                        <li>Square ($m=n$)</li>
+                        <li>Diagonal (non-diagonal elements are 0)</li>
+                        <li>Scalar (diagonal with equal elements)</li>
+                        <li>Identity ($I$, scalar with 1s on diagonal)</li>
+                        <li>Zero ($O$, all elements are 0)</li>
+                        <li>Row, Column, Symmetric ($A=A^T$), Skew-Symmetric ($A=-A^T$)</li>
+                    </ul>
+                </li>
+                <li><strong>Operations:</strong>
+                    <ul>
+                        <li>Addition/Subtraction: Only for same order matrices. Element-wise.</li>
+                        <li>Scalar Multiplication: Multiply each element by the scalar.</li>
+                        <li>Matrix Multiplication: $(m \times n) \cdot (n \times p) \rightarrow (m \times p)$. Not commutative.</li>
+                    </ul>
+                </li>
+                <li><strong>Transpose ($A^T$):</strong> Rows become columns and vice-versa. $(AB)^T = B^T A^T$.</li>
+                <li><strong>Determinant ($|A|$):</strong> Scalar value for square matrices. $|A|=0 \Rightarrow$ Singular matrix.</li>
+                <li><strong>Minors & Cofactors:</strong> Used to calculate adjoint. $C_{ij} = (-1)^{i+j} M_{ij}$.</li>
+                <li><strong>Adjoint ($\text{adj}(A)$):</strong> Transpose of cofactor matrix.</li>
+                <li><strong>Inverse ($A^{-1}$):</strong> $A^{-1} = \frac{1}{|A|} \text{adj}(A)$. Exists only if $|A| \neq 0$.</li>
+                <li><strong>Properties:</strong> $|AB| = |A||B|$, $(AB)^{-1} = B^{-1}A^{-1}$.</li>
+                <li><strong>Applications:</strong> Solving systems of linear equations (Matrix Method).</li>
+            </ul>
+        </div>
+    </section>
+</main>
+    </div>
+  </main>
+
+  <footer class="sn-footer">
+<div aria-hidden="true" class="sn-footer__bg">
+<video autoplay="" class="sn-footer__video" loop="" muted="" playsinline="" poster="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261014_121838_c97d0940-f430-4304-8573-4f47ee44f447.png" preload="auto" src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/4d01c727-d9c5-47c8-a778-35a451ffd39f.mp4"></video>
+</div>
+<div aria-hidden="true" class="sn-footer__overlay"></div>
+<div class="sn-footer__container">
+<div class="sn-footer__grid">
+<div class="sn-footer__brand">
+<a aria-label="Shorveer Notes home" class="sn-brand__logo" href="/">
+<span aria-hidden="true" class="sn-brand__mark">
+<svg fill="none" viewbox="0 0 64 64">
+<path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
+</svg>
+</span>
+<span class="sn-brand__title-txt">Shorveer<em>Notes</em></span>
+</a>
+<h2 class="sn-brand__heading">Class 12 Science, Clearly Organised</h2>
+<p class="sn-brand__sub">A student-focused learning platform for Class 12 Science notes, derivations, and board examination preparation.</p>
+<div class="sn-brand__badge-box">
+<a class="sn-yt-btn" href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24">
+<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+</svg>
+<span>JS EDIZ on YouTube</span>
+</a>
+<div class="sn-founder-pill">
+<span class="sn-founder-tag">JS</span>
+<span class="sn-founder-name">Created by <strong>Jatin Sandilya</strong></span>
+</div>
+</div>
+<div class="sn-chips-row">
+<span class="sn-chip"><span class="sn-chip-dot"></span>CBSE Aligned</span>
+<span class="sn-chip">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"></path><path d="M20 4v7h-7"></path></svg>
+              Syllabus 2026-27
+            </span>
+<span class="sn-chip">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              Student Focused
+            </span>
+</div>
+</div>
+<div class="sn-nav-col">
+<h3 class="sn-col-head">Study</h3>
+<ul class="sn-col-links">
+<li><a href="../physics/index.html">Physics</a></li>
+<li><a href="../chemistry/index.html">Chemistry</a></li>
+<li><a href="index.html">Mathematics</a></li>
+<li><a href="../english/index.html">English</a></li>
+</ul>
+</div>
+<div class="sn-nav-col">
+<h3 class="sn-col-head">Site</h3>
+<ul class="sn-col-links">
+<li><a href="../exam-info.html">Exam info</a></li>
+<li><a href="../about-notes.html">About the notes</a></li>
+<li><a href="../about.html">About us</a></li>
+<li><a href="../privacy.html">Privacy policy</a></li>
+<li><a href="../cookies.html">Cookies</a></li>
+</ul>
+</div>
+<div class="sn-nav-col">
+<h3 class="sn-col-head">Connect</h3>
+<ul class="sn-col-links">
+<li><a href="mailto:support.shorveernotes@gmail.com">Contact us</a></li>
+<li><a href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" target="_blank">YouTube Channel</a></li>
+<li><a href="../about.html#founder">Founder's Note</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="sn-wordmark-wrap">
+<svg class="sn-wordmark-svg" preserveaspectratio="xMidYMid meet" viewbox="0 0 1200 160">
+<defs>
+<lineargradient id="snWordmarkGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"></stop>
+<stop offset="50%" stop-color="#ffffff" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"></stop>
+</lineargradient>
+</defs>
+<text class="sn-svg-text" text-anchor="middle" x="50%" y="125">Shorveer Notes</text>
+</svg>
+</div>
+<div class="sn-bottom-bar">
+<div class="sn-bottom-container">
+<p>© <span id="year"></span> Shorveer Notes. All rights reserved.</p>
+<p>Built with pride in India 🇮🇳</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
