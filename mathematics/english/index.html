@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Jatin Sandilya">
+  <title>English · Class 12 Mathematics | Shorveer Notes</title>
+
+  
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+  <!-- Fonts directly aligned with main site -->
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
+
+  <!-- Main Website Stylesheet: Pure styling without inline overrides -->
+  <link rel="stylesheet" href="../../style.css">
+
+  <script>
+    // Theme Engine: Reads user choice from localStorage (notebook, chalkboard, blueprint, sunset)
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('shorveer-theme-name') || 'sunset';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.classList.add('js');
+      } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'sunset');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ============ SITE HEADER ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Shorveer Notes home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+          </svg>
+        </span>
+        <span class="brand-name">Shorveer<em>Notes</em></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="../index.html" style="color:var(--ink); font-weight:700;">Mathematics Hub</a>
+        <a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero Title -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="kicker">
+          <span class="dot"></span>
+          <span>CBSE Class 12 · Mathematics Hub</span>
+        </div>
+        <h1>English</h1>
+        <p class="hero-description">
+          Detailed theory breakdowns, verified derivations, and board examination questions curated for precision.
+        </p>
+        <div class="hero-note">
+          <span>Curated by <strong>Jatin Sandilya</strong> · High-Yield Board Solutions</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Generated Content Sections -->
+    <section class="section container">
+  <div class="section-head">
+    <span class="section-eyebrow">Concept Core</span>
+    <h2>1. Theoretical Principles & Definitions: Integrals</h2>
+  </div>
+  <div class="real-life">
+    <article class="rl-card" style="--rl-color: #bf5a3c">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Fundamental Overview: Antiderivatives & Integration</div>
+        <p class="rl-text">
+          <strong>Antiderivative (or Primitive):</strong> A function $F(x)$ is an antiderivative of a function $f(x)$ if $F'(x) = f(x)$. For example, $x^2$ is an antiderivative of $2x$.
+          <br><br>
+          <strong>Indefinite Integral:</strong> The collection of all antiderivatives of $f(x)$ is called the indefinite integral of $f(x)$ and is denoted by $\int f(x) \, dx$. If $F(x)$ is an antiderivative of $f(x)$, then $\int f(x) \, dx = F(x) + C$, where $C$ is an arbitrary constant of integration. This reflects that the derivative of a constant is zero.
+          <br><br>
+          <strong>Properties of Indefinite Integrals:</strong>
+          <ol>
+            <li>$\int [f(x) \pm g(x)] \, dx = \int f(x) \, dx \pm \int g(x) \, dx$ (Linearity)</li>
+            <li>$\int k \cdot f(x) \, dx = k \int f(x) \, dx$ (where $k$ is a constant)</li>
+            <li>$\frac{d}{dx} \left( \int f(x) \, dx \right) = f(x)$</li>
+            <li>$\int f'(x) \, dx = f(x) + C$</li>
+          </ol>
+          <br>
+          <strong>Definite Integral:</strong> The definite integral $\int_a^b f(x) \, dx$ represents the algebraic sum of the areas bounded by the curve $y=f(x)$, the x-axis, and the ordinates $x=a$ and $x=b$. Here, $a$ is the lower limit and $b$ is the upper limit.
+          <br>
+          <strong>Fundamental Theorem of Calculus:</strong>
+          <ul>
+            <li><strong>Part 1:</strong> If $F(x) = \int_a^x f(t) \, dt$, then $F'(x) = f(x)$.</li>
+            <li><strong>Part 2:</strong> If $F(x)$ is an antiderivative of $f(x)$, then $\int_a^b f(x) \, dx = F(b) - F(a)$. This is also known as Newton-Leibniz formula.</li>
+          </ul>
+        </p>
+      </div>
+    </article>
+    <article class="rl-card" style="--rl-color: #3cbf83">
+      <div class="rl-badge">§</div>
+      <div class="rl-body">
+        <div class="rl-title">Methods of Integration</div>
+        <p class="rl-text">
+          <strong>1. Integration by Substitution:</strong>
+          This method transforms the integral into a simpler form by changing the variable. If we have $\int f(g(x)) g'(x) \, dx$, we substitute $t = g(x)$, so $dt = g'(x) \, dx$. The integral becomes $\int f(t) \, dt$.
+          <br><br>
+          <strong>2. Integration by Parts:</strong>
+          Used for integrating the product of two functions. It is derived from the product rule of differentiation. The formula is:
+          $$ \int u \, dv = uv - \int v \, du $$
+          To choose $u$ and $dv$, the "ILATE" rule is often used:
+          <br>
+          <strong>I</strong>nverse trigonometric functions ($\sin^{-1}x$, $\tan^{-1}x$, etc.)
+          <br>
+          <strong>L</strong>ogarithmic functions ($\log x$, $\ln x$, etc.)
+          <br>
+          <strong>A</strong>lgebraic functions ($x^n$, $x+1$, etc.)
+          <br>
+          <strong>T</strong>rigonometric functions ($\sin x$, $\cos x$, etc.)
+          <br>
+          <strong>E</strong>xponential functions ($e^x$, $a^x$, etc.)
+          <br>
+          The function that comes first in ILATE sequence is chosen as $u$.
+          <br><br>
+          <strong>3. Integration by Partial Fractions:</strong>
+          Applicable for integrating rational functions $\frac{P(x)}{Q(x)}$ where $P(x)$ and $Q(x)$ are polynomials and the degree of $P(x)$ is less than the degree of $Q(x)$. If not, perform polynomial long division first.
+          The denominator $Q(x)$ is factored into linear and/or quadratic factors, and the rational function is decomposed into simpler partial fractions that can be easily integrated.
+          <br>
+          <em>Types of Partial Fractions:</em>
+          <ul>
+            <li>$\frac{px+q}{(x-a)(x-b)} = \frac{A}{x-a} + \frac{B}{x-b}$ (Distinct Linear Factors)</li>
+            <li>$\frac{px+q}{(x-a)^2} = \frac{A}{x-a} + \frac{B}{(x-a)^2}$ (Repeated Linear Factors)</li>
+            <li>$\frac{px^2+qx+r}{(x-a)(x^2+bx+c)} = \frac{A}{x-a} + \frac{Bx+C}{x^2+bx+c}$ (Non-repeated irreducible quadratic factor)</li>
+          </ul>
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head">
+    <span class="section-eyebrow">High Yield Formulas</span>
+    <h2>2. Essential Equations & Derivations: Integrals</h2>
+  </div>
+  <div class="resource-grid">
+    <article class="resource">
+      <h3>Basic Integration Formulas</h3>
+      <p>
+        <ol>
+          <li>$\int x^n \, dx = \frac{x^{n+1}}{n+1} + C$ for $n \neq -1$</li>
+          <li>$\int \frac{1}{x} \, dx = \log|x| + C$</li>
+          <li>$\int e^x \, dx = e^x + C$</li>
+          <li>$\int a^x \, dx = \frac{a^x}{\log a} + C$</li>
+          <li>$\int \sin x \, dx = -\cos x + C$</li>
+          <li>$\int \cos x \, dx = \sin x + C$</li>
+          <li>$\int \sec^2 x \, dx = \tan x + C$</li>
+          <li>$\int \csc^2 x \, dx = -\cot x + C$</li>
+          <li>$\int \sec x \tan x \, dx = \sec x + C$</li>
+          <li>$\int \csc x \cot x \, dx = -\csc x + C$</li>
+          <li>$\int \tan x \, dx = \log|\sec x| + C = -\log|\cos x| + C$</li>
+          <li>$\int \cot x \, dx = \log|\sin x| + C$</li>
+          <li>$\int \sec x \, dx = \log|\sec x + \tan x| + C$</li>
+          <li>$\int \csc x \, dx = \log|\csc x - \cot x| + C$</li>
+        </ol>
+      </p>
+    </article>
+    <article class="resource">
+      <h3>Standard Integrals of Special Forms</h3>
+      <p>
+        <ol>
+          <li>$\int \frac{dx}{x^2 - a^2} = \frac{1}{2a} \log \left|\frac{x-a}{x+a}\right| + C$</li>
+          <li>$\int \frac{dx}{a^2 - x^2} = \frac{1}{2a} \log \left|\frac{a+x}{a-x}\right| + C$</li>
+          <li>$\int \frac{dx}{x^2 + a^2} = \frac{1}{a} \tan^{-1}\left(\frac{x}{a}\right) + C$</li>
+          <li>$\int \frac{dx}{\sqrt{x^2 - a^2}} = \log|x + \sqrt{x^2 - a^2}| + C$</li>
+          <li>$\int \frac{dx}{\sqrt{a^2 - x^2}} = \sin^{-1}\left(\frac{x}{a}\right) + C$</li>
+          <li>$\int \frac{dx}{\sqrt{x^2 + a^2}} = \log|x + \sqrt{x^2 + a^2}| + C$</li>
+        </ol>
+      </p>
+    </article>
+    <article class="resource">
+      <h3>Integrals Involving $\sqrt{a^2 \pm x^2}$ and $\sqrt{x^2 \pm a^2}$</h3>
+      <p>
+        <ol>
+          <li>$\int \sqrt{a^2 - x^2} \, dx = \frac{x}{2}\sqrt{a^2 - x^2} + \frac{a^2}{2}\sin^{-1}\left(\frac{x}{a}\right) + C$</li>
+          <li>$\int \sqrt{x^2 - a^2} \, dx = \frac{x}{2}\sqrt{x^2 - a^2} - \frac{a^2}{2}\log|x + \sqrt{x^2 - a^2}| + C$</li>
+          <li>$\int \sqrt{x^2 + a^2} \, dx = \frac{x}{2}\sqrt{x^2 + a^2} + \frac{a^2}{2}\log|x + \sqrt{x^2 + a^2}| + C$</li>
+        </ol>
+      </p>
+    </article>
+    <article class="resource">
+      <h3>Properties of Definite Integrals</h3>
+      <p>
+        <ol>
+          <li>$\int_a^b f(x) \, dx = \int_a^b f(t) \, dt$ (Change of variable property)</li>
+          <li>$\int_a^b f(x) \, dx = -\int_b^a f(x) \, dx$</li>
+          <li>$\int_a^b f(x) \, dx = \int_a^c f(x) \, dx + \int_c^b f(x) \, dx$</li>
+          <li>$\int_a^b f(x) \, dx = \int_a^b f(a+b-x) \, dx$</li>
+          <li>$\int_0^a f(x) \, dx = \int_0^a f(a-x) \, dx$ (Most useful for simplifying definite integrals)</li>
+          <li>$\int_0^{2a} f(x) \, dx = \int_0^a f(x) \, dx + \int_0^a f(2a-x) \, dx$</li>
+          <li>$\int_0^{2a} f(x) \, dx = \begin{cases} 2 \int_0^a f(x) \, dx & \text{if } f(2a-x) = f(x) \\ 0 & \text{if } f(2a-x) = -f(x) \end{cases}$</li>
+          <li>$\int_{-a}^a f(x) \, dx = \begin{cases} 2 \int_0^a f(x) \, dx & \text{if } f(x) \text{ is an even function } (f(-x)=f(x)) \\ 0 & \text{if } f(x) \text{ is an odd function } (f(-x)=-f(x)) \end{cases}$</li>
+        </ol>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head">
+    <span class="section-eyebrow">Board Examination Questions</span>
+    <h2>3. Solved High-Yield CBSE PYQs</h2>
+  </div>
+  <div class="resource-grid">
+    <article class="resource">
+      <div class="resource-icon">Q1</div>
+      <h3>Integration by Parts (PYQ 2018)</h3>
+      <p><strong>Problem:</strong> Evaluate $\int e^x (\sin x + \cos x) \, dx$.</p>
+      <p><strong>Step-by-step Solution:</strong>
+        This is a standard form $\int e^x [f(x) + f'(x)] \, dx = e^x f(x) + C$.
+        Here, let $f(x) = \sin x$.
+        Then $f'(x) = \cos x$.
+        So, the integral is of the form $\int e^x [f(x) + f'(x)] \, dx$.
+        Therefore, $\int e^x (\sin x + \cos x) \, dx = e^x \sin x + C$.
+        <br><br>
+        Alternatively, using integration by parts on $\int e^x \sin x \, dx$:
+        Let $I = \int e^x \sin x \, dx + \int e^x \cos x \, dx$.
+        Consider the first integral $\int e^x \sin x \, dx$. Let $u = \sin x$ and $dv = e^x \, dx$.
+        Then $du = \cos x \, dx$ and $v = e^x$.
+        $\int e^x \sin x \, dx = e^x \sin x - \int e^x \cos x \, dx$.
+        Substitute this back into $I$:
+        $I = (e^x \sin x - \int e^x \cos x \, dx) + \int e^x \cos x \, dx$.
+        $I = e^x \sin x + C$.
+      </p>
+    </article>
+    <article class="resource">
+      <div class="resource-icon">Q2</div>
+      <h3>Definite Integral Property (PYQ 2020)</h3>
+      <p><strong>Problem:</strong> Evaluate $\int_0^{\pi/2} \frac{\sin^4 x}{\sin^4 x + \cos^4 x} \, dx$.</p>
+      <p><strong>Step-by-step Solution:</strong>
+        Let $I = \int_0^{\pi/2} \frac{\sin^4 x}{\sin^4 x + \cos^4 x} \, dx$.
+        Use the property $\int_0^a f(x) \, dx = \int_0^a f(a-x) \, dx$.
+        Here $a = \pi/2$. So, $x$ becomes $(\pi/2 - x)$.
+        $I = \int_0^{\pi/2} \frac{\sin^4 (\pi/2 - x)}{\sin^4 (\pi/2 - x) + \cos^4 (\pi/2 - x)} \, dx$.
+        Since $\sin(\pi/2 - x) = \cos x$ and $\cos(\pi/2 - x) = \sin x$:
+        $I = \int_0^{\pi/2} \frac{\cos^4 x}{\cos^4 x + \sin^4 x} \, dx$.
+        Now, add the original equation (1) and this modified equation (2):
+        $2I = \int_0^{\pi/2} \left( \frac{\sin^4 x}{\sin^4 x + \cos^4 x} + \frac{\cos^4 x}{\sin^4 x + \cos^4 x} \right) \, dx$.
+        $2I = \int_0^{\pi/2} \frac{\sin^4 x + \cos^4 x}{\sin^4 x + \cos^4 x} \, dx$.
+        $2I = \int_0^{\pi/2} 1 \, dx$.
+        $2I = [x]_0^{\pi/2}$.
+        $2I = \pi/2 - 0$.
+        $2I = \pi/2$.
+        $I = \pi/4$.
+      </p>
+    </article>
+    <article class="resource">
+      <div class="resource-icon">Q3</div>
+      <h3>Integration using Partial Fractions (PYQ 2019)</h3>
+      <p><strong>Problem:</strong> Evaluate $\int \frac{x}{(x+1)(x+2)} \, dx$.</p>
+      <p><strong>Step-by-step Solution:</strong>
+        The integrand is a proper rational function. We use partial fractions.
+        Let $\frac{x}{(x+1)(x+2)} = \frac{A}{x+1} + \frac{B}{x+2}$.
+        Multiply by $(x+1)(x+2)$:
+        $x = A(x+2) + B(x+1)$.
+        To find $A$, set $x = -1$:
+        $-1 = A(-1+2) + B(-1+1) \implies -1 = A(1) + B(0) \implies A = -1$.
+        To find $B$, set $x = -2$:
+        $-2 = A(-2+2) + B(-2+1) \implies -2 = A(0) + B(-1) \implies B = 2$.
+        So, $\frac{x}{(x+1)(x+2)} = \frac{-1}{x+1} + \frac{2}{x+2}$.
+        Now, integrate:
+        $\int \frac{x}{(x+1)(x+2)} \, dx = \int \left( \frac{-1}{x+1} + \frac{2}{x+2} \right) \, dx$.
+        $= -\int \frac{1}{x+1} \, dx + 2 \int \frac{1}{x+2} \, dx$.
+        $= -\log|x+1| + 2 \log|x+2| + C$.
+        Using logarithm properties ($n \log m = \log m^n$ and $\log m - \log n = \log(m/n)$):
+        $= \log(x+2)^2 - \log|x+1| + C$.
+        $= \log\left|\frac{(x+2)^2}{x+1}\right| + C$.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head">
+    <span class="section-eyebrow">Fast Revision</span>
+    <h2>4. Quick Mind-Map & Summary: Integrals</h2>
+  </div>
+  <div class="trust">
+    <div class="trust-inner container">
+      <div class="trust-item"><b>Core Rule 1: Master Basic Formulas</b> Thoroughly memorize all standard integration formulas (polynomials, trigonometric, exponential, inverse trig forms). These are the building blocks.</div>
+      <div class="trust-item"><b>Core Rule 2: Identify Method Correctly</b> For complex integrals, carefully determine the appropriate method: Substitution (if a function and its derivative are present), Integration by Parts (for products, use ILATE), Partial Fractions (for rational functions).</div>
+      <div class="trust-item"><b>Core Rule 3: Properties of Definite Integrals</b> These are crucial for simplifying and solving definite integrals, especially the property $\int_0^a f(x) \, dx = \int_0^a f(a-x) \, dx$ and even/odd function properties for $[-a, a]$ limits.</div>
+      <div class="trust-item"><b>Board Tip 1: Constant of Integration</b> Don't forget to add '+ C' for indefinite integrals. It's a common omission that leads to loss of marks. For definite integrals, 'C' cancels out.</div>
+      <div class="trust-item"><b>Board Tip 2: Verify by Differentiation</b> For indefinite integrals, you can always differentiate your final answer. If it matches the original integrand, your integration is correct.</div>
+      <div class="trust-item"><b>Board Tip 3: Rationalize for Square Roots</b> Sometimes, if the denominator has a square root like $\frac{1}{\sqrt{x+a} + \sqrt{x+b}}$, rationalize it first before integrating.</div>
+      <div class="trust-item"><b>Board Tip 4: Complete the Square</b> For integrals involving quadratic expressions in the denominator or under a square root (e.g., $\frac{1}{ax^2+bx+c}$ or $\frac{1}{\sqrt{ax^2+bx+c}}$), complete the square to convert them into standard forms.</div>
+    </div>
+  </div>
+</section>
+
+    <!-- Bottom Hub Navigation -->
+    <section class="final-cta container reveal">
+      <div class="cta-content">
+        <h2>Completed this chapter? <em>Return to the hub.</em></h2>
+        <p>Check formula sheets, other syllabus chapters, and high-yield study resources.</p>
+        <a class="btn btn-gold" href="../index.html">
+          Back to Mathematics Hub
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="sn-footer">
+    <div class="sn-footer__container container">
+      <div class="sn-footer__grid">
+        
+        <div class="sn-footer__brand">
+          <a class="sn-brand__logo" href="index.html" aria-label="Shorveer Notes home">
+            <span class="sn-brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+              </svg>
+            </span>
+            <span class="sn-brand__title-txt">Shorveer<em>Notes</em></span>
+          </a>
+
+          <h2 class="sn-brand__heading">Class 12 Science, Clearly Organised</h2>
+          <p class="sn-brand__sub">A student-focused learning platform for Class 12 Science notes, derivations, and board examination preparation.</p>
+
+          <div class="sn-brand__badge-box">
+            <div class="sn-founder-pill">
+              <span class="sn-founder-tag">JS</span>
+              <span class="sn-founder-name">Created by <strong>Jatin Sandilya</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sn-nav-col">
+          <h3 class="sn-col-head">Portals</h3>
+          <ul class="sn-col-links">
+            <li><a href="../physics/index.html">Physics Hub</a></li>
+            <li><a href="../chemistry/index.html">Chemistry Hub</a></li>
+            <li><a href="../mathematics/index.html">Mathematics Hub</a></li>
+          </ul>
+        </div>
+
+        <div class="sn-nav-col">
+          <h3 class="sn-col-head">Connect</h3>
+          <ul class="sn-col-links">
+            <li><a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ on YouTube</a></li>
+            <li><a href="mailto:support.shorveernotes@gmail.com">Contact Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="sn-bottom-bar">
+      <div class="sn-bottom-container container">
+        <p>&copy; 2026 Shorveer Notes. All rights reserved.</p>
+        <p>Built with pride in India 🇮🇳</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
