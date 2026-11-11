@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html data-theme="notebook" lang="en">
 <head>
@@ -6,8 +6,8 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="ca-pub-9688496231973353" name="google-adsense-account"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Shorveer Notes is a student-focused Class 12 Science learning platform with structured Physics, Chemistry, Mathematics and English notes, chapter resources, previous year questions, revision material and exam preparation resources." name="description"/>
-<meta content="Shorveer Notes" name="author"/>
+<meta content="Shorveer Notes is a student-focused Class 12 Science learning platform with structured Physics, Chemistry, Mathematics and English notes, chapter resources, practice questions, revision material and exam preparation resources." name="description"/>
+<meta content="Jatin Sandilya" name="author"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <meta content="#fdfaf3" media="(prefers-color-scheme: light)" name="theme-color"/>
 <meta content="#171613" media="(prefers-color-scheme: dark)" name="theme-color"/>
@@ -38,6 +38,20 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link crossorigin="" href="https://images.unsplash.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Karla:wght@400;500;600;700&amp;family=Inter:opsz,wght@14..32,400..700&amp;display=swap" rel="stylesheet"/>
+<!-- MathJax: formulas ($...$ and $$...$$) render here -->
+<script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <!-- External CSS Linked Here -->
 <link href="../style.css" rel="stylesheet"/>
 <script>document.documentElement.classList.add('js');</script>
@@ -52,7 +66,7 @@
     "logo": "https://shorveernotes.website/logo.png",
     "sameAs": ["https://www.youtube.com/@JSEDIZ"],
     "educationalLevel": "Class 12",
-    "knowsAbout": ["Physics","Chemistry","Mathematics","English","CBSE Class 12","Previous Year Questions","Board Examination Preparation"]
+    "knowsAbout": ["Physics","Chemistry","Mathematics","English","CBSE Class 12","Practice Questions","Board Examination Preparation"]
   }
   </script>
 <script type="application/ld+json">
@@ -71,320 +85,7 @@
   }
   </script>
 <title>Chapter7 · Class 12 Mathematics | Shorveer Notes</title>
-<style>
-    /* Meadow Footer Styles (Integrated directly with Shorveer design tokens) */
-    .footer {
-      --u: min(100vw / 1440, 100vh / 672);
-      --u: min(100vw / 1440, 100svh / 672);
-      position: relative;
-      height: 100vh;
-      height: 100svh;
-      background: var(--paper, #fdfaf3);
-      overflow: hidden;
-      isolation: isolate;
-      font-family: "Inter", system-ui, -apple-system, sans-serif;
-    }
-    .footer__stage {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-    .footer__video {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 100%;
-      transform: translateY(9%);
-    }
-    .footer__stage::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, var(--paper, #fdfaf3) 0%, rgb(253 250 243 / .96) 26%, rgb(253 250 243 / .72) 44%, rgb(253 250 243 / 0) 70%);
-      pointer-events: none;
-    }
-    .footer__wordmark {
-      position: absolute;
-      left: 50%;
-      bottom: calc(-2 * var(--u));
-      transform: translateX(-50%);
-      z-index: 1;
-      margin: 0;
-      font-size: calc(390 * var(--u));
-      font-weight: 600;
-      line-height: .74;
-      letter-spacing: -0.045em;
-      white-space: nowrap;
-      pointer-events: none;
-      user-select: none;
-      color: rgb(232 234 250 / .4);
-      background: linear-gradient(to bottom, rgb(255 255 255 / .78), rgb(214 218 246 / .36) 48%, rgb(255 255 255 / .62));
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 calc(-1 * var(--u)) 0 rgb(255 255 255 / .55)) drop-shadow(0 0 calc(18 * var(--u)) rgb(190 200 255 / .45));
-    }
-    .footer__fog {
-      position: absolute;
-      inset: auto 0 0 0;
-      z-index: 2;
-      height: 17%;
-      pointer-events: none;
-      background: linear-gradient(to top, #e2e3f1 0%, rgb(226 227 241 / .6) 30%, rgb(226 227 241 / 0) 100%);
-    }
-    .footer__content {
-      position: relative;
-      z-index: 3;
-      display: grid;
-      grid-template-columns: calc(440 * var(--u)) calc(240 * var(--u)) calc(240 * var(--u)) 1fr;
-      align-items: start;
-      width: calc(1440 * var(--u));
-      margin: 0 auto;
-      padding: calc(86 * var(--u)) calc(100 * var(--u)) 0 calc(160 * var(--u));
-    }
-    .footer-brand .brand__logo {
-      display: inline-flex;
-      align-items: center;
-      gap: calc(10 * var(--u));
-      font-size: calc(17 * var(--u));
-      font-weight: 500;
-      letter-spacing: -0.02em;
-    }
-    .footer-brand .brand__mark {
-      width: calc(30 * var(--u));
-      height: calc(30 * var(--u));
-      border-radius: calc(8 * var(--u));
-      background: linear-gradient(to bottom, #2b2b2b, #0a0a0a 55%);
-      box-shadow: 0 calc(1 * var(--u)) calc(2 * var(--u)) rgb(0 0 0 / .25);
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .footer-brand .brand__mark svg {
-      width: 60%;
-      height: 60%;
-    }
-    .footer-brand .brand__title {
-      margin-top: calc(19 * var(--u));
-      font-size: calc(20 * var(--u));
-      font-weight: 600;
-      line-height: 1.2;
-      letter-spacing: -0.045em;
-    }
-    .footer-brand .brand__text {
-      max-width: calc(412 * var(--u));
-      margin-top: calc(18 * var(--u));
-      color: #6f6f6c;
-      font-size: calc(13.7 * var(--u));
-      line-height: 1.43;
-      letter-spacing: -0.012em;
-    }
-    .footer-brand .brand__cta {
-      display: inline-flex;
-      align-items: center;
-      gap: calc(6 * var(--u));
-      height: calc(32.5 * var(--u));
-      margin-top: calc(20 * var(--u));
-      padding: 0 calc(16 * var(--u)) 0 calc(15 * var(--u));
-      border-radius: calc(7 * var(--u));
-      background: #0c0c0c;
-      color: #fff;
-      font-size: calc(11.8 * var(--u));
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      transition: background .2s, transform .2s;
-      text-decoration: none;
-    }
-    .footer-brand .brand__cta:hover {
-      background: #262626;
-      transform: translateY(-1px);
-    }
-    .footer-brand .brand__cta svg {
-      width: calc(13 * var(--u));
-      height: calc(13 * var(--u));
-      margin-top: calc(-1.5 * var(--u));
-    }
-    .footer-brand .brand__copy {
-      margin-top: calc(23 * var(--u));
-      color: #9c9c98;
-      font-size: calc(12.2 * var(--u));
-      letter-spacing: 0.01em;
-    }
-    .footer-brand .brand__by {
-      display: flex;
-      align-items: center;
-      gap: calc(5 * var(--u));
-      margin-top: calc(21 * var(--u));
-      font-size: calc(11.8 * var(--u));
-      font-weight: 500;
-      letter-spacing: -0.01em;
-    }
-    .footer-brand .brand__heart { font-size: .95em; }
-    .footer-brand .brand__author {
-      display: inline-flex;
-      align-items: center;
-      gap: calc(6 * var(--u));
-      margin-left: calc(5 * var(--u));
-    }
-    .footer-brand .brand__avatar {
-      width: calc(23 * var(--u));
-      height: calc(23 * var(--u));
-      border-radius: 50%;
-      overflow: hidden;
-      background: #e3e3e0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .footer-brand .brand__avatar svg { width: 100%; height: 100%; display: block; }
-    .footer-brand .brand__status {
-      display: flex;
-      flex-wrap: wrap;
-      gap: calc(8 * var(--u));
-      margin-top: calc(16 * var(--u));
-      list-style: none;
-      padding: 0;
-    }
-    .footer-brand .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: calc(6 * var(--u));
-      height: calc(25 * var(--u));
-      padding: 0 calc(10 * var(--u));
-      border: 1px solid rgb(12 12 12 / .12);
-      border-radius: 999px;
-      background: rgb(255 255 255 / .55);
-      font-size: calc(10.8 * var(--u));
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      white-space: nowrap;
-    }
-    .footer-brand .chip svg {
-      width: calc(11 * var(--u));
-      height: calc(11 * var(--u));
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .footer-brand .chip__dot {
-      width: calc(6 * var(--u));
-      height: calc(6 * var(--u));
-      border-radius: 50%;
-      background: #2fb36a;
-      box-shadow: 0 0 0 calc(2.5 * var(--u)) rgb(47 179 106 / .18);
-    }
-    .footer .col__title {
-      font-size: calc(16 * var(--u));
-      font-weight: 600;
-      line-height: 1;
-      letter-spacing: -0.045em;
-      margin: 0;
-    }
-    .footer .col__list {
-      display: grid;
-      gap: calc(20.5 * var(--u));
-      margin-top: calc(24 * var(--u));
-      font-size: calc(13.7 * var(--u));
-      line-height: 1.24;
-      letter-spacing: 0.022em;
-      color: #161616;
-      list-style: none;
-      padding: 0;
-    }
-    .footer .col--menu .col__list {
-      gap: calc(15 * var(--u));
-      margin-top: calc(21 * var(--u));
-      font-weight: 500;
-      letter-spacing: -0.025em;
-      color: #0c0c0c;
-    }
-    .footer .col__list a {
-      color: inherit;
-      text-decoration: none;
-      transition: opacity .2s;
-    }
-    .footer .col__list a:hover {
-      opacity: .55;
-    }
-
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .footer {
-        --u: min(100vw / 1040, 100svh / 672);
-      }
-      .footer__content {
-        grid-template-columns: calc(400 * var(--u)) calc(190 * var(--u)) calc(210 * var(--u)) 1fr;
-        width: calc(1040 * var(--u));
-        padding: calc(64 * var(--u)) calc(40 * var(--u)) 0;
-      }
-      .footer-brand .brand__text { max-width: calc(350 * var(--u)); }
-      .footer__wordmark {
-        font-size: calc(286 * var(--u));
-        bottom: calc(10 * var(--u));
-      }
-    }
-
-    @media (max-width: 767px) {
-      .footer {
-        --u: 1px;
-        height: auto;
-        min-height: 100svh;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-      }
-      .footer__stage::after {
-        background: linear-gradient(to bottom, var(--paper, #fdfaf3) 0%, rgb(253 250 243 / .95) 50%, rgb(253 250 243 / .8) 68%, rgb(253 250 243 / 0) 90%);
-      }
-      .footer__content {
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        justify-content: space-between;
-        gap: 36px 12px;
-        width: 100%;
-        padding: 40px 20px 0;
-        margin-bottom: max(34vw, 150px);
-      }
-      .footer-brand {
-        grid-column: 1 / -1;
-      }
-      .footer-brand .brand__title { font-size: 21px; margin-top: 19px; }
-      .footer-brand .brand__text { max-width: 34em; font-size: 14px; margin-top: 18px; }
-      .footer-brand .brand__cta { height: 38px; padding: 0 18px 0 16px; border-radius: 8px; font-size: 13px; margin-top: 20px; }
-      .footer-brand .brand__cta svg { width: 14px; height: 14px; }
-      .footer-brand .brand__copy, .footer-brand .brand__by { font-size: 12.5px; }
-      .footer-brand .brand__copy { margin-top: 23px; }
-      .footer-brand .brand__by { margin-top: 21px; }
-      .footer-brand .chip { height: 28px; font-size: 12px; padding: 0 10px; }
-      .footer .col__title { font-size: 15px; }
-      .footer .col__list { gap: 14px; margin-top: 20px; font-size: 13px; letter-spacing: 0; }
-      .footer .col--menu .col__list { gap: 14px; margin-top: 20px; }
-      .footer__wordmark {
-        bottom: 5vw;
-        font-size: 27vw;
-      }
-      .footer__fog { height: 7%; }
-    }
-
-    @media (max-width: 359px) {
-      .footer__content {
-        grid-template-columns: 1fr 1fr;
-      }
-      .footer .col:last-child {
-        grid-column: span 2;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .footer-brand .brand__cta, .footer .col__list a {
-        transition: none;
-      }
-    }
-  </style>
-<script>window.MathJax = {tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script async="True" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head>
+</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <!-- ============ HEADER ============ -->
@@ -411,6 +112,11 @@
 <circle cx="11" cy="11" r="7"></circle><path d="m20.5 20.5-4-4"></path>
 </svg>
 </button>
+<a aria-label="Mind map" class="nav-icon" href="chapter7-mindmap.html" title="Mind map">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<path d="M3 6h18M3 12h18M3 18h18"></path>
+</svg>
+</a>
 <button aria-expanded="false" aria-label="Change theme" class="nav-icon" id="themeButton" title="Change theme">
 <span aria-hidden="true" class="palette-dot"></span>
 </button>
@@ -430,11 +136,23 @@
 <a href="../about.html">About Shorveer</a>
 </div>
 </header>
+<!-- ============ SEARCH LAYER ============ -->
+<div aria-hidden="true" aria-label="Search" class="search-layer" id="searchLayer" role="dialog">
+<div class="search-panel">
+<div class="search-top">
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<circle cx="11" cy="11" r="7"></circle><path d="m20.5 20.5-4-4"></path>
+</svg>
+<input autocomplete="off" id="searchInput" placeholder="Search subjects and pages" type="text"/>
+<button aria-label="Close search" class="search-close" id="searchClose">✕</button>
+</div>
+<div class="search-results" id="searchResults"></div>
+</div>
+</div>
 <!-- ============ THEME PICKER (9 Themes) ============ -->
 <div aria-label="Choose a theme" class="theme-pop" id="themePop" role="dialog">
 <h4>Pick a look</h4>
 <div class="theme-grid">
-<!-- 1. Notebook -->
 <button aria-pressed="true" class="theme-opt" data-theme-value="notebook">
 <span aria-hidden="true" class="theme-swatch">
 <span style="background:#fdfaf3"></span>
@@ -445,7 +163,6 @@
 <b>Notebook</b>
 <small>Warm paper, classic</small>
 </button>
-<!-- 2. Chalkboard -->
 <button aria-pressed="false" class="theme-opt" data-theme-value="chalkboard">
 <span aria-hidden="true" class="theme-swatch">
 <span style="background:#1e2a24"></span>
@@ -456,7 +173,6 @@
 <b>Chalkboard</b>
 <small>Dark green, chalk</small>
 </button>
-<!-- 3. Blueprint -->
 <button aria-pressed="false" class="theme-opt" data-theme-value="blueprint">
 <span aria-hidden="true" class="theme-swatch">
 <span style="background:#0f2b4c"></span>
@@ -467,7 +183,6 @@
 <b>Blueprint</b>
 <small>Navy, technical</small>
 </button>
-<!-- 4. Sunset -->
 <button aria-pressed="false" class="theme-opt" data-theme-value="sunset">
 <span aria-hidden="true" class="theme-swatch">
 <span style="background:#241226"></span>
@@ -478,7 +193,6 @@
 <b>Sunset</b>
 <small>Plum, warm glow</small>
 </button>
-<!-- 5. Emerald -->
 <button aria-pressed="false" class="theme-opt" data-theme-value="emerald">
 <span aria-hidden="true" class="theme-swatch">
 <span style="background:#0b1d16"></span>
@@ -489,7 +203,6 @@
 <b>Emerald</b>
 <small>Biology &amp; Green</small>
 </button>
-<!-- 6. Cyberpunk -->
 <button aria-pressed="false" class="theme-opt" data-theme-value="cyberpunk">
 <span aria-hidden="true" class="theme-swatch">
 <span style="background:#0f1016"></span>
@@ -500,7 +213,6 @@
 <b>Cyberpunk</b>
 <small>Neon high-tech</small>
 </button>
-<!-- 7. Minimal -->
 <button aria-pressed="false" class="theme-opt" data-theme-value="minimal">
 <span aria-hidden="true" class="theme-swatch">
 <span style="background:#f8fafc"></span>
@@ -511,7 +223,6 @@
 <b>Minimal</b>
 <small>Clean white</small>
 </button>
-<!-- 8. Dracula -->
 <button aria-pressed="false" class="theme-opt" data-theme-value="dracula">
 <span aria-hidden="true" class="theme-swatch">
 <span style="background:#191622"></span>
@@ -522,7 +233,6 @@
 <b>Dracula</b>
 <small>Night indigo</small>
 </button>
-<!-- 9. Solarized -->
 <button aria-pressed="false" class="theme-opt" data-theme-value="solarized">
 <span aria-hidden="true" class="theme-swatch">
 <span style="background:#fdf6e3"></span>
@@ -536,7 +246,7 @@
 </div>
 <p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Your choice is saved for next time.</p>
 </div>
-<main id="main"><section class="hero container"><div class="hero-copy"><div class="kicker"><span class="dot"></span><span>Class 12 · Mathematics</span></div><h1>Chapter7</h1><p class="hero-description">Part 1: Theory &amp; Complete Derivations</p></div></section><section class="section container reveal" id="theory">
+<main id="main"><section class="hero container"><div class="hero-copy"><div class="kicker"><span class="dot"></span><span>Class 12 · Mathematics</span></div><h1>Chapter7</h1><p class="hero-description">Part 1: Theory and Complete Derivations</p><div class="hero-actions" style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;"><a class="btn btn-gold" href="chapter7-mindmap.html">View Mind Map ✎</a></div></div></section><section class="section container reveal" id="theory">
 <div class="section-head"><span class="section-eyebrow">Comprehensive Academic Theory</span><h2>1. Conceptual Framework</h2></div>
 <div class="real-life">
 <article class="rl-card">
@@ -728,412 +438,116 @@
       \end{aligned}$$</p>
 <p>where $\mathbf{y}$ are the dual variables (often interpreted as shadow prices). The derivation follows from the weak duality inequality:</p>
 <p>$$\mathbf{c}^T\mathbf{x} \le \mathbf{b}^T\mathbf{y}$$&lt;/</p></article></div></section></p></div></article></div></section></main>
-<!-- ============ FOOTER (100% FIXED & PROPORTIONAL) ============ -->
-<footer class="sn-footer">
-<div aria-hidden="true" class="sn-footer__bg">
-<video autoplay="" class="sn-footer__video" loop="" muted="" playsinline="" poster="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261014_121838_c97d0940-f430-4304-8573-4f47ee44f447.png" preload="auto" src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/4d01c727-d9c5-47c8-a778-35a451ffd39f.mp4"></video>
-</div>
-<div aria-hidden="true" class="sn-footer__overlay"></div>
-<!-- Top Content Grid -->
-<div class="sn-footer__container">
-<div class="sn-footer__grid">
-<!-- Brand & Founder Column -->
-<div class="sn-footer__brand">
-<a aria-label="Shorveer Notes home" class="sn-brand__logo" href="/">
-<span aria-hidden="true" class="sn-brand__mark">
+<footer class="sn-clean-footer">
+<div class="container sn-f-wrap">
+<div class="sn-f-grid">
+<!-- Brand & Founder -->
+<div class="sn-f-col brand-col">
+<a class="brand" href="/" style="margin-bottom: 12px; display: inline-flex;">
+<span aria-hidden="true" class="brand-mark">
 <svg fill="none" viewbox="0 0 64 64">
 <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
 </svg>
 </span>
-<span class="sn-brand__title-txt">Shorveer<em>Notes</em></span>
+<span class="brand-name">Shorveer<em>Notes</em></span>
 </a>
-<h2 class="sn-brand__heading">Class 12 Science, Clearly Organised</h2>
-<p class="sn-brand__sub">A student-focused learning platform for Class 12 Science notes, derivations, and board examination preparation.</p>
-<div class="sn-brand__badge-box">
-<a class="sn-yt-btn" href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" target="_blank">
-<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24">
-<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
-</svg>
-<span>JS EDIZ on YouTube</span>
-</a>
-<div class="sn-founder-pill">
-<span class="sn-founder-tag">JS</span>
-<span class="sn-founder-name">Created by <strong>Jatin Sandilya</strong></span>
+<p class="sn-f-desc">A student-focused Class 12 Science learning platform with structured Physics, Chemistry, Mathematics and English resources.</p>
+<div class="sn-f-author">
+          Created with pride by <strong>Jatin Sandilya</strong>
+</div>
+<div style="margin-top: 14px;">
+<a class="btn btn-dark" href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" style="min-height: 38px; padding: 0 14px; font-size: 13px;" target="_blank">
+            JS EDIZ on YouTube →
+          </a>
 </div>
 </div>
-<div class="sn-chips-row">
-<span class="sn-chip"><span class="sn-chip-dot"></span>CBSE Aligned</span>
-<span class="sn-chip">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"></path><path d="M20 4v7h-7"></path></svg>
-            Syllabus 2026-27
-          </span>
-<span class="sn-chip">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            Student Focused
-          </span>
-</div>
-</div>
-<!-- Links: Study -->
-<div class="sn-nav-col">
-<h3 class="sn-col-head">Study</h3>
-<ul class="sn-col-links">
-<li><a href="../physics/index.html">Physics</a></li>
-<li><a href="../chemistry/index.html">Chemistry</a></li>
-<li><a href="../mathematics/index.html">Mathematics</a></li>
-<li><a href="../english/index.html">English</a></li>
+<!-- Links: Subjects -->
+<div class="sn-f-col">
+<h3 class="sn-f-title">Subjects</h3>
+<ul class="sn-f-links">
+<li><a href="../physics/index.html">Physics Hub</a></li>
+<li><a href="../chemistry/index.html">Chemistry Hub</a></li>
+<li><a href="../mathematics/index.html">Mathematics Hub</a></li>
+<li><a href="../english/index.html">English Hub</a></li>
 </ul>
 </div>
-<!-- Links: Site -->
-<div class="sn-nav-col">
-<h3 class="sn-col-head">Site</h3>
-<ul class="sn-col-links">
-<li><a href="../exam-info.html">Exam info</a></li>
-<li><a href="../about-notes.html">About the notes</a></li>
-<li><a href="../about.html">About us</a></li>
-<li><a href="../privacy.html">Privacy policy</a></li>
-<li><a href="../cookies.html">Cookies</a></li>
-</ul>
-</div>
-<!-- Links: Connect -->
-<div class="sn-nav-col">
-<h3 class="sn-col-head">Connect</h3>
-<ul class="sn-col-links">
-<li><a href="mailto:support.shorveernotes@gmail.com">Contact us</a></li>
-<li><a href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" target="_blank">YouTube Channel</a></li>
-<li><a href="../about.html#founder">Founder's Note</a></li>
+<!-- Links: Site & Policies -->
+<div class="sn-f-col">
+<h3 class="sn-f-title">Resources</h3>
+<ul class="sn-f-links">
+<li><a href="../exam-info.html">Exam Info</a></li>
+<li><a href="../about-notes.html">About Notes</a></li>
+<li><a href="../about.html">About Shorveer</a></li>
+<li><a href="../cookies.html">Cookies &amp; Storage</a></li>
 </ul>
 </div>
 </div>
-</div>
-<!-- Big Watermark Wordmark (Ekdum Screen ke hisab se Fitted, Kabhi Cut Nahi Hoga) -->
-<div aria-hidden="true" class="sn-wordmark-wrap">
-<svg class="sn-wordmark-svg" preserveaspectratio="xMidYMid meet" viewbox="0 0 1200 160">
-<defs>
-<lineargradient id="snWordmarkGrad" x1="0%" x2="0%" y1="0%" y2="100%">
-<stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"></stop>
-<stop offset="50%" stop-color="#ffffff" stop-opacity="0.35"></stop>
-<stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"></stop>
-</lineargradient>
-</defs>
-<text class="sn-svg-text" text-anchor="middle" x="50%" y="125">Shorveer Notes</text>
-</svg>
-</div>
-<!-- Bottom Copyright Bar -->
-<div class="sn-bottom-bar">
-<div class="sn-bottom-container">
-<p>© <span id="year"></span> Shorveer Notes. All rights reserved.</p>
+<!-- Bottom Bar -->
+<div class="sn-f-bottom">
+<p>© <span id="year">2026</span> Shorveer Notes · All rights reserved.</p>
 <p>Built with pride in India 🇮🇳</p>
 </div>
 </div>
-<!-- Embedded Isolated CSS -->
 <style>
-    .sn-footer {
-      position: relative;
-      background: var(--paper, #fdfaf3);
-      color: var(--ink, #1c1c1a);
-      overflow: hidden;
-      isolation: isolate;
-      padding-top: 50px;
-      font-family: system-ui, -apple-system, sans-serif;
+    .sn-clean-footer {
+      background: var(--paper-2);
+      border-top: 1px solid var(--line);
+      padding: 60px 0 30px;
+      margin-top: 80px;
+      color: var(--ink);
     }
-
-    .sn-footer__bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .sn-footer__video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 90%;
-    }
-
-    .sn-footer__overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      background: linear-gradient(
-        to bottom,
-        var(--paper, #fdfaf3) 0%,
-        rgba(253, 250, 243, 0.95) 28%,
-        rgba(253, 250, 243, 0.6) 55%,
-        transparent 85%
-      );
-    }
-
-    .sn-footer__container {
-      position: relative;
-      z-index: 2;
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .sn-footer__grid {
+    .sn-f-wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .sn-f-grid {
       display: grid;
-      grid-template-columns: 1.5fr 0.8fr 0.8fr 0.8fr;
+      grid-template-columns: 2fr 1fr 1fr;
       gap: 40px;
-      align-items: start;
+      margin-bottom: 40px;
     }
-
-    .sn-footer__brand {
-      max-width: 480px;
-    }
-
-    .sn-brand__logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .sn-brand__mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 9px;
-      background: #1c1c1a;
-      display: grid;
-      place-items: center;
-    }
-
-    .sn-brand__mark svg {
-      width: 22px;
-      height: 22px;
-    }
-
-    .sn-brand__title-txt {
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .sn-brand__title-txt em {
-      font-style: italic;
-      color: #6b6858;
-      font-weight: 400;
-    }
-
-    .sn-brand__heading {
-      font-size: 22px;
-      font-weight: 600;
-      margin: 16px 0 8px;
-      letter-spacing: -0.02em;
-    }
-
-    .sn-brand__sub {
-      font-size: 14px;
-      line-height: 1.55;
-      color: #55534c;
-      margin-bottom: 20px;
-    }
-
-    .sn-brand__badge-box {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .sn-yt-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 8px 15px;
-      border-radius: 8px;
-      background: #0f0f0f;
-      color: #ffffff !important;
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.2s, background 0.2s;
-    }
-
-    .sn-yt-btn:hover {
-      background: #222;
-      transform: translateY(-2px);
-    }
-
-    .sn-yt-btn svg {
-      width: 16px;
-      height: 16px;
-      fill: #ff0000;
-    }
-
-    .sn-founder-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      background: rgba(255, 255, 255, 0.75);
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      border-radius: 30px;
-      font-size: 13px;
-      backdrop-filter: blur(8px);
-    }
-
-    .sn-founder-tag {
-      background: #1c1c1a;
-      color: #ffffff;
-      font-size: 10px;
-      font-weight: 800;
-      padding: 3px 6px;
-      border-radius: 5px;
-    }
-
-    .sn-founder-name strong {
-      color: #000000;
-    }
-
-    .sn-chips-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .sn-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 12px;
-      background: rgba(255, 255, 255, 0.75);
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      border-radius: 20px;
-      font-size: 11.5px;
-      font-weight: 600;
-      color: #333;
-      backdrop-filter: blur(8px);
-    }
-
-    .sn-chip svg {
-      width: 12px;
-      height: 12px;
-    }
-
-    .sn-chip-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #10b981;
-    }
-
-    /* Column Links */
-    .sn-nav-col .sn-col-head {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 16px;
-      letter-spacing: -0.01em;
-    }
-
-    .sn-col-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 12px;
-    }
-
-    .sn-col-links a {
-      color: #2e2e28;
-      text-decoration: none;
+    .sn-f-desc {
       font-size: 14.5px;
-      font-weight: 500;
-      transition: color 0.2s, transform 0.2s;
-      display: inline-block;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 12px 0;
+      max-width: 420px;
     }
-
-    .sn-col-links a:hover {
-      color: #bf5a3c;
-      transform: translateX(3px);
+    .sn-f-author {
+      font-size: 13.5px;
+      color: var(--muted);
     }
-
-    /* Wordmark SVG (Fixed Size, Fit to Viewport) */
-    .sn-wordmark-wrap {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: 1200px;
-      margin: 40px auto 0;
-      padding: 0 20px;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .sn-wordmark-svg {
-      width: 100%;
-      height: auto;
-      max-height: 140px;
-      display: block;
-    }
-
-    .sn-svg-text {
-      font-family: Georgia, serif;
-      font-size: 116px;
+    .sn-f-author strong { color: var(--ink); }
+    .sn-f-title {
+      font-family: var(--font-body);
+      font-size: 13px;
       font-weight: 700;
-      letter-spacing: -3px;
-      fill: url(#snWordmarkGrad);
-      filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.15));
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--rust);
+      margin-bottom: 16px;
     }
-
-    /* Bottom Copyright */
-    .sn-bottom-bar {
-      position: relative;
-      z-index: 2;
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
-      background: rgba(253, 250, 243, 0.4);
-      backdrop-filter: blur(8px);
-      padding: 16px 0;
+    .sn-f-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .sn-f-links a {
+      color: var(--ink-2);
+      font-size: 14.5px;
+      transition: color .2s ease;
+      text-decoration: none;
     }
-
-    .sn-bottom-container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 24px;
+    .sn-f-links a:hover { color: var(--rust); text-decoration: underline; }
+    .sn-f-bottom {
+      border-top: 1px solid var(--line-soft);
+      padding-top: 20px;
       display: flex;
       justify-content: space-between;
+      gap: 16px;
       font-size: 13px;
-      color: #6b6858;
+      color: var(--muted);
+      flex-wrap: wrap;
     }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .sn-footer__grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 32px;
-      }
-      .sn-footer__brand {
-        grid-column: span 2;
-        max-width: 100%;
-      }
-      .sn-svg-text {
-        font-size: 96px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .sn-footer__grid {
-        grid-template-columns: 1fr;
-      }
-      .sn-footer__brand {
-        grid-column: span 1;
-      }
-      .sn-bottom-container {
-        flex-direction: column;
-        gap: 6px;
-        text-align: center;
-      }
-      .sn-svg-text {
-        font-size: 78px;
-      }
+    @media (max-width: 768px) {
+      .sn-f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .sn-f-bottom { flex-direction: column; text-align: center; }
     }
   </style>
 </footer>
-<!-- ============ END FOOTER ============ -->
 <!-- ============ COOKIE ============ -->
 <aside aria-label="Cookie notice" aria-live="polite" class="cookie" id="cookieBox" role="dialog">
 <div class="cookie-header">
@@ -1146,55 +560,23 @@
 </div>
 </aside>
 <script>
-    /* Safe storage */
     const store = {
       get(k) { try { return localStorage.getItem(k); } catch { return null; } },
       set(k, v) { try { localStorage.setItem(k, v); } catch {} }
     };
 
-    /* Auto Year */
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    /* ==========================================================
-       THEMES CONFIG (All 9 Themes)
-       ========================================================== */
     const THEMES = {
-      notebook: {
-        hero: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=900&q=80",
-        label: "the desk of a class 12 student"
-      },
-      chalkboard: {
-        hero: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80",
-        label: "equations, one line at a time"
-      },
-      blueprint: {
-        hero: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=80",
-        label: "where the theory becomes engineering"
-      },
-      sunset: {
-        hero: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80",
-        label: "late-night study, warm lamp"
-      },
-      emerald: {
-        hero: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=80",
-        label: "life sciences & the biology lab"
-      },
-      cyberpunk: {
-        hero: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
-        label: "silicon, circuitry & quantum states"
-      },
-      minimal: {
-        hero: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80",
-        label: "pure focus, zero noise"
-      },
-      dracula: {
-        hero: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80",
-        label: "midnight coding & deep analysis"
-      },
-      solarized: {
-        hero: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=80",
-        label: "pages turn, ideas stick"
-      }
+      notebook: { hero: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=900&q=80", label: "the desk of a class 12 student" },
+      chalkboard: { hero: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80", label: "equations, one line at a time" },
+      blueprint: { hero: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=80", label: "where the theory becomes engineering" },
+      sunset: { hero: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80", label: "late-night study, warm lamp" },
+      emerald: { hero: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=80", label: "life sciences & the biology lab" },
+      cyberpunk: { hero: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80", label: "silicon, circuitry & quantum states" },
+      minimal: { hero: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80", label: "pure focus, zero noise" },
+      dracula: { hero: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80", label: "midnight coding & deep analysis" },
+      solarized: { hero: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=80", label: "pages turn, ideas stick" }
     };
 
     const html = document.documentElement;
@@ -1208,12 +590,8 @@
       if (!THEMES[name]) name = "notebook";
       html.setAttribute("data-theme", name);
       store.set("shorveer-theme-name", name);
+      themeOpts.forEach(btn => btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name)));
 
-      themeOpts.forEach(btn => {
-        btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name));
-      });
-
-      // Hero image swap with smooth fade
       const t = THEMES[name];
       if (heroImage && t) {
         heroImage.classList.add("fading");
@@ -1225,9 +603,7 @@
       }
     }
 
-    // Restore saved theme
-    const savedThemeName = store.get("shorveer-theme-name") || "notebook";
-    applyTheme(savedThemeName);
+    applyTheme(store.get("shorveer-theme-name") || "notebook");
 
     themeButton.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -1250,7 +626,6 @@
       }
     });
 
-    /* Motivation Rotator */
     const MOTIVATIONS = [
       "One chapter at a time.",
       "Understanding beats memorising.",
@@ -1280,7 +655,6 @@
     }
     setInterval(nextMotivation, 6500);
 
-    /* Flip Cards */
     const flipCards = document.querySelectorAll(".flip-card");
     const isTouch = window.matchMedia("(hover: none)").matches;
 
@@ -1300,7 +674,6 @@
       });
     });
 
-    /* Hero Parallax */
     const heroArt = document.getElementById("heroArt");
     const heroStage = document.getElementById("heroStage");
     const finePointer = window.matchMedia("(pointer: fine)").matches;
@@ -1318,7 +691,6 @@
       });
     }
 
-    /* 3D Tilt */
     const tiltEls = document.querySelectorAll("[data-tilt]");
     if (finePointer && !reduceMotion) {
       tiltEls.forEach(el => {
@@ -1328,13 +700,10 @@
           const py = (e.clientY - r.top) / r.height - 0.5;
           el.style.transform = `perspective(900px) rotateX(${-py * 8}deg) rotateY(${px * 8}deg) translateY(-4px)`;
         });
-        el.addEventListener("mouseleave", () => {
-          el.style.transform = "";
-        });
+        el.addEventListener("mouseleave", () => { el.style.transform = ""; });
       });
     }
 
-    /* Search */
     const searchData = [
       { title: "Physics", description: "Class 12 Physics chapters and resources", url: "physics/index.html" },
       { title: "Chemistry", description: "Class 12 Chemistry chapters and resources", url: "chemistry/index.html" },
@@ -1389,7 +758,6 @@
     if (searchLayer) searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
     if (searchInput) searchInput.addEventListener("input", e => renderResults(e.target.value));
 
-    /* Mobile Menu */
     const menuButton = document.getElementById("menuButton");
     const mobileMenu = document.getElementById("mobileMenu");
     function setMenu(open) {
@@ -1402,7 +770,6 @@
       mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
     }
 
-    /* Keyboard Shortcuts */
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") {
         closeSearch();
@@ -1411,11 +778,11 @@
         themeButton.setAttribute("aria-expanded", "false");
       }
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
-        e.preventDefault(); openSearch();
+        e.preventDefault();
+        openSearch();
       }
     });
 
-    /* Scroll Reveal */
     const reveals = document.querySelectorAll(".reveal");
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver(entries => {
@@ -1428,7 +795,6 @@
       reveals.forEach(el => el.classList.add("visible"));
     }
 
-    /* Cookie Consent */
     const cookieBox = document.getElementById("cookieBox");
     const acceptCookies = document.getElementById("acceptCookies");
     if (cookieBox && !store.get("shorveer-cookie-consent")) {
