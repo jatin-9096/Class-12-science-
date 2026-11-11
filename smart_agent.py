@@ -9,8 +9,8 @@ from groq import Groq
 # ---------------- Config ----------------
 MODELS = ["openai/gpt-oss-120b", "openai/gpt-oss-20b"]
 MAX_OUT_TOKENS = 3000
-TOKENS_PER_MIN = 6000          # Groq Console के TPM से नीचे रखो
-TEMPLATE = "index.html"        # index.html ही design का source है
+TOKENS_PER_MIN = 6000          # Groq Console ke TPM se neeche rakho
+TEMPLATE = "index.html"        # index.html hi design ka source hai
 STATE_FILE = "builder_state.json"
 MAX_FAILURES = 3
 MIN_WORDS = {False: 1500, True: 1200}
@@ -19,11 +19,10 @@ IGNORE_KEYWORDS = ["privacy", "terms", "cookie", "disclaimer", "about", "contact
 IGNORE_FILES = {"index.html", "about.html", "about-notes.html", "exam-info.html",
                 "privacy.html", "cookies.html"}
 
-# Brand और author: ये सब पेज पर एक जैसे रहेंगे
 BRAND = "Shorveer Notes"
 AUTHOR = "Jatin Sandilya"
+OLD_SURNAME = "Sharma"
 
-# Subject-wise galat topics: अगर पेज में ये मिले तो पेज दोबारा बनेगा
 FORBIDDEN = {
     "mathematics": ["arrhenius", "activation energy", "reaction rate", "haloalkane",
                     "sn1", "sn2", "aldehyde", "ketone"],
@@ -36,7 +35,9 @@ FORBIDDEN = {
 SYSTEM = (
     "You are a CBSE Class 12 subject expert writing for the site "
     f"'{BRAND}', authored by {AUTHOR}. Output ONLY an HTML fragment: no markdown fences, "
-    "no <html>, <head>, <body> or <footer>. Use MathJax: $...$ inline, $$...$$ display. "
+    "no <html>, <head>, <body> or <footer>. "
+    "All math must be LaTeX: inline $...$ and display $$...$$. "
+    "Never use \\( \\) or \\[ \\] delimiters. Never escape dollar signs. "
     "Never write square-bracket placeholders or instructions in the output. "
     "PYQ means real past-year papers, which you cannot verify. So for any question you write, "
     "label it as 'Practice Question' and never call it a PYQ."
@@ -150,7 +151,7 @@ Real textbook content only. Aim for at least 1500 words.""",
     <article class="resource"><h3>...</h3><p>...</p></article>
   </div>
 </section>
-Include step-by-step CBSE-standard derivations with MathJax, and a formula list with variables, SI units and conditions. Aim for at least 1500 words.""",
+Include step-by-step CBSE-standard derivations with LaTeX math, and a formula list with variables, SI units and conditions. Aim for at least 1500 words.""",
         ]
     return [
         f"""For CBSE Class 12 {subject}, chapter "{chapter}", write a section with id="pyqs".
@@ -190,7 +191,7 @@ def generate_body(subject, chapter, is_part2):
     raise RuntimeError(f"Validation failed: {problems}")
 
 
-# ---------------- Page building (index.html से template) ----------------
+# ---------------- Page building ----------------
 def hero(subject, chapter, is_part2):
     label = ("Part 2: Practice Questions & Case Studies" if is_part2
              else "Part 1: Theory & Complete Derivations")
@@ -202,13 +203,31 @@ def hero(subject, chapter, is_part2):
 
 
 def fix_brand_and_author(soup):
-    """Brand का नाम एक जैसा और पुराना सरनेम हटाना।"""
-    for text_node in soup.find_all(string=True):
-        if "Sharma" in text_node or "Sharma" in str(text_node):
-            text_node.replace_with(str(text_node).replace("Jatin Sharma", AUTHOR).replace("Sharma", AUTHOR.split()[-1]))
+    """Purana surname hatao aur brand/author ek jaisa karo."""
+    for node in soup.find_all(string=True):
+        text = str(node)
+        if OLD_SURNAME in text:
+            node.replace_with(text.replace("Jatin Sharma", AUTHOR).replace(OLD_SURNAME, AUTHOR.split()[-1]))
     for tag in soup.find_all(class_=re.compile(r"sn-founder-name")):
         for s in tag.find_all("strong"):
             s.string = AUTHOR
+
+
+def ensure_mathjax(soup):
+    """Head mein MathJax na ho to add karo."""
+    head = soup.find("head")
+    if head is None or soup.find("script", src=re.compile(r"tex-chtml")):
+        return
+    cfg = soup.new_tag("script")
+    cfg.string = (
+        "window.MathJax = {tex:{inlineMath:[['$','$'],['\\\\(','\\\\)']],"
+        "displayMath:[['$$','$$'],['\\\\[','\\\\]']],processEscapes:true},"
+        "options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};"
+    )
+    lib = soup.new_tag("script", id="MathJax-script", src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js")
+    lib["async"] = True
+    head.append(cfg)
+    head.append(lib)
 
 
 def build_page(path, subject, chapter, is_part2, body, add_hero=True):
@@ -233,6 +252,7 @@ def build_page(path, subject, chapter, is_part2, body, add_hero=True):
         shell.title.string = f"{chapter} · Class 12 {subject} | {BRAND}"
 
     fix_brand_and_author(shell)
+    ensure_mathjax(shell)
 
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     tmp = path + ".tmp"
@@ -300,6 +320,21 @@ def is_mismatched(path, subject):
     return len(hits) >= 2
 
 
+def audit_page(soup, is_part2):
+    """Purane pages mein MathJax, delimiters, naam aur surname ki galti pakdo."""
+    problems = []
+    html_text = str(soup)
+    if "tex-chtml" not in html_text:
+        problems.append("MathJax script missing")
+    if re.search(r"\\\(|\\\[", html_text):
+        problems.append("bad math delimiters \\( or \\[")
+    if OLD_SURNAME in html_text:
+        problems.append("old surname present")
+    if BRAND not in html_text and "ShorveerNotes" in html_text:
+        problems.append("brand name mismatch")
+    return problems
+
+
 def find_target(state):
     for page in discover_pages():
         path = page["path"]
@@ -312,7 +347,9 @@ def find_target(state):
         main = soup.find("main")
         if main is None or check_body(str(main), page["is_part2"]) or is_mismatched(path, page["subject"]):
             return {**page, "action": "build"}
-        if soup.find(class_="site-header") is None or "Sharma" in str(soup):
+        if audit_page(soup, page["is_part2"]):
+            return {**page, "action": "shell_fix"}
+        if soup.find(class_="site-header") is None:
             return {**page, "action": "shell_fix"}
         state[path] = {"status": "done"}
     return None
