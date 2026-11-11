@@ -1,1260 +1,1230 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="sunset">
+
+<html data-theme="notebook" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CBSE Class 12 Mathematics - Chapter1 (Part 1: In-Depth Theory & Complete Derivations). Comprehensive theory, derivations, formulas, and solved board PYQs by Jatin Sandilya at Shorveer Notes.">
-  <meta name="author" content="Jatin Sandilya">
-  <meta name="robots" content="index, follow">
-  <title>Chapter1 (Part 1) · Class 12 Mathematics | Shorveer Notes</title>
-
-  
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="ca-pub-9688496231973353" name="google-adsense-account"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Shorveer Notes is a student-focused Class 12 Science learning platform with structured Physics, Chemistry, Mathematics and English notes, chapter resources, practice questions, revision material and exam preparation resources." name="description"/>
+<meta content="Jatin Sandilya" name="author"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="#fdfaf3" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#171613" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="Shorveer Notes" name="apple-mobile-web-app-title"/>
+<link href="https://shorveernotes.website/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Shorveer Notes | Class 12 Science Study Platform" property="og:title"/>
+<meta content="Explore structured Class 12 Physics, Chemistry, Mathematics and English resources, chapter notes, revision material and exam resources in one focused study platform." property="og:description"/>
+<meta content="Shorveer Notes" property="og:site_name"/>
+<meta content="en_IN" property="og:locale"/>
+<meta content="https://shorveernotes.website/og-image.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Shorveer Notes — Class 12 Science study platform" property="og:image:alt"/>
+<meta content="https://shorveernotes.website/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Shorveer Notes | Class 12 Science" name="twitter:title"/>
+<meta content="A focused learning space for Class 12 Science notes, chapters, revision and exam resources." name="twitter:description"/>
+<meta content="https://shorveernotes.website/og-image.jpg" name="twitter:image"/>
+<meta content="@JSEDIZ" name="twitter:site"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1c1a'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23e8b64c'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link crossorigin="" href="https://images.unsplash.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Karla:wght@400;500;600;700&amp;family=Inter:opsz,wght@14..32,400..700&amp;display=swap" rel="stylesheet"/>
+<!-- MathJax: formulas ($...$ and $$...$$) render here -->
 <script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      processEscapes: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<!-- External CSS Linked Here -->
+<link href="../style.css" rel="stylesheet"/>
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Shorveer Notes",
+    "alternateName": ["Shorveer", "ShorveerNotes"],
+    "description": "A student-focused learning platform for Class 12 Science notes, chapters, revision resources and examination preparation.",
+    "url": "https://shorveernotes.website/",
+    "logo": "https://shorveernotes.website/logo.png",
+    "sameAs": ["https://www.youtube.com/@JSEDIZ"],
+    "educationalLevel": "Class 12",
+    "knowsAbout": ["Physics","Chemistry","Mathematics","English","CBSE Class 12","Practice Questions","Board Examination Preparation"]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Shorveer Notes",
+    "alternateName": ["Shorveer", "ShorveerNotes", "Shorveer Notes Class 12"],
+    "url": "https://shorveernotes.website/",
+    "inLanguage": "en-IN",
+    "publisher": {
+      "@type": "EducationalOrganization",
+      "name": "Shorveer Notes",
+      "url": "https://shorveernotes.website/"
     }
-  };
-</script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
-
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <style>
-    body {
-      background: var(--bg, #241226);
-      color: var(--ink, #ffe9d6);
-      font-family: var(--font-body, 'Karla', sans-serif);
-      margin: 0;
-      padding-top: 80px;
-    }
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 72px;
-      background: rgba(23, 22, 19, 0.95);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.15));
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-    }
-    .brand-mark, .sn-brand__mark {
-      width: 36px !important;
-      height: 36px !important;
-      max-width: 36px !important;
-      max-height: 36px !important;
-      background: #1c1c1a;
-      border-radius: 9px;
-      display: inline-flex !important;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    .brand-mark svg, .sn-brand__mark svg {
-      width: 24px !important;
-      height: 24px !important;
-    }
-    .toc-bar {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
-      border-radius: 12px;
-      padding: 16px 24px;
-      margin-bottom: 40px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      align-items: center;
-    }
-    .toc-title {
-      font-family: var(--font-mono, monospace);
-      font-size: 0.85rem;
-      color: var(--gold, #ff8a5b);
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-    .toc-link {
-      color: var(--ink, #ffe9d6);
-      text-decoration: none;
-      font-size: 0.92rem;
-      transition: color 0.2s;
-    }
-    .toc-link:hover {
-      color: var(--gold, #ff8a5b);
-      text-decoration: underline;
-    }
-    .sn-cookie-banner {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-      max-width: 500px;
-      background: #1c1b18;
-      border: 1px solid var(--line, rgba(255, 255, 255, 0.2));
-      border-radius: 12px;
-      padding: 18px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-      z-index: 9999;
-      display: none;
-    }
-    .sn-cookie-banner.show {
-      display: block;
-    }
-    .sn-cookie-banner p {
-      margin: 0 0 12px;
-      font-size: 0.88rem;
-      color: var(--muted, #ffb87a);
-      line-height: 1.5;
-    }
-    .sn-cookie-btn {
-      background: var(--gold, #ff8a5b);
-      color: #000;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    .theme-pop {
-      position: fixed;
-      top: 80px;
-      right: 24px;
-      background: #1c1b18;
-      border: 1px solid var(--line, rgba(255,255,255,0.2));
-      border-radius: 12px;
-      padding: 16px;
-      z-index: 2000;
-      display: none;
-    }
-    .theme-pop.open {
-      display: block;
-    }
-    .theme-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin: 10px 0;
-    }
-    .theme-opt {
-      background: #2a2824;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
-      padding: 8px 12px;
-      color: #fff;
-      cursor: pointer;
-    }
-    .sn-footer {
-      background: #141311 !important;
-      border-top: 1px solid var(--line, rgba(255, 255, 255, 0.12));
-      padding: 60px 0 35px;
-      margin-top: 80px;
-    }
-    .sn-footer__grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    @media (max-width: 768px) {
-      .sn-footer__grid { grid-template-columns: 1fr; gap: 24px; }
-    }
-  </style>
+  }
+  </script>
+<title>Chapter1 · Class 12 Mathematics | Shorveer Notes</title>
 </head>
 <body>
-
-  <!-- ============ SITE HEADER ============ -->
-  <header class="site-header">
-    <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="../index.html">
-        <span class="brand-mark">
-          <svg viewBox="0 0 64 64" fill="none">
-            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
-          </svg>
-        </span>
-        <span class="brand-name">Shorveer<em>Notes</em></span>
+<a class="skip" href="#main">Skip to content</a>
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+<nav aria-label="Primary" class="nav container">
+<a aria-label="Shorveer Notes home" class="brand" href="/">
+<span aria-hidden="true" class="brand-mark">
+<svg fill="none" viewbox="0 0 64 64">
+<path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
+</svg>
+</span>
+<span class="brand-name">Shorveer<em>Notes</em></span>
+</a>
+<div class="nav-links">
+<a href="#subjects">Subjects</a>
+<a href="#reallife">Real life</a>
+<a href="#resources">Resources</a>
+<a href="#method">How it works</a>
+<a href="../about.html">About</a>
+</div>
+<div class="nav-actions">
+<button aria-label="Open search" class="nav-icon" id="searchButton" title="Search (Ctrl+K)">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<circle cx="11" cy="11" r="7"></circle><path d="m20.5 20.5-4-4"></path>
+</svg>
+</button>
+<a aria-label="Mind map" class="nav-icon" href="chapter1-mindmap.html" title="Mind map">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<path d="M3 6h18M3 12h18M3 18h18"></path>
+</svg>
+</a>
+<button aria-expanded="false" aria-label="Change theme" class="nav-icon" id="themeButton" title="Change theme">
+<span aria-hidden="true" class="palette-dot"></span>
+</button>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav-icon mobile-toggle" id="menuButton">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<path d="M3 6h18M3 12h18M3 18h18"></path>
+</svg>
+</button>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="#subjects">Subjects</a>
+<a href="#reallife">Real life</a>
+<a href="#resources">Resources</a>
+<a href="#method">How it works</a>
+<a href="../exam-info.html">Exam information</a>
+<a href="../about.html">About Shorveer</a>
+</div>
+</header>
+<!-- ============ SEARCH LAYER ============ -->
+<div aria-hidden="true" aria-label="Search" class="search-layer" id="searchLayer" role="dialog">
+<div class="search-panel">
+<div class="search-top">
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<circle cx="11" cy="11" r="7"></circle><path d="m20.5 20.5-4-4"></path>
+</svg>
+<input autocomplete="off" id="searchInput" placeholder="Search subjects and pages" type="text"/>
+<button aria-label="Close search" class="search-close" id="searchClose">✕</button>
+</div>
+<div class="search-results" id="searchResults"></div>
+</div>
+</div>
+<!-- ============ THEME PICKER (9 Themes) ============ -->
+<div aria-label="Choose a theme" class="theme-pop" id="themePop" role="dialog">
+<h4>Pick a look</h4>
+<div class="theme-grid">
+<button aria-pressed="true" class="theme-opt" data-theme-value="notebook">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#fdfaf3"></span>
+<span style="background:#e8b64c"></span>
+<span style="background:#bf5a3c"></span>
+<span style="background:#1c1c1a"></span>
+</span>
+<b>Notebook</b>
+<small>Warm paper, classic</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="chalkboard">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#1e2a24"></span>
+<span style="background:#f0d97a"></span>
+<span style="background:#7bc3bf"></span>
+<span style="background:#ebe6d5"></span>
+</span>
+<b>Chalkboard</b>
+<small>Dark green, chalk</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="blueprint">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0f2b4c"></span>
+<span style="background:#7ec8f5"></span>
+<span style="background:#ff9d7c"></span>
+<span style="background:#e2eefb"></span>
+</span>
+<b>Blueprint</b>
+<small>Navy, technical</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="sunset">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#241226"></span>
+<span style="background:#ff8a5b"></span>
+<span style="background:#ffb87a"></span>
+<span style="background:#ffe9d6"></span>
+</span>
+<b>Sunset</b>
+<small>Plum, warm glow</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="emerald">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0b1d16"></span>
+<span style="background:#34d399"></span>
+<span style="background:#2dd4bf"></span>
+<span style="background:#e3f7ed"></span>
+</span>
+<b>Emerald</b>
+<small>Biology &amp; Green</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="cyberpunk">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0f1016"></span>
+<span style="background:#00f0ff"></span>
+<span style="background:#ff007f"></span>
+<span style="background:#f0f2ff"></span>
+</span>
+<b>Cyberpunk</b>
+<small>Neon high-tech</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="minimal">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#f8fafc"></span>
+<span style="background:#2563eb"></span>
+<span style="background:#64748b"></span>
+<span style="background:#0f172a"></span>
+</span>
+<b>Minimal</b>
+<small>Clean white</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="dracula">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#191622"></span>
+<span style="background:#bd93f9"></span>
+<span style="background:#ff79c6"></span>
+<span style="background:#f8f8f2"></span>
+</span>
+<b>Dracula</b>
+<small>Night indigo</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="solarized">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#fdf6e3"></span>
+<span style="background:#b58900"></span>
+<span style="background:#2aa198"></span>
+<span style="background:#073642"></span>
+</span>
+<b>Solarized</b>
+<small>Warm study paper</small>
+</button>
+</div>
+<p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Your choice is saved for next time.</p>
+</div>
+<main id="main"><section class="hero container"><div class="hero-copy"><div class="kicker"><span class="dot"></span><span>Class 12 · Mathematics</span></div><h1>Chapter1</h1><p class="hero-description">Part 1: Theory and Complete Derivations</p><div class="hero-actions" style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;"><a class="btn btn-gold" href="chapter1-mindmap.html">View Mind Map ✎</a></div></div></section>
+<div class="container">
+<div class="toc-bar">
+<span class="toc-title">Quick Navigation:</span>
+<a class="toc-link" href="#theory">1. In-Depth Theory</a><a class="toc-link" href="#derivations">2. Complete Derivations &amp; Formulas</a>
+</div>
+</div>
+<div class="container">
+<div style="margin: 30px 0; text-align: center;">
+<a class="btn btn-gold" href="chapter1_part2.html" style="padding: 14px 28px; font-size: 1.05rem;">
+        Continue to Part 2: Solved CBSE PYQs &amp; Case Studies →
       </a>
-
-      <div class="nav-links">
-        <a href="../index.html">Home</a>
-        <a href="index.html" style="color:var(--ink); font-weight:700;">Mathematics Hub</a>
-        <a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ</a>
-      </div>
-
-      <div class="nav-actions">
-        <button class="nav-icon" id="themeButton" aria-label="Change theme" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:8px; padding:8px; cursor:pointer;">
-          <span style="width:14px; height:14px; border-radius:50%; background:var(--gold, #ff8a5b); display:inline-block;"></span>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  <!-- ============ THEME PICKER ============ -->
-  <div class="theme-pop" id="themePop">
-    <h4 style="margin:0 0 8px; color:#fff;">Pick a look</h4>
-    <div class="theme-grid">
-      <button class="theme-opt" data-theme-value="notebook">Notebook</button>
-      <button class="theme-opt" data-theme-value="chalkboard">Chalkboard</button>
-      <button class="theme-opt" data-theme-value="blueprint">Blueprint</button>
-      <button class="theme-opt" data-theme-value="sunset">Sunset</button>
-    </div>
-  </div>
-
-  <main id="main">
-    <section class="hero container">
-      <div class="hero-copy">
-        <div class="kicker">
-          <span class="dot"></span>
-          <span>CBSE Class 12 · Mathematics Master Guide</span>
-        </div>
-        <h1>Chapter1</h1>
-        <p class="hero-description">Part 1: In-Depth Theory & Complete Derivations curated for rigorous CBSE Board Preparation.</p>
-        <div class="hero-note">
-          <span>Authored with Precision by <strong>Jatin Sandilya</strong> · Official 2026-27 Syllabus</span>
-        </div>
-      </div>
-    </section>
-
-    <div class="container">
-      <div class="toc-bar">
-        <span class="toc-title">Quick Navigation:</span>
-        <a class="toc-link" href="#theory">1. In-Depth Theory</a><a class="toc-link" href="#derivations">2. Complete Derivations & Formulas</a>
-      </div>
-    </div>
-
-    <div class="container">
-      
-    <div style="margin: 30px 0; text-align: center;">
-      <a class="btn btn-gold" href="chapter1_part2.html" style="padding: 14px 28px; font-size: 1.05rem;">
-        Continue to Part 2: Solved CBSE PYQs & Case Studies →
-      </a>
-    </div>
-    
-    </div>
-
-    <section class="section container" id="theory">
-  <div class="section-head">
-    <span class="section-eyebrow">Comprehensive Theory</span>
-    <h2>1. Complete Conceptual Framework &amp; Definitions</h2>
-  </div>
-  <div class="real-life">
-    <article class="rl-card" style="--rl-color: #bf5a3c">
-      <div class="rl-body">
-        <div class="rl-title">Fundamental Theoretical Principles</div>
-        <div class="rl-text">
-
-          <!-- PART 1: INTRODUCTORY CONTEXT & FOUNDATIONAL SET THEORY -->
-          <h3>1.1 Foundational Set-Theoretic Underpinnings and Cartesian Dynamics</h3>
-          <p>
+</div>
+</div>
+<section class="section container" id="theory">
+<div class="section-head">
+<span class="section-eyebrow">Comprehensive Theory</span>
+<h2>1. Complete Conceptual Framework &amp; Definitions</h2>
+</div>
+<div class="real-life">
+<article class="rl-card" style="--rl-color: #bf5a3c">
+<div class="rl-body">
+<div class="rl-title">Fundamental Theoretical Principles</div>
+<div class="rl-text">
+<!-- PART 1: INTRODUCTORY CONTEXT & FOUNDATIONAL SET THEORY -->
+<h3>1.1 Foundational Set-Theoretic Underpinnings and Cartesian Dynamics</h3>
+<p>
             The architecture of higher mathematics, specifically analysis and abstract algebra, is anchored upon the formalization of relationships between collections of mathematical objects. In Class 11, the preliminary concept of a set was established as a well-defined collection of distinct objects, denoted typically by uppercase Roman letters $A, B, X, Y$, with set membership symbolized by $\in$. The progression into Class 12 demands an epistemological shift from static collections to dynamic mappings and structural classifications.
           </p>
-          <p>
+<p>
             Let $A$ and $B$ be two non-empty sets. The <strong>Cartesian Product</strong>, denoted by $A \times B$, is the set of all possible ordered pairs $(a, b)$ such that the first component $a$ belongs to $A$ and the second component $b$ belongs to $B$. Formally, this set-builder construction is defined as:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$A \times B = \{(a, b) : a \in A \land b \in B\}$$
           </p>
-          <p>
+<p>
             If the cardinality of set $A$ is $|A| = n(A) = p$ and the cardinality of set $B$ is $|B| = n(B) = q$, where $p, q \in \mathbb{N} \cup \{0\}$, then the fundamental principle of counting dictates that the cardinality of the Cartesian product is:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$|A \times B| = |A| \cdot |B| = p \cdot q$$
           </p>
-          <p>
+<p>
             The order within the pair is inviolable; that is, $(a, b) = (c, d) \iff a = c \land b = d$. Consequently, unless $A = B$ or at least one of the sets is empty ($\emptyset$), the Cartesian product is non-commutative: $A \times B \ne B \times A$.
           </p>
-          <p>
+<p>
             When $A = B$, the product $A \times A$ is abbreviated as $A^2$. In Euclidean geometry, $\mathbb{R} \times \mathbb{R} = \mathbb{R}^2$ represents the two-dimensional Cartesian coordinate plane. A <strong>binary relation</strong> $R$ from a set $A$ to a set $B$ is formally defined as an arbitrary subset of the Cartesian product $A \times B$. Symbolically:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$R \subseteq A \times B \iff R \in \mathcal{P}(A \times B)$$
           </p>
-          <p>
+<p>
             where $\mathcal{P}(A \times B)$ denotes the power set of $A \times B$. If an element $a \in A$ is related to an element $b \in B$ under the relation $R$, we write $(a, b) \in R$ or, in infix notation, $a \, R \, b$. If $(a, b) \notin R$, we write $a \!\not R \, b$.
           </p>
-          <p>
+<p>
             The combinatorial consequence of this definition is immediate: since the power set of any finite set $S$ possesses $2^{|S|}$ elements, the total number of distinct binary relations that can be constructed from a set $A$ with $|A| = p$ to a set $B$ with $|B| = q$ is precisely:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$N_{\text{relations}} = |\mathcal{P}(A \times B)| = 2^{|A \times B|} = 2^{pq}$$
           </p>
-          <p>
+<p>
             For a relation defined on a single set $A$ (meaning $R \subseteq A \times A$), where $|A| = n$, the total number of possible relations is $2^{n^2}$.
           </p>
-
-          <!-- DOMAIN, RANGE, CODOMAIN, INVERSE -->
-          <h4>1.1.1 Structural Components: Domain, Range, Codomain, and Inverse</h4>
-          <p>
+<!-- DOMAIN, RANGE, CODOMAIN, INVERSE -->
+<h4>1.1.1 Structural Components: Domain, Range, Codomain, and Inverse</h4>
+<p>
             To completely specify a relation $R \subseteq A \times B$, three structural sets must be delineated:
           </p>
-          <ul>
-            <li><strong>Domain ($\operatorname{Dom}(R)$):</strong> The set of all first coordinates of the ordered pairs belonging to $R$:
+<ul>
+<li><strong>Domain ($\operatorname{Dom}(R)$):</strong> The set of all first coordinates of the ordered pairs belonging to $R$:
               $$\operatorname{Dom}(R) = \{a \in A : \exists\, b \in B \text{ such that } (a, b) \in R\} \subseteq A$$
             </li>
-            <li><strong>Range ($\operatorname{Ran}(R)$ or $\operatorname{Im}(R)$):</strong> The set of all second coordinates of the ordered pairs belonging to $R$:
+<li><strong>Range ($\operatorname{Ran}(R)$ or $\operatorname{Im}(R)$):</strong> The set of all second coordinates of the ordered pairs belonging to $R$:
               $$\operatorname{Ran}(R) = \{b \in B : \exists\, a \in A \text{ such that } (a, b) \in R\} \subseteq B$$
             </li>
-            <li><strong>Codomain:</strong> The entire target set $B$, regardless of whether every element of $B$ is mapped to by an element in $A$. Hence, $\operatorname{Ran}(R) \subseteq \operatorname{Codomain}(R) = B$.</li>
-          </ul>
-          <p>
+<li><strong>Codomain:</strong> The entire target set $B$, regardless of whether every element of $B$ is mapped to by an element in $A$. Hence, $\operatorname{Ran}(R) \subseteq \operatorname{Codomain}(R) = B$.</li>
+</ul>
+<p>
             Given a relation $R \subseteq A \times B$, the <strong>Inverse Relation</strong>, denoted by $R^{-1} \subseteq B \times A$, is obtained by reversing the order of every ordered pair in $R$:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$R^{-1} = \{(b, a) \in B \times A : (a, b) \in R\}$$
           </p>
-          <p>
+<p>
             It directly follows from this inversion that:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\operatorname{Dom}(R^{-1}) = \operatorname{Ran}(R) \quad \text{and} \quad \operatorname{Ran}(R^{-1}) = \operatorname{Dom}(R)$$
           </p>
-
-          <!-- TRIVIAL RELATIONS -->
-          <h4>1.1.2 Extremal and Trivial Relations</h4>
-          <p>
+<!-- TRIVIAL RELATIONS -->
+<h4>1.1.2 Extremal and Trivial Relations</h4>
+<p>
             Two extremal subsets exist for any product $A \times B$:
           </p>
-          <ol>
-            <li><strong>The Empty (or Void) Relation ($\emptyset$):</strong> Since the empty set is a subset of every set, $\emptyset \subseteq A \times B$. In this relation, no element of $A$ is related to any element of $B$:
+<ol>
+<li><strong>The Empty (or Void) Relation ($\emptyset$):</strong> Since the empty set is a subset of every set, $\emptyset \subseteq A \times B$. In this relation, no element of $A$ is related to any element of $B$:
               $$\emptyset = \{(a, b) \in A \times B : \text{False}\}$$
             </li>
-            <li><strong>The Universal Relation ($U$):</strong> The full Cartesian product $A \times B$ is itself a subset of $A \times B$. Here, every element of $A$ is related to every element of $B$:
+<li><strong>The Universal Relation ($U$):</strong> The full Cartesian product $A \times B$ is itself a subset of $A \times B$. Here, every element of $A$ is related to every element of $B$:
               $$U = A \times B = \{(a, b) : a \in A \land b \in B\}$$
             </li>
-          </ol>
-          <p>
+</ol>
+<p>
             Both the empty relation and the universal relation are often referred to as <em>trivial relations</em>.
           </p>
-
-          <!-- PART 2: RIGOROUS TAXONOMY OF RELATIONS -->
-          <h3>1.2 Rigorous Taxonomy of Relations on a Set</h3>
-          <p>
+<!-- PART 2: RIGOROUS TAXONOMY OF RELATIONS -->
+<h3>1.2 Rigorous Taxonomy of Relations on a Set</h3>
+<p>
             In Class 12 CBSE examinations, questions routinely hinge upon identifying, proving, or disproving specific structural invariants of a relation $R$ defined on an underlying set $A$ ($R \subseteq A \times A$). We evaluate three primary properties: <strong>Reflexivity</strong>, <strong>Symmetry</strong>, and <strong>Transitivity</strong>, alongside their complementary and exclusionary forms.
           </p>
-
-          <!-- REFLEXIVITY -->
-          <h4>1.2.1 Reflexivity and Its Nuances</h4>
-          <p>
-            <strong>Definition:</strong> A relation $R$ on a set $A$ is said to be <strong>reflexive</strong> if every element of $A$ is related to itself. Formally:
+<!-- REFLEXIVITY -->
+<h4>1.2.1 Reflexivity and Its Nuances</h4>
+<p>
+<strong>Definition:</strong> A relation $R$ on a set $A$ is said to be <strong>reflexive</strong> if every element of $A$ is related to itself. Formally:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\forall x \in A \implies (x, x) \in R$$
           </p>
-          <p>
-            <em>Examiner's Warning on Logical Negation:</em> To disprove reflexivity, one must demonstrate the existence of at least one counterexample where an element fails to relate to itself:
+<p>
+<em>Examiner's Warning on Logical Negation:</em> To disprove reflexivity, one must demonstrate the existence of at least one counterexample where an element fails to relate to itself:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\exists x \in A \text{ such that } (x, x) \notin R \implies R \text{ is not reflexive.}$$
           </p>
-          <p>
-            <strong>The Identity Relation ($\Delta_A$ or $I_A$):</strong> The identity relation on $A$ is defined strictly as:
+<p>
+<strong>The Identity Relation ($\Delta_A$ or $I_A$):</strong> The identity relation on $A$ is defined strictly as:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$I_A = \{(x, x) : x \in A\}$$
           </p>
-          <p>
+<p>
             A crucial distinction that CBSE examiners test: For a relation $R$ to be reflexive, it must contain the identity relation as a subset, i.e., $I_A \subseteq R$. A relation containing additional elements $(x, y)$ where $x \ne y$ remains reflexive so long as all $(x, x)$ are preserved. Conversely, the identity relation $I_A$ contains <em>only</em> pairs of the form $(x, x)$ and nothing else. Therefore, every identity relation is reflexive, but not every reflexive relation is an identity relation.
           </p>
-          <p>
-            <strong>Irreflexivity (Strict Non-Reflexivity):</strong> A relation $R$ on $A$ is <strong>irreflexive</strong> if no element is related to itself:
+<p>
+<strong>Irreflexivity (Strict Non-Reflexivity):</strong> A relation $R$ on $A$ is <strong>irreflexive</strong> if no element is related to itself:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\forall x \in A \implies (x, x) \notin R \iff R \cap I_A = \emptyset$$
           </p>
-          <p>
-            <em>Caution:</em> "Not reflexive" is <strong>not</strong> synonymous with "irreflexive". A relation can be neither reflexive nor irreflexive if it contains $(a, a)$ for some elements $a \in A$ but lacks $(b, b)$ for some other elements $b \in A$.
+<p>
+<em>Caution:</em> "Not reflexive" is <strong>not</strong> synonymous with "irreflexive". A relation can be neither reflexive nor irreflexive if it contains $(a, a)$ for some elements $a \in A$ but lacks $(b, b)$ for some other elements $b \in A$.
           </p>
-
-          <!-- SYMMETRY -->
-          <h4>1.2.2 Symmetry, Anti-Symmetry, and Asymmetry</h4>
-          <p>
-            <strong>Definition:</strong> A relation $R$ on a set $A$ is said to be <strong>symmetric</strong> if, whenever an ordered pair belongs to $R$, its reverse ordered pair also belongs to $R$. Formally:
+<!-- SYMMETRY -->
+<h4>1.2.2 Symmetry, Anti-Symmetry, and Asymmetry</h4>
+<p>
+<strong>Definition:</strong> A relation $R$ on a set $A$ is said to be <strong>symmetric</strong> if, whenever an ordered pair belongs to $R$, its reverse ordered pair also belongs to $R$. Formally:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\forall x, y \in A, \quad (x, y) \in R \implies (y, x) \in R$$
           </p>
-          <p>
+<p>
             In the language of relation inversion, a relation is symmetric if and only if it equals its own inverse:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$R \text{ is symmetric } \iff R = R^{-1}$$
           </p>
-          <p>
-            <strong>Anti-Symmetry:</strong> A relation $R$ on a set $A$ is said to be <strong>anti-symmetric</strong> if:
+<p>
+<strong>Anti-Symmetry:</strong> A relation $R$ on a set $A$ is said to be <strong>anti-symmetric</strong> if:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\forall x, y \in A, \quad ((x, y) \in R \land (y, x) \in R) \implies x = y$$
           </p>
-          <p>
+<p>
             Equivalently, if $x \ne y$, then $(x, y)$ and $(y, x)$ cannot both belong to $R$. Classic examples include the order relation "$\le$" on the set of real numbers $\mathbb{R}$, where $x \le y$ and $y \le x \implies x = y$, and the set containment relation "$\subseteq$" on $\mathcal{P}(X)$, where $A \subseteq B$ and $B \subseteq A \implies A = B$.
           </p>
-          <p>
-            <strong>Asymmetry:</strong> A relation $R$ on $A$ is <strong>asymmetric</strong> if:
+<p>
+<strong>Asymmetry:</strong> A relation $R$ on $A$ is <strong>asymmetric</strong> if:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\forall x, y \in A, \quad (x, y) \in R \implies (y, x) \notin R$$
           </p>
-          <p>
+<p>
             Asymmetry is equivalent to being both anti-symmetric and irreflexive.
           </p>
-
-          <!-- TRANSITIVITY -->
-          <h4>1.2.3 Transitivity: The Conditional Premise</h4>
-          <p>
-            <strong>Definition:</strong> A relation $R$ on a set $A$ is said to be <strong>transitive</strong> if, whenever an element $x$ is related to $y$, and $y$ is related to $z$, it necessarily implies that $x$ is related to $z$. Formally:
+<!-- TRANSITIVITY -->
+<h4>1.2.3 Transitivity: The Conditional Premise</h4>
+<p>
+<strong>Definition:</strong> A relation $R$ on a set $A$ is said to be <strong>transitive</strong> if, whenever an element $x$ is related to $y$, and $y$ is related to $z$, it necessarily implies that $x$ is related to $z$. Formally:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\forall x, y, z \in A, \quad ((x, y) \in R \land (y, z) \in R) \implies (x, z) \in R$$
           </p>
-          <p>
-            <strong>The Vacuous Truth Condition (Examiner Trap):</strong> Transitivity is formulated as a conditional statement: $P \implies Q$, where $P \equiv ((x, y) \in R \land (y, z) \in R)$ and $Q \equiv ((x, z) \in R)$. In classical mathematical logic, the implication $P \implies Q$ is true whenever the premise $P$ is false.
+<p>
+<strong>The Vacuous Truth Condition (Examiner Trap):</strong> Transitivity is formulated as a conditional statement: $P \implies Q$, where $P \equiv ((x, y) \in R \land (y, z) \in R)$ and $Q \equiv ((x, z) \in R)$. In classical mathematical logic, the implication $P \implies Q$ is true whenever the premise $P$ is false.
           </p>
-          <p>
+<p>
             Therefore, if there do not exist elements $x, y, z \in A$ such that $(x, y) \in R$ and $(y, z) \in R$ simultaneously, the condition is satisfied vacuously. For example, consider the set $A = \{1, 2, 3\}$ and the relation $R = \{(1, 2)\}$. Here, $(1, 2) \in R$, but there is no ordered pair starting with $2$ (i.e., no $(2, k) \in R$). The premise cannot be fulfilled, meaning no contradiction can be established. Thus, $R = \{(1, 2)\}$ is <strong>transitive</strong>. Students frequently forfeit marks by asserting that such relations are non-transitive due to a perceived "lack of steps."
           </p>
-          <p>
+<p>
             To disprove transitivity, one must provide a specific triplet of elements $a, b, c \in A$ such that:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$(a, b) \in R \quad \land \quad (b, c) \in R \quad \land \quad (a, c) \notin R$$
           </p>
-
-          <!-- PART 3: EQUIVALENCE RELATIONS AND PARTITION THEORY -->
-          <h3>1.3 Equivalence Relations, Equivalence Classes, and Partition Theory</h3>
-          <p>
+<!-- PART 3: EQUIVALENCE RELATIONS AND PARTITION THEORY -->
+<h3>1.3 Equivalence Relations, Equivalence Classes, and Partition Theory</h3>
+<p>
             An <strong>equivalence relation</strong> represents the abstract mathematical realization of "sameness" or qualitative indistinguishability under a specified criterion.
           </p>
-          <p>
-            <strong>Formal Definition:</strong> A binary relation $R$ on a set $A$ is an equivalence relation if and only if it satisfies all three axioms:
+<p>
+<strong>Formal Definition:</strong> A binary relation $R$ on a set $A$ is an equivalence relation if and only if it satisfies all three axioms:
           </p>
-          <ol>
-            <li><strong>Reflexivity:</strong> $\forall a \in A, \; (a, a) \in R$</li>
-            <li><strong>Symmetry:</strong> $\forall a, b \in A, \; (a, b) \in R \implies (b, a) \in R$</li>
-            <li><strong>Transitivity:</strong> $\forall a, b, c \in A, \; ((a, b) \in R \land (b, c) \in R) \implies (a, c) \in R$</li>
-          </ol>
-
-          <!-- THEOREMS ON EQUIVALENCE RELATIONS -->
-          <h4>1.3.1 Key Theorems Governing Equivalence Relations</h4>
-          <p>
-            <strong>Theorem 1:</strong> <em>The intersection of two equivalence relations on a set $A$ is also an equivalence relation on $A$.</em>
+<ol>
+<li><strong>Reflexivity:</strong> $\forall a \in A, \; (a, a) \in R$</li>
+<li><strong>Symmetry:</strong> $\forall a, b \in A, \; (a, b) \in R \implies (b, a) \in R$</li>
+<li><strong>Transitivity:</strong> $\forall a, b, c \in A, \; ((a, b) \in R \land (b, c) \in R) \implies (a, c) \in R$</li>
+</ol>
+<!-- THEOREMS ON EQUIVALENCE RELATIONS -->
+<h4>1.3.1 Key Theorems Governing Equivalence Relations</h4>
+<p>
+<strong>Theorem 1:</strong> <em>The intersection of two equivalence relations on a set $A$ is also an equivalence relation on $A$.</em>
+</p>
+<p>
+<em>Rigorous Proof:</em> Let $R$ and $S$ be two equivalence relations on $A$. We analyze $R \cap S$:
           </p>
-          <p>
-            <em>Rigorous Proof:</em> Let $R$ and $S$ be two equivalence relations on $A$. We analyze $R \cap S$:
-          </p>
-          <ul>
-            <li><strong>Reflexivity:</strong> Let $a \in A$ be arbitrary. Since $R$ is reflexive, $(a, a) \in R$. Since $S$ is reflexive, $(a, a) \in S$. By set intersection definition, $(a, a) \in R \cap S$. Thus, $R \cap S$ is reflexive.</li>
-            <li><strong>Symmetry:</strong> Let $(a, b) \in R \cap S$. Then $(a, b) \in R$ and $(a, b) \in S$. Because $R$ and $S$ are symmetric, $(b, a) \in R$ and $(b, a) \in S$. Therefore, $(b, a) \in R \cap S$, establishing symmetry.</li>
-            <li><strong>Transitivity:</strong> Let $(a, b) \in R \cap S$ and $(b, c) \in R \cap S$. This implies:
+<ul>
+<li><strong>Reflexivity:</strong> Let $a \in A$ be arbitrary. Since $R$ is reflexive, $(a, a) \in R$. Since $S$ is reflexive, $(a, a) \in S$. By set intersection definition, $(a, a) \in R \cap S$. Thus, $R \cap S$ is reflexive.</li>
+<li><strong>Symmetry:</strong> Let $(a, b) \in R \cap S$. Then $(a, b) \in R$ and $(a, b) \in S$. Because $R$ and $S$ are symmetric, $(b, a) \in R$ and $(b, a) \in S$. Therefore, $(b, a) \in R \cap S$, establishing symmetry.</li>
+<li><strong>Transitivity:</strong> Let $(a, b) \in R \cap S$ and $(b, c) \in R \cap S$. This implies:
               $$((a, b) \in R \land (a, b) \in S) \quad \text{and} \quad ((b, c) \in R \land (b, c) \in S)$$
               Grouping by relations: $((a, b) \in R \land (b, c) \in R) \implies (a, c) \in R$ (since $R$ is transitive). Similarly, $((a, b) \in S \land (b, c) \in S) \implies (a, c) \in S$ (since $S$ is transitive). Hence, $(a, c) \in R \cap S$, proving transitivity.
             </li>
-          </ul>
-          <p>
+</ul>
+<p>
             Since $R \cap S$ is reflexive, symmetric, and transitive, it is an equivalence relation on $A$. $\blacksquare$
           </p>
-          <p>
-            <strong>Theorem 2:</strong> <em>The union of two equivalence relations on a set $A$ is NOT necessarily an equivalence relation on $A$.</em>
+<p>
+<strong>Theorem 2:</strong> <em>The union of two equivalence relations on a set $A$ is NOT necessarily an equivalence relation on $A$.</em>
+</p>
+<p>
+<em>Counterexample:</em> Let $A = \{1, 2, 3\}$. Define:
           </p>
-          <p>
-            <em>Counterexample:</em> Let $A = \{1, 2, 3\}$. Define:
-          </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$R = \{(1, 1), (2, 2), (3, 3), (1, 2), (2, 1)\}$$
             $$S = \{(1, 1), (2, 2), (3, 3), (2, 3), (3, 2)\}$$
           </p>
-          <p>
+<p>
             Both $R$ and $S$ are reflexive, symmetric, and transitive, hence they are equivalence relations. Now consider their union:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$R \cup S = \{(1, 1), (2, 2), (3, 3), (1, 2), (2, 1), (2, 3), (3, 2)\}$$
           </p>
-          <p>
+<p>
             Notice that $(1, 2) \in R \cup S$ and $(2, 3) \in R \cup S$. However, for $R \cup S$ to be transitive, we must have $(1, 3) \in R \cup S$. Inspection reveals $(1, 3) \notin R \cup S$. Thus, transitivity fails, and $R \cup S$ is not an equivalence relation.
           </p>
-
-          <!-- EQUIVALENCE CLASSES -->
-          <h4>1.3.2 Equivalence Classes: Definitions and Invariants</h4>
-          <p>
+<!-- EQUIVALENCE CLASSES -->
+<h4>1.3.2 Equivalence Classes: Definitions and Invariants</h4>
+<p>
             Let $R$ be an equivalence relation defined on a non-empty set $A$. Let $a \in A$. The <strong>equivalence class</strong> determined by the representative element $a$, denoted by $[a]$, or alternatively $\bar{a}$ or $C(a)$, is the set of all elements in $A$ that are related to $a$ under $R$:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$[a] = \{x \in A : (x, a) \in R\}$$
           </p>
-          <p>
+<p>
             By symmetry of $R$, $(x, a) \in R \iff (a, x) \in R$, so $[a] = \{x \in A : (a, x) \in R\}$.
           </p>
-          <p>
-            <strong>Fundamental Properties of Equivalence Classes:</strong>
-          </p>
-          <ol>
-            <li><strong>Non-emptiness:</strong> $\forall a \in A, \; a \in [a]$. This follows immediately from reflexivity, $(a, a) \in R$. Hence, an equivalence class is never empty: $[a] \ne \emptyset$.</li>
-            <li><strong>Equivalence of Classes:</strong> For any $a, b \in A$, the following statements are logically equivalent:
+<p>
+<strong>Fundamental Properties of Equivalence Classes:</strong>
+</p>
+<ol>
+<li><strong>Non-emptiness:</strong> $\forall a \in A, \; a \in [a]$. This follows immediately from reflexivity, $(a, a) \in R$. Hence, an equivalence class is never empty: $[a] \ne \emptyset$.</li>
+<li><strong>Equivalence of Classes:</strong> For any $a, b \in A$, the following statements are logically equivalent:
               <p style="text-align: center;">
                 $$(a, b) \in R \iff [a] = [b] \iff [a] \cap [b] \ne \emptyset$$
               </p>
-            </li>
-            <li><strong>Disjointness or Identity:</strong> Any two equivalence classes are either strictly pairwise disjoint or completely identical:
+</li>
+<li><strong>Disjointness or Identity:</strong> Any two equivalence classes are either strictly pairwise disjoint or completely identical:
               <p style="text-align: center;">
                 $$\forall a, b \in A, \quad \text{either } [a] \cap [b] = \emptyset \quad \text{or} \quad [a] = [b]$$
               </p>
-              <em>Proof:</em> Assume $[a] \cap [b] \ne \emptyset$. Then there exists $x \in A$ such that $x \in [a]$ and $x \in [b]$. By definition, $(x, a) \in R$ and $(x, b) \in R$. By symmetry, $(a, x) \in R$. Applying transitivity to $(a, x) \in R$ and $(x, b) \in R$ yields $(a, b) \in R$.
-              <br><br>
+<em>Proof:</em> Assume $[a] \cap [b] \ne \emptyset$. Then there exists $x \in A$ such that $x \in [a]$ and $x \in [b]$. By definition, $(x, a) \in R$ and $(x, b) \in R$. By symmetry, $(a, x) \in R$. Applying transitivity to $(a, x) \in R$ and $(x, b) \in R$ yields $(a, b) \in R$.
+              <br/><br/>
               Now let $y \in [a]$ be arbitrary. Then $(y, a) \in R$. Since $(a, b) \in R$, by transitivity we obtain $(y, b) \in R \implies y \in [b]$. Thus, $[a] \subseteq [b]$. Reversing the roles by symmetry yields $[b] \subseteq [a]$. Consequently, $[a] = [b]$. Thus, if they share even a single element, they are identical. $\blacksquare$
             </li>
-          </ol>
-
-          <!-- PARTITION OF A SET -->
-          <h4>1.3.3 The Fundamental Theorem of Equivalence Relations (Partition Theory)</h4>
-          <p>
+</ol>
+<!-- PARTITION OF A SET -->
+<h4>1.3.3 The Fundamental Theorem of Equivalence Relations (Partition Theory)</h4>
+<p>
             A <strong>partition</strong> $\mathcal{P}$ of a non-empty set $A$ is a collection of non-empty, pairwise disjoint subsets $\{A_i\}_{i \in I}$ of $A$ such that their union covers the entire set $A$:
           </p>
-          <ol>
-            <li>$A_i \ne \emptyset$ for all $i \in I$</li>
-            <li>$A_i \cap A_j = \emptyset$ whenever $i \ne j$ (mutually disjoint)</li>
-            <li>$\bigcup_{i \in I} A_i = A$ (collectively exhaustive)</li>
-          </ol>
-          <p>
-            <strong>The Fundamental Theorem:</strong> <em>An equivalence relation $R$ on a set $A$ partitions the set $A$ into a collection of mutually disjoint equivalence classes whose union is $A$. Conversely, every partition of $A$ uniquely defines an equivalence relation on $A$ for which the partition blocks are the equivalence classes.</em>
-          </p>
-          <p>
+<ol>
+<li>$A_i \ne \emptyset$ for all $i \in I$</li>
+<li>$A_i \cap A_j = \emptyset$ whenever $i \ne j$ (mutually disjoint)</li>
+<li>$\bigcup_{i \in I} A_i = A$ (collectively exhaustive)</li>
+</ol>
+<p>
+<strong>The Fundamental Theorem:</strong> <em>An equivalence relation $R$ on a set $A$ partitions the set $A$ into a collection of mutually disjoint equivalence classes whose union is $A$. Conversely, every partition of $A$ uniquely defines an equivalence relation on $A$ for which the partition blocks are the equivalence classes.</em>
+</p>
+<p>
             The set of all equivalence classes is known as the <strong>Quotient Set</strong> of $A$ modulo $R$, denoted by:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$A / R = \{[a] : a \in A\}$$
           </p>
-
-          <!-- COMBINATORICS OF RELATIONS -->
-          <h4>1.3.4 Combinatorial Enumeration of Relations on Finite Sets</h4>
-          <p>
+<!-- COMBINATORICS OF RELATIONS -->
+<h4>1.3.4 Combinatorial Enumeration of Relations on Finite Sets</h4>
+<p>
             Let $A$ be a finite set with $|A| = n$.
           </p>
-          <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
-            <thead>
-              <tr style="border-bottom: 2px solid #bf5a3c; text-align: left;">
-                <th style="padding: 8px;">Type of Relation</th>
-                <th style="padding: 8px;">Counting Formula</th>
-                <th style="padding: 8px;">Mathematical Derivation / Logic</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid #ddd;">
-                <td style="padding: 8px;"><strong>Total Relations</strong></td>
-                <td style="padding: 8px;">$2^{n^2}$</td>
-                <td style="padding: 8px;">Each of the $n^2$ ordered pairs in $A \times A$ can be independently included or excluded ($2^{n^2}$).</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #ddd;">
-                <td style="padding: 8px;"><strong>Reflexive Relations</strong></td>
-                <td style="padding: 8px;">$2^{n(n-1)}$</td>
-                <td style="padding: 8px;">All $n$ diagonal pairs $(x, x)$ must be included (1 choice). The remaining $n^2 - n = n(n-1)$ off-diagonal pairs can be freely included or excluded ($2^{n(n-1)}$).</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #ddd;">
-                <td style="padding: 8px;"><strong>Symmetric Relations</strong></td>
-                <td style="padding: 8px;">$2^{\frac{n(n+1)}{2}}$</td>
-                <td style="padding: 8px;">There are $n$ diagonal pairs with 2 choices each. The $\frac{n(n-1)}{2}$ unordered off-diagonal pairs $\{x, y\}$ dictate that $(x, y)$ and $(y, x)$ must enter or exit together ($2^{\frac{n(n-1)}{2}}$). Total = $2^n \cdot 2^{\frac{n(n-1)}{2}} = 2^{\frac{n(n+1)}{2}}$.</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #ddd;">
-                <td style="padding: 8px;"><strong>Reflexive &amp; Symmetric</strong></td>
-                <td style="padding: 8px;">$2^{\frac{n(n-1)}{2}}$</td>
-                <td style="padding: 8px;">All $n$ diagonal pairs are forced to be present ($1^n = 1$). The $\frac{n(n-1)}{2}$ off-diagonal symmetrical pairs have 2 choices each.</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #ddd;">
-                <td style="padding: 8px;"><strong>Equivalence Relations</strong></td>
-                <td style="padding: 8px;">$B_n$ (Bell Number)</td>
-                <td style="padding: 8px;">Corresponds bijectively to partitions of a set of size $n$. Recurrence: $B_{n+1} = \sum_{k=0}^{n} \binom{n}{k} B_k$, with $B_0 = 1, B_1 = 1, B_2 = 2, B_3 = 5, B_4 = 15$.</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <!-- PART 4: FUNCTIONS AS SPECIAL RELATIONS -->
-          <h3>1.4 Functions as Single-Valued Relations</h3>
-          <p>
+<table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+<thead>
+<tr style="border-bottom: 2px solid #bf5a3c; text-align: left;">
+<th style="padding: 8px;">Type of Relation</th>
+<th style="padding: 8px;">Counting Formula</th>
+<th style="padding: 8px;">Mathematical Derivation / Logic</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px;"><strong>Total Relations</strong></td>
+<td style="padding: 8px;">$2^{n^2}$</td>
+<td style="padding: 8px;">Each of the $n^2$ ordered pairs in $A \times A$ can be independently included or excluded ($2^{n^2}$).</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px;"><strong>Reflexive Relations</strong></td>
+<td style="padding: 8px;">$2^{n(n-1)}$</td>
+<td style="padding: 8px;">All $n$ diagonal pairs $(x, x)$ must be included (1 choice). The remaining $n^2 - n = n(n-1)$ off-diagonal pairs can be freely included or excluded ($2^{n(n-1)}$).</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px;"><strong>Symmetric Relations</strong></td>
+<td style="padding: 8px;">$2^{\frac{n(n+1)}{2}}$</td>
+<td style="padding: 8px;">There are $n$ diagonal pairs with 2 choices each. The $\frac{n(n-1)}{2}$ unordered off-diagonal pairs $\{x, y\}$ dictate that $(x, y)$ and $(y, x)$ must enter or exit together ($2^{\frac{n(n-1)}{2}}$). Total = $2^n \cdot 2^{\frac{n(n-1)}{2}} = 2^{\frac{n(n+1)}{2}}$.</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px;"><strong>Reflexive &amp; Symmetric</strong></td>
+<td style="padding: 8px;">$2^{\frac{n(n-1)}{2}}$</td>
+<td style="padding: 8px;">All $n$ diagonal pairs are forced to be present ($1^n = 1$). The $\frac{n(n-1)}{2}$ off-diagonal symmetrical pairs have 2 choices each.</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px;"><strong>Equivalence Relations</strong></td>
+<td style="padding: 8px;">$B_n$ (Bell Number)</td>
+<td style="padding: 8px;">Corresponds bijectively to partitions of a set of size $n$. Recurrence: $B_{n+1} = \sum_{k=0}^{n} \binom{n}{k} B_k$, with $B_0 = 1, B_1 = 1, B_2 = 2, B_3 = 5, B_4 = 15$.</td>
+</tr>
+</tbody>
+</table>
+<!-- PART 4: FUNCTIONS AS SPECIAL RELATIONS -->
+<h3>1.4 Functions as Single-Valued Relations</h3>
+<p>
             A <strong>function</strong> (or mapping) $f$ from a set $A$ to a set $B$, denoted $f: A \to B$, is a specialized subset of $A \times B$ conforming to two foundational existence and uniqueness conditions:
           </p>
-          <ol>
-            <li><strong>Existence (Totality):</strong> Every element in the domain $A$ must be associated with an element in the codomain $B$:
+<ol>
+<li><strong>Existence (Totality):</strong> Every element in the domain $A$ must be associated with an element in the codomain $B$:
               $$\forall x \in A, \; \exists\, y \in B \text{ such that } (x, y) \in f$$
             </li>
-            <li><strong>Uniqueness (Single-Valuedness):</strong> No element in $A$ can be associated with more than one element in $B$:
+<li><strong>Uniqueness (Single-Valuedness):</strong> No element in $A$ can be associated with more than one element in $B$:
               $$\forall x \in A \text{ and } \forall y_1, y_2 \in B, \; ((x, y_1) \in f \land (x, y_2) \in f) \implies y_1 = y_2$$
             </li>
-          </ol>
-          <p>
+</ol>
+<p>
             When $(x, y) \in f$, we write $f(x) = y$, where $y$ is called the <em>image</em> of $x$ under $f$, and $x$ is called a <em>pre-image</em> of $y$ under $f$.
           </p>
-          <p>
-            <strong>Total Functions Count:</strong> If $|A| = m$ and $|B| = n$, each of the $m$ distinct domain elements can be mapped independently to any of the $n$ codomain elements. Thus:
+<p>
+<strong>Total Functions Count:</strong> If $|A| = m$ and $|B| = n$, each of the $m$ distinct domain elements can be mapped independently to any of the $n$ codomain elements. Thus:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$N_{\text{functions}} = n^m = |B|^{|A|}$$
           </p>
-
-          <!-- PART 5: TAXONOMY OF FUNCTIONS -->
-          <h3>1.5 Comprehensive Classification of Functions</h3>
-          <p>
+<!-- PART 5: TAXONOMY OF FUNCTIONS -->
+<h3>1.5 Comprehensive Classification of Functions</h3>
+<p>
             Functions are classified by the structural mapping between domain and codomain elements. CBSE questions routinely demand analytical proofs confirming or refuting these classifications.
           </p>
-
-          <!-- INJECTIVE -->
-          <h4>1.5.1 Injective (One-One) Functions</h4>
-          <p>
-            <strong>Definition:</strong> A function $f: A \to B$ is called <strong>injective</strong> (or one-to-one) if distinct elements of $A$ map to distinct images in $B$.
+<!-- INJECTIVE -->
+<h4>1.5.1 Injective (One-One) Functions</h4>
+<p>
+<strong>Definition:</strong> A function $f: A \to B$ is called <strong>injective</strong> (or one-to-one) if distinct elements of $A$ map to distinct images in $B$.
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\forall x_1, x_2 \in A, \quad x_1 \ne x_2 \implies f(x_1) \ne f(x_2)$$
           </p>
-          <p>
-            <strong>Contrapositive Algebraic Criterion (Examiner Proof Technique):</strong> In formal board examination proofs, establishing the conditional contrapositive is the required approach:
+<p>
+<strong>Contrapositive Algebraic Criterion (Examiner Proof Technique):</strong> In formal board examination proofs, establishing the conditional contrapositive is the required approach:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\forall x_1, x_2 \in A, \quad f(x_1) = f(x_2) \implies x_1 = x_2$$
           </p>
-          <p>
+<p>
             If $f(x_1) = f(x_2)$ allows any non-trivial solution where $x_1 \ne x_2$, the function is <strong>many-one</strong>.
           </p>
-          <p>
-            <strong>Calculus Criterion (Monotonicity Test):</strong> Let $f: I \to \mathbb{R}$ be a differentiable function on an open interval $I \subseteq \mathbb{R}$.
+<p>
+<strong>Calculus Criterion (Monotonicity Test):</strong> Let $f: I \to \mathbb{R}$ be a differentiable function on an open interval $I \subseteq \mathbb{R}$.
           </p>
-          <ul>
-            <li>If the first derivative is strictly positive throughout the interval, i.e., $f'(x) > 0 \; \forall x \in I$ (strictly increasing), or strictly negative throughout the interval, i.e., $f'(x) < 0 \; \forall x \in I$ (strictly decreasing), then $f$ is strictly monotonic on $I$.</li>
-            <li>Every strictly monotonic function is guaranteed to be <strong>injective</strong> on its domain.</li>
-            <li>If $f'(x)$ changes sign across the domain, there exist distinct points having the same image, proving the function is not injective (many-one).</li>
-          </ul>
-          <p>
-            <strong>Geometric Criterion (The Horizontal Line Test):</strong> A function $y = f(x)$ graphed in the Cartesian plane is injective if and only if every horizontal line $y = k$ (where $k \in \operatorname{Codomain}(f)$) intersects the graph at <em>most once</em>. If any horizontal line intersects the graph at two or more distinct points, those coordinates represent distinct inputs $x_1 \ne x_2$ producing identical output $f(x_1) = f(x_2) = k$, confirming the function is many-one.
+<ul>
+<li>If the first derivative is strictly positive throughout the interval, i.e., $f'(x) &gt; 0 \; \forall x \in I$ (strictly increasing), or strictly negative throughout the interval, i.e., $f'(x) &lt; 0 \; \forall x \in I$ (strictly decreasing), then $f$ is strictly monotonic on $I$.</li>
+<li>Every strictly monotonic function is guaranteed to be <strong>injective</strong> on its domain.</li>
+<li>If $f'(x)$ changes sign across the domain, there exist distinct points having the same image, proving the function is not injective (many-one).</li>
+</ul>
+<p>
+<strong>Geometric Criterion (The Horizontal Line Test):</strong> A function $y = f(x)$ graphed in the Cartesian plane is injective if and only if every horizontal line $y = k$ (where $k \in \operatorname{Codomain}(f)$) intersects the graph at <em>most once</em>. If any horizontal line intersects the graph at two or more distinct points, those coordinates represent distinct inputs $x_1 \ne x_2$ producing identical output $f(x_1) = f(x_2) = k$, confirming the function is many-one.
           </p>
-          <p>
-            <strong>Cardinality Constraint for Injectivity:</strong> For an injective function $f: A \to B$ to exist between finite sets, the target set must contain at least as many elements as the domain:
+<p>
+<strong>Cardinality Constraint for Injectivity:</strong> For an injective function $f: A \to B$ to exist between finite sets, the target set must contain at least as many elements as the domain:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$|A| \le |B|$$
           </p>
-          <p>
+<p>
             If $|A| = m$ and $|B| = n$ with $m \le n$, the number of possible injective functions corresponds to permutations:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$N_{\text{injective}} = {}^{n}P_m = \frac{n!}{(n-m)!}$$
           </p>
-          <p>
-            If $m > n$, by Dirichlet's Box (Pigeonhole) Principle, $N_{\text{injective}} = 0$.
+<p>
+            If $m &gt; n$, by Dirichlet's Box (Pigeonhole) Principle, $N_{\text{injective}} = 0$.
           </p>
-
-          <!-- SURJECTIVE -->
-          <h4>1.5.2 Surjective (Onto) Functions</h4>
-          <p>
-            <strong>Definition:</strong> A function $f: A \to B$ is called <strong>surjective</strong> (or onto) if every element of the codomain $B$ has at least one corresponding pre-image in the domain $A$.
+<!-- SURJECTIVE -->
+<h4>1.5.2 Surjective (Onto) Functions</h4>
+<p>
+<strong>Definition:</strong> A function $f: A \to B$ is called <strong>surjective</strong> (or onto) if every element of the codomain $B$ has at least one corresponding pre-image in the domain $A$.
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\forall y \in B, \; \exists\, x \in A \text{ such that } f(x) = y$$
           </p>
-          <p>
+<p>
             Equivalently, a function is surjective if and only if its range equals its codomain:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\operatorname{Ran}(f) = f(A) = B$$
           </p>
-          <p>
+<p>
             If $\operatorname{Ran}(f) \subsetneq B$, there exists at least one element $y \in B$ lacking any pre-image in $A$. In this case, the function is termed <strong>into</strong>.
           </p>
-          <p>
-            <strong>Analytical Proof Algorithm for Surjectivity:</strong>
-          </p>
-          <ol>
-            <li>Set up the equation $y = f(x)$, treating $y$ as an arbitrary variable belonging to the codomain $B$.</li>
-            <li>Perform algebraic operations to invert the equation, expressing $x$ explicitly in terms of $y$: $x = g(y)$.</li>
-            <li>Analyze whether for <em>every</em> possible value $y \in B$, the resulting $x$ is guaranteed to:
+<p>
+<strong>Analytical Proof Algorithm for Surjectivity:</strong>
+</p>
+<ol>
+<li>Set up the equation $y = f(x)$, treating $y$ as an arbitrary variable belonging to the codomain $B$.</li>
+<li>Perform algebraic operations to invert the equation, expressing $x$ explicitly in terms of $y$: $x = g(y)$.</li>
+<li>Analyze whether for <em>every</em> possible value $y \in B$, the resulting $x$ is guaranteed to:
               <ul>
-                <li>Be mathematically defined (no zero denominators, no real roots of negative numbers, etc.).</li>
-                <li>Belong strictly to the specified domain set $A$.</li>
-              </ul>
-            </li>
-            <li>Confirm by back-substitution that $f(g(y)) = y$. If any value $y \in B$ yields an $x \notin A$ or undefined expression, surjectivity fails.</li>
-          </ol>
-          <p>
-            <strong>Cardinality Constraint for Surjectivity:</strong> For a surjective function $f: A \to B$ to exist between finite sets, the domain must contain at least as many elements as the codomain:
+<li>Be mathematically defined (no zero denominators, no real roots of negative numbers, etc.).</li>
+<li>Belong strictly to the specified domain set $A$.</li>
+</ul>
+</li>
+<li>Confirm by back-substitution that $f(g(y)) = y$. If any value $y \in B$ yields an $x \notin A$ or undefined expression, surjectivity fails.</li>
+</ol>
+<p>
+<strong>Cardinality Constraint for Surjectivity:</strong> For a surjective function $f: A \to B$ to exist between finite sets, the domain must contain at least as many elements as the codomain:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$|A| \ge |B|$$
           </p>
-          <p>
-            If $|A| = m$ and $|B| = n$ with $m < n$, then $N_{\text{surjective}} = 0$.
+<p>
+            If $|A| = m$ and $|B| = n$ with $m &lt; n$, then $N_{\text{surjective}} = 0$.
           </p>
-          <p>
+<p>
             When $m \ge n$, the number of surjective functions can be calculated using Stirling Numbers of the Second Kind $S(m, n)$ or the Principle of Inclusion-Exclusion (PIE):
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$N_{\text{surjective}} = \sum_{k=0}^{n} (-1)^k \binom{n}{k} (n-k)^m = n! \, S(m, n)$$
           </p>
-
-          <!-- BIJECTIVE -->
-          <h4>1.5.3 Bijective (One-One and Onto) Functions</h4>
-          <p>
-            <strong>Definition:</strong> A function $f: A \to B$ is called <strong>bijective</strong> (or a one-to-one correspondence) if it is simultaneously injective and surjective:
+<!-- BIJECTIVE -->
+<h4>1.5.3 Bijective (One-One and Onto) Functions</h4>
+<p>
+<strong>Definition:</strong> A function $f: A \to B$ is called <strong>bijective</strong> (or a one-to-one correspondence) if it is simultaneously injective and surjective:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$f \text{ is bijective} \iff (f \text{ is one-one}) \land (f \text{ is onto})$$
           </p>
-          <p>
-            <strong>Cardinality Equivalence for Finite Sets:</strong> If sets $A$ and $B$ are finite, a bijection can exist between them if and only if:
+<p>
+<strong>Cardinality Equivalence for Finite Sets:</strong> If sets $A$ and $B$ are finite, a bijection can exist between them if and only if:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$|A| = |B| = n$$
           </p>
-          <p>
+<p>
             Under this condition ($|A| = |B| = n$), the following statements are logically equivalent:
           </p>
-          <ul>
-            <li>$f: A \to B$ is injective.</li>
-            <li>$f: A \to B$ is surjective.</li>
-            <li>$f: A \to B$ is bijective.</li>
-          </ul>
-          <p>
+<ul>
+<li>$f: A \to B$ is injective.</li>
+<li>$f: A \to B$ is surjective.</li>
+<li>$f: A \to B$ is bijective.</li>
+</ul>
+<p>
             The number of bijective functions between two finite sets of identical size $n$ is given by:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$N_{\text{bijective}} = n!$$
           </p>
-
-          <!-- SUMMARY COMPARISON TABLE -->
-          <h4>1.5.4 Comprehensive Function Classification Matrix</h4>
-          <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
-            <thead>
-              <tr style="border-bottom: 2px solid #bf5a3c; text-align: left;">
-                <th style="padding: 8px;">Classification</th>
-                <th style="padding: 8px;">Analytical Condition</th>
-                <th style="padding: 8px;">Horizontal Line Test</th>
-                <th style="padding: 8px;">Set Sizing Requirement</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid #ddd;">
-                <td style="padding: 8px;"><strong>Injective (One-One)</strong></td>
-                <td style="padding: 8px;">$f(x_1) = f(x_2) \implies x_1 = x_2$</td>
-                <td style="padding: 8px;">Intersects at most once ($\le 1$)</td>
-                <td style="padding: 8px;">$|A| \le |B|$</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #ddd;">
-                <td style="padding: 8px;"><strong>Many-One</strong></td>
-                <td style="padding: 8px;">$\exists x_1 \ne x_2 \text{ with } f(x_1) = f(x_2)$</td>
-                <td style="padding: 8px;">Intersects more than once ($\ge 2$)</td>
-                <td style="padding: 8px;">No restriction</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #ddd;">
-                <td style="padding: 8px;"><strong>Surjective (Onto)</strong></td>
-                <td style="padding: 8px;">$\operatorname{Ran}(f) = \operatorname{Codomain}(f)$</td>
-                <td style="padding: 8px;">Intersects at least once ($\ge 1$)</td>
-                <td style="padding: 8px;">$|A| \ge |B|$</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #ddd;">
-                <td style="padding: 8px;"><strong>Into</strong></td>
-                <td style="padding: 8px;">$\operatorname{Ran}(f) \subsetneq \operatorname{Codomain}(f)$</td>
-                <td style="padding: 8px;">Line exists with zero intersections</td>
-                <td style="padding: 8px;">No restriction</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #ddd;">
-                <td style="padding: 8px;"><strong>Bijective</strong></td>
-                <td style="padding: 8px;">Both Injective and Surjective</td>
-                <td style="padding: 8px;">Intersects exactly once ($= 1$)</td>
-                <td style="padding: 8px;">$|A| = |B|$ (for finite sets)</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <!-- PART 6: COMPOSITION OF FUNCTIONS -->
-          <h3>1.6 Composition of Functions: Structural Mechanics</h3>
-          <p>
+<!-- SUMMARY COMPARISON TABLE -->
+<h4>1.5.4 Comprehensive Function Classification Matrix</h4>
+<table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+<thead>
+<tr style="border-bottom: 2px solid #bf5a3c; text-align: left;">
+<th style="padding: 8px;">Classification</th>
+<th style="padding: 8px;">Analytical Condition</th>
+<th style="padding: 8px;">Horizontal Line Test</th>
+<th style="padding: 8px;">Set Sizing Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px;"><strong>Injective (One-One)</strong></td>
+<td style="padding: 8px;">$f(x_1) = f(x_2) \implies x_1 = x_2$</td>
+<td style="padding: 8px;">Intersects at most once ($\le 1$)</td>
+<td style="padding: 8px;">$|A| \le |B|$</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px;"><strong>Many-One</strong></td>
+<td style="padding: 8px;">$\exists x_1 \ne x_2 \text{ with } f(x_1) = f(x_2)$</td>
+<td style="padding: 8px;">Intersects more than once ($\ge 2$)</td>
+<td style="padding: 8px;">No restriction</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px;"><strong>Surjective (Onto)</strong></td>
+<td style="padding: 8px;">$\operatorname{Ran}(f) = \operatorname{Codomain}(f)$</td>
+<td style="padding: 8px;">Intersects at least once ($\ge 1$)</td>
+<td style="padding: 8px;">$|A| \ge |B|$</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px;"><strong>Into</strong></td>
+<td style="padding: 8px;">$\operatorname{Ran}(f) \subsetneq \operatorname{Codomain}(f)$</td>
+<td style="padding: 8px;">Line exists with zero intersections</td>
+<td style="padding: 8px;">No restriction</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px;"><strong>Bijective</strong></td>
+<td style="padding: 8px;">Both Injective and Surjective</td>
+<td style="padding: 8px;">Intersects exactly once ($= 1$)</td>
+<td style="padding: 8px;">$|A| = |B|$ (for finite sets)</td>
+</tr>
+</tbody>
+</table>
+<!-- PART 6: COMPOSITION OF FUNCTIONS -->
+<h3>1.6 Composition of Functions: Structural Mechanics</h3>
+<p>
             Function composition represents the sequential chained evaluation of mappings.
           </p>
-          <p>
-            <strong>Definition:</strong> Let $f: A \to B$ and $g: B \to C$ be two functions. The <strong>composite function</strong>, denoted by $g \circ f$ (read as "$g$ circle $f$" or "$g$ composed with $f$"), is a mapping from $A$ to $C$ defined by:
+<p>
+<strong>Definition:</strong> Let $f: A \to B$ and $g: B \to C$ be two functions. The <strong>composite function</strong>, denoted by $g \circ f$ (read as "$g$ circle $f$" or "$g$ composed with $f$"), is a mapping from $A$ to $C$ defined by:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$(g \circ f)(x) = g(f(x)), \quad \forall x \in A$$
           </p>
-          <p>
-            <strong>Existence Criterion:</strong> The composite function $g \circ f$ is mathematically defined if and only if the range of the inner function $f$ is a subset of the domain of the outer function $g$:
+<p>
+<strong>Existence Criterion:</strong> The composite function $g \circ f$ is mathematically defined if and only if the range of the inner function $f$ is a subset of the domain of the outer function $g$:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\operatorname{Ran}(f) \subseteq \operatorname{Dom}(g)$$
           </p>
-          <p>
+<p>
             If $\operatorname{Ran}(f) \not\subseteq \operatorname{Dom}(g)$, $g(f(x))$ cannot be evaluated for elements $x$ whose image $f(x)$ falls outside the domain of $g$. In such cases, the domain of $g \circ f$ must be restricted:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\operatorname{Dom}(g \circ f) = \{x \in \operatorname{Dom}(f) : f(x) \in \operatorname{Dom}(g)\}$$
           </p>
-
-          <!-- PROPERTIES OF COMPOSITION -->
-          <h4>1.6.1 Structural Properties of Function Composition</h4>
-          <ol>
-            <li><strong>Non-Commutativity:</strong> In general, function composition does not commute:
+<!-- PROPERTIES OF COMPOSITION -->
+<h4>1.6.1 Structural Properties of Function Composition</h4>
+<ol>
+<li><strong>Non-Commutativity:</strong> In general, function composition does not commute:
               $$g \circ f \ne f \circ g$$
               Even when both operations exist (e.g., $f: A \to A$ and $g: A \to A$), $g(f(x))$ and $f(g(x))$ typically evaluate to completely distinct functional expressions.
             </li>
-            <li><strong>Associativity:</strong> Function composition is strictly associative. Let $f: A \to B$, $g: B \to C$, and $h: C \to D$. Then:
+<li><strong>Associativity:</strong> Function composition is strictly associative. Let $f: A \to B$, $g: B \to C$, and $h: C \to D$. Then:
               $$h \circ (g \circ f) = (h \circ g) \circ f$$
               <em>Proof:</em> Let $x \in A$.
               $$\big(h \circ (g \circ f)\big)(x) = h\big((g \circ f)(x)\big) = h\big(g(f(x))\big)$$
               $$\big((h \circ g) \circ f\big)(x) = (h \circ g)(f(x)) = h\big(g(f(x))\big)$$
               Since both mappings have identical domains ($A$), identical codomains ($D$), and map every $x \in A$ to the same value in $D$, the equality holds. $\blacksquare$
             </li>
-            <li><strong>Interaction with Identity Functions:</strong> Let $f: A \to B$. If $I_A: A \to A$ and $I_B: B \to B$ are the identity functions on sets $A$ and $B$ respectively:
+<li><strong>Interaction with Identity Functions:</strong> Let $f: A \to B$. If $I_A: A \to A$ and $I_B: B \to B$ are the identity functions on sets $A$ and $B$ respectively:
               $$f \circ I_A = f \quad \text{and} \quad I_B \circ f = f$$
             </li>
-          </ol>
-
-          <!-- INHERITANCE THEOREMS -->
-          <h4>1.6.2 Inheritance of Mapping Properties Through Composition</h4>
-          <p>
-            <strong>Theorem 3 (Preservation of Injectivity):</strong> <em>If $f: A \to B$ and $g: B \to C$ are both injective, then the composite function $g \circ f: A \to C$ is also injective.</em>
+</ol>
+<!-- INHERITANCE THEOREMS -->
+<h4>1.6.2 Inheritance of Mapping Properties Through Composition</h4>
+<p>
+<strong>Theorem 3 (Preservation of Injectivity):</strong> <em>If $f: A \to B$ and $g: B \to C$ are both injective, then the composite function $g \circ f: A \to C$ is also injective.</em>
+</p>
+<p>
+<em>Proof:</em> Let $x_1, x_2 \in A$. Assume:
           </p>
-          <p>
-            <em>Proof:</em> Let $x_1, x_2 \in A$. Assume:
-          </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$(g \circ f)(x_1) = (g \circ f)(x_2) \implies g(f(x_1)) = g(f(x_2))$$
           </p>
-          <p>
+<p>
             Since $g$ is injective, $g(u) = g(v) \implies u = v$. Applying this where $u = f(x_1)$ and $v = f(x_2)$:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$f(x_1) = f(x_2)$$
           </p>
-          <p>
+<p>
             Since $f$ is also injective, $f(x_1) = f(x_2) \implies x_1 = x_2$. Hence, $g \circ f$ is injective. $\blacksquare$
           </p>
-          <p>
-            <strong>Theorem 4 (Preservation of Surjectivity):</strong> <em>If $f: A \to B$ and $g: B \to C$ are both surjective, then $g \circ f: A \to C$ is also surjective.</em>
+<p>
+<strong>Theorem 4 (Preservation of Surjectivity):</strong> <em>If $f: A \to B$ and $g: B \to C$ are both surjective, then $g \circ f: A \to C$ is also surjective.</em>
+</p>
+<p>
+<em>Proof:</em> Let $z \in C$ be arbitrary. Since $g: B \to C$ is surjective, there exists an element $y \in B$ such that $g(y) = z$. Since $f: A \to B$ is surjective, for that element $y \in B$, there exists an element $x \in A$ such that $f(x) = y$. Substituting $y = f(x)$ into the first expression:
           </p>
-          <p>
-            <em>Proof:</em> Let $z \in C$ be arbitrary. Since $g: B \to C$ is surjective, there exists an element $y \in B$ such that $g(y) = z$. Since $f: A \to B$ is surjective, for that element $y \in B$, there exists an element $x \in A$ such that $f(x) = y$. Substituting $y = f(x)$ into the first expression:
-          </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$g(f(x)) = z \implies (g \circ f)(x) = z$$
           </p>
-          <p>
+<p>
             Thus, for every $z \in C$, there exists an $x \in A$ such that $(g \circ f)(x) = z$. Hence, $g \circ f$ is surjective. $\blacksquare$
           </p>
-          <p>
-            <strong>Theorem 5 (Preservation of Bijectivity):</strong> <em>If $f: A \to B$ and $g: B \to C$ are bijections, then $g \circ f: A \to C$ is also a bijection.</em> (Follows directly from Theorems 3 and 4).
+<p>
+<strong>Theorem 5 (Preservation of Bijectivity):</strong> <em>If $f: A \to B$ and $g: B \to C$ are bijections, then $g \circ f: A \to C$ is also a bijection.</em> (Follows directly from Theorems 3 and 4).
           </p>
-
-          <!-- CONVERSE DEDUCTIONS (EXAMINER FAVORITE) -->
-          <h4>1.6.3 Converse Inferences from Composite Functions</h4>
-          <p>
+<!-- CONVERSE DEDUCTIONS (EXAMINER FAVORITE) -->
+<h4>1.6.3 Converse Inferences from Composite Functions</h4>
+<p>
             Board examinations frequently feature questions testing the converse conditions:
           </p>
-          <ul>
-            <li><strong>If $g \circ f$ is injective:</strong> Then the inner function $f$ <em>must</em> be injective. The outer function $g$ is not required to be injective.
-              <br><em>Proof:</em> Suppose $f$ were not injective. Then $\exists x_1 \ne x_2$ such that $f(x_1) = f(x_2)$. Applying $g$ yields $g(f(x_1)) = g(f(x_2)) \implies (g \circ f)(x_1) = (g \circ f)(x_2)$, which directly contradicts the injectivity of $g \circ f$.
+<ul>
+<li><strong>If $g \circ f$ is injective:</strong> Then the inner function $f$ <em>must</em> be injective. The outer function $g$ is not required to be injective.
+              <br/><em>Proof:</em> Suppose $f$ were not injective. Then $\exists x_1 \ne x_2$ such that $f(x_1) = f(x_2)$. Applying $g$ yields $g(f(x_1)) = g(f(x_2)) \implies (g \circ f)(x_1) = (g \circ f)(x_2)$, which directly contradicts the injectivity of $g \circ f$.
             </li>
-            <li><strong>If $g \circ f$ is surjective:</strong> Then the outer function $g$ <em>must</em> be surjective. The inner function $f$ is not required to be surjective.
-              <br><em>Proof:</em> Suppose $g$ were not surjective. Then $\exists z \in C$ such that no $y \in B$ satisfies $g(y) = z$. Since the range of $f$ is a subset of $B$, there cannot exist any $x \in A$ such that $g(f(x)) = z$, contradicting the surjectivity of $g \circ f$.
+<li><strong>If $g \circ f$ is surjective:</strong> Then the outer function $g$ <em>must</em> be surjective. The inner function $f$ is not required to be surjective.
+              <br/><em>Proof:</em> Suppose $g$ were not surjective. Then $\exists z \in C$ such that no $y \in B$ satisfies $g(y) = z$. Since the range of $f$ is a subset of $B$, there cannot exist any $x \in A$ such that $g(f(x)) = z$, contradicting the surjectivity of $g \circ f$.
             </li>
-          </ul>
-
-          <!-- PART 7: INVERTIBILITY OF FUNCTIONS -->
-          <h3>1.7 Invertibility of Functions and Inverse Mechanics</h3>
-          <p>
+</ul>
+<!-- PART 7: INVERTIBILITY OF FUNCTIONS -->
+<h3>1.7 Invertibility of Functions and Inverse Mechanics</h3>
+<p>
             The concept of function inversion reverses the causal mapping of an operation.
           </p>
-          <p>
-            <strong>Formal Definition:</strong> A function $f: A \to B$ is said to be <strong>invertible</strong> if there exists a function $g: B \to A$ such that:
+<p>
+<strong>Formal Definition:</strong> A function $f: A \to B$ is said to be <strong>invertible</strong> if there exists a function $g: B \to A$ such that:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$g \circ f = I_A \quad \text{and} \quad f \circ g = I_B$$
           </p>
-          <p>
+<p>
             The function $g$ is called the <strong>inverse</strong> of $f$, uniquely denoted as $f^{-1}: B \to A$.
           </p>
-          <p>
-            <strong>The Fundamental Invertibility Theorem:</strong> <em>A function $f: A \to B$ is invertible if and only if it is a bijection (both injective and surjective).</em>
+<p>
+<strong>The Fundamental Invertibility Theorem:</strong> <em>A function $f: A \to B$ is invertible if and only if it is a bijection (both injective and surjective).</em>
+</p>
+<p>
+<em>Proof ($\implies$ Direction):</em> Assume $f$ is invertible. Then there exists $g: B \to A$ such that $g \circ f = I_A$ and $f \circ g = I_B$.
           </p>
-          <p>
-            <em>Proof ($\implies$ Direction):</em> Assume $f$ is invertible. Then there exists $g: B \to A$ such that $g \circ f = I_A$ and $f \circ g = I_B$.
+<ul>
+<li>Since $g \circ f = I_A$ and $I_A$ is injective, by Section 1.6.3, the inner function $f$ must be injective.</li>
+<li>Since $f \circ g = I_B$ and $I_B$ is surjective, by Section 1.6.3, the outer function $f$ must be surjective.</li>
+<li>Therefore, $f$ is both injective and surjective, which means it is bijective.</li>
+</ul>
+<p>
+<em>Proof ($\impliedby$ Direction):</em> Assume $f: A \to B$ is bijective.
           </p>
-          <ul>
-            <li>Since $g \circ f = I_A$ and $I_A$ is injective, by Section 1.6.3, the inner function $f$ must be injective.</li>
-            <li>Since $f \circ g = I_B$ and $I_B$ is surjective, by Section 1.6.3, the outer function $f$ must be surjective.</li>
-            <li>Therefore, $f$ is both injective and surjective, which means it is bijective.</li>
-          </ul>
-          <p>
-            <em>Proof ($\impliedby$ Direction):</em> Assume $f: A \to B$ is bijective.
-          </p>
-          <ul>
-            <li>Since $f$ is surjective, for every $y \in B$, there exists at least one $x \in A$ such that $f(x) = y$.</li>
-            <li>Since $f$ is injective, this element $x$ is unique.</li>
-            <li>Thus, we can define a rule $g: B \to A$ that maps each $y \in B$ to this unique $x \in A$, so $g(y) = x \iff f(x) = y$.</li>
-            <li>Then $(g \circ f)(x) = g(f(x)) = g(y) = x = I_A(x)$ for all $x \in A$, meaning $g \circ f = I_A$.</li>
-            <li>Similarly, $(f \circ g)(y) = f(g(y)) = f(x) = y = I_B(y)$ for all $y \in B$, meaning $f \circ g = I_B$.</li>
-            <li>Therefore, $f$ is invertible and $g = f^{-1}$. $\blacksquare$</li>
-          </ul>
-
-          <!-- UNIQUENESS AND PROPERTIES OF INVERSE -->
-          <h4>1.7.1 Structural Properties of Inverse Functions</h4>
-          <ol>
-            <li><strong>Uniqueness of the Inverse:</strong> If a function possesses an inverse, that inverse is unique.
-              <br><em>Proof:</em> Assume $g_1$ and $g_2$ are both inverses of $f: A \to B$. Then:
+<ul>
+<li>Since $f$ is surjective, for every $y \in B$, there exists at least one $x \in A$ such that $f(x) = y$.</li>
+<li>Since $f$ is injective, this element $x$ is unique.</li>
+<li>Thus, we can define a rule $g: B \to A$ that maps each $y \in B$ to this unique $x \in A$, so $g(y) = x \iff f(x) = y$.</li>
+<li>Then $(g \circ f)(x) = g(f(x)) = g(y) = x = I_A(x)$ for all $x \in A$, meaning $g \circ f = I_A$.</li>
+<li>Similarly, $(f \circ g)(y) = f(g(y)) = f(x) = y = I_B(y)$ for all $y \in B$, meaning $f \circ g = I_B$.</li>
+<li>Therefore, $f$ is invertible and $g = f^{-1}$. $\blacksquare$</li>
+</ul>
+<!-- UNIQUENESS AND PROPERTIES OF INVERSE -->
+<h4>1.7.1 Structural Properties of Inverse Functions</h4>
+<ol>
+<li><strong>Uniqueness of the Inverse:</strong> If a function possesses an inverse, that inverse is unique.
+              <br/><em>Proof:</em> Assume $g_1$ and $g_2$ are both inverses of $f: A \to B$. Then:
               $$g_1 = g_1 \circ I_B = g_1 \circ (f \circ g_2) = (g_1 \circ f) \circ g_2 = I_A \circ g_2 = g_2$$
               Hence, $g_1 = g_2$. $\blacksquare$
             </li>
-            <li><strong>Involution Property:</strong> If $f: A \to B$ is a bijection, then $f^{-1}: B \to A$ is also a bijection, and its inverse is the original function:
+<li><strong>Involution Property:</strong> If $f: A \to B$ is a bijection, then $f^{-1}: B \to A$ is also a bijection, and its inverse is the original function:
               $$(f^{-1})^{-1} = f$$
             </li>
-            <li><strong>The Reversal Law for Composition:</strong> Let $f: A \to B$ and $g: B \to C$ be invertible functions. Then the composite function $g \circ f: A \to C$ is also invertible, and its inverse is given by:
+<li><strong>The Reversal Law for Composition:</strong> Let $f: A \to B$ and $g: B \to C$ be invertible functions. Then the composite function $g \circ f: A \to C$ is also invertible, and its inverse is given by:
               $$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$$
               <em>Rigorous Verification Proof:</em> We test whether $(f^{-1} \circ g^{-1})$ satisfies the inversion axioms with $(g \circ f)$:
               $$(f^{-1} \circ g^{-1}) \circ (g \circ f) = f^{-1} \circ (g^{-1} \circ g) \circ f = f^{-1} \circ I_B \circ f = f^{-1} \circ f = I_A$$
               $$(g \circ f) \circ (f^{-1} \circ g^{-1}) = g \circ (f \circ f^{-1}) \circ g^{-1} = g \circ I_B \circ g^{-1} = g \circ g^{-1} = I_C$$
               Since both left- and right-composition produce their respective identity mappings, the reversal law holds. $\blacksquare$
             </li>
-          </ol>
-
-          <!-- GEOMETRIC REFLECTION -->
-          <h4>1.7.2 Geometric Characterization of Invertibility</h4>
-          <p>
+</ol>
+<!-- GEOMETRIC REFLECTION -->
+<h4>1.7.2 Geometric Characterization of Invertibility</h4>
+<p>
             Analytically, if a point $(a, b)$ lies on the curve $y = f(x)$, then by definition $f(a) = b$. From the invertibility condition:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$f(a) = b \iff f^{-1}(b) = a$$
           </p>
-          <p>
+<p>
             This indicates that the point $(b, a)$ lies on the curve $y = f^{-1}(x)$. In Cartesian coordinate geometry, the coordinate transformation $(x, y) \mapsto (y, x)$ represents an orthogonal reflection across the identity line:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$y = x$$
           </p>
-          <p>
+<p>
             Consequently, the graph of $y = f^{-1}(x)$ is the mirror reflection of the graph of $y = f(x)$ across the line $y = x$. Intersections between $y = f(x)$ and $y = f^{-1}(x)$, if they exist for monotonically increasing functions, must lie along the axis of symmetry $y = x$.
           </p>
-
-          <!-- PART 8: BINARY OPERATIONS -->
-          <h3>1.8 Theory of Binary Operations</h3>
-          <p>
+<!-- PART 8: BINARY OPERATIONS -->
+<h3>1.8 Theory of Binary Operations</h3>
+<p>
             A <strong>binary operation</strong> represents an algebraic abstraction of arithmetic operations like addition and multiplication.
           </p>
-          <p>
-            <strong>Formal Definition:</strong> A binary operation $*$ on a non-empty set $A$ is a function from the Cartesian product $A \times A$ into $A$:
+<p>
+<strong>Formal Definition:</strong> A binary operation $*$ on a non-empty set $A$ is a function from the Cartesian product $A \times A$ into $A$:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$*: A \times A \to A$$
           </p>
-          <p>
+<p>
             We denote the image of an ordered pair $(a, b) \in A \times A$ under $*$ as $a * b$ rather than $*((a, b))$.
           </p>
-          <p>
-            <strong>Closure Property:</strong> The fact that the codomain of $*$ is $A$ constitutes the <em>closure property</em>:
+<p>
+<strong>Closure Property:</strong> The fact that the codomain of $*$ is $A$ constitutes the <em>closure property</em>:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\forall a, b \in A \implies a * b \in A$$
           </p>
-          <p>
+<p>
             If any pair $(a, b) \in A \times A$ produces a value outside $A$, then $*$ is <strong>not</strong> a binary operation on $A$. For example, normal subtraction ($-$) is a binary operation on $\mathbb{Z}$ (since $a - b \in \mathbb{Z}$), but it is <em>not</em> a binary operation on the natural numbers $\mathbb{N}$ (since $2 - 5 = -3 \notin \mathbb{N}$).
           </p>
-          <p>
-            <strong>Total Number of Binary Operations:</strong> Let $|A| = n$. The domain of $*$ is $A \times A$, which contains $n^2$ elements. The codomain is $A$, containing $n$ elements. Hence, the total number of binary operations that can be defined on $A$ is:
+<p>
+<strong>Total Number of Binary Operations:</strong> Let $|A| = n$. The domain of $*$ is $A \times A$, which contains $n^2$ elements. The codomain is $A$, containing $n$ elements. Hence, the total number of binary operations that can be defined on $A$ is:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$N_{\text{binary operations}} = |A|^{|A \times A|} = n^{n^2}$$
           </p>
-
-          <!-- AXIOMATIC PROPERTIES OF BINARY OPERATIONS -->
-          <h4>1.8.1 Axiomatic Algebraic Properties</h4>
-          <ol>
-            <li><strong>Commutativity:</strong> A binary operation $*$ on a set $A$ is <strong>commutative</strong> if the order of the operands does not affect the outcome:
+<!-- AXIOMATIC PROPERTIES OF BINARY OPERATIONS -->
+<h4>1.8.1 Axiomatic Algebraic Properties</h4>
+<ol>
+<li><strong>Commutativity:</strong> A binary operation $*$ on a set $A$ is <strong>commutative</strong> if the order of the operands does not affect the outcome:
               $$\forall a, b \in A, \quad a * b = b * a$$
               <em>Counting Commutative Binary Operations:</em> For a set of size $n$, a commutative operation is determined by its values on the diagonal elements ($n$ choices) and the strictly upper triangular elements ($\frac{n^2 - n}{2}$ choices). This yields:
               $$N_{\text{commutative}} = n^{\frac{n(n+1)}{2}}$$
             </li>
-            <li><strong>Associativity:</strong> A binary operation $*$ on a set $A$ is <strong>associative</strong> if operational grouping does not affect the outcome:
+<li><strong>Associativity:</strong> A binary operation $*$ on a set $A$ is <strong>associative</strong> if operational grouping does not affect the outcome:
               $$\forall a, b, c \in A, \quad (a * b) * c = a * (b * c)$$
               Associativity ensures expressions like $a * b * c$ can be evaluated without parentheses.
             </li>
-            <li><strong>Identity Element:</strong> Let $*$ be a binary operation on $A$. An element $e \in A$ is called the <strong>identity element</strong> for $*$ if:
+<li><strong>Identity Element:</strong> Let $*$ be a binary operation on $A$. An element $e \in A$ is called the <strong>identity element</strong> for $*$ if:
               $$\forall a \in A, \quad a * e = e * a = a$$
               <em>Theorem (Uniqueness of Identity):</em> If an identity element exists for a binary operation, it is unique.
-              <br><em>Proof:</em> Assume $e_1$ and $e_2$ are both identity elements for $*$ on $A$.
+              <br/><em>Proof:</em> Assume $e_1$ and $e_2$ are both identity elements for $*$ on $A$.
               <ul>
-                <li>Evaluating $e_1 * e_2$ viewing $e_1$ as identity: $e_1 * e_2 = e_2$</li>
-                <li>Evaluating $e_1 * e_2$ viewing $e_2$ as identity: $e_1 * e_2 = e_1$</li>
-              </ul>
+<li>Evaluating $e_1 * e_2$ viewing $e_1$ as identity: $e_1 * e_2 = e_2$</li>
+<li>Evaluating $e_1 * e_2$ viewing $e_2$ as identity: $e_1 * e_2 = e_1$</li>
+</ul>
               Therefore, $e_1 = e_2$. $\blacksquare$
             </li>
-            <li><strong>Invertible Elements and Inverses:</strong> Let $*$ be a binary operation on $A$ with identity element $e \in A$. An element $a \in A$ is said to be <strong>invertible</strong> with respect to $*$ if there exists an element $b \in A$ such that:
+<li><strong>Invertible Elements and Inverses:</strong> Let $*$ be a binary operation on $A$ with identity element $e \in A$. An element $a \in A$ is said to be <strong>invertible</strong> with respect to $*$ if there exists an element $b \in A$ such that:
               $$a * b = b * a = e$$
               The element $b$ is called the <strong>inverse</strong> of $a$, denoted by $a^{-1}$.
-              <br><em>Theorem (Uniqueness of Inverse):</em> Let $*$ be an associative binary operation on $A$ with identity $e$. If an element $a \in A$ is invertible, its inverse is unique.
-              <br><em>Proof:</em> Assume $b_1$ and $b_2$ are both inverses of $a$.
+              <br/><em>Theorem (Uniqueness of Inverse):</em> Let $*$ be an associative binary operation on $A$ with identity $e$. If an element $a \in A$ is invertible, its inverse is unique.
+              <br/><em>Proof:</em> Assume $b_1$ and $b_2$ are both inverses of $a$.
               $$b_1 = b_1 * e = b_1 * (a * b_2) = (b_1 * a) * b_2 = e * b_2 = b_2$$
               Thus, the inverse is unique. $\blacksquare$
             </li>
-          </ol>
-
-          <!-- OPERATION TABLES (CAYLEY TABLES) -->
-          <h4>1.8.2 Cayley Tables (Operation Tables) for Finite Sets</h4>
-          <p>
+</ol>
+<!-- OPERATION TABLES (CAYLEY TABLES) -->
+<h4>1.8.2 Cayley Tables (Operation Tables) for Finite Sets</h4>
+<p>
             When a set $A = \{a_1, a_2, \dots, a_n\}$ is finite, a binary operation $*$ can be fully represented using an $n \times n$ matrix called a <strong>Cayley Table</strong>. The element located at the intersection of row $a_i$ and column $a_j$ is the value $a_i * a_j$.
           </p>
-          <p>
-            <strong>Diagnostic Properties from Cayley Tables:</strong>
-          </p>
-          <ul>
-            <li><strong>Closure:</strong> Every entry inside the table must be an element belonging to set $A$.</li>
-            <li><strong>Commutativity:</strong> The Cayley table must be symmetric across its main diagonal (running from top-left to bottom-right). That is, entry $(i, j)$ must match entry $(j, i)$ for all $i, j$.</li>
-            <li><strong>Identity Element ($e$):</strong> The identity element corresponds to an element whose row matches the column headers identically in sequence, and whose column matches the row headers identically in sequence.</li>
-            <li><strong>Invertibility:</strong> If an identity element $e$ exists, an element $a_i$ is invertible if and only if the identity element $e$ appears at least once in row $a_i$ and column $a_i$ such that the row and column coordinates are symmetric.</li>
-          </ul>
-
-          <!-- PART 9: EXAMINER NUANCES & PITFALLS -->
-          <h3>1.9 Rigorous CBSE Examination Analysis &amp; Structural Pitfalls</h3>
-          <p>
+<p>
+<strong>Diagnostic Properties from Cayley Tables:</strong>
+</p>
+<ul>
+<li><strong>Closure:</strong> Every entry inside the table must be an element belonging to set $A$.</li>
+<li><strong>Commutativity:</strong> The Cayley table must be symmetric across its main diagonal (running from top-left to bottom-right). That is, entry $(i, j)$ must match entry $(j, i)$ for all $i, j$.</li>
+<li><strong>Identity Element ($e$):</strong> The identity element corresponds to an element whose row matches the column headers identically in sequence, and whose column matches the row headers identically in sequence.</li>
+<li><strong>Invertibility:</strong> If an identity element $e$ exists, an element $a_i$ is invertible if and only if the identity element $e$ appears at least once in row $a_i$ and column $a_i$ such that the row and column coordinates are symmetric.</li>
+</ul>
+<!-- PART 9: EXAMINER NUANCES & PITFALLS -->
+<h3>1.9 Rigorous CBSE Examination Analysis &amp; Structural Pitfalls</h3>
+<p>
             To achieve full marks on relation and function proofs in CBSE Class 12 board assessments, solutions must follow established structural conventions. Examiners frequently deduct marks for common oversights:
           </p>
-
-          <h4>Common Trap 1: Conflating "Showing" with "Proving"</h4>
-          <p>
+<h4>Common Trap 1: Conflating "Showing" with "Proving"</h4>
+<p>
             Students often provide a specific numeric example to demonstrate that a property holds generally:
           </p>
-          <div style="background-color: rgba(191, 90, 60, 0.08); padding: 12px; border-left: 4px solid #bf5a3c; margin: 10px 0;">
-            <p><strong>Examiner Note:</strong> A single numerical example can <em>disprove</em> a property by providing a counterexample. However, a single numerical example <strong>cannot prove</strong> a property for an infinite set. General proofs must use arbitrary algebraic variables ($x, y, z \in A$).</p>
-          </div>
-
-          <h4>Common Trap 2: Domain and Codomain Inattention</h4>
-          <p>
+<div style="background-color: rgba(191, 90, 60, 0.08); padding: 12px; border-left: 4px solid #bf5a3c; margin: 10px 0;">
+<p><strong>Examiner Note:</strong> A single numerical example can <em>disprove</em> a property by providing a counterexample. However, a single numerical example <strong>cannot prove</strong> a property for an infinite set. General proofs must use arbitrary algebraic variables ($x, y, z \in A$).</p>
+</div>
+<h4>Common Trap 2: Domain and Codomain Inattention</h4>
+<p>
             A formula alone does not define a function; the domain and codomain are fundamental to its identity. For example, consider the squaring operation:
           </p>
-          <ul>
-            <li>$f: \mathbb{R} \to \mathbb{R}, \; f(x) = x^2$: Neither injective (since $f(-2) = f(2) = 4$) nor surjective (negative numbers have no real pre-images).</li>
-            <li>$f: [0, \infty) \to \mathbb{R}, \; f(x) = x^2$: Injective, but not surjective (range is $[0, \infty) \ne \mathbb{R}$).</li>
-            <li>$f: \mathbb{R} \to [0, \infty), \; f(x) = x^2$: Surjective, but not injective.</li>
-            <li>$f: [0, \infty) \to [0, \infty), \; f(x) = x^2$: <strong>Bijective</strong> and therefore invertible, with $f^{-1}(x) = \sqrt{x}$.</li>
-          </ul>
-
-          <h4>Common Trap 3: The Premise Fallacy in Transitivity</h4>
-          <p>
-            Consider the relation $R = \{(a, b) \in \mathbb{R} \times \mathbb{R} : 1 + ab > 0\}$.
+<ul>
+<li>$f: \mathbb{R} \to \mathbb{R}, \; f(x) = x^2$: Neither injective (since $f(-2) = f(2) = 4$) nor surjective (negative numbers have no real pre-images).</li>
+<li>$f: [0, \infty) \to \mathbb{R}, \; f(x) = x^2$: Injective, but not surjective (range is $[0, \infty) \ne \mathbb{R}$).</li>
+<li>$f: \mathbb{R} \to [0, \infty), \; f(x) = x^2$: Surjective, but not injective.</li>
+<li>$f: [0, \infty) \to [0, \infty), \; f(x) = x^2$: <strong>Bijective</strong> and therefore invertible, with $f^{-1}(x) = \sqrt{x}$.</li>
+</ul>
+<h4>Common Trap 3: The Premise Fallacy in Transitivity</h4>
+<p>
+            Consider the relation $R = \{(a, b) \in \mathbb{R} \times \mathbb{R} : 1 + ab &gt; 0\}$.
           </p>
-          <ul>
-            <li><strong>Reflexive:</strong> For any $a \in \mathbb{R}$, $1 + a \cdot a = 1 + a^2 > 0$ (since $a^2 \ge 0$). Thus $(a, a) \in R$. Holds.</li>
-            <li><strong>Symmetric:</strong> If $(a, b) \in R$, then $1 + ab > 0 \implies 1 + ba > 0 \implies (b, a) \in R$. Holds.</li>
-            <li><strong>Transitive:</strong> Many students assume this is transitive without testing carefully chosen counterexamples. Let $a = -1$, $b = 0$, $c = 2$:
+<ul>
+<li><strong>Reflexive:</strong> For any $a \in \mathbb{R}$, $1 + a \cdot a = 1 + a^2 &gt; 0$ (since $a^2 \ge 0$). Thus $(a, a) \in R$. Holds.</li>
+<li><strong>Symmetric:</strong> If $(a, b) \in R$, then $1 + ab &gt; 0 \implies 1 + ba &gt; 0 \implies (b, a) \in R$. Holds.</li>
+<li><strong>Transitive:</strong> Many students assume this is transitive without testing carefully chosen counterexamples. Let $a = -1$, $b = 0$, $c = 2$:
               <ul>
-                <li>$(a, b) = (-1, 0) \implies 1 + (-1)(0) = 1 > 0$ (True, so $(-1, 0) \in R$)</li>
-                <li>$(b, c) = (0, 2) \implies 1 + (0)(2) = 1 > 0$ (True, so $(0, 2) \in R$)</li>
-                <li>Check $(a, c) = (-1, 2) \implies 1 + (-1)(2) = 1 - 2 = -1 \ngtr 0$ (False, so $(-1, 2) \notin R$)</li>
-              </ul>
+<li>$(a, b) = (-1, 0) \implies 1 + (-1)(0) = 1 &gt; 0$ (True, so $(-1, 0) \in R$)</li>
+<li>$(b, c) = (0, 2) \implies 1 + (0)(2) = 1 &gt; 0$ (True, so $(0, 2) \in R$)</li>
+<li>Check $(a, c) = (-1, 2) \implies 1 + (-1)(2) = 1 - 2 = -1 \ngtr 0$ (False, so $(-1, 2) \notin R$)</li>
+</ul>
               Thus, transitivity fails.
             </li>
-          </ul>
-
-          <h4>Common Trap 4: Assuming Left and Right Operations Match Without Checking</h4>
-          <p>
+</ul>
+<h4>Common Trap 4: Assuming Left and Right Operations Match Without Checking</h4>
+<p>
             For a binary operation $*$ that has not been proved commutative, both conditions must be verified separately:
           </p>
-          <p style="text-align: center;">
+<p style="text-align: center;">
             $$\text{Identity: } a * e = a \quad \text{AND} \quad e * a = a$$
             $$\text{Inverse: } a * b = e \quad \text{AND} \quad b * a = e$$
           </p>
-          <p>
+<p>
             Verifying only one direction forfeits procedural marks in CBSE evaluations.
           </p>
-
-        </div>
-      </div>
-    </article>
-  </div>
+</div>
+</div>
+</article>
+</div>
 </section>
-
 <section class="section container" id="derivations">
-  <div class="section-head">
-    <span class="section-eyebrow">Formula Repository</span>
-    <h2>2. Master Equation Bank &amp; Step-by-Step Derivations</h2>
-  </div>
-  <div class="resource-grid">
-    <article class="resource">
-      <h3>Exhaustive Formula Table</h3>
-      <div style="overflow-x:auto;">
-        <table class="table-formula" style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
-          <thead>
-            <tr style="border-bottom: 2px solid #ccc; text-align: left;">
-              <th style="padding: 10px;">Concept / Identity</th>
-              <th style="padding: 10px;">Mathematical Statement</th>
-              <th style="padding: 10px;">Variables &amp; Dimensions</th>
-              <th style="padding: 10px;">Conditions &amp; Constraints</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td style="padding: 10px; font-weight: bold;">Total Relations</td>
-              <td style="padding: 10px;">$N_R = 2^{|A \times B|} = 2^{mn}$</td>
-              <td style="padding: 10px;">$|A| = m$, $|B| = n$; Dimensionless count</td>
-              <td style="padding: 10px;">$m, n \in \mathbb{N}_0$</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td style="padding: 10px; font-weight: bold;">Reflexive Relations</td>
-              <td style="padding: 10px;">$N_{\text{ref}} = 2^{n^2 - n} = 2^{n(n-1)}$</td>
-              <td style="padding: 10px;">$|A| = n$; Dimensionless count</td>
-              <td style="padding: 10px;">Relation defined on $A \times A$</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td style="padding: 10px; font-weight: bold;">Symmetric Relations</td>
-              <td style="padding: 10px;">$N_{\text{sym}} = 2^{\frac{n(n+1)}{2}}$</td>
-              <td style="padding: 10px;">$|A| = n$; Dimensionless count</td>
-              <td style="padding: 10px;">Relation defined on $A \times A$</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td style="padding: 10px; font-weight: bold;">Reflexive &amp; Symmetric</td>
-              <td style="padding: 10px;">$N_{\text{ref}\cap\text{sym}} = 2^{\frac{n(n-1)}{2}}$</td>
-              <td style="padding: 10px;">$|A| = n$; Dimensionless count</td>
-              <td style="padding: 10px;">Relation defined on $A \times A$</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td style="padding: 10px; font-weight: bold;">Total Functions</td>
-              <td style="padding: 10px;">$N_F = n^m = |B|^{|A|}$</td>
-              <td style="padding: 10px;">$f: A \to B$, $|A|=m$, $|B|=n$</td>
-              <td style="padding: 10px;">Each element of $A$ has unique image in $B$</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td style="padding: 10px; font-weight: bold;">Injective (One-One) Functions</td>
-              <td style="padding: 10px;">
-                $N_{\text{inj}} = \begin{cases} ^n P_m = \frac{n!}{(n-m)!}, &amp; n \ge m \\ 0, &amp; n < m \end{cases}$
+<div class="section-head">
+<span class="section-eyebrow">Formula Repository</span>
+<h2>2. Master Equation Bank &amp; Step-by-Step Derivations</h2>
+</div>
+<div class="resource-grid">
+<article class="resource">
+<h3>Exhaustive Formula Table</h3>
+<div style="overflow-x:auto;">
+<table class="table-formula" style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
+<thead>
+<tr style="border-bottom: 2px solid #ccc; text-align: left;">
+<th style="padding: 10px;">Concept / Identity</th>
+<th style="padding: 10px;">Mathematical Statement</th>
+<th style="padding: 10px;">Variables &amp; Dimensions</th>
+<th style="padding: 10px;">Conditions &amp; Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid #eee;">
+<td style="padding: 10px; font-weight: bold;">Total Relations</td>
+<td style="padding: 10px;">$N_R = 2^{|A \times B|} = 2^{mn}$</td>
+<td style="padding: 10px;">$|A| = m$, $|B| = n$; Dimensionless count</td>
+<td style="padding: 10px;">$m, n \in \mathbb{N}_0$</td>
+</tr>
+<tr style="border-bottom: 1px solid #eee;">
+<td style="padding: 10px; font-weight: bold;">Reflexive Relations</td>
+<td style="padding: 10px;">$N_{\text{ref}} = 2^{n^2 - n} = 2^{n(n-1)}$</td>
+<td style="padding: 10px;">$|A| = n$; Dimensionless count</td>
+<td style="padding: 10px;">Relation defined on $A \times A$</td>
+</tr>
+<tr style="border-bottom: 1px solid #eee;">
+<td style="padding: 10px; font-weight: bold;">Symmetric Relations</td>
+<td style="padding: 10px;">$N_{\text{sym}} = 2^{\frac{n(n+1)}{2}}$</td>
+<td style="padding: 10px;">$|A| = n$; Dimensionless count</td>
+<td style="padding: 10px;">Relation defined on $A \times A$</td>
+</tr>
+<tr style="border-bottom: 1px solid #eee;">
+<td style="padding: 10px; font-weight: bold;">Reflexive &amp; Symmetric</td>
+<td style="padding: 10px;">$N_{\text{ref}\cap\text{sym}} = 2^{\frac{n(n-1)}{2}}$</td>
+<td style="padding: 10px;">$|A| = n$; Dimensionless count</td>
+<td style="padding: 10px;">Relation defined on $A \times A$</td>
+</tr>
+<tr style="border-bottom: 1px solid #eee;">
+<td style="padding: 10px; font-weight: bold;">Total Functions</td>
+<td style="padding: 10px;">$N_F = n^m = |B|^{|A|}$</td>
+<td style="padding: 10px;">$f: A \to B$, $|A|=m$, $|B|=n$</td>
+<td style="padding: 10px;">Each element of $A$ has unique image in $B$</td>
+</tr>
+<tr style="border-bottom: 1px solid #eee;">
+<td style="padding: 10px; font-weight: bold;">Injective (One-One) Functions</td>
+<td style="padding: 10px;">
+                $N_{\text{inj}} = \begin{cases} ^n P_m = \frac{n!}{(n-m)!}, &amp; n \ge m \\ 0, &amp; n &lt; m \end{cases}$
               </td>
-              <td style="padding: 10px;">$|A|=m$, $|B|=n$; Combinatorial count</td>
-              <td style="padding: 10px;">$f(x_1) = f(x_2) \implies x_1 = x_2$</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td style="padding: 10px; font-weight: bold;">Surjective (Onto) Functions</td>
-              <td style="padding: 10px;">
+<td style="padding: 10px;">$|A|=m$, $|B|=n$; Combinatorial count</td>
+<td style="padding: 10px;">$f(x_1) = f(x_2) \implies x_1 = x_2$</td>
+</tr>
+<tr style="border-bottom: 1px solid #eee;">
+<td style="padding: 10px; font-weight: bold;">Surjective (Onto) Functions</td>
+<td style="padding: 10px;">
                 $N_{\text{surj}} = \sum_{r=0}^{n} (-1)^r \binom{n}{r} (n-r)^m$
               </td>
-              <td style="padding: 10px;">$|A|=m$, $|B|=n$; Inclusion-Exclusion</td>
-              <td style="padding: 10px;">$m \ge n \ge 1$; $N_{\text{surj}} = 0$ if $m < n$</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td style="padding: 10px; font-weight: bold;">Bijective Functions</td>
-              <td style="padding: 10px;">
+<td style="padding: 10px;">$|A|=m$, $|B|=n$; Inclusion-Exclusion</td>
+<td style="padding: 10px;">$m \ge n \ge 1$; $N_{\text{surj}} = 0$ if $m &lt; n$</td>
+</tr>
+<tr style="border-bottom: 1px solid #eee;">
+<td style="padding: 10px; font-weight: bold;">Bijective Functions</td>
+<td style="padding: 10px;">
                 $N_{\text{bij}} = \begin{cases} n!, &amp; m = n \\ 0, &amp; m \neq n \end{cases}$
               </td>
-              <td style="padding: 10px;">$|A|=|B|=n$; Permutation factor</td>
-              <td style="padding: 10px;">Simultaneously injective and surjective</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td style="padding: 10px; font-weight: bold;">Reversal of Composition</td>
-              <td style="padding: 10px;">$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$</td>
-              <td style="padding: 10px;">$f: A \to B$, $g: B \to C$</td>
-              <td style="padding: 10px;">Both $f$ and $g$ must be bijective</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td style="padding: 10px; font-weight: bold;">Equivalence Partitioning</td>
-              <td style="padding: 10px;">$A = \bigcup_{a \in A} [a], \quad [a] \cap [b] = \emptyset \text{ if } [a] \neq [b]$</td>
-              <td style="padding: 10px;">$[a] = \{x \in A : (x, a) \in R\}$</td>
-              <td style="padding: 10px;">$R$ is reflexive, symmetric, and transitive</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- DERIVATION 1 -->
-      <div class="derivation-block" style="margin-top: 2rem;">
-        <h4>Derivation 1: Total Number of Reflexive Relations on a Set with $n$ Elements</h4>
-        <p><strong>Theorem:</strong> Let $A$ be a finite set such that $|A| = n$. The total number of reflexive relations on $A$ is $2^{n(n-1)}$.</p>
-        
-        <p><strong>Proof:</strong></p>
-        <p><strong>Step 1: Determine the cardinality of the Cartesian Product $A \times A$.</strong></p>
-        <p>A relation $R$ on set $A$ is defined as an arbitrary subset of the Cartesian product $A \times A$:</p>
+<td style="padding: 10px;">$|A|=|B|=n$; Permutation factor</td>
+<td style="padding: 10px;">Simultaneously injective and surjective</td>
+</tr>
+<tr style="border-bottom: 1px solid #eee;">
+<td style="padding: 10px; font-weight: bold;">Reversal of Composition</td>
+<td style="padding: 10px;">$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$</td>
+<td style="padding: 10px;">$f: A \to B$, $g: B \to C$</td>
+<td style="padding: 10px;">Both $f$ and $g$ must be bijective</td>
+</tr>
+<tr style="border-bottom: 1px solid #eee;">
+<td style="padding: 10px; font-weight: bold;">Equivalence Partitioning</td>
+<td style="padding: 10px;">$A = \bigcup_{a \in A} [a], \quad [a] \cap [b] = \emptyset \text{ if } [a] \neq [b]$</td>
+<td style="padding: 10px;">$[a] = \{x \in A : (x, a) \in R\}$</td>
+<td style="padding: 10px;">$R$ is reflexive, symmetric, and transitive</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- DERIVATION 1 -->
+<div class="derivation-block" style="margin-top: 2rem;">
+<h4>Derivation 1: Total Number of Reflexive Relations on a Set with $n$ Elements</h4>
+<p><strong>Theorem:</strong> Let $A$ be a finite set such that $|A| = n$. The total number of reflexive relations on $A$ is $2^{n(n-1)}$.</p>
+<p><strong>Proof:</strong></p>
+<p><strong>Step 1: Determine the cardinality of the Cartesian Product $A \times A$.</strong></p>
+<p>A relation $R$ on set $A$ is defined as an arbitrary subset of the Cartesian product $A \times A$:</p>
         $$|A \times A| = |A| \times |A| = n \times n = n^2$$
 
         <p><strong>Step 2: Partition the Cartesian Product into diagonal and non-diagonal pairs.</strong></p>
-        <p>The set $A \times A$ can be partitioned into two disjoint subsets:</p>
-        <ul>
-          <li><strong>Diagonal elements ($D$):</strong> Elements of the form $(a_i, a_i)$ for all $i \in \{1, 2, \dots, n\}$.
+<p>The set $A \times A$ can be partitioned into two disjoint subsets:</p>
+<ul>
+<li><strong>Diagonal elements ($D$):</strong> Elements of the form $(a_i, a_i)$ for all $i \in \{1, 2, \dots, n\}$.
             $$|D| = n$$
           </li>
-          <li><strong>Non-diagonal elements ($D'$):</strong> Elements of the form $(a_i, a_j)$ where $i \neq j$.
+<li><strong>Non-diagonal elements ($D'$):</strong> Elements of the form $(a_i, a_j)$ where $i \neq j$.
             $$|D'| = |A \times A| - |D| = n^2 - n = n(n-1)$$
           </li>
-        </ul>
-
-        <p><strong>Step 3: Apply the condition for reflexivity.</strong></p>
-        <p>By definition, a relation $R \subseteq A \times A$ is reflexive if and only if:</p>
+</ul>
+<p><strong>Step 3: Apply the condition for reflexivity.</strong></p>
+<p>By definition, a relation $R \subseteq A \times A$ is reflexive if and only if:</p>
         $$\forall a_i \in A, \quad (a_i, a_i) \in R$$
         <p>Thus, every diagonal element of $D$ must unconditionally be included in $R$. For each element in $D$, the number of choices is exactly $1$:</p>
         $$\text{Choices for diagonal elements} = 1^n = 1$$
 
         <p><strong>Step 4: Count combinations for non-diagonal pairs.</strong></p>
-        <p>For each non-diagonal ordered pair $(a_i, a_j) \in D'$ (where $i \neq j$), reflexivity imposes no restriction. Each pair may either be included in $R$ or excluded from $R$. Hence, there are $2$ independent choices per pair:</p>
+<p>For each non-diagonal ordered pair $(a_i, a_j) \in D'$ (where $i \neq j$), reflexivity imposes no restriction. Each pair may either be included in $R$ or excluded from $R$. Hence, there are $2$ independent choices per pair:</p>
         $$\text{Choices for non-diagonal elements} = \underbrace{2 \times 2 \times \cdots \times 2}_{n(n-1) \text{ times}} = 2^{n(n-1)}$$
 
         <p><strong>Step 5: Compute the total product.</strong></p>
-        <p>By the fundamental principle of counting:</p>
+<p>By the fundamental principle of counting:</p>
         $$N_{\text{ref}} = 1 \times 2^{n(n-1)} = 2^{n(n-1)}$$
         <p style="text-align: right;">$\blacksquare$</p>
-      </div>
-
-      <!-- DERIVATION 2 -->
-      <div class="derivation-block" style="margin-top: 2rem;">
-        <h4>Derivation 2: Total Number of Symmetric Relations on a Set with $n$ Elements</h4>
-        <p><strong>Theorem:</strong> Let $A$ be a finite set such that $|A| = n$. The total number of symmetric relations on $A$ is $2^{\frac{n(n+1)}{2}}$.</p>
-
-        <p><strong>Proof:</strong></p>
-        <p><strong>Step 1: Structural condition for symmetry.</strong></p>
-        <p>A relation $R$ on $A$ is symmetric if and only if:</p>
+</div>
+<!-- DERIVATION 2 -->
+<div class="derivation-block" style="margin-top: 2rem;">
+<h4>Derivation 2: Total Number of Symmetric Relations on a Set with $n$ Elements</h4>
+<p><strong>Theorem:</strong> Let $A$ be a finite set such that $|A| = n$. The total number of symmetric relations on $A$ is $2^{\frac{n(n+1)}{2}}$.</p>
+<p><strong>Proof:</strong></p>
+<p><strong>Step 1: Structural condition for symmetry.</strong></p>
+<p>A relation $R$ on $A$ is symmetric if and only if:</p>
         $$(a_i, a_j) \in R \iff (a_j, a_i) \in R \quad \forall a_i, a_j \in A$$
 
         <p><strong>Step 2: Grouping of elements in $A \times A$.</strong></p>
-        <p>Consider the matrix representation of $A \times A$ of size $n \times n$:</p>
-        <ul>
-          <li><strong>Diagonal pairs $(a_i, a_i)$:</strong> There are $n$ such pairs. Here, $(a_i, a_i)$ is its own transpose. Inclusion of $(a_i, a_i)$ in $R$ is independent of all other pairs. Hence, there are $2$ options (include or exclude) for each of the $n$ diagonal pairs.</li>
-          <li><strong>Off-diagonal symmetric pairs $\{(a_i, a_j), (a_j, a_i)\}$ ($i < j$):</strong> The total number of off-diagonal pairs is $n^2 - n$. Since $(a_i, a_j) \in R \iff (a_j, a_i) \in R$, the pairs $(a_i, a_j)$ and $(a_j, a_i)$ must be chosen together:
+<p>Consider the matrix representation of $A \times A$ of size $n \times n$:</p>
+<ul>
+<li><strong>Diagonal pairs $(a_i, a_i)$:</strong> There are $n$ such pairs. Here, $(a_i, a_i)$ is its own transpose. Inclusion of $(a_i, a_i)$ in $R$ is independent of all other pairs. Hence, there are $2$ options (include or exclude) for each of the $n$ diagonal pairs.</li>
+<li><strong>Off-diagonal symmetric pairs $\{(a_i, a_j), (a_j, a_i)\}$ ($i &lt; j$):</strong> The total number of off-diagonal pairs is $n^2 - n$. Since $(a_i, a_j) \in R \iff (a_j, a_i) \in R$, the pairs $(a_i, a_j)$ and $(a_j, a_i)$ must be chosen together:
             <ul>
-              <li>Option 1: Both $(a_i, a_j) \in R$ and $(a_j, a_i) \in R$.</li>
-              <li>Option 2: Neither $(a_i, a_j) \in R$ nor $(a_j, a_i) \in R$.</li>
-            </ul>
+<li>Option 1: Both $(a_i, a_j) \in R$ and $(a_j, a_i) \in R$.</li>
+<li>Option 2: Neither $(a_i, a_j) \in R$ nor $(a_j, a_i) \in R$.</li>
+</ul>
             Thus, each unordered pair $\{a_i, a_j\}$ with $i \neq j$ provides exactly $2$ choices.
           </li>
-        </ul>
-
-        <p><strong>Step 3: Count the total number of independent symmetric decision units.</strong></p>
-        <p>The number of unordered pairs of distinct elements is $\binom{n}{2} = \frac{n(n-1)}{2}$.</p>
-        <p>Total independent decisions $k$ required to construct a symmetric relation is the sum of diagonal pairs and distinct off-diagonal pairs:</p>
+</ul>
+<p><strong>Step 3: Count the total number of independent symmetric decision units.</strong></p>
+<p>The number of unordered pairs of distinct elements is $\binom{n}{2} = \frac{n(n-1)}{2}$.</p>
+<p>Total independent decisions $k$ required to construct a symmetric relation is the sum of diagonal pairs and distinct off-diagonal pairs:</p>
         $$k = n + \frac{n(n-1)}{2} = \frac{2n + n^2 - n}{2} = \frac{n^2 + n}{2} = \frac{n(n+1)}{2}$$
 
         <p><strong>Step 4: Total symmetric relations.</strong></p>
-        <p>Since each independent decision has $2$ choices:</p>
+<p>Since each independent decision has $2$ choices:</p>
         $$N_{\text{sym}} = 2^k = 2^{\frac{n(n+1)}{2}}$$
         <p style="text-align: right;">$\blacksquare$</p>
-      </div>
-
-      <!-- DERIVATION 3 -->
-      <div class="derivation-block" style="margin-top: 2rem;">
-        <h4>Derivation 3: Associativity of Function Composition</h4>
-        <p><strong>Theorem:</strong> Let $f: A \to B$, $g: B \to C$, and $h: C \to D$ be functions. Then:</p>
+</div>
+<!-- DERIVATION 3 -->
+<div class="derivation-block" style="margin-top: 2rem;">
+<h4>Derivation 3: Associativity of Function Composition</h4>
+<p><strong>Theorem:</strong> Let $f: A \to B$, $g: B \to C$, and $h: C \to D$ be functions. Then:</p>
         $$h \circ (g \circ f) = (h \circ g) \circ f$$
 
         <p><strong>Proof:</strong></p>
-        <p><strong>Step 1: Verify domains and codomains of both composite functions.</strong></p>
-        <p>The inner compositions have mappings:</p>
+<p><strong>Step 1: Verify domains and codomains of both composite functions.</strong></p>
+<p>The inner compositions have mappings:</p>
         $$(g \circ f): A \to C \implies h \circ (g \circ f): A \to D$$
         $$(h \circ g): B \to D \implies (h \circ g) \circ f: A \to D$$
         <p>Both composite functions possess identical domain $A$ and identical codomain $D$.</p>
-
-        <p><strong>Step 2: Evaluate point-wise equality for an arbitrary element $x \in A$.</strong></p>
-        <p>By the formal definition of composite functions, $(u \circ v)(t) = u(v(t))$:</p>
-        <p>Evaluate Left Hand Side (LHS):</p>
+<p><strong>Step 2: Evaluate point-wise equality for an arbitrary element $x \in A$.</strong></p>
+<p>By the formal definition of composite functions, $(u \circ v)(t) = u(v(t))$:</p>
+<p>Evaluate Left Hand Side (LHS):</p>
         $$\text{LHS} = [h \circ (g \circ f)](x) = h((g \circ f)(x))$$
         <p>Substitute the inner expansion $(g \circ f)(x) = g(f(x))$:</p>
         $$\text{LHS} = h(g(f(x)))$$
@@ -1268,23 +1238,21 @@
         <p><strong>Step 3: Conclusion.</strong></p>
         $$\text{LHS} = \text{RHS} = h(g(f(x))) \quad \forall x \in A$$
         <p>Hence, $h \circ (g \circ f) = (h \circ g) \circ f$.</p>
-        <p style="text-align: right;">$\blacksquare$</p>
-      </div>
-
-      <!-- DERIVATION 4 -->
-      <div class="derivation-block" style="margin-top: 2rem;">
-        <h4>Derivation 4: Invertibility of Composite Function: $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$</h4>
-        <p><strong>Theorem:</strong> Let $f: A \to B$ and $g: B \to C$ be invertible (bijective) functions. Then $g \circ f$ is invertible, and its inverse is given by $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$.</p>
-
-        <p><strong>Proof:</strong></p>
-        <p><strong>Step 1: Statement of Criterion for Invertibility.</strong></p>
-        <p>A function $\phi: X \to Y$ is the two-sided inverse of $\psi: Y \to X$ if and only if:</p>
+<p style="text-align: right;">$\blacksquare$</p>
+</div>
+<!-- DERIVATION 4 -->
+<div class="derivation-block" style="margin-top: 2rem;">
+<h4>Derivation 4: Invertibility of Composite Function: $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$</h4>
+<p><strong>Theorem:</strong> Let $f: A \to B$ and $g: B \to C$ be invertible (bijective) functions. Then $g \circ f$ is invertible, and its inverse is given by $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$.</p>
+<p><strong>Proof:</strong></p>
+<p><strong>Step 1: Statement of Criterion for Invertibility.</strong></p>
+<p>A function $\phi: X \to Y$ is the two-sided inverse of $\psi: Y \to X$ if and only if:</p>
         $$\phi \circ \psi = I_Y \quad \text{and} \quad \psi \circ \phi = I_X$$
         <p>Here, $g \circ f: A \to C$. To prove that $f^{-1} \circ g^{-1}: C \to A$ is the inverse of $g \circ f$, we must establish:</p>
         $$(f^{-1} \circ g^{-1}) \circ (g \circ f) = I_A \quad \text{and} \quad (g \circ f) \circ (f^{-1} \circ g^{-1}) = I_C$$
 
         <p><strong>Step 2: Verification of the Left Composition.</strong></p>
-        <p>Applying the associativity of function composition:</p>
+<p>Applying the associativity of function composition:</p>
         $$\big(f^{-1} \circ g^{-1}\big) \circ (g \circ f) = f^{-1} \circ \big(g^{-1} \circ (g \circ f)\big)$$
         $$\phantom{\big(f^{-1} \circ g^{-1}\big) \circ (g \circ f)} = f^{-1} \circ \big((g^{-1} \circ g) \circ f\big)$$
         <p>Since $g$ is invertible, $g^{-1} \circ g = I_B$ (the identity function on set $B$):</p>
@@ -1295,7 +1263,7 @@
         $$\big(f^{-1} \circ g^{-1}\big) \circ (g \circ f) = I_A$$
 
         <p><strong>Step 3: Verification of the Right Composition.</strong></p>
-        <p>Using associativity symmetrically:</p>
+<p>Using associativity symmetrically:</p>
         $$(g \circ f) \circ \big(f^{-1} \circ g^{-1}\big) = g \circ \big(f \circ (f^{-1} \circ g^{-1})\big)$$
         $$\phantom{(g \circ f) \circ \big(f^{-1} \circ g^{-1}\big)} = g \circ \big((f \circ f^{-1}) \circ g^{-1}\big)$$
         <p>Since $f \circ f^{-1} = I_B$:</p>
@@ -1303,20 +1271,19 @@
         $$\phantom{(g \circ f) \circ \big(f^{-1} \circ g^{-1}\big)} = g \circ g^{-1} = I_C$$
 
         <p><strong>Step 4: Conclusion.</strong></p>
-        <p>Since both conditions hold identically, the function $(f^{-1} \circ g^{-1})$ is the unique inverse of $(g \circ f)$:</p>
+<p>Since both conditions hold identically, the function $(f^{-1} \circ g^{-1})$ is the unique inverse of $(g \circ f)$:</p>
         $$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$$
         <p style="text-align: right;">$\blacksquare$</p>
-      </div>
-
-      <!-- DERIVATION 5 -->
-      <div class="derivation-block" style="margin-top: 2rem;">
-        <h4>Derivation 5: Fundamental Theorem of Equivalence Relations (Disjoint Equivalence Classes)</h4>
-        <p><strong>Theorem:</strong> Let $R$ be an equivalence relation on a non-empty set $A$. For any $a, b \in A$, the equivalence classes $[a]$ and $[b]$ are either identical or mutually disjoint:</p>
+</div>
+<!-- DERIVATION 5 -->
+<div class="derivation-block" style="margin-top: 2rem;">
+<h4>Derivation 5: Fundamental Theorem of Equivalence Relations (Disjoint Equivalence Classes)</h4>
+<p><strong>Theorem:</strong> Let $R$ be an equivalence relation on a non-empty set $A$. For any $a, b \in A$, the equivalence classes $[a]$ and $[b]$ are either identical or mutually disjoint:</p>
         $$[a] = [b] \iff (a, b) \in R \quad \text{and} \quad [a] \cap [b] \neq \emptyset \implies [a] = [b]$$
 
         <p><strong>Proof:</strong></p>
-        <p><strong>Part 1: Prove that $[a] \cap [b] \neq \emptyset \implies [a] = [b]$.</strong></p>
-        <p>Assume $[a] \cap [b] \neq \emptyset$. Therefore, there exists at least one element $x \in A$ such that:</p>
+<p><strong>Part 1: Prove that $[a] \cap [b] \neq \emptyset \implies [a] = [b]$.</strong></p>
+<p>Assume $[a] \cap [b] \neq \emptyset$. Therefore, there exists at least one element $x \in A$ such that:</p>
         $$x \in [a] \quad \text{and} \quad x \in [b]$$
         <p>By the definition of an equivalence class $[y] = \{z \in A : (z, y) \in R\}$:</p>
         $$(x, a) \in R \quad \text{and} \quad (x, b) \in R$$
@@ -1326,7 +1293,7 @@
         $$(a, b) \in R$$
 
         <p><strong>Part 2: Prove $[a] \subseteq [b]$.</strong></p>
-        <p>Let $y$ be an arbitrary element in $[a]$. Then:</p>
+<p>Let $y$ be an arbitrary element in $[a]$. Then:</p>
         $$(y, a) \in R$$
         <p>Using $(y, a) \in R$ and $(a, b) \in R$, by transitivity:</p>
         $$(y, b) \in R \implies y \in [b]$$
@@ -1334,7 +1301,7 @@
         $$[a] \subseteq [b]$$
 
         <p><strong>Part 3: Prove $[b] \subseteq [a]$.</strong></p>
-        <p>Since $(a, b) \in R$, symmetry ensures that $(b, a) \in R$. Let $z$ be an arbitrary element in $[b]$:</p>
+<p>Since $(a, b) \in R$, symmetry ensures that $(b, a) \in R$. Let $z$ be an arbitrary element in $[b]$:</p>
         $$(z, b) \in R$$
         <p>By transitivity with $(z, b) \in R$ and $(b, a) \in R$:</p>
         $$(z, a) \in R \implies z \in [a]$$
@@ -1342,21 +1309,20 @@
         $$[b] \subseteq [a]$$
 
         <p><strong>Part 4: Conclusion.</strong></p>
-        <p>Since $[a] \subseteq [b]$ and $[b] \subseteq [a]$, we establish:</p>
+<p>Since $[a] \subseteq [b]$ and $[b] \subseteq [a]$, we establish:</p>
         $$[a] = [b]$$
         <p>Consequently, two equivalence classes are either completely disjoint or identical.</p>
-        <p style="text-align: right;">$\blacksquare$</p>
-      </div>
-
-      <!-- DERIVATION 6 -->
-      <div class="derivation-block" style="margin-top: 2rem;">
-        <h4>Derivation 6: Number of Surjective (Onto) Functions via Principle of Inclusion-Exclusion (PIE)</h4>
-        <p><strong>Theorem:</strong> Let $|A| = m$ and $|B| = n$, where $m \ge n \ge 1$. The number of surjective functions $f: A \to B$ is:</p>
+<p style="text-align: right;">$\blacksquare$</p>
+</div>
+<!-- DERIVATION 6 -->
+<div class="derivation-block" style="margin-top: 2rem;">
+<h4>Derivation 6: Number of Surjective (Onto) Functions via Principle of Inclusion-Exclusion (PIE)</h4>
+<p><strong>Theorem:</strong> Let $|A| = m$ and $|B| = n$, where $m \ge n \ge 1$. The number of surjective functions $f: A \to B$ is:</p>
         $$S(m, n) = \sum_{r=0}^{n} (-1)^r \binom{n}{r} (n-r)^m = n^m - \binom{n}{1}(n-1)^m + \binom{n}{2}(n-2)^m - \cdots + (-1)^{n-1}\binom{n}{n-1}(1)^m$$
 
         <p><strong>Proof:</strong></p>
-        <p><strong>Step 1: Define the universal set and deficient properties.</strong></p>
-        <p>Let $U$ be the set of all possible functions from $A$ to $B$. The total cardinality is:</p>
+<p><strong>Step 1: Define the universal set and deficient properties.</strong></p>
+<p>Let $U$ be the set of all possible functions from $A$ to $B$. The total cardinality is:</p>
         $$|U| = n^m$$
         <p>Let $B = \{b_1, b_2, \dots, b_n\}$. For each index $i \in \{1, 2, \dots, n\}$, define the condition $P_i$ that an element $b_i$ is <em>not</em> in the range of the function:</p>
         $$A_i = \{f: A \to B \mid b_i \notin f(A)\}$$
@@ -1364,142 +1330,410 @@
         $$S(m, n) = \left| \bigcap_{i=1}^{n} A_i^c \right| = |U| - \left| \bigcup_{i=1}^{n} A_i \right|$$
 
         <p><strong>Step 2: Apply the Principle of Inclusion-Exclusion (PIE).</strong></p>
-        $$\left| \bigcup_{i=1}^{n} A_i \right| = \sum_{1 \le i \le n} |A_i| - \sum_{1 \le i < j \le n} |A_i \cap A_j| + \sum_{1 \le i < j < k \le n} |A_i \cap A_j \cap A_k| - \cdots + (-1)^{n-1} |A_1 \cap \dots \cap A_n|$$
+        $$\left| \bigcup_{i=1}^{n} A_i \right| = \sum_{1 \le i \le n} |A_i| - \sum_{1 \le i &lt; j \le n} |A_i \cap A_j| + \sum_{1 \le i &lt; j &lt; k \le n} |A_i \cap A_j \cap A_k| - \cdots + (-1)^{n-1} |A_1 \cap \dots \cap A_n|$$
 
         <p><strong>Step 3: Evaluate intersection terms for $r$ missing elements.</strong></p>
-        <p>If $r$ specific elements $\{b_{i_1}, \dots, b_{i_r}\}$ are excluded from the range, the function must map all $m$ elements of $A$ into the remaining $n - r$ elements of $B$:</p>
+<p>If $r$ specific elements $\{b_{i_1}, \dots, b_{i_r}\}$ are excluded from the range, the function must map all $m$ elements of $A$ into the remaining $n - r$ elements of $B$:</p>
         $$|A_{i_1} \cap A_{i_2} \cap \dots \cap A_{i_r}| = (n - r)^m$$
         <p>The number of distinct ways to choose $r$ excluded elements from $n$ elements is given by the binomial coefficient $\binom{n}{r}$.</p>
-        <p>Thus, the sum over all selections of $r$ elements is:</p>
-        $$S_r = \sum_{1 \le i_1 < \dots < i_r \le n} |A_{i_1} \cap \dots \cap A_{i_r}| = \binom{n}{r}(n - r)^m$$
+<p>Thus, the sum over all selections of $r$ elements is:</p>
+        $$S_r = \sum_{1 \le i_1 &lt; \dots &lt; i_r \le n} |A_{i_1} \cap \dots \cap A_{i_r}| = \binom{n}{r}(n - r)^m$$
 
         <p><strong>Step 4: Summing the alternating terms.</strong></p>
-        <p>Substituting $S_r$ into the PIE formula:</p>
+<p>Substituting $S_r$ into the PIE formula:</p>
         $$\left| \bigcup_{i=1}^{n} A_i \right| = \binom{n}{1}(n-1)^m - \binom{n}{2}(n-2)^m + \binom{n}{3}(n-3)^m - \dots + (-1)^{n-1}\binom{n}{n}(0)^m$$
         <p>Subtracting this union from the universal set $|U| = n^m = \binom{n}{0}(n-0)^m$ yields:</p>
         $$S(m, n) = \binom{n}{0}n^m - \binom{n}{1}(n-1)^m + \binom{n}{2}(n-2)^m - \dots + (-1)^n \binom{n}{n}(0)^m$$
         $$S(m, n) = \sum_{r=0}^{n} (-1)^r \binom{n}{r} (n-r)^m$$
         <p style="text-align: right;">$\blacksquare$</p>
-      </div>
-    </article>
-  </div>
+</div>
+</article>
+</div>
 </section>
-
-    <div class="container">
-      
-    <div style="margin: 30px 0; text-align: center;">
-      <a class="btn btn-gold" href="chapter1_part2.html" style="padding: 14px 28px; font-size: 1.05rem;">
-        Continue to Part 2: Solved CBSE PYQs & Case Studies →
+<div class="container">
+<div style="margin: 30px 0; text-align: center;">
+<a class="btn btn-gold" href="chapter1_part2.html" style="padding: 14px 28px; font-size: 1.05rem;">
+        Continue to Part 2: Solved CBSE PYQs &amp; Case Studies →
       </a>
-    </div>
-    
-    </div>
-
-    <section class="final-cta container reveal">
-      <div class="cta-content">
-        <h2>Mastered Chapter1? <em>Return to Mathematics Hub.</em></h2>
-        <a class="btn btn-gold" href="index.html">
+</div>
+</div>
+<section class="final-cta container reveal">
+<div class="cta-content">
+<h2>Mastered Chapter1? <em>Return to Mathematics Hub.</em></h2>
+<a class="btn btn-gold" href="index.html">
           Back to Mathematics Hub →
         </a>
-      </div>
-    </section>
-  </main>
+</div>
+</section>
+</main>
+<footer class="sn-clean-footer">
+<div class="container sn-f-wrap">
+<div class="sn-f-grid">
+<!-- Brand & Founder -->
+<div class="sn-f-col brand-col">
+<a class="brand" href="/" style="margin-bottom: 12px; display: inline-flex;">
+<span aria-hidden="true" class="brand-mark">
+<svg fill="none" viewbox="0 0 64 64">
+<path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
+</svg>
+</span>
+<span class="brand-name">Shorveer<em>Notes</em></span>
+</a>
+<p class="sn-f-desc">A student-focused Class 12 Science learning platform with structured Physics, Chemistry, Mathematics and English resources.</p>
+<div class="sn-f-author">
+          Created with pride by <strong>Jatin Sandilya</strong>
+</div>
+<div style="margin-top: 14px;">
+<a class="btn btn-dark" href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" style="min-height: 38px; padding: 0 14px; font-size: 13px;" target="_blank">
+            JS EDIZ on YouTube →
+          </a>
+</div>
+</div>
+<!-- Links: Subjects -->
+<div class="sn-f-col">
+<h3 class="sn-f-title">Subjects</h3>
+<ul class="sn-f-links">
+<li><a href="../physics/index.html">Physics Hub</a></li>
+<li><a href="../chemistry/index.html">Chemistry Hub</a></li>
+<li><a href="../mathematics/index.html">Mathematics Hub</a></li>
+<li><a href="../english/index.html">English Hub</a></li>
+</ul>
+</div>
+<!-- Links: Site & Policies -->
+<div class="sn-f-col">
+<h3 class="sn-f-title">Resources</h3>
+<ul class="sn-f-links">
+<li><a href="../exam-info.html">Exam Info</a></li>
+<li><a href="../about-notes.html">About Notes</a></li>
+<li><a href="../about.html">About Shorveer</a></li>
+<li><a href="../cookies.html">Cookies &amp; Storage</a></li>
+</ul>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="sn-f-bottom">
+<p>© <span id="year">2026</span> Shorveer Notes · All rights reserved.</p>
+<p>Built with pride in India 🇮🇳</p>
+</div>
+</div>
+<style>
+    .sn-clean-footer {
+      background: var(--paper-2);
+      border-top: 1px solid var(--line);
+      padding: 60px 0 30px;
+      margin-top: 80px;
+      color: var(--ink);
+    }
+    .sn-f-wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .sn-f-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .sn-f-desc {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 12px 0;
+      max-width: 420px;
+    }
+    .sn-f-author {
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .sn-f-author strong { color: var(--ink); }
+    .sn-f-title {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--rust);
+      margin-bottom: 16px;
+    }
+    .sn-f-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .sn-f-links a {
+      color: var(--ink-2);
+      font-size: 14.5px;
+      transition: color .2s ease;
+      text-decoration: none;
+    }
+    .sn-f-links a:hover { color: var(--rust); text-decoration: underline; }
+    .sn-f-bottom {
+      border-top: 1px solid var(--line-soft);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    @media (max-width: 768px) {
+      .sn-f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .sn-f-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</footer>
+<!-- ============ COOKIE ============ -->
+<aside aria-label="Cookie notice" aria-live="polite" class="cookie" id="cookieBox" role="dialog">
+<div class="cookie-header">
+<h3>Before you go — a quick note</h3>
+</div>
+<p>We use your browser's local storage to remember your theme and to not ask you this every visit. That's all. See our <a href="../cookies.html" style="text-decoration:underline">cookies page</a> for details.</p>
+<div class="cookie-actions">
+<a class="cookie-policy" href="../cookies.html">Read more</a>
+<button class="cookie-accept" id="acceptCookies">Got it</button>
+</div>
+</aside>
+<script>
+    const store = {
+      get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+      set(k, v) { try { localStorage.setItem(k, v); } catch {} }
+    };
 
-  <!-- ============ FOOTER ============ -->
-  <footer class="sn-footer">
-    <div class="container sn-footer__container">
-      <div class="sn-footer__grid">
-        <div class="sn-footer__brand">
-          <div class="brand" style="margin-bottom:12px;">
-            <span class="sn-brand__mark">
-              <svg viewBox="0 0 64 64" fill="none">
-                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
-              </svg>
-            </span>
-            <span class="brand-name" style="color:#fff; margin-left:8px;">Shorveer<em>Notes</em></span>
-          </div>
-          <p style="color:var(--muted); font-size:0.95rem; line-height:1.6;">
-            A student-focused platform providing Class 12 Science notes, derivations, and board examination preparation.
-          </p>
-          <div style="margin-top:14px; color:var(--muted); font-size:0.9rem;">
-            Created with pride by <strong>Jatin Sandilya</strong>
-          </div>
-        </div>
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-        <div class="sn-nav-col">
-          <h3 style="color:#fff; font-size:1rem; margin-bottom:14px;">Subject Hubs</h3>
-          <ul style="list-style:none; padding:0; margin:0; line-height:2;">
-            <li><a href="../physics/index.html" style="color:var(--muted); text-decoration:none;">Physics Hub</a></li>
-            <li><a href="../chemistry/index.html" style="color:var(--muted); text-decoration:none;">Chemistry Hub</a></li>
-            <li><a href="../mathematics/index.html" style="color:var(--muted); text-decoration:none;">Mathematics Hub</a></li>
-          </ul>
-        </div>
+    const THEMES = {
+      notebook: { hero: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=900&q=80", label: "the desk of a class 12 student" },
+      chalkboard: { hero: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80", label: "equations, one line at a time" },
+      blueprint: { hero: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=80", label: "where the theory becomes engineering" },
+      sunset: { hero: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80", label: "late-night study, warm lamp" },
+      emerald: { hero: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=80", label: "life sciences & the biology lab" },
+      cyberpunk: { hero: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80", label: "silicon, circuitry & quantum states" },
+      minimal: { hero: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80", label: "pure focus, zero noise" },
+      dracula: { hero: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80", label: "midnight coding & deep analysis" },
+      solarized: { hero: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=80", label: "pages turn, ideas stick" }
+    };
 
-        <div class="sn-nav-col">
-          <h3 style="color:#fff; font-size:1rem; margin-bottom:14px;">Connect</h3>
-          <ul style="list-style:none; padding:0; margin:0; line-height:2;">
-            <li><a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer" style="color:var(--muted); text-decoration:none;">JS EDIZ on YouTube</a></li>
-            <li><a href="mailto:support.shorveernotes@gmail.com">Contact Support</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:20px; text-align:center; color:var(--muted); font-size:0.85rem;">
-        <p>&copy; 2026 Shorveer Notes · Built with pride in India 🇮🇳</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ============ COOKIE BANNER ============ -->
-  <aside class="sn-cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie and Storage Notice">
-    <p>
-      🍪 <strong>Transparent Storage Notice:</strong> Shorveer Notes uses browser local storage exclusively to preserve your chosen theme settings (Notebook, Sunset, Chalkboard, Blueprint) across study sessions. We do not use intrusive tracking cookies.
-    </p>
-    <button class="sn-cookie-btn" id="cookieAcceptBtn">Got it, proceed</button>
-  </aside>
-
-  <script>
-    const themeBtn = document.getElementById("themeButton");
+    const html = document.documentElement;
+    const themeButton = document.getElementById("themeButton");
     const themePop = document.getElementById("themePop");
+    const heroImage = document.getElementById("heroImage");
+    const heroCaption = document.querySelector(".polaroid-caption");
     const themeOpts = document.querySelectorAll(".theme-opt");
-    const cookieBanner = document.getElementById("cookieBanner");
-    const cookieAcceptBtn = document.getElementById("cookieAcceptBtn");
 
     function applyTheme(name) {
-      document.documentElement.setAttribute("data-theme", name);
-      try { localStorage.setItem("shorveer-theme-name", name); } catch(e) {}
+      if (!THEMES[name]) name = "notebook";
+      html.setAttribute("data-theme", name);
+      store.set("shorveer-theme-name", name);
+      themeOpts.forEach(btn => btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name)));
+
+      const t = THEMES[name];
+      if (heroImage && t) {
+        heroImage.classList.add("fading");
+        setTimeout(() => {
+          heroImage.src = t.hero;
+          if (heroCaption) heroCaption.textContent = t.label;
+          heroImage.classList.remove("fading");
+        }, 260);
+      }
     }
 
-    applyTheme(localStorage.getItem("shorveer-theme-name") || "sunset");
+    applyTheme(store.get("shorveer-theme-name") || "notebook");
 
-    themeBtn.addEventListener("click", (e) => {
+    themeButton.addEventListener("click", (e) => {
       e.stopPropagation();
-      themePop.classList.toggle("open");
+      const open = themePop.classList.toggle("open");
+      themeButton.setAttribute("aria-expanded", String(open));
     });
 
     themeOpts.forEach(btn => {
       btn.addEventListener("click", () => {
         applyTheme(btn.dataset.themeValue);
         themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
       });
     });
 
     document.addEventListener("click", (e) => {
-      if (!themePop.contains(e.target) && !themeBtn.contains(e.target)) {
+      if (!themePop.contains(e.target) && !themeButton.contains(e.target)) {
         themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
       }
     });
 
-    try {
-      if (!localStorage.getItem("shorveer-cookie-ack")) {
-        cookieBanner.classList.add("show");
-      }
-    } catch(e) {}
+    const MOTIVATIONS = [
+      "One chapter at a time.",
+      "Understanding beats memorising.",
+      "Small progress every day adds up.",
+      "You don't have to be perfect today.",
+      "Read it once. Write it once. Learn it once.",
+      "The best time to revise is before you forget.",
+      "Study the weak chapter first.",
+      "Nothing is too hard once it's broken down.",
+      "Your pace is the right pace.",
+      "Show up. That's half of it.",
+      "Confusion is the feeling of learning.",
+      "You're not behind. You're on your own timeline."
+    ];
 
-    cookieAcceptBtn.addEventListener("click", () => {
-      cookieBanner.classList.remove("show");
-      try { localStorage.setItem("shorveer-cookie-ack", "true"); } catch(e) {}
+    const motivationText = document.getElementById("motivationText");
+    let motivationIndex = 0;
+
+    function nextMotivation() {
+      if (!motivationText) return;
+      motivationText.classList.remove("show");
+      setTimeout(() => {
+        motivationIndex = (motivationIndex + 1) % MOTIVATIONS.length;
+        motivationText.textContent = MOTIVATIONS[motivationIndex];
+        motivationText.classList.add("show");
+      }, 500);
+    }
+    setInterval(nextMotivation, 6500);
+
+    const flipCards = document.querySelectorAll(".flip-card");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    flipCards.forEach(card => {
+      if (isTouch) {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("a")) return;
+          card.classList.toggle("flipped");
+        });
+      }
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          if (e.target.closest("a")) return;
+          e.preventDefault();
+          card.classList.toggle("flipped");
+        }
+      });
     });
+
+    const heroArt = document.getElementById("heroArt");
+    const heroStage = document.getElementById("heroStage");
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (heroArt && heroStage && finePointer && !reduceMotion) {
+      heroArt.addEventListener("mousemove", (e) => {
+        const rect = heroArt.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        heroStage.style.transform = `perspective(1200px) rotateX(${-y * 16}deg) rotateY(${x * 16}deg) translateZ(10px)`;
+      });
+      heroArt.addEventListener("mouseleave", () => {
+        heroStage.style.transform = "perspective(1200px) rotateX(0) rotateY(0) translateZ(0)";
+      });
+    }
+
+    const tiltEls = document.querySelectorAll("[data-tilt]");
+    if (finePointer && !reduceMotion) {
+      tiltEls.forEach(el => {
+        el.addEventListener("mousemove", (e) => {
+          const r = el.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width - 0.5;
+          const py = (e.clientY - r.top) / r.height - 0.5;
+          el.style.transform = `perspective(900px) rotateX(${-py * 8}deg) rotateY(${px * 8}deg) translateY(-4px)`;
+        });
+        el.addEventListener("mouseleave", () => { el.style.transform = ""; });
+      });
+    }
+
+    const searchData = [
+      { title: "Physics", description: "Class 12 Physics chapters and resources", url: "physics/index.html" },
+      { title: "Chemistry", description: "Class 12 Chemistry chapters and resources", url: "chemistry/index.html" },
+      { title: "Mathematics", description: "Class 12 Maths chapters and resources", url: "mathematics/index.html" },
+      { title: "English", description: "Class 12 English notes and summaries", url: "english/index.html" },
+      { title: "Exam information", description: "Dates, syllabus and marking scheme", url: "exam-info.html" },
+      { title: "About our notes", description: "How each chapter is made", url: "about-notes.html" },
+      { title: "About Shorveer", description: "The story behind the site", url: "about.html" },
+      { title: "Privacy policy", description: "How we handle your data", url: "privacy.html" },
+      { title: "Cookies policy", description: "What we store in your browser", url: "cookies.html" }
+    ];
+
+    const searchButton = document.getElementById("searchButton");
+    const searchLayer = document.getElementById("searchLayer");
+    const searchClose = document.getElementById("searchClose");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    function openSearch() {
+      searchLayer.classList.add("active");
+      searchLayer.setAttribute("aria-hidden", "false");
+      setTimeout(() => searchInput.focus(), 60);
+      renderResults("");
+    }
+    function closeSearch() {
+      searchLayer.classList.remove("active");
+      searchLayer.setAttribute("aria-hidden", "true");
+      searchInput.value = "";
+    }
+    function renderResults(query) {
+      const q = query.trim().toLowerCase();
+      const matches = searchData.filter(item =>
+        !q || item.title.toLowerCase().includes(q) || item.description.toLowerCase().includes(q)
+      );
+      if (!matches.length) {
+        searchResults.innerHTML = '<div class="empty-result">Nothing found. Try "physics" or "exam".</div>';
+        return;
+      }
+      searchResults.innerHTML = matches.map(item => `
+        <a class="result" href="${item.url}">
+          <div>
+            <strong>${item.title}</strong>
+            <small>${item.description}</small>
+          </div>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+      `).join("");
+    }
+
+    if (searchButton) searchButton.addEventListener("click", openSearch);
+    if (searchClose) searchClose.addEventListener("click", closeSearch);
+    if (searchLayer) searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
+    if (searchInput) searchInput.addEventListener("input", e => renderResults(e.target.value));
+
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    function setMenu(open) {
+      mobileMenu.classList.toggle("open", open);
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+      mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+    }
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        closeSearch();
+        setMenu(false);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        openSearch();
+      }
+    });
+
+    const reveals = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); }
+        });
+      }, { threshold: .1 });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add("visible"));
+    }
+
+    const cookieBox = document.getElementById("cookieBox");
+    const acceptCookies = document.getElementById("acceptCookies");
+    if (cookieBox && !store.get("shorveer-cookie-consent")) {
+      setTimeout(() => cookieBox.classList.add("show"), 1400);
+    }
+    if (acceptCookies) {
+      acceptCookies.addEventListener("click", () => {
+        store.set("shorveer-cookie-consent", "accepted");
+        cookieBox.classList.remove("show");
+      });
+    }
   </script>
 </body>
 </html>
