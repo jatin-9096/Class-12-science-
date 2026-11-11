@@ -2069,3 +2069,40 @@ html.js .reveal.visible .resource-card,
 html.js .reveal.visible .flip-card {
 animation: none !important;
 }
+/* ---------- Math overflow & layout fix ---------- */
+.section, .section .container, .container, main {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.real-life, .rl-card, .rl-body, .flip-face, .resource, .notebook {
+  min-width: 0;
+  max-width: 100%;
+}
+mjx-container[display="true"] {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding: 6px 0;
+}
+mjx-container {
+  max-width: 100%;
+}
+.rl-text, .rl-body p, .resource p, .method-list p {
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Mind map ---------- */
+.mindmap { display: flex; flex-direction: column; gap: 22px; max-width: 880px; margin: 0 auto; }
+.mm-root { font-family: var(--font-display); font-size: 28px; padding: 18px 24px; border-radius: var(--r-lg); background: var(--ink); color: var(--paper); text-align: center; }
+.mm-branch { border-left: 3px solid var(--gold-dark); padding-left: 18px; }
+.mm-node { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+.mm-children { list-style: none; display: grid; gap: 6px; padding-left: 10px; }
+.mm-children li { font-size: 15px; color: var(--muted); }
+.mm-children li::before { content: "› "; color: var(--rust); }
+.mm-toggle { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); font-weight: 600; font-size: 14px; }
+
+@media (max-width: 720px) {
+  .mm-root { font-size: 22px; }
+  .mm-node { font-size: 18px; }
+}
