@@ -1,3992 +1,735 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html data-theme="notebook" lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description"
-      content="Chemistry Chapter 1 - Solutions. Interactive concept map covering concentration, solubility, Henry's law, ideal and non-ideal solutions, colligative properties, osmotic pressure and abnormal molar mass.">
-
-<meta name="theme-color" content="#f5f7fb">
-
-<title>Chapter 01 — Solutions | Shorveer Chemistry</title>
-
-<style>
-
-/* =========================================================
-   SHORVEER CHEMISTRY — CHAPTER 01
-   ORIGINAL INTERACTIVE MIND MAP
-   ========================================================= */
-
-:root{
-    --bg:#f5f7fb;
-    --bg2:#edf2f7;
-    --surface:rgba(255,255,255,.92);
-    --surface2:rgba(255,255,255,.82);
-    --border:rgba(30,64,175,.12);
-    --border2:rgba(37,99,235,.28);
-
-    --text:#172033;
-    --muted:#64748b;
-
-    --blue:#2563eb;
-    --cyan:#0891b2;
-    --violet:#6366f1;
-    --gold:#c79a2b;
-    --green:#16a34a;
-    --pink:#db2777;
-    --red:#dc2626;
-
-    --shadow:
-        0 18px 50px rgba(30,41,59,.10);
-
-    --radius:24px;
-    --transition:.35s cubic-bezier(.2,.8,.2,1);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    min-height:100vh;
-    background:
-        radial-gradient(circle at 12% 8%,rgba(37,99,235,.055),transparent 28%),
-        radial-gradient(circle at 88% 14%,rgba(99,102,241,.045),transparent 28%),
-        linear-gradient(135deg,var(--bg),var(--bg2));
-    color:var(--text);
-    font-family:
-        Inter,
-        "Segoe UI",
-        system-ui,
-        -apple-system,
-        sans-serif;
-    line-height:1.65;
-    overflow-x:hidden;
-}
-
-
-button,
-a{
-    font:inherit;
-}
-
-button{
-    border:0;
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-/* =========================================================
-   BACKGROUND
-   ========================================================= */
-
-.background-grid{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:-3;
-    opacity:.24;
-
-    background-image:
-        linear-gradient(
-            rgba(120,180,230,.06) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(120,180,230,.06) 1px,
-            transparent 1px
-        );
-
-    background-size:42px 42px;
-
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent 88%
-        );
-}
-
-.orb{
-    position:fixed;
-    border-radius:50%;
-    filter:blur(70px);
-    pointer-events:none;
-    z-index:-2;
-    opacity:.16;
-}
-
-.orb.one{
-    width:320px;
-    height:320px;
-    background:var(--blue);
-    top:80px;
-    left:-100px;
-}
-
-.orb.two{
-    width:360px;
-    height:360px;
-    background:var(--violet);
-    right:-120px;
-    top:460px;
-}
-
-.orb.three{
-    width:250px;
-    height:250px;
-    background:var(--cyan);
-    left:35%;
-    bottom:-100px;
-}
-
-/* =========================================================
-   LOADER
-   ========================================================= */
-
-#loader{
-    position:fixed;
-    inset:0;
-    z-index:9999;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-
-    background:#ffffff;
-
-    transition:
-        opacity .6s ease,
-        visibility .6s ease;
-}
-
-#loader.hide{
-    opacity:0;
-    visibility:hidden;
-}
-
-.loader-ring{
-    width:72px;
-    height:72px;
-
-    border-radius:50%;
-    border:2px solid rgba(255,255,255,.08);
-    border-top-color:var(--blue);
-    border-right-color:var(--cyan);
-
-    animation:
-        spin 1.1s linear infinite;
-}
-
-.loader-title{
-    margin-top:22px;
-    font-weight:700;
-    letter-spacing:.5px;
-}
-
-.loader-sub{
-    color:#64748b;
-    font-size:.85rem;
-    margin-top:4px;
-}
-
-@keyframes spin{
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:100;
-
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-
-    background:rgba(255,255,255,.88);
-    border-bottom:1px solid var(--border);
-}
-
-
-.nav{
-    max-width:1400px;
-    margin:auto;
-
-    min-height:74px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:0 24px;
-}
-
-.brand{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.brand-mark{
-    width:40px;
-    height:40px;
-    border-radius:13px;
-
-    display:grid;
-    place-items:center;
-
-    font-weight:900;
-
-    color:#ffffff;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--cyan),
-            var(--blue)
-        );
-
-    box-shadow:
-        0 8px 25px rgba(85,184,255,.25);
-}
-
-.brand-text strong{
-    display:block;
-    font-size:.95rem;
-}
-
-.brand-text span{
-    color:var(--muted);
-    font-size:.72rem;
-}
-
-.nav-actions{
-    display:flex;
-    gap:8px;
-}
-
-.icon-btn{
-    width:40px;
-    height:40px;
-
-    border-radius:12px;
-
-    background:var(--surface);
-    border:1px solid var(--border);
-
-    color:var(--text);
-
-    cursor:pointer;
-
-    transition:var(--transition);
-}
-
-.icon-btn:hover{
-    transform:translateY(-2px);
-    border-color:var(--border2);
-}
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero{
-    max-width:1400px;
-    margin:auto;
-    padding:72px 24px 45px;
-}
-
-.hero-grid{
-    display:grid;
-    grid-template-columns:
-        minmax(0,1.35fr)
-        minmax(300px,.65fr);
-
-    gap:35px;
-    align-items:center;
-}
-
-.eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-
-    padding:7px 12px;
-
-    border-radius:999px;
-
-    background:rgba(85,184,255,.08);
-    border:1px solid rgba(85,184,255,.18);
-
-    color:var(--blue);
-
-    font-size:.75rem;
-    font-weight:800;
-    letter-spacing:.9px;
-    text-transform:uppercase;
-}
-
-.live-dot{
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:var(--cyan);
-    box-shadow:0 0 12px var(--cyan);
-}
-
-.hero h1{
-    margin-top:18px;
-
-    font-size:
-        clamp(
-            2.6rem,
-            7vw,
-            5.6rem
-        );
-
-    line-height:.98;
-    letter-spacing:-4px;
-}
-
-.hero h1 span{
-    background:
-        linear-gradient(
-            100deg,
-            var(--blue),
-            var(--cyan),
-            var(--violet)
-        );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-}
-
-.hero-description{
-    max-width:760px;
-    color:var(--muted);
-    margin-top:24px;
-    font-size:1.04rem;
-}
-
-.hero-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    margin-top:28px;
-}
-
-.primary-btn,
-.secondary-btn{
-    padding:12px 18px;
-    border-radius:14px;
-
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-
-    cursor:pointer;
-
-    transition:var(--transition);
-}
-
-.primary-btn{
-    background:
-        linear-gradient(
-            135deg,
-            var(--blue),
-            var(--cyan)
-        );
-
-    color:#ffffff;
-    font-weight:800;
-
-    box-shadow:
-        0 12px 30px rgba(85,184,255,.18);
-}
-
-.secondary-btn{
-    background:var(--surface);
-    border:1px solid var(--border);
-}
-
-.primary-btn:hover,
-.secondary-btn:hover{
-    transform:translateY(-3px);
-}
-
-/* =========================================================
-   HERO MOLECULE VISUAL
-   ========================================================= */
-
-.molecule-card{
-    position:relative;
-    min-height:330px;
-
-    display:grid;
-    place-items:center;
-
-    border-radius:32px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(85,184,255,.08),
-            rgba(156,140,255,.05)
-        );
-
-    border:1px solid var(--border);
-
-    box-shadow:var(--shadow);
-
-    overflow:hidden;
-}
-
-.molecule-card::before{
-    content:"";
-    position:absolute;
-    width:230px;
-    height:230px;
-
-    border-radius:50%;
-
-    border:1px dashed
-        rgba(94,231,225,.25);
-
-    animation:
-        orbit 12s linear infinite;
-}
-
-.molecule-card::after{
-    content:"";
-    position:absolute;
-    width:310px;
-    height:310px;
-
-    border-radius:50%;
-
-    border:1px dashed
-        rgba(156,140,255,.16);
-
-    animation:
-        orbitReverse 18s linear infinite;
-}
-
-.atom{
-    position:relative;
-    z-index:2;
-
-    width:110px;
-    height:110px;
-
-    border-radius:50%;
-
-    display:grid;
-    place-items:center;
-
-    background:
-        radial-gradient(
-            circle at 35% 30%,
-            #d9ffff,
-            var(--cyan) 24%,
-            #237fa7 65%,
-            #102a48
-        );
-
-    color:#ffffff;
-
-    font-size:2rem;
-    font-weight:900;
-
-    box-shadow:
-        0 0 50px rgba(94,231,225,.38);
-
-    animation:
-        nucleusFloat 3.5s ease-in-out infinite;
-}
-
-.electron{
-    position:absolute;
-    width:12px;
-    height:12px;
-    border-radius:50%;
-    background:var(--gold);
-    box-shadow:0 0 18px var(--gold);
-}
-
-.e1{
-    transform:translate(135px,-18px);
-}
-
-.e2{
-    transform:translate(-120px,45px);
-}
-
-.e3{
-    transform:translate(55px,125px);
-}
-
-@keyframes orbit{
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-@keyframes orbitReverse{
-    to{
-        transform:rotate(-360deg);
-    }
-}
-
-@keyframes nucleusFloat{
-    50%{
-        transform:translateY(-10px);
-    }
-}
-
-/* =========================================================
-   QUICK NAV
-   ========================================================= */
-
-.quick-nav{
-    max-width:1400px;
-    margin:0 auto 25px;
-    padding:0 24px;
-}
-
-.quick-nav-inner{
-    display:flex;
-    gap:9px;
-    overflow:auto;
-
-    scrollbar-width:none;
-}
-
-.quick-nav-inner::-webkit-scrollbar{
-    display:none;
-}
-
-.quick-link{
-    flex:0 0 auto;
-
-    padding:9px 13px;
-
-    border:1px solid var(--border);
-    background:var(--surface);
-
-    border-radius:999px;
-
-    color:var(--muted);
-    font-size:.78rem;
-
-    transition:var(--transition);
-}
-
-.quick-link:hover{
-    color:var(--text);
-    border-color:var(--border2);
-}
-
-/* =========================================================
-   MAIN CONTAINER
-   ========================================================= */
-
-.container{
-    max-width:1400px;
-    margin:auto;
-    padding:0 24px 80px;
-}
-
-.section{
-    margin-top:28px;
-    scroll-margin-top:100px;
-}
-
-.section-heading{
-    display:flex;
-    align-items:end;
-    justify-content:space-between;
-    gap:15px;
-
-    margin-bottom:15px;
-}
-
-.section-heading h2{
-    font-size:1.65rem;
-    letter-spacing:-.8px;
-}
-
-.section-heading p{
-    color:var(--muted);
-    font-size:.82rem;
-}
-
-/* =========================================================
-   CENTRAL MAP
-   ========================================================= */
-
-.map-wrapper{
-    position:relative;
-
-    min-height:610px;
-
-    border-radius:30px;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(85,184,255,.09),
-            transparent 35%
-        ),
-        var(--surface);
-
-    border:1px solid var(--border);
-
-    box-shadow:var(--shadow);
-
-    overflow:hidden;
-}
-
-.map-svg{
-    position:absolute;
-    inset:0;
-
-    width:100%;
-    height:100%;
-
-    pointer-events:none;
-}
-
-.connection{
-    fill:none;
-    stroke:rgba(85,184,255,.22);
-    stroke-width:2;
-
-    stroke-dasharray:8 10;
-
-    animation:
-        flow 7s linear infinite;
-}
-
-@keyframes flow{
-    to{
-        stroke-dashoffset:-100;
-    }
-}
-
-.map-core{
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-    width:190px;
-    height:190px;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(85,184,255,.30),
-            rgba(255,255,255,.98) 67%
-        );
-
-    border:
-        1px solid
-        rgba(94,231,225,.45);
-
-    box-shadow:
-        0 0 70px rgba(85,184,255,.18),
-        inset 0 0 45px rgba(85,184,255,.10);
-
-    z-index:3;
-
-    animation:
-        corePulse 4s ease-in-out infinite;
-}
-
-.map-core strong{
-    font-size:1.4rem;
-}
-
-.map-core small{
-    display:block;
-    margin-top:5px;
-    color:var(--muted);
-    font-size:.68rem;
-    letter-spacing:.7px;
-}
-
-@keyframes corePulse{
-    50%{
-        box-shadow:
-            0 0 90px rgba(85,184,255,.25),
-            inset 0 0 55px rgba(85,184,255,.14);
-    }
-}
-
-.map-node{
-    position:absolute;
-
-    width:220px;
-    min-height:110px;
-
-    padding:17px;
-
-    border-radius:20px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.96),
-            rgba(248,250,252,.96)
-        );
-
-    border:1px solid var(--border);
-
-    cursor:pointer;
-
-    z-index:4;
-
-    transition:var(--transition);
-
-    box-shadow:
-        0 16px 35px rgba(0,0,0,.18);
-}
-
-
-.map-node:hover{
-    transform:translateY(-7px) scale(1.015);
-    border-color:var(--border2);
-
-    box-shadow:
-        0 25px 50px rgba(0,0,0,.25);
-}
-
-.node-number{
-    display:inline-grid;
-    place-items:center;
-
-    width:27px;
-    height:27px;
-
-    border-radius:9px;
-
-    background:rgba(85,184,255,.12);
-    color:var(--blue);
-
-    font-size:.7rem;
-    font-weight:900;
-}
-
-.map-node h3{
-    margin-top:10px;
-    font-size:.98rem;
-}
-
-.map-node p{
-    margin-top:4px;
-    color:var(--muted);
-    font-size:.74rem;
-}
-
-.node-a{
-    left:5%;
-    top:8%;
-}
-
-.node-b{
-    right:5%;
-    top:8%;
-}
-
-.node-c{
-    left:3%;
-    top:42%;
-}
-
-.node-d{
-    right:3%;
-    top:42%;
-}
-
-.node-e{
-    left:8%;
-    bottom:8%;
-}
-
-.node-f{
-    right:8%;
-    bottom:8%;
-}
-
-/* =========================================================
-   CARDS
-   ========================================================= */
-
-.cards{
-    display:grid;
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(250px,1fr)
-        );
-    gap:16px;
-}
-
-.card{
-    position:relative;
-
-    padding:23px;
-
-    border-radius:22px;
-
-    background:var(--surface);
-
-    border:1px solid var(--border);
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.12);
-
-    transition:var(--transition);
-}
-
-.card:hover{
-    transform:translateY(-5px);
-    border-color:var(--border2);
-}
-
-.card-icon{
-    width:44px;
-    height:44px;
-
-    border-radius:14px;
-
-    display:grid;
-    place-items:center;
-
-    background:rgba(85,184,255,.10);
-
-    color:var(--blue);
-
-    font-size:1.15rem;
-}
-
-.card h3{
-    margin-top:16px;
-    font-size:1.08rem;
-}
-
-.card p{
-    color:var(--muted);
-    margin-top:8px;
-    font-size:.86rem;
-}
-
-.card ul{
-    margin-top:12px;
-    padding-left:18px;
-    color:var(--muted);
-    font-size:.82rem;
-}
-
-.card li{
-    margin:5px 0;
-}
-
-/* =========================================================
-   FORMULA BOX
-   ========================================================= */
-
-.formula-grid{
-    display:grid;
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(270px,1fr)
-        );
-    gap:15px;
-}
-
-.formula{
-    padding:20px;
-
-    border-radius:20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(85,184,255,.08),
-            rgba(156,140,255,.06)
-        );
-
-    border:1px solid var(--border);
-}
-
-.formula-label{
-    color:var(--cyan);
-
-    font-size:.72rem;
-    font-weight:900;
-
-    text-transform:uppercase;
-    letter-spacing:.8px;
-}
-
-.formula-expression{
-    margin-top:12px;
-
-    padding:14px;
-
-    border-radius:14px;
-
-    background:rgba(15,23,42,.045);
-
-    text-align:center;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:1.16rem;
-
-    color:var(--gold);
-
-    overflow-x:auto;
-}
-
-
-.formula-note{
-    margin-top:9px;
-    color:var(--muted);
-    font-size:.77rem;
-}
-
-/* =========================================================
-   INFO TABLE
-   ========================================================= */
-
-.table-wrap{
-    overflow-x:auto;
-
-    border-radius:20px;
-
-    border:1px solid var(--border);
-
-    background:var(--surface);
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    min-width:720px;
-}
-
-th,
-td{
-    padding:14px 16px;
-    text-align:left;
-
-    border-bottom:1px solid var(--border);
-
-    font-size:.82rem;
-}
-
-th{
-    color:var(--blue);
-    font-size:.75rem;
-    text-transform:uppercase;
-    letter-spacing:.6px;
-}
-
-td{
-    color:var(--muted);
-}
-
-tr:last-child td{
-    border-bottom:0;
-}
-
-/* =========================================================
-   SVG GRAPH SECTION
-   ========================================================= */
-
-.graph-grid{
-    display:grid;
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(320px,1fr)
-        );
-    gap:18px;
-}
-
-.graph-card{
-    padding:20px;
-
-    border-radius:22px;
-
-    background:var(--surface);
-    border:1px solid var(--border);
-}
-
-.graph-card h3{
-    font-size:.98rem;
-}
-
-.graph-card p{
-    color:var(--muted);
-    font-size:.78rem;
-    margin-top:5px;
-}
-
-.graph{
-    width:100%;
-    height:auto;
-    margin-top:15px;
-}
-
-.axis{
-    stroke:var(--muted);
-    stroke-width:1.5;
-}
-
-.graph-line{
-    fill:none;
-    stroke:var(--blue);
-    stroke-width:3;
-    stroke-linecap:round;
-
-    stroke-dasharray:500;
-    stroke-dashoffset:500;
-
-    animation:
-        drawGraph 2.5s ease forwards;
-}
-
-.graph-line.alt{
-    stroke:var(--cyan);
-    animation-delay:.5s;
-}
-
-.graph-line.gold{
-    stroke:var(--gold);
-    animation-delay:.9s;
-}
-
-.graph-label{
-    fill:var(--muted);
-    font-size:11px;
-}
-
-@keyframes drawGraph{
-    to{
-        stroke-dashoffset:0;
-    }
-}
-
-/* =========================================================
-   SOLUBILITY DIAGRAM
-   ========================================================= */
-
-.solubility-diagram{
-    position:relative;
-    height:270px;
-
-    border-radius:20px;
-
-    background:var(--surface);
-
-    border:1px solid var(--border);
-
-    overflow:hidden;
-}
-
-.solution-beaker{
-    position:absolute;
-
-    left:50%;
-    bottom:30px;
-
-    transform:translateX(-50%);
-
-    width:170px;
-    height:180px;
-
-    border:
-        3px solid
-        rgba(150,210,255,.65);
-
-    border-top:0;
-
-    border-radius:
-        0 0 25px 25px;
-}
-
-.solution-liquid{
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    height:115px;
-
-    border-radius:
-        0 0 22px 22px;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(94,231,225,.18),
-            rgba(85,184,255,.32)
-        );
-
-    animation:
-        liquidWave 3s ease-in-out infinite;
-}
-
-.particle{
-    position:absolute;
-
-    width:7px;
-    height:7px;
-
-    border-radius:50%;
-
-    background:var(--gold);
-
-    box-shadow:
-        0 0 9px rgba(233,196,106,.6);
-}
-
-.p1{left:20%;bottom:55px}
-.p2{left:35%;bottom:80px}
-.p3{left:48%;bottom:45px}
-.p4{left:63%;bottom:95px}
-.p5{left:78%;bottom:62px}
-.p6{left:27%;bottom:110px}
-.p7{left:57%;bottom:125px}
-
-@keyframes liquidWave{
-    50%{
-        transform:
-            translateY(-3px)
-            scaleX(1.01);
-    }
-}
-
-/* =========================================================
-   PROCESS STEPS
-   ========================================================= */
-
-.steps{
-    display:grid;
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(220px,1fr)
-        );
-    gap:14px;
-}
-
-.step{
-    position:relative;
-    padding:20px;
-
-    background:var(--surface);
-    border:1px solid var(--border);
-
-    border-radius:20px;
-}
-
-.step-number{
-    width:34px;
-    height:34px;
-
-    border-radius:50%;
-
-    display:grid;
-    place-items:center;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--blue),
-            var(--violet)
-        );
-
-    color:#ffffff;
-    font-weight:900;
-}
-
-.step h3{
-    margin-top:14px;
-    font-size:.98rem;
-}
-
-.step p{
-    margin-top:6px;
-    color:var(--muted);
-    font-size:.8rem;
-}
-
-/* =========================================================
-   CALLOUT
-   ========================================================= */
-
-.callout{
-    padding:24px;
-
-    border-radius:24px;
-
-    border:
-        1px solid
-        rgba(94,231,225,.20);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(94,231,225,.08),
-            rgba(85,184,255,.04)
-        );
-}
-
-.callout strong{
-    color:var(--cyan);
-}
-
-.callout p{
-    margin-top:8px;
-    color:var(--muted);
-    font-size:.88rem;
-}
-/* =========================================================
-   MODAL
-   ========================================================= */
-
-.modal{
-    position:fixed;
-    inset:0;
-
-    display:none;
-    align-items:center;
-    justify-content:center;
-
-    padding:20px;
-
-    background:rgba(15,23,42,.28);
-
-    backdrop-filter:blur(10px);
-
-    z-index:500;
-}
-
-.modal.open{
-    display:flex;
-}
-
-.modal-box{
-    max-width:680px;
-    width:100%;
-    max-height:85vh;
-    overflow:auto;
-
-    padding:28px;
-
-    border-radius:26px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #0e2035,
-            #091523
-        );
-
-    border:1px solid var(--border2);
-
-    box-shadow:var(--shadow);
-
-    animation:
-        modalIn .35s ease;
-}
-
-
-@keyframes modalIn{
-    from{
-        opacity:0;
-        transform:translateY(20px) scale(.97);
-    }
-
-    to{
-        opacity:1;
-        transform:none;
-    }
-}
-
-.modal-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-}
-
-.modal-close{
-    width:36px;
-    height:36px;
-
-    border-radius:10px;
-
-    background:var(--surface);
-    color:var(--text);
-
-    cursor:pointer;
-}
-
-.modal-content{
-    margin-top:20px;
-}
-
-.modal-content p,
-.modal-content li{
-    color:var(--muted);
-    font-size:.88rem;
-}
-
-.modal-content ul{
-    padding-left:20px;
-    margin-top:10px;
-}
-
-.modal-content li{
-    margin:7px 0;
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media(max-width:900px){
-
-    .hero-grid{
-        grid-template-columns:1fr;
-    }
-
-    .molecule-card{
-        min-height:280px;
-    }
-
-    .map-wrapper{
-        min-height:
-            auto;
-
-        display:grid;
-
-        grid-template-columns:1fr;
-
-        gap:12px;
-
-        padding:20px;
-    }
-
-    .map-svg,
-    .map-core{
-        display:none;
-    }
-
-    .map-node{
-        position:relative;
-
-        inset:auto!important;
-
-        width:100%;
-    }
-
-    .hero{
-        padding-top:45px;
-    }
-
-    .hero h1{
-        letter-spacing:-2px;
-    }
-}
-
-@media(max-width:560px){
-
-    .nav{
-        padding:0 15px;
-    }
-
-    .brand-text span{
-        display:none;
-    }
-
-    .hero,
-    .container,
-    .quick-nav{
-        padding-left:15px;
-        padding-right:15px;
-    }
-
-    .hero h1{
-        font-size:3rem;
-    }
-
-    .molecule-card{
-        min-height:250px;
-    }
-
-    .formula-expression{
-        font-size:1rem;
-    }
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- =======================================================
-     LOADER
-     ======================================================= -->
-
-<div id="loader">
-
-    <div class="loader-ring"></div>
-
-    <div class="loader-title">
-        Building Chemistry Map
-    </div>
-
-    <div class="loader-sub">
-        Chapter 01 • Solutions
-    </div>
-
-</div>
-
-<div class="background-grid"></div>
-
-<div class="orb one"></div>
-<div class="orb two"></div>
-<div class="orb three"></div>
-
-
-<!-- =======================================================
-     HEADER
-     ======================================================= -->
-
-<header>
-
-    <nav class="nav">
-
-        <a
-            href="chemistry-index.html"
-            class="brand"
-            aria-label="Back to Chemistry">
-
-            <div class="brand-mark">
-                S
-            </div>
-
-            <div class="brand-text">
-
-                <strong>
-                    SHORVEER CHEMISTRY
-                </strong>
-
-                <span>
-                    Chapter-wise Learning System
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <div class="nav-actions">
-<button
-                class="icon-btn"
-                onclick="window.scrollTo({top:0,behavior:'smooth'})"
-                aria-label="Back to top">
-                ↑
-            </button>
-
-        </div>
-
-    </nav>
-
-</header>
-
-
-<!-- =======================================================
-     HERO
-     ======================================================= -->
-
-<section class="hero">
-
-    <div class="hero-grid">
-
-        <div>
-
-            <div class="eyebrow">
-
-                <span class="live-dot"></span>
-
-                Chapter 01 • Physical Chemistry
-
-            </div>
-
-
-            <h1>
-
-                <span>Solutions</span>
-
-                <br>
-
-                Interactive Mind Map
-
-            </h1>
-
-
-            <p class="hero-description">
-
-                A structured visual guide to the chemistry of
-                solutions — from concentration and solubility
-                to Henry's law, vapour pressure, ideal and
-                non-ideal behaviour, colligative properties,
-                osmotic pressure and abnormal molar mass.
-
-            </p>
-
-
-            <div class="hero-actions">
-
-                <a
-                    href="#mindmap"
-                    class="primary-btn">
-
-                    Explore Mind Map →
-                    
-                </a>
-
-
-                <a
-                    href="#formulas"
-                    class="secondary-btn">
-
-                    Formula Bank
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="molecule-card">
-
-            <div class="atom">
-                S
-            </div>
-
-            <div class="electron e1"></div>
-            <div class="electron e2"></div>
-            <div class="electron e3"></div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     QUICK NAV
-     ======================================================= -->
-
-<div class="quick-nav">
-
-    <div class="quick-nav-inner">
-
-        <a class="quick-link" href="#mindmap">
-            Overview
-        </a>
-
-        <a class="quick-link" href="#concentration">
-            Concentration
-        </a>
-
-        <a class="quick-link" href="#solubility">
-            Solubility
-        </a>
-
-        <a class="quick-link" href="#henry">
-            Henry's Law
-        </a>
-
-        <a class="quick-link" href="#ideal">
-            Ideal / Non-Ideal
-        </a>
-
-        <a class="quick-link" href="#colligative">
-            Colligative
-        </a>
-
-        <a class="quick-link" href="#formulas">
-            Formula Bank
-        </a>
-
-        <a class="quick-link" href="#graphs">
-            Graphs
-        </a>
-
-    </div>
-
-</div>
-
-
-<main class="container">
-
-
-<!-- =======================================================
-     MAIN MIND MAP
-     ======================================================= -->
-
-<section
-    class="section"
-    id="mindmap">
-
-    <div class="section-heading">
-
-        <div>
-
-            <h2>
-                The Chapter at a Glance
-            </h2>
-
-            <p>
-                Click any concept card for a focused explanation.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="map-wrapper">
-
-        <!-- Connecting lines -->
-        <svg
-            class="map-svg"
-            viewBox="0 0 1200 610"
-            preserveAspectRatio="none">
-
-            <path
-                class="connection"
-                d="M600 305 C470 220 330 130 160 95"/>
-
-            <path
-                class="connection"
-                d="M600 305 C730 220 870 130 1040 95"/>
-
-            <path
-                class="connection"
-                d="M600 305 C430 300 270 300 110 300"/>
-
-            <path
-                class="connection"
-                d="M600 305 C770 300 930 300 1090 300"/>
-
-            <path
-                class="connection"
-                d="M600 305 C470 390 340 475 180 535"/>
-
-            <path
-                class="connection"
-                d="M600 305 C730 390 860 475 1020 535"/>
-
-        </svg>
-
-
-        <div class="map-core">
-
-            <div>
-
-                <strong>
-                    SOLUTIONS
-                </strong>
-
-                <small>
-                    CHAPTER 01
-                </small>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="map-node node-a"
-            onclick="openConcept('concentration')">
-
-            <span class="node-number">
-                01
-            </span>
-
-            <h3>
-                Concentration
-            </h3>
-
-            <p>
-                Mass %, volume %, ppm, mole fraction,
-                molarity and molality.
-            </p>
-
-        </div>
-
-
-        <div
-            class="map-node node-b"
-            onclick="openConcept('solubility')">
-
-            <span class="node-number">
-                02
-            </span>
-
-            <h3>
-                Solubility
-            </h3>
-
-            <p>
-                Saturation, temperature effects,
-                pressure and dissolution behaviour.
-            </p>
-
-        </div>
-
-
-        <div
-            class="map-node node-c"
-            onclick="openConcept('henry')">
-
-            <span class="node-number">
-                03
-            </span>
-
-            <h3>
-                Henry's Law
-            </h3>
-
-            <p>
-                Gas pressure, mole fraction and
-                gas solubility in liquids.
-            </p>
-
-        </div>
-
-
-        <div
-            class="map-node node-d"
-            onclick="openConcept('ideal')">
-
-            <span class="node-number">
-                04
-            </span>
-
-            <h3>
-                Ideal & Non-Ideal
-            </h3>
-
-            <p>
-                Raoult's law, deviations, azeotropes
-                and molecular interactions.
-            </p>
-
-        </div>
-
-
-        <div
-            class="map-node node-e"
-            onclick="openConcept('colligative')">
-
-            <span class="node-number">
-                05
-            </span>
-
-            <h3>
-                Colligative Properties
-            </h3>
-
-            <p>
-                Vapour pressure, boiling point,
-                freezing point and osmotic pressure.
-            </p>
-
-        </div>
-
-
-        <div
-            class="map-node node-f"
-            onclick="openConcept('vanthoff')">
-
-            <span class="node-number">
-                06
-            </span>
-
-            <h3>
-                Abnormal Molar Mass
-            </h3>
-
-            <p>
-                Association, dissociation and
-                van't Hoff factor.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     CONCENTRATION
-     ======================================================= -->
-
-<section
-    class="section"
-    id="concentration">
-
-    <div class="section-heading">
-
-        <div>
-
-            <h2>
-                01. Expressing Concentration
-            </h2>
-
-            <p>
-                Different numerical ways to describe composition.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="cards">
-
-        <article class="card">
-
-            <div class="card-icon">
-                %
-            </div>
-
-            <h3>
-                Percentage Methods
-            </h3>
-
-            <p>
-                Percentage concentration compares the amount
-                of a chosen component with the total quantity
-                of the solution.
-            </p>
-
-            <ul>
-
-                <li>
-                    Mass percentage — useful for solid/liquid
-                    formulations.
-                </li>
-
-                <li>
-                    Volume percentage — convenient when
-                    both quantities are measured as volumes.
-                </li>
-
-                <li>
-                    Mass-by-volume percentage — frequently
-                    used for laboratory and pharmaceutical
-                    formulations.
-                </li>
-
-            </ul>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-icon">
-                χ
-            </div>
-
-            <h3>
-                Mole Fraction
-            </h3>
-
-            <p>
-                Mole fraction expresses the share of one
-                component in terms of total moles present.
-                It is especially useful in vapour-pressure
-                and phase-equilibrium calculations.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-icon">
-                M
-            </div>
-
-            <h3>
-                Molarity
-            </h3>
-
-            <p>
-                Molarity is based on the volume of the
-                complete solution. Because liquid volume
-                can change with temperature, molarity is
-                temperature dependent.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-icon">
-                m
-            </div>
-
-            <h3>
-                Molality
-            </h3>
-
-            <p>
-                Molality relates moles of solute to the mass
-                of solvent. Since mass does not change simply
-                because temperature changes, molality is
-                preferred in many temperature-sensitive
-                calculations.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-icon">
-                ppm
-            </div>
-
-            <h3>
-                Parts Per Million
-            </h3>
-
-            <p>
-                ppm is designed for very small concentrations.
-                It is commonly encountered in environmental
-                chemistry, water analysis and trace-component
-                measurements.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-icon">
-                ⚗
-            </div>
-
-            <h3>
-                Concentration Selection
-            </h3>
-
-            <p>
-                The most useful concentration unit depends
-                on what is being measured and what kind of
-                calculation is required. Mass-based units are
-                generally less sensitive to temperature than
-                volume-based units.
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     SOLUBILITY
-     ======================================================= -->
-
-<section
-    class="section"
-    id="solubility">
-
-    <div class="section-heading">
-
-        <div>
-
-            <h2>
-                02. Solubility & Dissolution
-            </h2>
-
-            <p>
-                Why substances dissolve — and what controls the limit.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="cards">
-
-        <article class="card">
-
-            <div class="card-icon">
-                S
-            </div>
-
-            <h3>
-                Solubility
-            </h3>
-
-            <p>
-                Solubility describes the maximum amount of
-                a substance that can dissolve in a specified
-                amount of solvent under specified conditions,
-                especially temperature and pressure.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-icon">
-                1
-            </div>
-
-            <h3>
-                Unsaturated Solution
-            </h3>
-
-            <p>
-                The solution contains less dissolved solute
-                than its equilibrium capacity. Additional
-                solute can therefore dissolve under the same
-                conditions.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-icon">
-                2
-            </div>
-
-            <h3>
-                Saturated Solution
-            </h3>
-
-            <p>
-                At equilibrium, the solvent has reached its
-                dissolution capacity. Adding more solute does
-                not increase the dissolved amount under the
-                same conditions.
-            </p>
-
-        </article>
-
-    </div>
-
-
-    <div class="solubility-diagram">
-
-        <div class="solution-beaker">
-
-            <div class="solution-liquid">
-
-                <span class="particle p1"></span>
-                <span class="particle p2"></span>
-                <span class="particle p3"></span>
-                <span class="particle p4"></span>
-                <span class="particle p5"></span>
-                <span class="particle p6"></span>
-                <span class="particle p7"></span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="callout">
-
-        <strong>
-            Temperature rule:
-        </strong>
-
-        <p>
-            For many solids, dissolution becomes more favourable
-            as temperature rises when the process is endothermic.
-            If dissolution releases heat, increasing temperature
-            can have the opposite effect. Gas solubility in liquids
-            generally decreases as temperature increases.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     HENRY LAW
-     ======================================================= -->
-
-<section
-    class="section"
-    id="henry">
-
-    <div class="section-heading">
-
-        <div>
-
-            <h2>
-                03. Henry's Law
-            </h2>
-
-            <p>
-                Pressure–solubility relationship for gases.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="formula-grid">
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Henry's Law
-            </div>
-
-            <div class="formula-expression">
-                p = K<sub>H</sub> χ
-            </div>
-
-            <div class="formula-note">
-                At constant temperature, the partial pressure
-                of a gas above a solution is proportional to
-                its mole fraction in the liquid phase.
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Solubility insight
-            </div>
-
-            <div class="formula-expression">
-                K<sub>H</sub> ↑ → χ ↓
-            </div>
-
-            <div class="formula-note">
-                With the same gas pressure, a larger Henry
-                constant corresponds to lower dissolved
-                gas concentration.
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="cards">
-
-        <article class="card">
-
-            <div class="card-icon">
-                CO₂
-            </div>
-
-            <h3>
-                Carbonated Drinks
-            </h3>
-
-            <p>
-                Pressurising a beverage encourages carbon dioxide
-                to remain dissolved. Opening the container reduces
-                pressure and allows dissolved gas to escape.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-icon">
-                O₂
-            </div>
-
-            <h3>
-                Dissolved Oxygen
-            </h3>
-
-            <p>
-                Aquatic ecosystems depend on dissolved oxygen.
-                Since warmer water generally holds less oxygen,
-                rising temperature can reduce oxygen availability.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-icon">
-                ⚓
-            </div>
-
-            <h3>
-                Diving & Pressure
-            </h3>
-
-            <p>
-                Increased pressure can increase gas dissolution
-                in body fluids. Controlled ascent is therefore
-                essential when pressure changes rapidly.
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     IDEAL / NON IDEAL
-     ======================================================= -->
-
-<section
-    class="section"
-    id="ideal">
-
-    <div class="section-heading">
-
-        <div>
-
-            <h2>
-                04. Ideal & Non-Ideal Solutions
-            </h2>
-
-            <p>
-                How molecular interactions change solution behaviour.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="cards">
-
-        <article class="card">
-
-            <div class="card-icon">
-                ✓
-            </div>
-
-            <h3>
-                Ideal Solution
-            </h3>
-
-            <p>
-                An ideal solution follows Raoult's law throughout
-                its composition range. Interactions between unlike
-                molecules are approximately comparable to those
-                between like molecules.
-            </p>
-
-            <ul>
-
-                <li>
-                    ΔH<sub>mix</sub> ≈ 0
-                </li>
-
-                <li>
-                    ΔV<sub>mix</sub> ≈ 0
-                </li>
-
-                <li>
-                    Raoult's law is obeyed.
-                </li>
-
-            </ul>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-icon">
-                +
-            </div>
-
-            <h3>
-                Positive Deviation
-            </h3>
-
-            <p>
-                If unlike-molecule attraction is weaker than
-                the original interactions, molecules escape
-                more readily into the vapour phase.
-            </p>
-
-            <ul>
-
-                <li>
-                    Vapour pressure becomes higher than ideal.
-                </li>
-
-                <li>
-                    ΔH<sub>mix</sub> &gt; 0
-                </li>
-
-                <li>
-                    ΔV<sub>mix</sub> &gt; 0
-                </li>
-
-                <li>
-                    Can produce minimum-boiling azeotropes.
-                </li>
-
-            </ul>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-icon">
-                −
-            </div>
-
-            <h3>
-                Negative Deviation
-            </h3>
-
-            <p>
-                Stronger unlike-molecule interactions hold
-                molecules more tightly in the liquid phase.
-                The vapour pressure consequently becomes
-                lower than the ideal prediction.
-            </p>
-
-            <ul>
-
-                <li>
-                    ΔH<sub>mix</sub> &lt; 0
-                </li>
-
-                <li>
-                    ΔV<sub>mix</sub> &lt; 0
-                </li>
-
-                <li>
-                    Can produce maximum-boiling azeotropes.
-                </li>
-
-            </ul>
-
-        </article>
-
-    </div>
-
-
-    <div
-        class="section"
-        style="margin-top:18px;">
-
-        <div class="cards">
-
-            <article class="card">
-
-                <div class="card-icon">
-                    A
-                </div>
-
-                <h3>
-                    Azeotropes
-                </h3>
-
-                <p>
-                    An azeotropic mixture has a vapour composition
-                    that matches the liquid composition at a
-                    particular composition and boils at a constant
-                    temperature. Ordinary fractional distillation
-                    cannot completely separate such a mixture.
-                </p>
-
-            </article>
-
-
-            <article class="card">
-
-                <div class="card-icon">
-                    I
-                </div>
-
-                <h3>
-                    Molecular Interaction Test
-                </h3>
-
-                <p>
-                    A useful conceptual question is:
-                    “Are unlike molecules attracting each other
-                    more strongly or less strongly than they did
-                    in the original liquids?” The answer predicts
-                    the direction of deviation.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     COLLIGATIVE
-     ======================================================= -->
-
-<section
-    class="section"
-    id="colligative">
-
-    <div class="section-heading">
-
-        <div>
-
-            <h2>
-                05. Colligative Properties
-            </h2>
-
-            <p>
-                Properties governed primarily by the number of solute particles.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="cards">
-
-        <article class="card">
-
-            <div class="card-icon">
-                ↓
-            </div>
-
-            <h3>
-                Relative Lowering of Vapour Pressure
-            </h3>
-
-            <p>
-                Adding a non-volatile solute reduces the fraction
-                of solvent molecules available to escape into
-                the vapour phase.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-icon">
-                ↑
-            </div>
-
-            <h3>
-                Elevation of Boiling Point
-            </h3>
-
-            <p>
-                A solution containing a non-volatile solute
-                generally requires a higher temperature to reach
-                the external pressure needed for boiling.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-icon">
-                ↓
-            </div>
-
-            <h3>
-                Depression of Freezing Point
-            </h3>
-
-            <p>
-                Dissolved particles lower the temperature at
-                which the solvent's solid and liquid phases
-                reach equilibrium.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-icon">
-                π
-            </div>
-
-            <h3>
-                Osmotic Pressure
-            </h3>
-
-            <p>
-                Osmotic pressure is the pressure that must be
-                applied to a solution to stop the net movement
-                of solvent through a semipermeable membrane.
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     FORMULA BANK
-     ======================================================= -->
-
-<section
-    class="section"
-    id="formulas">
-
-    <div class="section-heading">
-
-        <div>
-
-            <h2>
-                Formula Bank
-            </h2>
-
-            <p>
-                Exam-focused equations in a separate visual layer.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="formula-grid">
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Mass percentage
-            </div>
-
-            <div class="formula-expression">
-
-                Mass % =
-                <sup>Mass of solute</sup>
-                /
-                <sub>Mass of solution</sub>
-                × 100
-
-            </div>
-
-            <div class="formula-note">
-                Useful when both numerator and denominator are
-                expressed by mass.
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Volume percentage
-            </div>
-
-            <div class="formula-expression">
-
-                Volume % =
-                <sup>Volume of component</sup>
-                /
-                <sub>Total volume of solution</sub>
-                × 100
-
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Mass by volume
-            </div>
-
-            <div class="formula-expression">
-
-                (w/v)% =
-                <sup>Mass of solute</sup>
-                /
-                <sub>Volume of solution</sub>
-                × 100
-
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Parts per million
-            </div>
-
-            <div class="formula-expression">
-
-                ppm =
-                <sup>Parts of component</sup>
-                /
-                <sub>Total parts</sub>
-                × 10<sup>6</sup>
-
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Mole fraction
-            </div>
-
-            <div class="formula-expression">
-
-                χ<sub>i</sub> =
-                <sup>n<sub>i</sub></sup>
-                /
-                <sub>Σn</sub>
-
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Molarity
-            </div>
-
-            <div class="formula-expression">
-
-                M =
-                <sup>n<sub>solute</sub></sup>
-                /
-                <sub>V<sub>solution</sub>(L)</sub>
-
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Molality
-            </div>
-
-            <div class="formula-expression">
-
-                m =
-                <sup>n<sub>solute</sub></sup>
-                /
-                <sub>Mass of solvent (kg)</sub>
-
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Henry's law
-            </div>
-
-            <div class="formula-expression">
-
-                p = K<sub>H</sub>χ
-
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Raoult's law
-            </div>
-
-            <div class="formula-expression">
-
-                p<sub>i</sub>
-                =
-                x<sub>i</sub>p<sub>i</sub><sup>0</sup>
-
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Total vapour pressure
-            </div>
-
-            <div class="formula-expression">
-
-                P<sub>total</sub>
-                =
-                Σp<sub>i</sub>
-
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Osmotic pressure
-            </div>
-
-            <div class="formula-expression">
-
-                π = CRT
-
-            </div>
-
-            <div class="formula-note">
-                For dilute solutions in the ideal approximation.
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Boiling point elevation
-            </div>
-
-            <div class="formula-expression">
-
-                ΔT<sub>b</sub>
-                =
-                K<sub>b</sub>m
-
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Freezing point depression
-            </div>
-
-            <div class="formula-expression">
-
-                ΔT<sub>f</sub>
-                =
-                K<sub>f</sub>m
-
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Vapour pressure lowering
-            </div>
-
-            <div class="formula-expression">
-
-                Δp/p<sup>0</sup>
-                ≈
-                x<sub>solute</sub>
-
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                van't Hoff factor
-            </div>
-
-            <div class="formula-expression">
-
-                i =
-                Observed colligative property
-                /
-                Calculated property
-
-            </div>
-
-        </div>
-
-
-        <div class="formula">
-
-            <div class="formula-label">
-                Modified colligative equations
-            </div>
-
-            <div class="formula-expression">
-
-                ΔT<sub>b</sub>
-                =
-                iK<sub>b</sub>m
-                &nbsp;&nbsp; |
-                &nbsp;&nbsp;
-                ΔT<sub>f</sub>
-                =
-                iK<sub>f</sub>m
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     GRAPHS
-     ======================================================= -->
-
-<section
-    class="section"
-    id="graphs">
-
-    <div class="section-heading">
-
-        <div>
-
-            <h2>
-                Concept Graphs
-            </h2>
-
-            <p>
-                Drawn entirely with SVG — no image files required.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="graph-grid">
-
-
-        <!-- Graph 1 -->
-
-        <article class="graph-card">
-
-            <h3>
-                Vapour Pressure vs Mole Fraction
-            </h3>
-
-            <p>
-                Ideal binary liquid solution — schematic representation.
-            </p>
-
-
-            <svg
-                class="graph"
-                viewBox="0 0 500 300">
-
-                <line
-                    class="axis"
-                    x1="55"
-                    y1="250"
-                    x2="460"
-                    y2="250"/>
-
-                <line
-                    class="axis"
-                    x1="55"
-                    y1="250"
-                    x2="55"
-                    y2="35"/>
-
-
-                <path
-                    class="graph-line"
-                    d="M55 225 L460 70"/>
-
-                <path
-                    class="graph-line alt"
-                    d="M55 70 L460 225"/>
-
-                <path
-                    class="graph-line gold"
-                    d="M55 70 C160 120 340 160 460 225"/>
-
-
-                <text
-                    class="graph-label"
-                    x="210"
-                    y="285">
-                    Mole fraction
-                </text>
-
-                <text
-                    class="graph-label"
-                    x="8"
-                    y="150"
-                    transform="rotate(-90 8 150)">
-                    Vapour pressure
-                </text>
-
-                <text
-                    class="graph-label"
-                    x="375"
-                    y="62">
-                    p₁
-                </text>
-
-                <text
-                    class="graph-label"
-                    x="75"
-                    y="62">
-                    p₂
-                </text>
-
-            </svg>
-
-        </article>
-
-
-        <!-- Graph 2 -->
-
-        <article class="graph-card">
-
-            <h3>
-                Boiling Point Elevation
-            </h3>
-
-            <p>
-                Addition of non-volatile solute shifts the boiling
-                point upward.
-            </p>
-
-
-            <svg
-                class="graph"
-                viewBox="0 0 500 300">
-
-                <line
-                    class="axis"
-                    x1="55"
-                    y1="250"
-                    x2="460"
-                    y2="250"/>
-
-                <line
-                    class="axis"
-                    x1="55"
-                    y1="250"
-                    x2="55"
-                    y2="35"/>
-
-
-                <path
-                    class="graph-line"
-                    d="M70 225 C150 180 250 125 430 55"/>
-
-                <path
-                    class="graph-line alt"
-                    d="M70 245 C155 205 260 150 430 78"/>
-
-
-                <line
-                    x1="350"
-                    y1="86"
-                    x2="350"
-                    y2="145"
-                    stroke="var(--gold)"
-                    stroke-width="2"
-                    stroke-dasharray="5 5"/>
-
-
-                <text
-                    class="graph-label"
-                    x="330"
-                    y="165">
-                    ΔTᵦ
-                </text>
-
-                <text
-                    class="graph-label"
-                    x="190"
-                    y="285">
-                    Temperature
-                </text>
-
-                <text
-                    class="graph-label"
-                    x="8"
-                    y="150"
-                    transform="rotate(-90 8 150)">
-                    Vapour pressure
-                </text>
-
-            </svg>
-
-        </article>
-
-
-        <!-- Graph 3 -->
-
-        <article class="graph-card">
-
-            <h3>
-                Freezing Point Depression
-            </h3>
-
-            <p>
-                A solution freezes at a lower temperature than
-                the corresponding pure solvent.
-            </p>
-
-
-            <svg
-                class="graph"
-                viewBox="0 0 500 300">
-
-                <line
-                    class="axis"
-                    x1="55"
-                    y1="250"
-                    x2="460"
-                    y2="250"/>
-
-                <line
-                    class="axis"
-                    x1="55"
-                    y1="250"
-                    x2="55"
-                    y2="35"/>
-
-
-                <path
-                    class="graph-line"
-                    d="M80 210 L420 70"/>
-
-                <path
-                    class="graph-line alt"
-                    d="M80 235 L420 100"/>
-
-
-                <line
-                    x1="270"
-                    y1="130"
-                    x2="270"
-                    y2="157"
-                    stroke="var(--gold)"
-                    stroke-width="2"
-                    stroke-dasharray="5 5"/>
-
-
-                <text
-                    class="graph-label"
-                    x="275"
-                    y="150">
-                    ΔTᶠ
-                </text>
-
-                <text
-                    class="graph-label"
-                    x="205"
-                    y="285">
-                    Temperature
-                </text>
-
-                <text
-                    class="graph-label"
-                    x="8"
-                    y="150"
-                    transform="rotate(-90 8 150)">
-                    Vapour pressure
-                </text>
-
-            </svg>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     CONCENTRATION COMPARISON
-     ======================================================= -->
-
-<section class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <h2>
-                Choosing the Right Concentration Unit
-            </h2>
-
-            <p>
-                A quick revision comparison.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="table-wrap">
-
-        <table>
-
-            <thead>
-
-                <tr>
-
-                    <th>
-                        Quantity
-                    </th>
-
-                    <th>
-                        Based On
-                    </th>
-
-                    <th>
-                        Main Advantage
-                    </th>
-
-                    <th>
-                        Temperature Sensitivity
-                    </th>
-
-                </tr>
-
-            </thead>
-
-
-            <tbody>
-
-                <tr>
-
-                    <td>
-                        Mass %
-                    </td>
-
-                    <td>
-                        Mass of solution
-                    </td>
-
-                    <td>
-                        Simple composition reporting
-                    </td>
-
-                    <td>
-                        Very low
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Volume %
-                    </td>
-
-                    <td>
-                        Volume of solution
-                    </td>
-
-                    <td>
-                        Convenient for liquid mixtures
-                    </td>
-
-                    <td>
-                        Relatively high
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        ppm
-                    </td>
-
-                    <td>
-                        Trace quantities
-                    </td>
-
-                    <td>
-                        Extremely dilute systems
-                    </td>
-
-                    <td>
-                        Depends on definition
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Mole fraction
-                    </td>
-
-                    <td>
-                        Number of moles
-                    </td>
-
-                    <td>
-                        Phase-equilibrium calculations
-                    </td>
-
-                    <td>
-                        Low
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Molarity
-                    </td>
-
-                    <td>
-                        Solution volume
-                    </td>
-
-                    <td>
-                        Common laboratory calculations
-                    </td>
-
-                    <td>
-                        Yes
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Molality
-                    </td>
-
-                    <td>
-                        Solvent mass
-                    </td>
-
-                    <td>
-                        Temperature-independent mass basis
-                    </td>
-
-                    <td>
-                        Very low
-                    </td>
-
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     REVISION FLOW
-     ======================================================= -->
-
-<section class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <h2>
-                One-Minute Revision Flow
-            </h2>
-
-            <p>
-                Use this sequence before solving questions.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="steps">
-
-
-        <article class="step">
-
-            <div class="step-number">
-                1
-            </div>
-
-            <h3>
-                Identify the Components
-            </h3>
-
-            <p>
-                Decide which substance is the solvent and which
-                is the solute.
-            </p>
-
-        </article>
-
-
-        <article class="step">
-
-            <div class="step-number">
-                2
-            </div>
-
-            <h3>
-                Choose the Unit
-            </h3>
-
-            <p>
-                Look at whether the question gives mass, volume,
-                moles, solvent mass or trace concentration.
-            </p>
-
-        </article>
-
-
-        <article class="step">
-
-            <div class="step-number">
-                3
-            </div>
-
-            <h3>
-                Check Temperature
-            </h3>
-
-            <p>
-                Be careful whenever solution volume or molarity
-                appears.
-            </p>
-
-        </article>
-
-
-        <article class="step">
-
-            <div class="step-number">
-                4
-            </div>
-
-            <h3>
-                Select the Law
-            </h3>
-
-            <p>
-                Vapour pressure → Raoult;
-                gas solubility → Henry;
-                particle effects → colligative relations.
-            </p>
-
-        </article>
-
-
-        <article class="step">
-
-            <div class="step-number">
-                5
-            </div>
-
-            <h3>
-                Check Association / Dissociation
-            </h3>
-
-            <p>
-                If experimental and theoretical values disagree,
-                consider the van't Hoff factor.
-            </p>
-
-        </article>
-
-
-        <article class="step">
-
-            <div class="step-number">
-                6
-            </div>
-
-            <h3>
-                Apply Units Carefully
-            </h3>
-
-            <p>
-                Convert litres, kilograms, grams and temperature
-                units before substituting into equations.
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     FINAL TAKEAWAY
-     ======================================================= -->
-
-<section class="section">
-
-    <div class="callout">
-
-        <strong>
-            Chapter takeaway:
-        </strong>
-
-        <p>
-            The central idea of the chapter is that adding one
-            component to another changes measurable physical
-            properties according to composition, molecular
-            interactions and the number of dissolved particles.
-            Once concentration units, solubility behaviour,
-            vapour-pressure laws and colligative relationships
-            are connected, most of the chapter becomes a single
-            logical system rather than a collection of unrelated
-            formulas.
-        </p>
-
-    </div>
-
-</section>
-
-
-</main>
-<!-- =======================================================
-     CONCEPT MODAL
-     ======================================================= -->
-
-<div
-    class="modal"
-    id="conceptModal"
-    onclick="closeModal(event)">
-
-    <div
-        class="modal-box"
-        onclick="event.stopPropagation()">
-
-        <div class="modal-head">
-
-            <h2 id="modalTitle">
-                Concept
-            </h2>
-
-            <button
-                class="modal-close"
-                onclick="closeModal()">
-                ×
-            </button>
-
-        </div>
-
-        <div
-            class="modal-content"
-            id="modalContent">
-        </div>
-
-    </div>
-
-</div>
-
-
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="ca-pub-9688496231973353" name="google-adsense-account"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Shorveer Notes is a student-focused Class 12 Science learning platform with structured Physics, Chemistry, Mathematics and English notes, chapter resources, practice questions, revision material and exam preparation resources." name="description"/>
+<meta content="Jatin Sandilya" name="author"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="#fdfaf3" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#171613" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="Shorveer Notes" name="apple-mobile-web-app-title"/>
+<link href="https://shorveernotes.website/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Shorveer Notes | Class 12 Science Study Platform" property="og:title"/>
+<meta content="Explore structured Class 12 Physics, Chemistry, Mathematics and English resources, chapter notes, revision material and exam resources in one focused study platform." property="og:description"/>
+<meta content="Shorveer Notes" property="og:site_name"/>
+<meta content="en_IN" property="og:locale"/>
+<meta content="https://shorveernotes.website/og-image.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Shorveer Notes — Class 12 Science study platform" property="og:image:alt"/>
+<meta content="https://shorveernotes.website/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Shorveer Notes | Class 12 Science" name="twitter:title"/>
+<meta content="A focused learning space for Class 12 Science notes, chapters, revision and exam resources." name="twitter:description"/>
+<meta content="https://shorveernotes.website/og-image.jpg" name="twitter:image"/>
+<meta content="@JSEDIZ" name="twitter:site"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1c1a'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23e8b64c'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link crossorigin="" href="https://images.unsplash.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Karla:wght@400;500;600;700&amp;family=Inter:opsz,wght@14..32,400..700&amp;display=swap" rel="stylesheet"/>
+<!-- MathJax: formulas ($...$ and $$...$$) render here -->
 <script>
-
-/* =========================================================
-   LOADER
-   ========================================================= */
-
-window.addEventListener("load",function(){
-
-    setTimeout(function(){
-
-        document
-            .getElementById("loader")
-            .classList
-            .add("hide");
-
-    },700);
-
-});
-/* =========================================================
-   CONCEPT MODALS
-   ========================================================= */
-
-const concepts = {
-
-    concentration:{
-
-        title:"Concentration — Core Idea",
-
-        html:`
-
-            <p>
-                Concentration tells us how much of a particular
-                component is present relative to the complete
-                solution or solvent.
-            </p>
-
-            <ul>
-
-                <li>
-                    Mass percentage compares component mass
-                    with total solution mass.
-                </li>
-
-                <li>
-                    Volume percentage compares component volume
-                    with total solution volume.
-                </li>
-
-                <li>
-                    Mole fraction uses moles and is especially
-                    useful in vapour-pressure relationships.
-                </li>
-
-                <li>
-                    Molarity uses solution volume.
-                </li>
-
-                <li>
-                    Molality uses solvent mass.
-                </li>
-
-                <li>
-                    ppm is useful for trace-level quantities.
-                </li>
-
-            </ul>
-
-        `
-
-    },
-
-
-    solubility:{
-
-        title:"Solubility — Core Idea",
-
-        html:`
-
-            <p>
-                Solubility is the equilibrium capacity of a
-                solvent to dissolve a substance under specified
-                conditions.
-            </p>
-
-            <ul>
-
-                <li>
-                    Unsaturated solution → more solute can dissolve.
-                </li>
-
-                <li>
-                    Saturated solution → dissolution capacity
-                    has been reached.
-                </li>
-
-                <li>
-                    Temperature can strongly affect solid
-                    and gas solubility.
-                </li>
-
-                <li>
-                    Gas solubility generally decreases when
-                    temperature increases.
-                </li>
-
-            </ul>
-
-        `
-
-    },
-
-
-    henry:{
-
-        title:"Henry's Law",
-
-        html:`
-
-            <p>
-                For a gas dissolved in a liquid, Henry's law
-                connects gas pressure with the mole fraction
-                of the dissolved gas.
-            </p>
-
-            <div class="formula-expression">
-                p = K<sub>H</sub>χ
-            </div>
-
-            <ul>
-
-                <li>
-                    Higher gas pressure generally favours
-                    dissolution.
-                </li>
-
-                <li>
-                    A larger K<sub>H</sub> corresponds to
-                    lower solubility under the same pressure.
-                </li>
-
-                <li>
-                    Temperature must remain fixed while applying
-                    the simple relationship.
-                </li>
-
-            </ul>
-
-        `
-
-    },
-
-
-    ideal:{
-
-        title:"Ideal & Non-Ideal Solutions",
-
-        html:`
-
-            <p>
-                The difference between ideal and non-ideal
-                solutions comes mainly from how unlike molecules
-                interact compared with like molecules.
-            </p>
-
-            <ul>
-
-                <li>
-                    Ideal solution → approximately follows
-                    Raoult's law across the composition range.
-                </li>
-
-                <li>
-                    Positive deviation → weaker unlike interactions
-                    and higher vapour pressure than predicted.
-                </li>
-
-                <li>
-                    Negative deviation → stronger unlike interactions
-                    and lower vapour pressure than predicted.
-                </li>
-
-                <li>
-                    Azeotropes are special mixtures whose vapour
-                    and liquid compositions coincide at the
-                    azeotropic composition.
-                </li>
-
-            </ul>
-
-        `
-
-    },
-
-
-    colligative:{
-
-        title:"Colligative Properties",
-
-        html:`
-
-            <p>
-                Colligative properties primarily depend on the
-                number of dissolved particles rather than their
-                chemical identity, provided the required
-                assumptions are satisfied.
-            </p>
-
-            <ul>
-
-                <li>
-                    Relative lowering of vapour pressure
-                </li>
-
-                <li>
-                    Elevation of boiling point
-                </li>
-
-                <li>
-                    Depression of freezing point
-                </li>
-
-                <li>
-                    Osmotic pressure
-                </li>
-
-            </ul>
-
-        `
-
-    },
-
-
-    vanthoff:{
-
-        title:"Abnormal Molar Mass & van't Hoff Factor",
-
-        html:`
-
-            <p>
-                Experimental molar mass can differ from the
-                simple theoretical value when solute particles
-                associate or dissociate in solution.
-            </p>
-
-            <div class="formula-expression">
-                i =
-                Observed colligative effect
-                /
-                Calculated colligative effect
-            </div>
-
-            <ul>
-
-                <li>
-                    i ≈ 1 → no significant change in particle count.
-                </li>
-
-                <li>
-                    i &lt; 1 → association reduces the number
-                    of particles.
-                </li>
-
-                <li>
-                    i &gt; 1 → dissociation increases the number
-                    of particles.
-                </li>
-
-            </ul>
-
-        `
-
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<!-- External CSS Linked Here -->
+<link href="../../style.css" rel="stylesheet"/>
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Shorveer Notes",
+    "alternateName": ["Shorveer", "ShorveerNotes"],
+    "description": "A student-focused learning platform for Class 12 Science notes, chapters, revision resources and examination preparation.",
+    "url": "https://shorveernotes.website/",
+    "logo": "https://shorveernotes.website/logo.png",
+    "sameAs": ["https://www.youtube.com/@JSEDIZ"],
+    "educationalLevel": "Class 12",
+    "knowsAbout": ["Physics","Chemistry","Mathematics","English","CBSE Class 12","Practice Questions","Board Examination Preparation"]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Shorveer Notes",
+    "alternateName": ["Shorveer", "ShorveerNotes", "Shorveer Notes Class 12"],
+    "url": "https://shorveernotes.website/",
+    "inLanguage": "en-IN",
+    "publisher": {
+      "@type": "EducationalOrganization",
+      "name": "Shorveer Notes",
+      "url": "https://shorveernotes.website/"
+    }
+  }
+  </script>
+<title> · Class 12 Chemistry | Shorveer Notes</title>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+<nav aria-label="Primary" class="nav container">
+<a aria-label="Shorveer Notes home" class="brand" href="/">
+<span aria-hidden="true" class="brand-mark">
+<svg fill="none" viewbox="0 0 64 64">
+<path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
+</svg>
+</span>
+<span class="brand-name">Shorveer<em>Notes</em></span>
+</a>
+<div class="nav-links">
+<a href="#subjects">Subjects</a>
+<a href="#reallife">Real life</a>
+<a href="#resources">Resources</a>
+<a href="#method">How it works</a>
+<a href="../../about.html">About</a>
+</div>
+<div class="nav-actions">
+<button aria-label="Open search" class="nav-icon" id="searchButton" title="Search (Ctrl+K)">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<circle cx="11" cy="11" r="7"></circle><path d="m20.5 20.5-4-4"></path>
+</svg>
+</button>
+<a aria-label="Mind map" class="nav-icon" href="mind-map-mindmap.html" title="Mind map">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<path d="M3 6h18M3 12h18M3 18h18"></path>
+</svg>
+</a>
+<button aria-expanded="false" aria-label="Change theme" class="nav-icon" id="themeButton" title="Change theme">
+<span aria-hidden="true" class="palette-dot"></span>
+</button>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav-icon mobile-toggle" id="menuButton">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<path d="M3 6h18M3 12h18M3 18h18"></path>
+</svg>
+</button>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="#subjects">Subjects</a>
+<a href="#reallife">Real life</a>
+<a href="#resources">Resources</a>
+<a href="#method">How it works</a>
+<a href="../../exam-info.html">Exam information</a>
+<a href="../../about.html">About Shorveer</a>
+</div>
+</header>
+<!-- ============ SEARCH LAYER ============ -->
+<div aria-hidden="true" aria-label="Search" class="search-layer" id="searchLayer" role="dialog">
+<div class="search-panel">
+<div class="search-top">
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<circle cx="11" cy="11" r="7"></circle><path d="m20.5 20.5-4-4"></path>
+</svg>
+<input autocomplete="off" id="searchInput" placeholder="Search subjects and pages" type="text"/>
+<button aria-label="Close search" class="search-close" id="searchClose">✕</button>
+</div>
+<div class="search-results" id="searchResults"></div>
+</div>
+</div>
+<!-- ============ THEME PICKER (9 Themes) ============ -->
+<div aria-label="Choose a theme" class="theme-pop" id="themePop" role="dialog">
+<h4>Pick a look</h4>
+<div class="theme-grid">
+<button aria-pressed="true" class="theme-opt" data-theme-value="notebook">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#fdfaf3"></span>
+<span style="background:#e8b64c"></span>
+<span style="background:#bf5a3c"></span>
+<span style="background:#1c1c1a"></span>
+</span>
+<b>Notebook</b>
+<small>Warm paper, classic</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="chalkboard">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#1e2a24"></span>
+<span style="background:#f0d97a"></span>
+<span style="background:#7bc3bf"></span>
+<span style="background:#ebe6d5"></span>
+</span>
+<b>Chalkboard</b>
+<small>Dark green, chalk</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="blueprint">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0f2b4c"></span>
+<span style="background:#7ec8f5"></span>
+<span style="background:#ff9d7c"></span>
+<span style="background:#e2eefb"></span>
+</span>
+<b>Blueprint</b>
+<small>Navy, technical</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="sunset">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#241226"></span>
+<span style="background:#ff8a5b"></span>
+<span style="background:#ffb87a"></span>
+<span style="background:#ffe9d6"></span>
+</span>
+<b>Sunset</b>
+<small>Plum, warm glow</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="emerald">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0b1d16"></span>
+<span style="background:#34d399"></span>
+<span style="background:#2dd4bf"></span>
+<span style="background:#e3f7ed"></span>
+</span>
+<b>Emerald</b>
+<small>Biology &amp; Green</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="cyberpunk">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0f1016"></span>
+<span style="background:#00f0ff"></span>
+<span style="background:#ff007f"></span>
+<span style="background:#f0f2ff"></span>
+</span>
+<b>Cyberpunk</b>
+<small>Neon high-tech</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="minimal">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#f8fafc"></span>
+<span style="background:#2563eb"></span>
+<span style="background:#64748b"></span>
+<span style="background:#0f172a"></span>
+</span>
+<b>Minimal</b>
+<small>Clean white</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="dracula">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#191622"></span>
+<span style="background:#bd93f9"></span>
+<span style="background:#ff79c6"></span>
+<span style="background:#f8f8f2"></span>
+</span>
+<b>Dracula</b>
+<small>Night indigo</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="solarized">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#fdf6e3"></span>
+<span style="background:#b58900"></span>
+<span style="background:#2aa198"></span>
+<span style="background:#073642"></span>
+</span>
+<b>Solarized</b>
+<small>Warm study paper</small>
+</button>
+</div>
+<p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Your choice is saved for next time.</p>
+</div>
+<main id="main"><section class="hero container"><div class="hero-copy"><div class="kicker"><span class="dot"></span><span>Class 12 · Chemistry</span></div><h1></h1><p class="hero-description">Part 1: Theory and Complete Derivations</p><div class="hero-actions" style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;"><a class="btn btn-gold" href="mind-map-mindmap.html">View Mind Map ✎</a></div></div></section><section class="section container reveal" id="theory">
+<div class="section-head"><span class="section-eyebrow">Comprehensive Academic Theory</span><h2>1. Conceptual Framework</h2></div>
+<div class="real-life">
+<article class="rl-card"><div class="rl-body"><div class="rl-subject">Chemistry · Core Law</div><div class="rl-title">Fundamental Definitions and Basic Concepts</div><p class="rl-text">
+      Electrochemistry deals with the inter‑conversion of chemical and electrical energy. The central idea is a redox (reduction‑oxidation) process, where electrons are transferred from a reducing agent (oxidised) to an oxidising agent (reduced). An <strong>oxidation</strong> is the loss of electrons, denoted by an increase in oxidation number, while a <strong>reduction</strong> is the gain of electrons, signified by a decrease in oxidation number. The species that loses electrons is called the <em>anode</em> and the one that gains electrons is the <em>cathode</em> in an electrochemical cell.<br/><br/>
+      An <strong>electrochemical cell</strong> consists of two half‑cells, each containing an electrode immersed in an electrolyte. The two half‑cells are linked by a salt bridge or porous membrane that maintains electrical neutrality. The potential difference between the two electrodes under open‑circuit conditions is called the <strong>electromotive force (EMF)</strong> or cell potential, symbolised by $E_{\text{cell}}$. When the cell operates spontaneously as a galvanic (voltaic) cell, $E_{\text{cell}}$ is positive; when external energy is supplied to drive a non‑spontaneous reaction, the cell functions as an electrolytic cell and $E_{\text{cell}}$ is negative.<br/><br/>
+      Standard conditions (denoted by a superscript $^\circ$) refer to $1\ \text{M}$ concentration for all solutes, $1\ \text{atm}$ pressure for gases, and $25^\circ\text{C}$ (298 K) temperature. The standard electrode potential $E^\circ$ of a half‑reaction is measured against the standard hydrogen electrode (SHE), which is arbitrarily assigned $E^\circ_{\text{SHE}} = 0.00\ \text{V}$. The sign and magnitude of $E^\circ$ indicate the tendency of a species to gain electrons (positive $E^\circ$) or lose electrons (negative $E^\circ$). Understanding these definitions is essential before proceeding to quantitative aspects of electrochemistry.
+    </p></div></article>
+<article class="rl-card"><div class="rl-body"><div class="rl-subject">Chemistry · Core Law</div><div class="rl-title">Key Laws Governing Electrochemical Processes</div><p class="rl-text">
+      The quantitative description of electrochemical phenomena rests on two fundamental laws formulated by Michael Faraday. <strong>Faraday’s First Law</strong> states that the mass ($m$) of a substance deposited or liberated at an electrode is directly proportional to the quantity of electricity ($Q$) passed through the cell: $$m = Z\,Q$$ where $Z$ is the electrochemical equivalent of the substance. Since $Q = I t$ (current $I$ multiplied by time $t$), the law can be expressed as $$m = Z I t.$$<br/><br/>
+<strong>Faraday’s Second Law</strong> asserts that when the same quantity of electricity is passed through different electrolytes, the masses of substances deposited are proportional to their equivalent weights ($E$). Mathematically, $$\frac{m_1}{E_1} = \frac{m_2}{E_2} = \frac{Q}{F}$$ where $F$ is the Faraday constant ($F = 96485\ \text{C mol}^{-1}$). The equivalent weight $E$ is related to molar mass $M$ and the number of electrons $n$ transferred in the half‑reaction: $$E = \frac{M}{n}.$$<br/><br/>
+      The relationship between the Gibbs free energy change ($\Delta G$) and cell potential is given by $$\Delta G = -n F E_{\text{cell}}.$$ At standard conditions, $$\Delta G^\circ = -n F E^\circ_{\text{cell}}.$$ This equation links thermodynamics with electrochemistry and explains why a positive $E^\circ_{\text{cell}}$ corresponds to a negative $\Delta G^\circ$, indicating a spontaneous reaction.<br/><br/>
+      The <strong>Nernst Equation</strong> extends the concept of cell potential to non‑standard conditions: $$E = E^\circ - \frac{RT}{nF}\ln Q,$$ where $R$ is the universal gas constant ($8.314\ \text{J mol}^{-1}\text{K}^{-1}$), $T$ is temperature in kelvin, $n$ is the number of electrons transferred, and $Q$ is the reaction quotient. At $25^\circ\text{C}$, the equation simplifies to $$E = E^\circ - \frac{0.0592}{n}\log Q.$$ Mastery of these laws enables precise calculation of electrode potentials, deposited masses, and the feasibility of redox processes.
+    </p></div></article>
+<article class="rl-card"><div class="rl-body"><div class="rl-subject">Chemistry · Core Law</div><div class="rl-title">Intuitive Understanding and Conceptual Tools</div><p class="rl-text">
+      To develop intuition about electrochemical cells, it is useful to visualise the cell diagram, which succinctly represents the composition and order of the half‑reactions. A typical galvanic cell is written as: $$\text{Anode (oxidation)}\ |\ \text{Anode solution}\ ||\ \text{Cathode solution}\ |\ \text{Cathode (reduction)}.$$ The double vertical line denotes the salt bridge. For example, a $\text{Zn|Zn}^{2+}\ ||\ \text{Cu}^{2+}| \text{Cu}$ cell indicates zinc oxidation at the left electrode and copper reduction at the right electrode.<br/><br/>
+      The sign convention for cell potential follows the rule: $E_{\text{cell}} = E_{\text{cathode}} - E_{\text{anode}}$, where each $E$ is the standard reduction potential of the respective half‑reaction. This convention ensures that a positive $E_{\text{cell}}$ corresponds to a spontaneous galvanic process. The table of standard reduction potentials, often memorised by students, provides a quick way to predict the direction of electron flow: the half‑reaction with higher $E^\circ$ will occur as reduction (cathode), while the one with lower $E^\circ$ will be reversed (oxidation at the anode).<br/><br/>
+      Spontaneity can also be judged by the cell’s overall reaction quotient $Q$. If $E &gt; 0$, the reaction proceeds forward; if $E &lt; 0$, the reverse reaction is favoured. The Nernst equation shows how changes in concentration, pressure, or temperature shift $E$, thereby influencing the direction and extent of the reaction. For instance, increasing the concentration of reactants in the cathodic half‑reaction raises $E$, making the cell more powerful.<br/><br/>
+      Another intuitive tool is the concept of <strong>electrochemical series</strong>, which orders metals and ions according to their $E^\circ$ values. Metals higher in the series (more negative $E^\circ$) are stronger reducing agents and are more readily oxidised. Conversely, ions higher in the series (more positive $E^\circ$) are stronger oxidising agents. This series explains everyday phenomena such as corrosion of iron (Fe) in the presence of oxygen and water, and the ability of copper to plate onto a zinc surface in a galvanic cell.
+    </p></div></article>
+<article class="rl-card"><div class="rl-body"><div class="rl-subject">Chemistry · Core Law</div><div class="rl-title">Exceptions, Special Cases and Practical Considerations</div><p class="rl-text">
+      While the ideal equations presented earlier assume perfect conditions, real‑world electrochemical systems often deviate due to several factors. <strong>Overpotential</strong> is a kinetic barrier that requires an additional potential beyond the thermodynamic $E_{\text{cell}}$ to drive an electrochemical reaction at a measurable rate. Overpotential is especially significant for gas evolution reactions such as hydrogen or oxygen evolution, where the observed cell voltage is higher than predicted by the Nernst equation.<br/><br/>
+<strong>Concentration cells</strong> are a special class where both electrodes involve the same redox couple but at different concentrations. The cell potential arises solely from the concentration gradient and is given by $$E = \frac{0.0592}{n}\log\frac{[{\text{Ox}}]_1}{[{\text{Ox}}]_2}.$$ These cells are useful for determining diffusion potentials and for calibrating concentration measurements.<br/><br/>
+      In many practical electrolytes, complex ion formation alters the effective concentration of free ions. For example, in a copper(II) sulfate solution containing ammonia, the formation of $[\text{Cu(NH}_3)_4]^{2+}$ reduces the activity of free $\text{Cu}^{2+}$, thereby affecting the measured $E_{\text{cell}}$. The Nernst equation must then incorporate the activity of the complex species, or the equilibrium constant for complex formation must be considered.<br/><br/>
+      Temperature dependence is another source of deviation. The term $\frac{RT}{nF}$ in the Nernst equation indicates that $E$ varies linearly with temperature. At higher temperatures, the magnitude of the logarithmic term increases, which can either raise or lower $E$ depending on whether $Q$ is greater or less than 1. This principle underlies the operation of thermally activated batteries and fuel cells.<br/><br/>
+      Finally, the presence of a <strong>salt bridge</strong> or porous membrane is crucial for maintaining charge neutrality. If the bridge fails, charge buildup can halt the flow of electrons, causing the cell voltage to drop to zero even though the redox reaction is still thermodynamically favourable. Understanding these practical nuances helps students bridge the gap between textbook calculations and laboratory observations.
+    </p></div></article>
+<article class="rl-card"><div class="rl-body"><div class="rl-subject">Chemistry · Core Law</div><div class="rl-title">Worked Example: Calculating EMF and Mass of Deposited Metal</div><p class="rl-text">
+<strong>Problem Statement:</strong> A galvanic cell is constructed using a $\text{Zn|Zn}^{2+}(0.010\ \text{M})$ electrode and a $\text{Cu}^{2+}(0.100\ \text{M})|\text{Cu}$ electrode at $25^\circ\text{C}$. The standard reduction potentials are $E^\circ_{\text{Cu}^{2+}/\text{Cu}} = +0.340\ \text{V}$ and $E^\circ_{\text{Zn}^{2+}/\text{Zn}} = -0.763\ \text{V}$. (a) Calculate the cell EMF under the given conditions. (b) If a current of $0.500\ \text{A}$ is passed for $2.00\ \text{h}$, determine the mass of
+
+<section class="section container reveal" id="derivations">
+<div class="section-head"><span class="section-eyebrow">Formulas and Derivations</span><h2>2. Master Equation Bank</h2></div>
+<div class="resource-grid">
+<article class="resource">
+<h3>Derivation Details</h3>
+<p>In this segment we present a comprehensive, CBSE‑aligned derivation of the most frequently used electrochemical equations. The derivations are laid out in a step‑by‑step fashion, each step justified with fundamental thermodynamic or kinetic principles. All mathematical expressions are rendered in LaTeX for clarity.</p>
+<h4>1. Relation between Gibbs Free Energy Change and Cell Potential</h4>
+<p>The fundamental thermodynamic link between the change in Gibbs free energy ($\Delta G$) of an electrochemical cell and its electromotive force (EMF, $E$) is derived from the definition of electrical work. For a reversible cell, the maximum non‑expansion work obtainable is the electrical work $W_{\text{elec}}$, given by</p>
+      $$W_{\text{elec}} = -nFE$$
+      <p>where $n$ is the number of moles of electrons transferred, $F$ is the Faraday constant ($96\,485\ \text{C mol}^{-1}$), and $E$ is the cell potential in volts (V). Since at constant temperature and pressure the maximum work equals $-\Delta G$, we write</p>
+      $$\Delta G = -nFE$$
+      <p>Rearranging, the cell potential can be expressed as</p>
+      $$E = -\frac{\Delta G}{nF}$$
+      <p>This equation is the cornerstone for all subsequent electrochemical derivations.</p>
+<h4>2. Standard Cell Potential and Standard Gibbs Free Energy</h4>
+<p>When all reactants and products are in their standard states (1 bar for gases, 1 M for solutes, pure solids/liquids), the Gibbs free energy change is denoted $\Delta G^\circ$ and the cell potential $E^\circ$. Substituting these standard quantities into the previous relation yields</p>
+      $$\Delta G^\circ = -nFE^\circ$$
+      <p>Thus, the standard EMF of a cell can be directly calculated from tabulated standard Gibbs free energies of formation, and vice‑versa.</p>
+<h4>3. Derivation of the Nernst Equation</h4>
+<p>The Nernst equation provides the cell potential under non‑standard conditions. Starting from the general expression for Gibbs free energy at any state:</p>
+      $$\Delta G = \Delta G^\circ + RT\ln Q$$
+      <p>where $R$ is the universal gas constant ($8.314\ \text{J mol}^{-1}\text{K}^{-1}$), $T$ is the absolute temperature (K), and $Q$ is the reaction quotient. Substituting $\Delta G = -nFE$ and $\Delta G^\circ = -nFE^\circ$ gives</p>
+      $$-nFE = -nFE^\circ + RT\ln Q$$
+      <p>Dividing through by $-nF$:</p>
+      $$E = E^\circ - \frac{RT}{nF}\ln Q$$
+      <p>For convenience, the natural logarithm is often converted to base‑10 logarithm using $\ln x = 2.303\log_{10}x$:</p>
+      $$E = E^\circ - \frac{2.303RT}{nF}\log_{10} Q$$
+      <p>At $25^\circ\text{C}$ ($298\ \text{K}$), the factor $\frac{2.303RT}{F}$ simplifies to $0.05916\ \text{V}$, leading to the widely used form:</p>
+      $$\boxed{E = E^\circ - \frac{0.05916}{n}\log_{10} Q}\qquad (T = 298\ \text{K})$$
+      <p>This equation is indispensable for calculating cell potentials when concentrations differ from unity.</p>
+<h4>4. Derivation of the Relation between $K_{\text{sp}}$ and $E^\circ$ for Solubility‑Controlled Electrodes</h4>
+<p>Consider a sparingly soluble salt $MX_{(s)} \rightleftharpoons M^{m+} + X^{n-}$ with solubility product $K_{\text{sp}} = [M^{m+}][X^{n-}]$. When this salt forms one electrode of a galvanic cell, the electrode reaction can be written as</p>
+      $$M^{m+} + ne^- \rightleftharpoons M_{(s)}$$
+      <p>The Nernst equation for this half‑cell is</p>
+      $$E = E^\circ - \frac{0.05916}{n}\log_{10}[M^{m+}]$$
+      <p>Since $[M^{m+}] = \frac{K_{\text{sp}}}{[X^{n-}]}$, substituting gives</p>
+      $$E = E^\circ - \frac{0.05916}{n}\log_{10}\!\left(\frac{K_{\text{sp}}}{[X^{n-}]}\right)$$
+      <p>Rearranging to isolate $K_{\text{sp}}$ yields</p>
+      $$\log_{10}K_{\text{sp}} = n\frac{E^\circ - E}{0.05916} + \log_{10}[X^{n-}]$$
+      <p>This relationship is useful for determining solubility products from measured electrode potentials.</p>
+<h4>5. Derivation of the Temperature‑Dependent Form of the Nernst Equation</h4>
+<p>When temperature deviates significantly from $298\ \text{K}$, the temperature term must be retained explicitly. Starting again from</p>
+      $$E = E^\circ - \frac{RT}{nF}\ln Q$$
+      <p>and converting to base‑10 logarithm:</p>
+      $$E = E^\circ - \frac{2.303RT}{nF}\log_{10} Q$$
+      <p>Thus the temperature‑dependent coefficient is $\frac{2.303RT}{nF}$. At $T = 310\ \text{K}$ (physiological temperature), the coefficient becomes</p>
+      $$\frac{2.303 \times 8.314 \times 310}{n \times 96\,485} \approx \frac{0.0615}{n}\ \text{V}$$
+      <p>Hence the Nernst equation at $310\ \text{K}$ reads</p>
+      $$E = E^\circ - \frac{0.0615}{n}\log_{10} Q$$
+      <p>Students should memorize the $0.05916$ factor for $298\ \text{K}$ and understand how to adjust it for other temperatures.</p>
+<h4>6. Derivation of the Relationship between $E_{\text{cell}}$ and $K_{\text{eq}}$</h4>
+<p>For any redox reaction at equilibrium, the reaction quotient $Q$ equals the equilibrium constant $K_{\text{eq}}$. Setting $E = 0$ in the Nernst equation (since no net EMF exists at equilibrium) gives</p>
+      $$0 = E^\circ - \frac{RT}{nF}\ln K_{\text{eq}}$$
+      <p>Rearranging:</p>
+      $$E^\circ = \frac{RT}{nF}\ln K_{\text{eq}}$$
+      <p>Or, in base‑10 form:</p>
+      $$\boxed{E^\circ = \frac{0.05916}{n}\log_{10} K_{\text{eq}}}\qquad (T = 298\ \text{K})$$
+      <p>This equation illustrates why reactions with large $K_{\text{eq}}$ possess high positive standard potentials.</p>
+<h4>7. Derivation of the Randles–Sevcik Equation (for CV peak current)</h4>
+<p>Although primarily a physical‑chemistry concept, the Randles–Sevcik equation is part of the CBSE syllabus under electrochemical techniques. For a reversible redox couple, the peak current $i_p$ observed in cyclic voltammetry is given by</p>
+      $$i_p = (2.69\times10^5)\,n^{3/2} A D^{1/2} C^* \nu^{1/2}$$
+      <p>where:</p>
+<ul>
+<li>$n$ = number of electrons transferred per molecule,</li>
+<li>$A$ = electrode area (cm²),</li>
+<li>$D$ = diffusion coefficient (cm² s⁻¹),</li>
+<li>$C^*$ = bulk concentration (mol cm⁻³),</li>
+<li>$\nu$ = scan rate (V s⁻¹).</li>
+</ul>
+<p>The derivation starts from Fick’s first law and the Nernstian boundary condition at the electrode surface. By solving the diffusion equation under a linear potential sweep, one obtains the above proportionality. The constant $2.69\times10^5$ arises from the combination of universal constants ($R$, $F$, $T$) evaluated at $298\ \text{K}$.</p>
+<h4>8. Derivation of the Butler‑Volmer Equation</h4>
+<p>The Butler‑Volmer equation describes the current density ($j$) as a function of overpotential ($\eta$) for an electrode reaction:</p>
+      $$j = j_0\left[\exp\!\left(\frac{\alpha nF\eta}{RT}\right) - \exp\!\left(-\frac{(1-\alpha)nF\eta}{RT}\right)\right]$$
+      <p>where $j_0$ is the exchange current density, $\alpha$ is the charge‑transfer coefficient (0 &lt; $\alpha$ &lt; 1). The derivation proceeds by considering the forward ($j_f$) and reverse ($j_r$) reaction rates, each obeying an Arrhenius‑type dependence on the activation energy modified by the electrical work term $nF\eta$. The net current is the difference $j = j_f - j_r$, leading directly to the expression above.</p>
+<h4>9. Derivation of the Relationship between $E_{\text{cell}}$ and $pH$ (for hydrogen electrode)</h4>
+<p>For the half‑reaction involving hydrogen ions:</p>
+      $$2\text{H}^+ + 2e^- \rightleftharpoons \text{H}_2(g)$$
+      <p>The Nernst equation becomes</p>
+      $$E = E^\circ - \frac{0.05916}{2}\log_{10}\!\left(\frac{P_{\text{H}_2}}{[ \text{H}^+]^2}\right)$$
+      <p>Assuming $P_{\text{H}_2}=1\ \text{atm}$, the expression simplifies to</p>
+      $$E = 0 - 0.05916\,\text{pH}$$
+      <p>since $\text{pH} = -\log_{10}[ \text{H}^+]$. This linear dependence of electrode potential on pH is the basis of the pH‑meter calibration.</p>
+<h4>Formula List with Variables, SI Units, and Conditions</h4>
+<table>
+<thead>
+<tr><th>Formula</th><th>Variable</th><th>SI Unit</th></tr></thead></table></article></div></section></p></div></article></div></section></main>
+<footer class="sn-clean-footer">
+<div class="container sn-f-wrap">
+<div class="sn-f-grid">
+<!-- Brand & Founder -->
+<div class="sn-f-col brand-col">
+<a class="brand" href="/" style="margin-bottom: 12px; display: inline-flex;">
+<span aria-hidden="true" class="brand-mark">
+<svg fill="none" viewbox="0 0 64 64">
+<path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
+</svg>
+</span>
+<span class="brand-name">Shorveer<em>Notes</em></span>
+</a>
+<p class="sn-f-desc">A student-focused Class 12 Science learning platform with structured Physics, Chemistry, Mathematics and English resources.</p>
+<div class="sn-f-author">
+          Created with pride by <strong>Jatin Sandilya</strong>
+</div>
+<div style="margin-top: 14px;">
+<a class="btn btn-dark" href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" style="min-height: 38px; padding: 0 14px; font-size: 13px;" target="_blank">
+            JS EDIZ on YouTube →
+          </a>
+</div>
+</div>
+<!-- Links: Subjects -->
+<div class="sn-f-col">
+<h3 class="sn-f-title">Subjects</h3>
+<ul class="sn-f-links">
+<li><a href="../../physics/index.html">Physics Hub</a></li>
+<li><a href="../../chemistry/index.html">Chemistry Hub</a></li>
+<li><a href="../../mathematics/index.html">Mathematics Hub</a></li>
+<li><a href="../../english/index.html">English Hub</a></li>
+</ul>
+</div>
+<!-- Links: Site & Policies -->
+<div class="sn-f-col">
+<h3 class="sn-f-title">Resources</h3>
+<ul class="sn-f-links">
+<li><a href="../../exam-info.html">Exam Info</a></li>
+<li><a href="../../about-notes.html">About Notes</a></li>
+<li><a href="../../about.html">About Shorveer</a></li>
+<li><a href="../../cookies.html">Cookies &amp; Storage</a></li>
+</ul>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="sn-f-bottom">
+<p>© <span id="year">2026</span> Shorveer Notes · All rights reserved.</p>
+<p>Built with pride in India 🇮🇳</p>
+</div>
+</div>
+<style>
+    .sn-clean-footer {
+      background: var(--paper-2);
+      border-top: 1px solid var(--line);
+      padding: 60px 0 30px;
+      margin-top: 80px;
+      color: var(--ink);
+    }
+    .sn-f-wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .sn-f-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .sn-f-desc {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 12px 0;
+      max-width: 420px;
+    }
+    .sn-f-author {
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .sn-f-author strong { color: var(--ink); }
+    .sn-f-title {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--rust);
+      margin-bottom: 16px;
+    }
+    .sn-f-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .sn-f-links a {
+      color: var(--ink-2);
+      font-size: 14.5px;
+      transition: color .2s ease;
+      text-decoration: none;
+    }
+    .sn-f-links a:hover { color: var(--rust); text-decoration: underline; }
+    .sn-f-bottom {
+      border-top: 1px solid var(--line-soft);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    @media (max-width: 768px) {
+      .sn-f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .sn-f-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</footer>
+<!-- ============ COOKIE ============ -->
+<aside aria-label="Cookie notice" aria-live="polite" class="cookie" id="cookieBox" role="dialog">
+<div class="cookie-header">
+<h3>Before you go — a quick note</h3>
+</div>
+<p>We use your browser's local storage to remember your theme and to not ask you this every visit. That's all. See our <a href="../../cookies.html" style="text-decoration:underline">cookies page</a> for details.</p>
+<div class="cookie-actions">
+<a class="cookie-policy" href="../../cookies.html">Read more</a>
+<button class="cookie-accept" id="acceptCookies">Got it</button>
+</div>
+</aside>
+<script>
+    const store = {
+      get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+      set(k, v) { try { localStorage.setItem(k, v); } catch {} }
+    };
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const THEMES = {
+      notebook: { hero: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=900&q=80", label: "the desk of a class 12 student" },
+      chalkboard: { hero: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80", label: "equations, one line at a time" },
+      blueprint: { hero: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=80", label: "where the theory becomes engineering" },
+      sunset: { hero: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80", label: "late-night study, warm lamp" },
+      emerald: { hero: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=80", label: "life sciences & the biology lab" },
+      cyberpunk: { hero: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80", label: "silicon, circuitry & quantum states" },
+      minimal: { hero: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80", label: "pure focus, zero noise" },
+      dracula: { hero: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80", label: "midnight coding & deep analysis" },
+      solarized: { hero: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=80", label: "pages turn, ideas stick" }
+    };
+
+    const html = document.documentElement;
+    const themeButton = document.getElementById("themeButton");
+    const themePop = document.getElementById("themePop");
+    const heroImage = document.getElementById("heroImage");
+    const heroCaption = document.querySelector(".polaroid-caption");
+    const themeOpts = document.querySelectorAll(".theme-opt");
+
+    function applyTheme(name) {
+      if (!THEMES[name]) name = "notebook";
+      html.setAttribute("data-theme", name);
+      store.set("shorveer-theme-name", name);
+      themeOpts.forEach(btn => btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name)));
+
+      const t = THEMES[name];
+      if (heroImage && t) {
+        heroImage.classList.add("fading");
+        setTimeout(() => {
+          heroImage.src = t.hero;
+          if (heroCaption) heroCaption.textContent = t.label;
+          heroImage.classList.remove("fading");
+        }, 260);
+      }
     }
 
-};
+    applyTheme(store.get("shorveer-theme-name") || "notebook");
 
-
-function openConcept(key){
-
-    const concept = concepts[key];
-
-    if(!concept){
-        return;
-    }
-
-    document
-        .getElementById("modalTitle")
-        .innerHTML =
-        concept.title;
-
-    document
-        .getElementById("modalContent")
-        .innerHTML =
-        concept.html;
-
-    document
-        .getElementById("conceptModal")
-        .classList
-        .add("open");
-
-    document.body.style.overflow =
-        "hidden";
-
-}
-
-
-function closeModal(event){
-
-    if(
-        event &&
-        event.target !==
-        document.getElementById("conceptModal")
-    ){
-        return;
-    }
-
-    document
-        .getElementById("conceptModal")
-        .classList
-        .remove("open");
-
-    document.body.style.overflow =
-        "";
-
-}
-
-
-/* =========================================================
-   ESC KEY
-   ========================================================= */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key === "Escape"){
-
-            document
-                .getElementById("conceptModal")
-                .classList
-                .remove("open");
-
-            document.body.style.overflow =
-                "";
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   INTERSECTION ANIMATION
-   ========================================================= */
-
-const observer =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if(entry.isIntersecting){
-
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform =
-                        "translateY(0)";
-
-                }
-
-            });
-
-        },
-        {
-            threshold:.08
-        }
-    );
-
-
-document
-    .querySelectorAll(".card,.formula,.step,.graph-card")
-    .forEach(element => {
-
-        element.style.opacity = "0";
-        element.style.transform =
-            "translateY(18px)";
-
-        element.style.transition =
-            "opacity .7s ease, transform .7s ease";
-
-        observer.observe(element);
-
+    themeButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = themePop.classList.toggle("open");
+      themeButton.setAttribute("aria-expanded", String(open));
     });
 
-</script>
+    themeOpts.forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyTheme(btn.dataset.themeValue);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      });
+    });
 
+    document.addEventListener("click", (e) => {
+      if (!themePop.contains(e.target) && !themeButton.contains(e.target)) {
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    const MOTIVATIONS = [
+      "One chapter at a time.",
+      "Understanding beats memorising.",
+      "Small progress every day adds up.",
+      "You don't have to be perfect today.",
+      "Read it once. Write it once. Learn it once.",
+      "The best time to revise is before you forget.",
+      "Study the weak chapter first.",
+      "Nothing is too hard once it's broken down.",
+      "Your pace is the right pace.",
+      "Show up. That's half of it.",
+      "Confusion is the feeling of learning.",
+      "You're not behind. You're on your own timeline."
+    ];
+
+    const motivationText = document.getElementById("motivationText");
+    let motivationIndex = 0;
+
+    function nextMotivation() {
+      if (!motivationText) return;
+      motivationText.classList.remove("show");
+      setTimeout(() => {
+        motivationIndex = (motivationIndex + 1) % MOTIVATIONS.length;
+        motivationText.textContent = MOTIVATIONS[motivationIndex];
+        motivationText.classList.add("show");
+      }, 500);
+    }
+    setInterval(nextMotivation, 6500);
+
+    const flipCards = document.querySelectorAll(".flip-card");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    flipCards.forEach(card => {
+      if (isTouch) {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("a")) return;
+          card.classList.toggle("flipped");
+        });
+      }
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          if (e.target.closest("a")) return;
+          e.preventDefault();
+          card.classList.toggle("flipped");
+        }
+      });
+    });
+
+    const heroArt = document.getElementById("heroArt");
+    const heroStage = document.getElementById("heroStage");
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (heroArt && heroStage && finePointer && !reduceMotion) {
+      heroArt.addEventListener("mousemove", (e) => {
+        const rect = heroArt.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        heroStage.style.transform = `perspective(1200px) rotateX(${-y * 16}deg) rotateY(${x * 16}deg) translateZ(10px)`;
+      });
+      heroArt.addEventListener("mouseleave", () => {
+        heroStage.style.transform = "perspective(1200px) rotateX(0) rotateY(0) translateZ(0)";
+      });
+    }
+
+    const tiltEls = document.querySelectorAll("[data-tilt]");
+    if (finePointer && !reduceMotion) {
+      tiltEls.forEach(el => {
+        el.addEventListener("mousemove", (e) => {
+          const r = el.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width - 0.5;
+          const py = (e.clientY - r.top) / r.height - 0.5;
+          el.style.transform = `perspective(900px) rotateX(${-py * 8}deg) rotateY(${px * 8}deg) translateY(-4px)`;
+        });
+        el.addEventListener("mouseleave", () => { el.style.transform = ""; });
+      });
+    }
+
+    const searchData = [
+      { title: "Physics", description: "Class 12 Physics chapters and resources", url: "physics/index.html" },
+      { title: "Chemistry", description: "Class 12 Chemistry chapters and resources", url: "chemistry/index.html" },
+      { title: "Mathematics", description: "Class 12 Maths chapters and resources", url: "mathematics/index.html" },
+      { title: "English", description: "Class 12 English notes and summaries", url: "english/index.html" },
+      { title: "Exam information", description: "Dates, syllabus and marking scheme", url: "exam-info.html" },
+      { title: "About our notes", description: "How each chapter is made", url: "about-notes.html" },
+      { title: "About Shorveer", description: "The story behind the site", url: "about.html" },
+      { title: "Privacy policy", description: "How we handle your data", url: "privacy.html" },
+      { title: "Cookies policy", description: "What we store in your browser", url: "cookies.html" }
+    ];
+
+    const searchButton = document.getElementById("searchButton");
+    const searchLayer = document.getElementById("searchLayer");
+    const searchClose = document.getElementById("searchClose");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    function openSearch() {
+      searchLayer.classList.add("active");
+      searchLayer.setAttribute("aria-hidden", "false");
+      setTimeout(() => searchInput.focus(), 60);
+      renderResults("");
+    }
+    function closeSearch() {
+      searchLayer.classList.remove("active");
+      searchLayer.setAttribute("aria-hidden", "true");
+      searchInput.value = "";
+    }
+    function renderResults(query) {
+      const q = query.trim().toLowerCase();
+      const matches = searchData.filter(item =>
+        !q || item.title.toLowerCase().includes(q) || item.description.toLowerCase().includes(q)
+      );
+      if (!matches.length) {
+        searchResults.innerHTML = '<div class="empty-result">Nothing found. Try "physics" or "exam".</div>';
+        return;
+      }
+      searchResults.innerHTML = matches.map(item => `
+        <a class="result" href="${item.url}">
+          <div>
+            <strong>${item.title}</strong>
+            <small>${item.description}</small>
+          </div>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+      `).join("");
+    }
+
+    if (searchButton) searchButton.addEventListener("click", openSearch);
+    if (searchClose) searchClose.addEventListener("click", closeSearch);
+    if (searchLayer) searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
+    if (searchInput) searchInput.addEventListener("input", e => renderResults(e.target.value));
+
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    function setMenu(open) {
+      mobileMenu.classList.toggle("open", open);
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+      mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+    }
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        closeSearch();
+        setMenu(false);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        openSearch();
+      }
+    });
+
+    const reveals = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); }
+        });
+      }, { threshold: .1 });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add("visible"));
+    }
+
+    const cookieBox = document.getElementById("cookieBox");
+    const acceptCookies = document.getElementById("acceptCookies");
+    if (cookieBox && !store.get("shorveer-cookie-consent")) {
+      setTimeout(() => cookieBox.classList.add("show"), 1400);
+    }
+    if (acceptCookies) {
+      acceptCookies.addEventListener("click", () => {
+        store.set("shorveer-cookie-consent", "accepted");
+        cookieBox.classList.remove("show");
+      });
+    }
+  </script>
 </body>
 </html>
