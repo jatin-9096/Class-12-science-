@@ -1,89 +1,396 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="sunset">
+ <!DOCTYPE html>
+
+<html data-theme="notebook" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Open Chapter 03→ | Shorveer Notes</title>
-  
-  
-<script>
-  window.MathJax = {
-    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-    svg: { fontCache: 'global' }
-  };
-</script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-
-
-  <!-- Fonts matching Index -->
-  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
-
-  <!-- Master Global Stylesheet -->
-  <link rel="stylesheet" href="../style.css">
-
-  <style>
-    /* In-page polish for chapter reading */
-    body {
-      background: var(--bg, #241226);
-      color: var(--ink, #ffe9d6);
-      font-family: var(--font-body, 'Karla', sans-serif);
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="ca-pub-9688496231973353" name="google-adsense-account"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Shorveer Notes is a student-focused Class 12 Science learning platform with structured Physics, Chemistry, Mathematics and English notes, chapter resources, previous year questions, revision material and exam preparation resources." name="description"/>
+<meta content="Shorveer Notes" name="author"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="#fdfaf3" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#171613" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="Shorveer Notes" name="apple-mobile-web-app-title"/>
+<link href="https://shorveernotes.website/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Shorveer Notes | Class 12 Science Study Platform" property="og:title"/>
+<meta content="Explore structured Class 12 Physics, Chemistry, Mathematics and English resources, chapter notes, revision material and exam resources in one focused study platform." property="og:description"/>
+<meta content="Shorveer Notes" property="og:site_name"/>
+<meta content="en_IN" property="og:locale"/>
+<meta content="https://shorveernotes.website/og-image.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Shorveer Notes — Class 12 Science study platform" property="og:image:alt"/>
+<meta content="https://shorveernotes.website/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Shorveer Notes | Class 12 Science" name="twitter:title"/>
+<meta content="A focused learning space for Class 12 Science notes, chapters, revision and exam resources." name="twitter:description"/>
+<meta content="https://shorveernotes.website/og-image.jpg" name="twitter:image"/>
+<meta content="@JSEDIZ" name="twitter:site"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1c1a'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23e8b64c'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link crossorigin="" href="https://images.unsplash.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Karla:wght@400;500;600;700&amp;family=Inter:opsz,wght@14..32,400..700&amp;display=swap" rel="stylesheet"/>
+<!-- External CSS Linked Here -->
+<link href="../style.css" rel="stylesheet"/>
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Shorveer Notes",
+    "alternateName": ["Shorveer", "ShorveerNotes"],
+    "description": "A student-focused learning platform for Class 12 Science notes, chapters, revision resources and examination preparation.",
+    "url": "https://shorveernotes.website/",
+    "logo": "https://shorveernotes.website/logo.png",
+    "sameAs": ["https://www.youtube.com/@JSEDIZ"],
+    "educationalLevel": "Class 12",
+    "knowsAbout": ["Physics","Chemistry","Mathematics","English","CBSE Class 12","Previous Year Questions","Board Examination Preparation"]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Shorveer Notes",
+    "alternateName": ["Shorveer", "ShorveerNotes", "Shorveer Notes Class 12"],
+    "url": "https://shorveernotes.website/",
+    "inLanguage": "en-IN",
+    "publisher": {
+      "@type": "EducationalOrganization",
+      "name": "Shorveer Notes",
+      "url": "https://shorveernotes.website/"
+    }
+  }
+  </script>
+<title>Chapter3 · Class 12 Mathematics | Shorveer Notes</title>
+<style>
+    /* Meadow Footer Styles (Integrated directly with Shorveer design tokens) */
+    .footer {
+      --u: min(100vw / 1440, 100vh / 672);
+      --u: min(100vw / 1440, 100svh / 672);
+      position: relative;
+      height: 100vh;
+      height: 100svh;
+      background: var(--paper, #fdfaf3);
+      overflow: hidden;
+      isolation: isolate;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+    }
+    .footer__stage {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .footer__video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 100%;
+      transform: translateY(9%);
+    }
+    .footer__stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, var(--paper, #fdfaf3) 0%, rgb(253 250 243 / .96) 26%, rgb(253 250 243 / .72) 44%, rgb(253 250 243 / 0) 70%);
+      pointer-events: none;
+    }
+    .footer__wordmark {
+      position: absolute;
+      left: 50%;
+      bottom: calc(-2 * var(--u));
+      transform: translateX(-50%);
+      z-index: 1;
       margin: 0;
-      padding-top: 80px;
+      font-size: calc(390 * var(--u));
+      font-weight: 600;
+      line-height: .74;
+      letter-spacing: -0.045em;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      color: rgb(232 234 250 / .4);
+      background: linear-gradient(to bottom, rgb(255 255 255 / .78), rgb(214 218 246 / .36) 48%, rgb(255 255 255 / .62));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 calc(-1 * var(--u)) 0 rgb(255 255 255 / .55)) drop-shadow(0 0 calc(18 * var(--u)) rgb(190 200 255 / .45));
     }
-    .container {
-      max-width: 1080px;
+    .footer__fog {
+      position: absolute;
+      inset: auto 0 0 0;
+      z-index: 2;
+      height: 17%;
+      pointer-events: none;
+      background: linear-gradient(to top, #e2e3f1 0%, rgb(226 227 241 / .6) 30%, rgb(226 227 241 / 0) 100%);
+    }
+    .footer__content {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: calc(440 * var(--u)) calc(240 * var(--u)) calc(240 * var(--u)) 1fr;
+      align-items: start;
+      width: calc(1440 * var(--u));
       margin: 0 auto;
-      padding: 0 24px;
+      padding: calc(86 * var(--u)) calc(100 * var(--u)) 0 calc(160 * var(--u));
     }
-    .chapter-hero {
-      padding: 40px 0 20px;
-      border-bottom: 1px dashed var(--line, rgba(255,255,255,0.15));
-      margin-bottom: 35px;
+    .footer-brand .brand__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(10 * var(--u));
+      font-size: calc(17 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.02em;
     }
-    .chapter-hero h1 {
-      font-family: var(--font-heading, 'Fraunces', serif);
-      font-size: 2.6rem;
-      color: var(--ink, #fff);
-      margin-bottom: 10px;
+    .footer-brand .brand__mark {
+      width: calc(30 * var(--u));
+      height: calc(30 * var(--u));
+      border-radius: calc(8 * var(--u));
+      background: linear-gradient(to bottom, #2b2b2b, #0a0a0a 55%);
+      box-shadow: 0 calc(1 * var(--u)) calc(2 * var(--u)) rgb(0 0 0 / .25);
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
-    .content-card {
-      background: var(--card, rgba(255, 255, 255, 0.04));
-      border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
-      border-radius: 14px;
-      padding: 28px;
-      margin-bottom: 28px;
-      backdrop-filter: blur(10px);
+    .footer-brand .brand__mark svg {
+      width: 60%;
+      height: 60%;
     }
-    .content-card h2, .content-card h3 {
-      font-family: var(--font-heading, 'Fraunces', serif);
-      color: var(--gold, #ff8a5b);
-      margin-bottom: 14px;
+    .footer-brand .brand__title {
+      margin-top: calc(19 * var(--u));
+      font-size: calc(20 * var(--u));
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.045em;
     }
-    .formula-highlight {
-      background: rgba(0,0,0,0.3);
-      border-left: 3px solid var(--gold, #ff8a5b);
-      padding: 16px 20px;
-      border-radius: 8px;
-      margin: 16px 0;
-      overflow-x: auto;
+    .footer-brand .brand__text {
+      max-width: calc(412 * var(--u));
+      margin-top: calc(18 * var(--u));
+      color: #6f6f6c;
+      font-size: calc(13.7 * var(--u));
+      line-height: 1.43;
+      letter-spacing: -0.012em;
     }
-    a.back-nav {
-      display: inline-block;
-      margin-bottom: 20px;
-      color: var(--gold, #ff8a5b);
+    .footer-brand .brand__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(6 * var(--u));
+      height: calc(32.5 * var(--u));
+      margin-top: calc(20 * var(--u));
+      padding: 0 calc(16 * var(--u)) 0 calc(15 * var(--u));
+      border-radius: calc(7 * var(--u));
+      background: #0c0c0c;
+      color: #fff;
+      font-size: calc(11.8 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      transition: background .2s, transform .2s;
       text-decoration: none;
-      font-weight: 700;
+    }
+    .footer-brand .brand__cta:hover {
+      background: #262626;
+      transform: translateY(-1px);
+    }
+    .footer-brand .brand__cta svg {
+      width: calc(13 * var(--u));
+      height: calc(13 * var(--u));
+      margin-top: calc(-1.5 * var(--u));
+    }
+    .footer-brand .brand__copy {
+      margin-top: calc(23 * var(--u));
+      color: #9c9c98;
+      font-size: calc(12.2 * var(--u));
+      letter-spacing: 0.01em;
+    }
+    .footer-brand .brand__by {
+      display: flex;
+      align-items: center;
+      gap: calc(5 * var(--u));
+      margin-top: calc(21 * var(--u));
+      font-size: calc(11.8 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .footer-brand .brand__heart { font-size: .95em; }
+    .footer-brand .brand__author {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(6 * var(--u));
+      margin-left: calc(5 * var(--u));
+    }
+    .footer-brand .brand__avatar {
+      width: calc(23 * var(--u));
+      height: calc(23 * var(--u));
+      border-radius: 50%;
+      overflow: hidden;
+      background: #e3e3e0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-brand .brand__avatar svg { width: 100%; height: 100%; display: block; }
+    .footer-brand .brand__status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: calc(8 * var(--u));
+      margin-top: calc(16 * var(--u));
+      list-style: none;
+      padding: 0;
+    }
+    .footer-brand .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(6 * var(--u));
+      height: calc(25 * var(--u));
+      padding: 0 calc(10 * var(--u));
+      border: 1px solid rgb(12 12 12 / .12);
+      border-radius: 999px;
+      background: rgb(255 255 255 / .55);
+      font-size: calc(10.8 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    .footer-brand .chip svg {
+      width: calc(11 * var(--u));
+      height: calc(11 * var(--u));
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .footer-brand .chip__dot {
+      width: calc(6 * var(--u));
+      height: calc(6 * var(--u));
+      border-radius: 50%;
+      background: #2fb36a;
+      box-shadow: 0 0 0 calc(2.5 * var(--u)) rgb(47 179 106 / .18);
+    }
+    .footer .col__title {
+      font-size: calc(16 * var(--u));
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.045em;
+      margin: 0;
+    }
+    .footer .col__list {
+      display: grid;
+      gap: calc(20.5 * var(--u));
+      margin-top: calc(24 * var(--u));
+      font-size: calc(13.7 * var(--u));
+      line-height: 1.24;
+      letter-spacing: 0.022em;
+      color: #161616;
+      list-style: none;
+      padding: 0;
+    }
+    .footer .col--menu .col__list {
+      gap: calc(15 * var(--u));
+      margin-top: calc(21 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      color: #0c0c0c;
+    }
+    .footer .col__list a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    .footer .col__list a:hover {
+      opacity: .55;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .footer {
+        --u: min(100vw / 1040, 100svh / 672);
+      }
+      .footer__content {
+        grid-template-columns: calc(400 * var(--u)) calc(190 * var(--u)) calc(210 * var(--u)) 1fr;
+        width: calc(1040 * var(--u));
+        padding: calc(64 * var(--u)) calc(40 * var(--u)) 0;
+      }
+      .footer-brand .brand__text { max-width: calc(350 * var(--u)); }
+      .footer__wordmark {
+        font-size: calc(286 * var(--u));
+        bottom: calc(10 * var(--u));
+      }
+    }
+
+    @media (max-width: 767px) {
+      .footer {
+        --u: 1px;
+        height: auto;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .footer__stage::after {
+        background: linear-gradient(to bottom, var(--paper, #fdfaf3) 0%, rgb(253 250 243 / .95) 50%, rgb(253 250 243 / .8) 68%, rgb(253 250 243 / 0) 90%);
+      }
+      .footer__content {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: space-between;
+        gap: 36px 12px;
+        width: 100%;
+        padding: 40px 20px 0;
+        margin-bottom: max(34vw, 150px);
+      }
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+      .footer-brand .brand__title { font-size: 21px; margin-top: 19px; }
+      .footer-brand .brand__text { max-width: 34em; font-size: 14px; margin-top: 18px; }
+      .footer-brand .brand__cta { height: 38px; padding: 0 18px 0 16px; border-radius: 8px; font-size: 13px; margin-top: 20px; }
+      .footer-brand .brand__cta svg { width: 14px; height: 14px; }
+      .footer-brand .brand__copy, .footer-brand .brand__by { font-size: 12.5px; }
+      .footer-brand .brand__copy { margin-top: 23px; }
+      .footer-brand .brand__by { margin-top: 21px; }
+      .footer-brand .chip { height: 28px; font-size: 12px; padding: 0 10px; }
+      .footer .col__title { font-size: 15px; }
+      .footer .col__list { gap: 14px; margin-top: 20px; font-size: 13px; letter-spacing: 0; }
+      .footer .col--menu .col__list { gap: 14px; margin-top: 20px; }
+      .footer__wordmark {
+        bottom: 5vw;
+        font-size: 27vw;
+      }
+      .footer__fog { height: 7%; }
+    }
+
+    @media (max-width: 359px) {
+      .footer__content {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer .col:last-child {
+        grid-column: span 2;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .footer-brand .brand__cta, .footer .col__list a {
+        transition: none;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
+<a class="skip" href="#main">Skip to content</a>
+<!-- ============ HEADER ============ -->
+<header class="site-header">
 <nav aria-label="Primary" class="nav container">
-<a aria-label="Shorveer Notes home" class="brand" href="../index.html">
+<a aria-label="Shorveer Notes home" class="brand" href="/">
 <span aria-hidden="true" class="brand-mark">
 <svg fill="none" viewbox="0 0 64 64">
 <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
@@ -92,10 +399,11 @@
 <span class="brand-name">Shorveer<em>Notes</em></span>
 </a>
 <div class="nav-links">
-<a href="../index.html">Home</a>
-<a href="index.html" style="color:var(--ink); font-weight:700;">Math Hub</a>
-<a href="../about-notes.html">Framework</a>
-<a href="../about.html">About us</a>
+<a href="#subjects">Subjects</a>
+<a href="#reallife">Real life</a>
+<a href="#resources">Resources</a>
+<a href="#method">How it works</a>
+<a href="../about.html">About</a>
 </div>
 <div class="nav-actions">
 <button aria-label="Open search" class="nav-icon" id="searchButton" title="Search (Ctrl+K)">
@@ -114,278 +422,322 @@
 </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-<a href="../index.html">Home</a>
-<a href="index.html">Math Hub</a>
-<a href="../about-notes.html">How notes are made</a>
+<a href="#subjects">Subjects</a>
+<a href="#reallife">Real life</a>
+<a href="#resources">Resources</a>
+<a href="#method">How it works</a>
+<a href="../exam-info.html">Exam information</a>
 <a href="../about.html">About Shorveer</a>
-<a href="../exam-info.html">Exam info</a>
 </div>
 </header>
-
-  <main id="main">
-    <div class="container">
-      <div class="chapter-hero">
-        <a class="back-nav" href="index.html">← Back to Mathematics Hub</a>
-        <h1>Open Chapter 03→</h1>
-        <p style="color:var(--muted, #a090a0);">Curated for CBSE Class 12 · High-Yield Revision</p>
-      </div>
-
-      <main id="main">
-    <section class="section container">
-        <h1 class="chapter-title">Chapter 3: Matrices</h1>
-        <p class="chapter-intro">
-            Welcome to Open Chapter 03! In this chapter, we will delve into the fundamental concepts of Matrices, a powerful mathematical tool used extensively in various fields like computer graphics, physics, engineering, and economics. Matrices provide a concise way to represent and work with systems of linear equations and linear transformations.
+<!-- ============ THEME PICKER (9 Themes) ============ -->
+<div aria-label="Choose a theme" class="theme-pop" id="themePop" role="dialog">
+<h4>Pick a look</h4>
+<div class="theme-grid">
+<!-- 1. Notebook -->
+<button aria-pressed="true" class="theme-opt" data-theme-value="notebook">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#fdfaf3"></span>
+<span style="background:#e8b64c"></span>
+<span style="background:#bf5a3c"></span>
+<span style="background:#1c1c1a"></span>
+</span>
+<b>Notebook</b>
+<small>Warm paper, classic</small>
+</button>
+<!-- 2. Chalkboard -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="chalkboard">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#1e2a24"></span>
+<span style="background:#f0d97a"></span>
+<span style="background:#7bc3bf"></span>
+<span style="background:#ebe6d5"></span>
+</span>
+<b>Chalkboard</b>
+<small>Dark green, chalk</small>
+</button>
+<!-- 3. Blueprint -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="blueprint">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0f2b4c"></span>
+<span style="background:#7ec8f5"></span>
+<span style="background:#ff9d7c"></span>
+<span style="background:#e2eefb"></span>
+</span>
+<b>Blueprint</b>
+<small>Navy, technical</small>
+</button>
+<!-- 4. Sunset -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="sunset">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#241226"></span>
+<span style="background:#ff8a5b"></span>
+<span style="background:#ffb87a"></span>
+<span style="background:#ffe9d6"></span>
+</span>
+<b>Sunset</b>
+<small>Plum, warm glow</small>
+</button>
+<!-- 5. Emerald -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="emerald">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0b1d16"></span>
+<span style="background:#34d399"></span>
+<span style="background:#2dd4bf"></span>
+<span style="background:#e3f7ed"></span>
+</span>
+<b>Emerald</b>
+<small>Biology &amp; Green</small>
+</button>
+<!-- 6. Cyberpunk -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="cyberpunk">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0f1016"></span>
+<span style="background:#00f0ff"></span>
+<span style="background:#ff007f"></span>
+<span style="background:#f0f2ff"></span>
+</span>
+<b>Cyberpunk</b>
+<small>Neon high-tech</small>
+</button>
+<!-- 7. Minimal -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="minimal">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#f8fafc"></span>
+<span style="background:#2563eb"></span>
+<span style="background:#64748b"></span>
+<span style="background:#0f172a"></span>
+</span>
+<b>Minimal</b>
+<small>Clean white</small>
+</button>
+<!-- 8. Dracula -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="dracula">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#191622"></span>
+<span style="background:#bd93f9"></span>
+<span style="background:#ff79c6"></span>
+<span style="background:#f8f8f2"></span>
+</span>
+<b>Dracula</b>
+<small>Night indigo</small>
+</button>
+<!-- 9. Solarized -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="solarized">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#fdf6e3"></span>
+<span style="background:#b58900"></span>
+<span style="background:#2aa198"></span>
+<span style="background:#073642"></span>
+</span>
+<b>Solarized</b>
+<small>Warm study paper</small>
+</button>
+</div>
+<p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Your choice is saved for next time.</p>
+</div>
+<main id="main"><section class="hero container"><div class="hero-copy"><div class="kicker"><span class="dot"></span><span>Class 12 · Mathematics</span></div><h1>Chapter3</h1><p class="hero-description">Part 1: Theory &amp; Complete Derivations</p></div></section><section class="section container reveal" id="theory">
+<div class="section-head"><span class="section-eyebrow">Comprehensive Academic Theory</span><h2>1. Conceptual Framework</h2></div>
+<div class="real-life">
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Definitions &amp; Foundations</div>
+<div class="rl-title">What is a Matrix?</div>
+<p class="rl-text">
+          A <strong>matrix</strong> is a rectangular array of numbers, symbols, or expressions arranged in rows and columns. The size of a matrix is denoted by its <em>order</em> $m \times n$, where $m$ is the number of rows and $n$ is the number of columns. An individual entry of a matrix $A$ is written as $a_{ij}$, where $i$ ( $1\le i\le m$ ) indicates the row and $j$ ( $1\le j\le n$ ) indicates the column. For example,
+          $$A=\begin{bmatrix}
+          2 &amp; -1 &amp; 0\\
+          5 &amp; 3 &amp; 4\\
+          -2 &amp; 7 &amp; 1
+          \end{bmatrix}$$
+          is a $3\times3$ matrix.  
+          <br/><br/>
+          Matrices are classified according to their shape and the nature of their elements. A matrix with the same number of rows and columns ($m=n$) is called a <strong>square matrix</strong>. Special square matrices include:
+          <ul>
+<li><strong>Diagonal matrix:</strong> all non‑diagonal entries are zero, e.g., $D=\operatorname{diag}(d_1,d_2,\dots,d_n)$.</li>
+<li><strong>Scalar matrix:</strong> a diagonal matrix whose diagonal entries are all equal, i.e., $kI_n$ where $I_n$ is the identity matrix.</li>
+<li><strong>Identity matrix ($I_n$):</strong> a diagonal matrix with ones on the main diagonal and zeros elsewhere.</li>
+<li><strong>Zero (null) matrix:</strong> every entry is zero, denoted $0_{m\times n}$.</li>
+<li><strong>Symmetric matrix:</strong> $A^T=A$, meaning $a_{ij}=a_{ji}$ for all $i,j$.</li>
+<li><strong>Skew‑symmetric matrix:</strong> $A^T=-A$, implying $a_{ii}=0$ and $a_{ij}=-a_{ji}$.</li>
+<li><strong>Upper (lower) triangular matrix:</strong> all entries below (above) the main diagonal are zero.</li>
+</ul>
+          Understanding these classifications is crucial because many algebraic properties and computational techniques depend on the type of matrix under consideration.
         </p>
-    </section>
+</div>
+</article>
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Matrix Operations</div>
+<div class="rl-title">Addition, Subtraction, and Scalar Multiplication</div>
+<p class="rl-text">
+          Two matrices $A$ and $B$ can be added or subtracted only if they have the same order $m\times n$. The operation is performed element‑wise:
+          $$ (A\pm B)_{ij}=a_{ij}\pm b_{ij}. $$
+          For example,
+          $$A=\begin{bmatrix}1&amp;2\\3&amp;4\end{bmatrix},\; B=\begin{bmatrix}5&amp;6\\7&amp;8\end{bmatrix}
+          \;\Longrightarrow\;
+          A+B=\begin{bmatrix}6&amp;8\\10&amp;12\end{bmatrix}.$$
+          <br/><br/>
+          Scalar multiplication involves multiplying every entry of a matrix by a real number $k$:
+          $$ (kA)_{ij}=k\,a_{ij}. $$
+          If $k=3$ and $A$ is as above, then $3A=\begin{bmatrix}3&amp;6\\9&amp;12\end{bmatrix}$.
+          <br/><br/>
+          These operations satisfy the usual algebraic properties: commutativity of addition, associativity of both addition and scalar multiplication, and distributivity of scalar multiplication over matrix addition.
+        </p>
+</div>
+</article>
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Matrix Multiplication &amp; Transpose</div>
+<div class="rl-title">Product of Matrices and Its Properties</div>
+<p class="rl-text">
+          The product $AB$ of an $m\times n$ matrix $A$ and an $n\times p$ matrix $B$ is defined only when the number of columns of $A$ equals the number of rows of $B$. The resulting matrix $C=AB$ has order $m\times p$, and each entry is obtained by the dot‑product of the corresponding row of $A$ with the column of $B$:
+          $$c_{ij}=\sum_{k=1}^{n}a_{ik}b_{kj}.$$
+          For instance,
+          $$A=\begin{bmatrix}1&amp;2\\3&amp;4\end{bmatrix},\; B=\begin{bmatrix}0&amp;5\\6&amp;7\end{bmatrix}
+          \;\Longrightarrow\;
+          AB=\begin{bmatrix}1\cdot0+2\cdot6 &amp; 1\cdot5+2\cdot7\\
+          3\cdot0+4\cdot6 &amp; 3\cdot5+4\cdot7\end{bmatrix}
+          =\begin{bmatrix}12&amp;19\\24&amp;43\end{bmatrix}.$$
+          <br/><br/>
+          Matrix multiplication is associative, i.e., $(AB)C=A(BC)$, but it is generally **not** commutative: $AB\neq BA$ in most cases. The transpose of a matrix, denoted $A^{T}$, flips rows into columns: $(A^{T})_{ij}=a_{ji}$. Important identities include
+          $$ (A+B)^{T}=A^{T}+B^{T},\qquad (kA)^{T}=kA^{T},\qquad (AB)^{T}=B^{T}A^{T}. $$
+          The transpose of a symmetric matrix is the matrix itself, while the transpose of a skew‑symmetric matrix changes its sign.
+        </p>
+</div>
+</article>
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Special Matrices &amp; Inverses</div>
+<div class="rl-title">Identity, Orthogonal, and Invertible Matrices</div>
+<p class="rl-text">
+          The <strong>identity matrix</strong> $I_n$ acts as the multiplicative identity: $AI_n=A$ and $I_nA=A$ for any $n\times n$ matrix $A$. An $n\times n$ matrix $A$ is called <strong>invertible</strong> (or non‑singular) if there exists a matrix $A^{-1}$ such that $AA^{-1}=A^{-1}A=I_n$. The inverse, when it exists, is unique and can be computed by elementary row operations or by the adjoint method (using cofactors). A necessary and sufficient condition for invertibility is $\det A\neq0$ (the determinant concept is explored in Chapter 4).
+          <br/><br/>
+          An <strong>orthogonal matrix</strong> $Q$ satisfies $Q^{T}Q=QQ^{T}=I_n$, implying $Q^{-1}=Q^{T}$. Orthogonal matrices preserve Euclidean length and angle, making them indispensable in geometry and computer graphics. For example,
+          $$Q=\frac{1}{\sqrt{2}}\begin{bmatrix}1&amp;-1\\1&amp;1\end{bmatrix}$$
+          is orthogonal because $Q^{T}Q=I_2$.
+          <br/><br/>
+          Certain matrices are never invertible: the zero matrix, any matrix with a row (or column) of zeros, and matrices with linearly dependent rows/columns. Recognising these exceptions early prevents futile attempts at finding an inverse.
+        </p>
+</div>
+</article>
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Worked Example</div>
+<div class="rl-title">Solving a Linear System Using Matrix Inverse</div>
+<p class="rl-text">
+          Consider the simultaneous equations  
+          \[
+          \begin{cases}
+          2x+3y- z = 5,\\
+          -x+4y+2z = 6,\\
+          3x- y+ 5z = 4.
+          \end{cases}
+          \]
+          They can be written in matrix form as $AX=B$, where  
+          $$A=\begin{bmatrix}
+          2&amp;3&amp;-1\\
+          -1&amp;4&amp;2\\
+          3&amp;-1&amp;5
+          \end{bmatrix},\qquad
+          X=\begin{bmatrix}x\\y\\z\end{bmatrix},\qquad
+          B=\begin{bmatrix}5\\6\\4\end{bmatrix}.$$
+          <br/><br/>
+          **Step 1: Find $A^{-1}$** (using elementary row operations). Augment $A$ with $I_3$ and reduce:
+          $$
+          \left[\begin{array}{ccc|ccc}
+          2&amp;3&amp;-1&amp;1&amp;0&amp;0\\
+          -1&amp;4&amp;2&amp;0&amp;1&amp;0\\
+          3&amp;-1&amp;5&amp;0&amp;0&amp;1
+          \end{array}\right]
+          \xrightarrow{\text{RREF}}
+          \left[\begin{array}{ccc|ccc}
+          1&amp;0&amp;0&amp;\frac{23}{34}&amp;-\frac{5}{34}&amp;-\frac{3}{34}\\
+          0&amp;1&amp;0&amp;-\frac{7}{
 
-    <!-- Section 1: Detailed Chapter Concept & Definitions -->
-    <section class="section container">
-        <h2 class="section-title">1. Detailed Chapter Concept & Definitions</h2>
-        <div class="content-card">
-            <h3>1.1 What is a Matrix?</h3>
-            <p>A matrix is a rectangular arrangement of numbers or functions. These numbers or functions are called the elements or entries of the matrix. We denote matrices by capital letters like $A, B, C$, etc.</p>
-            <p>General form of a matrix $A$ with $m$ rows and $n$ columns (an $m \times n$ matrix):</p>
-            $$ A = \begin{bmatrix}
-                a_{11} & a_{12} & \dots & a_{1n} \\
-                a_{21} & a_{22} & \dots & a_{2n} \\
-                \vdots & \vdots & \ddots & \vdots \\
-                a_{m1} & a_{m2} & \dots & a_{mn}
-            \end{bmatrix} $$
-            <p>The element $a_{ij}$ refers to the element in the $i^{th}$ row and $j^{th}$ column.</p>
-
-            <h3>1.2 Order of a Matrix</h3>
-            <p>The order of a matrix is defined by the number of rows and columns it has. An $m \times n$ matrix has $m$ rows and $n$ columns.</p>
-            <p>Example: A matrix with 2 rows and 3 columns has an order of $2 \times 3$.</p>
-
-            <h3>1.3 Types of Matrices</h3>
-            <ul>
-                <li><strong>Column Matrix:</strong> A matrix having only one column. Order is $m \times 1$. Example: $A = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}$ (order $3 \times 1$)</li>
-                <li><strong>Row Matrix:</strong> A matrix having only one row. Order is $1 \times n$. Example: $B = \begin{bmatrix} 1 & 2 & 3 \end{bmatrix}$ (order $1 \times 3$)</li>
-                <li><strong>Square Matrix:</strong> A matrix in which the number of rows is equal to the number of columns ($m=n$). Order is $n \times n$. Example: $C = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$ (order $2 \times 2$)</li>
-                <li><strong>Diagonal Matrix:</strong> A square matrix where all non-diagonal elements are zero. That is, $a_{ij} = 0$ for $i \neq j$. Example: $D = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{bmatrix}$</li>
-                <li><strong>Scalar Matrix:</strong> A diagonal matrix where all diagonal elements are equal. Example: $E = \begin{bmatrix} 5 & 0 & 0 \\ 0 & 5 & 0 \\ 0 & 0 & 5 \end{bmatrix}$</li>
-                <li><strong>Identity Matrix (Unit Matrix):</strong> A scalar matrix where all diagonal elements are 1. Denoted by $I$. Example: $I_3 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$</li>
-                <li><strong>Zero Matrix (Null Matrix):</strong> A matrix in which all elements are zero. Denoted by $O$. Example: $O = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$</li>
-                <li><strong>Symmetric Matrix:</strong> A square matrix $A$ is symmetric if $A^T = A$, i.e., $a_{ij} = a_{ji}$ for all $i,j$. Example: $F = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 4 & 5 \\ 3 & 5 & 6 \end{bmatrix}$</li>
-                <li><strong>Skew-Symmetric Matrix:</strong> A square matrix $A$ is skew-symmetric if $A^T = -A$, i.e., $a_{ij} = -a_{ji}$ for all $i,j$. Note that diagonal elements must be zero. Example: $G = \begin{bmatrix} 0 & 2 & 3 \\ -2 & 0 & 5 \\ -3 & -5 & 0 \end{bmatrix}$</li>
-            </ul>
-
-            <h3>1.4 Operations on Matrices</h3>
-            <ul>
-                <li><strong>Addition/Subtraction:</strong> Two matrices can be added or subtracted only if they are of the same order. If $A = [a_{ij}]$ and $B = [b_{ij}]$, then $A \pm B = [a_{ij} \pm b_{ij}]$.</li>
-                <li><strong>Scalar Multiplication:</strong> If $A = [a_{ij}]$ and $k$ is a scalar, then $kA = [ka_{ij}]$.</li>
-                <li><strong>Matrix Multiplication:</strong> If $A$ is an $m \times n$ matrix and $B$ is an $n \times p$ matrix, then their product $AB$ is an $m \times p$ matrix. The element $(AB)_{ij}$ is found by taking the dot product of the $i^{th}$ row of $A$ and the $j^{th}$ column of $B$.
-                    $$ (AB)_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj} $$
-                    Note: Matrix multiplication is generally not commutative, i.e., $AB \neq BA$.
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Section 2: Important Derivations / Key Formulas -->
-    <section class="section container">
-        <h2 class="section-title">2. Important Derivations & Key Formulas</h2>
-
-        <div class="content-card info-box">
-            <h3>Determinant of a Matrix</h3>
-            <p>For a square matrix $A$, its determinant, denoted $|A|$ or $\det(A)$, is a scalar value.</p>
-            <ul>
-                <li><strong>For a $2 \times 2$ matrix:</strong>
-                    $$ A = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \implies |A| = ad - bc $$
-                </li>
-                <li><strong>For a $3 \times 3$ matrix:</strong>
-                    $$ A = \begin{bmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{bmatrix} \implies |A| = a_{11}(a_{22}a_{33} - a_{23}a_{32}) - a_{12}(a_{21}a_{33} - a_{23}a_{31}) + a_{13}(a_{21}a_{32} - a_{22}a_{31}) $$
-                    (This is expansion along the first row. Can be expanded along any row or column.)
-                </li>
-            </ul>
-        </div>
-
-        <div class="content-card info-box">
-            <h3>Adjoint and Inverse of a Matrix</h3>
-            <p><strong>Cofactor ($C_{ij}$):</strong> The cofactor of an element $a_{ij}$ is $(-1)^{i+j}$ times the determinant of the submatrix obtained by deleting the $i^{th}$ row and $j^{th}$ column.</p>
-            <p><strong>Adjoint ($\text{adj}(A)$):</strong> The adjoint of a square matrix $A$ is the transpose of the matrix of cofactors of $A$.</p>
-            $$ \text{adj}(A) = (\text{Cofactor Matrix})^T $$
-            <p><strong>Inverse ($A^{-1}$):</strong> For a square matrix $A$, its inverse $A^{-1}$ exists if and only if $A$ is a non-singular matrix (i.e., $|A| \neq 0$).</p>
-            $$ A^{-1} = \frac{1}{|A|} \text{adj}(A) $$
-            <p>Properties:</p>
-            <ul>
-                <li>$AA^{-1} = A^{-1}A = I$</li>
-                <li>$(AB)^{-1} = B^{-1}A^{-1}$</li>
-                <li>$(A^T)^{-1} = (A^{-1})^T$</li>
-            </ul>
-        </div>
-
-        <div class="content-card info-box">
-            <h3>Properties of Determinants</h3>
-            <ul>
-                <li>$|A^T| = |A|$</li>
-                <li>If any two rows (or columns) of a matrix are interchanged, the sign of the determinant changes.</li>
-                <li>If any two rows (or columns) are identical, the determinant is zero.</li>
-                <li>If each element of a row (or column) is multiplied by a scalar $k$, the determinant is multiplied by $k$.
-                    $$ |kA| = k^n|A| \text{ (for an } n \times n \text{ matrix)} $$
-                </li>
-                <li>$|AB| = |A||B|$</li>
-                <li>A square matrix $A$ is singular if $|A|=0$, and non-singular if $|A| \neq 0$.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Section 3: 3 Most Repeated CBSE Board Solved Questions -->
-    <section class="section container">
-        <h2 class="section-title">3. CBSE Board Solved Questions</h2>
-
-        <div class="content-card question-card">
-            <h3>Question 1: Find the inverse of the matrix $A = \begin{bmatrix} 2 & 3 \\ 1 & 2 \end{bmatrix}$ using the adjoint method.</h3>
-            <div class="solution">
-                <h4>Solution:</h4>
-                <p>Given matrix $A = \begin{bmatrix} 2 & 3 \\ 1 & 2 \end{bmatrix}$.</p>
-                <p><strong>Step 1: Calculate the determinant of A.</strong></p>
-                $$ |A| = (2)(2) - (3)(1) = 4 - 3 = 1 $$
-                <p>Since $|A| = 1 \neq 0$, the inverse exists. (Marking: 1 mark)</p>
-
-                <p><strong>Step 2: Find the cofactors of each element.</strong></p>
-                <ul>
-                    <li>$C_{11} = (-1)^{1+1}(2) = 2$</li>
-                    <li>$C_{12} = (-1)^{1+2}(1) = -1$</li>
-                    <li>$C_{21} = (-1)^{2+1}(3) = -3$</li>
-                    <li>$C_{22} = (-1)^{2+2}(2) = 2$</li>
-                </ul>
-                <p>The cofactor matrix is $C = \begin{bmatrix} 2 & -1 \\ -3 & 2 \end{bmatrix}$. (Marking: 1.5 marks)</p>
-
-                <p><strong>Step 3: Find the adjoint of A.</strong></p>
-                $$ \text{adj}(A) = C^T = \begin{bmatrix} 2 & -3 \\ -1 & 2 \end{bmatrix} $$
-                (Marking: 1 mark)
-
-                <p><strong>Step 4: Calculate the inverse of A.</strong></p>
-                $$ A^{-1} = \frac{1}{|A|} \text{adj}(A) = \frac{1}{1} \begin{bmatrix} 2 & -3 \\ -1 & 2 \end{bmatrix} = \begin{bmatrix} 2 & -3 \\ -1 & 2 \end{bmatrix} $$
-                (Marking: 1.5 marks)
-                <p><strong>Total Marks: 5</strong></p>
-            </div>
-        </div>
-
-        <div class="content-card question-card">
-            <h3>Question 2: Express the matrix $A = \begin{bmatrix} 3 & 5 \\ 1 & -1 \end{bmatrix}$ as the sum of a symmetric and a skew-symmetric matrix.</h3>
-            <div class="solution">
-                <h4>Solution:</h4>
-                <p>Any square matrix $A$ can be expressed as $A = P + Q$, where $P$ is a symmetric matrix and $Q$ is a skew-symmetric matrix.
-                    $$ P = \frac{1}{2}(A + A^T) \quad \text{and} \quad Q = \frac{1}{2}(A - A^T) $$
-                </p>
-                <p>Given $A = \begin{bmatrix} 3 & 5 \\ 1 & -1 \end{bmatrix}$.</p>
-
-                <p><strong>Step 1: Find the transpose of A.</strong></p>
-                $$ A^T = \begin{bmatrix} 3 & 1 \\ 5 & -1 \end{bmatrix} $$
-                (Marking: 1 mark)
-
-                <p><strong>Step 2: Calculate P (the symmetric part).</strong></p>
-                $$ A + A^T = \begin{bmatrix} 3 & 5 \\ 1 & -1 \end{bmatrix} + \begin{bmatrix} 3 & 1 \\ 5 & -1 \end{bmatrix} = \begin{bmatrix} 3+3 & 5+1 \\ 1+5 & -1-1 \end{bmatrix} = \begin{bmatrix} 6 & 6 \\ 6 & -2 \end{bmatrix} $$
-                $$ P = \frac{1}{2}(A + A^T) = \frac{1}{2} \begin{bmatrix} 6 & 6 \\ 6 & -2 \end{bmatrix} = \begin{bmatrix} 3 & 3 \\ 3 & -1 \end{bmatrix} $$
-                (Marking: 1.5 marks for $A+A^T$, 1 mark for $P$)
-                <p>Check: $P^T = \begin{bmatrix} 3 & 3 \\ 3 & -1 \end{bmatrix} = P$, so $P$ is symmetric.</p>
-
-                <p><strong>Step 3: Calculate Q (the skew-symmetric part).</strong></p>
-                $$ A - A^T = \begin{bmatrix} 3 & 5 \\ 1 & -1 \end{bmatrix} - \begin{bmatrix} 3 & 1 \\ 5 & -1 \end{bmatrix} = \begin{bmatrix} 3-3 & 5-1 \\ 1-5 & -1-(-1) \end{bmatrix} = \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix} $$
-                $$ Q = \frac{1}{2}(A - A^T) = \frac{1}{2} \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 2 \\ -2 & 0 \end{bmatrix} $$
-                (Marking: 1.5 marks for $A-A^T$, 1 mark for $Q$)
-                <p>Check: $Q^T = \begin{bmatrix} 0 & -2 \\ 2 & 0 \end{bmatrix} = -Q$, so $Q$ is skew-symmetric.</p>
-
-                <p><strong>Step 4: Verify $A = P + Q$.</strong></p>
-                $$ P+Q = \begin{bmatrix} 3 & 3 \\ 3 & -1 \end{bmatrix} + \begin{bmatrix} 0 & 2 \\ -2 & 0 \end{bmatrix} = \begin{bmatrix} 3+0 & 3+2 \\ 3-2 & -1+0 \end{bmatrix} = \begin{bmatrix} 3 & 5 \\ 1 & -1 \end{bmatrix} = A $$
-                (Marking: 0.5 mark for verification)
-                <p><strong>Total Marks: 5</strong></p>
-            </div>
-        </div>
-
-        <div class="content-card question-card">
-            <h3>Question 3: If $A = \begin{bmatrix} 2 & 0 & 1 \\ 2 & 1 & 3 \\ 1 & -1 & 0 \end{bmatrix}$, find $A^2 - 5A + 6I$.</h3>
-            <div class="solution">
-                <h4>Solution:</h4>
-                <p>Given matrix $A = \begin{bmatrix} 2 & 0 & 1 \\ 2 & 1 & 3 \\ 1 & -1 & 0 \end{bmatrix}$. $I$ is the $3 \times 3$ identity matrix $I = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$.</p>
-
-                <p><strong>Step 1: Calculate $A^2 = A \cdot A$.</strong></p>
-                $$ A^2 = \begin{bmatrix} 2 & 0 & 1 \\ 2 & 1 & 3 \\ 1 & -1 & 0 \end{bmatrix} \begin{bmatrix} 2 & 0 & 1 \\ 2 & 1 & 3 \\ 1 & -1 & 0 \end{bmatrix} $$
-                $$ A^2 = \begin{bmatrix}
-                    (2 \cdot 2 + 0 \cdot 2 + 1 \cdot 1) & (2 \cdot 0 + 0 \cdot 1 + 1 \cdot (-1)) & (2 \cdot 1 + 0 \cdot 3 + 1 \cdot 0) \\
-                    (2 \cdot 2 + 1 \cdot 2 + 3 \cdot 1) & (2 \cdot 0 + 1 \cdot 1 + 3 \cdot (-1)) & (2 \cdot 1 + 1 \cdot 3 + 3 \cdot 0) \\
-                    (1 \cdot 2 + (-1) \cdot 2 + 0 \cdot 1) & (1 \cdot 0 + (-1) \cdot 1 + 0 \cdot (-1)) & (1 \cdot 1 + (-1) \cdot 3 + 0 \cdot 0)
-                \end{bmatrix} $$
-                $$ A^2 = \begin{bmatrix}
-                    (4+0+1) & (0+0-1) & (2+0+0) \\
-                    (4+2+3) & (0+1-3) & (2+3+0) \\
-                    (2-2+0) & (0-1+0) & (1-3+0)
-                \end{bmatrix} = \begin{bmatrix} 5 & -1 & 2 \\ 9 & -2 & 5 \\ 0 & -1 & -2 \end{bmatrix} $$
-                (Marking: 2 marks)
-
-                <p><strong>Step 2: Calculate $5A$.</strong></p>
-                $$ 5A = 5 \begin{bmatrix} 2 & 0 & 1 \\ 2 & 1 & 3 \\ 1 & -1 & 0 \end{bmatrix} = \begin{bmatrix} 10 & 0 & 5 \\ 10 & 5 & 15 \\ 5 & -5 & 0 \end{bmatrix} $$
-                (Marking: 1 mark)
-
-                <p><strong>Step 3: Calculate $6I$.</strong></p>
-                $$ 6I = 6 \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} = \begin{bmatrix} 6 & 0 & 0 \\ 0 & 6 & 0 \\ 0 & 0 & 6 \end{bmatrix} $$
-                (Marking: 0.5 mark)
-
-                <p><strong>Step 4: Calculate $A^2 - 5A + 6I$.</strong></p>
-                $$ A^2 - 5A + 6I = \begin{bmatrix} 5 & -1 & 2 \\ 9 & -2 & 5 \\ 0 & -1 & -2 \end{bmatrix} - \begin{bmatrix} 10 & 0 & 5 \\ 10 & 5 & 15 \\ 5 & -5 & 0 \end{bmatrix} + \begin{bmatrix} 6 & 0 & 0 \\ 0 & 6 & 0 \\ 0 & 0 & 6 \end{bmatrix} $$
-                $$ = \begin{bmatrix}
-                    (5-10+6) & (-1-0+0) & (2-5+0) \\
-                    (9-10+0) & (-2-5+6) & (5-15+0) \\
-                    (0-5+0) & (-1-(-5)+0) & (-2-0+6)
-                \end{bmatrix} $$
-                $$ = \begin{bmatrix}
-                    1 & -1 & -3 \\
-                    -1 & -1 & -10 \\
-                    -5 & 4 & 4
-                \end{bmatrix} $$
-                (Marking: 1.5 marks)
-                <p><strong>Total Marks: 5</strong></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4: Quick Summary Mind-Map points -->
-    <section class="section container">
-        <h2 class="section-title">4. Quick Summary: Mind Map Points</h2>
-        <div class="content-card summary-card">
-            <ul class="mind-map-list">
-                <li><strong>Matrix:</strong> Rectangular array of numbers/functions.</li>
-                <li><strong>Order:</strong> Number of rows $\times$ Number of columns ($m \times n$).</li>
-                <li><strong>Types:</strong>
-                    <ul>
-                        <li>Square ($m=n$)</li>
-                        <li>Diagonal (non-diagonal elements are 0)</li>
-                        <li>Scalar (diagonal with equal elements)</li>
-                        <li>Identity ($I$, scalar with 1s on diagonal)</li>
-                        <li>Zero ($O$, all elements are 0)</li>
-                        <li>Row, Column, Symmetric ($A=A^T$), Skew-Symmetric ($A=-A^T$)</li>
-                    </ul>
-                </li>
-                <li><strong>Operations:</strong>
-                    <ul>
-                        <li>Addition/Subtraction: Only for same order matrices. Element-wise.</li>
-                        <li>Scalar Multiplication: Multiply each element by the scalar.</li>
-                        <li>Matrix Multiplication: $(m \times n) \cdot (n \times p) \rightarrow (m \times p)$. Not commutative.</li>
-                    </ul>
-                </li>
-                <li><strong>Transpose ($A^T$):</strong> Rows become columns and vice-versa. $(AB)^T = B^T A^T$.</li>
-                <li><strong>Determinant ($|A|$):</strong> Scalar value for square matrices. $|A|=0 \Rightarrow$ Singular matrix.</li>
-                <li><strong>Minors & Cofactors:</strong> Used to calculate adjoint. $C_{ij} = (-1)^{i+j} M_{ij}$.</li>
-                <li><strong>Adjoint ($\text{adj}(A)$):</strong> Transpose of cofactor matrix.</li>
-                <li><strong>Inverse ($A^{-1}$):</strong> $A^{-1} = \frac{1}{|A|} \text{adj}(A)$. Exists only if $|A| \neq 0$.</li>
-                <li><strong>Properties:</strong> $|AB| = |A||B|$, $(AB)^{-1} = B^{-1}A^{-1}$.</li>
-                <li><strong>Applications:</strong> Solving systems of linear equations (Matrix Method).</li>
-            </ul>
-        </div>
-    </section>
-</main>
-    </div>
-  </main>
-
-  <footer class="sn-footer">
+<section class="section container reveal" id="derivations">
+<div class="section-head"><span class="section-eyebrow">Formulas and Derivations</span><h2>2. Master Equation Bank</h2></div>
+<div class="resource-grid">
+<article class="resource">
+<h3>Derivations and Formula Compendium for Chapter 3 – Matrices</h3>
+<p>In this section we present a systematic derivation of the most frequently used matrix results in the CBSE Class 12 syllabus. Each derivation follows the standard CBSE‑approved logical flow, beginning from the definition of a matrix and proceeding step‑by‑step to the final compact formula. All symbols are defined in the accompanying formula list, together with their SI units (where applicable) and the conditions under which the formula holds true.</p>
+<h4>1. Definition of a Matrix and Notation</h4>
+<p>Let $A$ be a rectangular array of real numbers (or complex numbers) arranged in $m$ rows and $n$ columns. The element situated at the intersection of the $i^{\text{th}}$ row and $j^{\text{th}}$ column is denoted by $a_{ij}$. Hence,</p>
+      $$A=\begin{bmatrix}
+      a_{11}&amp;a_{12}&amp;\dots&amp;a_{1n}\\
+      a_{21}&amp;a_{22}&amp;\dots&amp;a_{2n}\\
+      \vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+      a_{m1}&amp;a_{m2}&amp;\dots&amp;a_{mn}
+      \end{bmatrix},\qquad a_{ij}\in\mathbb{R}\;(\text{or }\mathbb{C}).$$
+      <p>The order of $A$ is written as $m\times n$. When $m=n$, $A$ is called a <strong>square matrix</strong>. The set of all $n\times n$ real matrices is denoted by $\mathbb{M}_{n}(\mathbb{R})$.</p>
+<h4>2. Matrix Addition and Scalar Multiplication</h4>
+<p>For two matrices $A=(a_{ij})$ and $B=(b_{ij})$ of the same order $m\times n$, the sum $C=A+B$ is defined element‑wise:</p>
+      $$c_{ij}=a_{ij}+b_{ij},\qquad 1\le i\le m,\;1\le j\le n.$$
+      <p>Scalar multiplication by a real number $k$ is similarly defined:</p>
+      $$ (kA)_{ij}=k\,a_{ij}.$$
+      <p>Both operations satisfy the commutative, associative, and distributive laws, which can be proved directly from the field properties of real numbers. For instance, commutativity of addition follows because $a_{ij}+b_{ij}=b_{ij}+a_{ij}$ for each pair $(i,j)$.</p>
+<h4>3. Matrix Multiplication – Derivation from Linear Transformations</h4>
+<p>Consider two matrices $A$ of order $m\times p$ and $B$ of order $p\times n$. The product $C=AB$ is defined only when the inner dimensions match ($p$). The entry $c_{ij}$ of $C$ is obtained by taking the dot product of the $i^{\text{th}}$ row of $A$ with the $j^{\text{th}}$ column of $B$:</p>
+      $$c_{ij}=\sum_{k=1}^{p}a_{ik}b_{kj},\qquad 1\le i\le m,\;1\le j\le n.$$
+      <p>**Derivation** – Let $A$ represent a linear transformation $T_{A}:\mathbb{R}^{p}\to\mathbb{R}^{m}$ and $B$ represent $T_{B}:\mathbb{R}^{n}\to\mathbb{R}^{p}$. The composition $T_{A}\circ T_{B}$ maps $\mathbb{R}^{n}\to\mathbb{R}^{m}$ and is represented by the matrix product $AB$. For a vector $x\in\mathbb{R}^{n}$,</p>
+      $$T_{A}(T_{B}(x))=A(Bx)=(AB)x.$$
+      <p>Expanding $Bx$ yields a $p$‑dimensional vector whose $k^{\text{th}}$ component is $\sum_{j=1}^{n}b_{kj}x_{j}$. Multiplying $A$ with this vector gives the $i^{\text{th}}$ component of $ABx$ as $\sum_{k=1}^{p}a_{ik}\bigl(\sum_{j=1}^{n}b_{kj}x_{j}\bigr)$. Re‑ordering the sums leads directly to the definition of $c_{ij}$ above.</p>
+<h4>4. Properties of Matrix Multiplication</h4>
+<ul>
+<li><strong>Associativity:</strong> $(AB)C=A(BC)$ for conformable matrices.</li>
+<li><strong>Distributivity:</strong> $A(B+C)=AB+AC$ and $(A+B)C=AC+BC$.</li>
+<li><strong>Non‑commutativity:</strong> In general $AB\neq BA$. Equality holds only under special conditions (e.g., both matrices are diagonal and of the same order, or they are scalar multiples of the identity).</li>
+</ul>
+<h4>5. Transpose of a Matrix</h4>
+<p>The transpose of $A$, denoted $A^{\mathsf{T}}$, interchanges rows and columns:</p>
+      $$ (A^{\mathsf{T}})_{ij}=a_{ji},\qquad 1\le i\le n,\;1\le j\le m.$$
+      <p>Key properties (proved by element‑wise inspection) are:</p>
+<ul>
+<li>$(A^{\mathsf{T}})^{\mathsf{T}}=A$.</li>
+<li>$(A+B)^{\mathsf{T}}=A^{\mathsf{T}}+B^{\mathsf{T}}$.</li>
+<li>$(kA)^{\mathsf{T}}=kA^{\mathsf{T}}$ for any scalar $k$.</li>
+<li>$(AB)^{\mathsf{T}}=B^{\mathsf{T}}A^{\mathsf{T}}$ (reverse order).</li>
+</ul>
+<h4>6. Determinant of a Square Matrix – Laplace Expansion</h4>
+<p>For a $2\times2$ matrix $A=\begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix}$, the determinant is defined as $\det A=ad-bc$. For higher orders, the determinant is defined recursively using the Laplace expansion along any row (or column). Let $A$ be an $n\times n$ matrix and $C_{ij}$ be the cofactor of element $a_{ij}$, where</p>
+      $$C_{ij}=(-1)^{i+j}\,M_{ij},$$
+      <p>and $M_{ij}$ is the minor obtained by deleting the $i^{\text{th}}$ row and $j^{\text{th}}$ column. Then the determinant is</p>
+      $$\det A=\sum_{j=1}^{n}a_{ij}C_{ij}\quad\text{(expansion along the $i^{\text{th}}$ row)}.$$
+      <p>**Proof Sketch** – The determinant is the unique alternating multilinear function of the rows that equals $1$ for the identity matrix. By multilinearity, expanding along a row reduces the $n$‑dimensional problem to an $(n-1)$‑dimensional one, giving the recursive formula above.</p>
+<h4>7. Inverse of a Non‑Singular Square Matrix</h4>
+<p>A square matrix $A$ of order $n$ is invertible (or non‑singular) if $\det A\neq0$. The inverse $A^{-1}$ satisfies $AA^{-1}=A^{-1}A=I_n$, where $I_n$ is the identity matrix. The classical adjoint method gives</p>
+      $$A^{-1}=\frac{1}{\det A}\,\operatorname{adj}(A),$$
+      <p>where $\operatorname{adj}(A)$ is the adjugate (or adjoint) matrix, i.e., the transpose of the cofactor matrix:</p>
+      $$\operatorname{adj}(A)=\bigl[C_{ji}\bigr]_{1\le i,j\le n}.$$
+      <p>**Derivation** – Starting from the definition of cofactors, one can show that $A\,\operatorname{adj}(A)=\det A\,I_n$. Multiplying both sides by $\frac{1}{\det A}$ (possible only when $\det A\neq0$) yields the inverse formula.</p>
+<h4>8. Cramer's Rule – Solving a System of Linear Equations</h4>
+<p>Consider a system $AX=B$, where $A$ is an $n\times n$ non‑singular coefficient matrix, $X$ is the column vector of unknowns $[x_1,\dots,x_n]^{\mathsf{T}}$, and $B$ is the constant column vector. Cramer's rule states that each unknown $x_i$ is given by</p>
+      $$x_i=\frac{\det A_i}{\det A},\qquad i=1,2,\dots,n,$$
+      <p>where $A_i$ is obtained from $A$ by replacing its $i^{\text{th}}$ column with $B$. The proof uses the linearity of the determinant with respect to a single column and the fact that $A^{-1}B$ yields the unique solution.</p>
+<h4>9. Rank of a Matrix</h4>
+<p>The rank $\operatorname{rank}(A)$ is the maximum order of any non‑zero minor of $A$. Equivalently, it equals the dimension of the vector space spanned by the rows (row rank) or columns (column rank). The equality of row rank and column rank is a fundamental theorem proved using elementary row operations and the concept of linear independence.</p>
+<h4>10. Elementary Row Operations and Row‑Echelon Form</h4>
+<p>Three elementary row operations (EROs) preserve the solution set of a linear system:</p>
+<ol>
+<li>Swap two rows: $R_i\leftrightarrow R_j$.</li>
+<li>Multiply a row by a non‑zero scalar $k$: $R_i\to kR_i$, $k\neq0$.</li>
+<li>Add a multiple of one row to another: $R_i\to R_i+kR_j$.</li>
+</ol>
+<p>Applying a finite sequence of EROs transforms $A$ into its row‑echelon form (REF) or reduced row‑echelon form (RREF). The number of non‑zero rows in REF equals $\operatorname{rank}(A)$.</p>
+<h4>11. Formula List – Variables, Units, and Conditions</h4>
+<table>
+<thead>
+<tr><th>Formula</th><th>Variables</th>&lt;</tr></thead></table></article></div></section></p></div></article></div></section></main>
+<!-- ============ FOOTER (100% FIXED & PROPORTIONAL) ============ -->
+<footer class="sn-footer">
 <div aria-hidden="true" class="sn-footer__bg">
 <video autoplay="" class="sn-footer__video" loop="" muted="" playsinline="" poster="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261014_121838_c97d0940-f430-4304-8573-4f47ee44f447.png" preload="auto" src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/4d01c727-d9c5-47c8-a778-35a451ffd39f.mp4"></video>
 </div>
 <div aria-hidden="true" class="sn-footer__overlay"></div>
+<!-- Top Content Grid -->
 <div class="sn-footer__container">
 <div class="sn-footer__grid">
+<!-- Brand & Founder Column -->
 <div class="sn-footer__brand">
 <a aria-label="Shorveer Notes home" class="sn-brand__logo" href="/">
 <span aria-hidden="true" class="sn-brand__mark">
@@ -413,23 +765,25 @@
 <span class="sn-chip"><span class="sn-chip-dot"></span>CBSE Aligned</span>
 <span class="sn-chip">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"></path><path d="M20 4v7h-7"></path></svg>
-              Syllabus 2026-27
-            </span>
+            Syllabus 2026-27
+          </span>
 <span class="sn-chip">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              Student Focused
-            </span>
+            Student Focused
+          </span>
 </div>
 </div>
+<!-- Links: Study -->
 <div class="sn-nav-col">
 <h3 class="sn-col-head">Study</h3>
 <ul class="sn-col-links">
 <li><a href="../physics/index.html">Physics</a></li>
 <li><a href="../chemistry/index.html">Chemistry</a></li>
-<li><a href="index.html">Mathematics</a></li>
+<li><a href="../mathematics/index.html">Mathematics</a></li>
 <li><a href="../english/index.html">English</a></li>
 </ul>
 </div>
+<!-- Links: Site -->
 <div class="sn-nav-col">
 <h3 class="sn-col-head">Site</h3>
 <ul class="sn-col-links">
@@ -440,6 +794,7 @@
 <li><a href="../cookies.html">Cookies</a></li>
 </ul>
 </div>
+<!-- Links: Connect -->
 <div class="sn-nav-col">
 <h3 class="sn-col-head">Connect</h3>
 <ul class="sn-col-links">
@@ -450,6 +805,7 @@
 </div>
 </div>
 </div>
+<!-- Big Watermark Wordmark (Ekdum Screen ke hisab se Fitted, Kabhi Cut Nahi Hoga) -->
 <div aria-hidden="true" class="sn-wordmark-wrap">
 <svg class="sn-wordmark-svg" preserveaspectratio="xMidYMid meet" viewbox="0 0 1200 160">
 <defs>
@@ -462,12 +818,628 @@
 <text class="sn-svg-text" text-anchor="middle" x="50%" y="125">Shorveer Notes</text>
 </svg>
 </div>
+<!-- Bottom Copyright Bar -->
 <div class="sn-bottom-bar">
 <div class="sn-bottom-container">
 <p>© <span id="year"></span> Shorveer Notes. All rights reserved.</p>
 <p>Built with pride in India 🇮🇳</p>
 </div>
 </div>
+<!-- Embedded Isolated CSS -->
+<style>
+    .sn-footer {
+      position: relative;
+      background: var(--paper, #fdfaf3);
+      color: var(--ink, #1c1c1a);
+      overflow: hidden;
+      isolation: isolate;
+      padding-top: 50px;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .sn-footer__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .sn-footer__video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 90%;
+    }
+
+    .sn-footer__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        var(--paper, #fdfaf3) 0%,
+        rgba(253, 250, 243, 0.95) 28%,
+        rgba(253, 250, 243, 0.6) 55%,
+        transparent 85%
+      );
+    }
+
+    .sn-footer__container {
+      position: relative;
+      z-index: 2;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .sn-footer__grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.8fr 0.8fr 0.8fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .sn-footer__brand {
+      max-width: 480px;
+    }
+
+    .sn-brand__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .sn-brand__mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: #1c1c1a;
+      display: grid;
+      place-items: center;
+    }
+
+    .sn-brand__mark svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .sn-brand__title-txt {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .sn-brand__title-txt em {
+      font-style: italic;
+      color: #6b6858;
+      font-weight: 400;
+    }
+
+    .sn-brand__heading {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 16px 0 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .sn-brand__sub {
+      font-size: 14px;
+      line-height: 1.55;
+      color: #55534c;
+      margin-bottom: 20px;
+    }
+
+    .sn-brand__badge-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .sn-yt-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 15px;
+      border-radius: 8px;
+      background: #0f0f0f;
+      color: #ffffff !important;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .sn-yt-btn:hover {
+      background: #222;
+      transform: translateY(-2px);
+    }
+
+    .sn-yt-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: #ff0000;
+    }
+
+    .sn-founder-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 30px;
+      font-size: 13px;
+      backdrop-filter: blur(8px);
+    }
+
+    .sn-founder-tag {
+      background: #1c1c1a;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 6px;
+      border-radius: 5px;
+    }
+
+    .sn-founder-name strong {
+      color: #000000;
+    }
+
+    .sn-chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sn-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #333;
+      backdrop-filter: blur(8px);
+    }
+
+    .sn-chip svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .sn-chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+    }
+
+    /* Column Links */
+    .sn-nav-col .sn-col-head {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .sn-col-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .sn-col-links a {
+      color: #2e2e28;
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 500;
+      transition: color 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .sn-col-links a:hover {
+      color: #bf5a3c;
+      transform: translateX(3px);
+    }
+
+    /* Wordmark SVG (Fixed Size, Fit to Viewport) */
+    .sn-wordmark-wrap {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding: 0 20px;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .sn-wordmark-svg {
+      width: 100%;
+      height: auto;
+      max-height: 140px;
+      display: block;
+    }
+
+    .sn-svg-text {
+      font-family: Georgia, serif;
+      font-size: 116px;
+      font-weight: 700;
+      letter-spacing: -3px;
+      fill: url(#snWordmarkGrad);
+      filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.15));
+    }
+
+    /* Bottom Copyright */
+    .sn-bottom-bar {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      background: rgba(253, 250, 243, 0.4);
+      backdrop-filter: blur(8px);
+      padding: 16px 0;
+    }
+
+    .sn-bottom-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #6b6858;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .sn-footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+      .sn-footer__brand {
+        grid-column: span 2;
+        max-width: 100%;
+      }
+      .sn-svg-text {
+        font-size: 96px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sn-footer__grid {
+        grid-template-columns: 1fr;
+      }
+      .sn-footer__brand {
+        grid-column: span 1;
+      }
+      .sn-bottom-container {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+      }
+      .sn-svg-text {
+        font-size: 78px;
+      }
+    }
+  </style>
 </footer>
+<!-- ============ END FOOTER ============ -->
+<!-- ============ COOKIE ============ -->
+<aside aria-label="Cookie notice" aria-live="polite" class="cookie" id="cookieBox" role="dialog">
+<div class="cookie-header">
+<h3>Before you go — a quick note</h3>
+</div>
+<p>We use your browser's local storage to remember your theme and to not ask you this every visit. That's all. See our <a href="../cookies.html" style="text-decoration:underline">cookies page</a> for details.</p>
+<div class="cookie-actions">
+<a class="cookie-policy" href="../cookies.html">Read more</a>
+<button class="cookie-accept" id="acceptCookies">Got it</button>
+</div>
+</aside>
+<script>
+    /* Safe storage */
+    const store = {
+      get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+      set(k, v) { try { localStorage.setItem(k, v); } catch {} }
+    };
+
+    /* Auto Year */
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* ==========================================================
+       THEMES CONFIG (All 9 Themes)
+       ========================================================== */
+    const THEMES = {
+      notebook: {
+        hero: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=900&q=80",
+        label: "the desk of a class 12 student"
+      },
+      chalkboard: {
+        hero: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80",
+        label: "equations, one line at a time"
+      },
+      blueprint: {
+        hero: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=80",
+        label: "where the theory becomes engineering"
+      },
+      sunset: {
+        hero: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80",
+        label: "late-night study, warm lamp"
+      },
+      emerald: {
+        hero: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=80",
+        label: "life sciences & the biology lab"
+      },
+      cyberpunk: {
+        hero: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+        label: "silicon, circuitry & quantum states"
+      },
+      minimal: {
+        hero: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80",
+        label: "pure focus, zero noise"
+      },
+      dracula: {
+        hero: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80",
+        label: "midnight coding & deep analysis"
+      },
+      solarized: {
+        hero: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=80",
+        label: "pages turn, ideas stick"
+      }
+    };
+
+    const html = document.documentElement;
+    const themeButton = document.getElementById("themeButton");
+    const themePop = document.getElementById("themePop");
+    const heroImage = document.getElementById("heroImage");
+    const heroCaption = document.querySelector(".polaroid-caption");
+    const themeOpts = document.querySelectorAll(".theme-opt");
+
+    function applyTheme(name) {
+      if (!THEMES[name]) name = "notebook";
+      html.setAttribute("data-theme", name);
+      store.set("shorveer-theme-name", name);
+
+      themeOpts.forEach(btn => {
+        btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name));
+      });
+
+      // Hero image swap with smooth fade
+      const t = THEMES[name];
+      if (heroImage && t) {
+        heroImage.classList.add("fading");
+        setTimeout(() => {
+          heroImage.src = t.hero;
+          if (heroCaption) heroCaption.textContent = t.label;
+          heroImage.classList.remove("fading");
+        }, 260);
+      }
+    }
+
+    // Restore saved theme
+    const savedThemeName = store.get("shorveer-theme-name") || "notebook";
+    applyTheme(savedThemeName);
+
+    themeButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = themePop.classList.toggle("open");
+      themeButton.setAttribute("aria-expanded", String(open));
+    });
+
+    themeOpts.forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyTheme(btn.dataset.themeValue);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!themePop.contains(e.target) && !themeButton.contains(e.target)) {
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    /* Motivation Rotator */
+    const MOTIVATIONS = [
+      "One chapter at a time.",
+      "Understanding beats memorising.",
+      "Small progress every day adds up.",
+      "You don't have to be perfect today.",
+      "Read it once. Write it once. Learn it once.",
+      "The best time to revise is before you forget.",
+      "Study the weak chapter first.",
+      "Nothing is too hard once it's broken down.",
+      "Your pace is the right pace.",
+      "Show up. That's half of it.",
+      "Confusion is the feeling of learning.",
+      "You're not behind. You're on your own timeline."
+    ];
+
+    const motivationText = document.getElementById("motivationText");
+    let motivationIndex = 0;
+
+    function nextMotivation() {
+      if (!motivationText) return;
+      motivationText.classList.remove("show");
+      setTimeout(() => {
+        motivationIndex = (motivationIndex + 1) % MOTIVATIONS.length;
+        motivationText.textContent = MOTIVATIONS[motivationIndex];
+        motivationText.classList.add("show");
+      }, 500);
+    }
+    setInterval(nextMotivation, 6500);
+
+    /* Flip Cards */
+    const flipCards = document.querySelectorAll(".flip-card");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    flipCards.forEach(card => {
+      if (isTouch) {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("a")) return;
+          card.classList.toggle("flipped");
+        });
+      }
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          if (e.target.closest("a")) return;
+          e.preventDefault();
+          card.classList.toggle("flipped");
+        }
+      });
+    });
+
+    /* Hero Parallax */
+    const heroArt = document.getElementById("heroArt");
+    const heroStage = document.getElementById("heroStage");
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (heroArt && heroStage && finePointer && !reduceMotion) {
+      heroArt.addEventListener("mousemove", (e) => {
+        const rect = heroArt.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        heroStage.style.transform = `perspective(1200px) rotateX(${-y * 16}deg) rotateY(${x * 16}deg) translateZ(10px)`;
+      });
+      heroArt.addEventListener("mouseleave", () => {
+        heroStage.style.transform = "perspective(1200px) rotateX(0) rotateY(0) translateZ(0)";
+      });
+    }
+
+    /* 3D Tilt */
+    const tiltEls = document.querySelectorAll("[data-tilt]");
+    if (finePointer && !reduceMotion) {
+      tiltEls.forEach(el => {
+        el.addEventListener("mousemove", (e) => {
+          const r = el.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width - 0.5;
+          const py = (e.clientY - r.top) / r.height - 0.5;
+          el.style.transform = `perspective(900px) rotateX(${-py * 8}deg) rotateY(${px * 8}deg) translateY(-4px)`;
+        });
+        el.addEventListener("mouseleave", () => {
+          el.style.transform = "";
+        });
+      });
+    }
+
+    /* Search */
+    const searchData = [
+      { title: "Physics", description: "Class 12 Physics chapters and resources", url: "physics/index.html" },
+      { title: "Chemistry", description: "Class 12 Chemistry chapters and resources", url: "chemistry/index.html" },
+      { title: "Mathematics", description: "Class 12 Maths chapters and resources", url: "mathematics/index.html" },
+      { title: "English", description: "Class 12 English notes and summaries", url: "english/index.html" },
+      { title: "Exam information", description: "Dates, syllabus and marking scheme", url: "exam-info.html" },
+      { title: "About our notes", description: "How each chapter is made", url: "about-notes.html" },
+      { title: "About Shorveer", description: "The story behind the site", url: "about.html" },
+      { title: "Privacy policy", description: "How we handle your data", url: "privacy.html" },
+      { title: "Cookies policy", description: "What we store in your browser", url: "cookies.html" }
+    ];
+
+    const searchButton = document.getElementById("searchButton");
+    const searchLayer = document.getElementById("searchLayer");
+    const searchClose = document.getElementById("searchClose");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    function openSearch() {
+      searchLayer.classList.add("active");
+      searchLayer.setAttribute("aria-hidden", "false");
+      setTimeout(() => searchInput.focus(), 60);
+      renderResults("");
+    }
+    function closeSearch() {
+      searchLayer.classList.remove("active");
+      searchLayer.setAttribute("aria-hidden", "true");
+      searchInput.value = "";
+    }
+    function renderResults(query) {
+      const q = query.trim().toLowerCase();
+      const matches = searchData.filter(item =>
+        !q || item.title.toLowerCase().includes(q) || item.description.toLowerCase().includes(q)
+      );
+      if (!matches.length) {
+        searchResults.innerHTML = '<div class="empty-result">Nothing found. Try "physics" or "exam".</div>';
+        return;
+      }
+      searchResults.innerHTML = matches.map(item => `
+        <a class="result" href="${item.url}">
+          <div>
+            <strong>${item.title}</strong>
+            <small>${item.description}</small>
+          </div>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+      `).join("");
+    }
+
+    if (searchButton) searchButton.addEventListener("click", openSearch);
+    if (searchClose) searchClose.addEventListener("click", closeSearch);
+    if (searchLayer) searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
+    if (searchInput) searchInput.addEventListener("input", e => renderResults(e.target.value));
+
+    /* Mobile Menu */
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    function setMenu(open) {
+      mobileMenu.classList.toggle("open", open);
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+      mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+    }
+
+    /* Keyboard Shortcuts */
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        closeSearch();
+        setMenu(false);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault(); openSearch();
+      }
+    });
+
+    /* Scroll Reveal */
+    const reveals = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); }
+        });
+      }, { threshold: .1 });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add("visible"));
+    }
+
+    /* Cookie Consent */
+    const cookieBox = document.getElementById("cookieBox");
+    const acceptCookies = document.getElementById("acceptCookies");
+    if (cookieBox && !store.get("shorveer-cookie-consent")) {
+      setTimeout(() => cookieBox.classList.add("show"), 1400);
+    }
+    if (acceptCookies) {
+      acceptCookies.addEventListener("click", () => {
+        store.set("shorveer-cookie-consent", "accepted");
+        cookieBox.classList.remove("show");
+      });
+    }
+  </script>
 </body>
 </html>
