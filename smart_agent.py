@@ -10,13 +10,13 @@ from groq import Groq
 # ---------------- Config ----------------
 MODELS = ["openai/gpt-oss-120b", "openai/gpt-oss-20b"]
 MAX_OUT_TOKENS = 3000
-TOKENS_PER_MIN = 6000          # Groq Console ke TPM se neeche rakho
+TOKENS_PER_MIN = 6000          # Groq Console TPM margin
 TEMPLATE = "index.html"
 STATE_FILE = "builder_state.json"
-MAX_ATTEMPTS = 3               # ek page par itni baar koshish, phir skip
+MAX_ATTEMPTS = 3
 MIN_WORDS = {False: 1500, True: 1200}
 REQUIRED_IDS = {False: ["theory", "derivations"], True: ["pyqs", "case-studies", "mcq"]}
-IGNORE_KEYWORDS = ["privacy", "terms", "cookie", "disclaimer", "about", "contact", "framework"]
+IGNORE_KEYWORDS = ["privacy", "terms", "cookie", "disclaimer", "about", "contact", "framework", "mindmap"]
 IGNORE_FILES = {"index.html", "about.html", "about-notes.html", "exam-info.html",
                 "privacy.html", "cookies.html"}
 
@@ -44,20 +44,20 @@ SYSTEM = (
     "All math must be LaTeX: inline $...$ and display $$...$$. "
     "Never use \\( \\) or \\[ \\] delimiters. Never escape dollar signs. "
     "Never write square-bracket placeholders or instructions in the output. "
-    "PYQ means real past-year papers, which you cannot verify. So never call any question a PYQ "
-    "or Board question. Label every question you write as a Practice Question."
+    "Label every question you write as a Practice Question, never PYQ or Board question."
 )
 
 MATHJAX_CFG = r"""window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};"""
 
 MM_CSS = """<style>
-.mindmap{display:flex;flex-direction:column;gap:22px;max-width:880px;margin:0 auto}
-.mm-root{font-family:var(--font-display);font-size:28px;padding:18px 24px;border-radius:var(--r-lg);background:var(--ink);color:var(--paper);text-align:center}
-.mm-branch{border-left:3px solid var(--gold-dark);padding-left:18px}
+.mindmap{display:flex;flex-direction:column;gap:22px;max-width:880px;margin:30px auto}
+.mm-root{font-family:var(--font-display);font-size:28px;padding:18px 24px;border-radius:var(--r-lg);background:var(--ink);color:var(--paper);text-align:center;box-shadow:var(--shadow-lg)}
+.mm-branch{border-left:3px solid var(--gold-dark);padding-left:18px;margin-bottom:12px}
 .mm-node{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--ink);margin-bottom:8px}
 .mm-children{list-style:none;display:grid;gap:6px;padding-left:10px}
-.mm-children li{font-size:15px;color:var(--muted)}
-.mm-children li::before{content:"› ";color:var(--rust)}
+.mm-children li{font-size:15px;color:var(--muted);line-height:1.6}
+.mm-children li::before{content:"› ";color:var(--rust);font-weight:bold}
+.mm-nav-toolbar{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:30px 0;padding:16px;background:var(--paper-2);border-radius:var(--r-md);border:1px solid var(--line-soft)}
 @media (max-width:720px){.mm-root{font-size:22px}.mm-node{font-size:18px}}
 </style>"""
 
@@ -138,6 +138,27 @@ class DailyQuotaExhausted(Exception):
 
 
 # ---------------- Helpers ----------------
+def cleanup_junk_mindmaps():
+    junk_patterns = ["**/*mindmap*mindmap*.html", "*mindmap*mindmap*.html"]
+    for pat in junk_patterns:
+        for fpath in glob.glob(pat, recursive=True):
+            try:
+                os.remove(fpath)
+                print(f"[CLEANUP] Deleted loop artifact: {fpath}")
+            except Exception as e:
+                print(f"Could not delete {fpath}: {e}")
+
+    if os.path.exists(STATE_FILE):
+        try:
+            with open(STATE_FILE, "r", encoding="utf-8") as f:
+                st = json.load(f)
+            cleaned = {k: v for k, v in st.items() if "mindmap" not in k.lower()}
+            with open(STATE_FILE, "w", encoding="utf-8") as f:
+                json.dump(cleaned, f, indent=2, ensure_ascii=False)
+        except Exception:
+            pass
+
+
 def set_output(name, value):
     if "GITHUB_OUTPUT" in os.environ:
         with open(os.environ["GITHUB_OUTPUT"], "a") as f:
@@ -209,7 +230,7 @@ def call_groq(prompt):
                     errors.append(f"{model}: daily quota")
                     break
                 if "429" in msg or "rate limit" in low:
-                    print(f"429 on {model}, {30 * attempt}s wait...")
+                    print(f"429 on {model}, waiting {30 * attempt}s...")
                     time.sleep(30 * attempt)
                     continue
                 errors.append(f"{model}: {msg[:120]}")
@@ -228,7 +249,7 @@ Output exactly one block:
 <section class="section container reveal" id="theory">
   <div class="section-head"><span class="section-eyebrow">Comprehensive Academic Theory</span><h2>1. Conceptual Framework</h2></div>
   <div class="real-life">
-    <article class="rl-card"><div class="rl-body"><div class="rl-subject">...</div><div class="rl-title">...</div><p class="rl-text">...</p></div></article>
+    <article class="rl-card"><div class="rl-body"><div class="rl-subject">{subject} · Core Law</div><div class="rl-title">Fundamental Theoretical Principles</div><p class="rl-text">...</p></div></article>
     (4 to 6 such articles covering definitions, laws, intuition, exceptions, worked examples)
   </div>
 </section>
@@ -237,7 +258,7 @@ Real textbook content only. Aim for at least 1500 words.""",
 <section class="section container reveal" id="derivations">
   <div class="section-head"><span class="section-eyebrow">Formulas and Derivations</span><h2>2. Master Equation Bank</h2></div>
   <div class="resource-grid">
-    <article class="resource"><h3>...</h3><p>...</p></article>
+    <article class="resource"><h3>Derivation Details</h3><p>...</p></article>
   </div>
 </section>
 Include step-by-step CBSE-standard derivations with LaTeX math, and a formula list with variables, SI units and conditions. Aim for at least 1500 words.""",
@@ -254,10 +275,10 @@ Real content only. Aim for at least 1000 words.""",
 
 def generate_mcq(subject, chapter):
     prompt = f"""Create 10 practice multiple-choice questions for CBSE Class 12 {subject}, chapter "{chapter}".
-These are practice questions, not PYQs. Return ONLY a JSON array, no markdown, no extra text.
-Each item must look exactly like this:
+These are practice questions. Return ONLY a JSON array, no markdown fences.
+Each item:
 {{"q": "question text with LaTeX if needed", "options": ["option A", "option B", "option C", "option D"], "answer": 0, "explain": "one or two line reason"}}
-"answer" is the index 0 to 3 of the correct option. Mix easy and hard questions."""
+Mix easy, moderate, and conceptual questions."""
     raw = call_groq(prompt)
     try:
         items = json.loads(raw)
@@ -320,27 +341,26 @@ def generate_body(subject, chapter, is_part2):
 
 
 def generate_mindmap_body(subject, chapter):
-    prompt = f"""Create a complete mind map for CBSE Class 12 {subject}, chapter "{chapter}".
+    prompt = f"""Create an exhaustive visual mind map for CBSE Class 12 {subject}, chapter "{chapter}".
 Output ONLY this HTML structure, no markdown fences:
 <div class="mindmap">
   <div class="mm-root">{chapter}</div>
   <div class="mm-branch">
-    <div class="mm-node">Concept</div>
-    <ul class="mm-children"><li>Sub point</li><li>Sub point</li></ul>
+    <div class="mm-node">Concept Title</div>
+    <ul class="mm-children"><li>Sub point with formulas</li><li>Key law & exception</li></ul>
   </div>
 </div>
-Use 6 to 8 main branches, each with 3 to 5 sub points, ordered so a student scrolls from one idea to the next.
-Use LaTeX $...$ for formulas. Real content only."""
+Provide 6 to 8 main branches with 3 to 5 sub points each. Use LaTeX $...$ for equations."""
     body = call_groq(prompt)
     if 'class="mindmap"' not in body:
-        raise RuntimeError("mindmap HTML format galat hai")
+        raise RuntimeError("mindmap HTML format invalid")
     return body
 
 
-# ---------------- Paths ----------------
+# ---------------- Path & Navigation Helpers ----------------
 def base_of(path):
     root = os.path.splitext(path)[0]
-    return re.sub(r"[-_]?(part[12]|pyqs?)$", "", root, flags=re.I)
+    return re.sub(r"[-_]?(part[12]|pyqs?|mindmap)$", "", root, flags=re.I)
 
 
 def mm_path_for(path):
@@ -352,15 +372,31 @@ def mm_link_for(path):
     return os.path.basename(p) if os.path.exists(p) else None
 
 
-# ---------------- Page building ----------------
-def hero_html(subject, chapter, label, mm_link=None):
-    btn = f'<a class="btn btn-light" href="{mm_link}">View mind map</a>' if mm_link else ""
+def part1_path_for(path):
+    b = base_of(path)
+    return f"{b}.html" if os.path.exists(f"{b}.html") else f"{b}_part1.html"
+
+
+def part2_path_for(path):
+    b = base_of(path)
+    return f"{b}_part2.html"
+
+
+# ---------------- Page Building ----------------
+def hero_html(subject, chapter, label, mm_link=None, back_link=None):
+    actions = []
+    if back_link:
+        actions.append(f'<a class="btn btn-dark" href="{back_link}">← Back to Notes</a>')
+    if mm_link:
+        actions.append(f'<a class="btn btn-gold" href="{mm_link}">View Mind Map ✎</a>')
+    action_html = f'<div class="hero-actions" style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">{" ".join(actions)}</div>' if actions else ""
+
     return (f'<section class="hero container"><div class="hero-copy">'
             f'<div class="kicker"><span class="dot"></span>'
             f'<span>Class 12 · {htmllib.escape(subject)}</span></div>'
             f'<h1>{htmllib.escape(chapter)}</h1>'
             f'<p class="hero-description">{htmllib.escape(label)}</p>'
-            f'<div class="hero-actions">{btn}</div></div></section>')
+            f'{action_html}</div></section>')
 
 
 def fix_names(soup):
@@ -385,7 +421,7 @@ def ensure_mathjax(soup):
     head.append(lib)
 
 
-def build_page(path, subject, chapter, label, body, mm_link=None, add_hero=True):
+def build_page(path, subject, chapter, label, body, mm_link=None, back_link=None, add_hero=True):
     depth = len(os.path.normpath(path).split(os.sep)) - 1
     prefix = "../" * depth
     shell = read_soup(TEMPLATE)
@@ -396,7 +432,7 @@ def build_page(path, subject, chapter, label, body, mm_link=None, add_hero=True)
             if v and not v.startswith(("http", "#", "mailto:", "tel:", "data:", "//", "/")):
                 tag[attr] = prefix + v
 
-    # Header ka mind map icon: chapter ke mind map se link, warna hata do
+    # Header Mind Map Icon update
     for a in shell.find_all("a", href=True):
         if a["href"].endswith("mindmap.html"):
             if mm_link:
@@ -408,8 +444,9 @@ def build_page(path, subject, chapter, label, body, mm_link=None, add_hero=True)
     if main is None:
         raise RuntimeError(f"{TEMPLATE} mein <main> nahi mila")
     main.clear()
+
     if add_hero:
-        main.append(read_fragment(hero_html(subject, chapter, label, mm_link)))
+        main.append(read_fragment(hero_html(subject, chapter, label, mm_link, back_link)))
     main.append(read_fragment(body))
 
     if shell.title:
@@ -436,8 +473,31 @@ def is_hero(node):
 def make_mindmap(subject, chapter, theory_path):
     body = generate_mindmap_body(subject, chapter)
     mm_path = mm_path_for(theory_path)
-    build_page(mm_path, subject, chapter, "Mind map: quick revision overview",
-               f'<section class="section container reveal">{MM_CSS}{body}</section>')
+
+    p1_file = os.path.basename(theory_path)
+    p2_path = part2_path_for(theory_path)
+    p2_file = os.path.basename(p2_path) if os.path.exists(p2_path) else None
+
+    p2_btn = f'<a class="btn btn-gold" href="{p2_file}">Go to Part 2: Practice & MCQs →</a>' if p2_file else ""
+    nav_toolbar = f"""
+    <div class="mm-nav-toolbar">
+      <a class="btn btn-dark" href="{p1_file}">← Back to Part 1: Theory</a>
+      {p2_btn}
+      <a class="btn btn-light" href="index.html">Subject Hub</a>
+    </div>
+    """
+
+    content = f"""
+    <section class="section container reveal">
+      {MM_CSS}
+      {nav_toolbar}
+      {body}
+      {nav_toolbar}
+    </section>
+    """
+    build_page(mm_path, subject, chapter, "Visual Mind Map: Concept Flow & Quick Revision", content,
+               mm_link=None, back_link=p1_file)
+    print(f"[OK] Mind map created with full navigation: {mm_path}")
     return mm_path
 
 
@@ -477,9 +537,11 @@ def clean_title(a, fname):
         title = card.find(["h2", "h3", "h4"]).get_text(strip=True)
     if not title:
         title = a.get_text(strip=True)
-    if not title or re.search(r"open\s+chapter|read\s+more|chapter\s+\d+", title, re.I):
-        title = os.path.splitext(os.path.basename(fname))[0].replace("-", " ").replace("_", " ").title()
-    return re.sub(r"\s*\(?(Part\s*[12]|PYQs?)\)?", "", title, flags=re.I).strip()
+    if not title or re.search(r"open\s+chapter|read\s+more|chapter\s+\d+|mind\s*map", title, re.I):
+        title = os.path.splitext(os.path.basename(fname))[0]
+        title = re.sub(r"[-_]?(part[12]|pyqs?|mindmap)$", "", title, flags=re.I)
+        title = title.replace("-", " ").replace("_", " ").title()
+    return re.sub(r"\s*\(?(Part\s*[12]|PYQs?|Mind\s*Map)\)?", "", title, flags=re.I).strip()
 
 
 def discover_pages():
@@ -495,12 +557,17 @@ def discover_pages():
             if href.startswith(("#", "http", "mailto:", "tel:", "javascript:")):
                 continue
             clean = href.split("?")[0].split("#")[0]
+            
             if not clean.endswith(".html") or any(k in clean.lower() for k in IGNORE_KEYWORDS):
                 continue
+            if "mindmap" in clean.lower():
+                continue
+
             path = os.path.normpath(os.path.join(base_dir, clean.lstrip("/\\")))
             fname = os.path.basename(path).lower()
-            if fname in IGNORE_FILES or path in seen:
+            if fname in IGNORE_FILES or "mindmap" in fname or path in seen:
                 continue
+
             seen.add(path)
             yield {
                 "path": path,
@@ -520,7 +587,6 @@ def is_mismatched(path, subject):
 
 
 def audit_page(soup):
-    """Purani galtiyan: MathJax nahi, galat delimiters, purana surname."""
     problems = []
     if not soup.find("script", src=re.compile(r"tex-chtml")):
         problems.append("mathjax missing")
@@ -568,10 +634,12 @@ def run_target(t):
 
 
 def main():
+    cleanup_junk_mindmaps()
+
     state = load_state()
     t = find_target(state)
     if t is None:
-        print("Saare pages complete, design aur MathJax theek hain.")
+        print("Saare pages complete, design, mindmaps aur MathJax 100% theek hain.")
         set_output("has_more", "false")
         save_state(state)
         return
@@ -586,7 +654,7 @@ def main():
         print("OK")
         set_output("has_more", "true")
     except DailyQuotaExhausted as e:
-        print(f"Groq daily quota khatam. Agle scheduled run par resume hoga. ({e})")
+        print(f"Groq daily quota limit. Agle scheduled run par resume hoga. ({e})")
         set_output("has_more", "false")
     except Exception as e:
         rec["last_error"] = str(e)[:300]
