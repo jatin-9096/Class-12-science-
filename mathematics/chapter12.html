@@ -1,576 +1,1435 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="sunset">
+ <!DOCTYPE html>
+
+<html data-theme="notebook" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Open Chapter 12→ | Shorveer Notes</title>
-  
-  
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      processEscapes: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="ca-pub-9688496231973353" name="google-adsense-account"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Shorveer Notes is a student-focused Class 12 Science learning platform with structured Physics, Chemistry, Mathematics and English notes, chapter resources, previous year questions, revision material and exam preparation resources." name="description"/>
+<meta content="Shorveer Notes" name="author"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="#fdfaf3" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#171613" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="Shorveer Notes" name="apple-mobile-web-app-title"/>
+<link href="https://shorveernotes.website/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Shorveer Notes | Class 12 Science Study Platform" property="og:title"/>
+<meta content="Explore structured Class 12 Physics, Chemistry, Mathematics and English resources, chapter notes, revision material and exam resources in one focused study platform." property="og:description"/>
+<meta content="Shorveer Notes" property="og:site_name"/>
+<meta content="en_IN" property="og:locale"/>
+<meta content="https://shorveernotes.website/og-image.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Shorveer Notes — Class 12 Science study platform" property="og:image:alt"/>
+<meta content="https://shorveernotes.website/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Shorveer Notes | Class 12 Science" name="twitter:title"/>
+<meta content="A focused learning space for Class 12 Science notes, chapters, revision and exam resources." name="twitter:description"/>
+<meta content="https://shorveernotes.website/og-image.jpg" name="twitter:image"/>
+<meta content="@JSEDIZ" name="twitter:site"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1c1a'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23e8b64c'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link crossorigin="" href="https://images.unsplash.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Karla:wght@400;500;600;700&amp;family=Inter:opsz,wght@14..32,400..700&amp;display=swap" rel="stylesheet"/>
+<!-- External CSS Linked Here -->
+<link href="../style.css" rel="stylesheet"/>
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Shorveer Notes",
+    "alternateName": ["Shorveer", "ShorveerNotes"],
+    "description": "A student-focused learning platform for Class 12 Science notes, chapters, revision resources and examination preparation.",
+    "url": "https://shorveernotes.website/",
+    "logo": "https://shorveernotes.website/logo.png",
+    "sameAs": ["https://www.youtube.com/@JSEDIZ"],
+    "educationalLevel": "Class 12",
+    "knowsAbout": ["Physics","Chemistry","Mathematics","English","CBSE Class 12","Previous Year Questions","Board Examination Preparation"]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Shorveer Notes",
+    "alternateName": ["Shorveer", "ShorveerNotes", "Shorveer Notes Class 12"],
+    "url": "https://shorveernotes.website/",
+    "inLanguage": "en-IN",
+    "publisher": {
+      "@type": "EducationalOrganization",
+      "name": "Shorveer Notes",
+      "url": "https://shorveernotes.website/"
     }
-  };
-</script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
-
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <style>
-    body {
-      background: var(--bg, #241226);
-      color: var(--ink, #ffe9d6);
-      font-family: var(--font-body, 'Karla', sans-serif);
+  }
+  </script>
+<title>Chapter12 · Class 12 Mathematics | Shorveer Notes</title>
+<style>
+    /* Meadow Footer Styles (Integrated directly with Shorveer design tokens) */
+    .footer {
+      --u: min(100vw / 1440, 100vh / 672);
+      --u: min(100vw / 1440, 100svh / 672);
+      position: relative;
+      height: 100vh;
+      height: 100svh;
+      background: var(--paper, #fdfaf3);
+      overflow: hidden;
+      isolation: isolate;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+    }
+    .footer__stage {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .footer__video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 100%;
+      transform: translateY(9%);
+    }
+    .footer__stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, var(--paper, #fdfaf3) 0%, rgb(253 250 243 / .96) 26%, rgb(253 250 243 / .72) 44%, rgb(253 250 243 / 0) 70%);
+      pointer-events: none;
+    }
+    .footer__wordmark {
+      position: absolute;
+      left: 50%;
+      bottom: calc(-2 * var(--u));
+      transform: translateX(-50%);
+      z-index: 1;
       margin: 0;
-      padding-top: 76px;
+      font-size: calc(390 * var(--u));
+      font-weight: 600;
+      line-height: .74;
+      letter-spacing: -0.045em;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      color: rgb(232 234 250 / .4);
+      background: linear-gradient(to bottom, rgb(255 255 255 / .78), rgb(214 218 246 / .36) 48%, rgb(255 255 255 / .62));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 calc(-1 * var(--u)) 0 rgb(255 255 255 / .55)) drop-shadow(0 0 calc(18 * var(--u)) rgb(190 200 255 / .45));
     }
-    .container {
-      max-width: 1080px;
+    .footer__fog {
+      position: absolute;
+      inset: auto 0 0 0;
+      z-index: 2;
+      height: 17%;
+      pointer-events: none;
+      background: linear-gradient(to top, #e2e3f1 0%, rgb(226 227 241 / .6) 30%, rgb(226 227 241 / 0) 100%);
+    }
+    .footer__content {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: calc(440 * var(--u)) calc(240 * var(--u)) calc(240 * var(--u)) 1fr;
+      align-items: start;
+      width: calc(1440 * var(--u));
+      margin: 0 auto;
+      padding: calc(86 * var(--u)) calc(100 * var(--u)) 0 calc(160 * var(--u));
+    }
+    .footer-brand .brand__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(10 * var(--u));
+      font-size: calc(17 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .footer-brand .brand__mark {
+      width: calc(30 * var(--u));
+      height: calc(30 * var(--u));
+      border-radius: calc(8 * var(--u));
+      background: linear-gradient(to bottom, #2b2b2b, #0a0a0a 55%);
+      box-shadow: 0 calc(1 * var(--u)) calc(2 * var(--u)) rgb(0 0 0 / .25);
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-brand .brand__mark svg {
+      width: 60%;
+      height: 60%;
+    }
+    .footer-brand .brand__title {
+      margin-top: calc(19 * var(--u));
+      font-size: calc(20 * var(--u));
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.045em;
+    }
+    .footer-brand .brand__text {
+      max-width: calc(412 * var(--u));
+      margin-top: calc(18 * var(--u));
+      color: #6f6f6c;
+      font-size: calc(13.7 * var(--u));
+      line-height: 1.43;
+      letter-spacing: -0.012em;
+    }
+    .footer-brand .brand__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(6 * var(--u));
+      height: calc(32.5 * var(--u));
+      margin-top: calc(20 * var(--u));
+      padding: 0 calc(16 * var(--u)) 0 calc(15 * var(--u));
+      border-radius: calc(7 * var(--u));
+      background: #0c0c0c;
+      color: #fff;
+      font-size: calc(11.8 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      transition: background .2s, transform .2s;
+      text-decoration: none;
+    }
+    .footer-brand .brand__cta:hover {
+      background: #262626;
+      transform: translateY(-1px);
+    }
+    .footer-brand .brand__cta svg {
+      width: calc(13 * var(--u));
+      height: calc(13 * var(--u));
+      margin-top: calc(-1.5 * var(--u));
+    }
+    .footer-brand .brand__copy {
+      margin-top: calc(23 * var(--u));
+      color: #9c9c98;
+      font-size: calc(12.2 * var(--u));
+      letter-spacing: 0.01em;
+    }
+    .footer-brand .brand__by {
+      display: flex;
+      align-items: center;
+      gap: calc(5 * var(--u));
+      margin-top: calc(21 * var(--u));
+      font-size: calc(11.8 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .footer-brand .brand__heart { font-size: .95em; }
+    .footer-brand .brand__author {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(6 * var(--u));
+      margin-left: calc(5 * var(--u));
+    }
+    .footer-brand .brand__avatar {
+      width: calc(23 * var(--u));
+      height: calc(23 * var(--u));
+      border-radius: 50%;
+      overflow: hidden;
+      background: #e3e3e0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-brand .brand__avatar svg { width: 100%; height: 100%; display: block; }
+    .footer-brand .brand__status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: calc(8 * var(--u));
+      margin-top: calc(16 * var(--u));
+      list-style: none;
+      padding: 0;
+    }
+    .footer-brand .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(6 * var(--u));
+      height: calc(25 * var(--u));
+      padding: 0 calc(10 * var(--u));
+      border: 1px solid rgb(12 12 12 / .12);
+      border-radius: 999px;
+      background: rgb(255 255 255 / .55);
+      font-size: calc(10.8 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    .footer-brand .chip svg {
+      width: calc(11 * var(--u));
+      height: calc(11 * var(--u));
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .footer-brand .chip__dot {
+      width: calc(6 * var(--u));
+      height: calc(6 * var(--u));
+      border-radius: 50%;
+      background: #2fb36a;
+      box-shadow: 0 0 0 calc(2.5 * var(--u)) rgb(47 179 106 / .18);
+    }
+    .footer .col__title {
+      font-size: calc(16 * var(--u));
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.045em;
+      margin: 0;
+    }
+    .footer .col__list {
+      display: grid;
+      gap: calc(20.5 * var(--u));
+      margin-top: calc(24 * var(--u));
+      font-size: calc(13.7 * var(--u));
+      line-height: 1.24;
+      letter-spacing: 0.022em;
+      color: #161616;
+      list-style: none;
+      padding: 0;
+    }
+    .footer .col--menu .col__list {
+      gap: calc(15 * var(--u));
+      margin-top: calc(21 * var(--u));
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      color: #0c0c0c;
+    }
+    .footer .col__list a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    .footer .col__list a:hover {
+      opacity: .55;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .footer {
+        --u: min(100vw / 1040, 100svh / 672);
+      }
+      .footer__content {
+        grid-template-columns: calc(400 * var(--u)) calc(190 * var(--u)) calc(210 * var(--u)) 1fr;
+        width: calc(1040 * var(--u));
+        padding: calc(64 * var(--u)) calc(40 * var(--u)) 0;
+      }
+      .footer-brand .brand__text { max-width: calc(350 * var(--u)); }
+      .footer__wordmark {
+        font-size: calc(286 * var(--u));
+        bottom: calc(10 * var(--u));
+      }
+    }
+
+    @media (max-width: 767px) {
+      .footer {
+        --u: 1px;
+        height: auto;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .footer__stage::after {
+        background: linear-gradient(to bottom, var(--paper, #fdfaf3) 0%, rgb(253 250 243 / .95) 50%, rgb(253 250 243 / .8) 68%, rgb(253 250 243 / 0) 90%);
+      }
+      .footer__content {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: space-between;
+        gap: 36px 12px;
+        width: 100%;
+        padding: 40px 20px 0;
+        margin-bottom: max(34vw, 150px);
+      }
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+      .footer-brand .brand__title { font-size: 21px; margin-top: 19px; }
+      .footer-brand .brand__text { max-width: 34em; font-size: 14px; margin-top: 18px; }
+      .footer-brand .brand__cta { height: 38px; padding: 0 18px 0 16px; border-radius: 8px; font-size: 13px; margin-top: 20px; }
+      .footer-brand .brand__cta svg { width: 14px; height: 14px; }
+      .footer-brand .brand__copy, .footer-brand .brand__by { font-size: 12.5px; }
+      .footer-brand .brand__copy { margin-top: 23px; }
+      .footer-brand .brand__by { margin-top: 21px; }
+      .footer-brand .chip { height: 28px; font-size: 12px; padding: 0 10px; }
+      .footer .col__title { font-size: 15px; }
+      .footer .col__list { gap: 14px; margin-top: 20px; font-size: 13px; letter-spacing: 0; }
+      .footer .col--menu .col__list { gap: 14px; margin-top: 20px; }
+      .footer__wordmark {
+        bottom: 5vw;
+        font-size: 27vw;
+      }
+      .footer__fog { height: 7%; }
+    }
+
+    @media (max-width: 359px) {
+      .footer__content {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer .col:last-child {
+        grid-column: span 2;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .footer-brand .brand__cta, .footer .col__list a {
+        transition: none;
+      }
+    }
+  </style>
+<script>window.MathJax = {tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script async="True" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+<nav aria-label="Primary" class="nav container">
+<a aria-label="Shorveer Notes home" class="brand" href="/">
+<span aria-hidden="true" class="brand-mark">
+<svg fill="none" viewbox="0 0 64 64">
+<path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
+</svg>
+</span>
+<span class="brand-name">Shorveer<em>Notes</em></span>
+</a>
+<div class="nav-links">
+<a href="#subjects">Subjects</a>
+<a href="#reallife">Real life</a>
+<a href="#resources">Resources</a>
+<a href="#method">How it works</a>
+<a href="../about.html">About</a>
+</div>
+<div class="nav-actions">
+<button aria-label="Open search" class="nav-icon" id="searchButton" title="Search (Ctrl+K)">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<circle cx="11" cy="11" r="7"></circle><path d="m20.5 20.5-4-4"></path>
+</svg>
+</button>
+<button aria-expanded="false" aria-label="Change theme" class="nav-icon" id="themeButton" title="Change theme">
+<span aria-hidden="true" class="palette-dot"></span>
+</button>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav-icon mobile-toggle" id="menuButton">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<path d="M3 6h18M3 12h18M3 18h18"></path>
+</svg>
+</button>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="#subjects">Subjects</a>
+<a href="#reallife">Real life</a>
+<a href="#resources">Resources</a>
+<a href="#method">How it works</a>
+<a href="../exam-info.html">Exam information</a>
+<a href="../about.html">About Shorveer</a>
+</div>
+</header>
+<!-- ============ THEME PICKER (9 Themes) ============ -->
+<div aria-label="Choose a theme" class="theme-pop" id="themePop" role="dialog">
+<h4>Pick a look</h4>
+<div class="theme-grid">
+<!-- 1. Notebook -->
+<button aria-pressed="true" class="theme-opt" data-theme-value="notebook">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#fdfaf3"></span>
+<span style="background:#e8b64c"></span>
+<span style="background:#bf5a3c"></span>
+<span style="background:#1c1c1a"></span>
+</span>
+<b>Notebook</b>
+<small>Warm paper, classic</small>
+</button>
+<!-- 2. Chalkboard -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="chalkboard">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#1e2a24"></span>
+<span style="background:#f0d97a"></span>
+<span style="background:#7bc3bf"></span>
+<span style="background:#ebe6d5"></span>
+</span>
+<b>Chalkboard</b>
+<small>Dark green, chalk</small>
+</button>
+<!-- 3. Blueprint -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="blueprint">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0f2b4c"></span>
+<span style="background:#7ec8f5"></span>
+<span style="background:#ff9d7c"></span>
+<span style="background:#e2eefb"></span>
+</span>
+<b>Blueprint</b>
+<small>Navy, technical</small>
+</button>
+<!-- 4. Sunset -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="sunset">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#241226"></span>
+<span style="background:#ff8a5b"></span>
+<span style="background:#ffb87a"></span>
+<span style="background:#ffe9d6"></span>
+</span>
+<b>Sunset</b>
+<small>Plum, warm glow</small>
+</button>
+<!-- 5. Emerald -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="emerald">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0b1d16"></span>
+<span style="background:#34d399"></span>
+<span style="background:#2dd4bf"></span>
+<span style="background:#e3f7ed"></span>
+</span>
+<b>Emerald</b>
+<small>Biology &amp; Green</small>
+</button>
+<!-- 6. Cyberpunk -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="cyberpunk">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0f1016"></span>
+<span style="background:#00f0ff"></span>
+<span style="background:#ff007f"></span>
+<span style="background:#f0f2ff"></span>
+</span>
+<b>Cyberpunk</b>
+<small>Neon high-tech</small>
+</button>
+<!-- 7. Minimal -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="minimal">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#f8fafc"></span>
+<span style="background:#2563eb"></span>
+<span style="background:#64748b"></span>
+<span style="background:#0f172a"></span>
+</span>
+<b>Minimal</b>
+<small>Clean white</small>
+</button>
+<!-- 8. Dracula -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="dracula">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#191622"></span>
+<span style="background:#bd93f9"></span>
+<span style="background:#ff79c6"></span>
+<span style="background:#f8f8f2"></span>
+</span>
+<b>Dracula</b>
+<small>Night indigo</small>
+</button>
+<!-- 9. Solarized -->
+<button aria-pressed="false" class="theme-opt" data-theme-value="solarized">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#fdf6e3"></span>
+<span style="background:#b58900"></span>
+<span style="background:#2aa198"></span>
+<span style="background:#073642"></span>
+</span>
+<b>Solarized</b>
+<small>Warm study paper</small>
+</button>
+</div>
+<p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Your choice is saved for next time.</p>
+</div>
+<main id="main"><section class="hero container"><div class="hero-copy"><div class="kicker"><span class="dot"></span><span>Class 12 · Mathematics</span></div><h1>Chapter12</h1><p class="hero-description">Part 1: Theory &amp; Complete Derivations</p></div></section><section class="section container reveal" id="theory">
+<div class="section-head"><span class="section-eyebrow">Comprehensive Academic Theory</span><h2>1. Conceptual Framework</h2></div>
+<div class="real-life">
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Definition &amp; Scope</div>
+<div class="rl-title">Fundamental Notion of Probability</div>
+<p class="rl-text">
+          Probability is a quantitative measure of the likelihood of occurrence of an event. In the CBSE Class 12 syllabus, probability is introduced as a real‑valued function $P$ defined on a sample space $S$ that satisfies three axioms: (i) $0\le P(A)\le 1$ for every event $A\subseteq S$, (ii) $P(S)=1$, and (iii) for any countable collection of mutually exclusive events $A_1,A_2,\dots$, we have $P\!\left(\bigcup_{i=1}^{\infty}A_i\right)=\sum_{i=1}^{\infty}P(A_i)$. These axioms, known as Kolmogorov’s axioms, provide the rigorous foundation for all subsequent results.  
+          <br/><br/>
+          The sample space $S$ is the set of all possible outcomes of a random experiment. An event $A$ is any subset of $S$, and the complement of $A$, denoted $A'$, consists of all outcomes in $S$ that are not in $A$. The probability of the complement follows directly from the axioms: $$P(A')=1-P(A).$$  
+          <br/><br/>
+          Two broad approaches are employed in the textbook: the classical (or equally likely) method, where each elementary outcome has the same probability $1/n$, and the frequentist method, where probability is interpreted as the limiting relative frequency of an event after a large number of trials. Both perspectives lead to the same algebraic rules, but the classical method is primarily used for theoretical derivations in the chapter.
+        </p>
+</div>
+</article>
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Basic Laws</div>
+<div class="rl-title">Addition and Multiplication Rules</div>
+<p class="rl-text">
+          The addition rule quantifies the probability of the union of two events $A$ and $B$:  
+          $$P(A\cup B)=P(A)+P(B)-P(A\cap B).$$  
+          The subtraction of $P(A\cap B)$ avoids double counting the outcomes that belong to both $A$ and $B$. When $A$ and $B$ are mutually exclusive (i.e., $A\cap B=\varnothing$), the rule simplifies to $P(A\cup B)=P(A)+P(B)$.  
+          <br/><br/>
+          The multiplication rule addresses the probability of the intersection of two events. For any two events,  
+          $$P(A\cap B)=P(A)\,P(B\mid A),$$  
+          where $P(B\mid A)$ denotes the conditional probability of $B$ given that $A$ has occurred. If $A$ and $B$ are independent, the conditional probability reduces to $P(B\mid A)=P(B)$, and the rule becomes the familiar product formula $P(A\cap B)=P(A)P(B)$. Independence is a stronger condition than mutual exclusivity; mutually exclusive events cannot be independent unless one of them has probability zero.  
+          <br/><br/>
+          Extending these ideas, the general addition rule for $n$ events is:  
+          $$P\!\Bigl(\bigcup_{i=1}^{n}A_i\Bigr)=\sum_{i=1}^{n}P(A_i)-\sum_{i<j}p(a_i\cap <="" a_j)+\sum_{i<j<k}p(a_i\cap="" a_j\cap="" a_k)-\cdots+(-1)^{n+1}p\!\bigl(\bigcap_{i="1}^{n}A_i\Bigr).$$" events.="" for="" inclusion‑exclusion="" indispensable="" involving="" is="" overlapping="" p="" principle="" problems="" solving="" this="">
+</j}p(a_i\cap></p></div>
+</article>
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Conditional Probability &amp; Independence</div>
+<div class="rl-title">Understanding Dependence through Bayes’ Theorem</div>
+<p class="rl-text">
+          Conditional probability captures how the occurrence of one event influences the likelihood of another. Formally, for events $A$ and $B$ with $P(A)&gt;0$,  
+          $$P(B\mid A)=\frac{P(A\cap B)}{P(A)}.$$  
+          This definition can be rearranged to give Bayes’ theorem, a cornerstone of statistical inference:  
+          $$P(A\mid B)=\frac{P(B\mid A)\,P(A)}{P(B)}.$$  
+          Bayes’ theorem allows us to update prior beliefs $P(A)$ in light of new evidence $B$. In the CBSE curriculum, the theorem is often illustrated with problems involving urns, cards, and diagnostic tests.  
+          <br/><br/>
+          Independence is characterized by the equality $P(A\cap B)=P(A)P(B)$. Equivalently, $A$ and $B$ are independent if $P(A\mid B)=P(A)$ (provided $P(B)&gt;0$) and $P(B\mid A)=P(B)$. Independence can be extended to more than two events; a collection $\{A_1,\dots,A_n\}$ is mutually independent if every finite intersection satisfies the product rule. A common misconception is to assume that pairwise independence implies mutual independence; the textbook provides counter‑examples where each pair of events is independent but the triple intersection does not satisfy the product rule.
+        </p>
+</div>
+</article>
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Worked Example</div>
+<div class="rl-title">Probability of Selecting a Red Ball from Two Urns</div>
+<p class="rl-text">
+<strong>Problem:</strong> Urn I contains 3 red and 2 blue balls; Urn II contains 4 red and 6 blue balls. An urn is chosen at random, and then a ball is drawn at random from the selected urn. Find the probability that the drawn ball is red.  
+          <br/><br/>
+<strong>Solution:</strong> Let $U_1$ and $U_2$ denote the events “Urn I is chosen’’ and “Urn II is chosen’’ respectively. Since the urn is selected at random, $P(U_1)=P(U_2)=\frac12$. Let $R$ denote the event “the drawn ball is red”. Using the law of total probability,  
+          $$P(R)=P(R\mid U_1)P(U_1)+P(R\mid U_2)P(U_2).$$  
+          In Urn I, the probability of a red ball is $\displaystyle P(R\mid U_1)=\frac{3}{3+2}=\frac35$. In Urn II, $\displaystyle P(R\mid U_2)=\frac{4}{4+6}=\frac{4}{10}=\frac{2}{5}$. Substituting,  
+          $$P(R)=\frac35\cdot\frac12+\frac25\cdot\frac12=\frac{3}{10}+\frac{2}{10}=\frac{5}{10}= \frac12.$$  
+          Hence, the probability of drawing a red ball is $\boxed{\frac12}$.  
+          <br/><br/>
+          This example illustrates the combined use of conditional probability, the law of total probability, and the concept of equally likely selection of the urns. It also demonstrates how the same numerical answer can arise from two distinct sub‑experiments.
+        </p>
+</div>
+</article>
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Common Pitfalls &amp; Exceptions</div>
+<div class="rl-title">When Classical Assumptions Fail</div>
+<p class="rl-text">
+          The classical definition assumes that all elementary outcomes are equally likely. This assumption breaks down in many real‑world contexts, such as biased dice, non‑uniform distributions of cards, or sampling without replacement from a finite population. In such situations, the probability of an event must be computed using the actual frequencies or by invoking the hypergeometric distribution.  
+          <br/><br/>
+          For example, consider drawing two cards from a standard deck without replacement. The probability that both are aces is not $\bigl(\frac{4}{52}\bigr)^2$, because the second draw is conditioned on the first. The correct computation uses the multiplication rule:  
+          $$P(\text{both aces})=\frac{4}{52}\times\frac{3}{51}=\frac{12}{2652}=\frac{1}{221}.$$  
+          Ignoring the change in composition of the sample space leads to over‑estimation.  
+          <br/><br/>
+          Another subtlety arises with “mutually exclusive’’ versus “collectively exhaustive’’ events. Mutually exclusive events cannot occur together, while collectively exhaustive events cover the entire sample space. The addition rule $P(A\cup B)=P(A)+P(B)$ holds only when $A$ and $B$ are mutually exclusive; otherwise the intersection term must be subtracted. Students often forget to verify exclusivity before simplifying the formula.  
+          <br/><br/>
+          Finally, independence must be verified carefully. Two events may appear independent in a particular experiment but become dependent when the underlying sample space changes (e.g., after conditioning on a third event). The chapter stresses checking the definition $P(A\cap B)=P(A)P(B)$ rather than relying on intuition alone.
+        </p>
+</div>
+</article>
+</div>
+</section>
+<section class="section container reveal" id="derivations">
+<div class="section-head"><span class="section-eyebrow">Formulas and Derivations</span><h2>2. Master Equation Bank</h2></div>
+<div class="resource-grid">
+<article class="resource">
+<h3>Linear Programming – Fundamental Formulation</h3>
+<p>In a typical linear programming (LP) problem the aim is to optimise (maximise or minimise) a linear objective function subject to a finite set of linear inequalities (or equalities). The standard form for a maximisation problem with two decision variables $x_1$ and $x_2$ is written as</p>
+      $$\text{Maximise } Z = c_1 x_1 + c_2 x_2$$
+      <p>subject to</p>
+      $$\begin{aligned}
+      a_{11}x_1 + a_{12}x_2 &amp;\le b_1,\\
+      a_{21}x_1 + a_{22}x_2 &amp;\le b_2,\\
+      &amp;\vdots\\
+      a_{m1}x_1 + a_{m2}x_2 &amp;\le b_m,\\
+      x_1,\;x_2 &amp;\ge 0.
+      \end{aligned}$$
+      <p>Each coefficient $c_i$, $a_{ij}$ and constant $b_i$ is a real number. The non‑negativity condition $x_i\ge0$ is essential for the graphical method and for the simplex algorithm to be applicable in its canonical form.</p>
+<p><strong>Variables and Units</strong></p>
+<ul>
+<li>$x_1, x_2$ – Decision variables (units depend on the context, e.g., kilograms, litres, dollars).</li>
+<li>$c_1, c_2$ – Profit or cost coefficients (units: $\,\text{currency per unit of }x_i$).</li>
+<li>$a_{ij}$ – Resource consumption coefficients (units: $\,\text{resource units per unit of }x_i$).</li>
+<li>$b_i$ – Available amount of the $i^{\text{th}}$ resource (units: same as $a_{ij}x_j$, e.g., kilograms, hours).</li>
+<li>$Z$ – Objective value (units: same as $c_i x_i$, typically currency).</li>
+</ul>
+<p><strong>Conditions for Validity</strong></p>
+<ul>
+<li>All relationships are linear – no product or power of decision variables.</li>
+<li>All $b_i$ are non‑negative; otherwise the corresponding inequality is transformed by multiplying by $-1$.</li>
+<li>The feasible region defined by the constraints must be bounded for a finite optimum; if unbounded, the optimum may be infinite.</li>
+</ul>
+</article>
+<article class="resource">
+<h3>Conversion to Equality Form – Slack Variables</h3>
+<p>To apply the simplex method each inequality is converted into an equality by adding a non‑negative slack variable $s_i$. For the $i^{\text{th}}$ constraint</p>
+      $$a_{i1}x_1 + a_{i2}x_2 \le b_i,$$
+      <p>the equality form becomes</p>
+      $$a_{i1}x_1 + a_{i2}x_2 + s_i = b_i,\qquad s_i\ge0.$$
+      <p>Collecting all constraints, the canonical system is</p>
+      $$\begin{aligned}
+      a_{11}x_1 + a_{12}x_2 + s_1 &amp;= b_1,\\
+      a_{21}x_1 + a_{22}x_2 + s_2 &amp;= b_2,\\
+      &amp;\vdots\\
+      a_{m1}x_1 + a_{m2}x_2 + s_m &amp;= b_m,
+      \end{aligned}$$
+      <p>with the extended variable vector</p>
+      $$\mathbf{x} = (x_1, x_2, s_1, s_2, \dots, s_m)^{\mathsf{T}} \ge \mathbf{0}.$$
+      <p>In matrix notation the system reads</p>
+      $$\mathbf{A}\mathbf{x} = \mathbf{b},\qquad \mathbf{x}\ge\mathbf{0},$$
+      <p>where $\mathbf{A}$ is an $m\times (n+m)$ matrix containing the original coefficients and an identity sub‑matrix for the slack variables.</p>
+</article>
+<article class="resource">
+<h3>Graphical Method – Step‑by‑Step Derivation</h3>
+<p>The graphical method is applicable only when $n=2$ (or $n=3$ with a 3‑D plot). The steps are as follows:</p>
+<ol>
+<li><strong>Plot each constraint as an equality line.</strong> For $a_{i1}x_1 + a_{i2}x_2 = b_i$, find intercepts:
+          <ul>
+<li>When $x_1=0$, $x_2 = \dfrac{b_i}{a_{i2}}$.</li>
+<li>When $x_2=0$, $x_1 = \dfrac{b_i}{a_{i1}}$.</li>
+</ul>
+</li>
+<li><strong>Identify the feasible half‑plane.</strong> Substitute a test point (commonly the origin) into the original inequality. If the inequality holds, the half‑plane containing the origin is retained; otherwise the opposite side is taken.</li>
+<li><strong>Determine the feasible region.</strong> The intersection of all half‑planes together with the non‑negativity axes $x_1\ge0$, $x_2\ge0$ yields a convex polygon (or an unbounded convex set).</li>
+<li><strong>Locate corner points (extreme points).</strong> Each vertex is obtained by solving the simultaneous equations of two intersecting constraint lines. For example, the intersection of constraints $i$ and $j$ solves
+          $$\begin{cases}
+          a_{i1}x_1 + a_{i2}x_2 = b_i,\\
+          a_{j1}x_1 + a_{j2}x_2 = b_j.
+          \end{cases}$$
+        </li>
+<li><strong>Evaluate the objective function at every corner point.</strong> Compute $Z_k = c_1 x_{1k} + c_2 x_{2k}$ for each vertex $k$.</li>
+<li><strong>Select the optimal value.</strong> If the problem is a maximisation, choose the largest $Z_k$; for minimisation, choose the smallest.</li>
+</ol>
+<p><strong>Why does the optimum lie at a corner point?</strong> The feasible region is convex and the objective function is linear. A linear function attains its extreme values on the boundary, and more precisely at an extreme point of a convex polygon. This geometric property is the cornerstone of linear programming theory.</p>
+</article>
+<article class="resource">
+<h3>Simplex Method – Algebraic Derivation</h3>
+<p>The simplex algorithm moves from one basic feasible solution (BFS) to another, improving the objective value at each iteration. The derivation proceeds from the canonical tableau.</p>
+<p><strong>1. Initialise the tableau.</strong> With $n$ decision variables and $m$ slack variables, the initial basic variables are the slacks $s_1,\dots,s_m$. The tableau is</p>
+      $$\begin{array}{c|cccc|c}
+      \text{BV} &amp; x_1 &amp; x_2 &amp; \cdots &amp; s_m &amp; \text{RHS}\\\hline
+      s_1 &amp; a_{11} &amp; a_{12} &amp; \cdots &amp; 1 &amp; b_1\\
+      s_2 &amp; a_{21} &amp; a_{22} &amp; \cdots &amp; 1 &amp; b_2\\
+      \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\\
+      s_m &amp; a_{m1} &amp; a_{m2} &amp; \cdots &amp; 1 &amp; b_m\\\hline
+      Z &amp; -c_1 &amp; -c_2 &amp; \cdots &amp; 0 &amp; 0
+      \end{array}$$
+      <p>Here “BV” denotes the current basic variable in each row, and “RHS” is the right‑hand side (the values of the basic variables).</p>
+<p><strong>2. Optimality test.</strong> Examine the bottom row (reduced costs). If every coefficient of a non‑basic variable is $\le0$ (for maximisation), the current BFS is optimal. Otherwise, select the most positive coefficient as the entering variable.</p>
+<p><strong>3. Ratio test – leaving variable.</strong> For each row $i$ with a positive coefficient $a_{ij}&gt;0$ of the entering variable $x_j$, compute the ratio</p>
+      $$\theta_i = \frac{b_i}{a_{ij}}.$$
+      <p>The smallest non‑negative $\theta_i$ determines the leaving basic variable (the pivot row). This guarantees feasibility after the pivot.</p>
+<p><strong>4. Pivot operation.</strong> Perform elementary row operations to make the pivot element equal to 1 and all other entries in the entering column equal to 0. The algebraic steps are:</p>
+<ul>
+<li>Divide the pivot row by the pivot element.</li>
+<li>For every other row $k$, replace row $k$ by $ \text{row}_k - a_{kj}\times\text{new pivot row}$.</li>
+<li>Update the bottom row similarly.</li>
+</ul>
+<p><strong>5. Iterate.</strong> Return to step 2 with the updated tableau. The process terminates when the optimality condition holds, or when no positive $a_{ij}$ exists in the pivot column (signalling unboundedness).</p>
+<p><strong>Mathematical justification.</strong> Each pivot corresponds to a change of basis in the linear system $\mathbf{A}\mathbf{x}=\mathbf{b}$. The new basis consists of a different set of $m$ linearly independent columns of $\</p></article></div></section></main>
+<!-- ============ FOOTER (100% FIXED & PROPORTIONAL) ============ -->
+<footer class="sn-footer">
+<div aria-hidden="true" class="sn-footer__bg">
+<video autoplay="" class="sn-footer__video" loop="" muted="" playsinline="" poster="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261014_121838_c97d0940-f430-4304-8573-4f47ee44f447.png" preload="auto" src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/4d01c727-d9c5-47c8-a778-35a451ffd39f.mp4"></video>
+</div>
+<div aria-hidden="true" class="sn-footer__overlay"></div>
+<!-- Top Content Grid -->
+<div class="sn-footer__container">
+<div class="sn-footer__grid">
+<!-- Brand & Founder Column -->
+<div class="sn-footer__brand">
+<a aria-label="Shorveer Notes home" class="sn-brand__logo" href="/">
+<span aria-hidden="true" class="sn-brand__mark">
+<svg fill="none" viewbox="0 0 64 64">
+<path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
+</svg>
+</span>
+<span class="sn-brand__title-txt">Shorveer<em>Notes</em></span>
+</a>
+<h2 class="sn-brand__heading">Class 12 Science, Clearly Organised</h2>
+<p class="sn-brand__sub">A student-focused learning platform for Class 12 Science notes, derivations, and board examination preparation.</p>
+<div class="sn-brand__badge-box">
+<a class="sn-yt-btn" href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24">
+<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+</svg>
+<span>JS EDIZ on YouTube</span>
+</a>
+<div class="sn-founder-pill">
+<span class="sn-founder-tag">JS</span>
+<span class="sn-founder-name">Created by <strong>Jatin Sandilya</strong></span>
+</div>
+</div>
+<div class="sn-chips-row">
+<span class="sn-chip"><span class="sn-chip-dot"></span>CBSE Aligned</span>
+<span class="sn-chip">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"></path><path d="M20 4v7h-7"></path></svg>
+            Syllabus 2026-27
+          </span>
+<span class="sn-chip">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            Student Focused
+          </span>
+</div>
+</div>
+<!-- Links: Study -->
+<div class="sn-nav-col">
+<h3 class="sn-col-head">Study</h3>
+<ul class="sn-col-links">
+<li><a href="../physics/index.html">Physics</a></li>
+<li><a href="../chemistry/index.html">Chemistry</a></li>
+<li><a href="../mathematics/index.html">Mathematics</a></li>
+<li><a href="../english/index.html">English</a></li>
+</ul>
+</div>
+<!-- Links: Site -->
+<div class="sn-nav-col">
+<h3 class="sn-col-head">Site</h3>
+<ul class="sn-col-links">
+<li><a href="../exam-info.html">Exam info</a></li>
+<li><a href="../about-notes.html">About the notes</a></li>
+<li><a href="../about.html">About us</a></li>
+<li><a href="../privacy.html">Privacy policy</a></li>
+<li><a href="../cookies.html">Cookies</a></li>
+</ul>
+</div>
+<!-- Links: Connect -->
+<div class="sn-nav-col">
+<h3 class="sn-col-head">Connect</h3>
+<ul class="sn-col-links">
+<li><a href="mailto:support.shorveernotes@gmail.com">Contact us</a></li>
+<li><a href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" target="_blank">YouTube Channel</a></li>
+<li><a href="../about.html#founder">Founder's Note</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Big Watermark Wordmark (Ekdum Screen ke hisab se Fitted, Kabhi Cut Nahi Hoga) -->
+<div aria-hidden="true" class="sn-wordmark-wrap">
+<svg class="sn-wordmark-svg" preserveaspectratio="xMidYMid meet" viewbox="0 0 1200 160">
+<defs>
+<lineargradient id="snWordmarkGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"></stop>
+<stop offset="50%" stop-color="#ffffff" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"></stop>
+</lineargradient>
+</defs>
+<text class="sn-svg-text" text-anchor="middle" x="50%" y="125">Shorveer Notes</text>
+</svg>
+</div>
+<!-- Bottom Copyright Bar -->
+<div class="sn-bottom-bar">
+<div class="sn-bottom-container">
+<p>© <span id="year"></span> Shorveer Notes. All rights reserved.</p>
+<p>Built with pride in India 🇮🇳</p>
+</div>
+</div>
+<!-- Embedded Isolated CSS -->
+<style>
+    .sn-footer {
+      position: relative;
+      background: var(--paper, #fdfaf3);
+      color: var(--ink, #1c1c1a);
+      overflow: hidden;
+      isolation: isolate;
+      padding-top: 50px;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .sn-footer__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .sn-footer__video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 90%;
+    }
+
+    .sn-footer__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        var(--paper, #fdfaf3) 0%,
+        rgba(253, 250, 243, 0.95) 28%,
+        rgba(253, 250, 243, 0.6) 55%,
+        transparent 85%
+      );
+    }
+
+    .sn-footer__container {
+      position: relative;
+      z-index: 2;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 0 24px;
     }
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 72px;
-      background: rgba(36, 18, 38, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.12));
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-    }
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
-    .brand-title {
-      font-family: var(--font-heading, 'Fraunces', serif);
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #fff;
-      text-decoration: none;
-    }
-    .brand-title em {
-      color: var(--gold, #ff8a5b);
-      font-style: normal;
-    }
-    .nav-links a {
-      color: var(--muted, #a090a0);
-      text-decoration: none;
-      font-weight: 600;
-      margin-left: 20px;
-      font-size: 0.95rem;
-    }
-    .nav-links a:hover {
-      color: var(--gold, #ff8a5b);
-    }
-    .chapter-hero {
-      padding: 35px 0 20px;
-      border-bottom: 1px dashed var(--line, rgba(255, 255, 255, 0.15));
-      margin-bottom: 30px;
-    }
-    .back-btn {
-      display: inline-block;
-      margin-bottom: 12px;
-      color: var(--gold, #ff8a5b);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-    .chapter-hero h1 {
-      font-family: var(--font-heading, 'Fraunces', serif);
-      font-size: 2.4rem;
-      margin: 0 0 10px 0;
-      color: #fff;
-    }
-    .content-card {
-      background: var(--card, rgba(255, 255, 255, 0.04));
-      border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
-      border-radius: 14px;
-      padding: 28px;
-      margin-bottom: 24px;
-    }
-    .content-card h2, .content-card h3 {
-      font-family: var(--font-heading, 'Fraunces', serif);
-      color: var(--gold, #ff8a5b);
-      margin-top: 0;
-    }
-    .formula-box {
-      background: rgba(0, 0, 0, 0.35);
-      border-left: 4px solid var(--gold, #ff8a5b);
-      padding: 18px;
-      border-radius: 8px;
-      margin: 18px 0;
-      overflow-x: auto;
-    }
-    /* Clean Solid Footer */
-    .sn-footer {
-      background: #190c1a;
-      border-top: 1px solid var(--line, rgba(255, 255, 255, 0.12));
-      padding: 50px 0 30px;
-      margin-top: 60px;
-    }
-    .sn-footer-grid {
+
+    .sn-footer__grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 36px;
-      margin-bottom: 36px;
+      grid-template-columns: 1.5fr 0.8fr 0.8fr 0.8fr;
+      gap: 40px;
+      align-items: start;
     }
-    .sn-brand h3 {
-      font-family: var(--font-heading, 'Fraunces', serif);
-      font-size: 1.4rem;
-      margin: 0 0 10px 0;
-      color: #fff;
+
+    .sn-footer__brand {
+      max-width: 480px;
     }
-    .sn-brand p {
-      color: var(--muted, #a090a0);
-      font-size: 0.92rem;
-      line-height: 1.6;
+
+    .sn-brand__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
     }
-    .footer-col h4 {
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      color: #fff;
-      margin: 0 0 14px 0;
-      letter-spacing: 0.5px;
+
+    .sn-brand__mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: #1c1c1a;
+      display: grid;
+      place-items: center;
     }
-    .footer-col ul {
+
+    .sn-brand__mark svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .sn-brand__title-txt {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .sn-brand__title-txt em {
+      font-style: italic;
+      color: #6b6858;
+      font-weight: 400;
+    }
+
+    .sn-brand__heading {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 16px 0 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .sn-brand__sub {
+      font-size: 14px;
+      line-height: 1.55;
+      color: #55534c;
+      margin-bottom: 20px;
+    }
+
+    .sn-brand__badge-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .sn-yt-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 15px;
+      border-radius: 8px;
+      background: #0f0f0f;
+      color: #ffffff !important;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .sn-yt-btn:hover {
+      background: #222;
+      transform: translateY(-2px);
+    }
+
+    .sn-yt-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: #ff0000;
+    }
+
+    .sn-founder-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 30px;
+      font-size: 13px;
+      backdrop-filter: blur(8px);
+    }
+
+    .sn-founder-tag {
+      background: #1c1c1a;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 6px;
+      border-radius: 5px;
+    }
+
+    .sn-founder-name strong {
+      color: #000000;
+    }
+
+    .sn-chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sn-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #333;
+      backdrop-filter: blur(8px);
+    }
+
+    .sn-chip svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .sn-chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+    }
+
+    /* Column Links */
+    .sn-nav-col .sn-col-head {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .sn-col-links {
       list-style: none;
       padding: 0;
       margin: 0;
+      display: grid;
+      gap: 12px;
     }
-    .footer-col li {
-      margin-bottom: 8px;
-    }
-    .footer-col a {
-      color: var(--muted, #a090a0);
+
+    .sn-col-links a {
+      color: #2e2e28;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 14.5px;
+      font-weight: 500;
+      transition: color 0.2s, transform 0.2s;
+      display: inline-block;
     }
-    .footer-col a:hover {
-      color: var(--gold, #ff8a5b);
+
+    .sn-col-links a:hover {
+      color: #bf5a3c;
+      transform: translateX(3px);
     }
-    .bottom-bar {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 20px;
-      text-align: center;
-      color: var(--muted, #a090a0);
-      font-size: 0.85rem;
+
+    /* Wordmark SVG (Fixed Size, Fit to Viewport) */
+    .sn-wordmark-wrap {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding: 0 20px;
+      pointer-events: none;
+      user-select: none;
     }
-    @media (max-width: 768px) {
-      .sn-footer-grid { grid-template-columns: 1fr; gap: 24px; }
-      .chapter-hero h1 { font-size: 1.9rem; }
-      .content-card { padding: 20px; }
+
+    .sn-wordmark-svg {
+      width: 100%;
+      height: auto;
+      max-height: 140px;
+      display: block;
+    }
+
+    .sn-svg-text {
+      font-family: Georgia, serif;
+      font-size: 116px;
+      font-weight: 700;
+      letter-spacing: -3px;
+      fill: url(#snWordmarkGrad);
+      filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.15));
+    }
+
+    /* Bottom Copyright */
+    .sn-bottom-bar {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      background: rgba(253, 250, 243, 0.4);
+      backdrop-filter: blur(8px);
+      padding: 16px 0;
+    }
+
+    .sn-bottom-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #6b6858;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .sn-footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+      .sn-footer__brand {
+        grid-column: span 2;
+        max-width: 100%;
+      }
+      .sn-svg-text {
+        font-size: 96px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sn-footer__grid {
+        grid-template-columns: 1fr;
+      }
+      .sn-footer__brand {
+        grid-column: span 1;
+      }
+      .sn-bottom-container {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+      }
+      .sn-svg-text {
+        font-size: 78px;
+      }
     }
   </style>
-</head>
-<body>
-
-  <header class="site-header">
-    <div class="container nav-inner">
-      <a class="brand-title" href="index.html">Shorveer<em>Notes</em></a>
-      <nav class="nav-links">
-        <a href="index.html">Portal Hub</a>
-        <a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <div class="chapter-hero">
-      <a class="back-btn" href="index.html">← Back to Hub</a>
-      <h1>Open Chapter 12→</h1>
-      <p style="color:var(--muted, #a090a0); margin:0;">Class 12 Science · Authored by <strong>Jatin Sandilya</strong></p>
-    </div>
-
-    <div class="chapter-notes">
-    <h1 style="text-align: center; color: #333; margin-bottom: 20px;">Electrostatic Potential and Capacitance</h1>
-
-    <div class="card" style="background-color: #f9f9f9; border-left: 5px solid #007bff; padding: 20px; margin-bottom: 20px; border-radius: 8px;">
-        <h2>1. Comprehensive Chapter Overview & Core Concepts</h2>
-        <p>This chapter is a cornerstone of electrostatics, extending the understanding of electric fields and forces to the scalar concepts of potential and energy. It lays the groundwork for understanding how charge is stored and released in devices like capacitors, which are ubiquitous in electronic circuits.</p>
-
-        <h3 style="color: #007bff;">1.1 Electrostatic Potential (V)</h3>
-        <ul>
-            <li><strong>Definition:</strong> The electrostatic potential at any point in an electric field is the work done by an external agency in bringing a unit positive test charge from infinity to that point without acceleration. It is a scalar quantity, measured in Volts (V).</li>
-            <li><strong>Potential Difference:</strong> The potential difference between two points A and B ($V_B - V_A$) is the work done per unit positive test charge ($q_0$) in moving it from point A to point B: $V_B - V_A = \frac{W_{AB}}{q_0}$.</li>
-            <li><strong>Relation with Electric Field:</strong> Electric potential is intimately linked to the electric field. In one dimension, $E = -\frac{dV}{dr}$. Generally, $\vec{E} = -\nabla V$, meaning the electric field points in the direction of decreasing potential.</li>
-            <li><strong>Potential due to a Point Charge:</strong> For a point charge $Q$ at a distance $r$, the potential is $V = \frac{1}{4\pi\epsilon_0} \frac{Q}{r}$. Note that potential is positive for positive charges and negative for negative charges.</li>
-            <li><strong>Potential due to an Electric Dipole:</strong> At a point $(r, \theta)$ from the center of a dipole with dipole moment $\vec{p}$, the potential is $V = \frac{1}{4\pi\epsilon_0} \frac{p \cos\theta}{r^2}$.
-                <ul>
-                    <li>On the axial line ($\theta=0^\circ$ or $180^\circ$): $V = \pm \frac{1}{4\pi\epsilon_0} \frac{p}{r^2}$</li>
-                    <li>On the equatorial plane ($\theta=90^\circ$): $V=0$</li>
-                </ul>
-            </li>
-            <li><strong>Equipotential Surfaces:</strong> These are surfaces in an electric field where the electric potential is constant at every point.
-                <ul>
-                    <li>No work is done in moving a charge from one point to another on an equipotential surface.</li>
-                    <li>Electric field lines are always perpendicular to equipotential surfaces.</li>
-                    <li>They are closer together in regions of strong electric fields and farther apart in regions of weak fields.</li>
-                    <li>Two equipotential surfaces can never intersect.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h3 style="color: #007bff;">1.2 Electrostatic Potential Energy (U)</h3>
-        <ul>
-            <li><strong>Definition:</strong> The electrostatic potential energy of a system of charges is the work done by an external agency in assembling the charges from infinity to their current configuration.</li>
-            <li><strong>Potential Energy of a System of Two Point Charges:</strong> For two charges $q_1$ and $q_2$ separated by a distance $r$, $U = \frac{1}{4\pi\epsilon_0} \frac{q_1 q_2}{r}$.</li>
-            <li><strong>Potential Energy of a Dipole in an External Electric Field:</strong> When an electric dipole with moment $\vec{p}$ is placed in a uniform external electric field $\vec{E}$, its potential energy is $U = -\vec{p} \cdot \vec{E} = -pE \cos\theta$.
-                <ul>
-                    <li>Minimum energy (stable equilibrium) when $\theta=0^\circ$ (dipole aligned with E).</li>
-                    <li>Maximum energy (unstable equilibrium) when $\theta=180^\circ$ (dipole anti-aligned with E).</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h3 style="color: #007bff;">1.3 Conductors and Dielectrics in Electric Fields</h3>
-        <ul>
-            <li><strong>Conductors:</strong> Materials with a large number of free charge carriers.
-                <ul>
-                    <li>Net electrostatic field inside a conductor is zero.</li>
-                    <li>Net charge in the interior of a conductor is zero; any excess charge resides on its surface.</li>
-                    <li>Electric potential is constant throughout the volume of the conductor and is equal to its value on the surface.</li>
-                    <li>Electric field at the surface of a charged conductor is always perpendicular to the surface.</li>
-                    <li>Electrostatic shielding: The phenomenon of protecting a region from external electric fields by enclosing it within a conductor (Faraday cage).</li>
-                </ul>
-            </li>
-            <li><strong>Dielectrics:</strong> Insulating materials that get polarized when placed in an external electric field but do not conduct electricity.
-                <ul>
-                    <li><strong>Polar Dielectrics:</strong> Molecules have a permanent electric dipole moment (e.g., H₂O, HCl).</li>
-                    <li><strong>Non-Polar Dielectrics:</strong> Molecules do not have a permanent electric dipole moment (e.g., O₂, N₂).</li>
-                    <li><strong>Polarization:</strong> The alignment or induction of dipole moments in a dielectric due to an external electric field. This creates an internal electric field that opposes the external field, reducing the net electric field inside the dielectric.</li>
-                    <li><strong>Dielectric Constant (K):</strong> It is the ratio of the external electric field ($E_0$) to the reduced electric field ($E$) inside the dielectric: $K = E_0/E$. For vacuum, $K=1$. For conductors, $K=\infty$.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h3 style="color: #007bff;">1.4 Capacitance (C)</h3>
-        <ul>
-            <li><strong>Definition:</strong> The capacitance of a conductor is its ability to store electric charge. It is defined as the ratio of the charge ($Q$) stored on the conductor to the potential difference ($V$) developed across it: $C = \frac{Q}{V}$. The SI unit is Farad (F), where 1 F = 1 C/V.</li>
-            <li><strong>Parallel Plate Capacitor:</strong> A common capacitor design consisting of two large parallel conducting plates separated by a small distance.
-                <ul>
-                    <li>Capacitance in vacuum: $C_0 = \frac{\epsilon_0 A}{d}$, where $A$ is the area of each plate and $d$ is the separation between them. $\epsilon_0$ is the permittivity of free space.</li>
-                    <li>Capacitance with Dielectric: If a dielectric medium of dielectric constant $K$ fills the space between the plates, the capacitance increases: $C = \frac{K\epsilon_0 A}{d} = K C_0$.</li>
-                </ul>
-            </li>
-            <li><strong>Combination of Capacitors:</strong>
-                <ul>
-                    <li><strong>Series Combination:</strong> When capacitors are connected end-to-end. The charge on each capacitor is the same, but the potential difference divides. The reciprocal of the equivalent capacitance is the sum of the reciprocals of individual capacitances: $\frac{1}{C_{eq}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots$</li>
-                    <li><strong>Parallel Combination:</strong> When capacitors are connected such that the potential difference across each is the same. The total charge divides. The equivalent capacitance is the sum of individual capacitances: $C_{eq} = C_1 + C_2 + \dots$</li>
-                </ul>
-            </li>
-            <li><strong>Energy Stored in a Capacitor:</strong> The energy stored is the work done in charging the capacitor. This energy is stored in the electric field between the plates.
-                $$U = \frac{1}{2}CV^2 = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}QV$$
-            </li>
-            <li><strong>Energy Density:</strong> The energy stored per unit volume in the electric field: $u = \frac{1}{2}\epsilon_0 E^2$.</li>
-            <li><strong>Loss of Energy on Sharing Charges:</strong> When two charged capacitors are connected, charge redistributes until a common potential is reached. In this process, there is always a loss of energy, usually dissipated as heat, unless an inductor is used to conserve energy in oscillations.</li>
-        </ul>
-    </div>
-
-    <div class="card" style="background-color: #f9f9f9; border-left: 5px solid #28a745; padding: 20px; margin-bottom: 20px; border-radius: 8px;">
-        <h2>2. Key Theorems / Core Formulas</h2>
-        <div class="formula-box" style="background-color: #e2f0d9; padding: 15px; border-radius: 5px; border: 1px dashed #28a745;">
-            <h3 style="color: #28a745;">Electrostatic Potential:</h3>
-            <ul>
-                <li>Potential difference between points A and B: $V_B - V_A = \frac{W_{AB}}{q_0}$</li>
-                <li>Potential due to a point charge Q at distance r:
-                    $$V = \frac{1}{4\pi\epsilon_0} \frac{Q}{r}$$
-                </li>
-                <li>Potential due to an electric dipole (p) at $(r, \theta)$:
-                    $$V = \frac{1}{4\pi\epsilon_0} \frac{p \cos\theta}{r^2}$$
-                </li>
-                <li>Relation between Electric Field and Potential (in 1D): $E = -\frac{dV}{dr}$</li>
-            </ul>
-
-            <h3 style="color: #28a745;">Electrostatic Potential Energy:</h3>
-            <ul>
-                <li>Potential energy of two point charges ($q_1, q_2$) separated by r:
-                    $$U = \frac{1}{4\pi\epsilon_0} \frac{q_1 q_2}{r}$$
-                </li>
-                <li>Potential energy of an electric dipole ($\vec{p}$) in a uniform electric field ($\vec{E}$):
-                    $$U = -\vec{p} \cdot \vec{E} = -pE \cos\theta$$
-                </li>
-            </ul>
-
-            <h3 style="color: #28a745;">Capacitance:</h3>
-            <ul>
-                <li>Definition of Capacitance:
-                    $$C = \frac{Q}{V}$$
-                </li>
-                <li>Capacitance of a parallel plate capacitor (vacuum):
-                    $$C_0 = \frac{\epsilon_0 A}{d}$$
-                </li>
-                <li>Capacitance of a parallel plate capacitor (with dielectric K):
-                    $$C = \frac{K\epsilon_0 A}{d} = K C_0$$
-                </li>
-                <li>Capacitors in Series:
-                    $$\frac{1}{C_{eq}} = \sum_{i} \frac{1}{C_i}$$
-                </li>
-                <li>Capacitors in Parallel:
-                    $$C_{eq} = \sum_{i} C_i$$
-                </li>
-            </ul>
-
-            <h3 style="color: #28a745;">Energy Stored in a Capacitor:</h3>
-            <ul>
-                <li>Energy stored:
-                    $$U = \frac{1}{2}CV^2 = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}QV$$
-                </li>
-                <li>Energy density of electric field:
-                    $$u = \frac{1}{2}\epsilon_0 E^2$$
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="card" style="background-color: #f9f9f9; border-left: 5px solid #dc3545; padding: 20px; margin-bottom: 20px; border-radius: 8px;">
-        <h2>3. Solved High-Yield CBSE Board PYQs</h2>
-
-        <div class="pyq-question" style="margin-bottom: 25px; padding: 15px; border: 1px solid #dc3545; border-radius: 5px;">
-            <h3 style="color: #dc3545;">Question 1 (CBSE 2018) - 3 Marks</h3>
-            <p>Define an equipotential surface. Draw equipotential surfaces for a uniform electric field in the z-direction. Why are equipotential surfaces perpendicular to the electric field lines?</p>
-            <h4>Solution:</h4>
-            <ol>
-                <li><strong>Definition:</strong> An equipotential surface is a surface in an electric field over which the electrostatic potential is constant at every point. <strong>(1 Mark)</strong></li>
-                <li><strong>Drawing:</strong> For a uniform electric field in the z-direction, the electric field lines are straight, parallel, and equally spaced, pointing along the z-axis. The equipotential surfaces would be planes perpendicular to the z-axis (i.e., xy-planes) and parallel to each other.
-                    <pre style="background-color: #ffeeee; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
-                        <code class="language-plaintext">
-                            ^ E-field (z-direction)
-                            |
-                            |------------------- Equipotential Surface 1 (V₁)
-                            |                         (Plane at z₁)
-                            |------------------- Equipotential Surface 2 (V₂)
-                            |                         (Plane at z₂)
-                            |------------------- Equipotential Surface 3 (V₃)
-                            |                         (Plane at z₃)
-                            O-----------------------------------------> X-axis
-                            |
-                            V Y-axis
-                        </code>
-                    </pre>
-                    <strong>(1 Mark for correct drawing/description)</strong>
-                </li>
-                <li><strong>Reason for Perpendicularity:</strong> The work done ($W$) in moving a test charge 'q' between any two points on an equipotential surface is zero, because the potential difference ($\Delta V$) between any two points on such a surface is zero ($W = q \Delta V = q \times 0 = 0$). Also, work done is given by $W = \int \vec{E} \cdot d\vec{l}$. Since $W=0$ for any arbitrary displacement $d\vec{l}$ along the surface, it implies that $\vec{E} \cdot d\vec{l} = 0$. This means the electric field vector $\vec{E}$ must be perpendicular to the displacement vector $d\vec{l}$. As $d\vec{l}$ can be in any direction on the equipotential surface, the electric field $\vec{E}$ must be perpendicular to the entire equipotential surface at every point. <strong>(1 Mark)</strong></li>
-            </ol>
-        </div>
-
-        <div class="pyq-question" style="margin-bottom: 25px; padding: 15px; border: 1px solid #dc3545; border-radius: 5px;">
-            <h3 style="color: #dc3545;">Question 2 (CBSE 2020) - 3 Marks</h3>
-            <p>Three capacitors of capacitances $C_1 = 3 \mu F$, $C_2 = 6 \mu F$ and $C_3 = 12 \mu F$ are connected in series. Find the equivalent capacitance of the combination. If the combination is connected to a 120V supply, what is the charge on each capacitor and the total energy stored in the combination?</p>
-            <h4>Solution:</h4>
-            <p>Given: $C_1 = 3 \mu F$, $C_2 = 6 \mu F$, $C_3 = 12 \mu F$. Voltage supply $V = 120 V$.</p>
-            <ol>
-                <li><strong>Equivalent Capacitance ($C_{eq}$):</strong>
-                    For capacitors connected in series, the reciprocal of the equivalent capacitance is the sum of the reciprocals of individual capacitances:
-                    $$\frac{1}{C_{eq}} = \frac{1}{C_1} + \frac{1}{C_2} + \frac{1}{C_3}$$
-                    $$\frac{1}{C_{eq}} = \frac{1}{3 \mu F} + \frac{1}{6 \mu F} + \frac{1}{12 \mu F}$$
-                    To sum these fractions, find a common denominator, which is $12 \mu F$:
-                    $$\frac{1}{C_{eq}} = \frac{4}{12 \mu F} + \frac{2}{12 \mu F} + \frac{1}{12 \mu F} = \frac{4 + 2 + 1}{12 \mu F} = \frac{7}{12 \mu F}$$
-                    $$C_{eq} = \frac{12}{7} \mu F \approx 1.71 \mu F$$
-                    <strong>(1 Mark for formula and calculation of $C_{eq}$)</strong>
-                </li>
-                <li><strong>Charge on each capacitor (Q):</strong>
-                    In a series combination, the charge stored on each capacitor is the same as the total charge stored by the equivalent capacitance.
-                    $$Q = C_{eq} V$$
-                    $$Q = \left(\frac{12}{7} \times 10^{-6} F\right) \times (120 V)$$
-                    $$Q = \frac{1440}{7} \times 10^{-6} C \approx 205.71 \times 10^{-6} C \approx 205.71 \mu C$$
-                    Therefore, the charge on each capacitor is $Q_1 = Q_2 = Q_3 = \frac{1440}{7} \mu C$.
-                    <strong>(1 Mark for concept and calculation of Q)</strong>
-                </li>
-                <li><strong>Total Energy Stored (U):</strong>
-                    The total energy stored in the combination can be calculated using the equivalent capacitance and the total voltage:
-                    $$U = \frac{1}{2} C_{eq} V^2$$
-                    $$U = \frac{1}{2} \times \left(\frac{12}{7} \times 10^{-6} F\right) \times (120 V)^2$$
-                    $$U = \frac{1}{2} \times \frac{12}{7} \times 10^{-6} \times 14400$$
-                    $$U = \frac{6 \times 14400}{7} \times 10^{-6} J = \frac{86400}{7} \times 10^{-6} J \approx 12342.86 \times 10^{-6} J \approx 12.34 mJ$$
-                    <strong>(1 Mark for formula and calculation of U)</strong>
-                </li>
-            </ol>
-        </div>
-
-        <div class="pyq-question" style="margin-bottom: 25px; padding: 15px; border: 1px solid #dc3545; border-radius: 5px;">
-            <h3 style="color: #dc3545;">Question 3 (CBSE 2019) - 3 Marks</h3>
-            <p>Two point charges $Q_1 = +5 \mu C$ and $Q_2 = -3 \mu C$ are located 16 cm apart. At what point(s) on the line joining the two charges is the electric potential zero? Take the potential at infinity to be zero.</p>
-            <h4>Solution:</h4>
-            <p>Let the two charges be placed along the x-axis. Let $Q_1$ be at the origin (x=0) and $Q_2$ at x = 16 cm = 0.16 m.
-            Let P be a point on the line joining the two charges where the electric potential is zero. The total potential at P is the algebraic sum of potentials due to $Q_1$ and $Q_2$: $V = V_1 + V_2 = 0$.
-            $$V = \frac{1}{4\pi\epsilon_0} \frac{Q_1}{r_1} + \frac{1}{4\pi\epsilon_0} \frac{Q_2}{r_2} = 0$$
-            Since $\frac{1}{4\pi\epsilon_0} \ne 0$, we must have $\frac{Q_1}{r_1} + \frac{Q_2}{r_2} = 0$, which implies $\frac{Q_1}{r_1} = -\frac{Q_2}{r_2}$.</p>
-            <ol>
-                <li><strong>Case 1: Point P is between the charges ($0 < x < 0.16$ m).</strong>
-                    Let P be at a distance x from $Q_1$. Then $r_1 = x$ and $r_2 = (0.16 - x)$.
-                    $$\frac{+5 \times 10^{-6} C}{x} = -\frac{(-3 \times 10^{-6} C)}{0.16 - x}$$
-                    $$\frac{5}{x} = \frac{3}{0.16 - x}$$
-                    Cross-multiplying:
-                    $$5(0.16 - x) = 3x$$
-                    $$0.8 - 5x = 3x$$
-                    $$0.8 = 8x \implies x = \frac{0.8}{8} = 0.1 \text{ m or } 10 \text{ cm}$$
-                    This point is located 10 cm from $Q_1$ (and 6 cm from $Q_2$) on the line segment joining them.
-                    <strong>(1.5 Marks for correct setup and solution of Case 1)</strong>
-                </li>
-                <li><strong>Case 2: Point P is outside the charges.</strong>
-                    Since $Q_1$ is positive and $Q_2$ is negative, for the potential to be zero outside, the point must be closer to the charge with smaller magnitude to effectively cancel the potentials. Here, $|Q_2| < |Q_1|$, so the point P must be to the right of $Q_2$ (at $x > 0.16$ m).
-                    Let P be at a distance x from $Q_1$. Then $r_1 = x$ and $r_2 = x - 0.16$.
-                    $$\frac{+5 \times 10^{-6} C}{x} = -\frac{(-3 \times 10^{-6} C)}{x - 0.16}$$
-                    $$\frac{5}{x} = \frac{3}{x - 0.16}$$
-                    Cross-multiplying:
-                    $$5(x - 0.16) = 3x$$
-                    $$5x - 0.8 = 3x$$
-                    $$2x = 0.8 \implies x = \frac{0.8}{2} = 0.4 \text{ m or } 40 \text{ cm}$$
-                    This point is located 40 cm from $Q_1$ (and 24 cm from $Q_2$) on the line extending beyond $Q_2$.
-                    <strong>(1.5 Marks for correct setup and solution of Case 2)</strong>
-                </li>
-            </ol>
-            <p>Thus, there are two points on the line joining the two charges where the electric potential is zero: one at 10 cm from $Q_1$ between the charges, and another at 40 cm from $Q_1$ on the line extending beyond $Q_2$ (i.e., 24 cm to the right of $Q_2$).</p>
-        </div>
-    </div>
-
-    <div class="card" style="background-color: #f9f9f9; border-left: 5px solid #ffc107; padding: 20px; margin-bottom: 20px; border-radius: 8px;">
-        <h2>4. Quick Revision Summary Box</h2>
-        <div class="summary-box" style="background-color: #fffde7; padding: 15px; border-radius: 5px; border: 1px dashed #ffc107;">
-            <ul style="list-style-type: disc; padding-left: 20px;">
-                <li><strong>Electrostatic Potential (V):</strong> Scalar quantity. Work per unit charge ($W/q_0$). $V = kQ/r$. Measured in Volts.</li>
-                <li><strong>Potential Difference:</strong> Work done per unit charge moving between two points ($V_B - V_A = W_{AB}/q_0$).</li>
-                <li><strong>Equipotential Surfaces:</strong> Surfaces of constant potential. Electric field lines are always perpendicular to them. No work done moving charge on these surfaces.</li>
-                <li><strong>Electrostatic Potential Energy (U):</strong> Energy of a system of charges due to their configuration. $U = kq_1q_2/r$ for two charges. $U = -\vec{p} \cdot \vec{E}$ for a dipole in E-field.</li>
-                <li><strong>Conductors:</strong> Electric field inside is zero. Potential is constant throughout. Excess charge resides on surface.</li>
-                <li><strong>Dielectrics:</strong> Insulators that polarize in an E-field. Reduces the net E-field. Characterized by dielectric constant $K = E_0/E$.</li>
-                <li><strong>Capacitance (C):</strong> Measure of a conductor's ability to store charge. $C = Q/V$. SI unit is Farad (F).</li>
-                <li><strong>Parallel Plate Capacitor:</strong> $C = \frac{\epsilon_0 A}{d}$ (vacuum). $C = \frac{K\epsilon_0 A}{d}$ (with dielectric).</li>
-                <li><strong>Capacitor Combinations:</strong>
-                    <ul style="list-style-type: circle; padding-left: 20px;">
-                        <li><strong>Series:</strong> $\frac{1}{C_{eq}} = \sum \frac{1}{C_i}$ (Charge is same across each capacitor).</li>
-                        <li><strong>Parallel:</strong> $C_{eq} = \sum C_i$ (Potential difference is same across each capacitor).</li>
-                    </ul>
-                </li>
-                <li><strong>Energy Stored in Capacitor:</strong> $U = \frac{1}{2}CV^2 = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}QV$. Energy density $u = \frac{1}{2}\epsilon_0 E^2$.</li>
-                <li><strong>Energy Loss:</strong> Occurs when two charged capacitors are connected due to charge redistribution.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="card" style="background-color: #f9f9f9; border-left: 5px solid #17a2b8; padding: 20px; margin-bottom: 20px; border-radius: 8px;">
-        <h2>5. Concept Mind-Map Points List</h2>
-        <ul style="list-style-type: square; padding-left: 20px;">
-            <li><strong>Electrostatic Potential (V)</strong>
-                <ul style="list-style-type: disc; padding-left: 20px;">
-                    <li>Definition (Work per unit charge from infinity)</li>
-                    <li>Scalar Quantity, Unit: Volt (V)</li>
-                    <li>Potential Difference ($V_B - V_A = W_{AB}/q_0$)</li>
-                    <li>Sources:
-                        <ul style="list-style-type: circle; padding-left: 20px;">
-                            <li>Point Charge ($V = kQ/r$)</li>
-                            <li>Electric Dipole ($V = kp \cos\theta / r^2$)</li>
-                        </ul>
-                    </li>
-                    <li>Equipotential Surfaces: Properties (no work, perpendicular to E-field, never intersect)</li>
-                    <li>Relation with Electric Field ($\vec{E} = -\nabla V$)</li>
-                </ul>
-            </li>
-            <li><strong>Electrostatic Potential Energy (U)</strong>
-                <ul style="list-style-type: disc; padding-left: 20px;">
-                    <li>Definition (Work done to assemble charges)</li>
-                    <li>System of Charges ($U = \sum k q_i q_j / r_{ij}$)</li>
-                    <li>Electric Dipole in External E-field ($U = -\vec{p} \cdot \vec{E}$)</li>
-                </ul>
-            </li>
-            <li><strong>Conductors & Dielectrics</strong>
-                <ul style="list-style-type: disc; padding-left: 20px;">
-                    <li><strong>Conductors:</strong>
-                        <ul style="list-style-type: circle; padding-left: 20px;">
-                            <li>$\vec{E} = 0$ inside</li>
-                            <li>Potential constant throughout volume</li>
-                            <li>Excess charge on surface</li>
-                            <li>Electrostatic shielding (Faraday cage)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Dielectrics:</strong>
-                        <ul style="list-style-type: circle; padding-left: 20px;">
-                            <li>Polar vs Non-Polar molecules</li>
-                            <li>Polarization (reduces net E-field)</li>
-                            <li>Dielectric Constant (K) ($K = E_0/E$)</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><strong>Capacitance (C)</strong>
-                <ul style="list-style-type: disc; padding-left: 20px;">
-                    <li>Definition ($C = Q/V$), Unit: Farad (F)</li>
-                    <li>Factors Affecting Capacitance</li>
-                    <li>Parallel Plate Capacitor:
-                        <ul style="list-style-type: circle; padding-left: 20px;">
-                            <li>Vacuum ($C_0 = \epsilon_0 A/d$)</li>
-                            <li>With Dielectric ($C = K C_0$)</li>
-                        </ul>
-                    </li>
-                    <li>Combinations of Capacitors:
-                        <ul style="list-style-type: circle; padding-left: 20px;">
-                            <li>Series ($1/C_{eq} = \sum 1/C_i$, Charge same)</li>
-                            <li>Parallel ($C_{eq} = \sum C_i$, Voltage same)</li>
-                        </ul>
-                    </li>
-                    <li>Energy Stored in a Capacitor ($U = \frac{1}{2}CV^2 = \frac{1}{2}Q^2/C = \frac{1}{2}QV$)</li>
-                    <li>Energy Density ($u = \frac{1}{2}\epsilon_0 E^2$)</li>
-                    <li>Loss of Energy on Sharing Charges</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-    <div class="author-attribution" style="text-align: right; margin-top: 30px; font-style: italic; color: #555;">
-        <p>Notes by: Jatin Sandilya</p>
-    </div>
+</footer>
+<!-- ============ END FOOTER ============ -->
+<!-- ============ COOKIE ============ -->
+<aside aria-label="Cookie notice" aria-live="polite" class="cookie" id="cookieBox" role="dialog">
+<div class="cookie-header">
+<h3>Before you go — a quick note</h3>
 </div>
-  </main>
+<p>We use your browser's local storage to remember your theme and to not ask you this every visit. That's all. See our <a href="../cookies.html" style="text-decoration:underline">cookies page</a> for details.</p>
+<div class="cookie-actions">
+<a class="cookie-policy" href="../cookies.html">Read more</a>
+<button class="cookie-accept" id="acceptCookies">Got it</button>
+</div>
+</aside>
+<script>
+    /* Safe storage */
+    const store = {
+      get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+      set(k, v) { try { localStorage.setItem(k, v); } catch {} }
+    };
 
-  <footer class="sn-footer">
-    <div class="container">
-      <div class="sn-footer-grid">
-        <div class="sn-brand">
-          <h3>Shorveer<em>Notes</em></h3>
-          <p>High-yield Class 12 Science & Mathematics preparation. Concept breakdowns, verified formulas, and board derivations created with precision by <strong>Jatin Sandilya</strong>.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Subjects</h4>
-          <ul>
-            <li><a href="../physics/index.html">Physics</a></li>
-            <li><a href="../chemistry/index.html">Chemistry</a></li>
-            <li><a href="../mathematics/index.html">Mathematics</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Platform</h4>
-          <ul>
-            <li><a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ YouTube</a></li>
-            <li><a href="mailto:support.shorveernotes@gmail.com">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="bottom-bar">
-        <p>&copy; 2026 Shorveer Notes · Built with pride in India 🇮🇳</p>
-      </div>
-    </div>
-  </footer>
+    /* Auto Year */
+    document.getElementById("year").textContent = new Date().getFullYear();
 
+    /* ==========================================================
+       THEMES CONFIG (All 9 Themes)
+       ========================================================== */
+    const THEMES = {
+      notebook: {
+        hero: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=900&q=80",
+        label: "the desk of a class 12 student"
+      },
+      chalkboard: {
+        hero: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80",
+        label: "equations, one line at a time"
+      },
+      blueprint: {
+        hero: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=80",
+        label: "where the theory becomes engineering"
+      },
+      sunset: {
+        hero: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80",
+        label: "late-night study, warm lamp"
+      },
+      emerald: {
+        hero: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=80",
+        label: "life sciences & the biology lab"
+      },
+      cyberpunk: {
+        hero: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+        label: "silicon, circuitry & quantum states"
+      },
+      minimal: {
+        hero: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80",
+        label: "pure focus, zero noise"
+      },
+      dracula: {
+        hero: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80",
+        label: "midnight coding & deep analysis"
+      },
+      solarized: {
+        hero: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=80",
+        label: "pages turn, ideas stick"
+      }
+    };
+
+    const html = document.documentElement;
+    const themeButton = document.getElementById("themeButton");
+    const themePop = document.getElementById("themePop");
+    const heroImage = document.getElementById("heroImage");
+    const heroCaption = document.querySelector(".polaroid-caption");
+    const themeOpts = document.querySelectorAll(".theme-opt");
+
+    function applyTheme(name) {
+      if (!THEMES[name]) name = "notebook";
+      html.setAttribute("data-theme", name);
+      store.set("shorveer-theme-name", name);
+
+      themeOpts.forEach(btn => {
+        btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name));
+      });
+
+      // Hero image swap with smooth fade
+      const t = THEMES[name];
+      if (heroImage && t) {
+        heroImage.classList.add("fading");
+        setTimeout(() => {
+          heroImage.src = t.hero;
+          if (heroCaption) heroCaption.textContent = t.label;
+          heroImage.classList.remove("fading");
+        }, 260);
+      }
+    }
+
+    // Restore saved theme
+    const savedThemeName = store.get("shorveer-theme-name") || "notebook";
+    applyTheme(savedThemeName);
+
+    themeButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = themePop.classList.toggle("open");
+      themeButton.setAttribute("aria-expanded", String(open));
+    });
+
+    themeOpts.forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyTheme(btn.dataset.themeValue);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!themePop.contains(e.target) && !themeButton.contains(e.target)) {
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    /* Motivation Rotator */
+    const MOTIVATIONS = [
+      "One chapter at a time.",
+      "Understanding beats memorising.",
+      "Small progress every day adds up.",
+      "You don't have to be perfect today.",
+      "Read it once. Write it once. Learn it once.",
+      "The best time to revise is before you forget.",
+      "Study the weak chapter first.",
+      "Nothing is too hard once it's broken down.",
+      "Your pace is the right pace.",
+      "Show up. That's half of it.",
+      "Confusion is the feeling of learning.",
+      "You're not behind. You're on your own timeline."
+    ];
+
+    const motivationText = document.getElementById("motivationText");
+    let motivationIndex = 0;
+
+    function nextMotivation() {
+      if (!motivationText) return;
+      motivationText.classList.remove("show");
+      setTimeout(() => {
+        motivationIndex = (motivationIndex + 1) % MOTIVATIONS.length;
+        motivationText.textContent = MOTIVATIONS[motivationIndex];
+        motivationText.classList.add("show");
+      }, 500);
+    }
+    setInterval(nextMotivation, 6500);
+
+    /* Flip Cards */
+    const flipCards = document.querySelectorAll(".flip-card");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    flipCards.forEach(card => {
+      if (isTouch) {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("a")) return;
+          card.classList.toggle("flipped");
+        });
+      }
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          if (e.target.closest("a")) return;
+          e.preventDefault();
+          card.classList.toggle("flipped");
+        }
+      });
+    });
+
+    /* Hero Parallax */
+    const heroArt = document.getElementById("heroArt");
+    const heroStage = document.getElementById("heroStage");
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (heroArt && heroStage && finePointer && !reduceMotion) {
+      heroArt.addEventListener("mousemove", (e) => {
+        const rect = heroArt.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        heroStage.style.transform = `perspective(1200px) rotateX(${-y * 16}deg) rotateY(${x * 16}deg) translateZ(10px)`;
+      });
+      heroArt.addEventListener("mouseleave", () => {
+        heroStage.style.transform = "perspective(1200px) rotateX(0) rotateY(0) translateZ(0)";
+      });
+    }
+
+    /* 3D Tilt */
+    const tiltEls = document.querySelectorAll("[data-tilt]");
+    if (finePointer && !reduceMotion) {
+      tiltEls.forEach(el => {
+        el.addEventListener("mousemove", (e) => {
+          const r = el.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width - 0.5;
+          const py = (e.clientY - r.top) / r.height - 0.5;
+          el.style.transform = `perspective(900px) rotateX(${-py * 8}deg) rotateY(${px * 8}deg) translateY(-4px)`;
+        });
+        el.addEventListener("mouseleave", () => {
+          el.style.transform = "";
+        });
+      });
+    }
+
+    /* Search */
+    const searchData = [
+      { title: "Physics", description: "Class 12 Physics chapters and resources", url: "physics/index.html" },
+      { title: "Chemistry", description: "Class 12 Chemistry chapters and resources", url: "chemistry/index.html" },
+      { title: "Mathematics", description: "Class 12 Maths chapters and resources", url: "mathematics/index.html" },
+      { title: "English", description: "Class 12 English notes and summaries", url: "english/index.html" },
+      { title: "Exam information", description: "Dates, syllabus and marking scheme", url: "exam-info.html" },
+      { title: "About our notes", description: "How each chapter is made", url: "about-notes.html" },
+      { title: "About Shorveer", description: "The story behind the site", url: "about.html" },
+      { title: "Privacy policy", description: "How we handle your data", url: "privacy.html" },
+      { title: "Cookies policy", description: "What we store in your browser", url: "cookies.html" }
+    ];
+
+    const searchButton = document.getElementById("searchButton");
+    const searchLayer = document.getElementById("searchLayer");
+    const searchClose = document.getElementById("searchClose");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    function openSearch() {
+      searchLayer.classList.add("active");
+      searchLayer.setAttribute("aria-hidden", "false");
+      setTimeout(() => searchInput.focus(), 60);
+      renderResults("");
+    }
+    function closeSearch() {
+      searchLayer.classList.remove("active");
+      searchLayer.setAttribute("aria-hidden", "true");
+      searchInput.value = "";
+    }
+    function renderResults(query) {
+      const q = query.trim().toLowerCase();
+      const matches = searchData.filter(item =>
+        !q || item.title.toLowerCase().includes(q) || item.description.toLowerCase().includes(q)
+      );
+      if (!matches.length) {
+        searchResults.innerHTML = '<div class="empty-result">Nothing found. Try "physics" or "exam".</div>';
+        return;
+      }
+      searchResults.innerHTML = matches.map(item => `
+        <a class="result" href="${item.url}">
+          <div>
+            <strong>${item.title}</strong>
+            <small>${item.description}</small>
+          </div>
+          <span class="go" aria-hidden="true">→</span>
+        </a>
+      `).join("");
+    }
+
+    if (searchButton) searchButton.addEventListener("click", openSearch);
+    if (searchClose) searchClose.addEventListener("click", closeSearch);
+    if (searchLayer) searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
+    if (searchInput) searchInput.addEventListener("input", e => renderResults(e.target.value));
+
+    /* Mobile Menu */
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    function setMenu(open) {
+      mobileMenu.classList.toggle("open", open);
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+      mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+    }
+
+    /* Keyboard Shortcuts */
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        closeSearch();
+        setMenu(false);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault(); openSearch();
+      }
+    });
+
+    /* Scroll Reveal */
+    const reveals = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); }
+        });
+      }, { threshold: .1 });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add("visible"));
+    }
+
+    /* Cookie Consent */
+    const cookieBox = document.getElementById("cookieBox");
+    const acceptCookies = document.getElementById("acceptCookies");
+    if (cookieBox && !store.get("shorveer-cookie-consent")) {
+      setTimeout(() => cookieBox.classList.add("show"), 1400);
+    }
+    if (acceptCookies) {
+      acceptCookies.addEventListener("click", () => {
+        store.set("shorveer-cookie-consent", "accepted");
+        cookieBox.classList.remove("show");
+      });
+    }
+  </script>
 </body>
 </html>
