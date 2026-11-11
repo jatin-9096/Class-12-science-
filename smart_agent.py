@@ -3,18 +3,19 @@ import re
 import glob
 import json
 import time
-from bs4 import BeautifulSoup
+import html as htmllib
+from bs4 import BeautifulSoup, NavigableString
 from groq import Groq
 
 # ---------------- Config ----------------
 MODELS = ["openai/gpt-oss-120b", "openai/gpt-oss-20b"]
 MAX_OUT_TOKENS = 3000
 TOKENS_PER_MIN = 6000          # Groq Console ke TPM se neeche rakho
-TEMPLATE = "index.html"        # index.html hi design ka source hai
+TEMPLATE = "index.html"
 STATE_FILE = "builder_state.json"
-MAX_FAILURES = 3
+MAX_ATTEMPTS = 3               # ek page par itni baar koshish, phir skip
 MIN_WORDS = {False: 1500, True: 1200}
-REQUIRED_IDS = {False: ["theory", "derivations"], True: ["pyqs", "case-studies", "mindmap"]}
+REQUIRED_IDS = {False: ["theory", "derivations"], True: ["pyqs", "case-studies", "mcq"]}
 IGNORE_KEYWORDS = ["privacy", "terms", "cookie", "disclaimer", "about", "contact", "framework"]
 IGNORE_FILES = {"index.html", "about.html", "about-notes.html", "exam-info.html",
                 "privacy.html", "cookies.html"}
@@ -22,6 +23,10 @@ IGNORE_FILES = {"index.html", "about.html", "about-notes.html", "exam-info.html"
 BRAND = "Shorveer Notes"
 AUTHOR = "Jatin Sandilya"
 OLD_SURNAME = "Sharma"
+SURNAME = "Sandilya"
+
+LABEL_1 = "Part 1: Theory and Complete Derivations"
+LABEL_2 = "Part 2: Practice Questions and Case Studies"
 
 FORBIDDEN = {
     "mathematics": ["arrhenius", "activation energy", "reaction rate", "haloalkane",
@@ -39,9 +44,88 @@ SYSTEM = (
     "All math must be LaTeX: inline $...$ and display $$...$$. "
     "Never use \\( \\) or \\[ \\] delimiters. Never escape dollar signs. "
     "Never write square-bracket placeholders or instructions in the output. "
-    "PYQ means real past-year papers, which you cannot verify. So for any question you write, "
-    "label it as 'Practice Question' and never call it a PYQ."
+    "PYQ means real past-year papers, which you cannot verify. So never call any question a PYQ "
+    "or Board question. Label every question you write as a Practice Question."
 )
+
+MATHJAX_CFG = r"""window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};"""
+
+MM_CSS = """<style>
+.mindmap{display:flex;flex-direction:column;gap:22px;max-width:880px;margin:0 auto}
+.mm-root{font-family:var(--font-display);font-size:28px;padding:18px 24px;border-radius:var(--r-lg);background:var(--ink);color:var(--paper);text-align:center}
+.mm-branch{border-left:3px solid var(--gold-dark);padding-left:18px}
+.mm-node{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--ink);margin-bottom:8px}
+.mm-children{list-style:none;display:grid;gap:6px;padding-left:10px}
+.mm-children li{font-size:15px;color:var(--muted)}
+.mm-children li::before{content:"› ";color:var(--rust)}
+@media (max-width:720px){.mm-root{font-size:22px}.mm-node{font-size:18px}}
+</style>"""
+
+MCQ_CSS = """<style>
+.mcq-wrap{max-width:820px;margin:0 auto}
+.mcq-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.mcq-timer{font-family:var(--font-display);font-size:28px;font-weight:600;color:var(--rust)}
+.mcq-q{padding:20px 22px;margin-bottom:14px;background:var(--card);border:1px solid var(--line);border-radius:8px}
+.mcq-opt{display:flex;gap:10px;padding:8px 10px;border-radius:6px;cursor:pointer}
+.mcq-opt:hover{background:var(--paper-2)}
+.mcq-exp{padding:10px 12px;margin:8px 0;border-left:3px solid var(--line);font-size:14.5px}
+.mcq-exp.ok{border-color:var(--green)}
+.mcq-exp.no{border-color:var(--rust)}
+#mcq-submit{margin-top:10px}
+</style>"""
+
+MCQ_JS = """
+(function(){
+  var data = JSON.parse(document.getElementById('mcq-data').textContent);
+  var body = document.getElementById('mcq-body'), res = document.getElementById('mcq-result');
+  var timer = document.getElementById('mcq-timer'), start = document.getElementById('mcq-start');
+  var left = 600, iv = null, done = false;
+  function fmt(s){ return String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0'); }
+  function typeset(el){ if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise([el]); } }
+  function finish(){
+    if (done) return;
+    done = true; clearInterval(iv);
+    var score = 0, out = '';
+    data.forEach(function(it, i){
+      var sel = document.querySelector('input[name="q' + i + '"]:checked');
+      var ok = !!sel && Number(sel.value) === it.answer;
+      if (ok) score++;
+      out += '<div class="mcq-exp ' + (ok ? 'ok' : 'no') + '"><b>Q' + (i+1) + '.</b> ' +
+             (ok ? 'Correct.' : 'Correct answer: ' + it.options[it.answer] + '.') + ' ' + it.explain + '</div>';
+    });
+    res.innerHTML = '<h3>Score: ' + score + ' / ' + data.length + '</h3>' + out;
+    typeset(res);
+    res.scrollIntoView({behavior: 'smooth'});
+  }
+  function build(){
+    body.innerHTML = ''; done = false;
+    data.forEach(function(it, i){
+      var d = document.createElement('div'); d.className = 'mcq-q';
+      d.innerHTML = '<p><b>Q' + (i+1) + '.</b> ' + it.q + '</p>';
+      it.options.forEach(function(o, j){
+        var l = document.createElement('label'); l.className = 'mcq-opt';
+        l.innerHTML = '<input type="radio" name="q' + i + '" value="' + j + '"><span>' + o + '</span>';
+        d.appendChild(l);
+      });
+      body.appendChild(d);
+    });
+    var sub = document.createElement('button');
+    sub.id = 'mcq-submit'; sub.className = 'btn btn-dark'; sub.type = 'button';
+    sub.textContent = 'Submit answers';
+    sub.addEventListener('click', finish);
+    body.appendChild(sub);
+    typeset(body);
+  }
+  start.addEventListener('click', function(){
+    build(); res.innerHTML = ''; left = 600; timer.textContent = fmt(left);
+    clearInterval(iv);
+    iv = setInterval(function(){
+      left--; timer.textContent = fmt(left);
+      if (left <= 0) { timer.textContent = '00:00'; finish(); }
+    }, 1000);
+  });
+})();
+"""
 
 api_key = os.environ.get("GROQ_API_KEY")
 if not api_key:
@@ -53,7 +137,7 @@ class DailyQuotaExhausted(Exception):
     pass
 
 
-# ---------------- State & helpers ----------------
+# ---------------- Helpers ----------------
 def set_output(name, value):
     if "GITHUB_OUTPUT" in os.environ:
         with open(os.environ["GITHUB_OUTPUT"], "a") as f:
@@ -73,9 +157,14 @@ def save_state(state):
         json.dump(state, f, indent=2, ensure_ascii=False)
 
 
+def read_soup(path):
+    with open(path, encoding="utf-8") as f:
+        return BeautifulSoup(f.read(), "html.parser")
+
+
 def clean_code(text):
     text = text.strip()
-    text = re.sub(r"^```(?:html)?\s*", "", text)
+    text = re.sub(r"^```[a-zA-Z]*\s*", "", text)
     text = re.sub(r"\s*```$", "", text)
     return text.strip()
 
@@ -94,7 +183,7 @@ def wait_for_budget(tokens):
         time.sleep(5)
 
 
-# ---------------- Groq call ----------------
+# ---------------- Groq ----------------
 def call_groq(prompt):
     errors = []
     for model in MODELS:
@@ -157,11 +246,48 @@ Include step-by-step CBSE-standard derivations with LaTeX math, and a formula li
         f"""For CBSE Class 12 {subject}, chapter "{chapter}", write a section with id="pyqs".
 Give exactly 8 PRACTICE questions (2 five-mark, 3 three-mark, 3 two-mark), each with a marking scheme.
 Do not call them PYQs or Board questions. Use <section class="section container reveal" id="pyqs"> with section-head and resource-grid cards. Output only that block.""",
-        f"""Continue chapter "{chapter}" of CBSE Class 12 {subject}. Output exactly two blocks:
-1. <section class="section container reveal" id="case-studies"> with 2 case-study articles (passage, sub-questions, full solutions) in real-life cards.
-2. <section class="section container reveal" id="mindmap"> with a visual mind-map built as nested HTML lists or a flow of boxes (one idea after another, easy to scroll), plus examiner traps and scoring strategy.
-Real content only. Aim for at least 1200 words.""",
+        f"""Continue chapter "{chapter}" of CBSE Class 12 {subject}. Output exactly one block:
+<section class="section container reveal" id="case-studies"> with 2 case-study articles (passage, sub-questions, full solutions) in real-life cards.
+Real content only. Aim for at least 1000 words.""",
     ]
+
+
+def generate_mcq(subject, chapter):
+    prompt = f"""Create 10 practice multiple-choice questions for CBSE Class 12 {subject}, chapter "{chapter}".
+These are practice questions, not PYQs. Return ONLY a JSON array, no markdown, no extra text.
+Each item must look exactly like this:
+{{"q": "question text with LaTeX if needed", "options": ["option A", "option B", "option C", "option D"], "answer": 0, "explain": "one or two line reason"}}
+"answer" is the index 0 to 3 of the correct option. Mix easy and hard questions."""
+    raw = call_groq(prompt)
+    try:
+        items = json.loads(raw)
+    except Exception:
+        raise RuntimeError("MCQ JSON parse failed")
+    good = [i for i in items
+            if isinstance(i, dict) and i.get("q") and isinstance(i.get("options"), list)
+            and len(i["options"]) == 4 and isinstance(i.get("answer"), int)
+            and 0 <= i["answer"] <= 3]
+    if len(good) < 5:
+        raise RuntimeError(f"only {len(good)} valid MCQs")
+    return good
+
+
+def render_mcq(items):
+    data = json.dumps(items, ensure_ascii=False).replace("</", "<\\/")
+    return f"""{MCQ_CSS}
+<section class="section container reveal" id="mcq">
+  <div class="section-head"><span class="section-eyebrow">Practice Section</span><h2>3. Timed MCQ Practice</h2></div>
+  <div class="mcq-wrap">
+    <div class="mcq-top">
+      <span id="mcq-timer" class="mcq-timer">10:00</span>
+      <button id="mcq-start" class="btn btn-dark" type="button">Start test</button>
+    </div>
+    <div id="mcq-body"></div>
+    <div id="mcq-result"></div>
+  </div>
+  <script type="application/json" id="mcq-data">{data}</script>
+  <script>{MCQ_JS}</script>
+</section>"""
 
 
 def check_body(html_fragment, is_part2):
@@ -183,6 +309,8 @@ def generate_body(subject, chapter, is_part2):
     feedback, problems = "", []
     for _ in range(2):
         parts = [call_groq(p + feedback) for p in prompts_for(subject, chapter, is_part2)]
+        if is_part2:
+            parts.append(render_mcq(generate_mcq(subject, chapter)))
         body = "\n\n".join(parts)
         problems = check_body(body, is_part2)
         if not problems:
@@ -191,49 +319,76 @@ def generate_body(subject, chapter, is_part2):
     raise RuntimeError(f"Validation failed: {problems}")
 
 
+def generate_mindmap_body(subject, chapter):
+    prompt = f"""Create a complete mind map for CBSE Class 12 {subject}, chapter "{chapter}".
+Output ONLY this HTML structure, no markdown fences:
+<div class="mindmap">
+  <div class="mm-root">{chapter}</div>
+  <div class="mm-branch">
+    <div class="mm-node">Concept</div>
+    <ul class="mm-children"><li>Sub point</li><li>Sub point</li></ul>
+  </div>
+</div>
+Use 6 to 8 main branches, each with 3 to 5 sub points, ordered so a student scrolls from one idea to the next.
+Use LaTeX $...$ for formulas. Real content only."""
+    body = call_groq(prompt)
+    if 'class="mindmap"' not in body:
+        raise RuntimeError("mindmap HTML format galat hai")
+    return body
+
+
+# ---------------- Paths ----------------
+def base_of(path):
+    root = os.path.splitext(path)[0]
+    return re.sub(r"[-_]?(part[12]|pyqs?)$", "", root, flags=re.I)
+
+
+def mm_path_for(path):
+    return base_of(path) + "-mindmap.html"
+
+
+def mm_link_for(path):
+    p = mm_path_for(path)
+    return os.path.basename(p) if os.path.exists(p) else None
+
+
 # ---------------- Page building ----------------
-def hero(subject, chapter, is_part2):
-    label = ("Part 2: Practice Questions & Case Studies" if is_part2
-             else "Part 1: Theory & Complete Derivations")
+def hero_html(subject, chapter, label, mm_link=None):
+    btn = f'<a class="btn btn-light" href="{mm_link}">View mind map</a>' if mm_link else ""
     return (f'<section class="hero container"><div class="hero-copy">'
             f'<div class="kicker"><span class="dot"></span>'
-            f'<span>Class 12 · {subject}</span></div>'
-            f'<h1>{chapter}</h1>'
-            f'<p class="hero-description">{label}</p></div></section>')
+            f'<span>Class 12 · {htmllib.escape(subject)}</span></div>'
+            f'<h1>{htmllib.escape(chapter)}</h1>'
+            f'<p class="hero-description">{htmllib.escape(label)}</p>'
+            f'<div class="hero-actions">{btn}</div></div></section>')
 
 
-def fix_brand_and_author(soup):
-    """Purana surname hatao aur brand/author ek jaisa karo."""
-    for node in soup.find_all(string=True):
+def fix_names(soup):
+    for node in list(soup.find_all(string=True)):
         text = str(node)
         if OLD_SURNAME in text:
-            node.replace_with(text.replace("Jatin Sharma", AUTHOR).replace(OLD_SURNAME, AUTHOR.split()[-1]))
-    for tag in soup.find_all(class_=re.compile(r"sn-founder-name")):
-        for s in tag.find_all("strong"):
-            s.string = AUTHOR
+            node.replace_with(NavigableString(
+                text.replace("Jatin Sharma", AUTHOR).replace(OLD_SURNAME, SURNAME)))
 
 
 def ensure_mathjax(soup):
-    """Head mein MathJax na ho to add karo."""
+    if soup.find("script", src=re.compile(r"tex-chtml")):
+        return
     head = soup.find("head")
-    if head is None or soup.find("script", src=re.compile(r"tex-chtml")):
+    if head is None:
         return
     cfg = soup.new_tag("script")
-    cfg.string = (
-        "window.MathJax = {tex:{inlineMath:[['$','$'],['\\\\(','\\\\)']],"
-        "displayMath:[['$$','$$'],['\\\\[','\\\\]']],processEscapes:true},"
-        "options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};"
-    )
-    lib = soup.new_tag("script", id="MathJax-script", src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js")
-    lib["async"] = True
+    cfg.string = MATHJAX_CFG
+    lib = soup.new_tag("script", src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js")
+    lib["async"] = ""
     head.append(cfg)
     head.append(lib)
 
 
-def build_page(path, subject, chapter, is_part2, body, add_hero=True):
+def build_page(path, subject, chapter, label, body, mm_link=None, add_hero=True):
     depth = len(os.path.normpath(path).split(os.sep)) - 1
     prefix = "../" * depth
-    shell = BeautifulSoup(open(TEMPLATE, encoding="utf-8").read(), "html.parser")
+    shell = read_soup(TEMPLATE)
 
     for tag in shell.find_all(["a", "link", "script", "img", "source"]):
         for attr in ("href", "src"):
@@ -241,17 +396,26 @@ def build_page(path, subject, chapter, is_part2, body, add_hero=True):
             if v and not v.startswith(("http", "#", "mailto:", "tel:", "data:", "//", "/")):
                 tag[attr] = prefix + v
 
+    # Header ka mind map icon: chapter ke mind map se link, warna hata do
+    for a in shell.find_all("a", href=True):
+        if a["href"].endswith("mindmap.html"):
+            if mm_link:
+                a["href"] = mm_link
+            else:
+                a.decompose()
+
     main = shell.find("main")
     if main is None:
         raise RuntimeError(f"{TEMPLATE} mein <main> nahi mila")
     main.clear()
     if add_hero:
-        main.append(BeautifulSoup(hero(subject, chapter, is_part2), "html.parser"))
-    main.append(BeautifulSoup(body, "html.parser"))
+        main.append(read_fragment(hero_html(subject, chapter, label, mm_link)))
+    main.append(read_fragment(body))
+
     if shell.title:
         shell.title.string = f"{chapter} · Class 12 {subject} | {BRAND}"
 
-    fix_brand_and_author(shell)
+    fix_names(shell)
     ensure_mathjax(shell)
 
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
@@ -259,6 +423,41 @@ def build_page(path, subject, chapter, is_part2, body, add_hero=True):
     with open(tmp, "w", encoding="utf-8") as f:
         f.write(str(shell))
     os.replace(tmp, path)
+
+
+def read_fragment(fragment):
+    return BeautifulSoup(fragment, "html.parser")
+
+
+def is_hero(node):
+    return getattr(node, "name", None) == "section" and "hero" in (node.get("class") or [])
+
+
+def make_mindmap(subject, chapter, theory_path):
+    body = generate_mindmap_body(subject, chapter)
+    mm_path = mm_path_for(theory_path)
+    build_page(mm_path, subject, chapter, "Mind map: quick revision overview",
+               f'<section class="section container reveal">{MM_CSS}{body}</section>')
+    return mm_path
+
+
+def build_theory(path, subject, chapter):
+    try:
+        make_mindmap(subject, chapter, path)
+    except DailyQuotaExhausted:
+        raise
+    except Exception as e:
+        print(f"Mind map skip: {e}")
+    body = generate_body(subject, chapter, False)
+    build_page(path, subject, chapter, LABEL_1, body, mm_link_for(path))
+
+
+def shell_fix(t):
+    soup = read_soup(t["path"])
+    main = soup.find("main")
+    keep = "".join(str(c) for c in main.children if not is_hero(c))
+    label = LABEL_2 if t["is_part2"] else LABEL_1
+    build_page(t["path"], t["subject"], t["chapter"], label, keep, mm_link_for(t["path"]))
 
 
 # ---------------- Discovery & audit ----------------
@@ -288,7 +487,7 @@ def discover_pages():
     for source in glob.glob("**/*.html", recursive=True):
         base_dir = os.path.dirname(source)
         try:
-            soup = BeautifulSoup(open(source, encoding="utf-8").read(), "html.parser")
+            soup = read_soup(source)
         except Exception:
             continue
         for a in soup.find_all("a", href=True):
@@ -315,101 +514,87 @@ def is_mismatched(path, subject):
     words = FORBIDDEN.get(subject.lower())
     if not words:
         return False
-    text = BeautifulSoup(open(path, encoding="utf-8").read(), "html.parser").get_text(" ").lower()
+    text = read_soup(path).get_text(" ").lower()
     hits = [w for w in words if re.search(r"\b" + re.escape(w) + r"\b", text)]
     return len(hits) >= 2
 
 
-def audit_page(soup, is_part2):
-    """Purane pages mein MathJax, delimiters, naam aur surname ki galti pakdo."""
+def audit_page(soup):
+    """Purani galtiyan: MathJax nahi, galat delimiters, purana surname."""
     problems = []
-    html_text = str(soup)
-    if "tex-chtml" not in html_text:
-        problems.append("MathJax script missing")
-    if re.search(r"\\\(|\\\[", html_text):
-        problems.append("bad math delimiters \\( or \\[")
-    if OLD_SURNAME in html_text:
-        problems.append("old surname present")
-    if BRAND not in html_text and "ShorveerNotes" in html_text:
-        problems.append("brand name mismatch")
+    if not soup.find("script", src=re.compile(r"tex-chtml")):
+        problems.append("mathjax missing")
+    main = soup.find("main")
+    if main is not None and re.search(r"\\\(|\\\[", str(main)):
+        problems.append("bad math delimiters")
+    if OLD_SURNAME in str(soup):
+        problems.append("old surname")
     return problems
 
 
 def find_target(state):
     for page in discover_pages():
         path = page["path"]
-        rec = state.get(path, {})
-        if rec.get("status") == "done" or rec.get("failures", 0) >= MAX_FAILURES:
+        rec = state.setdefault(path, {})
+        if rec.get("attempts", 0) >= MAX_ATTEMPTS:
             continue
         if not os.path.exists(path):
             return {**page, "action": "build"}
-        soup = BeautifulSoup(open(path, encoding="utf-8").read(), "html.parser")
+        soup = read_soup(path)
         main = soup.find("main")
         if main is None or check_body(str(main), page["is_part2"]) or is_mismatched(path, page["subject"]):
             return {**page, "action": "build"}
-        if audit_page(soup, page["is_part2"]):
+        if audit_page(soup):
             return {**page, "action": "shell_fix"}
-        if soup.find(class_="site-header") is None:
-            return {**page, "action": "shell_fix"}
-        state[path] = {"status": "done"}
+        if not page["is_part2"] and not os.path.exists(mm_path_for(path)):
+            return {**page, "action": "mindmap"}
+        rec["attempts"] = 0
     return None
+
+
+def run_target(t):
+    s, c, path = t["subject"], t["chapter"], t["path"]
+    if t["action"] == "build":
+        if t["is_part2"]:
+            body = generate_body(s, c, True)
+            build_page(path, s, c, LABEL_2, body, mm_link_for(path))
+        else:
+            build_theory(path, s, c)
+    elif t["action"] == "mindmap":
+        make_mindmap(s, c, path)
+        shell_fix(t)
+    else:
+        shell_fix(t)
 
 
 def main():
     state = load_state()
-    target = find_target(state)
-    if target is None:
-        print("Saare pages complete aur design-match hain.")
+    t = find_target(state)
+    if t is None:
+        print("Saare pages complete, design aur MathJax theek hain.")
         set_output("has_more", "false")
         save_state(state)
         return
 
-    path = target["path"]
-    print(f"[{target['action']}] {path} | {target['subject']}: {target['chapter']}")
+    path = t["path"]
+    rec = state.setdefault(path, {})
+    rec["attempts"] = rec.get("attempts", 0) + 1
+    print(f"[{t['action']}] {path} | {t['subject']}: {t['chapter']} (attempt {rec['attempts']})")
+
     try:
-        if target["action"] == "shell_fix":
-            old = BeautifulSoup(open(path, encoding="utf-8").read(), "html.parser")
-            body = "".join(str(c) for c in old.find("main").children)
-            build_page(path, target["subject"], target["chapter"], target["is_part2"], body, add_hero=False)
-        else:
-            body = generate_body(target["subject"], target["chapter"], target["is_part2"])
-            build_page(path, target["subject"], target["chapter"], target["is_part2"], body)
-        state[path] = {"status": "done"}
+        run_target(t)
         print("OK")
+        set_output("has_more", "true")
     except DailyQuotaExhausted as e:
         print(f"Groq daily quota khatam. Agle scheduled run par resume hoga. ({e})")
         set_output("has_more", "false")
-        save_state(state)
-        return
     except Exception as e:
-        rec = state.setdefault(path, {})
-        rec["failures"] = rec.get("failures", 0) + 1
         rec["last_error"] = str(e)[:300]
-        print(f"FAILED ({rec['failures']}/{MAX_FAILURES}): {e}")
+        print(f"FAILED ({rec['attempts']}/{MAX_ATTEMPTS}): {e}")
+        set_output("has_more", "true")
+    finally:
+        save_state(state)
 
-    save_state(state)
-    set_output("has_more", "true")
-def generate_mindmap(subject, chapter):
-    prompt = f"""Create a complete mind map for CBSE Class 12 {subject}, chapter "{chapter}".
-Output ONLY this HTML structure, no markdown fences:
-<div class="mindmap">
-  <div class="mm-root">{chapter}</div>
-  <div class="mm-branch">
-    <div class="mm-node">Concept</div>
-    <ul class="mm-children"><li>Sub point</li></ul>
-  </div>
-</div>
-Use 6 to 8 main branches, each with 3 to 5 sub points. Use LaTeX $...$ for formulas. Real content only."""
-    return call_groq(prompt)
-
-
-def build_mindmap_page(theory_path, subject, chapter):
-    mm_path = theory_path.replace(".html", "-mindmap.html")
-    body = generate_mindmap(subject, chapter)
-    if "<div class=\"mindmap\"" not in body:
-        raise RuntimeError("mindmap HTML format galat hai")
-    build_page(mm_path, subject, chapter, False, f'<section class="section container reveal">{body}</section>')
-    return mm_path
 
 if __name__ == "__main__":
     main()
