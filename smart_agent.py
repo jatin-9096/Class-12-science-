@@ -389,7 +389,27 @@ def main():
 
     save_state(state)
     set_output("has_more", "true")
+def generate_mindmap(subject, chapter):
+    prompt = f"""Create a complete mind map for CBSE Class 12 {subject}, chapter "{chapter}".
+Output ONLY this HTML structure, no markdown fences:
+<div class="mindmap">
+  <div class="mm-root">{chapter}</div>
+  <div class="mm-branch">
+    <div class="mm-node">Concept</div>
+    <ul class="mm-children"><li>Sub point</li></ul>
+  </div>
+</div>
+Use 6 to 8 main branches, each with 3 to 5 sub points. Use LaTeX $...$ for formulas. Real content only."""
+    return call_groq(prompt)
 
+
+def build_mindmap_page(theory_path, subject, chapter):
+    mm_path = theory_path.replace(".html", "-mindmap.html")
+    body = generate_mindmap(subject, chapter)
+    if "<div class=\"mindmap\"" not in body:
+        raise RuntimeError("mindmap HTML format galat hai")
+    build_page(mm_path, subject, chapter, False, f'<section class="section container reveal">{body}</section>')
+    return mm_path
 
 if __name__ == "__main__":
     main()
