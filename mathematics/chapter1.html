@@ -256,500 +256,715 @@
     <article class="rl-card" style="--rl-color: #bf5a3c">
       <div class="rl-body">
         <div class="rl-title">Fundamental Theoretical Principles</div>
-        <p class="rl-text">
-          <!-- SECTION 1: HISTORICAL, LOGICAL, AND AXIOMATIC UNDERPINNINGS -->
-          <strong>1.1 Axiomatic Foundations of Set-Theoretic Mapping</strong><br>
-          Modern mathematics rests upon the language of set theory, formalized through the Zermelo-Fraenkel axiomatic system with the Axiom of Choice (ZFC). Within this architecture, relations and functions serve as the primary conduits through which mathematical structures communicate, transform, and preserve invariance. In the pedagogical continuum of the Central Board of Secondary Education (CBSE) Class 12 curriculum, Chapter 1 transitions the student from intuitive set associations to the formal, analytical study of mappings, their internal topologies, algebraic properties, and functional classifications.<br><br>
+        <div class="rl-text">
+          <h3>1. Epistemological and Set-Theoretic Foundations</h3>
+          <p>
+            The architecture of modern mathematics rests upon axiomatic set theory, established through the foundational work of Georg Cantor, Ernst Zermelo, and Adolf Fraenkel. In Class 12 Mathematics, <em>Chapter 1: Relations and Functions</em> serves as the structural gateway through which discrete set theory synthesizes with continuous mathematical analysis. Every construct encountered in subsequent branches—such as differential calculus, linear algebra, topology, and measure theory—is ultimately an instantiation of relations and functions.
+          </p>
+          <p>
+            To understand relations and functions rigorously, one must begin with the Cartesian product. Let $A$ and $B$ be two non-empty sets defined within a universal set $\mathcal{U}$. The <strong>Cartesian Product</strong> of $A$ and $B$, denoted by $A \times B$, is the set of all ordered pairs $(a, b)$ such that $a \in A$ and $b \in B$. Formally, this is written using set-builder notation as:
+          </p>
+          <p style="text-align: center;">
+            $$A \times B = \{(a, b) : a \in A \land b \in B\}$$
+          </p>
+          <p>
+            The order within the tuple is paramount: $(a, b) = (c, d) \iff (a = c \land b = d)$. If set $A$ has cardinality $|A| = m$ and set $B$ has cardinality $|B| = n$, where $m, n \in \mathbb{N}$, then by the Fundamental Principle of Counting, the cardinality of the Cartesian product is:
+          </p>
+          <p style="text-align: center;">
+            $$|A \times B| = |A| \cdot |B| = mn$$
+          </p>
+          <p>
+            When $A = B$, the Cartesian product $A \times A$ is frequently denoted as $A^2$. The power set $\mathcal{P}(A \times B)$ is the set of all subsets of $A \times B$. By elementary combinatorial set theory, since $|A \times B| = mn$, the cardinality of the power set is $|\mathcal{P}(A \times B)| = 2^{mn}$. Every element of this power set constitutes a binary relation.
+          </p>
 
-          To construct a rigorous theory of relations, we begin with the Cartesian product. Let $A$ and $B$ be two non-empty sets. The Cartesian product, denoted by $A \times B$, is the set of all ordered pairs $(a, b)$ such that the first coordinate $a$ belongs to set $A$ and the second coordinate $b$ belongs to set $B$:
-          $$\mathcal{P}_{A \times B} = A \times B = \{(a, b) \mid a \in A \land b \in B\}$$
-          The concept of the ordered pair relies fundamentally on Kuratowski's definition, wherein the pair $(a, b)$ is encoded set-theoretically as:
-          $$(a, b) := \{\{a\}, \{a, b\}\}$$
-          This formulation guarantees the primary property of ordered pairs:
-          $$(a, b) = (c, d) \iff a = c \land b = d$$
-          The fundamental counting principle establishes that if the cardinality of set $A$ is $|A| = m$ and the cardinality of set $B$ is $|B| = n$, where $m, n \in \mathbb{N}$, then the cardinality of the Cartesian product is:
-          $$|A \times B| = |A| \cdot |B| = mn$$
-          The power set of $A \times B$, denoted $\mathcal{P}(A \times B)$, represents the totality of all subsets of $A \times B$. The cardinality of this power set is given by:
-          $$|\mathcal{P}(A \times B)| = 2^{|A \times B|} = 2^{mn}$$
-          A binary relation $R$ from a set $A$ to a set $B$ is formally defined as an arbitrary subset of the Cartesian product $A \times B$:
-          $$R \subseteq A \times B \quad \Longleftrightarrow \quad R \in \mathcal{P}(A \times B)$$
-          If $(a, b) \in R$, we denote this relationship infix by $a\,R\,b$, which translates logically to the predicate $R(a, b) = \text{True}$. Conversely, if $(a, b) \notin R$, we write $a\,\cancel{R}\,b$. When $A = B$, $R$ is defined simply as an endorelation, or a binary relation on the set $A$ ($R \subseteq A \times A$). The total number of distinct relations that can be defined on a set $A$ possessing $n$ elements is precisely $2^{n \cdot n} = 2^{n^2}$.<br><br>
+          <hr />
 
-          <!-- SECTION 2: STRUCTURAL CLASSIFICATION OF RELATIONS -->
-          <strong>1.2 Granular Taxonomy of Binary Relations</strong><br>
-          Relations are classified by the structural symmetries, invariances, and constraints they satisfy over their underlying sets. For an endorelation $R \subseteq A \times A$, the principal taxonomic categories mandated by the CBSE Class 12 syllabus are detailed below.<br><br>
-
-          <strong>1.2.1 The Trivial Relations (Empty and Universal)</strong><br>
-          Let $A$ be any set.
+          <h3>2. The Rigorous Theory of Binary Relations</h3>
+          <p>
+            <strong>Definition:</strong> A <em>relation</em> $R$ from a set $A$ to a set $B$ is formally defined as any subset of the Cartesian product $A \times B$. That is:
+          </p>
+          <p style="text-align: center;">
+            $$R \subseteq A \times B \iff R \in \mathcal{P}(A \times B)$$
+          </p>
+          <p>
+            If $(a, b) \in R$, we say that &ldquo;$a$ is related to $b$ under $R$&rdquo;, conventionally denoted in infix notation as $aRb$. If $(a, b) \notin R$, we write $a\not R b$. When $B = A$, $R$ is explicitly designated as a <em>binary relation on the set $A$</em>.
+          </p>
+          <p>
+            <strong>Domain, Codomain, and Range:</strong>
+            Let $R \subseteq A \times B$. We define three fundamental structural subspaces associated with $R$:
+          </p>
           <ul>
-            <li><strong>The Empty (or Void) Relation:</strong> The empty set $\emptyset$ is a subset of every set, hence $\emptyset \subseteq A \times A$. The relation $R = \emptyset$ is termed the empty relation on $A$. Formally:
-            $$\forall x, y \in A, \quad (x, y) \notin R$$
-            In an empty relation, no element of $A$ is related to any element of $A$.</li>
-            <li><strong>The Universal Relation:</strong> The complete Cartesian product $A \times A$ is a subset of itself, hence $R = A \times A$ is a relation on $A$. Formally:
-            $$\forall x, y \in A, \quad (x, y) \in R$$
-            In a universal relation, every element of $A$ is related to every element of $A$.</li>
+            <li><strong>Domain of $R$ ($\operatorname{Dom}(R)$):</strong> The set of all first components of the ordered pairs belonging to $R$:
+              $$\operatorname{Dom}(R) = \{a \in A : \exists b \in B \text{ such that } (a, b) \in R\} \subseteq A$$
+            </li>
+            <li><strong>Codomain of $R$:</strong> The entire target set $B$, irrespective of whether every element in $B$ participates in the relation.</li>
+            <li><strong>Range of $R$ ($\operatorname{Ran}(R)$):</strong> The set of all second components of the ordered pairs belonging to $R$:
+              $$\operatorname{Ran}(R) = \{b \in B : \exists a \in A \text{ such that } (a, b) \in R\} \subseteq B$$
+            </li>
           </ul>
-          Both the empty relation and the universal relation are often referred to as the <em>trivial</em> or <em>extreme relations</em> on $A$. If $|A| = 1$, the empty relation has 0 elements, and the universal relation has 1 element.<br><br>
 
-          <strong>1.2.2 The Identity Relation</strong><br>
-          The identity relation on a set $A$, denoted by $I_A$ or $\Delta_A$ (the diagonal relation), is the relation wherein every element is related exclusively to itself:
-          $$I_A := \{(a, a) \mid a \in A\} = \{(x, y) \in A \times A \mid x = y\}$$
-          A vital analytical distinction must be drawn between the <em>identity relation</em> and a <em>reflexive relation</em>. The identity relation demands <em>exact exclusivity</em>: $(a, b) \in I_A \iff a = b$. No element may relate to any non-identical element. A reflexive relation relaxes this exclusivity constraint.<br><br>
-
-          <strong>1.2.3 Reflexive Relations</strong><br>
-          A relation $R$ on a set $A$ is called <strong>reflexive</strong> if every element of $A$ is related to itself. In formal first-order predicate logic:
-          $$\forall x \in A, \quad (x, x) \in R$$
-          The failure of reflexivity requires only a single counterexample:
-          $$R \text{ is not reflexive} \iff \exists x \in A \text{ such that } (x, x) \notin R$$
-          <em>Reflexive vs. Identity:</em> While $I_A \subseteq R$ is the necessary and sufficient condition for $R$ to be reflexive, $R$ may contain additional ordered pairs $(a, b)$ with $a \neq b$. Thus, every identity relation is reflexive, but not every reflexive relation is an identity relation.<br><br>
-
-          <strong>1.2.4 Symmetric Relations</strong><br>
-          A relation $R$ on a set $A$ is called <strong>symmetric</strong> if the presence of any ordered pair implies the presence of its transpose. Formally:
-          $$\forall x, y \in A, \quad (x, y) \in R \implies (y, x) \in R$$
-          Let the inverse relation $R^{-1}$ be defined as:
-          $$R^{-1} := \{(y, x) \mid (x, y) \in R\}$$
-          Then, an endorelation $R$ is symmetric if and only if it is equal to its inverse:
-          $$R \text{ is symmetric} \iff R = R^{-1}$$
-          Symmetry does not require that $(x, x)$ exists for all $x \in A$. If no elements are related, the implication $(x, y) \in R \implies (y, x) \in R$ holds vacuously. Hence, the empty relation $\emptyset$ is vacuously symmetric.<br><br>
-
-          <strong>1.2.5 Anti-Symmetric Relations</strong><br>
-          A relation $R$ on a set $A$ is called <strong>anti-symmetric</strong> if mutual relatedness between two elements implies their identity. Formally:
-          $$\forall x, y \in A, \quad ((x, y) \in R \land (y, x) \in R) \implies x = y$$
-          Equivalently, its contrapositive formulation states:
-          $$\forall x, y \in A \text{ with } x \neq y, \quad (x, y) \in R \implies (y, x) \notin R$$
-          Anti-symmetry is not the logical negation of symmetry. A relation can be simultaneously symmetric and anti-symmetric (e.g., the identity relation $I_A$, or the empty relation $\emptyset$). A relation can also be neither symmetric nor anti-symmetric.<br><br>
-
-          <strong>1.2.6 Transitive Relations</strong><br>
-          A relation $R$ on a set $A$ is called <strong>transitive</strong> if a chain of relatedness through an intermediary implies a direct relation between the initial and terminal elements. Formally:
-          $$\forall x, y, z \in A, \quad ((x, y) \in R \land (y, z) \in R) \implies (x, z) \in R$$
-          The hypothesis $((x, y) \in R \land (y, z) \in R)$ requires an intermediary element $y$. If no such pair exists within $R$ sharing an intermediary link, the conditional statement evaluates to true vacuously. For example, in the relation $R = \{(1, 2)\}$ defined on $A = \{1, 2, 3\}$, there are no pairs of the form $(1, y)$ and $(y, z)$ where the terminal element of the first matches the initial element of the second (other than $y=2$, but no $(2, z) \in R$ exists). Hence, the condition holds vacuously, and $R$ is transitive.<br><br>
-
-          <!-- SECTION 3: COMBINATORIAL ENUMERATION OF RELATIONS -->
-          <strong>1.3 Combinatorial Enumeration of Relations on Finite Sets</strong><br>
-          Let $A$ be a finite set with $|A| = n$. The Cartesian product $A \times A$ can be represented as an $n \times n$ matrix containing $n^2$ coordinate entries. We partition these $n^2$ pairs into two mutually exclusive sets:
+          <h4>Trivial and Extreme Relations</h4>
+          <p>
+            Given any set $A$, the power set $\mathcal{P}(A \times A)$ contains two extreme boundary cases:
+          </p>
           <ol>
-            <li>The diagonal elements: $\Delta = \{(a_i, a_i) \mid 1 \le i \le n\}$, with $|\Delta| = n$.</li>
-            <li>The non-diagonal elements: $\Omega = \{(a_i, a_j) \mid i \neq j\}$, with $|\Omega| = n^2 - n = n(n - 1)$.</li>
+            <li><strong>The Empty Relation (Void Relation):</strong> Since the empty set $\emptyset$ is a subset of every set, $\emptyset \subseteq A \times A$. The relation $\emptyset$ on $A$ contains no elements whatsoever:
+              $$\emptyset = \{(a, b) \in A \times A : (a, b) \neq (a, b)\} = \emptyset$$
+              In this case, no element of $A$ is related to any element of $A$.
+            </li>
+            <li><strong>The Universal Relation:</strong> Since every set is a subset of itself, $A \times A \subseteq A \times A$. The universal relation on $A$, denoted $U_A = A \times A$, relates every single element of $A$ to every element of $A$:
+              $$U_A = \{(a, b) : a \in A \land b \in A\}$$
+            </li>
           </ol>
-          The non-diagonal pairs can be partitioned into $\frac{n(n - 1)}{2}$ unordered pairs of complementary entries: $\{(a_i, a_j), (a_j, a_i)\}$ for $i &lt; j$.<br><br>
+          <p>
+            Both the empty relation $\emptyset$ and the universal relation $A \times A$ are often referred to as the <em>trivial relations</em> on $A$.
+          </p>
 
-          <strong>1. Total Number of Relations:</strong><br>
-          Every subset of $A \times A$ forms a relation. The number of such subsets is:
-          $$N_{\text{total}} = 2^{n^2}$$
+          <hr />
 
-          <strong>2. Total Number of Reflexive Relations:</strong><br>
-          For a relation to be reflexive, all $n$ diagonal elements must be present. Thus, for each $(a_i, a_i)$, there is only 1 choice (inclusion). For the remaining $n(n - 1)$ non-diagonal elements, each pair may be independently included or excluded (2 choices each). Therefore:
-          $$N_{\text{reflexive}} = 1^n \cdot 2^{n(n - 1)} = 2^{n(n - 1)} = 2^{n^2 - n}$$
+          <h3>3. Complete Taxonomy of Relations on a Set</h3>
+          <p>
+            The core syllabus of Class 12 Mathematics focuses on relations defined on a single set $A$. These relations are categorized based on whether they satisfy specific logical invariants over the universal quantification of elements in $A$.
+          </p>
 
-          <strong>3. Total Number of Symmetric Relations:</strong><br>
-          For the $n$ diagonal pairs, each may be included or excluded independently ($2^n$ choices). For each of the $\frac{n(n - 1)}{2}$ non-diagonal pairs $\{(a_i, a_j), (a_j, a_i)\}$, symmetry dictates that either both are included or both are excluded (2 choices per pair). Hence:
-          $$N_{\text{symmetric}} = 2^n \cdot 2^{\frac{n(n - 1)}{2}} = 2^{n + \frac{n(n - 1)}{2}} = 2^{\frac{n(n + 1)}{2}}$$
+          <h4>A. The Identity Relation</h4>
+          <p>
+            The identity relation on a set $A$, denoted $I_A$ or $\Delta_A$ (the diagonal relation), is defined as:
+          </p>
+          <p style="text-align: center;">
+            $$I_A = \{(a, a) : a \in A\}$$
+          </p>
+          <p>
+            In the identity relation, every element of $A$ is related <em>strictly and solely</em> to itself. If $a \neq b$, $(a, b) \notin I_A$ under any circumstances.
+          </p>
 
-          <strong>4. Total Number of Reflexive and Symmetric Relations:</strong><br>
-          To satisfy reflexivity, all $n$ diagonal pairs must be included (1 choice). To satisfy symmetry, the $\frac{n(n - 1)}{2}$ non-diagonal pairs must be chosen jointly (2 choices per pair). Therefore:
-          $$N_{\text{refl} \land \text{symm}} = 1 \cdot 2^{\frac{n(n - 1)}{2}} = 2^{\frac{n^2 - n}{2}}$$
+          <h4>B. Reflexive Relations</h4>
+          <p>
+            <strong>Definition:</strong> A relation $R$ on a set $A$ is said to be <em>reflexive</em> if every element of $A$ is related to itself. Formally:
+          </p>
+          <p style="text-align: center;">
+            $$\forall a \in A, \quad (a, a) \in R$$
+          </p>
+          <p>
+            <strong>Critical Distinction: Identity vs. Reflexivity:</strong> The identity relation $I_A$ requires that $(a, b) \in I_A \iff a = b$. A reflexive relation $R$ requires that $(a, a) \in R$ for all $a \in A$, but it <em>permits additional non-diagonal pairs</em> $(a, b)$ where $a \neq b$. Hence:
+          </p>
+          <p style="text-align: center;">
+            $$I_A \subseteq R \implies R \text{ is reflexive on } A$$
+          </p>
+          <p>
+            Every identity relation is reflexive, but a reflexive relation is not necessarily the identity relation. If a single element $x \in A$ exists such that $(x, x) \notin R$, then $R$ is <strong>not reflexive</strong> (irreflexive or non-reflexive).
+          </p>
 
-          <strong>5. Total Number of Anti-Symmetric Relations:</strong><br>
-          For each of the $n$ diagonal pairs, there are 2 choices (included or excluded). For each of the $\frac{n(n - 1)}{2}$ pairs $\{(a_i, a_j), (a_j, a_i)\}$, anti-symmetry permits at most one of the two to be present. That yields 3 choices per pair: (i) only $(a_i, a_j)$ is in $R$, (ii) only $(a_j, a_i)$ is in $R$, or (iii) neither is in $R$. Thus:
-          $$N_{\text{anti-symmetric}} = 2^n \cdot 3^{\frac{n(n - 1)}{2}}$$
+          <h4>C. Symmetric Relations</h4>
+          <p>
+            <strong>Definition:</strong> A relation $R$ on a set $A$ is said to be <em>symmetric</em> if the presence of any ordered pair implies the presence of its inverted counterpart. Formally:
+          </p>
+          <p style="text-align: center;">
+            $$\forall a, b \in A, \quad (a, b) \in R \implies (b, a) \in R$$
+          </p>
+          <p>
+            Let $R^{-1}$ denote the <strong>inverse relation</strong> of $R$, defined as $R^{-1} = \{(b, a) : (a, b) \in R\}$. Then the condition of symmetry is algebraically equivalent to:
+          </p>
+          <p style="text-align: center;">
+            $$R = R^{-1}$$
+          </p>
+          <p>
+            <em>Examiner's Warning on Vacuous Truth:</em> The implication $(a, b) \in R \implies (b, a) \in R$ is conditioned on the premise $(a, b) \in R$. If there are no pairs $(a, b)$ in $R$ where $a \neq b$, the condition is vacuously satisfied. For instance, the empty relation $\emptyset$ on a non-empty set $A$ is symmetric, because there exists no pair $(a, b) \in \emptyset$ that violates the implication.
+          </p>
 
-          <!-- SUMMARY TABLE -->
-          <table border="1" cellpadding="6" style="border-collapse: collapse; width: 100%; margin: 16px 0; border: 1px solid #bf5a3c;">
-            <thead style="background-color: rgba(191, 90, 60, 0.1);">
-              <tr>
-                <th style="text-align: left;">Relation Category</th>
-                <th style="text-align: left;">Formal Mathematical Condition</th>
-                <th style="text-align: center;">Combinatorial Formula ($|A|=n$)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Total Possible Relations</td>
-                <td>$R \subseteq A \times A$</td>
-                <td style="text-align: center;">$2^{n^2}$</td>
-              </tr>
-              <tr>
-                <td>Reflexive Relations</td>
-                <td>$\forall x \in A, \, (x, x) \in R$</td>
-                <td style="text-align: center;">$2^{n(n - 1)}$</td>
-              </tr>
-              <tr>
-                <td>Symmetric Relations</td>
-                <td>$(x, y) \in R \implies (y, x) \in R$</td>
-                <td style="text-align: center;">$2^{\frac{n(n + 1)}{2}}$</td>
-              </tr>
-              <tr>
-                <td>Reflexive &amp; Symmetric</td>
-                <td>$I_A \subseteq R$ and $R = R^{-1}$</td>
-                <td style="text-align: center;">$2^{\frac{n(n - 1)}{2}}$</td>
-              </tr>
-              <tr>
-                <td>Anti-Symmetric</td>
-                <td>$(x, y) \in R \land (y, x) \in R \implies x = y$</td>
-                <td style="text-align: center;">$2^n \cdot 3^{\frac{n(n - 1)}{2}}$</td>
-              </tr>
-            </tbody>
-          </table><br>
+          <h4>D. Transitive Relations</h4>
+          <p>
+            <strong>Definition:</strong> A relation $R$ on a set $A$ is said to be <em>transitive</em> if whenever an element $a$ is related to $b$, and $b$ is related to $c$, then $a$ is related to $c$. Formally:
+          </p>
+          <p style="text-align: center;">
+            $$\forall a, b, c \in A, \quad \Big((a, b) \in R \land (b, c) \in R\Big) \implies (a, c) \in R$$
+          </p>
+          <p>
+            In the language of relational composition: let $R \circ R$ (or $R^2$) be the composition of $R$ with itself, defined by:
+          </p>
+          <p style="text-align: center;">
+            $$R \circ R = \{(a, c) \in A \times A : \exists b \in A \text{ such that } (a, b) \in R \land (b, c) \in R\}$$
+          </p>
+          <p>
+            Then $R$ is transitive if and only if:
+          </p>
+          <p style="text-align: center;">
+            $$R \circ R \subseteq R$$
+          </p>
+          <p>
+            <em>The Vacuous Condition in Transitivity:</em> Transitivity fails <strong>if and only if</strong> there exist elements $a, b, c \in A$ such that $(a, b) \in R$ and $(b, c) \in R$, but $(a, c) \notin R$. If one cannot find an intermediate link $b$ connecting $(a, b)$ and $(b, c)$, the conditional statement $P \implies Q$ has a false antecedent, rendering the implication <strong>true</strong>.
+          </p>
+          <p>
+            <em>Example:</em> Let $A = \{1, 2, 3\}$ and $R = \{(1, 2)\}$. Is $R$ transitive? 
+            Here, $(a, b) = (1, 2)$. But there is no pair in $R$ starting with $2$. The antecedent $(1, 2) \in R \land (2, c) \in R$ is never satisfied for any $c$. Hence, no counterexample can exist. Therefore, $R = \{(1, 2)\}$ is <strong>transitive</strong>.
+          </p>
 
-          <!-- SECTION 4: EQUIVALENCE RELATIONS AND PARTITIONS -->
-          <strong>1.4 Equivalence Relations, Equivalence Classes, and Quotient Sets</strong><br>
-          A relation $R$ on a set $A$ is termed an <strong>equivalence relation</strong> if and only if it is simultaneously:
-          $$\text{1. Reflexive} \quad \land \quad \text{2. Symmetric} \quad \land \quad \text{3. Transitive}$$
+          <h4>E. Anti-Symmetric Relations</h4>
+          <p>
+            <strong>Definition:</strong> A relation $R$ on a set $A$ is called <em>anti-symmetric</em> if:
+          </p>
+          <p style="text-align: center;">
+            $$\forall a, b \in A, \quad \Big((a, b) \in R \land (b, a) \in R\Big) \implies a = b$$
+          </p>
+          <p>
+            Equivalently, if $a \neq b$, then $(a, b)$ and $(b, a)$ cannot both belong to $R$. An anti-symmetric relation is <em>not</em> the linguistic opposite of symmetric; a relation may be both symmetric and anti-symmetric (e.g., the identity relation $I_A$), or neither symmetric nor anti-symmetric.
+          </p>
 
-          <strong>Theorem 1.1 (Intersection of Equivalence Relations):</strong> Let $R_1$ and $R_2$ be two equivalence relations on a set $A$. Then the intersection $R_1 \cap R_2$ is also an equivalence relation on $A$.<br>
-          <em>Proof:</em><br>
-          <em>(i) Reflexivity:</em> Let $x \in A$. Since $R_1$ is reflexive, $(x, x) \in R_1$. Since $R_2$ is reflexive, $(x, x) \in R_2$. By definition of set intersection:
-          $$(x, x) \in R_1 \land (x, x) \in R_2 \implies (x, x) \in R_1 \cap R_2$$
-          Thus, $R_1 \cap R_2$ is reflexive.<br>
-          <em>(ii) Symmetry:</em> Let $(x, y) \in R_1 \cap R_2$. Then $(x, y) \in R_1$ and $(x, y) \in R_2$. By symmetry of $R_1$, $(y, x) \in R_1$. By symmetry of $R_2$, $(y, x) \in R_2$. Hence:
-          $$(y, x) \in R_1 \land (y, x) \in R_2 \implies (y, x) \in R_1 \cap R_2$$
-          Thus, $R_1 \cap R_2$ is symmetric.<br>
-          <em>(iii) Transitivity:</em> Let $(x, y) \in R_1 \cap R_2$ and $(y, z) \in R_1 \cap R_2$. Then:
-          $$((x, y) \in R_1 \land (y, z) \in R_1) \implies (x, z) \in R_1 \quad (\text{since } R_1 \text{ is transitive})$$
-          $$((x, y) \in R_2 \land (y, z) \in R_2) \implies (x, z) \in R_2 \quad (\text{since } R_2 \text{ is transitive})$$
-          Therefore, $(x, z) \in R_1 \cap R_2$. It follows that $R_1 \cap R_2$ is transitive.<br>
-          Since $R_1 \cap R_2$ is reflexive, symmetric, and transitive, it is an equivalence relation on $A$. $\blacksquare$<br><br>
+          <hr />
 
-          <strong>Theorem 1.2 (Union of Equivalence Relations):</strong> The union $R_1 \cup R_2$ of two equivalence relations is <em>not necessarily</em> an equivalence relation.<br>
-          <em>Analytical Counterexample:</em> Let $A = \{1, 2, 3\}$. Define:
-          $$R_1 = \{(1, 1), (2, 2), (3, 3), (1, 2), (2, 1)\}$$
-          $$R_2 = \{(1, 1), (2, 2), (3, 3), (2, 3), (3, 2)\}$$
-          Both $R_1$ and $R_2$ are verified equivalence relations on $A$. Now consider their union:
-          $$R_1 \cup R_2 = \{(1, 1), (2, 2), (3, 3), (1, 2), (2, 1), (2, 3), (3, 2)\}$$
-          Observe that $(1, 2) \in R_1 \cup R_2$ and $(2, 3) \in R_1 \cup R_2$. If $R_1 \cup R_2$ were transitive, it would require $(1, 3) \in R_1 \cup R_2$. However, $(1, 3) \notin R_1 \cup R_2$. Hence, transitivity fails, and $R_1 \cup R_2$ is not an equivalence relation.<br><br>
-
-          <strong>1.4.1 Equivalence Classes</strong><br>
-          Let $R$ be an equivalence relation on a non-empty set $A$. Let $a \in A$. The <strong>equivalence class</strong> of $a$, denoted by $[a]$, or $cl(a)$, or $\bar{a}$, is the set of all elements in $A$ that are related to $a$ under $R$:
-          $$[a] := \{x \in A \mid (x, a) \in R\} = \{x \in A \mid x \, R \, a\}$$
-          By symmetry, $(x, a) \in R \iff (a, x) \in R$.<br><br>
-
-          <strong>Properties of Equivalence Classes:</strong>
+          <h3>4. Equivalence Relations, Partitions, and Quotient Sets</h3>
+          <p>
+            <strong>Definition:</strong> A relation $R$ on a set $A$ is an <strong>Equivalence Relation</strong> if and only if it satisfies all three of the following axiomatic properties simultaneously:
+          </p>
           <ol>
-            <li><strong>Non-emptiness:</strong> Since $R$ is reflexive, $\forall a \in A, \, (a, a) \in R \implies a \in [a]$. Hence, no equivalence class is empty: $[a] \neq \emptyset$.</li>
-            <li><strong>Congruence of Equivalent Elements:</strong> For any $a, b \in A$, $a \, R \, b \iff [a] = [b]$.</li>
-            <li><strong>Fundamental Disjointness Property:</strong> For any two elements $a, b \in A$, their equivalence classes are either identical or completely disjoint:
-            $$[a] = [b] \quad \lor \quad [a] \cap [b] = \emptyset$$
-            <em>Proof of Disjointness:</em> Suppose $[a] \cap [b] \neq \emptyset$. Then there exists an element $x \in A$ such that $x \in [a]$ and $x \in [b]$. This means $(x, a) \in R$ and $(x, b) \in R$.
-            By symmetry of $R$, $(a, x) \in R$.
-            Applying transitivity to $(a, x) \in R$ and $(x, b) \in R$, we obtain $(a, b) \in R$.
-            Now let $y \in [a]$ be arbitrary. Then $(y, a) \in R$. Since $(a, b) \in R$, by transitivity we have $(y, b) \in R$, which implies $y \in [b]$. Thus, $[a] \subseteq [b]$.
-            By exact symmetry of argument, $[b] \subseteq [a]$.
-            Consequently, $[a] = [b]$.
-            Therefore, if the classes share even one element, they must be equal. Hence, if $[a] \neq [b]$, they must be disjoint: $[a] \cap [b] = \emptyset$. $\blacksquare$</li>
-            <li><strong>Exhaustive Partition of the Set:</strong> The union of all equivalence classes reconstructs the entire set $A$:
-            $$\bigcup_{a \in A} [a] = A$$
-            This collection of disjoint equivalence classes is called the <strong>Quotient Set</strong> of $A$ by $R$, denoted by:
-            $$A / R := \{[a] \mid a \in A\}$$
-          </ol>
-          The Fundamental Theorem of Equivalence Relations asserts a bijective correspondence between an equivalence relation on a set $A$ and a partition of the set $A$.<br><br>
-
-          <!-- SECTION 5: CANONICAL EQUIVALENCE PROBLEMS -->
-          <strong>1.5 Classical CBSE Exemplar Analysis of Equivalence Structures</strong><br>
-          Board examinations frequently test equivalence over Cartesian product domains, such as $A = \mathbb{N} \times \mathbb{N}$.<br><br>
-
-          <strong>Model Problem 1.1:</strong> Let $\mathbb{N}$ denote the set of natural numbers. Define a relation $R$ on $\mathbb{N} \times \mathbb{N}$ by:
-          $$((a, b), (c, d)) \in R \iff a + d = b + c$$
-          Prove that $R$ is an equivalence relation. Find the equivalence class $[(2, 5)]$.<br><br>
-          <em>Analytical Solution:</em><br>
-          Let $(a, b), (c, d), (e, f) \in \mathbb{N} \times \mathbb{N}$.<br>
-          <strong>1. Reflexivity:</strong><br>
-          For any $(a, b) \in \mathbb{N} \times \mathbb{N}$, addition on $\mathbb{N}$ is commutative:
-          $$a + b = b + a$$
-          By definition of the relation, this implies $((a, b), (a, b)) \in R$. Therefore, $R$ is reflexive on $\mathbb{N} \times \mathbb{N}$.<br><br>
-          <strong>2. Symmetry:</strong><br>
-          Assume $((a, b), (c, d)) \in R$.
-          $$\implies a + d = b + c$$
-          By symmetry and commutativity of equality over $\mathbb{N}$:
-          $$b + c = a + d \implies c + b = d + a$$
-          By definition of the relation, this yields:
-          $$((c, d), (a, b)) \in R$$
-          Thus, $R$ is symmetric.<br><br>
-          <strong>3. Transitivity:</strong><br>
-          Assume $((a, b), (c, d)) \in R$ and $((c, d), (e, f)) \in R$.
-          $$\text{Equation (1): } a + d = b + c$$
-          $$\text{Equation (2): } c + f = d + e$$
-          Adding Equations (1) and (2) algebraically:
-          $$(a + d) + (c + f) = (b + c) + (d + e)$$
-          Rearranging terms via associativity and commutativity:
-          $$(a + f) + (c + d) = (b + e) + (c + d)$$
-          Applying the additive cancellation law in $\mathbb{N}$:
-          $$a + f = b + e$$
-          By definition of the relation, this yields $((a, b), (e, f)) \in R$. Thus, $R$ is transitive.<br>
-          Since $R$ is reflexive, symmetric, and transitive, $R$ is an equivalence relation.<br><br>
-          <strong>Determination of $[(2, 5)]$:</strong><br>
-          $$[(2, 5)] = \{(x, y) \in \mathbb{N} \times \mathbb{N} \mid ((x, y), (2, 5)) \in R\}$$
-          $$((x, y), (2, 5)) \in R \iff x + 5 = y + 2 \iff y = x + 3$$
-          Since $x \in \mathbb{N} = \{1, 2, 3, \dots\}$:
-          $$[(2, 5)] = \{(1, 4), (2, 5), (3, 6), (4, 7), (5, 8), \dots\} = \{(n, n + 3) \mid n \in \mathbb{N}\}$$
-
-          <!-- SECTION 6: RIGOROUS FUNCTION THEORY -->
-          <br><strong>1.6 Mathematical Formalism of Functions (Mappings)</strong><br>
-          Let $X$ and $Y$ be non-empty sets. A function $f$ from $X$ to $Y$, denoted by $f: X \to Y$, is a special type of relation $f \subseteq X \times Y$ that satisfies two structural conditions:
-          <ol>
-            <li><strong>Totality:</strong> Every element in the domain must map to an element in the codomain:
-            $$\forall x \in X, \quad \exists y \in Y \text{ such that } (x, y) \in f$$</li>
-            <li><strong>Uniqueness (Well-definedness):</strong> An element in the domain cannot map to more than one element in the codomain:
-            $$\forall x \in X \text{ and } \forall y_1, y_2 \in Y, \quad ((x, y_1) \in f \land (x, y_2) \in f) \implies y_1 = y_2$$</li>
-          </ol>
-          If $(x, y) \in f$, we write $y = f(x)$, where $y$ is called the <em>image</em> of $x$ under $f$, and $x$ is called the <em>pre-image</em> of $y$ under $f$.
-          <ul>
-            <li><strong>Domain:</strong> $\text{Dom}(f) = X$</li>
-            <li><strong>Codomain:</strong> $\text{Codom}(f) = Y$</li>
-            <li><strong>Range (Image Set):</strong> The set of all realized images:
-            $$\text{Range}(f) = f(X) := \{y \in Y \mid \exists x \in X \text{ such that } f(x) = y\} = \{f(x) \mid x \in X\}$$
-            By definition, $\text{Range}(f) \subseteq Y$.</li>
-          </ul><br>
-
-          <!-- SECTION 7: INJECTIVITY, SURJECTIVITY, BIJECTIVITY -->
-          <strong>1.7 Deep Analytical Classifications of Functions</strong><br>
-          Functions are classified by how their mappings distribute elements from the domain to the codomain.<br><br>
-
-          <strong>1.7.1 Injection (One-to-One Function)</strong><br>
-          A function $f: X \to Y$ is said to be <strong>injective</strong> (or <strong>one-to-one</strong>) if distinct elements in the domain always map to distinct elements in the codomain.<br>
-          <em>Formal Algebraic Formulation:</em>
-          $$\forall x_1, x_2 \in X, \quad f(x_1) = f(x_2) \implies x_1 = x_2$$
-          <em>Contrapositive Formulation:</em>
-          $$\forall x_1, x_2 \in X, \quad x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$$
-          If a function is not injective, it is termed <strong>many-to-one</strong>:
-          $$\exists x_1, x_2 \in X \text{ such that } x_1 \neq x_2 \land f(x_1) = f(x_2)$$
-
-          <em>Calculus-Based Criterion for Real Functions:</em><br>
-          Let $f: I \to \mathbb{R}$ be a differentiable function defined on an open interval $I \subseteq \mathbb{R}$.
-          <ul>
-            <li>If the first derivative is strictly positive throughout the interval ($f'(x) &gt; 0, \, \forall x \in I$), the function is strictly increasing on $I$.</li>
-            <li>If the first derivative is strictly negative throughout the interval ($f'(x) &lt; 0, \, \forall x \in I$), the function is strictly decreasing on $I$.</li>
-          </ul>
-          A strictly monotonic function (either strictly increasing or strictly decreasing) on an interval $I$ is guaranteed to be injective on $I$.<br><br>
-
-          <em>Geometric Criterion (Horizontal Line Test):</em><br>
-          A real-valued function $y = f(x)$ is injective if and only if every horizontal line $y = k$ (where $k \in \mathbb{R}$) intersects the graph of the function at <em>most once</em>.<br><br>
-
-          <strong>1.7.2 Surjection (Onto Function)</strong><br>
-          A function $f: X \to Y$ is said to be <strong>surjective</strong> (or <strong>onto</strong>) if every element of the codomain possesses at least one pre-image in the domain.<br>
-          <em>Formal Predicate Formulation:</em>
-          $$\forall y \in Y, \quad \exists x \in X \text{ such that } f(x) = y$$
-          <em>Set-Theoretic Criterion:</em>
-          $$f \text{ is surjective} \iff \text{Range}(f) = Y$$
-          If a function is not surjective, it is termed <strong>into</strong>:
-          $$\text{Range}(f) \subsetneq Y \iff \exists y \in Y \text{ such that } \forall x \in X, \, f(x) \neq y$$
-
-          <em>CBSE Procedural Proof Strategy for Surjectivity:</em>
-          <ol>
-            <li>Let an arbitrary element $y \in Y$ (the codomain) be given.</li>
-            <li>Set $y = f(x)$ and solve algebraically for $x$ entirely in terms of $y$: $x = g(y)$.</li>
-            <li>Verify whether for <em>every</em> $y \in Y$, the resulting expression $g(y)$ evaluates to an element that belongs to the defined domain $X$.</li>
-            <li>Evaluate $f(g(y))$ and show that it simplifies to $y$, thereby confirming that $x = g(y)$ is a valid pre-image.</li>
-          </ol><br>
-
-          <strong>1.7.3 Bijection (One-to-One and Onto Function)</strong><br>
-          A function $f: X \to Y$ is <strong>bijective</strong> (or a <strong>one-to-one correspondence</strong>) if and only if it is simultaneously injective and surjective:
-          $$f \text{ is bijective} \iff (f \text{ is one-to-one}) \land (f \text{ is onto})$$
-          Bijective functions establish a perfect matching between domain and codomain elements.
-
-          <em>Cardinality Theorem for Finite Sets:</em><br>
-          Let $X$ and $Y$ be finite sets, with $|X| = m$ and $|Y| = n$.
-          <ol>
-            <li>If there exists an injection $f: X \to Y$, then $m \le n$.</li>
-            <li>If there exists a surjection $f: X \to Y$, then $m \ge n$.</li>
-            <li>If there exists a bijection $f: X \to Y$, then $m = n$.</li>
-          </ol>
-          <em>The Finite Dimension Invariance (Pigeonhole Principle):</em> If $|X| = |Y| = n$, and $f: X \to Y$ is a function, then:
-          $$f \text{ is injective} \iff f \text{ is surjective} \iff f \text{ is bijective}$$
-          <em>Critical Warning for Board Students:</em> This equivalence holds <strong>only</strong> for finite sets. For infinite sets, it fails. For instance, consider $f: \mathbb{N} \to \mathbb{N}$ defined by $f(n) = n + 1$:
-          <ul>
-            <li>$f(n_1) = f(n_2) \implies n_1 + 1 = n_2 + 1 \implies n_1 = n_2$ (Injective).</li>
-            <li>However, the element $1 \in \mathbb{N}$ has no pre-image ($n + 1 = 1 \implies n = 0 \notin \mathbb{N}$). Thus, $f$ is not surjective.</li>
-          </ul><br>
-
-          <!-- SECTION 8: COMBINATORIAL ENUMERATION OF FUNCTIONS -->
-          <strong>1.8 Combinatorial Enumeration of Mappings</strong><br>
-          Let the domain $X$ have cardinality $|X| = m$ and codomain $Y$ have cardinality $|Y| = n$.<br><br>
-
-          <strong>1. Total Number of Functions:</strong><br>
-          Each of the $m$ distinct domain elements can be mapped to any of the $n$ codomain elements independently. Hence:
-          $$N_{\text{total functions}} = n^m$$
-
-          <strong>2. Total Number of Injective Functions (One-to-One):</strong><br>
-          The first element in $X$ has $n$ choices, the second has $n - 1$ choices, ..., and the $m$-th element has $n - (m - 1)$ choices. Thus:
-          $$N_{\text{injective}} = \begin{cases} P(n, m) = \dfrac{n!}{(n - m)!}, &amp; \text{if } m \le n \\ 0, &amp; \text{if } m &gt; n \end{cases}$$
-
-          <strong>3. Total Number of Bijective Functions:</strong><br>
-          A bijection requires $m = n$. The total number of bijections is the number of permutations of $n$ elements:
-          $$N_{\text{bijective}} = \begin{cases} n!, &amp; \text{if } m = n \\ 0, &amp; \text{if } m \neq n \end{cases}$$
-
-          <strong>4. Total Number of Surjective Functions (Onto):</strong><br>
-          Using the Principle of Inclusion-Exclusion, the number of surjective functions from a set of size $m$ onto a set of size $n$ is given by:
-          $$N_{\text{surjective}} = \sum_{k=0}^{n} (-1)^{n - k} \binom{n}{k} k^m = n! \, S(m, n)$$
-          where $S(m, n)$ is the Stirling number of the second kind, representing the number of ways to partition a set of $m$ labeled elements into $n$ unlabeled, non-empty subsets. If $m &lt; n$, $N_{\text{surjective}} = 0$.<br><br>
-
-          <!-- SECTION 9: COMPOSITION OF FUNCTIONS -->
-          <strong>1.9 Algebra and Mechanics of Composite Functions</strong><br>
-          Let $f: A \to B$ and $g: B \to C$ be two functions. The <strong>composition</strong> of $g$ and $f$, denoted by $g \circ f$ (read as "$g$ circle $f$" or "$g$ composed with $f$"), is the function from $A$ to $C$ defined by:
-          $$(g \circ f)(x) := g(f(x)), \quad \forall x \in A$$
-          <em>Domain and Existence Criterion:</em><br>
-          For the composite function $g \circ f$ to exist, the range of the inner function $f$ must be contained within the domain of the outer function $g$:
-          $$\text{Range}(f) \subseteq \text{Dom}(g)$$
-          If this condition is violated globally, the composite function is restricted to the specific subdomain:
-          $$\text{Dom}(g \circ f) = \{x \in \text{Dom}(f) \mid f(x) \in \text{Dom}(g)\}$$
-
-          <strong>Algebraic Properties of Composition:</strong>
-          <ol>
-            <li><strong>Non-Commutativity:</strong> In general, functional composition is non-commutative:
-            $$g \circ f \neq f \circ g$$
-            Indeed, $f \circ g$ may not even be defined if $\text{Range}(g) \not\subseteq \text{Dom}(f)$. Even when $f: A \to A$ and $g: A \to A$, so that both $g \circ f$ and $f \circ g$ are defined, equality rarely holds.</li>
-            <li><strong>Associativity:</strong> Functional composition is associative. Let $f: A \to B$, $g: B \to C$, and $h: C \to D$. Then:
-            $$h \circ (g \circ f) = (h \circ g) \circ f$$
-            <em>Proof:</em> Let $x \in A$.
-            $$(h \circ (g \circ f))(x) = h((g \circ f)(x)) = h(g(f(x)))$$
-            $$((h \circ g) \circ f)(x) = (h \circ g)(f(x)) = h(g(f(x)))$$
-            The values are equal for all $x \in A$, and their domains and codomains coincide. Hence, the mappings are identical. $\blacksquare$</li>
-            <li><strong>Identity Composition:</strong> Let $f: A \to B$. Then:
-            $$f \circ I_A = f \quad \text{and} \quad I_B \circ f = f$$
-            where $I_A$ and $I_B$ are the identity functions on sets $A$ and $B$, respectively.</li>
+            <li><strong>Reflexivity:</strong> $\forall a \in A, (a, a) \in R$.</li>
+            <li><strong>Symmetry:</strong> $\forall a, b \in A, (a, b) \in R \implies (b, a) \in R$.</li>
+            <li><strong>Transitivity:</strong> $\forall a, b, c \in A, ((a, b) \in R \land (b, c) \in R) \implies (a, c) \in R$.</li>
           </ol>
 
-          <strong>Theorems on Composite Mapping Inheritance:</strong><br>
-          <strong>Theorem 1.3:</strong>
-          <ul>
-            <li>If $f: A \to B$ and $g: B \to C$ are both injective, then $g \circ f: A \to C$ is injective.</li>
-            <li>If $f: A \to B$ and $g: B \to C$ are both surjective, then $g \circ f: A \to C$ is surjective.</li>
-            <li>If $f: A \to B$ and $g: B \to C$ are both bijective, then $g \circ f: A \to C$ is bijective.</li>
-          </ul>
-          <em>Proof of Injective Inheritance:</em> Let $x_1, x_2 \in A$. Assume $(g \circ f)(x_1) = (g \circ f)(x_2)$.
-          $$\implies g(f(x_1)) = g(f(x_2))$$
-          Since $g$ is injective, $g(u) = g(v) \implies u = v$. Setting $u = f(x_1)$ and $v = f(x_2)$:
-          $$\implies f(x_1) = f(x_2)$$
-          Since $f$ is injective:
-          $$\implies x_1 = x_2$$
-          Hence, $g \circ f$ is injective. $\blacksquare$<br><br>
+          <h4>Equivalence Classes</h4>
+          <p>
+            Let $R$ be an equivalence relation on a non-empty set $A$. For any arbitrary element $a \in A$, the <strong>Equivalence Class</strong> of $a$, denoted by $[a]$, $cl(a)$, or $\bar{a}$, is the set of all elements in $A$ that are related to $a$ under $R$:
+          </p>
+          <p style="text-align: center;">
+            $$[a] = \{x \in A : (x, a) \in R\} = \{x \in A : (a, x) \in R\}$$
+          </p>
 
-          <strong>Theorem 1.4 (Decomposition of Injective and Surjective Compositions):</strong><br>
-          Let $f: A \to B$ and $g: B \to C$ be two functions.
+          <h4>Fundamental Properties of Equivalence Classes</h4>
+          <p>
+            Let $R$ be an equivalence relation on $A$. Then:
+          </p>
           <ol>
-            <li>If $g \circ f$ is <strong>injective</strong>, then $f$ must be <strong>injective</strong>. (Note: $g$ need not be injective).</li>
-            <li>If $g \circ f$ is <strong>surjective</strong>, then $g$ must be <strong>surjective</strong>. (Note: $f$ need not be surjective).</li>
+            <li><strong>Non-emptiness:</strong> For all $a \in A$, $a \in [a]$ because $(a, a) \in R$ (by reflexivity). Thus, $[a] \neq \emptyset$.</li>
+            <li><strong>Identical or Disjoint:</strong> For any two elements $a, b \in A$, either $[a] = [b]$ or $[a] \cap [b] = \emptyset$. Two equivalence classes can never partially overlap.
+              <br />
+              <em>Proof:</em> Assume $[a] \cap [b] \neq \emptyset$. We must prove that $[a] = [b]$.
+              <br />
+              Since the intersection is non-empty, there exists some $x \in A$ such that $x \in [a] \land x \in [b]$.
+              <br />
+              By definition: $(x, a) \in R$ and $(x, b) \in R$.
+              <br />
+              By symmetry: $(a, x) \in R$.
+              <br />
+              Now, since $(a, x) \in R$ and $(x, b) \in R$, by transitivity, $(a, b) \in R$.
+              <br />
+              Now let $y \in [b]$ be arbitrary. Then $(y, b) \in R$, which implies $(b, y) \in R$ by symmetry.
+              <br />
+              Since $(a, b) \in R$ and $(b, y) \in R$, by transitivity, $(a, y) \in R \implies (y, a) \in R \implies y \in [a]$.
+              <br />
+              Therefore, $[b] \subseteq [a]$.
+              <br />
+              By symmetric reasoning, $[a] \subseteq [b]$. By the axiom of extensionality, $[a] = [b]$.
+              <br />
+              Consequently, if $[a] \neq [b]$, they must be completely disjoint: $[a] \cap [b] = \emptyset$.
+            </li>
+            <li><strong>Exhaustive Union:</strong> The union of all equivalence classes reconstructs the original set $A$:
+              $$\bigcup_{a \in A} [a] = A$$
+            </li>
           </ol>
-          <em>Proof of (1):</em> Let $x_1, x_2 \in A$ and assume $f(x_1) = f(x_2)$. Applying $g$ to both sides:
-          $$g(f(x_1)) = g(f(x_2)) \implies (g \circ f)(x_1) = (g \circ f)(x_2)$$
-          Since $g \circ f$ is injective, it follows that $x_1 = x_2$. Hence, $f$ is injective. $\blacksquare$<br><br>
-          <em>Proof of (2):</em> Let $z \in C$. Since $g \circ f$ is surjective, there exists $x \in A$ such that:
-          $$(g \circ f)(x) = z \implies g(f(x)) = z$$
-          Let $y = f(x)$. Since $x \in A$ and $f: A \to B$, we have $y \in B$. Thus, for any $z \in C$, there exists $y \in B$ such that $g(y) = z$. Hence, $g$ is surjective. $\blacksquare$<br><br>
 
-          <!-- SECTION 10: INVERTIBILITY AND THE INVERSE OPERATOR -->
-          <strong>1.10 Invertibility and the Construction of Inverse Functions</strong><br>
-          A function $f: X \to Y$ is said to be <strong>invertible</strong> if there exists a function $g: Y \to X$ such that:
-          $$g \circ f = I_X \quad \text{and} \quad f \circ g = I_Y$$
-          The function $g$ is called the <strong>inverse</strong> of $f$ and is uniquely denoted by $f^{-1}$.<br><br>
-
-          <strong>Theorem 1.5 (Fundamental Theorem of Invertibility):</strong><br>
-          A function $f: X \to Y$ is invertible if and only if $f$ is bijective (both one-to-one and onto).<br>
-          <em>Proof:</em><br>
-          <strong>Part 1 ($\implies$): Invertible implies Bijective</strong><br>
-          Suppose $f$ is invertible. Then there exists $g: Y \to X$ such that $g \circ f = I_X$ and $f \circ g = I_Y$.<br>
-          Since $g \circ f = I_X$, and the identity function $I_X$ is injective, by Theorem 1.4, $f$ must be injective.<br>
-          Since $f \circ g = I_Y$, and the identity function $I_Y$ is surjective, by Theorem 1.4, $f$ must be surjective.<br>
-          Therefore, $f$ is both injective and surjective, hence bijective.<br><br>
-          <strong>Part 2 ($\impliedby$): Bijective implies Invertible</strong><br>
-          Suppose $f$ is bijective. We must construct an explicit inverse map $g: Y \to X$.<br>
-          Let $y \in Y$ be arbitrary. Since $f$ is surjective, there exists at least one $x \in X$ such that $f(x) = y$.<br>
-          Since $f$ is injective, this element $x$ is unique: if $f(x_1) = y$ and $f(x_2) = y$, then $x_1 = x_2$.<br>
-          We define $g: Y \to X$ by setting $g(y) = x$, where $x$ is the unique element such that $f(x) = y$.<br>
-          Now evaluate the compositions:
-          $$\forall x \in X, \quad (g \circ f)(x) = g(f(x)) = g(y) = x = I_X(x) \implies g \circ f = I_X$$
-          $$\forall y \in Y, \quad (f \circ g)(y) = f(g(y)) = f(x) = y = I_Y(y) \implies f \circ g = I_Y$$
-          Thus, $g$ satisfies both conditions of invertibility. Hence, $f$ is invertible, with $f^{-1} = g$. $\blacksquare$<br><br>
-
-          <strong>Theorem 1.6 (Uniqueness of the Inverse):</strong><br>
-          If a function $f: X \to Y$ is invertible, its inverse is unique.<br>
-          <em>Proof:</em> Suppose $g_1: Y \to X$ and $g_2: Y \to X$ are both inverses of $f$. Then:
-          $$g_1 \circ f = I_X, \quad f \circ g_1 = I_Y, \quad g_2 \circ f = I_X, \quad f \circ g_2 = I_Y$$
-          Using associativity and the properties of identity maps:
-          $$g_1 = g_1 \circ I_Y = g_1 \circ (f \circ g_2) = (g_1 \circ f) \circ g_2 = I_X \circ g_2 = g_2$$
-          Thus, $g_1 = g_2$. The inverse is unique. $\blacksquare$<br><br>
-
-          <strong>Theorem 1.7 (Reversal Law of Composition):</strong><br>
-          Let $f: A \to B$ and $g: B \to C$ be two invertible functions. Then the composite function $g \circ f: A \to C$ is invertible, and its inverse is given by:
-          $$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$$
-          <em>Proof:</em> We verify that $(f^{-1} \circ g^{-1})$ satisfies the invertibility conditions for $(g \circ f)$:
-          $$(f^{-1} \circ g^{-1}) \circ (g \circ f) = f^{-1} \circ (g^{-1} \circ g) \circ f = f^{-1} \circ I_B \circ f = f^{-1} \circ f = I_A$$
-          $$(g \circ f) \circ (f^{-1} \circ g^{-1}) = g \circ (f \circ f^{-1}) \circ g^{-1} = g \circ I_B \circ g^{-1} = g \circ g^{-1} = I_C$$
-          By uniqueness of the inverse, $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$. $\blacksquare$<br><br>
-
-          <strong>Geometric Property of the Inverse:</strong><br>
-          For a real function $f: \mathbb{R} \to \mathbb{R}$, if $(a, b)$ lies on the curve $y = f(x)$, then $(b, a)$ lies on the curve $y = f^{-1}(x)$. The point $(b, a)$ is the geometric reflection of the point $(a, b)$ across the line of symmetry $y = x$. Thus, the graph of $f^{-1}$ is the reflection of the graph of $f$ in the identity line $y = x$.<br><br>
-
-          <!-- SECTION 11: STEP-BY-STEP WORKED MODELS -->
-          <strong>1.11 Comprehensive Worked Analytical Models</strong><br><br>
-
-          <strong>Model Problem 1.2 (Rational Linear Fractional Transformation):</strong><br>
-          Let $A = \mathbb{R} \setminus \{3\}$ and $B = \mathbb{R} \setminus \{1\}$. Consider the function $f: A \to B$ defined by:
-          $$f(x) = \frac{x - 2}{x - 3}$$
-          Prove that $f$ is bijective, and compute its explicit inverse $f^{-1}(x)$.<br><br>
-          <em>Analytical Solution:</em><br>
-          <strong>Step 1: Proof of Injectivity (One-to-One):</strong><br>
-          Let $x_1, x_2 \in A = \mathbb{R} \setminus \{3\}$. Assume $f(x_1) = f(x_2)$:
-          $$\frac{x_1 - 2}{x_1 - 3} = \frac{x_2 - 2}{x_2 - 3}$$
-          Cross-multiplying:
-          $$(x_1 - 2)(x_2 - 3) = (x_2 - 2)(x_1 - 3)$$
-          Expanding both products:
-          $$x_1 x_2 - 3x_1 - 2x_2 + 6 = x_1 x_2 - 3x_2 - 2x_1 + 6$$
-          Subtracting $x_1 x_2 + 6$ from both sides:
-          $$-3x_1 - 2x_2 = -3x_2 - 2x_1$$
-          Rearranging terms:
-          $$-3x_1 + 2x_1 = -3x_2 + 2x_2 \implies -x_1 = -x_2 \implies x_1 = x_2$$
-          Since $f(x_1) = f(x_2) \implies x_1 = x_2$ for all $x_1, x_2 \in A$, the function $f$ is strictly <strong>injective</strong>.<br><br>
-          <strong>Step 2: Proof of Surjectivity (Onto):</strong><br>
-          Let $y \in B = \mathbb{R} \setminus \{1\}$. We must find $x \in A$ such that $f(x) = y$:
-          $$y = \frac{x - 2}{x - 3}$$
-          $$y(x - 3) = x - 2 \implies xy - 3y = x - 2$$
-          Collecting terms in $x$:
-          $$xy - x = 3y - 2 \implies x(y - 1) = 3y - 2$$
-          Since $y \in B$, $y \neq 1$, so $(y - 1) \neq 0$. We may divide by $(y - 1)$:
-          $$x = \frac{3y - 2}{y - 1}$$
-          We check whether this $x$ belongs to the domain $A = \mathbb{R} \setminus \{3\}$.<br>
-          Could $x = 3$?
-          $$\frac{3y - 2}{y - 1} = 3 \implies 3y - 2 = 3(y - 1) \implies 3y - 2 = 3y - 3 \implies -2 = -3 \quad (\text{Contradiction})$$
-          Hence, $x \neq 3$ for any real $y$. Thus, $x = \frac{3y - 2}{y - 1} \in A$.<br>
-          Now evaluate $f(x)$:
-          $$f(x) = f\left(\frac{3y - 2}{y - 1}\right) = \frac{\frac{3y - 2}{y - 1} - 2}{\frac{3y - 2}{y - 1} - 3} = \frac{\frac{3y - 2 - 2(y - 1)}{y - 1}}{\frac{3y - 2 - 3(y - 1)}{y - 1}} = \frac{3y - 2 - 2y + 2}{3y - 2 - 3y + 3} = \frac{y}{1} = y$$
-          Thus, for every $y \in B$, there exists a valid pre-image $x \in A$. Therefore, $f$ is <strong>surjective</strong>.<br><br>
-          <strong>Step 3: Determining the Inverse:</strong><br>
-          Since $f$ is both injective and surjective, it is bijective and therefore invertible. The inverse function $f^{-1}: B \to A$ is:
-          $$f^{-1}(y) = \frac{3y - 2}{y - 1} \quad \implies \quad f^{-1}(x) = \frac{3x - 2}{x - 1}$$<br>
-
-          <strong>Model Problem 1.3 (Piecewise Function Analysis):</strong><br>
-          Consider the function $f: \mathbb{N} \to \mathbb{N}$ defined piecewise by:
-          $$f(n) = \begin{cases} \dfrac{n + 1}{2}, &amp; \text{if } n \text{ is odd} \\[8pt] \dfrac{n}{2}, &amp; \text{if } n \text{ is even} \end{cases}$$
-          Determine whether $f$ is bijective.<br><br>
-          <em>Analytical Solution:</em><br>
-          <strong>Step 1: Check for Injectivity:</strong><br>
-          We test distinct inputs to see whether they map to the same image.
+          <h4>Partitions of a Set and the Fundamental Theorem</h4>
+          <p>
+            <strong>Definition of a Partition:</strong> A collection $\mathcal{P} = \{A_1, A_2, A_3, \dots\}$ of non-empty subsets of $A$ is defined as a <em>partition</em> of $A$ if:
+          </p>
           <ul>
-            <li>Evaluate $f(1)$: Since $n = 1$ is odd, $f(1) = \frac{1 + 1}{2} = 1$.</li>
-            <li>Evaluate $f(2)$: Since $n = 2$ is even, $f(2) = \frac{2}{2} = 1$.</li>
+            <li>$A_i \neq \emptyset$ for all indices $i$.</li>
+            <li>Pairwise Disjointness: $A_i \cap A_j = \emptyset$ for all $i \neq j$.</li>
+            <li>Exhaustive: $\bigcup_i A_i = A$.</li>
           </ul>
-          We have $1 \neq 2$, but $f(1) = f(2) = 1$. Distinct domain elements yield the same image. Hence, $f$ is <strong>not injective</strong> (it is many-to-one).<br><br>
-          <strong>Step 2: Check for Surjectivity:</strong><br>
-          Let $m \in \mathbb{N}$ be an arbitrary element in the codomain. We consider two cases for pre-images:
-          <ul>
-            <li>Choose an odd pre-image: Set $\frac{n + 1}{2} = m \implies n = 2m - 1$. For any $m \ge 1$, $2m - 1$ is a positive odd integer, so $2m - 1 \in \mathbb{N}$. Then $f(2m - 1) = \frac{(2m - 1) + 1}{2} = m$.</li>
-            <li>Choose an even pre-image: Set $\frac{n}{2} = m \implies n = 2m$. For any $m \ge 1$, $2m$ is a positive even integer, so $2m \in \mathbb{N}$. Then $f(2m) = \frac{2m}{2} = m$.</li>
-          </ul>
-          Every element $m \in \mathbb{N}$ has not only one, but two distinct pre-images ($2m - 1$ and $2m$) in $\mathbb{N}$. Therefore, the range is all of $\mathbb{N}$, and $f$ is <strong>surjective</strong>.<br><br>
-          <strong>Conclusion:</strong> $f$ is surjective but not injective; therefore, $f$ is <strong>not bijective</strong>.<br><br>
+          <p>
+            <strong>The Fundamental Theorem of Equivalence Relations:</strong>
+            <em>An equivalence relation $R$ on a set $A$ partitions the set $A$ into mutually disjoint equivalence classes. Conversely, any partition of a set $A$ induces a unique equivalence relation on $A$ under which the blocks of the partition are the equivalence classes.</em>
+          </p>
+          <p>
+            The set of all equivalence classes of $A$ with respect to $R$ is termed the <strong>Quotient Set</strong> of $A$ by $R$, denoted:
+          </p>
+          <p style="text-align: center;">
+            $$A / R = \{[a] : a \in A\}$$
+          </p>
 
-          <!-- SECTION 12: CBSE EXAM TRAPS AND MARKING SCHEME PROTOCOLS -->
-          <strong>1.12 Senior Examiner Commentary: Pitfalls and CBSE Board Marking Nuances</strong><br>
-          As an examiner evaluating Class 12 board scripts, deductions frequently arise not from arithmetic errors, but from missing formal justifications and imprecise mathematical grammar. Keep the following requirements in mind:
+          <h4>Canonical Paradigm: Congruence Modulo $n$</h4>
+          <p>
+            Let $\mathbb{Z}$ be the set of integers and let $n \in \mathbb{N}$ be a fixed positive integer. Define a relation $R$ on $\mathbb{Z}$ by:
+          </p>
+          <p style="text-align: center;">
+            $$a \equiv b \pmod n \iff n \mid (a - b) \iff a - b = kn \text{ for some } k \in \mathbb{Z}$$
+          </p>
+          <p>
+            Let us verify that Congruence Modulo $n$ is an equivalence relation:
+          </p>
           <ul>
-            <li><strong>Universal Quantifiers:</strong> Stating that a relation is reflexive requires the universal quantifier: $\forall a \in A, \, (a, a) \in R$. Showing that $(1, 1) \in R$ for a single element is insufficient to claim reflexivity for the entire set.</li>
-            <li><strong>Disproving vs. Proving:</strong> A general proof cannot rely on specific numbers; it must use arbitrary variables ($x_1, x_2 \in A$). Conversely, to <em>disprove</em> a property (such as transitivity or injectivity), a concrete numerical counterexample is required.</li>
-            <li><strong>Validating Codomain Inclusion in Surjectivity:</strong> After solving $y = f(x)$ to obtain $x = g(y)$, students must verify that $g(y)$ actually falls within the specified domain $X$ for <em>all</em> $y \in Y$. For instance, if $f: \mathbb{R} \to \mathbb{R}$ is given by $f(x) = x^2$, solving gives $x = \pm\sqrt{y}$, which is undefined in $\mathbb{R}$ for $y &lt; 0$. Omitting this domain check results in point deductions.</li>
-            <li><strong>Domain Notation for Compositions:</strong> When defining $g \circ f$, always verify that the inner range lies inside the outer domain: $\text{Range}(f) \subseteq \text{Dom}(g)$. Without this check, writing the composite expression may be invalid.</li>
-            <li><strong>Rigorous Algebraic Layout for Bijectivity Proofs:</strong> CBSE marking schemes assign distinct marks for: (1) stating the injective condition and completing the step-by-step algebra to reach $x_1 = x_2$, (2) explicitly solving for $x$ in terms of $y$, (3) stating that $x$ lies in the domain for all values in the codomain, and (4) computing $f(x)$ to verify $f(g(y)) = y$. Skipping step 3 or 4 is a common source of lost marks.</li>
+            <li><strong>Reflexivity:</strong> For any $a \in \mathbb{Z}$, $a - a = 0 = 0 \cdot n$. Since $0 \in \mathbb{Z}$, $n \mid (a - a)$, so $a \equiv a \pmod n$. Reflexivity holds.</li>
+            <li><strong>Symmetry:</strong> Let $a \equiv b \pmod n \implies a - b = kn$ ($k \in \mathbb{Z}$). Multiplying by $-1$, we obtain $b - a = (-k)n$. Since $k \in \mathbb{Z} \implies -k \in \mathbb{Z}$, it follows that $n \mid (b - a)$, hence $b \equiv a \pmod n$. Symmetry holds.</li>
+            <li><strong>Transitivity:</strong> Let $a \equiv b \pmod n$ and $b \equiv c \pmod n$. Then $a - b = k_1 n$ and $b - c = k_2 n$ for $k_1, k_2 \in \mathbb{Z}$. Adding these two equations yields:
+              $$(a - b) + (b - c) = k_1 n + k_2 n \implies a - c = (k_1 + k_2)n$$
+              Since $k_1 + k_2 \in \mathbb{Z}$, $n \mid (a - c)$, which confirms $a \equiv c \pmod n$. Transitivity holds.
+            </li>
           </ul>
-        </p>
+          <p>
+            The quotient set $\mathbb{Z} / \equiv_n$ produces precisely $n$ distinct equivalence classes, designated the <em>residue classes modulo $n$</em>:
+          </p>
+          <p style="text-align: center;">
+            $$[0] = \{\dots, -2n, -n, 0, n, 2n, \dots\}$$
+            $$[1] = \{\dots, -2n+1, -n+1, 1, n+1, 2n+1, \dots\}$$
+            $$\vdots$$
+            $$[n-1] = \{\dots, -n-1, -1, n-1, 2n-1, 3n-1, \dots\}$$
+          </p>
+          <p>
+            These $n$ classes are mutually disjoint, and their union is $\mathbb{Z}$, confirming the theorem.
+          </p>
+
+          <hr />
+
+          <h3>5. Combinatorial Analysis of Relations</h3>
+          <p>
+            Let $A$ be a finite set with cardinality $|A| = n$.
+          </p>
+          <ol>
+            <li><strong>Total Number of Relations:</strong>
+              The total number of relations on $A$ is the cardinality of $\mathcal{P}(A \times A)$. Since $|A \times A| = n^2$:
+              $$N_{\text{total}} = 2^{n^2}$$
+            </li>
+            <li><strong>Total Number of Reflexive Relations:</strong>
+              A relation $R$ is reflexive if it contains all $n$ diagonal pairs: $(a_1, a_1), (a_2, a_2), \dots, (a_n, a_n)$. The total number of pairs in $A \times A$ is $n^2$. The diagonal contains $n$ elements, leaving $n^2 - n$ non-diagonal pairs. For each non-diagonal pair $(a_i, a_j)$ ($i \neq j$), there are 2 choices: include it or exclude it. The $n$ diagonal pairs have only 1 choice (must be included). Hence:
+              $$N_{\text{reflexive}} = 1^n \cdot 2^{n^2 - n} = 2^{n(n - 1)}$$
+            </li>
+            <li><strong>Total Number of Symmetric Relations:</strong>
+              The $n \times n$ grid of ordered pairs consists of:
+              <ul>
+                <li>$n$ diagonal elements: $(a_i, a_i)$. Each can be independently included or excluded ($2^n$ choices).</li>
+                <li>$\frac{n^2 - n}{2} = \binom{n}{2}$ pairs of symmetric off-diagonal positions: $\{(a_i, a_j), (a_j, a_i)\}$. For each such pair, to preserve symmetry, we must either include both or exclude both ($2^{\binom{n}{2}}$ choices).</li>
+              </ul>
+              By the multiplication rule:
+              $$N_{\text{symmetric}} = 2^n \cdot 2^{\frac{n(n-1)}{2}} = 2^{n + \frac{n(n-1)}{2}} = 2^{\frac{n(n+1)}{2}}$$
+            </li>
+            <li><strong>Total Number of Reflexive and Symmetric Relations:</strong>
+              Here, all $n$ diagonal pairs must be present ($1$ choice each), while the off-diagonal pairs must be chosen symmetrically:
+              $$N_{\text{ref} \land \text{sym}} = 1^n \cdot 2^{\frac{n(n-1)}{2}} = 2^{\frac{n(n-1)}{2}}$$
+            </li>
+            <li><strong>Number of Equivalence Relations (Bell Numbers):</strong>
+              The number of equivalence relations on a set of $n$ elements equals the number of partitions of that set, given by the <em>Bell Number</em> $B_n$, which satisfies the recurrence relation:
+              $$B_{n+1} = \sum_{k=0}^{n} \binom{n}{k} B_k, \quad \text{with } B_0 = 1$$
+              For the first few integers:
+              <ul>
+                <li>$B_1 = 1$</li>
+                <li>$B_2 = 2$</li>
+                <li>$B_3 = 5$</li>
+                <li>$B_4 = 15$</li>
+                <li>$B_5 = 52$</li>
+              </ul>
+            </li>
+          </ol>
+
+          <hr />
+
+          <h3>6. Advanced Theory of Mappings (Functions)</h3>
+          <p>
+            A <strong>function</strong> (or mapping) is a specialized type of relation exhibiting strict determinism and total domain coverage.
+          </p>
+          <p>
+            <strong>Formal Definition:</strong> Let $X$ and $Y$ be non-empty sets. A relation $f \subseteq X \times Y$ is called a <em>function</em> from $X$ to $Y$, written $f: X \to Y$, if and only if:
+          </p>
+          <ol>
+            <li><strong>Totality (Existence Condition):</strong> Every element of $X$ is assigned an image in $Y$:
+              $$\forall x \in X, \quad \exists y \in Y \text{ such that } (x, y) \in f$$
+            </li>
+            <li><strong>Uniqueness (Well-Definedness Condition):</strong> No element of $X$ is assigned more than one image in $Y$:
+              $$\forall x \in X \text{ and } \forall y_1, y_2 \in Y, \quad \Big((x, y_1) \in f \land (x, y_2) \in f\Big) \implies y_1 = y_2$$
+            </li>
+          </ol>
+          <p>
+            When $(x, y) \in f$, we write $f(x) = y$, where $y$ is called the <em>image</em> of $x$ under $f$, and $x$ is called the <em>pre-image</em> of $y$ under $f$.
+          </p>
+          <p>
+            <strong>The Graphical Criterion (Vertical Line Test):</strong> Let $f \subseteq \mathbb{R} \times \mathbb{R}$. The curve represents a well-defined function $y = f(x)$ if and only if <em>every</em> vertical line $x = c$ (where $c \in \operatorname{Dom}(f)$) intersects the graph at <em>exactly one point</em>.
+          </p>
+
+          <hr />
+
+          <h3>7. Detailed Classification of Functions</h3>
+          <p>
+            The core analytic distinction in Class 12 mathematics rests upon three classifications: Injection, Surjection, and Bijection.
+          </p>
+
+          <h4>A. Injective Functions (One-to-One Mappings)</h4>
+          <p>
+            <strong>Definition:</strong> A function $f: X \to Y$ is called <strong>injective</strong> (or one-to-one) if distinct elements in the domain map to distinct elements in the codomain.
+          </p>
+          <p>
+            Formally, this can be stated in direct form or contrapositive form:
+          </p>
+          <p style="text-align: center;">
+            <strong>Direct Form:</strong> $\forall x_1, x_2 \in X, \quad x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$
+          </p>
+          <p style="text-align: center;">
+            <strong>Contrapositive Form (Standard Analytical Proof Method):</strong>
+            $$\forall x_1, x_2 \in X, \quad f(x_1) = f(x_2) \implies x_1 = x_2$$
+          </p>
+          <p>
+            If a function is not injective, it is classified as <strong>many-to-one</strong>:
+          </p>
+          <p style="text-align: center;">
+            $$\exists x_1, x_2 \in X \text{ such that } x_1 \neq x_2 \text{ and } f(x_1) = f(x_2)$$
+          </p>
+
+          <p><strong>Tests for Injectivity:</strong></p>
+          <ul>
+            <li><strong>The Horizontal Line Test:</strong> A continuous real-valued function $f: I \subseteq \mathbb{R} \to \mathbb{R}$ is injective if and only if every horizontal line $y = k$ ($k \in \mathbb{R}$) intersects the graph of $f$ at <em>at most one point</em>.</li>
+            <li><strong>Monotonicity Criterion (Calculus Test):</strong> Let $f: [a, b] \to \mathbb{R}$ be continuous on $[a, b]$ and differentiable on $(a, b)$.
+              <ul>
+                <li>If $f'(x) > 0$ for all $x \in (a, b)$ (strictly increasing), then $f$ is <strong>strictly injective</strong>.</li>
+                <li>If $f'(x) < 0$ for all $x \in (a, b)$ (strictly decreasing), then $f$ is <strong>strictly injective</strong>.</li>
+                <li>If $f'(x) = 0$ on any interval of non-zero length, or if $f'(x)$ changes sign across the domain, $f$ is <strong>not injective</strong>. (Isolated points where $f'(x) = 0$, such as $f(x) = x^3$ at $x = 0$, do not compromise injectivity).</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h4>B. Surjective Functions (Onto Mappings)</h4>
+          <p>
+            <strong>Definition:</strong> A function $f: X \to Y$ is called <strong>surjective</strong> (or onto) if every element in the codomain possesses at least one pre-image in the domain.
+          </p>
+          <p style="text-align: center;">
+            $$\forall y \in Y, \quad \exists x \in X \text{ such that } f(x) = y$$
+          </p>
+          <p>
+            This condition is algebraically equivalent to stating that the range of the function is identical to its codomain:
+          </p>
+          <p style="text-align: center;">
+            $$\operatorname{Ran}(f) = Y$$
+          </p>
+          <p>
+            If a function is not surjective, it is termed an <strong>into</strong> function, meaning:
+          </p>
+          <p style="text-align: center;">
+            $$\exists y \in Y \text{ such that } \forall x \in X, f(x) \neq y \iff \operatorname{Ran}(f) \subsetneq Y$$
+          </p>
+
+          <h4>C. Bijective Functions (One-to-One and Onto Mappings)</h4>
+          <p>
+            <strong>Definition:</strong> A function $f: X \to Y$ is called <strong>bijective</strong> if it is simultaneously injective and surjective:
+          </p>
+          <p style="text-align: center;">
+            $$f \text{ is bijective} \iff (f \text{ is one-to-one}) \land (f \text{ is onto})$$
+          </p>
+          <p>
+            A bijection establishes a <em>one-to-one correspondence</em> between sets $X$ and $Y$. If $X$ and $Y$ are finite sets, a bijection can exist if and only if $|X| = |Y|$.
+          </p>
+
+          <hr />
+
+          <h3>8. Combinatorics of Functions</h3>
+          <p>
+            Let $X$ and $Y$ be finite sets with $|X| = m$ and $|Y| = n$, where $m, n \in \mathbb{N}$.
+          </p>
+
+          <h4>A. Total Number of Functions</h4>
+          <p>
+            Each of the $m$ distinct elements in $X$ can be mapped independently to any of the $n$ elements in $Y$. By the fundamental multiplication principle:
+          </p>
+          <p style="text-align: center;">
+            $$N_{\text{total functions}} = \underbrace{n \times n \times \dots \times n}_{m \text{ times}} = n^m$$
+          </p>
+
+          <h4>B. Total Number of Injective Functions</h4>
+          <p>
+            For an injection to exist, each element of $X$ must map to a unique element in $Y$. This requires $n \ge m$.
+          </p>
+          <ul>
+            <li>The first element in $X$ has $n$ possible choices in $Y$.</li>
+            <li>The second element has $n - 1$ choices.</li>
+            <li>The $m$-th element has $n - (m - 1) = n - m + 1$ choices.</li>
+          </ul>
+          <p>
+            Hence, the total number of injective functions is:
+          </p>
+          <p style="text-align: center;">
+            $$N_{\text{injections}} = \begin{cases} 
+            ^n P_m = \dfrac{n!}{(n - m)!}, & \text{if } n \ge m \\ 
+            0, & \text{if } n < m \end{cases}$$
+          </p>
+
+          <h4>C. Total Number of Surjective Functions</h4>
+          <p>
+            For a surjection to exist, the domain must have at least as many elements as the codomain; thus, $m \ge n$. If $m < n$, $N_{\text{surjections}} = 0$.
+          </p>
+          <p>
+            Using the <strong>Principle of Inclusion-Exclusion (PIE)</strong>, we calculate the number of onto functions from an $m$-element set to an $n$-element set:
+          </p>
+          <p style="text-align: center;">
+            $$N_{\text{surjections}} = \sum_{k=0}^{n} (-1)^k \binom{n}{k} (n - k)^m$$
+          </p>
+          <p>
+            Expanding this formula:
+          </p>
+          <p style="text-align: center;">
+            $$N_{\text{surjections}} = n^m - \binom{n}{1}(n-1)^m + \binom{n}{2}(n-2)^m - \binom{n}{3}(n-3)^m + \dots + (-1)^{n-1}\binom{n}{n-1}(1)^m$$
+          </p>
+          <p>
+            Alternatively, this can be expressed using <strong>Stirling Numbers of the Second Kind</strong>, denoted $S(m, n)$ or $\left\{ \begin{matrix} m \\ n \end{matrix} \right\}$, which count the number of ways to partition a set of $m$ labeled elements into $n$ unlabeled, non-empty subsets:
+          </p>
+          <p style="text-align: center;">
+            $$N_{\text{surjections}} = n! \cdot S(m, n) = n! \cdot \frac{1}{n!} \sum_{j=0}^{n} (-1)^{n-j} \binom{n}{j} j^m = \sum_{j=0}^{n} (-1)^{n-j} \binom{n}{j} j^m$$
+          </p>
+
+          <h4>D. Total Number of Bijective Functions</h4>
+          <p>
+            A bijection requires $m = n$. When $m = n$, using either the injection formula ($^n P_n$) or the surjection formula:
+          </p>
+          <p style="text-align: center;">
+            $$N_{\text{bijections}} = \begin{cases} n!, & \text{if } m = n \\ 0, & \text{if } m \neq n \end{cases}$$
+          </p>
+
+          <hr />
+
+          <h3>9. Composition of Functions</h3>
+          <p>
+            <strong>Definition:</strong> Let $f: A \to B$ and $g: B \to C$ be two functions. The <strong>composition</strong> of $g$ and $f$, denoted by $g \circ f$ (read as &ldquo;$g$ circle $f$&rdquo; or &ldquo;$g$ composed with $f$&rdquo;), is a function mapping $A$ directly into $C$:
+          </p>
+          <p style="text-align: center;">
+            $$g \circ f: A \to C, \quad \text{defined by} \quad (g \circ f)(x) = g(f(x)), \quad \forall x \in A$$
+          </p>
+
+          <h4>Existence Condition for Composition</h4>
+          <p>
+            For $g(f(x))$ to be evaluated, the output of $f$ must lie within the domain of $g$. Therefore, $g \circ f$ is well-defined if and only if:
+          </p>
+          <p style="text-align: center;">
+            $$\operatorname{Ran}(f) \subseteq \operatorname{Dom}(g)$$
+          </p>
+          <p>
+            Similarly, for $f \circ g$ to exist, we must have $\operatorname{Ran}(g) \subseteq \operatorname{Dom}(f)$.
+          </p>
+
+          <h4>Fundamental Algebraic Theorems on Composition</h4>
+          <ol>
+            <li><strong>Non-Commutativity:</strong> In general, function composition is <em>not commutative</em>:
+              $$g \circ f \neq f \circ g$$
+              Even when both operations exist (such as when $f, g: A \to A$), $g(f(x))$ and $f(g(x))$ are generally distinct expressions.
+            </li>
+            <li><strong>Associativity:</strong> Function composition is strictly <em>associative</em>. Let $f: A \to B$, $g: B \to C$, and $h: C \to D$. Then:
+              $$h \circ (g \circ f) = (h \circ g) \circ f$$
+              <em>Proof:</em> Let $x \in A$.
+              $$\big(h \circ (g \circ f)\big)(x) = h\big((g \circ f)(x)\big) = h\big(g(f(x))\big)$$
+              $$\big((h \circ g) \circ f\big)(x) = (h \circ g)(f(x)) = h\big(g(f(x))\big)$$
+              Since the domain, codomain, and values at every point $x$ coincide, the functions are identical.
+            </li>
+            <li><strong>Identity Composition:</strong> Let $f: A \to B$. If $I_A: A \to A$ and $I_B: B \to B$ are the identity functions on $A$ and $B$ respectively ($I_A(x) = x$, $I_B(y) = y$), then:
+              $$f \circ I_A = f \quad \text{and} \quad I_B \circ f = f$$
+            </li>
+            <li><strong>Preservation of Injectivity:</strong>
+              If $f: A \to B$ and $g: B \to C$ are both injective, then $(g \circ f): A \to C$ is injective.
+              <br />
+              <em>Proof:</em> Let $x_1, x_2 \in A$.
+              $$(g \circ f)(x_1) = (g \circ f)(x_2) \implies g(f(x_1)) = g(f(x_2))$$
+              Since $g$ is injective, $g(u) = g(v) \implies u = v$. Setting $u = f(x_1)$ and $v = f(x_2)$:
+              $$f(x_1) = f(x_2)$$
+              Since $f$ is injective, $f(x_1) = f(x_2) \implies x_1 = x_2$.
+              Hence, $g \circ f$ is injective.
+            </li>
+            <li><strong>Preservation of Surjectivity:</strong>
+              If $f: A \to B$ and $g: B \to C$ are both surjective, then $(g \circ f): A \to C$ is surjective.
+              <br />
+              <em>Proof:</em> Let $z \in C$ be an arbitrary element.
+              Since $g: B \to C$ is surjective, there exists some $y \in B$ such that $g(y) = z$.
+              Since $f: A \to B$ is surjective, for this $y \in B$, there exists some $x \in A$ such that $f(x) = y$.
+              Substituting this yields:
+              $$(g \circ f)(x) = g(f(x)) = g(y) = z$$
+              Thus, for any $z \in C$, there exists an $x \in A$ such that $(g \circ f)(x) = z$. Hence, $g \circ f$ is surjective.
+            </li>
+            <li><strong>The Converse Deduction Theorem (Crucial for Competitive Exams &amp; Boards):</strong>
+              Let $f: A \to B$ and $g: B \to C$.
+              <ul>
+                <li>If $g \circ f$ is <strong>injective</strong>, then $f$ must be <strong>injective</strong>. (Note: $g$ need not be injective).</li>
+                <li>If $g \circ f$ is <strong>surjective</strong>, then $g$ must be <strong>surjective</strong>. (Note: $f$ need not be surjective).</li>
+              </ul>
+            </li>
+          </ol>
+
+          <hr />
+
+          <h3>10. Invertible Functions and the Inversion Algorithm</h3>
+          <p>
+            <strong>Definition:</strong> A function $f: X \to Y$ is said to be <strong>invertible</strong> if there exists a function $g: Y \to X$ such that:
+          </p>
+          <p style="text-align: center;">
+            $$g \circ f = I_X \quad \text{and} \quad f \circ g = I_Y$$
+          </p>
+          <p>
+            Where $I_X$ is the identity function on $X$ and $I_Y$ is the identity function on $Y$. If such a function $g$ exists, it is called the <strong>inverse</strong> of $f$, and is uniquely denoted by $f^{-1}$.
+          </p>
+
+          <h4>The Fundamental Theorem of Invertibility</h4>
+          <p style="text-align: center;">
+            <strong>A function $f: X \to Y$ is invertible if and only if it is a bijection (both one-to-one and onto).</strong>
+          </p>
+          <p>
+            <em>Proof ($\implies$):</em> Assume $f$ is invertible. Then there exists $g: Y \to X$ such that $g \circ f = I_X$ and $f \circ g = I_Y$.
+          </p>
+          <ul>
+            <li>To prove injectivity: Let $f(x_1) = f(x_2)$. Apply $g$ to both sides:
+              $$g(f(x_1)) = g(f(x_2)) \implies (g \circ f)(x_1) = (g \circ f)(x_2) \implies I_X(x_1) = I_X(x_2) \implies x_1 = x_2$$
+              Thus, $f$ is injective.
+            </li>
+            <li>To prove surjectivity: Let $y \in Y$ be arbitrary. Consider $x = g(y) \in X$.
+              Evaluating $f$ at $x$:
+              $$f(x) = f(g(y)) = (f \circ g)(y) = I_Y(y) = y$$
+              Thus, every $y \in Y$ has a pre-image $x = g(y) \in X$. Hence, $f$ is surjective.
+            </li>
+          </ul>
+          <p>
+            Therefore, invertibility implies bijectivity.
+          </p>
+          <p>
+            <em>Proof ($\impliedby$):</em> Assume $f$ is bijective.
+          </p>
+          <ul>
+            <li>Since $f$ is surjective, for every $y \in Y$, there exists at least one $x \in X$ such that $f(x) = y$.</li>
+            <li>Since $f$ is injective, this $x$ is unique.</li>
+          </ul>
+          <p>
+            We define a rule $g: Y \to X$ by setting $g(y) = x$, where $x$ is the unique element such that $f(x) = y$.
+          </p>
+          <ul>
+            <li>For any $x \in X$, let $y = f(x)$. Then by definition, $g(y) = x \implies g(f(x)) = x \implies (g \circ f)(x) = I_X(x)$. Thus, $g \circ f = I_X$.</li>
+            <li>For any $y \in Y$, let $x = g(y)$. Then $f(x) = y \implies f(g(y)) = y \implies (f \circ g)(y) = I_Y(y)$. Thus, $f \circ g = I_Y$.</li>
+          </ul>
+          <p>
+            Hence, $g$ is the two-sided inverse of $f$, making $f$ invertible.
+          </p>
+
+          <h4>The Reversal Law of Inverses</h4>
+          <p>
+            Let $f: A \to B$ and $g: B \to C$ be two invertible functions. Then their composition $(g \circ f): A \to C$ is also invertible, and:
+          </p>
+          <p style="text-align: center;">
+            $$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$$
+          </p>
+          <p>
+            <em>Proof:</em> We test whether $(f^{-1} \circ g^{-1})$ satisfies the two-sided inverse criteria for $(g \circ f)$:
+          </p>
+          <p style="text-align: center;">
+            $$(f^{-1} \circ g^{-1}) \circ (g \circ f) = f^{-1} \circ (g^{-1} \circ g) \circ f = f^{-1} \circ I_B \circ f = f^{-1} \circ f = I_A$$
+          </p>
+          <p style="text-align: center;">
+            $$(g \circ f) \circ (f^{-1} \circ g^{-1}) = g \circ (f \circ f^{-1}) \circ g^{-1} = g \circ I_B \circ g^{-1} = g \circ g^{-1} = I_C$$
+          </p>
+          <p>
+            By uniqueness of the inverse map, $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$.
+          </p>
+
+          <hr />
+
+          <h3>11. Theory of Binary Operations</h3>
+          <p>
+            <strong>Definition:</strong> A <strong>binary operation</strong> $*$ on a non-empty set $A$ is a function from the Cartesian product $A \times A$ into $A$:
+          </p>
+          <p style="text-align: center;">
+            $$*: A \times A \to A$$
+          </p>
+          <p>
+            We denote the image of an ordered pair $(a, b) \in A \times A$ under $*$ as $a * b$ instead of $*((a, b))$.
+          </p>
+          <p>
+            <strong>Closure Property:</strong> By definition, since $*$ is a well-defined function with codomain $A$, the set $A$ is automatically <em>closed</em> under $*$:
+          </p>
+          <p style="text-align: center;">
+            $$\forall a, b \in A, \quad a * b \in A$$
+          </p>
+          <p>
+            If $|A| = n$, the cardinality of $A \times A$ is $n^2$. Since a binary operation is simply a function from a domain of size $n^2$ to a codomain of size $n$, the total number of possible binary operations on $A$ is:
+          </p>
+          <p style="text-align: center;">
+            $$N_{\text{binary operations}} = n^{n^2}$$
+          </p>
+
+          <h4>Axiomatic Properties of Binary Operations</h4>
+          <ol>
+            <li><strong>Commutativity:</strong> A binary operation $*$ on $A$ is called <em>commutative</em> if:
+              $$\forall a, b \in A, \quad a * b = b * a$$
+              <em>Combinatorics of Commutative Operations:</em> In a Cayley multiplication table of size $n \times n$, commutativity requires the table to be symmetric across its main diagonal. The diagonal has $n$ elements, and there are $\frac{n(n-1)}{2}$ independent entries above the diagonal. 
+              Total independent entries $= n + \frac{n(n-1)}{2} = \frac{n(n+1)}{2}$.
+              Each entry can be filled in $n$ ways. Hence:
+              $$N_{\text{commutative binary operations}} = n^{\frac{n(n+1)}{2}}$$
+            </li>
+            <li><strong>Associativity:</strong> A binary operation $*$ on $A$ is called <em>associative</em> if:
+              $$\forall a, b, c \in A, \quad (a * b) * c = a * (b * c)$$
+            </li>
+            <li><strong>Identity Element:</strong> An element $e \in A$ is said to be the <strong>identity element</strong> for the binary operation $*$ if:
+              $$\forall a \in A, \quad a * e = a = e * a$$
+              <em>Uniqueness Theorem for Identity:</em> If an identity element exists for a binary operation, it is unique.
+              <br />
+              <em>Proof:</em> Suppose $e_1$ and $e_2$ are both identity elements in $A$ for $*$.
+              Since $e_1$ is an identity: $e_2 * e_1 = e_2$.
+              Since $e_2$ is an identity: $e_1 * e_2 = e_1$.
+              If $*$ is well-defined, and treating $e_1 * e_2$ from both viewpoints:
+              $$e_1 = e_1 * e_2 = e_2 \implies e_1 = e_2$$
+            </li>
+            <li><strong>Invertible Elements:</strong> Given a binary operation $*$ on $A$ with an identity element $e \in A$, an element $a \in A$ is said to be <strong>invertible</strong> (or symmetric) if there exists an element $b \in A$ such that:
+              $$a * b = e = b * a$$
+              The element $b$ is called the <strong>inverse</strong> of $a$, denoted $a^{-1}$.
+              <br />
+              <em>Uniqueness of Inverse:</em> If the operation $*$ is <strong>associative</strong>, the inverse of an element $a$, if it exists, is unique.
+              <br />
+              <em>Proof:</em> Suppose $b_1$ and $b_2$ are both inverses of $a$.
+              Then $a * b_1 = b_1 * a = e$ and $a * b_2 = b_2 * a = e$.
+              Consider the product $b_1 * (a * b_2)$:
+              $$b_1 * (a * b_2) = b_1 * e = b_1$$
+              Using associativity:
+              $$(b_1 * a) * b_2 = e * b_2 = b_2$$
+              Therefore:
+              $$b_1 = b_2$$
+            </li>
+          </ol>
+
+          <hr />
+
+          <h3>12. Critical Board Pitfalls, Edge Cases, and Misconceptions</h3>
+          <p>
+            To achieve full marks in the CBSE Class 12 Board Examination, students must navigate subtleties that are frequently penalized in descriptive answers:
+          </p>
+
+          <h4>Pitfall 1: Failing to Address Both Directions in Equivalence Proofs</h4>
+          <p>
+            When proving a relation is symmetric, writing &ldquo;$aRb \implies bRa$&rdquo; without universal quantifiers or without justifying algebraic reversibility results in an immediate deduction of marks. Always state: <em>&ldquo;Let $(a, b) \in R$ be arbitrary. Then... Hence $(b, a) \in R$. Since this holds for all $(a, b) \in R$, $R$ is symmetric.&rdquo;</em>
+          </p>
+
+          <h4>Pitfall 2: The Vacuous Transitivity Trap</h4>
+          <p>
+            Consider $R = \{(1, 2)\}$ on $A = \{1, 2, 3\}$. Many students mistakenly mark this as &ldquo;not transitive&rdquo; because $(1, 3)$ or $(2, 1)$ is missing. 
+            Remember: Transitivity requires that <em>whenever</em> $(a, b) \in R$ and $(b, c) \in R$, we must have $(a, c) \in R$. If the condition $(a, b) \in R \land (b, c) \in R$ is never met, no violation is possible, and the statement is <strong>vacuously true</strong>.
+          </p>
+
+          <h4>Pitfall 3: The Strict Domain/Codomain Dependence of Bijectivity</h4>
+          <p>
+            A common error is treating an algebraic rule in isolation without specifying its domain and codomain:
+          </p>
+          <ul>
+            <li>$f(x) = x^2$ with $f: \mathbb{R} \to \mathbb{R}$ is <strong>neither injective</strong> (since $f(-2) = f(2) = 4$) <strong>nor surjective</strong> (since $-4 \in \text{Codomain}$, but $x^2 \neq -4$ for any real $x$).</li>
+            <li>$f(x) = x^2$ with $f: [0, \infty) \to [0, \infty)$ is <strong>strictly bijective</strong> and invertible, with $f^{-1}(x) = \sqrt{x}$.</li>
+          </ul>
+          <p>
+            Always write the domain and codomain explicitly when verifying invertibility.
+          </p>
+
+          <h4>Pitfall 4: Confusing Invertibility with Algebraic Reciprocal</h4>
+          <p>
+            The notation $f^{-1}(x)$ denotes the <strong>functional inverse</strong> under composition, such that $f(f^{-1}(x)) = x$. It should not be confused with the multiplicative reciprocal:
+          </p>
+          <p style="text-align: center;">
+            $$f^{-1}(x) \neq \frac{1}{f(x)} = [f(x)]^{-1}$$
+          </p>
+
+          <h4>Pitfall 5: Proving Surjectivity Analytically</h4>
+          <p>
+            In CBSE board examinations, showing that $\operatorname{Ran}(f) = Y$ requires a two-step proof:
+          </p>
+          <ol>
+            <li>Let $y \in Y$ be arbitrary. Set $y = f(x)$ and solve for $x$ in terms of $y$: $x = g(y)$.</li>
+            <li>Show that for every $y \in Y$, this value $x = g(y)$ lies within the domain $X$.</li>
+            <li>Substitute $x$ back into $f$: evaluate $f(g(y))$ and show that it simplifies to $y$. Conclude: <em>&ldquo;Since for every $y \in Y$ there exists $x \in X$ such that $f(x) = y$, $f$ is surjective.&rdquo;</em></li>
+          </ol>
+        </div>
       </div>
     </article>
   </div>
@@ -758,299 +973,349 @@
 <section class="section container" id="derivations">
   <div class="section-head">
     <span class="section-eyebrow">Formula Repository</span>
-    <h2>2. Master Equation Bank & Step-by-Step Derivations</h2>
+    <h2>2. Master Equation Bank &amp; Step-by-Step Derivations</h2>
   </div>
   <div class="resource-grid">
     <article class="resource">
       <h3>Exhaustive Formula Table</h3>
-      <p>The following repository summarizes the operational definitions, cardinality equations, and closure properties for Relations and Functions on finite and infinite sets.</p>
+      <p>Summary of algebraic counting identities, relational bounds, mapping combinations, and functional equations for a finite set $A$ where $|A| = n$ and a set $B$ where $|B| = m$.</p>
       
       <div class="table-responsive">
-        <table class="data-table" style="width: 100%; border-collapse: collapse; text-align: left; margin-bottom: 2rem;">
+        <table class="formula-table" style="width: 100%; border-collapse: collapse; text-align: left; margin-bottom: 2rem;">
           <thead>
-            <tr style="border-bottom: 2px solid #ccc;">
-              <th style="padding: 10px;">Concept / Object</th>
-              <th style="padding: 10px;">Mathematical Formulation</th>
-              <th style="padding: 10px;">Variables &amp; Sets</th>
-              <th style="padding: 10px;">Applicability / Existence Condition</th>
+            <tr style="border-bottom: 2px solid var(--border-color, #cbd5e1); background-color: var(--table-head-bg, #f8fafc);">
+              <th style="padding: 12px 16px;">Formula / Identity</th>
+              <th style="padding: 12px 16px;">Mathematical Expression</th>
+              <th style="padding: 12px 16px;">Variables &amp; Domain/Codomain</th>
+              <th style="padding: 12px 16px;">Conditions / Context</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td><strong>Cartesian Product</strong></td>
-              <td>$A \times B = \{(a, b) : a \in A \text{ and } b \in B\}$</td>
-              <td>$|A| = m, \, |B| = n$</td>
-              <td>$|A \times B| = mn$; $\emptyset$ if $A = \emptyset$ or $B = \emptyset$</td>
+            <tr style="border-bottom: 1px solid var(--border-color, #e2e8f0);">
+              <td style="padding: 12px 16px;"><strong>Cartesian Product Cardinality</strong></td>
+              <td style="padding: 12px 16px;">$|A \times B| = |A| \cdot |B| = n \cdot m$</td>
+              <td style="padding: 12px 16px;">$|A|=n, |B|=m \in \mathbb{N}_0$</td>
+              <td style="padding: 12px 16px;">Finite discrete sets</td>
             </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td><strong>Total Relations</strong></td>
-              <td>$N_R = 2^{mn}$</td>
-              <td>$|A| = m, \, |B| = n$</td>
-              <td>Number of distinct subsets of $A \times B$</td>
+            <tr style="border-bottom: 1px solid var(--border-color, #e2e8f0);">
+              <td style="padding: 12px 16px;"><strong>Total Possible Relations</strong></td>
+              <td style="padding: 12px 16px;">$N_{\text{rel}} = 2^{|A \times B|} = 2^{nm}$</td>
+              <td style="padding: 12px 16px;">$R \subseteq A \times B$</td>
+              <td style="padding: 12px 16px;">Cardinality of power set $\mathcal{P}(A \times B)$</td>
             </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td><strong>Reflexive Relation</strong></td>
-              <td>$\forall a \in A, \, (a, a) \in R$</td>
-              <td>Relation $R \subseteq A \times A$, $|A| = n$</td>
-              <td>Total reflexive relations: $N_{ref} = 2^{n(n-1)} = 2^{n^2 - n}$</td>
+            <tr style="border-bottom: 1px solid var(--border-color, #e2e8f0);">
+              <td style="padding: 12px 16px;"><strong>Reflexive Relations</strong></td>
+              <td style="padding: 12px 16px;">$N_{\text{ref}} = 2^{n(n-1)}$</td>
+              <td style="padding: 12px 16px;">$R \subseteq A \times A, |A|=n$</td>
+              <td style="padding: 12px 16px;">$\forall a \in A, (a,a) \in R$ is fixed (1 choice)</td>
             </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td><strong>Symmetric Relation</strong></td>
-              <td>$\forall a, b \in A, \, (a, b) \in R \implies (b, a) \in R$</td>
-              <td>Relation $R \subseteq A \times A$, $|A| = n$</td>
-              <td>Total symmetric relations: $N_{sym} = 2^{\frac{n(n+1)}{2}}$</td>
+            <tr style="border-bottom: 1px solid var(--border-color, #e2e8f0);">
+              <td style="padding: 12px 16px;"><strong>Symmetric Relations</strong></td>
+              <td style="padding: 12px 16px;">$N_{\text{sym}} = 2^{\frac{n(n+1)}{2}}$</td>
+              <td style="padding: 12px 16px;">$R \subseteq A \times A, |A|=n$</td>
+              <td style="padding: 12px 16px;">$(a,b) \in R \iff (b,a) \in R$</td>
             </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td><strong>Reflexive &amp; Symmetric</strong></td>
-              <td>$R = R^{-1} \text{ and } I_A \subseteq R$</td>
-              <td>Relation $R \subseteq A \times A$, $|A| = n$</td>
-              <td>Total relations: $N_{ref \cap sym} = 2^{\frac{n(n-1)}{2}}$</td>
+            <tr style="border-bottom: 1px solid var(--border-color, #e2e8f0);">
+              <td style="padding: 12px 16px;"><strong>Reflexive &amp; Symmetric Relations</strong></td>
+              <td style="padding: 12px 16px;">$N_{\text{ref}\cap\text{sym}} = 2^{\frac{n(n-1)}{2}}$</td>
+              <td style="padding: 12px 16px;">$R \subseteq A \times A, |A|=n$</td>
+              <td style="padding: 12px 16px;">Diagonal pairs fixed; off-diagonal symmetric pairs chosen freely</td>
             </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td><strong>Transitive Relation</strong></td>
-              <td>$(a, b) \in R \land (b, c) \in R \implies (a, c) \in R$</td>
-              <td>$\forall a, b, c \in A$</td>
-              <td>Vacuously true if premise $(a, b) \in R \land (b, c) \in R$ fails</td>
+            <tr style="border-bottom: 1px solid var(--border-color, #e2e8f0);">
+              <td style="padding: 12px 16px;"><strong>Total Functions</strong></td>
+              <td style="padding: 12px 16px;">$N_f = m^n$</td>
+              <td style="padding: 12px 16px;">$f: A \to B, |A|=n, |B|=m$</td>
+              <td style="padding: 12px 16px;">Each of the $n$ elements has $m$ choices</td>
             </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td><strong>Equivalence Class</strong></td>
-              <td>$[a] = \{x \in A : (x, a) \in R\}$</td>
-              <td>$a \in A$, $R$ is an equivalence relation</td>
-              <td>$[a] \neq \emptyset$ since $a \in [a]$; $[a] = [b] \iff (a, b) \in R$</td>
+            <tr style="border-bottom: 1px solid var(--border-color, #e2e8f0);">
+              <td style="padding: 12px 16px;"><strong>Injective (One-to-One) Functions</strong></td>
+              <td style="padding: 12px 16px;">$N_{\text{inj}} = \begin{cases} \frac{m!}{(m-n)!} = {}^mP_n &amp; \text{if } m \ge n \\ 0 &amp; \text{if } m &lt; n \end{cases}$</td>
+              <td style="padding: 12px 16px;">$f: A \to B, |A|=n, |B|=m$</td>
+              <td style="padding: 12px 16px;">$f(x_1) = f(x_2) \implies x_1 = x_2$</td>
             </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td><strong>Injective (One-One) Maps</strong></td>
-              <td>$f(x_1) = f(x_2) \implies x_1 = x_2$</td>
-              <td>$f: A \to B$, $|A| = m, \, |B| = n$</td>
-              <td>Number of injections: $P(n, m) = \frac{n!}{(n-m)!}$ for $n \ge m$; $0$ for $n < m$</td>
+            <tr style="border-bottom: 1px solid var(--border-color, #e2e8f0);">
+              <td style="padding: 12px 16px;"><strong>Surjective (Onto) Functions</strong></td>
+              <td style="padding: 12px 16px;">$N_{\text{surj}} = \sum_{r=0}^{m} (-1)^{m-r} \binom{m}{r} r^n$</td>
+              <td style="padding: 12px 16px;">$f: A \to B, |A|=n, |B|=m$</td>
+              <td style="padding: 12px 16px;">Valid for $n \ge m \ge 1$; returns $0$ if $n &lt; m$</td>
             </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td><strong>Surjective (Onto) Maps</strong></td>
-              <td>$\forall y \in B, \, \exists x \in A \text{ s.t. } f(x) = y$</td>
-              <td>$f: A \to B$, $|A| = m, \, |B| = n$</td>
-              <td>Number of surjections: $\sum_{k=0}^{n} (-1)^{n-k} \binom{n}{k} k^m$ ($m \ge n$)</td>
+            <tr style="border-bottom: 1px solid var(--border-color, #e2e8f0);">
+              <td style="padding: 12px 16px;"><strong>Bijective Functions</strong></td>
+              <td style="padding: 12px 16px;">$N_{\text{bij}} = \begin{cases} n! &amp; \text{if } m = n \\ 0 &amp; \text{if } m \neq n \end{cases}$</td>
+              <td style="padding: 12px 16px;">$f: A \to B, |A|=|B|=n$</td>
+              <td style="padding: 12px 16px;">Simultaneously injective and surjective</td>
             </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td><strong>Bijective Maps</strong></td>
-              <td>One-One and Onto simultaneously</td>
-              <td>$f: A \to B$, $|A| = |B| = n$</td>
-              <td>Total bijections: $n!$; possible if and only if $|A| = |B|$</td>
+            <tr style="border-bottom: 1px solid var(--border-color, #e2e8f0);">
+              <td style="padding: 12px 16px;"><strong>Equivalence Class Definition</strong></td>
+              <td style="padding: 12px 16px;">$[a] = \{x \in A : (x, a) \in R\}$</td>
+              <td style="padding: 12px 16px;">$a \in A$, $R$ is an equivalence relation</td>
+              <td style="padding: 12px 16px;">$[a] \neq \emptyset$ since $a \in [a]$</td>
             </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td><strong>Function Composition</strong></td>
-              <td>$(g \circ f)(x) = g(f(x))$</td>
-              <td>$f: A \to B$, $g: B \to C$</td>
-              <td>Requires $\text{Range}(f) \subseteq \text{Domain}(g)$</td>
+            <tr style="border-bottom: 1px solid var(--border-color, #e2e8f0);">
+              <td style="padding: 12px 16px;"><strong>Composition Rule</strong></td>
+              <td style="padding: 12px 16px;">$(g \circ f)(x) = g(f(x))$</td>
+              <td style="padding: 12px 16px;">$f: A \to B, g: B \to C$</td>
+              <td style="padding: 12px 16px;">$\text{Range}(f) \subseteq \text{Domain}(g)$</td>
             </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td><strong>Invertible Function</strong></td>
-              <td>$g \circ f = I_A \text{ and } f \circ g = I_B$</td>
-              <td>$f: A \to B$, $g: B \to A$</td>
-              <td>$f$ is invertible if and only if $f$ is a bijection; $g = f^{-1}$</td>
+            <tr style="border-bottom: 1px solid var(--border-color, #e2e8f0);">
+              <td style="padding: 12px 16px;"><strong>Invertibility Condition</strong></td>
+              <td style="padding: 12px 16px;">$g \circ f = I_A \quad \text{and} \quad f \circ g = I_B$</td>
+              <td style="padding: 12px 16px;">$f: A \to B, g = f^{-1}: B \to A$</td>
+              <td style="padding: 12px 16px;">$f$ must be a bijection</td>
             </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-              <td><strong>Composition Inverse</strong></td>
-              <td>$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$</td>
-              <td>$f: A \to B$, $g: B \to C$ invertible</td>
-              <td>Reversal of composition order holds for all bijections</td>
+            <tr style="border-bottom: 1px solid var(--border-color, #e2e8f0);">
+              <td style="padding: 12px 16px;"><strong>Reversal Law of Inverse</strong></td>
+              <td style="padding: 12px 16px;">$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$</td>
+              <td style="padding: 12px 16px;">$f: A \to B, g: B \to C$</td>
+              <td style="padding: 12px 16px;">Both $f$ and $g$ are invertible bijections</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="derivations-list" style="margin-top: 2.5rem;">
-        <h3>Rigorous Step-by-Step Derivation Bank</h3>
+      <div class="derivation-bank" style="margin-top: 3rem;">
+        <h3 style="margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color, #cbd5e1); padding-bottom: 0.5rem;">Comprehensive Derivation Bank</h3>
 
-        <!-- Derivation 1 -->
-        <div class="derivation-item" style="margin-bottom: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.02); border-left: 4px solid #0056b3;">
-          <h4>Derivation 1: Formula for the Number of Reflexive Relations on a Set of Size $n$</h4>
-          <p><strong>Proposition:</strong> Let $A$ be a set with $|A| = n$. The total number of distinct reflexive relations on $A$ is $2^{n^2 - n}$.</p>
-          <div class="proof-steps">
-            <p><strong>Step 1: Determine the size of the product space.</strong></p>
-            <p>The total number of ordered pairs in the Cartesian product $A \times A$ is:</p>
-            $$|A \times A| = |A| \times |A| = n \times n = n^2$$
+        <!-- DERIVATION 1 -->
+        <div class="derivation-item" style="margin-bottom: 2.5rem; padding: 1.5rem; background: var(--card-bg, #fdfdfd); border: 1px solid var(--border-color, #e2e8f0); border-radius: 8px;">
+          <h4 style="margin-top: 0; color: var(--primary-color, #1e293b);">Derivation 1: Combinatorial Formulas for Reflexive and Symmetric Relations</h4>
+          <p><strong>Target:</strong> Let $A$ be a set of cardinality $|A| = n$. Prove that:</p>
+          <ol>
+            <li>The number of reflexive relations on $A$ is $2^{n(n-1)}$.</li>
+            <li>The number of symmetric relations on $A$ is $2^{\frac{n(n+1)}{2}}$.</li>
+          </ol>
 
-            <p><strong>Step 2: Partition the Cartesian product into diagonal and non-diagonal subsets.</strong></p>
-            <p>Any pair $(a_i, a_j) \in A \times A$ falls into exactly one of two mutually exclusive classes:</p>
+          <div class="proof-steps" style="line-height: 1.8;">
+            <p><strong>Proof of (1):</strong></p>
+            <p><strong>Step 1:</strong> A relation $R$ on $A$ is any arbitrary subset of the Cartesian product $A \times A$. The total number of ordered pairs in $A \times A$ is:</p>
+            $$|A \times A| = |A| \cdot |A| = n^2$$
+
+            <p><strong>Step 2:</strong> Partition the Cartesian product $A \times A$ into two mutually exclusive sets:</p>
             <ul>
-              <li><strong>Diagonal elements:</strong> $\Delta = \{(a_i, a_i) : a_i \in A\}$. The cardinality is $|\Delta| = n$.</li>
-              <li><strong>Non-diagonal elements:</strong> $\Delta^c = \{(a_i, a_j) : i \neq j\}$. The cardinality is $|\Delta^c| = n^2 - n$.</li>
+              <li>The diagonal (reflexive) elements: $\Delta = \{(a, a) : a \in A\}$. Clearly, $|\Delta| = n$.</li>
+              <li>The non-diagonal elements: $\Delta^c = \{(a, b) \in A \times A : a \neq b\}$. The cardinality is $|\Delta^c| = n^2 - n = n(n-1)$.</li>
             </ul>
 
-            <p><strong>Step 3: Impose the reflexive constraint.</strong></p>
-            <p>A binary relation $R \subseteq A \times A$ is reflexive if and only if:</p>
-            $$\forall a_i \in A, \, (a_i, a_i) \in R \implies \Delta \subseteq R$$
-            <p>Thus, for each of the $n$ elements in $\Delta$, there is strictly $1$ choice: it <em>must</em> be included in $R$.</p>
+            <p><strong>Step 3:</strong> By definition, a relation $R$ is reflexive if and only if $\forall a \in A$, $(a, a) \in R$. Thus, for every element in $\Delta$, there is strictly <strong>1 choice</strong> (it must be included in $R$).</p>
 
-            <p><strong>Step 4: Compute combinations of non-diagonal pairs.</strong></p>
-            <p>For each of the $n^2 - n$ elements in $\Delta^c$, there are $2$ independent choices: the pair may either belong to $R$ or not belong to $R$.</p>
+            <p><strong>Step 4:</strong> For each non-diagonal element $(a, b) \in \Delta^c$, there are <strong>2 choices</strong>: either $(a, b) \in R$ or $(a, b) \notin R$.</p>
 
-            <p><strong>Step 5: Apply the Fundamental Principle of Counting.</strong></p>
-            $$N_{ref} = \prod_{k=1}^{n} (1) \times \prod_{j=1}^{n^2 - n} (2) = 1^n \times 2^{n^2 - n} = 2^{n(n-1)}$$
-            <p><strong>Conclusion:</strong> The total number of reflexive relations is $2^{n^2 - n}$. $\blacksquare$</p>
+            <p><strong>Step 5:</strong> Applying the fundamental principle of multiplication, the total number of reflexive relations $N_{\text{ref}}$ is:</p>
+            $$N_{\text{ref}} = \underbrace{(1 \times 1 \times \cdots \times 1)}_{n \text{ times}} \times \underbrace{(2 \times 2 \times \cdots \times 2)}_{n(n-1) \text{ times}} = 1^n \cdot 2^{n(n-1)} = 2^{n(n-1)}$$
+
+            <p><strong>Proof of (2):</strong></p>
+            <p><strong>Step 1:</strong> A relation $R$ is symmetric if and only if $(a, b) \in R \implies (b, a) \in R$ for all $a, b \in A$.</p>
+            <p><strong>Step 2:</strong> Consider the diagonal pairs $(a, a)$. If $(a, a) \in R$, its reverse is trivially $(a, a) \in R$. Therefore, each of the $n$ diagonal pairs can be independently chosen to be in $R$ or not in $R$. This yields $2^n$ possibilities.</p>
+            <p><strong>Step 3:</strong> The remaining $n^2 - n$ non-diagonal pairs occur in conjugate pairs: $\{(a, b), (b, a)\}$ with $a \neq b$. The number of such unordered pairs is:</p>
+            $$\frac{n^2 - n}{2} = \frac{n(n-1)}{2}$$
+            <p><strong>Step 4:</strong> For each unordered pair $\{a, b\}$, symmetry mandates that either both $(a, b)$ and $(b, a)$ belong to $R$, or neither belongs to $R$. Hence, each pair yields exactly 2 choices.</p>
+            <p><strong>Step 5:</strong> Total number of independent choices:</p>
+            $$N_{\text{sym}} = 2^n \cdot 2^{\frac{n(n-1)}{2}} = 2^{n + \frac{n(n-1)}{2}} = 2^{\frac{2n + n^2 - n}{2}} = 2^{\frac{n(n+1)}{2}}$$
+            <p align="right">$\blacksquare$</p>
           </div>
         </div>
 
-        <!-- Derivation 2 -->
-        <div class="derivation-item" style="margin-bottom: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.02); border-left: 4px solid #0056b3;">
-          <h4>Derivation 2: Formula for the Number of Symmetric Relations on a Set of Size $n$</h4>
-          <p><strong>Proposition:</strong> Let $A$ be a set with $|A| = n$. The total number of distinct symmetric relations on $A$ is $2^{\frac{n(n+1)}{2}}$.</p>
-          <div class="proof-steps">
-            <p><strong>Step 1: Represent the Cartesian product as an adjacency matrix.</strong></p>
-            <p>Represent relation $R$ as an $n \times n$ Boolean matrix $M$, where $M_{ij} = 1$ if $(a_i, a_j) \in R$ and $M_{ij} = 0$ otherwise. Symmetry dictates:</p>
-            $$(a_i, a_j) \in R \iff (a_j, a_i) \in R \iff M_{ij} = M_{ji} \quad \forall i, j \in \{1, 2, \dots, n\}$$
+        <!-- DERIVATION 2 -->
+        <div class="derivation-item" style="margin-bottom: 2.5rem; padding: 1.5rem; background: var(--card-bg, #fdfdfd); border: 1px solid var(--border-color, #e2e8f0); border-radius: 8px;">
+          <h4 style="margin-top: 0; color: var(--primary-color, #1e293b);">Derivation 2: Fundamental Theorem of Equivalence Relations (Partition of a Set)</h4>
+          <p><strong>Target:</strong> Let $R$ be an equivalence relation on a non-empty set $A$. Prove that the family of equivalence classes partitions $A$ into mutually disjoint subsets whose union is $A$. That is:</p>
+          <ol>
+            <li>$\forall a \in A, [a] \neq \emptyset$ and $\bigcup_{a \in A} [a] = A$.</li>
+            <li>For any $a, b \in A$, either $[a] = [b]$ or $[a] \cap [b] = \emptyset$.</li>
+            <li>$[a] = [b] \iff (a, b) \in R$.</li>
+          </ol>
 
-            <p><strong>Step 2: Count independent entries on the main diagonal.</strong></p>
-            <p>The diagonal entries $M_{ii}$ are self-symmetric ($(a_i, a_i) \in R \iff (a_i, a_i) \in R$). There are $n$ such entries, and each can independently be assigned $0$ or $1$ ($2$ choices each).</p>
+          <div class="proof-steps" style="line-height: 1.8;">
+            <p><strong>Step 1: Non-emptiness and Exhaustive Union.</strong></p>
+            <p>Since $R$ is reflexive on $A$, $(a, a) \in R$ for every $a \in A$. By definition of an equivalence class:</p>
+            $$[a] = \{x \in A : (x, a) \in R\}$$
+            <p>Since $(a, a) \in R$, we have $a \in [a]$. Therefore, $[a] \neq \emptyset$. Furthermore, because $a \in [a]$ for every $a \in A$:</p>
+            $$A = \bigcup_{a \in A} \{a\} \subseteq \bigcup_{a \in A} [a]$$
+            <p>Since each $[a] \subseteq A$, it follows that $\bigcup_{a \in A} [a] \subseteq A$. Hence, by mutual inclusion:</p>
+            $$\bigcup_{a \in A} [a] = A$$
 
-            <p><strong>Step 3: Count independent off-diagonal pairs.</strong></p>
-            <p>For $i \neq j$, the value of $M_{ji}$ is uniquely determined once $M_{ij}$ is chosen. Hence, choices are restricted to pairs in the strictly upper triangular matrix:</p>
-            $$\{(i, j) : 1 \le i < j \le n\}$$
-            <p>The total number of such unordered index pairs is:</p>
-            $$\binom{n}{2} = \frac{n(n-1)}{2}$$
-            <p>Each pair $\{(a_i, a_j), (a_j, a_i)\}$ can either both be excluded ($M_{ij} = M_{ji} = 0$) or both be included ($M_{ij} = M_{ji} = 1$), yielding $2$ choices per pair.</p>
+            <p><strong>Step 2: Proof that $(a, b) \in R \implies [a] = [b]$.</strong></p>
+            <p>Assume $(a, b) \in R$. Let $x \in [a]$. Then:</p>
+            $$(x, a) \in R$$
+            <p>Since $(x, a) \in R$ and $(a, b) \in R$, by transitivity of $R$, we have:</p>
+            $$(x, b) \in R \implies x \in [b]$$
+            <p>This proves that $[a] \subseteq [b]$.</p>
+            <p>Conversely, because $R$ is symmetric, $(a, b) \in R \implies (b, a) \in R$. Let $y \in [b]$, then $(y, b) \in R$. By transitivity with $(b, a) \in R$:</p>
+            $$(y, a) \in R \implies y \in [a]$$
+            <p>Thus, $[b] \subseteq [a]$. Since $[a] \subseteq [b]$ and $[b] \subseteq [a]$, we conclude:</p>
+            $$[a] = [b]$$
 
-            <p><strong>Step 4: Total independent binary decisions.</strong></p>
-            <p>Total independent decisions $K$ equals diagonal choices plus off-diagonal pair choices:</p>
-            $$K = n + \frac{n(n-1)}{2} = \frac{2n + n^2 - n}{2} = \frac{n(n+1)}{2}$$
-
-            <p><strong>Step 5: Compute cardinality.</strong></p>
-            $$N_{sym} = 2^K = 2^{\frac{n(n+1)}{2}}$$
-            <p><strong>Conclusion:</strong> The total number of symmetric relations on $A$ is $2^{\frac{n(n+1)}{2}}$. $\blacksquare$</p>
+            <p><strong>Step 3: Proof of Pairwise Disjointness ($[a] \cap [b] \neq \emptyset \implies [a] = [b]$).</strong></p>
+            <p>Let $[a]$ and $[b]$ be two equivalence classes such that $[a] \cap [b] \neq \emptyset$.</p>
+            <p>Then there exists at least one element $c \in [a] \cap [b]$.</p>
+            $$c \in [a] \implies (c, a) \in R$$
+            $$c \in [b] \implies (c, b) \in R$$
+            <p>By symmetry of $R$, $(c, a) \in R \implies (a, c) \in R$.</p>
+            <p>By transitivity of $R$, since $(a, c) \in R$ and $(c, b) \in R$, we have:</p>
+            $$(a, b) \in R$$
+            <p>Applying the result established in Step 2, $(a, b) \in R \implies [a] = [b]$.</p>
+            <p>Hence, if $[a] \cap [b] \neq \emptyset$, they must be identical. Contrapositively, if $[a] \neq [b]$, then $[a] \cap [b] = \emptyset$.</p>
+            <p align="right">$\blacksquare$</p>
           </div>
         </div>
 
-        <!-- Derivation 3 -->
-        <div class="derivation-item" style="margin-bottom: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.02); border-left: 4px solid #0056b3;">
-          <h4>Derivation 3: Fundamental Theorem of Equivalence Relations (Partitioning Property)</h4>
-          <p><strong>Theorem:</strong> Let $R$ be an equivalence relation on a non-empty set $A$. Any two equivalence classes $[a]$ and $[b]$ are either identical or disjoint; that is, $[a] = [b]$ or $[a] \cap [b] = \emptyset$.</p>
-          <div class="proof-steps">
-            <p><strong>Step 1: Set up the alternative hypothesis.</strong></p>
-            <p>Let $a, b \in A$. We consider two exhaustive cases: either $[a] \cap [b] = \emptyset$ or $[a] \cap [b] \neq \emptyset$. If $[a] \cap [b] = \emptyset$, the condition holds trivially.</p>
+        <!-- DERIVATION 3 -->
+        <div class="derivation-item" style="margin-bottom: 2.5rem; padding: 1.5rem; background: var(--card-bg, #fdfdfd); border: 1px solid var(--border-color, #e2e8f0); border-radius: 8px;">
+          <h4 style="margin-top: 0; color: var(--primary-color, #1e293b);">Derivation 3: Preservation of Injectivity and Surjectivity under Composition</h4>
+          <p><strong>Target:</strong> Let $f: A \to B$ and $g: B \to C$ be two mappings. Prove rigorously:</p>
+          <ol>
+            <li>If $f$ and $g$ are injective, then $(g \circ f): A \to C$ is injective.</li>
+            <li>If $f$ and $g$ are surjective, then $(g \circ f): A \to C$ is surjective.</li>
+            <li>Converse implication: If $g \circ f$ is injective, then $f$ is injective. If $g \circ f$ is surjective, then $g$ is surjective.</li>
+          </ol>
 
-            <p><strong>Step 2: Assume non-empty intersection.</strong></p>
-            <p>Suppose $[a] \cap [b] \neq \emptyset$. Then there exists at least one element $x \in A$ such that:</p>
-            $$x \in [a] \quad \text{and} \quad x \in [b]$$
-
-            <p><strong>Step 3: Apply relational definitions and properties.</strong></p>
-            <p>By definition of equivalence classes:</p>
-            $$(x, a) \in R \quad \text{and} \quad (x, b) \in R$$
-            <p>Since $R$ is symmetric, $(x, a) \in R \implies (a, x) \in R$.</p>
-            <p>Now, using transitivity of $R$:</p>
-            $$(a, x) \in R \land (x, b) \in R \implies (a, b) \in R$$
-
-            <p><strong>Step 4: Prove inclusion $[b] \subseteq [a]$.</strong></p>
-            <p>Let $y$ be an arbitrary element of $[b]$. Then $(y, b) \in R$. By symmetry, $(b, y) \in R$.</p>
-            <p>Applying transitivity with $(a, b) \in R$ and $(b, y) \in R$:</p>
-            $$(a, y) \in R \implies (y, a) \in R \text{ (by symmetry)} \implies y \in [a]$$
-            <p>Because $y \in [b] \implies y \in [a]$, we establish that $[b] \subseteq [a]$.</p>
-
-            <p><strong>Step 5: Prove reverse inclusion $[a] \subseteq [b]$.</strong></p>
-            <p>Since $(a, b) \in R$, symmetry guarantees $(b, a) \in R$. Let $z$ be an arbitrary element of $[a]$. Then $(z, a) \in R \implies (a, z) \in R$.</p>
-            <p>By transitivity:</p>
-            $$(b, a) \in R \land (a, z) \in R \implies (b, z) \in R \implies (z, b) \in R \implies z \in [b]$$
-            <p>Thus, $[a] \subseteq [b]$.</p>
-
-            <p><strong>Step 6: Equality of sets.</strong></p>
-            <p>From $[b] \subseteq [a]$ and $[a] \subseteq [b]$, it follows by mutual inclusion that $[a] = [b]$.</p>
-            <p><strong>Conclusion:</strong> If $[a] \cap [b] \neq \emptyset$, then $[a] = [b]$. Hence, any two equivalence classes are either disjoint or identical. $\blacksquare$</p>
-          </div>
-        </div>
-
-        <!-- Derivation 4 -->
-        <div class="derivation-item" style="margin-bottom: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.02); border-left: 4px solid #0056b3;">
-          <h4>Derivation 4: Preservation of Injectivity under Function Composition</h4>
-          <p><strong>Theorem:</strong> Let $f: A \to B$ and $g: B \to C$ be two injective (one-one) functions. Then the composite function $g \circ f: A \to C$ is also injective.</p>
-          <div class="proof-steps">
-            <p><strong>Step 1: State the injective criterion for $g \circ f$.</strong></p>
-            <p>To prove $g \circ f$ is one-one, we must show that for any $x_1, x_2 \in A$:</p>
-            $$(g \circ f)(x_1) = (g \circ f)(x_2) \implies x_1 = x_2$$
-
-            <p><strong>Step 2: Expand using composition definition.</strong></p>
+          <div class="proof-steps" style="line-height: 1.8;">
+            <p><strong>Proof of (1) - Injectivity:</strong></p>
+            <p><strong>Step 1:</strong> Let $x_1, x_2 \in A$. Assume that $(g \circ f)(x_1) = (g \circ f)(x_2)$.</p>
+            <p><strong>Step 2:</strong> By the definition of composite functions:</p>
             $$g(f(x_1)) = g(f(x_2))$$
-
-            <p><strong>Step 3: Leverage injectivity of the outer function $g$.</strong></p>
-            <p>Let $y_1 = f(x_1) \in B$ and $y_2 = f(x_2) \in B$. The statement becomes $g(y_1) = g(y_2)$.</p>
-            <p>Because $g: B \to C$ is given to be injective, by definition $g(y_1) = g(y_2) \implies y_1 = y_2$. Therefore:</p>
+            <p><strong>Step 3:</strong> Since $g: B \to C$ is injective, $g(u) = g(v) \implies u = v$. Setting $u = f(x_1)$ and $v = f(x_2)$:</p>
             $$f(x_1) = f(x_2)$$
+            <p><strong>Step 4:</strong> Since $f: A \to B$ is injective, $f(x_1) = f(x_2) \implies x_1 = x_2$.</p>
+            <p><strong>Step 5:</strong> We have shown that $(g \circ f)(x_1) = (g \circ f)(x_2) \implies x_1 = x_2$. Therefore, $g \circ f$ is injective.</p>
 
-            <p><strong>Step 4: Leverage injectivity of the inner function $f$.</strong></p>
-            <p>Because $f: A \to B$ is given to be injective, $f(x_1) = f(x_2) \implies x_1 = x_2$.</p>
+            <p><strong>Proof of (2) - Surjectivity:</strong></p>
+            <p><strong>Step 1:</strong> Let $z$ be an arbitrary element in the codomain $C$.</p>
+            <p><strong>Step 2:</strong> Since $g: B \to C$ is surjective, by definition there exists some $y \in B$ such that:</p>
+            $$g(y) = z$$
+            <p><strong>Step 3:</strong> Since $f: A \to B$ is surjective, for the element $y \in B$, there exists some $x \in A$ such that:</p>
+            $$f(x) = y$$
+            <p><strong>Step 4:</strong> Substitute $f(x)$ for $y$ into the equation from Step 2:</p>
+            $$(g \circ f)(x) = g(f(x)) = g(y) = z$$
+            <p><strong>Step 5:</strong> For every $z \in C$, there exists $x \in A$ such that $(g \circ f)(x) = z$. Thus, $g \circ f$ is surjective.</p>
 
-            <p><strong>Step 5: Deduce final implication.</strong></p>
-            $$(g \circ f)(x_1) = (g \circ f)(x_2) \implies f(x_1) = f(x_2) \implies x_1 = x_2$$
-            <p><strong>Conclusion:</strong> $g \circ f$ is injective. $\blacksquare$</p>
+            <p><strong>Proof of (3) - Converse Properties:</strong></p>
+            <p><strong>Case A:</strong> Assume $g \circ f$ is injective. Let $x_1, x_2 \in A$ such that $f(x_1) = f(x_2)$. Applying $g$ to both sides yields $g(f(x_1)) = g(f(x_2)) \implies (g \circ f)(x_1) = (g \circ f)(x_2)$. Since $g \circ f$ is injective, $x_1 = x_2$. Thus, $f$ must be injective.</p>
+            <p><strong>Case B:</strong> Assume $g \circ f$ is surjective. Let $z \in C$. Then $\exists x \in A$ such that $(g \circ f)(x) = z \implies g(f(x)) = z$. Setting $y = f(x) \in B$, we obtain $g(y) = z$. Thus, for every $z \in C$, there exists $y \in B$ such that $g(y) = z$. Hence, $g$ must be surjective.</p>
+            <p align="right">$\blacksquare$</p>
           </div>
         </div>
 
-        <!-- Derivation 5 -->
-        <div class="derivation-item" style="margin-bottom: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.02); border-left: 4px solid #0056b3;">
-          <h4>Derivation 5: Reversal Law for the Inverse of a Composition</h4>
-          <p><strong>Theorem:</strong> Let $f: A \to B$ and $g: B \to C$ be invertible functions. Then $g \circ f$ is invertible, and its inverse is given by:</p>
-          $$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$$
-          <div class="proof-steps">
-            <p><strong>Step 1: State condition for invertibility.</strong></p>
-            <p>A map $h: A \to C$ has an inverse $h^{-1}: C \to A$ if and only if there exists a map $k: C \to A$ such that:</p>
-            $$k \circ h = I_A \quad \text{and} \quad h \circ k = I_C$$
-            <p>Here, $h = g \circ f$. We propose candidate inverse $k = f^{-1} \circ g^{-1}: C \to A$.</p>
+        <!-- DERIVATION 4 -->
+        <div class="derivation-item" style="margin-bottom: 2.5rem; padding: 1.5rem; background: var(--card-bg, #fdfdfd); border: 1px solid var(--border-color, #e2e8f0); border-radius: 8px;">
+          <h4 style="margin-top: 0; color: var(--primary-color, #1e293b);">Derivation 4: Necessary and Sufficient Condition for Invertibility</h4>
+          <p><strong>Target:</strong> Prove that a function $f: A \to B$ is invertible if and only if $f$ is a bijection (both injective and surjective). Furthermore, prove that its inverse $f^{-1}: B \to A$ is unique.</p>
 
-            <p><strong>Step 2: Evaluate left-composition $k \circ h$.</strong></p>
-            $$(f^{-1} \circ g^{-1}) \circ (g \circ f)$$
-            <p>Applying the associative property of function composition:</p>
-            $$(f^{-1} \circ g^{-1}) \circ (g \circ f) = f^{-1} \circ (g^{-1} \circ (g \circ f)) = f^{-1} \circ ((g^{-1} \circ g) \circ f)$$
+          <div class="proof-steps" style="line-height: 1.8;">
+            <p><strong>Part 1: Invertible $\implies$ Bijective.</strong></p>
+            <p>Assume $f$ is invertible. By definition, there exists a function $g: B \to A$ such that:</p>
+            $$g \circ f = I_A \quad \text{and} \quad f \circ g = I_B$$
+            <p><strong>Injectivity:</strong> Let $x_1, x_2 \in A$ such that $f(x_1) = f(x_2)$. Applying $g$:</p>
+            $$g(f(x_1)) = g(f(x_2)) \implies (g \circ f)(x_1) = (g \circ f)(x_2)$$
+            $$I_A(x_1) = I_A(x_2) \implies x_1 = x_2$$
+            <p>Thus, $f$ is injective.</p>
+            <p><strong>Surjectivity:</strong> Let $y \in B$. Since $f \circ g = I_B$, we have:</p>
+            $$(f \circ g)(y) = I_B(y) \implies f(g(y)) = y$$
+            <p>Setting $x = g(y) \in A$, we have $f(x) = y$. Thus, for every $y \in B$, there exists a pre-image in $A$. Hence, $f$ is surjective.</p>
+            <p>Since $f$ is both injective and surjective, $f$ is bijective.</p>
 
-            <p><strong>Step 3: Simplify intermediate identity maps.</strong></p>
-            <p>Since $g$ is invertible, $g^{-1} \circ g = I_B$ (the identity map on $B$). Thus:</p>
-            $$f^{-1} \circ (I_B \circ f) = f^{-1} \circ f$$
-            <p>Since $f$ is invertible, $f^{-1} \circ f = I_A$ (the identity map on $A$). Hence:</p>
-            $$(f^{-1} \circ g^{-1}) \circ (g \circ f) = I_A$$
+            <p><strong>Part 2: Bijective $\implies$ Invertible.</strong></p>
+            <p>Assume $f: A \to B$ is bijective.</p>
+            <p><strong>Step 1: Construct $g: B \to A$.</strong> Let $y \in B$. Since $f$ is surjective, the pre-image set $f^{-1}(\{y\}) = \{x \in A : f(x) = y\}$ is non-empty. Since $f$ is injective, this pre-image contains exactly one unique element $x$. Define $g(y) = x$.</p>
+            <p><strong>Step 2: Check left inverse.</strong> For any $x \in A$, let $y = f(x)$. By definition of $g$, $g(y) = x$. Thus:</p>
+            $$(g \circ f)(x) = g(f(x)) = g(y) = x = I_A(x) \implies g \circ f = I_A$$
+            <p><strong>Step 3: Check right inverse.</strong> For any $y \in B$, let $x = g(y)$. By definition of $g$, $f(x) = y$. Thus:</p>
+            $$(f \circ g)(y) = f(g(y)) = f(x) = y = I_B(y) \implies f \circ g = I_B$$
+            <p>Since both compositions yield identity mappings, $f$ is invertible with inverse $g$.</p>
 
-            <p><strong>Step 4: Evaluate right-composition $h \circ k$.</strong></p>
-            $$(g \circ f) \circ (f^{-1} \circ g^{-1})$$
-            <p>By associativity:</p>
-            $$(g \circ f) \circ (f^{-1} \circ g^{-1}) = g \circ (f \circ (f^{-1} \circ g^{-1})) = g \circ ((f \circ f^{-1}) \circ g^{-1})$$
-            <p>Since $f \circ f^{-1} = I_B$:</p>
-            $$g \circ (I_B \circ g^{-1}) = g \circ g^{-1} = I_C$$
-
-            <p><strong>Step 5: Apply uniqueness of inverse map.</strong></p>
-            <p>Because $(f^{-1} \circ g^{-1}) \circ (g \circ f) = I_A$ and $(g \circ f) \circ (f^{-1} \circ g^{-1}) = I_C$, by uniqueness of the two-sided inverse:</p>
-            $$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$$
-            <p><strong>Conclusion:</strong> The reversal identity $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$ is established. $\blacksquare$</p>
-          </div>
-        </div>
-
-        <!-- Derivation 6 -->
-        <div class="derivation-item" style="margin-bottom: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.02); border-left: 4px solid #0056b3;">
-          <h4>Derivation 6: Uniqueness of the Inverse of an Invertible Function</h4>
-          <p><strong>Theorem:</strong> If a function $f: A \to B$ is invertible, then its inverse function is unique.</p>
-          <div class="proof-steps">
-            <p><strong>Step 1: Assume non-uniqueness.</strong></p>
-            <p>Let $g_1: B \to A$ and $g_2: B \to A$ be two valid inverse functions of $f$.</p>
-
-            <p><strong>Step 2: Write structural identity requirements for $g_1$ and $g_2$.</strong></p>
-            <p>By definition of inverse for $g_1$:</p>
-            $$f \circ g_1 = I_B \quad \text{and} \quad g_1 \circ f = I_A$$
-            <p>Similarly, for $g_2$:</p>
-            $$f \circ g_2 = I_B \quad \text{and} \quad g_2 \circ f = I_A$$
-
-            <p><strong>Step 3: Express $g_1$ via composite identity.</strong></p>
-            <p>For any function $g_1: B \to A$, composition with the identity map $I_B$ yields:</p>
-            $$g_1 = g_1 \circ I_B$$
-
-            <p><strong>Step 4: Substitute the identity expansion of $g_2$.</strong></p>
-            <p>Substitute $I_B = f \circ g_2$ into the identity expression:</p>
-            $$g_1 = g_1 \circ (f \circ g_2)$$
-
-            <p><strong>Step 5: Apply associative property of composition.</strong></p>
-            $$g_1 = (g_1 \circ f) \circ g_2$$
-            <p>Substitute $g_1 \circ f = I_A$:</p>
-            $$g_1 = I_A \circ g_2$$
-            <p>Since $I_A \circ g_2 = g_2$ for any map $g_2: B \to A$:</p>
+            <p><strong>Part 3: Uniqueness of Inverse.</strong></p>
+            <p>Suppose $g_1: B \to A$ and $g_2: B \to A$ are two inverses of $f$. Then:</p>
+            $$g_1 \circ f = I_A, \quad f \circ g_1 = I_B \quad \text{and} \quad g_2 \circ f = I_A, \quad f \circ g_2 = I_B$$
+            <p>Consider the composition $g_1 \circ (f \circ g_2)$:</p>
+            $$g_1 \circ (f \circ g_2) = g_1 \circ I_B = g_1$$
+            <p>By associativity of function composition:</p>
+            $$g_1 \circ (f \circ g_2) = (g_1 \circ f) \circ g_2 = I_A \circ g_2 = g_2$$
+            <p>Equating the results gives:</p>
             $$g_1 = g_2$$
-            <p><strong>Conclusion:</strong> Any two inverses of $f$ are identical; hence the inverse is unique. $\blacksquare$</p>
+            <p>Thus, the inverse is unique, denoted as $f^{-1}$.</p>
+            <p align="right">$\blacksquare$</p>
           </div>
         </div>
 
+        <!-- DERIVATION 5 -->
+        <div class="derivation-item" style="margin-bottom: 2.5rem; padding: 1.5rem; background: var(--card-bg, #fdfdfd); border: 1px solid var(--border-color, #e2e8f0); border-radius: 8px;">
+          <h4 style="margin-top: 0; color: var(--primary-color, #1e293b);">Derivation 5: Reversal Law of Inverses for Composite Mappings</h4>
+          <p><strong>Target:</strong> Let $f: A \to B$ and $g: B \to C$ be two invertible functions. Prove that $(g \circ f)$ is invertible and its inverse is given by:</p>
+          $$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$$
+
+          <div class="proof-steps" style="line-height: 1.8;">
+            <p><strong>Step 1:</strong> Since $f$ and $g$ are invertible, they are both bijective. From Derivation 3, their composition $(g \circ f): A \to C$ is bijective, hence $(g \circ f)$ is invertible.</p>
+            
+            <p><strong>Step 2:</strong> To prove that an arbitrary function $h: C \to A$ is the inverse of $(g \circ f)$, it is sufficient and necessary to show that:</p>
+            $$h \circ (g \circ f) = I_A \quad \text{and} \quad (g \circ f) \circ h = I_C$$
+            <p>Let the candidate function be $h = f^{-1} \circ g^{-1}: C \to A$.</p>
+
+            <p><strong>Step 3: Verification of Left Invertibility.</strong></p>
+            $$\begin{aligned}
+            (f^{-1} \circ g^{-1}) \circ (g \circ f) &amp;= f^{-1} \circ (g^{-1} \circ (g \circ f)) &amp;&amp; \text{(Associativity of composition)} \\
+            &amp;= f^{-1} \circ ((g^{-1} \circ g) \circ f) &amp;&amp; \text{(Associativity)} \\
+            &amp;= f^{-1} \circ (I_B \circ f) &amp;&amp; (\text{Since } g^{-1} \circ g = I_B) \\
+            &amp;= f^{-1} \circ f &amp;&amp; (\text{Since } I_B \circ f = f) \\
+            &amp;= I_A &amp;&amp; (\text{Since } f^{-1} \circ f = I_A)
+            \end{aligned}$$
+
+            <p><strong>Step 4: Verification of Right Invertibility.</strong></p>
+            $$\begin{aligned}
+            (g \circ f) \circ (f^{-1} \circ g^{-1}) &amp;= g \circ (f \circ (f^{-1} \circ g^{-1})) &amp;&amp; \text{(Associativity)} \\
+            &amp;= g \circ ((f \circ f^{-1}) \circ g^{-1}) &amp;&amp; \text{(Associativity)} \\
+            &amp;= g \circ (I_B \circ g^{-1}) &amp;&amp; (\text{Since } f \circ f^{-1} = I_B) \\
+            &amp;= g \circ g^{-1} &amp;&amp; (\text{Since } I_B \circ g^{-1} = g^{-1}) \\
+            &amp;= I_C &amp;&amp; (\text{Since } g \circ g^{-1} = I_C)
+            \end{aligned}$$
+
+            <p><strong>Step 5:</strong> By uniqueness of the inverse mapping:</p>
+            $$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$$
+            <p align="right">$\blacksquare$</p>
+          </div>
+        </div>
+
+        <!-- DERIVATION 6 -->
+        <div class="derivation-item" style="padding: 1.5rem; background: var(--card-bg, #fdfdfd); border: 1px solid var(--border-color, #e2e8f0); border-radius: 8px;">
+          <h4 style="margin-top: 0; color: var(--primary-color, #1e293b);">Derivation 6: Closed-Form Formula for Total Surjective Functions via PIE</h4>
+          <p><strong>Target:</strong> Let $A$ and $B$ be finite sets with $|A| = n$ and $|B| = m$ where $n \ge m$. Using the Principle of Inclusion-Exclusion (PIE), derive the formula for the number of onto functions $f: A \to B$:</p>
+          $$N_{\text{surj}} = \sum_{k=0}^{m} (-1)^k \binom{m}{k} (m - k)^n = \sum_{r=0}^{m} (-1)^{m-r} \binom{m}{r} r^n$$
+
+          <div class="proof-steps" style="line-height: 1.8;">
+            <p><strong>Step 1: Set definition.</strong> Let $S$ denote the universal set of all functions from $A$ to $B$. The total cardinality of $S$ is:</p>
+            $$|S| = m^n$$
+            <p>Let the target set be $B = \{b_1, b_2, \dots, b_m\}$.</p>
+
+            <p><strong>Step 2: Defining the undesirable properties.</strong> For each $i \in \{1, 2, \dots, m\}$, define $P_i$ as the subset of functions in $S$ whose range does not contain element $b_i$:</p>
+            $$P_i = \{f \in S : b_i \notin f(A)\}$$
+            <p>A function $f$ is surjective if and only if it satisfies none of the properties $P_1, P_2, \dots, P_m$. Thus:</p>
+            $$N_{\text{surj}} = |P_1^c \cap P_2^c \cap \cdots \cap P_m^c|$$
+
+            <p><strong>Step 3: Principle of Inclusion-Exclusion formulation.</strong></p>
+            $$N_{\text{surj}} = |S| - \sum_{1 \le i \le m} |P_i| + \sum_{1 \le i &lt; j \le m} |P_i \cap P_j| - \sum_{1 \le i &lt; j &lt; k \le m} |P_i \cap P_j \cap P_k| + \cdots + (-1)^m |P_1 \cap \dots \cap P_m|$$
+
+            <p><strong>Step 4: Cardinality of intersections.</strong></p>
+            <ul>
+              <li>For any single element $b_i$, the functions omitting $b_i$ can map into only $(m-1)$ choices for each of the $n$ elements:
+              $$|P_i| = (m-1)^n$$
+              There are $\binom{m}{1}$ such subsets.</li>
+              <li>For any two elements $b_i, b_j$, the functions omitting both can map into $(m-2)$ choices:
+              $$|P_i \cap P_j| = (m-2)^n$$
+              There are $\binom{m}{2}$ such choices.</li>
+              <li>In general, for the intersection of $k$ distinct properties, the codomain is restricted to $(m-k)$ elements:
+              $$|P_{i_1} \cap P_{i_2} \cap \cdots \cap P_{i_k}| = (m-k)^n$$
+              The number of ways to choose $k$ elements out of $m$ is $\binom{m}{k}$.</li>
+            </ul>
+
+            <p><strong>Step 5: Summing terms.</strong> Substituting these values into the PIE expression:</p>
+            $$N_{\text{surj}} = \binom{m}{0}m^n - \binom{m}{1}(m-1)^n + \binom{m}{2}(m-2)^n - \cdots + (-1)^m \binom{m}{m}(m-m)^n$$
+            $$N_{\text{surj}} = \sum_{k=0}^{m} (-1)^k \binom{m}{k} (m - k)^n$$
+
+            <p><strong>Step 6: Change of index.</strong> Let $r = m - k$. When $k = 0 \implies r = m$, and when $k = m \implies r = 0$. Using the identity $\binom{m}{k} = \binom{m}{m-k} = \binom{m}{r}$:</p>
+            $$N_{\text{surj}} = \sum_{r=0}^{m} (-1)^{m-r} \binom{m}{r} r^n$$
+            <p><em>Special Case ($m = n$):</em> When $m = n$, $N_{\text{surj}} = n! \cdot S(n, n) = n! \cdot 1 = n!$, which confirms the number of bijections on an $n$-element set.</p>
+            <p align="right">$\blacksquare$</p>
+          </div>
+        </div>
       </div>
     </article>
   </div>
