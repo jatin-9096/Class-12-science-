@@ -1,797 +1,358 @@
 import os
 import re
 import glob
+import json
 import time
 from bs4 import BeautifulSoup
-from google import genai
-from google.genai.errors import ServerError, APIError
+from groq import Groq
 
-BATCH_SIZE = 1
-API_COOLDOWN = 20  # Rate-limit safety cooldown in seconds
-MIN_FILE_SIZE = 250 * 1024  # 250 KB minimum target
+# ---------------- Config ----------------
+MODELS = ["openai/gpt-oss-120b", "openai/gpt-oss-20b"]
+MAX_OUT_TOKENS = 3000
+TOKENS_PER_MIN = 6000          # Groq Console के TPM से नीचे रखो
+TEMPLATE = "index.html"        # index.html ही design का source है
+STATE_FILE = "builder_state.json"
+MAX_FAILURES = 3
+MIN_WORDS = {False: 1500, True: 1200}
+REQUIRED_IDS = {False: ["theory", "derivations"], True: ["pyqs", "case-studies", "mindmap"]}
+IGNORE_KEYWORDS = ["privacy", "terms", "cookie", "disclaimer", "about", "contact", "framework"]
+IGNORE_FILES = {"index.html", "about.html", "about-notes.html", "exam-info.html",
+                "privacy.html", "cookies.html"}
 
-api_key = os.environ.get("GEMINI_API_KEY")
-if not api_key:
-    raise ValueError("GEMINI_API_KEY environment variable is missing.")
+# Brand और author: ये सब पेज पर एक जैसे रहेंगे
+BRAND = "Shorveer Notes"
+AUTHOR = "Jatin Sandilya"
 
-client = genai.Client(api_key=api_key)
-
-MATHJAX_HEADER = """
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
-      displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']],
-      processEscapes: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-  };
-</script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
-"""
-
-# Subject signatures to catch mismatches across folders
-SUBJECT_SIGNATURES = {
-    "mathematics": {
-        "forbidden": ["arrhenius", "chemical kinetics", "activation energy", "reaction rate", "reactant", "haloalkane", "sn1", "sn2", "alcohols phenols", "aldehyde", "ketone"]
-    },
-    "physics": {
-        "forbidden": ["reaction mechanism", "organic chemistry", "haloalkanes", "aldol condensation", "coordination compounds"]
-    },
-    "chemistry": {
-        "forbidden": ["direction cosines", "shortest distance between skew lines", "matrix adjoint", "integration by parts dx"]
-    }
+# Subject-wise galat topics: अगर पेज में ये मिले तो पेज दोबारा बनेगा
+FORBIDDEN = {
+    "mathematics": ["arrhenius", "activation energy", "reaction rate", "haloalkane",
+                    "sn1", "sn2", "aldehyde", "ketone"],
+    "physics": ["reaction mechanism", "organic chemistry", "haloalkanes",
+                "aldol condensation", "coordination compounds"],
+    "chemistry": ["direction cosines", "shortest distance between skew lines",
+                  "matrix adjoint", "integration by parts"],
 }
 
-IGNORE_KEYWORDS = ["privacy", "terms", "cookie", "disclaimer", "about", "contact", "framework"]
-
-def call_gemini_with_fallback(prompt, max_retries=3):
-    # Active & supported Gemini models
-    models = ["gemini-3.8-flash"]
-    
-    for model_name in models:
-        for attempt in range(1, max_retries + 1):
-            try:
-                print(f"Calling model: {model_name} (Attempt {attempt}/{max_retries})...")
-                response = client.models.generate_content(
-                    model=model_name,
-                    contents=prompt
-                )
-                if response and response.text:
-                    return response.text
-            except Exception as e:
-                err_msg = str(e)
-                print(f"Error on {model_name} (Attempt {attempt}): {err_msg}")
-                if "429" in err_msg or "ResourceExhausted" in err_msg or "503" in err_msg or "Demand" in err_msg:
-                    print("Quota/Rate-limit hit, waiting 20s before retry...")
-                    time.sleep(20)
-                else:
-                    time.sleep(6)
-                    
-    raise RuntimeError("All Gemini API models failed after retries.")
-    
-def clean_code(raw_text):
-    text = raw_text.strip()
-    if text.startswith("```html"):
-        text = text[7:]
-    elif text.startswith("```"):
-        text = text[3:]
-    if text.endswith("```"):
-        text = text[:-3]
-    return text.strip()
-
-def detect_subject(file_path):
-    lower = file_path.lower()
-    if "physic" in lower:
-        return "Physics"
-    elif "chem" in lower:
-        return "Chemistry"
-    elif "math" in lower:
-        return "Mathematics"
-    elif "eng" in lower:
-        return "English"
-    return "Science"
-
-def is_content_mismatched(file_path, subject):
-    sub_key = subject.lower()
-    if sub_key not in SUBJECT_SIGNATURES:
-        return False
-    try:
-        with open(file_path, "r", encoding="utf-8") as f:
-            text = f.read().lower()
-        forbidden = SUBJECT_SIGNATURES[sub_key]["forbidden"]
-        violations = [w for w in forbidden if w in text]
-        if len(violations) >= 2:
-            return True
-    except Exception:
-        pass
-    return False
-
-def target_in_place_patch(file_path):
-    """In-place localized patcher: fixes unclosed tags without rewriting 250KB content"""
-    try:
-        with open(file_path, "r", encoding="utf-8") as f:
-            content = f.read()
-
-        unclosed = []
-        for tag in ["html", "head", "body", "main", "article", "section", "div"]:
-            open_c = len(re.findall(rf"<{tag}\b", content, re.I))
-            close_c = len(re.findall(rf"</{tag}>", content, re.I))
-            if open_c > close_c:
-                unclosed.append(tag)
-
-        if unclosed:
-            print(f"Applying in-place tag patch in {file_path}: {unclosed}")
-            patch_str = "\n" + "\n".join([f"</{tag}>" for tag in reversed(unclosed)]) + "\n"
-            with open(file_path, "a", encoding="utf-8") as f:
-                f.write(patch_str)
-    except Exception as e:
-        print(f"Error in tag patching: {e}")
-
-def scan_and_audit_website():
-    """Scans whole website: detects missing files, small files, or mismatched content"""
-    seen_paths = set()
-    html_files = glob.glob("**/*.html", recursive=True)
-
-    for source_file in html_files:
-        base_dir = os.path.dirname(source_file)
-        try:
-            with open(source_file, "r", encoding="utf-8") as f:
-                soup = BeautifulSoup(f.read(), "html.parser")
-        except Exception:
-            continue
-
-        for a_tag in soup.find_all("a", href=True):
-            href = a_tag["href"].strip()
-            if not href or href.startswith(("#", "http://", "https://", "mailto:", "tel:", "javascript:")):
-                continue
-            
-            clean_href = href.split("?")[0].split("#")[0]
-            if not clean_href.endswith(".html"):
-                continue
-
-            if any(k in clean_href.lower() for k in IGNORE_KEYWORDS):
-                continue
-
-            normalized_href = clean_href.lstrip("/\\")
-            target_path = os.path.normpath(os.path.join(base_dir, normalized_href))
-            filename = os.path.basename(target_path).lower()
-
-            if filename in ["index.html", "about.html", "about-notes.html", "exam-info.html"]:
-                continue
-
-            if target_path in seen_paths:
-                continue
-
-            seen_paths.add(target_path)
-            subject = detect_subject(target_path)
-
-            title_text = ""
-            parent_card = a_tag.find_parent(class_=re.compile(r"card|item|subject", re.I))
-            if parent_card:
-                h_tag = parent_card.find(["h2", "h3", "h4"])
-                if h_tag:
-                    title_text = h_tag.get_text(strip=True)
-            if not title_text:
-                title_text = a_tag.get_text(strip=True)
-
-            if re.search(r"open\s+chapter|read\s+more|chapter\s+\d+", title_text, re.I) or not title_text:
-                file_base = os.path.splitext(os.path.basename(normalized_href))[0]
-                title_text = file_base.replace("-", " ").replace("_", " ").title()
-
-            is_part_2 = "part2" in filename or "pyq" in filename
-            clean_title = re.sub(r"\s*\(?(Part\s*[12]|PYQs?)\)?", "", title_text, flags=re.I).strip()
-
-            # 1. Condition: Missing File
-            if not os.path.exists(target_path):
-                return {
-                    "action": "create",
-                    "target_path": target_path,
-                    "chapter_name": clean_title,
-                    "subject": subject,
-                    "is_part_2": is_part_2,
-                    "reason": "Missing File"
-                }
-
-            # 2. Condition: Content Mismatch (e.g., Chemistry in Maths)
-            if is_content_mismatched(target_path, subject):
-                return {
-                    "action": "fix_mismatch",
-                    "target_path": target_path,
-                    "chapter_name": clean_title,
-                    "subject": subject,
-                    "is_part_2": is_part_2,
-                    "reason": "Subject Mismatch Detected (Replacing inner content)"
-                }
-
-            # 3. Condition: File too small (Under size target)
-            file_size = os.path.getsize(target_path)
-            if file_size < MIN_FILE_SIZE:
-                return {
-                    "action": "create",
-                    "target_path": target_path,
-                    "chapter_name": clean_title,
-                    "subject": subject,
-                    "is_part_2": is_part_2,
-                    "reason": f"File size too small ({file_size // 1024} KB < 250 KB target)"
-                }
-
-    return None
-
-def generate_part1_content(subject, chapter_name):
-    """Generates 250KB+ Deep Academic Theory, Complete Derivations, and Comprehensive Laws"""
-    print(f"--> [Chunk 1/2] Drafting In-depth Theory for {chapter_name} ({subject})...")
-    p1 = f"""
-    Act as a Senior CBSE Board Examiner and Textbook Author in Class 12 {subject}.
-    Write a massive, mathematically and scientifically rigorous conceptual breakdown for: '{chapter_name}'.
-    
-    Requirements:
-    1. Provide extensive introductory context, definitions, core laws, conditions, and graphical variations for Class 12 {subject}.
-    2. Write minimum 3500+ words of granular explanations. Avoid any placeholder text or short summaries.
-    
-    Structure:
-    <section class="section container" id="theory">
-      <div class="section-head">
-        <span class="section-eyebrow">Comprehensive Theory</span>
-        <h2>1. Complete Conceptual Framework & Definitions</h2>
-      </div>
-      <div class="real-life">
-        <article class="rl-card" style="--rl-color: #bf5a3c">
-          <div class="rl-body">
-            <div class="rl-title">Fundamental Theoretical Principles</div>
-            <p class="rl-text"><!-- Massive theoretical body --></p>
-          </div>
-        </article>
-      </div>
-    </section>
-    Return ONLY this valid HTML section.
-    """
-    chunk1 = clean_code(call_gemini_with_fallback(p1))
-    print(f"Waiting {API_COOLDOWN}s for API cooldown...")
-    time.sleep(API_COOLDOWN)
-
-    print(f"--> [Chunk 2/2] Drafting Complete Derivation Bank & Exhaustive Formula Tables...")
-    p2 = f"""
-    Continue Class 12 {subject} notes for Chapter: '{chapter_name}'.
-    Provide the exhaustive Derivation Bank and Formula/Equation Repository.
-    
-    Requirements:
-    1. Full multi-step mathematical proofs for all CBSE standard derivations using MathJax ($...$ for inline, $$...$$ for display equations).
-    2. A comprehensive formula table listing variables, SI units, and conditions.
-    
-    Structure:
-    <section class="section container" id="derivations">
-      <div class="section-head">
-        <span class="section-eyebrow">Formula Repository</span>
-        <h2>2. Master Equation Bank & Step-by-Step Derivations</h2>
-      </div>
-      <div class="resource-grid">
-        <article class="resource">
-          <h3>Exhaustive Formula Table</h3>
-          <!-- Comprehensive list of all formulas & derivations -->
-        </article>
-      </div>
-    </section>
-    Return ONLY this valid HTML section.
-    """
-    chunk2 = clean_code(call_gemini_with_fallback(p2))
-
-    return f"{chunk1}\n\n{chunk2}"
-
-def generate_part2_content(subject, chapter_name):
-    """Generates 250KB+ Solved Board PYQs, Competency Case Studies, and Mind-Maps"""
-    print(f"--> [Chunk 1/2] Drafting Solved CBSE Board PYQs for {chapter_name} ({subject})...")
-    p1 = f"""
-    Act as a CBSE Chief Head Evaluator in Class 12 {subject}.
-    Write a comprehensive Solved Board Question Bank for: '{chapter_name}'.
-    
-    Requirements:
-    1. Exactly 8 full-length solved CBSE Board Past 10-Year Questions:
-       - 2 Long Answer Questions (5-Markers) with step-by-step marking scheme allocations.
-       - 3 Medium Application Questions (3-Markers).
-       - 3 Conceptual & Numerical Traps (2-Markers).
-    2. Write every mathematical equation with MathJax.
-    
-    Structure:
-    <section class="section container" id="pyqs">
-      <div class="section-head">
-        <span class="section-eyebrow">Board Examination Archive</span>
-        <h2>1. Solved CBSE Board Past Year Questions (Marking Scheme Aligned)</h2>
-      </div>
-      <div class="resource-grid">
-        <!-- 8 solved question articles with .resource-icon and .qa-box -->
-      </div>
-    </section>
-    Return ONLY this valid HTML section.
-    """
-    chunk1 = clean_code(call_gemini_with_fallback(p1))
-    print(f"Waiting {API_COOLDOWN}s for API cooldown...")
-    time.sleep(API_COOLDOWN)
-
-    print(f"--> [Chunk 2/2] Drafting Competency-Based Case Studies & Visual Mind-Map...")
-    p2 = f"""
-    Continue Part 2 of Class 12 {subject} notes for: '{chapter_name}'.
-    
-    Requirements:
-    1. 2 Competency-Based Case-Study Questions with paragraph passages, multiple sub-parts, and detailed solutions.
-    2. High-Yield Visual Mind-Map and Fast Revision Checklist.
-    3. Common student blunders and examiner traps warning box.
-    
-    Structure:
-    <section class="section container" id="case-studies">
-      <div class="section-head">
-        <span class="section-eyebrow">Competency Assessment</span>
-        <h2>2. Case-Study Scenarios & Application Problems</h2>
-      </div>
-      <div class="resource-grid">
-        <!-- 2 extensive case study articles -->
-      </div>
-    </section>
-
-    <section class="section container" id="mindmap">
-      <div class="section-head">
-        <span class="section-eyebrow">Revision Framework</span>
-        <h2>3. Concept Mind-Map & Examiner Traps Checklist</h2>
-      </div>
-      <div class="trust">
-        <div class="trust-inner container">
-          <div class="trust-item"><b>Visual Framework</b>Mindmap steps</div>
-          <div class="trust-item"><b>Examiner Traps</b>Common mistakes</div>
-          <div class="trust-item"><b>Scoring Strategy</b>Step-marking tips</div>
-        </div>
-      </div>
-    </section>
-    Return ONLY these valid HTML sections.
-    """
-    chunk2 = clean_code(call_gemini_with_fallback(p2))
-
-    return f"{chunk1}\n\n{chunk2}"
-
-def fix_mismatch_in_place(target):
-    """Keeps the layout, header, footer intact and replaces ONLY the inner mismatched content"""
-    target_path = target["target_path"]
-    chapter_name = target["chapter_name"]
-    subject = target["subject"]
-    is_part_2 = target["is_part_2"]
-
-    print(f"\n[IN-PLACE FIX] Overwriting inner content for: {target_path} -> {subject}: {chapter_name}")
-    
-    if is_part_2:
-        new_content = generate_part2_content(subject, chapter_name)
-    else:
-        new_content = generate_part1_content(subject, chapter_name)
-
-    with open(target_path, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f.read(), "html.parser")
-
-    main_tag = soup.find("main")
-    if main_tag:
-        hero = main_tag.find("section", class_="hero")
-        cta = main_tag.find("section", class_="final-cta")
-        main_tag.clear()
-        if hero: 
-            main_tag.append(hero)
-        main_tag.append(BeautifulSoup(new_content, "html.parser"))
-        if cta: 
-            main_tag.append(cta)
-
-        with open(target_path, "w", encoding="utf-8") as f:
-            f.write(str(soup))
-        target_in_place_patch(target_path)
-        print(f"Successfully fixed content mismatch in: {target_path}")
-    else:
-        # Fallback to full page build if main tag was broken
-        build_full_page(target)
-
-def build_full_page(target):
-    target_path = target["target_path"]
-    chapter_name = target["chapter_name"]
-    subject = target["subject"]
-    is_part_2 = target["is_part_2"]
-
-    depth = len(os.path.normpath(target_path).split(os.sep)) - 1
-    css_rel = ("../" * depth) + "style.css" if depth > 0 else "style.css"
-    hub_link = "index.html" if depth == 1 else "../index.html"
-    root_link = "../index.html" if depth == 1 else "index.html"
-
-    base_name = os.path.splitext(os.path.basename(target_path))[0]
-    clean_base = re.sub(r"(_part[12]|\.html)", "", base_name, flags=re.I)
-    part1_url = f"{clean_base}.html" if "part" not in base_name else f"{clean_base}_part1.html"
-    part2_url = f"{clean_base}_part2.html"
-
-    part_subtitle = "Part 2: Solved Board PYQs & Case Studies" if is_part_2 else "Part 1: In-Depth Theory & Complete Derivations"
-    switch_btn = f"""
-    <div style="margin: 30px 0; text-align: center;">
-      <a class="btn btn-gold" href="{part1_url if is_part_2 else part2_url}" style="padding: 14px 28px; font-size: 1.05rem;">
-        {'← Back to Part 1: Theory & Formulas' if is_part_2 else 'Continue to Part 2: Solved CBSE PYQs & Case Studies →'}
-      </a>
-    </div>
-    """
-
-    if is_part_2:
-        body_content = generate_part2_content(subject, chapter_name)
-    else:
-        body_content = generate_part1_content(subject, chapter_name)
-
-    full_html = f"""<!DOCTYPE html>
-<html lang="en" data-theme="sunset">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CBSE Class 12 {subject} - {chapter_name} ({part_subtitle}). Comprehensive theory, derivations, formulas, and solved board PYQs by Jatin Sandilya at Shorveer Notes.">
-  <meta name="author" content="Jatin Sandilya">
-  <meta name="robots" content="index, follow">
-  <title>{chapter_name} ({'Part 2' if is_part_2 else 'Part 1'}) · Class 12 {subject} | Shorveer Notes</title>
-
-  {MATHJAX_HEADER}
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link href="[https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap)" rel="stylesheet">
-
-  <link rel="stylesheet" href="{css_rel}">
-
-  <style>
-    body {{
-      background: var(--bg, #241226);
-      color: var(--ink, #ffe9d6);
-      font-family: var(--font-body, 'Karla', sans-serif);
-      margin: 0;
-      padding-top: 80px;
-    }}
-    .site-header {{
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 72px;
-      background: rgba(23, 22, 19, 0.95);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.15));
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-    }}
-    .brand-mark, .sn-brand__mark {{
-      width: 36px !important;
-      height: 36px !important;
-      max-width: 36px !important;
-      max-height: 36px !important;
-      background: #1c1c1a;
-      border-radius: 9px;
-      display: inline-flex !important;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      flex-shrink: 0;
-    }}
-    .brand-mark svg, .sn-brand__mark svg {{
-      width: 24px !important;
-      height: 24px !important;
-    }}
-    .toc-bar {{
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
-      border-radius: 12px;
-      padding: 16px 24px;
-      margin-bottom: 40px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      align-items: center;
-    }}
-    .toc-title {{
-      font-family: var(--font-mono, monospace);
-      font-size: 0.85rem;
-      color: var(--gold, #ff8a5b);
-      text-transform: uppercase;
-      font-weight: 700;
-    }}
-    .toc-link {{
-      color: var(--ink, #ffe9d6);
-      text-decoration: none;
-      font-size: 0.92rem;
-      transition: color 0.2s;
-    }}
-    .toc-link:hover {{
-      color: var(--gold, #ff8a5b);
-      text-decoration: underline;
-    }}
-    .sn-cookie-banner {{
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-      max-width: 500px;
-      background: #1c1b18;
-      border: 1px solid var(--line, rgba(255, 255, 255, 0.2));
-      border-radius: 12px;
-      padding: 18px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-      z-index: 9999;
-      display: none;
-    }}
-    .sn-cookie-banner.show {{
-      display: block;
-    }}
-    .sn-cookie-banner p {{
-      margin: 0 0 12px;
-      font-size: 0.88rem;
-      color: var(--muted, #ffb87a);
-      line-height: 1.5;
-    }}
-    .sn-cookie-btn {{
-      background: var(--gold, #ff8a5b);
-      color: #000;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-weight: 700;
-      cursor: pointer;
-    }}
-    .theme-pop {{
-      position: fixed;
-      top: 80px;
-      right: 24px;
-      background: #1c1b18;
-      border: 1px solid var(--line, rgba(255,255,255,0.2));
-      border-radius: 12px;
-      padding: 16px;
-      z-index: 2000;
-      display: none;
-    }}
-    .theme-pop.open {{
-      display: block;
-    }}
-    .theme-grid {{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin: 10px 0;
-    }}
-    .theme-opt {{
-      background: #2a2824;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
-      padding: 8px 12px;
-      color: #fff;
-      cursor: pointer;
-    }}
-    .sn-footer {{
-      background: #141311 !important;
-      border-top: 1px solid var(--line, rgba(255, 255, 255, 0.12));
-      padding: 60px 0 35px;
-      margin-top: 80px;
-    }}
-    .sn-footer__grid {{
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 40px;
-    }}
-    @media (max-width: 768px) {{
-      .sn-footer__grid {{ grid-template-columns: 1fr; gap: 24px; }}
-    }}
-  </style>
-</head>
-<body>
-
-  <!-- ============ SITE HEADER ============ -->
-  <header class="site-header">
-    <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="{root_link}">
-        <span class="brand-mark">
-          <svg viewBox="0 0 64 64" fill="none">
-            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
-          </svg>
-        </span>
-        <span class="brand-name">Shorveer<em>Notes</em></span>
-      </a>
-
-      <div class="nav-links">
-        <a href="{root_link}">Home</a>
-        <a href="{hub_link}" style="color:var(--ink); font-weight:700;">{subject} Hub</a>
-        <a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer">JS EDIZ</a>
-      </div>
-
-      <div class="nav-actions">
-        <button class="nav-icon" id="themeButton" aria-label="Change theme" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:8px; padding:8px; cursor:pointer;">
-          <span style="width:14px; height:14px; border-radius:50%; background:var(--gold, #ff8a5b); display:inline-block;"></span>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  <!-- ============ THEME PICKER ============ -->
-  <div class="theme-pop" id="themePop">
-    <h4 style="margin:0 0 8px; color:#fff;">Pick a look</h4>
-    <div class="theme-grid">
-      <button class="theme-opt" data-theme-value="notebook">Notebook</button>
-      <button class="theme-opt" data-theme-value="chalkboard">Chalkboard</button>
-      <button class="theme-opt" data-theme-value="blueprint">Blueprint</button>
-      <button class="theme-opt" data-theme-value="sunset">Sunset</button>
-    </div>
-  </div>
-
-  <main id="main">
-    <section class="hero container">
-      <div class="hero-copy">
-        <div class="kicker">
-          <span class="dot"></span>
-          <span>CBSE Class 12 · {subject} Master Guide</span>
-        </div>
-        <h1>{chapter_name}</h1>
-        <p class="hero-description">{part_subtitle} curated for rigorous CBSE Board Preparation.</p>
-        <div class="hero-note">
-          <span>Authored with Precision by <strong>Jatin Sandilya</strong> · Official 2026-27 Syllabus</span>
-        </div>
-      </div>
-    </section>
-
-    <div class="container">
-      <div class="toc-bar">
-        <span class="toc-title">Quick Navigation:</span>
-        {'<a class="toc-link" href="#theory">1. In-Depth Theory</a><a class="toc-link" href="#derivations">2. Complete Derivations & Formulas</a>' if not is_part_2 else '<a class="toc-link" href="#pyqs">1. Solved CBSE PYQs</a><a class="toc-link" href="#case-studies">2. Competency Case Studies</a><a class="toc-link" href="#mindmap">3. Mind-Map Checklist</a>'}
-      </div>
-    </div>
-
-    <div class="container">
-      {switch_btn}
-    </div>
-
-    {body_content}
-
-    <div class="container">
-      {switch_btn}
-    </div>
-
-    <section class="final-cta container reveal">
-      <div class="cta-content">
-        <h2>Mastered {chapter_name}? <em>Return to {subject} Hub.</em></h2>
-        <a class="btn btn-gold" href="{hub_link}">
-          Back to {subject} Hub →
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="sn-footer">
-    <div class="container sn-footer__container">
-      <div class="sn-footer__grid">
-        <div class="sn-footer__brand">
-          <div class="brand" style="margin-bottom:12px;">
-            <span class="sn-brand__mark">
-              <svg viewBox="0 0 64 64" fill="none">
-                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
-              </svg>
-            </span>
-            <span class="brand-name" style="color:#fff; margin-left:8px;">Shorveer<em>Notes</em></span>
-          </div>
-          <p style="color:var(--muted); font-size:0.95rem; line-height:1.6;">
-            A student-focused platform providing Class 12 Science notes, derivations, and board examination preparation.
-          </p>
-          <div style="margin-top:14px; color:var(--muted); font-size:0.9rem;">
-            Created with pride by <strong>Jatin Sandilya</strong>
-          </div>
-        </div>
-
-        <div class="sn-nav-col">
-          <h3 style="color:#fff; font-size:1rem; margin-bottom:14px;">Subject Hubs</h3>
-          <ul style="list-style:none; padding:0; margin:0; line-height:2;">
-            <li><a href="../physics/index.html" style="color:var(--muted); text-decoration:none;">Physics Hub</a></li>
-            <li><a href="../chemistry/index.html" style="color:var(--muted); text-decoration:none;">Chemistry Hub</a></li>
-            <li><a href="../mathematics/index.html" style="color:var(--muted); text-decoration:none;">Mathematics Hub</a></li>
-          </ul>
-        </div>
-
-        <div class="sn-nav-col">
-          <h3 style="color:#fff; font-size:1rem; margin-bottom:14px;">Connect</h3>
-          <ul style="list-style:none; padding:0; margin:0; line-height:2;">
-            <li><a href="[https://www.youtube.com/@JSEDIZ](https://www.youtube.com/@JSEDIZ)" target="_blank" rel="noopener noreferrer" style="color:var(--muted); text-decoration:none;">JS EDIZ on YouTube</a></li>
-            <li><a href="mailto:support.shorveernotes@gmail.com">Contact Support</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:20px; text-align:center; color:var(--muted); font-size:0.85rem;">
-        <p>&copy; 2026 Shorveer Notes · Built with pride in India 🇮🇳</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ============ COOKIE BANNER ============ -->
-  <aside class="sn-cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie and Storage Notice">
-    <p>
-      🍪 <strong>Transparent Storage Notice:</strong> Shorveer Notes uses browser local storage exclusively to preserve your chosen theme settings (Notebook, Sunset, Chalkboard, Blueprint) across study sessions. We do not use intrusive tracking cookies.
-    </p>
-    <button class="sn-cookie-btn" id="cookieAcceptBtn">Got it, proceed</button>
-  </aside>
-
-  <script>
-    const themeBtn = document.getElementById("themeButton");
-    const themePop = document.getElementById("themePop");
-    const themeOpts = document.querySelectorAll(".theme-opt");
-    const cookieBanner = document.getElementById("cookieBanner");
-    const cookieAcceptBtn = document.getElementById("cookieAcceptBtn");
-
-    function applyTheme(name) {{
-      document.documentElement.setAttribute("data-theme", name);
-      try {{ localStorage.setItem("shorveer-theme-name", name); }} catch(e) {{}}
-    }}
-
-    applyTheme(localStorage.getItem("shorveer-theme-name") || "sunset");
-
-    themeBtn.addEventListener("click", (e) => {{
-      e.stopPropagation();
-      themePop.classList.toggle("open");
-    }});
-
-    themeOpts.forEach(btn => {{
-      btn.addEventListener("click", () => {{
-        applyTheme(btn.dataset.themeValue);
-        themePop.classList.remove("open");
-      }});
-    }});
-
-    document.addEventListener("click", (e) => {{
-      if (!themePop.contains(e.target) && !themeBtn.contains(e.target)) {{
-        themePop.classList.remove("open");
-      }}
-    }});
-
-    try {{
-      if (!localStorage.getItem("shorveer-cookie-ack")) {{
-        cookieBanner.classList.add("show");
-      }}
-    }} catch(e) {{}}
-
-    cookieAcceptBtn.addEventListener("click", () => {{
-      cookieBanner.classList.remove("show");
-      try {{ localStorage.setItem("shorveer-cookie-ack", "true"); }} catch(e) {{}}
-    }});
-  </script>
-</body>
-</html>"""
-
-    parent_dir = os.path.dirname(target_path)
-    if parent_dir:
-        os.makedirs(parent_dir, exist_ok=True)
-
-    with open(target_path, "w", encoding="utf-8") as f:
-        f.write(full_html)
-    
-    target_in_place_patch(target_path)
-    print(f"Generated Comprehensive {os.path.getsize(target_path) // 1024} KB Guide: {target_path}")
-
-def main():
-    target = scan_and_audit_website()
-    if not target:
-        print("All chapters across the entire website are 100% healthy, matched, and complete (250KB+ target met).")
-        if "GITHUB_OUTPUT" in os.environ:
-            with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-                f.write("has_more=false\n")
-        return
-
-    print(f"\n==================================================")
-    print(f"[ACTION: {target['action'].upper()}] -> {target['target_path']}")
-    print(f"Subject: {target['subject']} | Chapter: {target['chapter_name']}")
-    print(f"Health Audit Reason: {target['reason']}")
-    print(f"==================================================")
-
-    if target["action"] == "fix_mismatch":
-        fix_mismatch_in_place(target)
-    else:
-        build_full_page(target)
-
+SYSTEM = (
+    "You are a CBSE Class 12 subject expert writing for the site "
+    f"'{BRAND}', authored by {AUTHOR}. Output ONLY an HTML fragment: no markdown fences, "
+    "no <html>, <head>, <body> or <footer>. Use MathJax: $...$ inline, $$...$$ display. "
+    "Never write square-bracket placeholders or instructions in the output. "
+    "PYQ means real past-year papers, which you cannot verify. So for any question you write, "
+    "label it as 'Practice Question' and never call it a PYQ."
+)
+
+api_key = os.environ.get("GROQ_API_KEY")
+if not api_key:
+    raise ValueError("GROQ_API_KEY missing. Repo Settings -> Secrets mein add karo.")
+client = Groq(api_key=api_key)
+
+
+class DailyQuotaExhausted(Exception):
+    pass
+
+
+# ---------------- State & helpers ----------------
+def set_output(name, value):
     if "GITHUB_OUTPUT" in os.environ:
         with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-            f.write("has_more=true\n")
+            f.write(f"{name}={value}\n")
+
+
+def load_state():
+    try:
+        with open(STATE_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def save_state(state):
+    with open(STATE_FILE, "w", encoding="utf-8") as f:
+        json.dump(state, f, indent=2, ensure_ascii=False)
+
+
+def clean_code(text):
+    text = text.strip()
+    text = re.sub(r"^```(?:html)?\s*", "", text)
+    text = re.sub(r"\s*```$", "", text)
+    return text.strip()
+
+
+_sent = []
+
+
+def wait_for_budget(tokens):
+    tokens = min(tokens, TOKENS_PER_MIN)
+    while True:
+        now = time.time()
+        _sent[:] = [(t, n) for t, n in _sent if now - t < 60]
+        if sum(n for _, n in _sent) + tokens <= TOKENS_PER_MIN:
+            _sent.append((now, tokens))
+            return
+        time.sleep(5)
+
+
+# ---------------- Groq call ----------------
+def call_groq(prompt):
+    errors = []
+    for model in MODELS:
+        for attempt in range(1, 4):
+            wait_for_budget(len(SYSTEM + prompt) // 3 + MAX_OUT_TOKENS)
+            try:
+                resp = client.chat.completions.create(
+                    model=model,
+                    temperature=0.4,
+                    max_completion_tokens=MAX_OUT_TOKENS,
+                    messages=[{"role": "system", "content": SYSTEM},
+                              {"role": "user", "content": prompt}],
+                )
+                text = (resp.choices[0].message.content or "").strip()
+                if len(text) > 200:
+                    return clean_code(text)
+                errors.append(f"{model}: short output")
+                break
+            except Exception as e:
+                msg = str(e)
+                low = msg.lower()
+                if "per day" in low or "(tpd)" in low:
+                    errors.append(f"{model}: daily quota")
+                    break
+                if "429" in msg or "rate limit" in low:
+                    print(f"429 on {model}, {30 * attempt}s wait...")
+                    time.sleep(30 * attempt)
+                    continue
+                errors.append(f"{model}: {msg[:120]}")
+                time.sleep(5 * attempt)
+    if errors and all("daily quota" in e for e in errors):
+        raise DailyQuotaExhausted("; ".join(errors))
+    raise RuntimeError("; ".join(errors) or "no output")
+
+
+# ---------------- Content prompts ----------------
+def prompts_for(subject, chapter, is_part2):
+    if not is_part2:
+        return [
+            f"""Write the THEORY section for CBSE Class 12 {subject}, chapter "{chapter}".
+Output exactly one block:
+<section class="section container reveal" id="theory">
+  <div class="section-head"><span class="section-eyebrow">Comprehensive Academic Theory</span><h2>1. Conceptual Framework</h2></div>
+  <div class="real-life">
+    <article class="rl-card"><div class="rl-body"><div class="rl-subject">...</div><div class="rl-title">...</div><p class="rl-text">...</p></div></article>
+    (4 to 6 such articles covering definitions, laws, intuition, exceptions, worked examples)
+  </div>
+</section>
+Real textbook content only. Aim for at least 1500 words.""",
+            f"""Continue chapter "{chapter}" of CBSE Class 12 {subject}. Output exactly one block:
+<section class="section container reveal" id="derivations">
+  <div class="section-head"><span class="section-eyebrow">Formulas and Derivations</span><h2>2. Master Equation Bank</h2></div>
+  <div class="resource-grid">
+    <article class="resource"><h3>...</h3><p>...</p></article>
+  </div>
+</section>
+Include step-by-step CBSE-standard derivations with MathJax, and a formula list with variables, SI units and conditions. Aim for at least 1500 words.""",
+        ]
+    return [
+        f"""For CBSE Class 12 {subject}, chapter "{chapter}", write a section with id="pyqs".
+Give exactly 8 PRACTICE questions (2 five-mark, 3 three-mark, 3 two-mark), each with a marking scheme.
+Do not call them PYQs or Board questions. Use <section class="section container reveal" id="pyqs"> with section-head and resource-grid cards. Output only that block.""",
+        f"""Continue chapter "{chapter}" of CBSE Class 12 {subject}. Output exactly two blocks:
+1. <section class="section container reveal" id="case-studies"> with 2 case-study articles (passage, sub-questions, full solutions) in real-life cards.
+2. <section class="section container reveal" id="mindmap"> with a visual mind-map built as nested HTML lists or a flow of boxes (one idea after another, easy to scroll), plus examiner traps and scoring strategy.
+Real content only. Aim for at least 1200 words.""",
+    ]
+
+
+def check_body(html_fragment, is_part2):
+    soup = BeautifulSoup(html_fragment, "html.parser")
+    ids = {t.get("id") for t in soup.find_all(id=True)}
+    missing = [i for i in REQUIRED_IDS[is_part2] if i not in ids]
+    words = len(soup.get_text(" ", strip=True).split())
+    problems = []
+    if missing:
+        problems.append(f"missing sections {missing}")
+    if words < MIN_WORDS[is_part2]:
+        problems.append(f"only {words} words")
+    if re.search(r"\[(Provide|Write|Insert|Add)[^\]]*\]", html_fragment, re.I):
+        problems.append("placeholder text found")
+    return problems
+
+
+def generate_body(subject, chapter, is_part2):
+    feedback, problems = "", []
+    for _ in range(2):
+        parts = [call_groq(p + feedback) for p in prompts_for(subject, chapter, is_part2)]
+        body = "\n\n".join(parts)
+        problems = check_body(body, is_part2)
+        if not problems:
+            return body
+        feedback = f"\n\nPrevious attempt problems: {', '.join(problems)}. Fix them completely."
+    raise RuntimeError(f"Validation failed: {problems}")
+
+
+# ---------------- Page building (index.html से template) ----------------
+def hero(subject, chapter, is_part2):
+    label = ("Part 2: Practice Questions & Case Studies" if is_part2
+             else "Part 1: Theory & Complete Derivations")
+    return (f'<section class="hero container"><div class="hero-copy">'
+            f'<div class="kicker"><span class="dot"></span>'
+            f'<span>Class 12 · {subject}</span></div>'
+            f'<h1>{chapter}</h1>'
+            f'<p class="hero-description">{label}</p></div></section>')
+
+
+def fix_brand_and_author(soup):
+    """Brand का नाम एक जैसा और पुराना सरनेम हटाना।"""
+    for text_node in soup.find_all(string=True):
+        if "Sharma" in text_node or "Sharma" in str(text_node):
+            text_node.replace_with(str(text_node).replace("Jatin Sharma", AUTHOR).replace("Sharma", AUTHOR.split()[-1]))
+    for tag in soup.find_all(class_=re.compile(r"sn-founder-name")):
+        for s in tag.find_all("strong"):
+            s.string = AUTHOR
+
+
+def build_page(path, subject, chapter, is_part2, body, add_hero=True):
+    depth = len(os.path.normpath(path).split(os.sep)) - 1
+    prefix = "../" * depth
+    shell = BeautifulSoup(open(TEMPLATE, encoding="utf-8").read(), "html.parser")
+
+    for tag in shell.find_all(["a", "link", "script", "img", "source"]):
+        for attr in ("href", "src"):
+            v = tag.get(attr)
+            if v and not v.startswith(("http", "#", "mailto:", "tel:", "data:", "//", "/")):
+                tag[attr] = prefix + v
+
+    main = shell.find("main")
+    if main is None:
+        raise RuntimeError(f"{TEMPLATE} mein <main> nahi mila")
+    main.clear()
+    if add_hero:
+        main.append(BeautifulSoup(hero(subject, chapter, is_part2), "html.parser"))
+    main.append(BeautifulSoup(body, "html.parser"))
+    if shell.title:
+        shell.title.string = f"{chapter} · Class 12 {subject} | {BRAND}"
+
+    fix_brand_and_author(shell)
+
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        f.write(str(shell))
+    os.replace(tmp, path)
+
+
+# ---------------- Discovery & audit ----------------
+def detect_subject(path):
+    lower = path.lower()
+    if "physic" in lower: return "Physics"
+    if "chem" in lower: return "Chemistry"
+    if "math" in lower: return "Mathematics"
+    if "eng" in lower: return "English"
+    return "Science"
+
+
+def clean_title(a, fname):
+    title = ""
+    card = a.find_parent(class_=re.compile(r"card|item|subject|resource", re.I))
+    if card and card.find(["h2", "h3", "h4"]):
+        title = card.find(["h2", "h3", "h4"]).get_text(strip=True)
+    if not title:
+        title = a.get_text(strip=True)
+    if not title or re.search(r"open\s+chapter|read\s+more|chapter\s+\d+", title, re.I):
+        title = os.path.splitext(os.path.basename(fname))[0].replace("-", " ").replace("_", " ").title()
+    return re.sub(r"\s*\(?(Part\s*[12]|PYQs?)\)?", "", title, flags=re.I).strip()
+
+
+def discover_pages():
+    seen = set()
+    for source in glob.glob("**/*.html", recursive=True):
+        base_dir = os.path.dirname(source)
+        try:
+            soup = BeautifulSoup(open(source, encoding="utf-8").read(), "html.parser")
+        except Exception:
+            continue
+        for a in soup.find_all("a", href=True):
+            href = a["href"].strip()
+            if href.startswith(("#", "http", "mailto:", "tel:", "javascript:")):
+                continue
+            clean = href.split("?")[0].split("#")[0]
+            if not clean.endswith(".html") or any(k in clean.lower() for k in IGNORE_KEYWORDS):
+                continue
+            path = os.path.normpath(os.path.join(base_dir, clean.lstrip("/\\")))
+            fname = os.path.basename(path).lower()
+            if fname in IGNORE_FILES or path in seen:
+                continue
+            seen.add(path)
+            yield {
+                "path": path,
+                "subject": detect_subject(path),
+                "chapter": clean_title(a, clean),
+                "is_part2": "part2" in fname or "pyq" in fname,
+            }
+
+
+def is_mismatched(path, subject):
+    words = FORBIDDEN.get(subject.lower())
+    if not words:
+        return False
+    text = BeautifulSoup(open(path, encoding="utf-8").read(), "html.parser").get_text(" ").lower()
+    hits = [w for w in words if re.search(r"\b" + re.escape(w) + r"\b", text)]
+    return len(hits) >= 2
+
+
+def find_target(state):
+    for page in discover_pages():
+        path = page["path"]
+        rec = state.get(path, {})
+        if rec.get("status") == "done" or rec.get("failures", 0) >= MAX_FAILURES:
+            continue
+        if not os.path.exists(path):
+            return {**page, "action": "build"}
+        soup = BeautifulSoup(open(path, encoding="utf-8").read(), "html.parser")
+        main = soup.find("main")
+        if main is None or check_body(str(main), page["is_part2"]) or is_mismatched(path, page["subject"]):
+            return {**page, "action": "build"}
+        if soup.find(class_="site-header") is None or "Sharma" in str(soup):
+            return {**page, "action": "shell_fix"}
+        state[path] = {"status": "done"}
+    return None
+
+
+def main():
+    state = load_state()
+    target = find_target(state)
+    if target is None:
+        print("Saare pages complete aur design-match hain.")
+        set_output("has_more", "false")
+        save_state(state)
+        return
+
+    path = target["path"]
+    print(f"[{target['action']}] {path} | {target['subject']}: {target['chapter']}")
+    try:
+        if target["action"] == "shell_fix":
+            old = BeautifulSoup(open(path, encoding="utf-8").read(), "html.parser")
+            body = "".join(str(c) for c in old.find("main").children)
+            build_page(path, target["subject"], target["chapter"], target["is_part2"], body, add_hero=False)
+        else:
+            body = generate_body(target["subject"], target["chapter"], target["is_part2"])
+            build_page(path, target["subject"], target["chapter"], target["is_part2"], body)
+        state[path] = {"status": "done"}
+        print("OK")
+    except DailyQuotaExhausted as e:
+        print(f"Groq daily quota khatam. Agle scheduled run par resume hoga. ({e})")
+        set_output("has_more", "false")
+        save_state(state)
+        return
+    except Exception as e:
+        rec = state.setdefault(path, {})
+        rec["failures"] = rec.get("failures", 0) + 1
+        rec["last_error"] = str(e)[:300]
+        print(f"FAILED ({rec['failures']}/{MAX_FAILURES}): {e}")
+
+    save_state(state)
+    set_output("has_more", "true")
+
 
 if __name__ == "__main__":
     main()
