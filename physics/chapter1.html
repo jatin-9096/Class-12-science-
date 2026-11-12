@@ -1,1172 +1,466 @@
- <!DOCTYPE html>
-<html lang="en" data-theme="notebook">
+<!DOCTYPE html>
+
+<html data-theme="notebook" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description" content="Class 12 Physics Chapter 1: Electric Charges and Fields — Comprehensive Long Notes, 3D Flip Cards, Solved 5-Mark Numericals, Derivations, and 20 Practice MCQs by Shorveer Notes.">
-  <meta name="author" content="Jatin Sandilya">
-  <meta name="robots" content="index, follow">
-
-  <meta name="theme-color" content="#fdfaf3" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#171613" media="(prefers-color-scheme: dark)">
-  <meta name="color-scheme" content="light dark">
-
-  <link rel="canonical" href="https://shorveernotes.website/physics/chapter1.html">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Chapter 1: Electric Charges & Fields (Detailed Long Notes) | Shorveer Notes">
-  <meta property="og:description" content="Master Chapter 1 with 3D flip cards, step-by-step Gauss law derivations, 5-mark solved board exemplars, and 20 interactive MCQs.">
-  <meta property="og:site_name" content="Shorveer Notes">
-  <meta property="og:url" content="https://shorveernotes.website/physics/chapter1.html">
-  <meta property="og:image" content="https://shorveernotes.website/og-image.jpg">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1c1a'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23e8b64c'/%3E%3C/svg%3E">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Global Design System Link -->
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- MathJax Configuration -->
-  <script>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="ca-pub-9688496231973353" name="google-adsense-account"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Shorveer Notes is a student-focused Class 12 Science learning platform with structured Physics, Chemistry, Mathematics and English notes, chapter resources, practice questions, revision material and exam preparation resources." name="description"/>
+<meta content="Jatin Sandilya" name="author"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="#fdfaf3" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#171613" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="Shorveer Notes" name="apple-mobile-web-app-title"/>
+<link href="https://shorveernotes.website/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Shorveer Notes | Class 12 Science Study Platform" property="og:title"/>
+<meta content="Explore structured Class 12 Physics, Chemistry, Mathematics and English resources, chapter notes, revision material and exam resources in one focused study platform." property="og:description"/>
+<meta content="Shorveer Notes" property="og:site_name"/>
+<meta content="en_IN" property="og:locale"/>
+<meta content="https://shorveernotes.website/og-image.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Shorveer Notes — Class 12 Science study platform" property="og:image:alt"/>
+<meta content="https://shorveernotes.website/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Shorveer Notes | Class 12 Science" name="twitter:title"/>
+<meta content="A focused learning space for Class 12 Science notes, chapters, revision and exam resources." name="twitter:description"/>
+<meta content="https://shorveernotes.website/og-image.jpg" name="twitter:image"/>
+<meta content="@JSEDIZ" name="twitter:site"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1c1a'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23e8b64c'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link crossorigin="" href="https://images.unsplash.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Karla:wght@400;500;600;700&amp;family=Inter:opsz,wght@14..32,400..700&amp;display=swap" rel="stylesheet"/>
+<!-- MathJax: formulas ($...$ and $$...$$) render here -->
+<script>
     window.MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$']]
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
       },
-      chtml: { scale: 0.95, displayAlign: 'left' }
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
     };
   </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-
-  <script>document.documentElement.classList.add('js');</script>
-
-  <title>Chapter 1: Electric Charges & Fields (Detailed Long Notes) | Shorveer Notes</title>
-
-  <style>
-    /* Specific styles for Long Notes & Derivation Cards */
-    .part-banner {
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<!-- External CSS Linked Here -->
+<link href="../style.css" rel="stylesheet"/>
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Shorveer Notes",
+    "alternateName": ["Shorveer", "ShorveerNotes"],
+    "description": "A student-focused learning platform for Class 12 Science notes, chapters, revision resources and examination preparation.",
+    "url": "https://shorveernotes.website/",
+    "logo": "https://shorveernotes.website/logo.png",
+    "sameAs": ["https://www.youtube.com/@JSEDIZ"],
+    "educationalLevel": "Class 12",
+    "knowsAbout": ["Physics","Chemistry","Mathematics","English","CBSE Class 12","Practice Questions","Board Examination Preparation"]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Shorveer Notes",
+    "alternateName": ["Shorveer", "ShorveerNotes", "Shorveer Notes Class 12"],
+    "url": "https://shorveernotes.website/",
+    "inLanguage": "en-IN",
+    "publisher": {
+      "@type": "EducationalOrganization",
+      "name": "Shorveer Notes",
+      "url": "https://shorveernotes.website/"
+    }
+  }
+  </script>
+<title>Electric Charges &amp; Fields · Class 12 Physics | Shorveer Notes</title>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+<nav aria-label="Primary" class="nav container">
+<a aria-label="Shorveer Notes home" class="brand" href="/">
+<span aria-hidden="true" class="brand-mark">
+<svg fill="none" viewbox="0 0 64 64">
+<path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
+</svg>
+</span>
+<span class="brand-name">Shorveer<em>Notes</em></span>
+</a>
+<div class="nav-links">
+<a href="#subjects">Subjects</a>
+<a href="#reallife">Real life</a>
+<a href="#resources">Resources</a>
+<a href="#method">How it works</a>
+<a href="../about.html">About</a>
+</div>
+<div class="nav-actions">
+<button aria-label="Open search" class="nav-icon" id="searchButton" title="Search (Ctrl+K)">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<circle cx="11" cy="11" r="7"></circle><path d="m20.5 20.5-4-4"></path>
+</svg>
+</button>
+<a aria-label="Mind map" class="nav-icon" href="chapter1-mindmap.html" title="Mind map">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<path d="M3 6h18M3 12h18M3 18h18"></path>
+</svg>
+</a>
+<button aria-expanded="false" aria-label="Change theme" class="nav-icon" id="themeButton" title="Change theme">
+<span aria-hidden="true" class="palette-dot"></span>
+</button>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav-icon mobile-toggle" id="menuButton">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<path d="M3 6h18M3 12h18M3 18h18"></path>
+</svg>
+</button>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="#subjects">Subjects</a>
+<a href="#reallife">Real life</a>
+<a href="#resources">Resources</a>
+<a href="#method">How it works</a>
+<a href="../exam-info.html">Exam information</a>
+<a href="../about.html">About Shorveer</a>
+</div>
+</header>
+<!-- ============ SEARCH LAYER ============ -->
+<div aria-hidden="true" aria-label="Search" class="search-layer" id="searchLayer" role="dialog">
+<div class="search-panel">
+<div class="search-top">
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.9" viewbox="0 0 24 24" width="18">
+<circle cx="11" cy="11" r="7"></circle><path d="m20.5 20.5-4-4"></path>
+</svg>
+<input autocomplete="off" id="searchInput" placeholder="Search subjects and pages" type="text"/>
+<button aria-label="Close search" class="search-close" id="searchClose">✕</button>
+</div>
+<div class="search-results" id="searchResults"></div>
+</div>
+</div>
+<!-- ============ THEME PICKER (9 Themes) ============ -->
+<div aria-label="Choose a theme" class="theme-pop" id="themePop" role="dialog">
+<h4>Pick a look</h4>
+<div class="theme-grid">
+<button aria-pressed="true" class="theme-opt" data-theme-value="notebook">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#fdfaf3"></span>
+<span style="background:#e8b64c"></span>
+<span style="background:#bf5a3c"></span>
+<span style="background:#1c1c1a"></span>
+</span>
+<b>Notebook</b>
+<small>Warm paper, classic</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="chalkboard">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#1e2a24"></span>
+<span style="background:#f0d97a"></span>
+<span style="background:#7bc3bf"></span>
+<span style="background:#ebe6d5"></span>
+</span>
+<b>Chalkboard</b>
+<small>Dark green, chalk</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="blueprint">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0f2b4c"></span>
+<span style="background:#7ec8f5"></span>
+<span style="background:#ff9d7c"></span>
+<span style="background:#e2eefb"></span>
+</span>
+<b>Blueprint</b>
+<small>Navy, technical</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="sunset">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#241226"></span>
+<span style="background:#ff8a5b"></span>
+<span style="background:#ffb87a"></span>
+<span style="background:#ffe9d6"></span>
+</span>
+<b>Sunset</b>
+<small>Plum, warm glow</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="emerald">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0b1d16"></span>
+<span style="background:#34d399"></span>
+<span style="background:#2dd4bf"></span>
+<span style="background:#e3f7ed"></span>
+</span>
+<b>Emerald</b>
+<small>Biology &amp; Green</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="cyberpunk">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#0f1016"></span>
+<span style="background:#00f0ff"></span>
+<span style="background:#ff007f"></span>
+<span style="background:#f0f2ff"></span>
+</span>
+<b>Cyberpunk</b>
+<small>Neon high-tech</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="minimal">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#f8fafc"></span>
+<span style="background:#2563eb"></span>
+<span style="background:#64748b"></span>
+<span style="background:#0f172a"></span>
+</span>
+<b>Minimal</b>
+<small>Clean white</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="dracula">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#191622"></span>
+<span style="background:#bd93f9"></span>
+<span style="background:#ff79c6"></span>
+<span style="background:#f8f8f2"></span>
+</span>
+<b>Dracula</b>
+<small>Night indigo</small>
+</button>
+<button aria-pressed="false" class="theme-opt" data-theme-value="solarized">
+<span aria-hidden="true" class="theme-swatch">
+<span style="background:#fdf6e3"></span>
+<span style="background:#b58900"></span>
+<span style="background:#2aa198"></span>
+<span style="background:#073642"></span>
+</span>
+<b>Solarized</b>
+<small>Warm study paper</small>
+</button>
+</div>
+<p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Your choice is saved for next time.</p>
+</div>
+<main id="main"><section class="hero container"><div class="hero-copy"><div class="kicker"><span class="dot"></span><span>Class 12 · Physics</span></div><h1>Electric Charges &amp; Fields</h1><p class="hero-description">Part 1: Theory and Complete Derivations</p><div class="hero-actions" style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;"><a class="btn btn-gold" href="chapter1-mindmap.html">View Mind Map ✎</a></div></div></section><section class="section container reveal" id="theory">
+<div class="section-head"><span class="section-eyebrow">Comprehensive Academic Theory</span><h2>1. Conceptual Framework</h2></div>
+<div class="real-life">
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Physics · Core Law</div>
+<div class="rl-title">Definition of Charge and Quantisation</div>
+<p class="rl-text">
+          Electric charge is a fundamental property of matter that gives rise to electric forces. It exists in two distinct types, conventionally called positive and negative. The sign convention was introduced by Benjamin Franklin: bodies that attract a glass rod when rubbed are called positively charged, while those that attract a silk thread are called negatively charged. Charge is quantised; it occurs only in integral multiples of the elementary charge $e = 1.602 \times 10^{-19}\,\text{C}$. Hence any macroscopic charge $Q$ can be expressed as $Q = n e$, where $n$ is an integer (positive, negative or zero). This quantisation is a direct consequence of the existence of electrons (negative charge $-e$) and protons (positive charge $+e$) as the smallest indivisible carriers in ordinary matter. The conservation of charge states that the total charge in an isolated system remains constant; charge can be transferred from one body to another but cannot be created or destroyed. Mathematically, for any closed system,
+          $$\sum_i Q_i = \text{constant}.$$
+          The law of conservation of charge underlies all electrostatic phenomena and is experimentally verified to a precision better than one part in $10^{20}$.
+        </p>
+</div>
+</article>
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Physics · Coulomb’s Law</div>
+<div class="rl-title">Coulomb’s Interaction Between Point Charges</div>
+<p class="rl-text">
+          Coulomb’s law quantifies the electrostatic force between two stationary point charges. If $Q_1$ and $Q_2$ are separated by a distance $r$, the magnitude of the force is
+          $$F = k \frac{|Q_1 Q_2|}{r^2},$$
+          where $k = \frac{1}{4\pi\varepsilon_0} = 8.988 \times 10^9\,\text{N·m}^2\text{/C}^2$ and $\varepsilon_0 = 8.854 \times 10^{-12}\,\text{F/m}$ is the permittivity of free space. The force is attractive if the charges have opposite signs and repulsive if they have the same sign. The direction of the force is along the line joining the two charges, making it a central force. Coulomb’s law is analogous to Newton’s law of gravitation, differing only in the presence of both attractive and repulsive interactions and the much larger magnitude of the electrostatic constant $k$. The law holds strictly for point charges; for extended charge distributions, the principle of superposition must be applied, integrating the contributions of infinitesimal charge elements $dq$ over the volume or surface of the object.
+        </p>
+</div>
+</article>
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Physics · Electric Field Concept</div>
+<div class="rl-title">Electric Field Intensity and Its Vector Nature</div>
+<p class="rl-text">
+          The electric field $\vec{E}$ at a point in space is defined as the force $\vec{F}$ experienced by a unit positive test charge $q_0$ placed at that point:
+          $$\vec{E} = \frac{\vec{F}}{q_0}.$$
+          It is a vector quantity, possessing both magnitude and direction. For a point charge $Q$, the field at a distance $r$ is
+          $$\vec{E} = k \frac{Q}{r^2}\,\hat{r},$$
+          where $\hat{r}$ is a unit vector directed radially outward from a positive charge (inward for a negative charge). The principle of superposition applies to electric fields as well: the net field due to multiple charges is the vector sum of the individual fields,
+          $$\vec{E}_{\text{net}} = \sum_i \vec{E}_i.$$
+          Field lines provide a visual representation of $\vec{E}$. They originate on positive charges and terminate on negative charges, never intersect, and their density is proportional to the field magnitude. The electric flux $\Phi_E$ through a closed surface $S$ is related to the enclosed charge $Q_{\text{enc}}$ by Gauss’s law,
+          $$\oint_S \vec{E}\cdot d\vec{A} = \frac{Q_{\text{enc}}}{\varepsilon_0}.$$
+          This integral form is particularly powerful for systems with high symmetry (spherical, cylindrical, planar), allowing rapid calculation of $\vec{E}$ without explicit summation of forces.
+        </p>
+</div>
+</article>
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Physics · Conductors, Insulators &amp; Polarisation</div>
+<div class="rl-title">Behaviour of Materials in Electrostatic Equilibrium</div>
+<p class="rl-text">
+          Materials are classified based on the mobility of their charge carriers. Conductors (e.g., metals) contain free electrons that can move readily under an external field, while insulators (e.g., glass, rubber) have tightly bound electrons, restricting charge motion. In electrostatic equilibrium, the electric field inside a perfect conductor is zero; any excess charge resides on its surface, distributing itself so that the surface field is perpendicular to the surface at every point. This results from the fact that any tangential component would cause surface charges to move, contradicting equilibrium. For insulators, charges cannot migrate freely; however, an external field can induce a slight displacement of bound electrons relative to nuclei, creating induced dipoles—a phenomenon known as polarisation. The net effect is a reduction of the internal field, quantified by the dielectric constant $\kappa$, where $\varepsilon = \kappa \varepsilon_0$. The relationship between the electric displacement $\vec{D}$ and the field $\vec{E}$ in a linear, isotropic dielectric is
+          $$\vec{D} = \varepsilon \vec{E} = \kappa \varepsilon_0 \vec{E}.$$
+          Exceptions to ideal behaviour arise in semiconductors, where charge carriers are limited but not absent, leading to intermediate conductivity and the basis for modern electronic devices.
+        </p>
+</div>
+</article>
+<article class="rl-card">
+<div class="rl-body">
+<div class="rl-subject">Physics · Worked Example</div>
+<div class="rl-title">Electric Field of a Uniformly Charged Ring on Its Axis</div>
+<p class="rl-text">
+          Consider a thin circular ring of radius $R$ carrying a total charge $Q$ uniformly distributed. We wish to find the electric field at a point $P$ on the axis of the ring at a distance $x$ from its centre. By symmetry, the horizontal components of the field due to opposite charge elements cancel, leaving only a vertical component along the axis. An infinitesimal charge element $dq = \frac{Q}{2\pi R}\,dl$ at a point on the ring produces a field magnitude
+          $$dE = k \frac{dq}{r^2},$$
+          where $r = \sqrt{R^2 + x^2}$ is the distance from $dq$ to $P$. The vertical component is
+          $$dE_{\parallel} = dE \cos\theta = k \frac{dq}{r^2}\frac{x}{r} = k \frac{Q}{2\pi R}\frac{x\,dl}{(R^2 + x^2)^{3/2}}.$$
+          Integrating around the entire ring,
+          $$E_{\parallel} = \int_0^{2\pi R} dE_{\parallel} = k \frac{Qx}{(R^2 + x^2)^{3/2}} \int_0^{2\pi R}\frac{dl}{2\pi R} = k \frac{Qx}{(R^2 + x^2)^{3/2}}.$$
+          Hence the electric field on the axis is
+          $$\boxed{E = \frac{1}{4\pi\varepsilon_0}\,\frac{Qx}{(R^2 + x^2)^{3/2}}}$$
+          directed away from the ring if $Q$ is positive and towards the ring if $Q$ is negative. This result illustrates the power of symmetry and superposition in solving electrostatic problems, and it serves as a stepping stone to more complex configurations such as charged disks and solenoids.
+        </p>
+</div>
+</article>
+</div>
+</section>
+<section class="section container reveal" id="derivations">
+<div class="section-head"><span class="section-eyebrow">Formulas and Derivations</span><h2>2. Master Equation Bank</h2></div>
+<div class="resource-grid">
+<article class="resource"><h3>Derivation Details</h3><p>In this section we present a systematic, CBSE‑style derivation of all fundamental equations that appear in the chapter “Electric Charges &amp; Fields”. The derivations are broken into logical blocks, each beginning with a brief physical premise, followed by mathematical steps that lead to the final formula. Every equation is written in LaTeX, with inline expressions surrounded by single dollar signs and display equations surrounded by double dollar signs. After the derivations we provide a concise formula bank that lists each symbol, its SI unit and the conditions under which the formula is valid. Finally, a handful of practice questions are included to reinforce the concepts. All content is contained within a single <strong>paragraph</strong> element, with <br/> tags used to separate logical sections and to keep the structure flat as required by the template. <br/><br/> <strong>1. Coulomb’s Law – Derivation from Symmetry and Experiment</strong> <br/> Coulomb’s law is the cornerstone of electrostatics. It states that the electrostatic force between two point charges is proportional to the product of the charges and inversely proportional to the square of the distance between them. The derivation can be sketched in two parts: (i) experimental observation of the inverse‑square dependence, and (ii) symmetry arguments that fix the direction and the vector nature of the force. <br/> (i) <em>Experimental Observation</em> <br/> By measuring the force between two charged spheres suspended from a torsion balance, Coulomb found that the force varied as $1/r^2$. The proportionality constant was later denoted $k$ and expressed in terms of the permittivity of free space: $k = 1/(4\pi\varepsilon_0)$. <br/> (ii) <em>Symmetry Argument</em> <br/> The force must act along the line joining the two charges because of isotropy of space. Therefore, the force vector can be written as $\mathbf{F} = f(r)\,\hat{\mathbf{r}}$, where $\hat{\mathbf{r}}$ is the unit vector from one charge to the other and $f(r)$ is a scalar function of the separation $r$. By the experimental result, $f(r) = k\,q_1q_2/r^2$. Hence, the vector form of Coulomb’s law is $$\mathbf{F}_{12} = \frac{1}{4\pi\varepsilon_0}\,\frac{q_1q_2}{r^2}\,\hat{\mathbf{r}}_{12}.$$ <br/> This expression is valid for static point charges in vacuum or any linear, isotropic, homogeneous medium with permittivity $\varepsilon$. <br/> <br/> <strong>2. Electric Field of a Point Charge – Derivation from Coulomb’s Law</strong> <br/> The electric field $\mathbf{E}$ is defined as the force per unit test charge: $$\mathbf{E}(\mathbf{r}) = \frac{\mathbf{F}}{q_{\text{test}}}.$$ Substituting Coulomb’s law for a test charge $q_{\text{test}}$ placed at $\mathbf{r}$ due to a source charge $q$ at the origin gives $$\mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0}\,\frac{q}{r^2}\,\hat{\mathbf{r}}.$$ The magnitude is $E = \frac{1}{4\pi\varepsilon_0}\,\frac{|q|}{r^2}$ and the direction is radially outward for $q&gt;0$ and inward for $q&lt;0$. <br/> The field is a vector field that satisfies the superposition principle: for multiple point charges, $$\mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0}\sum_i \frac{q_i}{|\mathbf{r}-\mathbf{r}_i|^2}\,\widehat{(\mathbf{r}-\mathbf{r}_i)}.$$ <br/> <br/> <strong>3. Electric Field of Continuous Charge Distributions</strong> <br/> For a continuous distribution of charge, the point‑charge expression is replaced by an integral over the charge density. <br/> (a) <em>Line Charge</em> <br/> Consider a straight line of length $L$ carrying a uniform linear charge density $\lambda$ (C/m). The infinitesimal charge element is $dq = \lambda\,dl$. The field at a point $P$ a perpendicular distance $x$ from the line is obtained by integrating the contribution from each element: $$\mathbf{E}(x) = \frac{1}{4\pi\varepsilon_0}\int_{-L/2}^{L/2}\frac{\lambda\,dl}{(x^2+l^2)}\,\frac{x\,\hat{\mathbf{x}}}{(x^2+l^2)^{1/2}}.$$ Performing the integral yields $$E(x) = \frac{\lambda}{2\pi\varepsilon_0\,x}\,\left(1-\frac{x}{\sqrt{x^2+(L/2)^2}}\right).$$ In the limit $L\to\infty$, the field reduces to $$E_{\infty} = \frac{\lambda}{2\pi\varepsilon_0\,x}.$$ <br/> (b) <em>Surface Charge</em> <br/> For a uniformly charged infinite plane with surface charge density $\sigma$ (C/m$^2$), the field at a distance $z$ from the plane is obtained by integrating over an infinitesimal ring of radius $r$ and width $dr$: $$d\mathbf{E} = \frac{1}{4\pi\varepsilon_0}\,\frac{\sigma\,2\pi r\,dr}{(r^2+z^2)}\,\frac{z\,\hat{\mathbf{z}}}{(r^2+z^2)^{1/2}}.$$ Integrating from $0$ to $\infty$ gives $$E = \frac{\sigma}{2\varepsilon_0}\,\hat{\mathbf{z}},$$ independent of $z$. The direction is normal to the plane. <br/> (c) <em>Volume Charge</em> <br/> For a volume charge density $\rho(\mathbf{r}')$, the field at $\mathbf{r}$ is $$\mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0}\int_V \frac{\rho(\mathbf{r}')\,(\mathbf{r}-\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|^3}\,d^3r'.$$ This is the general integral expression used for any arbitrary charge distribution. <br/> <br/> <strong>4. Electric Potential – Derivation from Work Done</strong> <br/> The electric potential $V$ at a point is defined as the work done per unit charge in bringing a test charge from infinity to that point against the electrostatic field: $$V(\mathbf{r}) = -\int_{\infty}^{\mathbf{r}}\mathbf{E}\cdot d\mathbf{l}.$$ For a point charge, substituting $E = \frac</p></article></div></section></main>
+<footer class="sn-clean-footer">
+<div class="container sn-f-wrap">
+<div class="sn-f-grid">
+<!-- Brand & Founder -->
+<div class="sn-f-col brand-col">
+<a class="brand" href="/" style="margin-bottom: 12px; display: inline-flex;">
+<span aria-hidden="true" class="brand-mark">
+<svg fill="none" viewbox="0 0 64 64">
+<path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"></path>
+</svg>
+</span>
+<span class="brand-name">Shorveer<em>Notes</em></span>
+</a>
+<p class="sn-f-desc">A student-focused Class 12 Science learning platform with structured Physics, Chemistry, Mathematics and English resources.</p>
+<div class="sn-f-author">
+          Created with pride by <strong>Jatin Sandilya</strong>
+</div>
+<div style="margin-top: 14px;">
+<a class="btn btn-dark" href="https://www.youtube.com/@JSEDIZ" rel="noopener noreferrer" style="min-height: 38px; padding: 0 14px; font-size: 13px;" target="_blank">
+            JS EDIZ on YouTube →
+          </a>
+</div>
+</div>
+<!-- Links: Subjects -->
+<div class="sn-f-col">
+<h3 class="sn-f-title">Subjects</h3>
+<ul class="sn-f-links">
+<li><a href="../physics/index.html">Physics Hub</a></li>
+<li><a href="../chemistry/index.html">Chemistry Hub</a></li>
+<li><a href="../mathematics/index.html">Mathematics Hub</a></li>
+<li><a href="../english/index.html">English Hub</a></li>
+</ul>
+</div>
+<!-- Links: Site & Policies -->
+<div class="sn-f-col">
+<h3 class="sn-f-title">Resources</h3>
+<ul class="sn-f-links">
+<li><a href="../exam-info.html">Exam Info</a></li>
+<li><a href="../about-notes.html">About Notes</a></li>
+<li><a href="../about.html">About Shorveer</a></li>
+<li><a href="../cookies.html">Cookies &amp; Storage</a></li>
+</ul>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="sn-f-bottom">
+<p>© <span id="year">2026</span> Shorveer Notes · All rights reserved.</p>
+<p>Built with pride in India 🇮🇳</p>
+</div>
+</div>
+<style>
+    .sn-clean-footer {
       background: var(--paper-2);
-      border: 1px solid var(--line);
-      border-left: 5px solid var(--rust);
-      border-radius: var(--r-md);
-      padding: 22px 26px;
-      margin: 40px 0 20px;
-    }
-    .part-banner h2 { font-size: 24px; color: var(--ink); }
-    .part-banner p { font-size: 14.5px; color: var(--muted); margin-top: 4px; }
-
-    .content-box {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--r-md);
-      padding: 28px;
-      margin-bottom: 25px;
-      box-shadow: var(--shadow-sm);
-    }
-    .content-box h3 {
-      font-size: 20px;
-      margin-bottom: 14px;
+      border-top: 1px solid var(--line);
+      padding: 60px 0 30px;
+      margin-top: 80px;
       color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
-    .content-box h3::before {
-      content: '';
-      width: 4px;
-      height: 18px;
-      background: var(--rust);
-      border-radius: 4px;
-      display: inline-block;
+    .sn-f-wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .sn-f-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
     }
-
-    .math-card {
-      background: var(--paper-2);
-      border: 1px solid var(--line-soft);
-      border-left: 4px solid var(--teal);
-      border-radius: 8px;
-      padding: 16px 20px;
-      margin: 16px 0;
-      overflow-x: auto;
+    .sn-f-desc {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 12px 0;
+      max-width: 420px;
     }
-    .math-title {
-      font-size: 12.5px;
-      font-weight: 800;
-      color: var(--teal);
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      letter-spacing: .08em;
-      font-family: var(--font-body);
-    }
-    .math-desc {
+    .sn-f-author {
       font-size: 13.5px;
       color: var(--muted);
-      margin-top: 6px;
     }
-
-    .derivation-box {
-      background: var(--paper-2);
-      border: 1px dashed var(--line);
-      border-radius: var(--r-md);
-      padding: 22px;
-      margin: 18px 0;
-      overflow-x: auto;
-    }
-    .derivation-step {
-      margin-bottom: 12px;
-      font-size: 15px;
-      line-height: 1.7;
-    }
-    .step-badge {
-      display: inline-block;
-      background: var(--ink);
-      color: var(--paper);
-      font-size: 11px;
+    .sn-f-author strong { color: var(--ink); }
+    .sn-f-title {
+      font-family: var(--font-body);
+      font-size: 13px;
       font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 4px;
-      margin-right: 8px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--rust);
+      margin-bottom: 16px;
     }
-
-    .problem-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--r-md);
-      padding: 26px;
-      margin-bottom: 22px;
-      box-shadow: var(--shadow-sm);
+    .sn-f-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .sn-f-links a {
+      color: var(--ink-2);
+      font-size: 14.5px;
+      transition: color .2s ease;
+      text-decoration: none;
     }
-    .problem-header {
+    .sn-f-links a:hover { color: var(--rust); text-decoration: underline; }
+    .sn-f-bottom {
+      border-top: 1px solid var(--line-soft);
+      padding-top: 20px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .problem-tag {
-      font-size: 12px;
-      font-weight: 800;
-      background: color-mix(in srgb, var(--rust) 12%, transparent);
-      color: var(--rust);
-      padding: 4px 10px;
-      border-radius: 6px;
-    }
-    .problem-q {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-    .solution-box {
-      background: var(--paper-2);
-      border-left: 4px solid var(--green);
-      border-radius: 8px;
-      padding: 16px 20px;
-      font-size: 14.5px;
-      line-height: 1.7;
-      color: var(--ink-2);
-    }
-
-    .table-container {
-      width: 100%;
-      overflow-x: auto;
-      border-radius: 8px;
-      border: 1px solid var(--line);
-      margin: 18px 0;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      font-size: 14px;
-      min-width: 520px;
-    }
-    th {
-      padding: 12px 16px;
-      background: var(--paper-2);
-      color: var(--ink);
-      font-weight: 700;
-      border-bottom: 1px solid var(--line);
-    }
-    td {
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--line);
+      gap: 16px;
+      font-size: 13px;
       color: var(--muted);
+      flex-wrap: wrap;
     }
-    tr:last-child td { border-bottom: none; }
-
-    /* MCQs */
-    .mcq-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--r-md);
-      padding: 22px;
-      margin-bottom: 18px;
-      box-shadow: var(--shadow-sm);
+    @media (max-width: 768px) {
+      .sn-f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .sn-f-bottom { flex-direction: column; text-align: center; }
     }
-    .mcq-title { font-size: 15.5px; font-weight: 600; margin-bottom: 14px; color: var(--ink); }
-    .mcq-options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
-    .mcq-option {
-      display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px;
-      border: 1px solid var(--line-soft); background: var(--paper-2); cursor: pointer; font-size: 14.5px;
-      transition: border-color .2s ease;
-    }
-    .mcq-option:hover { border-color: var(--ink); }
-    .btn-validate {
-      padding: 8px 18px; border-radius: 8px; border: none; font-weight: 700; font-size: 13.5px;
-      background: var(--ink); color: var(--paper); cursor: pointer;
-    }
-    .feedback-box {
-      display: none; margin-top: 12px; padding: 12px 14px; border-radius: 8px; font-size: 13.5px; line-height: 1.5;
-    }
-    .feedback-box.correct { display: block; background: color-mix(in srgb, var(--green) 15%, transparent); color: var(--ink); border: 1px solid var(--green); }
-    .feedback-box.incorrect { display: block; background: color-mix(in srgb, var(--rust) 15%, transparent); color: var(--ink); border: 1px solid var(--rust); }
   </style>
-</head>
-
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <!-- ============ HEADER ============ -->
-  <header class="site-header">
-    <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="../index.html" aria-label="Shorveer Notes home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 64 64" fill="none">
-            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
-          </svg>
-        </span>
-        <span class="brand-name">Shorveer<em>Notes</em></span>
-      </a>
-
-      <div class="nav-links">
-        <a href="../index.html">Home</a>
-        <a href="index.html">Physics Hub</a>
-        <a href="chapter1.html" style="color:var(--ink); font-weight:700;">Detailed Notes</a>
-        <a href="ch1-short.html">Mind Map</a>
-        <a href="ch1-pyq.html">PYQs</a>
-      </div>
-
-      <div class="nav-actions">
-        <button class="nav-icon" id="searchButton" aria-label="Open search" title="Search (Ctrl+K)">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
-            <circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/>
-          </svg>
-        </button>
-
-        <button class="nav-icon" id="themeButton" aria-label="Change theme" aria-expanded="false" title="Change theme">
-          <span class="palette-dot" aria-hidden="true"></span>
-        </button>
-
-        <button class="nav-icon mobile-toggle" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
-            <path d="M3 6h18M3 12h18M3 18h18"/>
-          </svg>
-        </button>
-      </div>
-    </nav>
-
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="../index.html">Home</a>
-      <a href="index.html">Physics Hub</a>
-      <a href="chapter1.html">Chapter 1 Long Notes</a>
-      <a href="ch1-short.html">Chapter 1 Mind Map</a>
-      <a href="ch1-pyq.html">Solved PYQs</a>
-      <a href="../about.html">About Shorveer</a>
-    </div>
-  </header>
-
-  <!-- ============ THEME PICKER POPOVER ============ -->
-  <div class="theme-pop" id="themePop" role="dialog" aria-label="Choose a theme">
-    <h4>Pick a look</h4>
-    <div class="theme-grid">
-      <button class="theme-opt" data-theme-value="notebook" aria-pressed="true">
-        <span class="theme-swatch" aria-hidden="true">
-          <span style="background:#fdfaf3"></span>
-          <span style="background:#e8b64c"></span>
-          <span style="background:#bf5a3c"></span>
-          <span style="background:#1c1c1a"></span>
-        </span>
-        <b>Notebook</b>
-        <small>Warm paper, classic</small>
-      </button>
-
-      <button class="theme-opt" data-theme-value="chalkboard" aria-pressed="false">
-        <span class="theme-swatch" aria-hidden="true">
-          <span style="background:#1e2a24"></span>
-          <span style="background:#f0d97a"></span>
-          <span style="background:#7bc3bf"></span>
-          <span style="background:#ebe6d5"></span>
-        </span>
-        <b>Chalkboard</b>
-        <small>Dark green, chalk</small>
-      </button>
-
-      <button class="theme-opt" data-theme-value="blueprint" aria-pressed="false">
-        <span class="theme-swatch" aria-hidden="true">
-          <span style="background:#0f2b4c"></span>
-          <span style="background:#7ec8f5"></span>
-          <span style="background:#ff9d7c"></span>
-          <span style="background:#e2eefb"></span>
-        </span>
-        <b>Blueprint</b>
-        <small>Navy, technical</small>
-      </button>
-
-      <button class="theme-opt" data-theme-value="sunset" aria-pressed="false">
-        <span class="theme-swatch" aria-hidden="true">
-          <span style="background:#241226"></span>
-          <span style="background:#ff8a5b"></span>
-          <span style="background:#ffb87a"></span>
-          <span style="background:#ffe9d6"></span>
-        </span>
-        <b>Sunset</b>
-        <small>Plum, warm glow</small>
-      </button>
-    </div>
-    <p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Saved across all chapters.</p>
-  </div>
-
-  <main id="main">
-
-    <!-- ============ HERO SECTION ============ -->
-    <section class="hero container">
-      <div class="hero-copy">
-        <div class="kicker">
-          <span class="dot"></span>
-          <span>Chapter 01 · Comprehensive Board Reference</span>
-        </div>
-
-        <h1>
-          Electric Charges & Fields:
-          <span style="position:relative;display:inline-block">
-            <span style="position:relative;z-index:1">The Complete</span>
-          </span>
-          <em>Masterclass.</em>
-        </h1>
-
-        <p class="hero-description">
-          Exhaustive NCERT derivations, vector Coulomb interactions, dipole torque calculations, 5-mark solved board exemplars, and 20 practice MCQs. Built for rigorous Class 12 board examination preparation.
-        </p>
-
-        <!-- Dynamic Motivational Rotator -->
-        <div class="motivation" aria-live="polite">
-          <svg class="motivation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
-          <span class="motivation-text show" id="motivationText">"Every equals sign in a derivation must earn its step marks." — Jatin Sandilya</span>
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn btn-dark" href="#part1">
-            Start Reading Part 1
-            <span class="btn-arrow">→</span>
-          </a>
-          <a class="btn btn-light" href="#mcqs">20 Practice MCQs</a>
-        </div>
-
-        <div class="hero-note">
-          <span>Engineered by <strong>Jatin Sandilya</strong> · Step-by-Step Pedagogical Flow</span>
-        </div>
-      </div>
-
-      <div class="hero-art" id="heroArt">
-        <div class="hero-stage" id="heroStage">
-          <div class="polaroid">
-            <img class="hero-img" id="heroImage"
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
-              alt="Electrostatic field lines and microscopic charges" loading="eager" width="900" height="1125">
-            <div class="polaroid-caption">every charge alters the universe</div>
-          </div>
-
-          <div class="sticky">
-            vector direction is<br>half the answer! ✎
-          </div>
-
-          <svg class="doodle" viewBox="0 0 130 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="M6 12 C 40 4, 70 20, 96 50" stroke-dasharray="4 5"/>
-            <path d="M92 34 L 100 52 L 82 52" />
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ TRUST BAR ============ -->
-    <section class="trust" aria-label="Chapter Highlights">
-      <div class="trust-inner container">
-        <div class="trust-item"><b>100% NCERT Scope</b>Derivations in Full Sequence</div>
-        <div class="trust-item"><b>5 Complete Proofs</b>Gauss & Dipole Theorems</div>
-        <div class="trust-item"><b>5-Mark Exemplars</b>Solved with Board Marking Keys</div>
-        <div class="trust-item"><b>20 Live MCQs</b>Assertion & Numerical Types</div>
-      </div>
-    </section>
-
-    <!-- ============ REAL LIFE 3D FLIP CARDS ============ -->
-    <section class="section container reveal">
-      <div class="section-head">
-        <span class="section-eyebrow">every equation runs in reality</span>
-        <h2>How Electrostatics Operates in Daily Life.<br><em>Hover or tap to flip for technological applications.</em></h2>
-      </div>
-
-      <div class="subject-list">
-
-        <!-- Flip 1 -->
-        <div class="flip-card" style="--subject-color: #bf5a3c" tabindex="0" role="button">
-          <div class="flip-inner">
-            <div class="flip-face flip-front">
-              <div>
-                <div class="subject-top">
-                  <div class="subject-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
-                  </div>
-                  <div class="subject-tag">Application 01 · Industry</div>
-                </div>
-                <h3>Photocopiers & Laser Printers</h3>
-                <p>How does toner stick only to letters on a page? Electrostatic attraction dictates every printed character.</p>
-              </div>
-              <div class="subject-bottom">
-                <span class="subject-meta">Flip to see technology <span class="arrow">→</span></span>
-                <span class="subject-count">Coulomb Force</span>
-              </div>
-              <span class="flip-hint">flip card</span>
-            </div>
-            <div class="flip-face flip-back">
-              <div>
-                <div class="back-label">The Electrostatic Drum</div>
-                <div class="back-rule">"Opposite charges attract with precise microscopic forces."</div>
-                <p class="back-example">A laser beam discharges specific areas of a selenium drum. Oppositely charged black toner powder clings only to the charged image pattern before being melted onto paper.</p>
-              </div>
-              <span class="subject-meta">Electrostatic Deposition</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Flip 2 -->
-        <div class="flip-card" style="--subject-color: #2a7d7a" tabindex="0" role="button">
-          <div class="flip-inner">
-            <div class="flip-face flip-front">
-              <div>
-                <div class="subject-top">
-                  <div class="subject-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                  </div>
-                  <div class="subject-tag">Application 02 · Safety</div>
-                </div>
-                <h3>Lightning Protection & Aircraft</h3>
-                <p>Why are passengers inside a metal airplane or car completely safe during a severe lightning strike?</p>
-              </div>
-              <div class="subject-bottom">
-                <span class="subject-meta">Flip to see technology <span class="arrow">→</span></span>
-                <span class="subject-count">Gauss's Theorem</span>
-              </div>
-              <span class="flip-hint">flip card</span>
-            </div>
-            <div class="flip-face flip-back">
-              <div>
-                <div class="back-label">Electrostatic Shielding</div>
-                <div class="back-rule">"Inside a closed conducting shell, the electric field is strictly zero."</div>
-                <p class="back-example">Lightning strikes the exterior metal skin of the plane. All charge stays on the outer surface and flows harmlessly away. Zero flux penetrates the cabin.</p>
-              </div>
-              <span class="subject-meta">Faraday Cage Principle</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============ MAIN CONTENT CHAPTER NOTES ============ -->
-    <div class="container">
-
-      <!-- ================= PART 1 ================= -->
-      <div class="part-banner" id="part1">
-        <h2>Part 1: Electric Charges & Coulomb's Interaction</h2>
-        <p>Intrinsic properties of charge, quantisation limits, dielectric constants, and vector force derivations.</p>
-      </div>
-
-      <div class="content-box">
-        <h3>1. Fundamentals of Electric Charge</h3>
-        <p><strong>Electric Charge</strong> is an intrinsic scalar physical property of elementary matter (electrons and protons) causing it to experience an electrostatic force in an electromagnetic field. Its SI unit is Coulomb ($C$), with dimensional formula $[M^0 L^0 T^1 A^1]$.</p>
-
-        <ul>
-          <li><strong>Polarity of Charge:</strong> The property distinguishing positive (electron deficit) and negative (electron excess) charges, discovered by Benjamin Franklin.</li>
-          <li><strong>Gold-Leaf Electroscope:</strong> Apparatus detecting presence and nature of electric charge. Leaf divergence angle reflects charge magnitude.</li>
-          <li><strong>Methods of Charging:</strong>
-            <ul>
-              <li><em>Friction:</em> Work-function mismatch causes electron transfer when rubbing two insulators (e.g. glass rod on silk).</li>
-              <li><em>Conduction:</em> Direct physical contact transfer between conductors until potentials equalize.</li>
-              <li><em>Induction:</em> Redistribution of internal charges caused by an external field without touching, followed by grounding.</li>
-            </ul>
-          </li>
-        </ul>
-
-        <h3>2. Conductors, Insulators & Semiconductors</h3>
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Property</th>
-                <th>Conductors</th>
-                <th>Insulators (Dielectrics)</th>
-                <th>Semiconductors</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Free Carrier Density</strong></td>
-                <td>High free electron density ($\sim 10^{28}/\text{m}^3$)</td>
-                <td>Negligible free electrons; bound valence electrons</td>
-                <td>Moderate; increases exponentially with temperature</td>
-              </tr>
-              <tr>
-                <td><strong>Charge Distribution</strong></td>
-                <td>Resides solely on the outer boundary surface</td>
-                <td>Remains localized at point of application</td>
-                <td>Regulated by intentional doping ($p$, $n$)</td>
-              </tr>
-              <tr>
-                <td><strong>Examples</strong></td>
-                <td>Copper, Aluminium, Human Body</td>
-                <td>Glass, Rubber, Mica, Dry Wood</td>
-                <td>Silicon, Germanium, GaAs</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3>3. Three Core Postulates of Electric Charge</h3>
-        <ul>
-          <li><strong>Additivity:</strong> Total charge is the scalar algebraic sum: $Q_{\text{net}} = \sum q_i$.</li>
-          <li><strong>Conservation:</strong> Net charge in an electrically isolated system remains strictly constant over time ($Q_{\text{initial}} = Q_{\text{final}}$).</li>
-          <li><strong>Quantisation:</strong> Charge exists exclusively in integer multiples of elementary quantum charge $e = 1.602 \times 10^{-19}\text{ C}$:
-            <div class="math-card">
-              <div class="math-title">Quantisation Formula</div>
-              $$q = \pm n e \quad \text{where } n \in \mathbb{N} = \{1, 2, 3, \dots\}$$
-              <div class="math-desc">At macroscopic scales ($q \sim 1\,\mu\text{C} \approx 6.25 \times 10^{12}e$), discrete steps blur into a continuous fluid.</div>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="content-box">
-        <h3>4. Coulomb's Law (Scalar & Vector Proofs)</h3>
-        <p><strong>Coulomb's Law</strong> states that the electrostatic force between two stationary point charges is directly proportional to their product and inversely proportional to the square of their separation distance $r$.</p>
-
-        <div class="math-card">
-          <div class="math-title">Scalar Magnitude</div>
-          $$F = \frac{1}{4\pi\varepsilon_0} \frac{|q_1 q_2|}{r^2}$$
-          <div class="math-desc">Permittivity of vacuum $\varepsilon_0 = 8.854 \times 10^{-12}\text{ C}^2\text{N}^{-1}\text{m}^{-2}$; $\frac{1}{4\pi\varepsilon_0} \approx 8.99 \times 10^9\text{ N}\cdot\text{m}^2/\text{C}^2$.</div>
-        </div>
-
-        <div class="derivation-box">
-          <div class="math-title">Board Derivation 1: Coulomb's Law in Vector Form</div>
-          <div class="derivation-step">
-            <span class="step-badge">Step 1</span> Let displacement vector pointing from $q_1$ to $q_2$ be $\vec{r}_{21} = \vec{r}_2 - \vec{r}_1$, with unit vector $\hat{r}_{21} = \frac{\vec{r}_{21}}{r}$.
-          </div>
-          <div class="derivation-step">
-            <span class="step-badge">Step 2</span> The electrostatic force on $q_2$ exerted by $q_1$ is:
-            $$\vec{F}_{21} = \frac{1}{4\pi\varepsilon_0} \frac{q_1 q_2}{r^2} \hat{r}_{21} = \frac{1}{4\pi\varepsilon_0} \frac{q_1 q_2}{|\vec{r}_2 - \vec{r}_1|^3} (\vec{r}_2 - \vec{r}_1)$$
-          </div>
-          <div class="derivation-step">
-            <span class="step-badge">Step 3</span> Force on $q_1$ exerted by $q_2$ with $\hat{r}_{12} = -\hat{r}_{21}$:
-            $$\vec{F}_{12} = \frac{1}{4\pi\varepsilon_0} \frac{q_1 q_2}{r^2} \hat{r}_{12} = -\vec{F}_{21}$$
-          </div>
-          <div class="math-desc"><strong>Conclusion:</strong> Electrostatic force satisfies Newton's Third Law and acts along the central axis (central conservative force).</div>
-        </div>
-
-        <h3>5. Dielectric Constant ($K$ or $\varepsilon_r$)</h3>
-        <p>In a dielectric medium, Coulomb force is reduced by medium polarization:</p>
-        $$F_{\text{med}} = \frac{F_{\text{vac}}}{K} \implies K = \varepsilon_r = \frac{\varepsilon}{\varepsilon_0}$$
-        <p>Vacuum $K=1$; air $K \approx 1.00054$; water $K \approx 80$; ideal metals $K = \infty$.</p>
-      </div>
-
-      <!-- ================= PART 2 ================= -->
-      <div class="part-banner" id="part2">
-        <h2>Part 2: Electric Field, Field Lines & Dipole Dynamics</h2>
-        <p>Electric field intensity, field line axioms, axial & equatorial proofs, and dipole torque.</p>
-      </div>
-
-      <div class="content-box">
-        <h3>1. Electric Field Intensity ($\vec{E}$)</h3>
-        <p>The electrostatic force experienced per unit infinitesimal positive test charge:</p>
-        <div class="math-card">
-          <div class="math-title">Field Equation</div>
-          $$\vec{E}(\vec{r}) = \lim_{q_0 \to 0} \frac{\vec{F}}{q_0} = \frac{1}{4\pi\varepsilon_0} \frac{Q}{r^2} \hat{r}$$
-          <div class="math-desc">SI Unit: $\text{N/C}$ or $\text{V/m}$. Dimensions: $[M^1 L^1 T^{-3} A^{-1}]$. Radially outward for $+Q$; inward for $-Q$.</div>
-        </div>
-
-        <h3>2. Electric Dipole & Dipole Moment Vector ($\vec{p}$)</h3>
-        <p>Pair of equal and opposite charges ($\pm q$) separated by distance $2\vec{a}$:</p>
-        <div class="math-card">
-          <div class="math-title">Dipole Moment</div>
-          $$\vec{p} = q \cdot (2\vec{a}) \quad (\text{Directed from } -q \text{ to } +q)$$
-        </div>
-
-        <!-- DERIVATION AXIAL -->
-        <div class="derivation-box">
-          <div class="math-title">Board Derivation 2: Field of a Dipole at an Axial Point ($P$)</div>
-          <div class="derivation-step">
-            <span class="step-badge">Step 1</span> Place dipole along $x$-axis centered at $O$. Observation point $P$ is at distance $r$ along the axis.
-          </div>
-          <div class="derivation-step">
-            <span class="step-badge">Step 2</span> Distance from $+q$ is $(r - a)$ and from $-q$ is $(r + a)$:
-            $$E_{\text{axial}} = \frac{q}{4\pi\varepsilon_0} \left[ \frac{1}{(r - a)^2} - \frac{1}{(r + a)^2} \right] = \frac{q}{4\pi\varepsilon_0} \left[ \frac{4ar}{(r^2 - a^2)^2} \right]$$
-          </div>
-          <div class="derivation-step">
-            <span class="step-badge">Step 3</span> For short dipole ($r \gg a$):
-            $$\vec{E}_{\text{axial}} = \frac{1}{4\pi\varepsilon_0} \frac{2\vec{p}}{r^3} \quad (\text{Directed along } \vec{p})$$
-          </div>
-        </div>
-
-        <!-- DERIVATION EQUATORIAL -->
-        <div class="derivation-box">
-          <div class="math-title">Board Derivation 3: Field of a Dipole at an Equatorial Point ($Q$)</div>
-          <div class="derivation-step">
-            <span class="step-badge">Step 1</span> Let point $Q$ be on the perpendicular bisector at distance $r$. Distance from each charge is $\sqrt{r^2 + a^2}$.
-          </div>
-          <div class="derivation-step">
-            <span class="step-badge">Step 2</span> Vertical sine components cancel. Horizontal cosine components reinforce in direction opposite to $\vec{p}$:
-            $$E_{\text{eq}} = 2 E_{+q} \cos\theta = 2 \left( \frac{q}{4\pi\varepsilon_0 (r^2 + a^2)} \right) \left( \frac{a}{\sqrt{r^2 + a^2}} \right) = \frac{q \cdot 2a}{4\pi\varepsilon_0 (r^2 + a^2)^{3/2}}$$
-          </div>
-          <div class="derivation-step">
-            <span class="step-badge">Step 3</span> For short dipole ($r \gg a$):
-            $$\vec{E}_{\text{equatorial}} = -\frac{1}{4\pi\varepsilon_0} \frac{\vec{p}}{r^3} \quad (\text{Directed opposite to } \vec{p})$$
-          </div>
-          <div class="math-desc"><strong>Key Golden Ratio:</strong> At equal distances $r$, $|\vec{E}_{\text{axial}}| = 2 \times |\vec{E}_{\text{equatorial}}|$.</div>
-        </div>
-
-        <h3>3. Dipole in Uniform Field ($\vec{E}$)</h3>
-        <div class="math-card">
-          <div class="math-title">Torque & Potential Energy</div>
-          $$\vec{\tau} = \vec{p} \times \vec{E} \implies \tau = pE\sin\theta$$
-          $$U(\theta) = -\vec{p}\cdot\vec{E} = -pE\cos\theta$$
-          <div class="math-desc">Stable equilibrium at $\theta = 0^\circ$ ($U_{\min} = -pE$). Unstable at $\theta = 180^\circ$ ($U_{\max} = +pE$).</div>
-        </div>
-      </div>
-
-      <!-- ================= PART 3 ================= -->
-      <div class="part-banner" id="part3">
-        <h2>Part 3: Gauss's Law & Core Applications</h2>
-        <p>Electric flux integration, Gauss's theorem proof, and three 5-mark board derivations.</p>
-      </div>
-
-      <div class="content-box">
-        <h3>1. Gauss's Law</h3>
-        <div class="math-card">
-          <div class="math-title">Gauss Equation</div>
-          $$\oint_S \vec{E} \cdot d\vec{A} = \frac{q_{\text{enclosed}}}{\varepsilon_0} = \Phi_{\text{net}}$$
-          <div class="math-desc">Flux depends strictly on net enclosed charge, not on the geometric shape or size of the Gaussian surface.</div>
-        </div>
-
-        <!-- DERIVATION GAUSS WIRE -->
-        <div class="derivation-box">
-          <div class="math-title">Board Derivation 4: Field of an Infinite Uniformly Charged Straight Wire</div>
-          <div class="derivation-step">
-            <span class="step-badge">Step 1</span> Consider an infinite line of linear charge density $\lambda$. Choose a coaxial cylindrical Gaussian surface of radius $r$ and length $l$.
-          </div>
-          <div class="derivation-step">
-            <span class="step-badge">Step 2</span> Flux through circular caps is zero ($\vec{E} \perp d\vec{A}$). On curved mantle: $\vec{E} \parallel d\vec{A}$.
-            $$\oint \vec{E} \cdot d\vec{A} = E (2\pi r l) = \frac{\lambda l}{\varepsilon_0} \implies E = \frac{\lambda}{2\pi\varepsilon_0 r}$$
-          </div>
-        </div>
-
-        <!-- DERIVATION GAUSS SHEET -->
-        <div class="derivation-box">
-          <div class="math-title">Board Derivation 5: Field of an Infinite Thin Plane Sheet</div>
-          <div class="derivation-step">
-            <span class="step-badge">Step 1</span> Let surface charge density be $\sigma$. Choose a Gaussian cylinder of cross-sectional area $A$ piercing perpendicularly through the sheet.
-          </div>
-          <div class="derivation-step">
-            <span class="step-badge">Step 2</span> Flux emerges through both end-caps: $2EA = \frac{\sigma A}{\varepsilon_0} \implies E = \frac{\sigma}{2\varepsilon_0}$ (Independent of distance $r$).
-          </div>
-        </div>
-
-        <!-- DERIVATION GAUSS SHELL -->
-        <div class="derivation-box">
-          <div class="math-title">Board Derivation 6: Field of a Thin Spherical Shell (Radius $R$)</div>
-          <div class="derivation-step">
-            <span class="step-badge">Case A</span> <strong>Outside ($r > R$):</strong> $E = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}$.
-          </div>
-          <div class="derivation-step">
-            <span class="step-badge">Case B</span> <strong>Surface ($r = R$):</strong> $E = \frac{1}{4\pi\varepsilon_0}\frac{q}{R^2} = \frac{\sigma}{\varepsilon_0}$ (Maximum).
-          </div>
-          <div class="derivation-step">
-            <span class="step-badge">Case C</span> <strong>Inside ($r < R$):</strong> Enclosed charge $q_{\text{enc}} = 0 \implies E_{\text{inside}} = 0$.
-          </div>
-        </div>
-      </div>
-
-      <!-- ================= PART 4: SOLVED 5-MARK BOARD NUMERICALS ================= -->
-      <div class="part-banner" id="exemplars">
-        <h2>Part 4: 5-Mark Solved Board Numericals</h2>
-        <p>Full solutions to high-probability numericals with step marking breakdown.</p>
-      </div>
-
-      <div class="problem-card">
-        <div class="problem-header">
-          <span class="problem-tag">5 Marks • Superposition & Equilibrium</span>
-          <span style="font-size: 13px; font-weight:700; color:var(--muted);">CBSE Board Exemplar</span>
-        </div>
-        <div class="problem-q">
-          Two point charges $+4e$ and $+e$ are fixed at distance $a$ apart in vacuum. Where should a third charge $q$ be placed on the line joining them so that the whole system remains in equilibrium? Find the magnitude and sign of $q$.
-        </div>
-        <div class="solution-box">
-          <strong>Step 1: Equilibrium of third charge $q$:</strong><br>
-          Let $q$ be placed at distance $x$ from $+4e$. Distance from $+e$ is $(a - x)$.<br>
-          $$\frac{1}{4\pi\varepsilon_0} \frac{(4e)q}{x^2} = \frac{1}{4\pi\varepsilon_0} \frac{(e)q}{(a - x)^2} \implies \frac{2}{x} = \frac{1}{a - x} \implies x = \frac{2a}{3}$$
-          <br>
-          <strong>Step 2: Equilibrium of $+e$ for system stability:</strong><br>
-          $$\frac{1}{4\pi\varepsilon_0} \frac{(4e)(e)}{a^2} + \frac{1}{4\pi\varepsilon_0} \frac{q(e)}{(a/3)^2} = 0 \implies \frac{4e^2}{a^2} + \frac{9qe}{a^2} = 0 \implies q = -\frac{4e}{9}$$
-          <br>
-          <strong>Final Result:</strong> Place $q = -\frac{4e}{9}$ at distance $\frac{2a}{3}$ from $+4e$.
-        </div>
-      </div>
-
-      <div class="problem-card">
-        <div class="problem-header">
-          <span class="problem-tag">5 Marks • Dipole & Gauss Flux</span>
-          <span style="font-size: 13px; font-weight:700; color:var(--muted);">CBSE Core Question</span>
-        </div>
-        <div class="problem-q">
-          An electric dipole has charges $\pm 2\,\mu\text{C}$ separated by $4\,\text{cm}$. Calculate:<br>
-          (i) Dipole moment $\vec{p}$.<br>
-          (ii) Field at $20\,\text{cm}$ on the axial line.<br>
-          (iii) Field at $20\,\text{cm}$ on the equatorial line.<br>
-          (iv) Total flux through a concentric sphere of radius $10\,\text{cm}$.
-        </div>
-        <div class="solution-box">
-          <strong>(i) Dipole Moment:</strong> $p = q(2a) = (2 \times 10^{-6}\text{ C})(0.04\text{ m}) = \mathbf{8 \times 10^{-8}\text{ C}\cdot\text{m}}$ ($-q$ to $+q$).<br><br>
-          <strong>(ii) Axial Field ($r = 0.2\text{ m}$):</strong><br>
-          $$E_{\text{axial}} = \frac{2kp}{r^3} = \frac{2 \times (9 \times 10^9) \times (8 \times 10^{-8})}{(0.2)^3} = \mathbf{1.8 \times 10^5\text{ N/C}}$$<br>
-          <strong>(iii) Equatorial Field:</strong> $E_{\text{eq}} = \frac{E_{\text{axial}}}{2} = \mathbf{9.0 \times 10^4\text{ N/C}}$.<br><br>
-          <strong>(iv) Total Flux:</strong> Enclosed charge $q_{\text{enc}} = (+2\,\mu\text{C}) + (-2\,\mu\text{C}) = 0 \implies \Phi_E = \mathbf{0\text{ N}\cdot\text{m}^2/\text{C}}$.
-        </div>
-      </div>
-
-      <!-- ================= PART 5: 20 PRACTICE MCQS ================= -->
-      <div class="part-banner" id="mcqs">
-        <h2>Part 5: 20 Interactive Practice MCQs</h2>
-        <p>Test your conceptual retention. Choose an option and validate instantly.</p>
-      </div>
-
-      <!-- Q1 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q1. If $10^{19}$ electrons are removed from a neutral copper sphere, the net charge acquired is:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m1" value="A"> A) $-1.6\text{ C}$</label>
-          <label class="mcq-option"><input type="radio" name="m1" value="B"> B) $+1.6\text{ C}$</label>
-          <label class="mcq-option"><input type="radio" name="m1" value="C"> C) $+1.6 \times 10^{-19}\text{ C}$</label>
-          <label class="mcq-option"><input type="radio" name="m1" value="D"> D) $-1.6 \times 10^{-19}\text{ C}$</label>
-        </div>
-        <button class="btn-validate" onclick="check('m1', 'B', 'f1', 'Removing electrons creates positive charge: q = +ne = (10^{19})(1.602 x 10^{-19}) = +1.6 C.')">Validate Option</button>
-        <div id="f1" class="feedback-box"></div>
-      </div>
-
-      <!-- Q2 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q2. Two charges repel with force $F$ in vacuum. If distance is doubled and medium replaced with water ($K=81$), new force is:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m2" value="A"> A) $\frac{F}{324}$</label>
-          <label class="mcq-option"><input type="radio" name="m2" value="B"> B) $\frac{F}{162}$</label>
-          <label class="mcq-option"><input type="radio" name="m2" value="C"> C) $\frac{F}{81}$</label>
-          <label class="mcq-option"><input type="radio" name="m2" value="D"> D) $4F$</label>
-        </div>
-        <button class="btn-validate" onclick="check('m2', 'A', 'f2', 'F\' = F / (K * (r\'/r)^2) = F / (81 * 4) = F / 324.')">Validate Option</button>
-        <div id="f2" class="feedback-box"></div>
-      </div>
-
-      <!-- Q3 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q3. What is the SI unit and dimensional formula of permittivity of free space ($\varepsilon_0$)?</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m3" value="A"> A) $\text{C}^2\text{N}^{-1}\text{m}^{-2}$ and $[M^{-1}L^{-3}T^4A^2]$</label>
-          <label class="mcq-option"><input type="radio" name="m3" value="B"> B) $\text{N}\text{m}^2\text{C}^{-2}$ and $[M^1L^3T^{-4}A^{-2}]$</label>
-          <label class="mcq-option"><input type="radio" name="m3" value="C"> C) $\text{J}\text{C}^{-1}\text{m}^{-1}$ and $[M^{-1}L^2T^{-3}A^1]$</label>
-          <label class="mcq-option"><input type="radio" name="m3" value="D"> D) $\text{Farad/m}^2$ and $[M^1L^{-2}T^2A^1]$</label>
-        </div>
-        <button class="btn-validate" onclick="check('m3', 'A', 'f3', 'ε₀ = q₁q₂ / (4πFr²). Unit = C²/(N·m²). Dimensions = [M⁻¹L⁻³T⁴A²].')">Validate Option</button>
-        <div id="f3" class="feedback-box"></div>
-      </div>
-
-      <!-- Q4 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q4. A soap bubble is given negative electric charge. Its radius will immediately:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m4" value="A"> A) Decrease</label>
-          <label class="mcq-option"><input type="radio" name="m4" value="B"> B) Increase due to mutual repulsion of surface charges</label>
-          <label class="mcq-option"><input type="radio" name="m4" value="C"> C) Remain unchanged</label>
-          <label class="mcq-option"><input type="radio" name="m4" value="D"> D) Burst immediately</label>
-        </div>
-        <button class="btn-validate" onclick="check('m4', 'B', 'f4', 'Surface negative charges repel one another outward, expanding the bubble.')">Validate Option</button>
-        <div id="f4" class="feedback-box"></div>
-      </div>
-
-      <!-- Q5 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q5. An electric dipole is inside a closed cube. Total electric flux through all six faces is:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m5" value="A"> A) Zero</label>
-          <label class="mcq-option"><input type="radio" name="m5" value="B"> B) $\frac{q}{\varepsilon_0}$</label>
-          <label class="mcq-option"><input type="radio" name="m5" value="C"> C) $\frac{2q}{\varepsilon_0}$</label>
-          <label class="mcq-option"><input type="radio" name="m5" value="D"> D) $\frac{q}{6\varepsilon_0}$</label>
-        </div>
-        <button class="btn-validate" onclick="check('m5', 'A', 'f5', 'Net charge q_enc = (+q) + (-q) = 0. By Gauss theorem, Φ = 0.')">Validate Option</button>
-        <div id="f5" class="feedback-box"></div>
-      </div>
-
-      <!-- Q6 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q6. Ratio of axial field to equatorial field of a short dipole at equal distance $r$ is:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m6" value="A"> A) $1 : 2$</label>
-          <label class="mcq-option"><input type="radio" name="m6" value="B"> B) $2 : 1$</label>
-          <label class="mcq-option"><input type="radio" name="m6" value="C"> C) $4 : 1$</label>
-          <label class="mcq-option"><input type="radio" name="m6" value="D"> D) $1 : 1$</label>
-        </div>
-        <button class="btn-validate" onclick="check('m6', 'B', 'f6', 'E_axial = 2kp/r³ and E_eq = kp/r³. Ratio is 2 : 1.')">Validate Option</button>
-        <div id="f6" class="feedback-box"></div>
-      </div>
-
-      <!-- Q7 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q7. An electric dipole $\vec{p}$ is in stable equilibrium in field $\vec{E}$ at angle:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m7" value="A"> A) $\theta = 0^\circ$</label>
-          <label class="mcq-option"><input type="radio" name="m7" value="B"> B) $\theta = 90^\circ$</label>
-          <label class="mcq-option"><input type="radio" name="m7" value="C"> C) $\theta = 180^\circ$</label>
-          <label class="mcq-option"><input type="radio" name="m7" value="D"> D) $\theta = 45^\circ$</label>
-        </div>
-        <button class="btn-validate" onclick="check('m7', 'A', 'f7', 'At θ = 0°, torque is zero and potential energy is minimum (-pE).')">Validate Option</button>
-        <div id="f7" class="feedback-box"></div>
-      </div>
-
-      <!-- Q8 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q8. How does electric field $E$ due to an infinite uniformly charged wire vary with distance $r$?</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m8" value="A"> A) $E \propto r^2$</label>
-          <label class="mcq-option"><input type="radio" name="m8" value="B"> B) $E \propto \frac{1}{r}$</label>
-          <label class="mcq-option"><input type="radio" name="m8" value="C"> C) $E \propto \frac{1}{r^2}$</label>
-          <label class="mcq-option"><input type="radio" name="m8" value="D"> D) Independent of $r$</label>
-        </div>
-        <button class="btn-validate" onclick="check('m8', 'B', 'f8', 'E = λ / (2πε₀r), hence E is inversely proportional to r.')">Validate Option</button>
-        <div id="f8" class="feedback-box"></div>
-      </div>
-
-      <!-- Q9 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q9. The electric field $E$ due to an infinite plane thin charged sheet is:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m9" value="A"> A) Proportional to $r$</label>
-          <label class="mcq-option"><input type="radio" name="m9" value="B"> B) Proportional to $\frac{1}{r^2}$</label>
-          <label class="mcq-option"><input type="radio" name="m9" value="C"> C) $\frac{\sigma}{2\varepsilon_0}$ (independent of distance $r$)</label>
-          <label class="mcq-option"><input type="radio" name="m9" value="D"> D) $\frac{\sigma}{\varepsilon_0 r}$</label>
-        </div>
-        <button class="btn-validate" onclick="check('m9', 'C', 'f9', 'Gauss law gives E = σ / (2ε₀), completely independent of distance r.')">Validate Option</button>
-        <div id="f9" class="feedback-box"></div>
-      </div>
-
-      <!-- Q10 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q10. The electric field inside a hollow spherical charged conductor at $r < R$ is:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m10" value="A"> A) Constant non-zero</label>
-          <label class="mcq-option"><input type="radio" name="m10" value="B"> B) Proportional to $\frac{1}{r}$</label>
-          <label class="mcq-option"><input type="radio" name="m10" value="C"> C) Strictly zero</label>
-          <label class="mcq-option"><input type="radio" name="m10" value="D"> D) Infinite</label>
-        </div>
-        <button class="btn-validate" onclick="check('m10', 'C', 'f10', 'Enclosed charge inside conductor is zero => E = 0 (Electrostatic Shielding).')">Validate Option</button>
-        <div id="f10" class="feedback-box"></div>
-      </div>
-
-      <!-- Q11 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q11. Charge $+q$ is at the center of an open hemispherical bowl. Flux through curved surface is:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m11" value="A"> A) $\frac{q}{\varepsilon_0}$</label>
-          <label class="mcq-option"><input type="radio" name="m11" value="B"> B) $\frac{q}{2\varepsilon_0}$</label>
-          <label class="mcq-option"><input type="radio" name="m11" value="C"> C) $\frac{q}{4\varepsilon_0}$</label>
-          <label class="mcq-option"><input type="radio" name="m11" value="D"> D) Zero</label>
-        </div>
-        <button class="btn-validate" onclick="check('m11', 'B', 'f11', 'A full sphere captures q/ε₀. A hemisphere captures half: q / (2ε₀).')">Validate Option</button>
-        <div id="f11" class="feedback-box"></div>
-      </div>
-
-      <!-- Q12 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q12. If entering flux is $\Phi_1$ and leaving flux is $\Phi_2$, net enclosed charge is:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m12" value="A"> A) $(\Phi_2 - \Phi_1)\varepsilon_0$</label>
-          <label class="mcq-option"><input type="radio" name="m12" value="B"> B) $(\Phi_1 + \Phi_2)\varepsilon_0$</label>
-          <label class="mcq-option"><input type="radio" name="m12" value="C"> C) $\frac{\Phi_2 - \Phi_1}{\varepsilon_0}$</label>
-          <label class="mcq-option"><input type="radio" name="m12" value="D"> D) Zero</label>
-        </div>
-        <button class="btn-validate" onclick="check('m12', 'A', 'f12', 'Net outward flux is Φ₂ - Φ₁ = q_enc / ε₀ => q_enc = (Φ₂ - Φ₁)ε₀.')">Validate Option</button>
-        <div id="f12" class="feedback-box"></div>
-      </div>
-
-      <!-- Q13 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q13. Which statement regarding electric field lines is INCORRECT?</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m13" value="A"> A) Perpendicular to conductor surfaces</label>
-          <label class="mcq-option"><input type="radio" name="m13" value="B"> B) They form closed continuous loops</label>
-          <label class="mcq-option"><input type="radio" name="m13" value="C"> C) Tangent indicates field vector direction</label>
-          <label class="mcq-option"><input type="radio" name="m13" value="D"> D) Never intersect</label>
-        </div>
-        <button class="btn-validate" onclick="check('m13', 'B', 'f13', 'Electric field lines NEVER form closed loops because electrostatic fields are conservative.')">Validate Option</button>
-        <div id="f13" class="feedback-box"></div>
-      </div>
-
-      <!-- Q14 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q14. The torque $\vec{\tau}$ experienced by an electric dipole $\vec{p}$ in field $\vec{E}$ is:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m14" value="A"> A) $\vec{\tau} = \vec{p} \cdot \vec{E}$</label>
-          <label class="mcq-option"><input type="radio" name="m14" value="B"> B) $\vec{\tau} = \vec{p} \times \vec{E}$</label>
-          <label class="mcq-option"><input type="radio" name="m14" value="C"> C) $\vec{\tau} = \vec{E} \times \vec{p}$</label>
-          <label class="mcq-option"><input type="radio" name="m14" value="D"> D) $\vec{\tau} = \vec{p} / \vec{E}$</label>
-        </div>
-        <button class="btn-validate" onclick="check('m14', 'B', 'f14', 'Torque is a vector cross-product: τ = p x E.')">Validate Option</button>
-        <div id="f14" class="feedback-box"></div>
-      </div>
-
-      <!-- Q15 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q15. Work done in rotating a dipole from $\theta = 0^\circ$ to $\theta = 90^\circ$ in field $E$ is:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m15" value="A"> A) Zero</label>
-          <label class="mcq-option"><input type="radio" name="m15" value="B"> B) $+pE$</label>
-          <label class="mcq-option"><input type="radio" name="m15" value="C"> C) $2pE$</label>
-          <label class="mcq-option"><input type="radio" name="m15" value="D"> D) $-pE$</label>
-        </div>
-        <button class="btn-validate" onclick="check('m15', 'B', 'f15', 'W = -pE(cos 90° - cos 0°) = -pE(0 - 1) = +pE.')">Validate Option</button>
-        <div id="f15" class="feedback-box"></div>
-      </div>
-
-      <!-- Q16 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q16. Two point charges $+4q$ and $+q$ are separated by distance $L$. Third charge $Q$ is in equilibrium at:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m16" value="A"> A) At $2L/3$ from $+4q$</label>
-          <label class="mcq-option"><input type="radio" name="m16" value="B"> B) At $L/3$ from $+4q$</label>
-          <label class="mcq-option"><input type="radio" name="m16" value="C"> C) At midpoint</label>
-          <label class="mcq-option"><input type="radio" name="m16" value="D"> D) At $L/4$ from $+4q$</label>
-        </div>
-        <button class="btn-validate" onclick="check('m16', 'A', 'f16', '2/x = 1/(L-x) => x = 2L/3 from +4q.')">Validate Option</button>
-        <div id="f16" class="feedback-box"></div>
-      </div>
-
-      <!-- Q17 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q17. Why cannot an electrostatic field exist tangentially along a conductor in equilibrium?</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m17" value="A"> A) Conservation of momentum</label>
-          <label class="mcq-option"><input type="radio" name="m17" value="B"> B) Free surface electrons would flow, violating static equilibrium</label>
-          <label class="mcq-option"><input type="radio" name="m17" value="C"> C) Ampere Law</label>
-          <label class="mcq-option"><input type="radio" name="m17" value="D"> D) Newton third law</label>
-        </div>
-        <button class="btn-validate" onclick="check('m17', 'B', 'f17', 'Any tangential component causes current flow, contradicting static state.')">Validate Option</button>
-        <div id="f17" class="feedback-box"></div>
-      </div>
-
-      <!-- Q18 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q18. Direction of electric dipole moment vector $\vec{p}$ is conventionally:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m18" value="A"> A) From negative to positive charge</label>
-          <label class="mcq-option"><input type="radio" name="m18" value="B"> B) From positive to negative charge</label>
-          <label class="mcq-option"><input type="radio" name="m18" value="C"> C) Radially outwards</label>
-          <label class="mcq-option"><input type="radio" name="m18" value="D"> D) Arbitrary</label>
-        </div>
-        <button class="btn-validate" onclick="check('m18', 'A', 'f18', 'In physics, p is directed from -q to +q.')">Validate Option</button>
-        <div id="f18" class="feedback-box"></div>
-      </div>
-
-      <!-- Q19 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q19. How many electrons constitute $1\text{ C}$ of negative charge?</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m19" value="A"> A) $6.25 \times 10^{18}$</label>
-          <label class="mcq-option"><input type="radio" name="m19" value="B"> B) $1.6 \times 10^{-19}$</label>
-          <label class="mcq-option"><input type="radio" name="m19" value="C"> C) $6.02 \times 10^{23}$</label>
-          <label class="mcq-option"><input type="radio" name="m19" value="D"> D) $9 \times 10^9$</label>
-        </div>
-        <button class="btn-validate" onclick="check('m19', 'A', 'f19', 'n = 1 / (1.602 x 10^{-19}) = 6.25 x 10^{18} electrons.')">Validate Option</button>
-        <div id="f19" class="feedback-box"></div>
-      </div>
-
-      <!-- Q20 -->
-      <div class="mcq-card">
-        <div class="mcq-title">Q20. If radius of a Gaussian sphere enclosing charge $Q$ is doubled, outward flux will:</div>
-        <div class="mcq-options">
-          <label class="mcq-option"><input type="radio" name="m20" value="A"> A) Become four times</label>
-          <label class="mcq-option"><input type="radio" name="m20" value="B"> B) Become half</label>
-          <label class="mcq-option"><input type="radio" name="m20" value="C"> C) Remain unchanged</label>
-          <label class="mcq-option"><input type="radio" name="m20" value="D"> D) Become one-fourth</label>
-        </div>
-        <button class="btn-validate" onclick="check('m20', 'C', 'f20', 'Flux depends solely on enclosed charge: Φ = Q / ε₀.')">Validate Option</button>
-        <div id="f20" class="feedback-box"></div>
-      </div>
-
-    </div>
-
-    <!-- ============ NAVIGATION PIPELINE ============ -->
-    <section class="section container reveal">
-      <div class="notebook" style="grid-template-columns: 1fr;">
-        <div>
-          <span class="section-eyebrow">preparation workflow</span>
-          <h2 style="font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 12px;">
-            Completed Chapter 1 Detailed Notes?
-          </h2>
-          <p style="color:var(--muted); font-size:15px; margin-bottom:24px;">
-            Continue your preparation workflow seamlessly:
-          </p>
-
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
-            <div style="background:var(--card); border:1px solid var(--line); border-radius:10px; padding:20px;">
-              <span style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--rust);">Rapid Revision</span>
-              <h4 style="font-size:17px; margin:6px 0;">Chapter 1 Mind Map</h4>
-              <p style="font-size:13.5px; color:var(--muted); margin-bottom:14px;">Interactive formula tree and variation graphs for 15-min revision.</p>
-              <a href="ch1-short.html" style="font-weight:700; color:var(--ink); text-decoration:underline;">Open Quick Revision →</a>
-            </div>
-
-            <div style="background:var(--card); border:1px solid var(--line); border-radius:10px; padding:20px;">
-              <span style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--teal);">Exam Drill</span>
-              <h4 style="font-size:17px; margin:6px 0;">Solved PYQs (2015–2024)</h4>
-              <p style="font-size:13.5px; color:var(--muted); margin-bottom:14px;">Board questions categorized into 1, 2, 3, and 5 marks.</p>
-              <a href="ch1-pyq.html" style="font-weight:700; color:var(--ink); text-decoration:underline;">Practice Solved PYQs →</a>
-            </div>
-
-            <div style="background:var(--card); border:1.5px solid var(--rust); border-radius:10px; padding:20px;">
-              <span style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--rust);">Next Chapter</span>
-              <h4 style="font-size:17px; margin:6px 0;">Chapter 2: Potential & Capacitance</h4>
-              <p style="font-size:13.5px; color:var(--muted); margin-bottom:14px;">Advance to work, equipotential surfaces, and dielectric slabs.</p>
-              <a href="chapter2.html" style="font-weight:700; color:var(--rust); text-decoration:underline;">Go to Chapter 2 Detailed Notes ➔</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ FINAL CTA ============ -->
-    <section class="final-cta container reveal">
-      <div class="cta-content">
-        <h2>"When your understanding of principles is complete, numbers fall in line."</h2>
-        <p>— Jatin Sandilya · Founder of Shorveer Notes</p>
-        <a class="btn btn-gold" href="ch1-short.html">
-          Review Chapter 1 Mind Map
-          <span class="btn-arrow">→</span>
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href="../index.html">
-            <span class="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 64 64" fill="none">
-                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
-              </svg>
-            </span>
-            <span class="brand-name">Shorveer<em>Notes</em></span>
-          </a>
-          <p>Class 12 Science simplified, visual, and high-yielding for CBSE Board Examinations. Founded by <strong>Jatin Sandilya</strong>.</p>
-        </div>
-
-        <div class="footer-column">
-          <h3>Study Hub</h3>
-          <a href="index.html">Physics Hub</a>
-          <a href="../chemistry/index.html">Chemistry Notes</a>
-          <a href="../mathematics/index.html">Mathematics Hub</a>
-          <a href="../english/index.html">English Core</a>
-        </div>
-
-        <div class="footer-column">
-          <h3>Platform</h3>
-          <a href="../exam-info.html">Exam Info</a>
-          <a href="../about-notes.html">About the Notes</a>
-          <a href="../about.html">About Shorveer</a>
-          <a href="../privacy.html">Privacy Policy</a>
-          <a href="../cookies.html">Cookies</a>
-        </div>
-
-        <div class="footer-column">
-          <h3>Connect</h3>
-          <a href="mailto:support.shorveernotes@gmail.com">Contact Us</a>
-          <a href="https://www.youtube.com/@JSEDIZ" target="_blank" rel="noopener noreferrer">YouTube: @JSEDIZ</a>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© <span id="year"></span> Shorveer Notes · Founded by <strong>Jatin Sandilya</strong></span>
-        <span>Crafted with Warrior Discipline in India</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ============ SEARCH MODAL ============ -->
-  <div class="search-layer" id="searchLayer" aria-hidden="true">
-    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search">
-      <div class="search-top">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
-          <circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/>
-        </svg>
-        <input id="searchInput" type="search" placeholder="Search chapters, derivations, topics…" autocomplete="off">
-        <button class="search-close" id="searchClose" aria-label="Close search">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 6 6 18M6 6l12 12"/>
-          </svg>
-        </button>
-      </div>
-      <div class="search-results" id="searchResults"></div>
-    </div>
-  </div>
-
-  <!-- ============ JAVASCRIPT ============ -->
-  <script>
-    /* Safe Storage */
+</footer>
+<!-- ============ COOKIE ============ -->
+<aside aria-label="Cookie notice" aria-live="polite" class="cookie" id="cookieBox" role="dialog">
+<div class="cookie-header">
+<h3>Before you go — a quick note</h3>
+</div>
+<p>We use your browser's local storage to remember your theme and to not ask you this every visit. That's all. See our <a href="../cookies.html" style="text-decoration:underline">cookies page</a> for details.</p>
+<div class="cookie-actions">
+<a class="cookie-policy" href="../cookies.html">Read more</a>
+<button class="cookie-accept" id="acceptCookies">Got it</button>
+</div>
+</aside>
+<script>
     const store = {
       get(k) { try { return localStorage.getItem(k); } catch { return null; } },
       set(k, v) { try { localStorage.setItem(k, v); } catch {} }
     };
 
-    /* Copyright Year */
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    /* Theme Engine */
     const THEMES = {
-      notebook: {
-        hero: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
-        label: "every charge alters the universe"
-      },
-      chalkboard: {
-        hero: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80",
-        label: "equations, one line at a time"
-      },
-      blueprint: {
-        hero: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=80",
-        label: "where the theory becomes engineering"
-      },
-      sunset: {
-        hero: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80",
-        label: "late-night physics, warm desk lamp"
-      }
+      notebook: { hero: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=900&q=80", label: "the desk of a class 12 student" },
+      chalkboard: { hero: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80", label: "equations, one line at a time" },
+      blueprint: { hero: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=900&q=80", label: "where the theory becomes engineering" },
+      sunset: { hero: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80", label: "late-night study, warm lamp" },
+      emerald: { hero: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=80", label: "life sciences & the biology lab" },
+      cyberpunk: { hero: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80", label: "silicon, circuitry & quantum states" },
+      minimal: { hero: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80", label: "pure focus, zero noise" },
+      dracula: { hero: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80", label: "midnight coding & deep analysis" },
+      solarized: { hero: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=80", label: "pages turn, ideas stick" }
     };
 
     const html = document.documentElement;
@@ -1180,24 +474,20 @@
       if (!THEMES[name]) name = "notebook";
       html.setAttribute("data-theme", name);
       store.set("shorveer-theme-name", name);
+      themeOpts.forEach(btn => btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name)));
 
-      themeOpts.forEach(btn => {
-        btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name));
-      });
-
-      if (heroImage && heroCaption) {
-        const t = THEMES[name];
+      const t = THEMES[name];
+      if (heroImage && t) {
         heroImage.classList.add("fading");
         setTimeout(() => {
           heroImage.src = t.hero;
-          heroCaption.textContent = t.label;
+          if (heroCaption) heroCaption.textContent = t.label;
           heroImage.classList.remove("fading");
         }, 260);
       }
     }
 
-    const savedThemeName = store.get("shorveer-theme-name") || "notebook";
-    applyTheme(savedThemeName);
+    applyTheme(store.get("shorveer-theme-name") || "notebook");
 
     themeButton.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -1220,27 +510,35 @@
       }
     });
 
-    /* Motivation Rotator */
     const MOTIVATIONS = [
-      "\"Every equals sign in a derivation must earn its step marks.\" — Jatin Sandilya",
-      "\"Draw your electric field vectors before attempting numericals.\" — Jatin Sandilya",
-      "\"Gauss theorem turns complex integrals into basic geometry.\" — Jatin Sandilya",
-      "\"Charge is conserved, and so is consistent revision effort.\" — Jatin Sandilya"
+      "One chapter at a time.",
+      "Understanding beats memorising.",
+      "Small progress every day adds up.",
+      "You don't have to be perfect today.",
+      "Read it once. Write it once. Learn it once.",
+      "The best time to revise is before you forget.",
+      "Study the weak chapter first.",
+      "Nothing is too hard once it's broken down.",
+      "Your pace is the right pace.",
+      "Show up. That's half of it.",
+      "Confusion is the feeling of learning.",
+      "You're not behind. You're on your own timeline."
     ];
-    const motivationText = document.getElementById("motivationText");
-    let motIndex = 0;
-    if (motivationText) {
-      setInterval(() => {
-        motivationText.classList.remove("show");
-        setTimeout(() => {
-          motIndex = (motIndex + 1) % MOTIVATIONS.length;
-          motivationText.textContent = MOTIVATIONS[motIndex];
-          motivationText.classList.add("show");
-        }, 400);
-      }, 5000);
-    }
 
-    /* 3D Flip Card Handling */
+    const motivationText = document.getElementById("motivationText");
+    let motivationIndex = 0;
+
+    function nextMotivation() {
+      if (!motivationText) return;
+      motivationText.classList.remove("show");
+      setTimeout(() => {
+        motivationIndex = (motivationIndex + 1) % MOTIVATIONS.length;
+        motivationText.textContent = MOTIVATIONS[motivationIndex];
+        motivationText.classList.add("show");
+      }, 500);
+    }
+    setInterval(nextMotivation, 6500);
+
     const flipCards = document.querySelectorAll(".flip-card");
     const isTouch = window.matchMedia("(hover: none)").matches;
 
@@ -1260,7 +558,6 @@
       });
     });
 
-    /* 3D Hero Parallax */
     const heroArt = document.getElementById("heroArt");
     const heroStage = document.getElementById("heroStage");
     const finePointer = window.matchMedia("(pointer: fine)").matches;
@@ -1278,33 +575,29 @@
       });
     }
 
-    /* MCQ Checker */
-    function check(groupName, correctVal, feedbackId, explanation) {
-      const selected = document.querySelector(`input[name="${groupName}"]:checked`);
-      const feedback = document.getElementById(feedbackId);
-      if (!selected) {
-        alert("Please select an option first!");
-        return;
-      }
-      if (selected.value === correctVal) {
-        feedback.className = "feedback-box correct";
-        feedback.innerHTML = `✓ <strong>Correct!</strong><br>${explanation}`;
-      } else {
-        feedback.className = "feedback-box incorrect";
-        feedback.innerHTML = `✗ <strong>Incorrect.</strong> Correct option is <strong>(${correctVal})</strong>.<br>${explanation}`;
-      }
-      if (window.MathJax && window.MathJax.typesetPromise) {
-        window.MathJax.typesetPromise([feedback]);
-      }
+    const tiltEls = document.querySelectorAll("[data-tilt]");
+    if (finePointer && !reduceMotion) {
+      tiltEls.forEach(el => {
+        el.addEventListener("mousemove", (e) => {
+          const r = el.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width - 0.5;
+          const py = (e.clientY - r.top) / r.height - 0.5;
+          el.style.transform = `perspective(900px) rotateX(${-py * 8}deg) rotateY(${px * 8}deg) translateY(-4px)`;
+        });
+        el.addEventListener("mouseleave", () => { el.style.transform = ""; });
+      });
     }
 
-    /* Search Feature */
     const searchData = [
-      { title: "Electric Charges & Fields", description: "Coulomb's Law, Dipole, Gauss's Law", url: "chapter1.html" },
-      { title: "Chapter 1 Mind Map", description: "Rapid formula revision and vector maps", url: "ch1-short.html" },
-      { title: "Chapter 1 Solved PYQs", description: "10-Year CBSE board examination drill", url: "ch1-pyq.html" },
-      { title: "Electrostatic Potential & Capacitance", description: "Equipotential surfaces, capacitors", url: "chapter2.html" },
-      { title: "Physics Hub", description: "All 14 chapters portal", url: "index.html" }
+      { title: "Physics", description: "Class 12 Physics chapters and resources", url: "physics/index.html" },
+      { title: "Chemistry", description: "Class 12 Chemistry chapters and resources", url: "chemistry/index.html" },
+      { title: "Mathematics", description: "Class 12 Maths chapters and resources", url: "mathematics/index.html" },
+      { title: "English", description: "Class 12 English notes and summaries", url: "english/index.html" },
+      { title: "Exam information", description: "Dates, syllabus and marking scheme", url: "exam-info.html" },
+      { title: "About our notes", description: "How each chapter is made", url: "about-notes.html" },
+      { title: "About Shorveer", description: "The story behind the site", url: "about.html" },
+      { title: "Privacy policy", description: "How we handle your data", url: "privacy.html" },
+      { title: "Cookies policy", description: "What we store in your browser", url: "cookies.html" }
     ];
 
     const searchButton = document.getElementById("searchButton");
@@ -1330,7 +623,7 @@
         !q || item.title.toLowerCase().includes(q) || item.description.toLowerCase().includes(q)
       );
       if (!matches.length) {
-        searchResults.innerHTML = '<div class="empty-result">Nothing found. Try "Gauss" or "Dipole".</div>';
+        searchResults.innerHTML = '<div class="empty-result">Nothing found. Try "physics" or "exam".</div>';
         return;
       }
       searchResults.innerHTML = matches.map(item => `
@@ -1344,22 +637,23 @@
       `).join("");
     }
 
-    searchButton.addEventListener("click", openSearch);
-    searchClose.addEventListener("click", closeSearch);
-    searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
-    searchInput.addEventListener("input", e => renderResults(e.target.value));
+    if (searchButton) searchButton.addEventListener("click", openSearch);
+    if (searchClose) searchClose.addEventListener("click", closeSearch);
+    if (searchLayer) searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
+    if (searchInput) searchInput.addEventListener("input", e => renderResults(e.target.value));
 
-    /* Mobile Menu */
     const menuButton = document.getElementById("menuButton");
     const mobileMenu = document.getElementById("mobileMenu");
     function setMenu(open) {
       mobileMenu.classList.toggle("open", open);
       menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     }
-    menuButton.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
-    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+      mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+    }
 
-    /* Keyboard Shortcuts */
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") {
         closeSearch();
@@ -1368,11 +662,11 @@
         themeButton.setAttribute("aria-expanded", "false");
       }
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
-        e.preventDefault(); openSearch();
+        e.preventDefault();
+        openSearch();
       }
     });
 
-    /* Scroll Reveal */
     const reveals = document.querySelectorAll(".reveal");
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver(entries => {
@@ -1383,6 +677,18 @@
       reveals.forEach(el => io.observe(el));
     } else {
       reveals.forEach(el => el.classList.add("visible"));
+    }
+
+    const cookieBox = document.getElementById("cookieBox");
+    const acceptCookies = document.getElementById("acceptCookies");
+    if (cookieBox && !store.get("shorveer-cookie-consent")) {
+      setTimeout(() => cookieBox.classList.add("show"), 1400);
+    }
+    if (acceptCookies) {
+      acceptCookies.addEventListener("click", () => {
+        store.set("shorveer-cookie-consent", "accepted");
+        cookieBox.classList.remove("show");
+      });
     }
   </script>
 </body>
