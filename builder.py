@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parent
 STATE_FILE = ROOT / "builder_state.json"
 DOMAIN = "https://shorveernotes.website"
 MODELS = ["openai/gpt-oss-120b", "openai/gpt-oss-20b"]
-REQUEST_DELAY = 30  # हर रिक्वेस्ट के बीच 30 सेकंड का गैप
+REQUEST_DELAY = 30
 
 SUBJECTS = {
     "mathematics": "Mathematics",
@@ -102,7 +102,7 @@ CSS = r"""<style>
 mjx-container{max-width:100%}mjx-container[display=true]{overflow-x:auto;max-width:100%}
 </style>"""
 
-MATHJAX = r"""window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},options:{skipHtmlTags:['script','style','textarea','pre','code']}};"""
+MATHJAX = r"""window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],macros:{arccot:'\\operatorname{arccot}',arcsec:'\\operatorname{arcsec}',arccsc:'\\operatorname{arccsc}'}},options:{skipHtmlTags:['script','style','textarea','pre','code']}};"""
 
 QUIZ_JS = r"""(()=>{const root=document.getElementById('svb-quiz');if(!root)return;
 const data=JSON.parse(document.getElementById('svb-data').textContent),form=document.getElementById('svb-form');
@@ -130,6 +130,22 @@ renderMath();
 iv=setInterval(()=>{left--;timer.textContent=fmt(left);if(left<=0)finish();},1000);});
 })();"""
 
+LATEX_COMMANDS = (
+    r"theta|tan|tau|times|text|tilde|to|triangle|frac|forall|flat|beta|bar|binom|begin|end|"
+    r"nu|neq|nabla|not|rho|rightarrow|Rightarrow|right|rceil|rfloor|upsilon|underline|uparrow|"
+    r"cup|cap|cdot|cos|cot|csc|sec|sin|sqrt|sum|int|infty|in|le|ge|left|lim|log|ln|alpha|approx|"
+    r"angle|delta|Delta|div|dot|equiv|eta|epsilon|gamma|Gamma|lambda|Lambda|mu|omega|Omega|"
+    r"partial|perp|phi|Phi|pi|Pi|pm|prime|prod|psi|Psi|sigma|Sigma|subset|subseteq|supset|supseteq|"
+    r"therefore|because|vec|varepsilon|varphi|vartheta|xi|Xi|zeta|arcsin|arccos|arctan|arccot|arcsec|arccsc|operatorname"
+)
+
+
+def fix_json_latex(raw):
+    """JSON में सिंगल बैकस्लैश वाले LaTeX कमांड्स को सुरक्षित करता है ताकि \\theta या \\frac न कटे"""
+    raw = re.sub(r'(?<!\\)\\(?!["\\/bfnrtu])', r'\\\\', raw)
+    raw = re.sub(rf'(?<!\\)\\({LATEX_COMMANDS})(?![a-zA-Z])', r'\\\\\1', raw)
+    return raw
+
 
 def esc(x):
     return html.escape(str(x), quote=True)
@@ -155,7 +171,6 @@ def save_state(state):
 
 
 def analyze_website():
-    """वेबसाइट के subject/index.html को स्कैन करके सही चैप्टर नंबर और नाम निकालता है"""
     targets = []
     for subj in SUBJECTS:
         folder = ROOT / subj
@@ -221,6 +236,7 @@ class GroqBot:
         system = (
             f"You are an expert CBSE Class 12 {SUBJECTS[subject]} teacher for Shorveer Notes (by Jatin Sandilya). "
             "Write exhaustive, crystal-clear, exam-oriented content strictly following the latest CBSE Class 12 syllabus. "
+            "MATH FORMATTING RULE: Wrap EVERY mathematical expression, variable, or formula (including inside HTML <td> table cells) in $...$ for inline or $$...$$ for display equations. Never leave an unmatched $ sign. Escape backslashes properly in JSON. "
             "Output ONLY valid JSON as requested."
         )
         for model in MODELS:
@@ -232,7 +248,7 @@ class GroqBot:
                 try:
                     res = self.client.chat.completions.create(
                         model=model,
-                        temperature=0.25,
+                        temperature=0.2,
                         max_completion_tokens=4096,
                         response_format={"type": "json_object"},
                         messages=[
@@ -243,7 +259,7 @@ class GroqBot:
                     self.last_call = time.time()
                     raw = (res.choices[0].message.content or "").strip()
                     raw = re.sub(r"^```json\s*|\s*```$", "", raw, flags=re.I)
-                    return json.loads(raw)
+                    return json.loads(fix_json_latex(raw))
                 except Exception as e:
                     self.last_call = time.time()
                     print(f"[{model}] Error (attempt {attempt+1}): {str(e)[:120]}")
@@ -270,7 +286,7 @@ def render_page(rel_path, title, ch_num, chapter, subject, badge, body, nav_link
     soup = BeautifulSoup(template.read_text(encoding="utf-8"), "html.parser")
     main = soup.find("main")
     if main is None:
-        raise RuntimeError("Template index.html must contain a <main> element. No files were changed.")
+        raise RuntimeError("Template index.html must contain a <main> element.")
 
     for old_f in soup.find_all("footer"):
         old_f.decompose()
@@ -456,7 +472,7 @@ def build_science_math(bot, target, rec, state, force):
             res = bot.ask(subj, f"""
             CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}" — Topic: "{topic}".
             Return JSON: {{"html": "..."}}
-            Write exhaustive, crystal-clear Long Detailed Notes (350-500 words). Include exact definitions, step-by-step mathematical derivations, laws/theorems, SI units, edge cases, and a solved example. Use LaTeX ($...$ and $$...$$) for all equations and clean HTML (p, ul, li, strong, table, tr, th, td).
+            Write exhaustive, crystal-clear Long Detailed Notes (350-500 words). Include exact definitions, step-by-step mathematical derivations, laws/theorems, SI units, edge cases, and a solved example. Wrap ALL math/equations (including inside HTML tables) in $...$ or $$...$$. Use clean HTML (p, ul, li, strong, table, tr, th, td).
             """)
             notes_map[topic] = sanitize_html(res["html"])
             save_state(state)
@@ -469,7 +485,7 @@ def build_science_math(bot, target, rec, state, force):
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
         Return JSON: {{"cards": [{{"title": "...", "html": "..."}}]}}
-        Create crisp, high-yield Short Revision Notes for last-minute board exam revision: 1) All Important Formulas Table, 2) Key Definitions & Laws, 3) Important Graphs/Reactions/Theorems Summary, 4) Common Exam Mistakes to Avoid. Use LaTeX ($...$ / $$...$$).
+        Create crisp, high-yield Short Revision Notes for last-minute board exam revision: 1) All Important Formulas Table, 2) Key Definitions & Laws, 3) Important Graphs/Reactions/Theorems Summary, 4) Common Exam Mistakes to Avoid. Wrap EVERY formula (including in table cells) in $...$ or $$...$$.
         """)
         rec["short_notes"] = res["cards"]
         save_state(state)
@@ -512,7 +528,6 @@ def build_science_math(bot, target, rec, state, force):
 
 
 def build_visual_maps(bot, subj, ch_num, chapter, p_maps, p_notes, rec, state, force):
-    """Generate a Mermaid mind map and flowchart for a chapter."""
     if "visual_maps" not in rec or force:
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
@@ -522,8 +537,7 @@ def build_visual_maps(bot, subj, ch_num, chapter, p_maps, p_notes, rec, state, f
           "flowchart_mermaid":"flowchart TD\\n  A[Start] --> B[Concept]\\n  B --> C[Result]",
           "revision_points":["point 1","point 2"]}}
         Rules: Mermaid syntax only in diagram fields; no Markdown fences; use short plain labels without parentheses or quotes inside node text;
-        avoid HTML; do not invent syllabus topics. For English, map plot/theme/characters;
-        for Physics/Chemistry/Maths, map concepts, formulas, laws and relationships.
+        avoid HTML; do not invent syllabus topics.
         """)
         mind = str(res.get("mindmap_mermaid", "")).strip()
         flow = str(res.get("flowchart_mermaid", "")).strip()
@@ -577,7 +591,6 @@ def build_mcq(bot, subj, ch_num, chapter, p_mcq, p_notes, rec, state, force):
 
 
 def update_sitemap():
-    """रूट फोल्डर में sitemap.xml को ऑटोमैटिक अपडेट करता है"""
     urls = []
     for file in sorted(ROOT.rglob("*.html")):
         if file.name.lower() == "404.html":
@@ -592,7 +605,6 @@ def update_sitemap():
 
 
 def audit_website():
-    """Audit local HTML files for broken local links, missing assets and basic SEO gaps."""
     html_files = sorted(ROOT.rglob("*.html"))
     broken_links, missing_assets, seo_warnings = [], [], []
     for file in html_files:
@@ -632,7 +644,6 @@ def audit_website():
     out.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     update_sitemap()
     print(json.dumps(report, ensure_ascii=False, indent=2))
-    print(f"\nAudit report saved: {out.name}")
 
 
 def main():
