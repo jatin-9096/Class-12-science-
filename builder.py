@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parent
 STATE_FILE = ROOT / "builder_state.json"
 DOMAIN = "https://shorveernotes.website"
 MODELS = ["openai/gpt-oss-120b", "openai/gpt-oss-20b"]
-REQUEST_DELAY = 30
+REQUEST_DELAY = 15  # 15 सेकंड का सुरक्षित गैप ताकि 8K TPM लिमिट न टूटे और 25 मिनट में जॉब टाइमआउट न हो
 
 SUBJECTS = {
     "mathematics": "Mathematics",
@@ -70,37 +70,263 @@ FOOTER_HTML = r"""<footer class="sn-clean-footer">
     </div>
   </div>
   <style>
-    .sn-clean-footer { background: var(--paper-2); border-top: 1px solid var(--line); padding: 60px 0 30px; margin-top: 80px; color: var(--ink); }
-    .sn-f-wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .sn-clean-footer { background: var(--paper-2, var(--surface, rgba(128,128,128,.06))); border-top: 1px solid var(--line, rgba(128,128,128,.22)); padding: 60px 0 30px; margin-top: 80px; color: var(--ink, var(--text)); }
+    .sn-f-wrap { width: min(var(--max, 1140px), calc(100% - 40px)); margin: 0 auto; }
     .sn-f-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .sn-f-desc { font-size: 14.5px; line-height: 1.6; color: var(--muted); margin: 12px 0; max-width: 420px; }
-    .sn-f-author { font-size: 13.5px; color: var(--muted); }
-    .sn-f-author strong { color: var(--ink); }
-    .sn-f-title { font-family: var(--font-body); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--rust); margin-bottom: 16px; }
+    .sn-f-desc { font-size: 14.5px; line-height: 1.6; color: var(--muted, var(--ink-2)); margin: 12px 0; max-width: 420px; }
+    .sn-f-author { font-size: 13.5px; color: var(--muted, var(--ink-2)); }
+    .sn-f-author strong { color: var(--ink, var(--text)); }
+    .sn-f-title { font-family: var(--font-body, inherit); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--rust, var(--accent, #c85a32)); margin-bottom: 16px; }
     .sn-f-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-    .sn-f-links a { color: var(--ink-2); font-size: 14.5px; transition: color .2s ease; text-decoration: none; }
-    .sn-f-links a:hover { color: var(--rust); text-decoration: underline; }
-    .sn-f-bottom { border-top: 1px solid var(--line-soft); padding-top: 20px; display: flex; justify-content: space-between; gap: 16px; font-size: 13px; color: var(--muted); flex-wrap: wrap; }
+    .sn-f-links a { color: var(--ink-2, var(--ink)); font-size: 14.5px; transition: color .2s ease; text-decoration: none; }
+    .sn-f-links a:hover { color: var(--rust, var(--accent)); text-decoration: underline; }
+    .sn-f-bottom { border-top: 1px solid var(--line-soft, var(--line, rgba(128,128,128,.2))); padding-top: 20px; display: flex; justify-content: space-between; gap: 16px; font-size: 13px; color: var(--muted, var(--ink-2)); flex-wrap: wrap; }
     @media (max-width: 768px) { .sn-f-grid { grid-template-columns: 1fr; gap: 30px; } .sn-f-bottom { flex-direction: column; text-align: center; } }
   </style>
 </footer>"""
 
 CSS = r"""<style>
-.svb{max-width:920px;margin:auto;padding:18px 16px 48px}
-.svb-hero{padding:26px 0}.svb-hero h1{font-size:clamp(28px,5vw,44px);margin:8px 0}
-.svb-meta{color:var(--muted);font-size:14px}.svb-nav{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
-.svb-nav a,.svb-btn{padding:9px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;cursor:pointer}
-.svb-card{margin:18px 0;padding:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow-sm)}
-.svb-card h2{font-size:clamp(22px,3vw,30px);margin-bottom:12px}.svb-card h3{font-size:19px;margin:14px 0 8px}
-.svb-card p,.svb-card li{line-height:1.8;color:var(--ink-2);overflow-wrap:anywhere}
-.svb-card table{width:100%;border-collapse:collapse;margin:14px 0}
-.svb-card th,.svb-card td{border:1px solid var(--line);padding:10px;text-align:left}
-.svb-note{padding:14px;background:var(--paper-2);border-left:4px solid var(--gold-dark);border-radius:9px;margin-top:12px}
-.svb-badge{display:inline-block;padding:3px 10px;font-size:12px;font-weight:700;background:var(--paper-2);border:1px solid var(--line);border-radius:6px;margin-bottom:8px}
-.svb-quiz-q{padding:18px;margin:14px 0;border:1px solid var(--line);border-radius:10px}
-.svb-opt{display:flex;gap:9px;padding:8px;cursor:pointer}.svb-result{padding:16px;margin:12px 0;border:1px solid var(--line);border-radius:10px}
-mjx-container{max-width:100%}mjx-container[display=true]{overflow-x:auto;max-width:100%}
+:root {
+  --svb-accent: var(--rust, var(--accent, var(--gold-dark, #c85a32)));
+  --svb-card-bg: var(--card, var(--surface, var(--paper-2, rgba(255,255,255,0.04))));
+  --svb-sub-bg: var(--paper-2, var(--surface-2, rgba(128,128,128,0.08)));
+  --svb-border: var(--line, rgba(128,128,128,0.25));
+  --svb-heading: var(--ink, var(--text, inherit));
+  --svb-body: var(--ink-2, var(--ink, var(--text, inherit)));
+}
+html { scroll-behavior: smooth; }
+.svb { max-width: 960px; margin: auto; padding: 24px 18px 56px; color: var(--svb-heading); }
+
+/* Hero & Heading Styling */
+.svb-hero {
+  position: relative;
+  padding: 32px 28px;
+  margin-bottom: 24px;
+  background: var(--svb-card-bg);
+  border: 1px solid var(--svb-border);
+  border-radius: var(--r-lg, 18px);
+  box-shadow: var(--shadow-sm, 0 4px 20px rgba(0,0,0,0.05));
+  overflow: hidden;
+}
+.svb-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--svb-accent), var(--gold, #e8b64c));
+}
+.svb-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--svb-sub-bg);
+  border: 1px solid var(--svb-border);
+  color: var(--svb-accent);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.svb-hero h1 {
+  font-size: clamp(28px, 4.8vw, 44px);
+  line-height: 1.2;
+  margin: 14px 0 8px;
+  color: var(--svb-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Navigation Pills */
+.svb-nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 6px; }
+.svb-nav a, .svb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border: 1px solid var(--svb-border);
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--svb-card-bg);
+  color: var(--svb-heading);
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+.svb-nav a:hover, .svb-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--svb-accent);
+  background: var(--svb-sub-bg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Modern Cards with Left Accent & Hover Lift */
+.svb-card {
+  position: relative;
+  margin: 22px 0;
+  padding: 26px 28px;
+  background: var(--svb-card-bg);
+  border: 1px solid var(--svb-border);
+  border-left: 4px solid var(--svb-accent);
+  border-radius: var(--r-md, 16px);
+  box-shadow: var(--shadow-sm, 0 2px 12px rgba(0,0,0,0.04));
+  color: var(--svb-heading);
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+}
+.svb-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.09);
+  border-color: var(--svb-accent);
+}
+.svb-card h2 {
+  font-size: clamp(21px, 2.8vw, 28px);
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--svb-border);
+  color: var(--svb-heading);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.svb-card h2::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--svb-accent);
+  flex-shrink: 0;
+}
+.svb-card h3 { font-size: 18.5px; margin: 16px 0 8px; color: var(--svb-heading); }
+.svb-card p, .svb-card li { line-height: 1.85; color: var(--svb-body); overflow-wrap: anywhere; }
+.svb-card ul, .svb-card ol { padding-left: 22px; margin: 10px 0; }
+.svb-card blockquote {
+  margin: 14px 0;
+  padding: 14px 18px;
+  background: var(--svb-sub-bg);
+  border-left: 3px solid var(--svb-accent);
+  border-radius: 8px;
+  font-style: italic;
+  color: var(--svb-body);
+}
+
+/* Tables */
+.svb-card table { width: 100%; border-collapse: collapse; margin: 16px 0; border-radius: 10px; overflow: hidden; }
+.svb-card th, .svb-card td { border: 1px solid var(--svb-border); padding: 11px 14px; text-align: left; color: var(--svb-body); }
+.svb-card th { background: var(--svb-sub-bg); font-weight: 700; color: var(--svb-heading); }
+
+/* Solution & Note Callout Box */
+.svb-note {
+  padding: 16px 18px;
+  background: var(--svb-sub-bg);
+  border: 1px solid var(--svb-border);
+  border-left: 4px solid var(--gold-dark, var(--svb-accent));
+  border-radius: 10px;
+  margin-top: 14px;
+  color: var(--svb-heading);
+}
+.svb-badge {
+  display: inline-block;
+  padding: 4px 11px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--svb-sub-bg);
+  border: 1px solid var(--svb-border);
+  border-radius: 6px;
+  margin-bottom: 10px;
+  color: var(--svb-accent);
+}
+
+/* Quiz Styling */
+.svb-quiz-q {
+  padding: 20px;
+  margin: 16px 0;
+  border: 1px solid var(--svb-border);
+  border-left: 4px solid var(--svb-accent);
+  border-radius: 12px;
+  background: var(--svb-card-bg);
+}
+.svb-quiz-q legend { font-weight: 700; padding: 0 8px; color: var(--svb-heading); }
+.svb-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--svb-body);
+  transition: background 0.15s ease;
+}
+.svb-opt:hover { background: var(--svb-sub-bg); }
+.svb-result {
+  padding: 18px;
+  margin: 14px 0;
+  border: 1px solid var(--svb-border);
+  border-left: 4px solid var(--svb-accent);
+  border-radius: 12px;
+  background: var(--svb-card-bg);
+}
+
+/* Scroll Reveal Animation */
+.svb-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.svb-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .svb-reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* Diagrams & MathJax */
+.mermaid { display: flex; justify-content: center; overflow-x: auto; padding: 12px 0; }
+mjx-container { max-width: 100%; }
+mjx-container[display=true] { overflow-x: auto; max-width: 100%; padding: 6px 0; }
+@media (max-width: 640px) {
+  .svb-hero, .svb-card { padding: 20px 16px; }
+}
 </style>"""
+
+ANIM_AND_THEME_JS = r"""
+(()=>{
+  // 1. Scroll Reveal Animation
+  const cards = document.querySelectorAll('.svb-card, .svb-hero, .svb-quiz-q');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    cards.forEach(el => {
+      el.classList.add('svb-reveal');
+      io.observe(el);
+    });
+  }
+
+  // 2. Theme Sync Fallback (Blueprint, Chalkboard, Cyberpunk, Dracula, Sunset, Emerald, Minimal, Notebook)
+  try {
+    const keys = ['sn-theme', 'theme', 'shorveer-theme', 'look', 'color-theme'];
+    for (const k of keys) {
+      const saved = localStorage.getItem(k);
+      if (saved && !document.documentElement.getAttribute('data-theme')) {
+        document.documentElement.setAttribute('data-theme', saved);
+        document.body.setAttribute('data-theme', saved);
+        break;
+      }
+    }
+  } catch (e) {}
+})();
+"""
 
 MATHJAX = r"""window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],macros:{arccot:'\\operatorname{arccot}',arcsec:'\\operatorname{arcsec}',arccsc:'\\operatorname{arccsc}'}},options:{skipHtmlTags:['script','style','textarea','pre','code']}};"""
 
@@ -131,7 +357,7 @@ iv=setInterval(()=>{left--;timer.textContent=fmt(left);if(left<=0)finish();},100
 })();"""
 
 LATEX_COMMANDS = (
-    r"theta|tan|tau|times|text|tilde|to|triangle|frac|forall|flat|beta|bar|binom|begin|end|"
+    r"theta|tan|tau|times|text|tilde|to|triangle|dfrac|frac|forall|flat|beta|bar|binom|begin|end|"
     r"nu|neq|nabla|not|rho|rightarrow|Rightarrow|right|rceil|rfloor|upsilon|underline|uparrow|"
     r"cup|cap|cdot|cos|cot|csc|sec|sin|sqrt|sum|int|infty|in|le|ge|left|lim|log|ln|alpha|approx|"
     r"angle|delta|Delta|div|dot|equiv|eta|epsilon|gamma|Gamma|lambda|Lambda|mu|omega|Omega|"
@@ -141,10 +367,19 @@ LATEX_COMMANDS = (
 
 
 def fix_json_latex(raw):
-    """JSON में सिंगल बैकस्लैश वाले LaTeX कमांड्स को सुरक्षित करता है ताकि \\theta या \\frac न कटे"""
     raw = re.sub(r'(?<!\\)\\(?!["\\/bfnrtu])', r'\\\\', raw)
     raw = re.sub(rf'(?<!\\)\\({LATEX_COMMANDS})(?![a-zA-Z])', r'\\\\\1', raw)
     return raw
+
+
+def repair_math_html(html_str):
+    def repl(match):
+        expr = match.group(1)
+        expr = re.sub(rf'(?<!\\)\b({LATEX_COMMANDS})\b', r'\\\1', expr)
+        expr = re.sub(r'(?<!\\)\b(dfrac|frac|sqrt)([a-zA-Z0-9])', r'\\\1{\2}', expr)
+        return f"${expr}$"
+
+    return re.sub(r'\$([^\$]+?)\$', repl, html_str)
 
 
 def esc(x):
@@ -236,14 +471,13 @@ class GroqBot:
         system = (
             f"You are an expert CBSE Class 12 {SUBJECTS[subject]} teacher for Shorveer Notes (by Jatin Sandilya). "
             "Write exhaustive, crystal-clear, exam-oriented content strictly following the latest CBSE Class 12 syllabus. "
-            "MATH FORMATTING RULE: Wrap EVERY mathematical expression, variable, or formula (including inside HTML <td> table cells) in $...$ for inline or $$...$$ for display equations. Never leave an unmatched $ sign. Escape backslashes properly in JSON. "
+            "MATH FORMATTING RULE: Wrap EVERY mathematical expression, variable, or formula (including inside HTML <td> table cells) in $...$ for inline or $$...$$ for display equations. Use double backslashes like \\\\frac{a}{b}, \\\\sqrt{x}, \\\\ge, \\\\infty inside JSON strings. Never leave an unmatched $ sign. "
             "Output ONLY valid JSON as requested."
         )
         for model in MODELS:
-            for attempt in range(3):
+            for attempt in range(2):
                 wait = REQUEST_DELAY - (time.time() - self.last_call)
                 if wait > 0:
-                    print(f"Waiting {wait:.1f}s before next API request...")
                     time.sleep(wait)
                 try:
                     res = self.client.chat.completions.create(
@@ -263,7 +497,7 @@ class GroqBot:
                 except Exception as e:
                     self.last_call = time.time()
                     print(f"[{model}] Error (attempt {attempt+1}): {str(e)[:120]}")
-                    time.sleep(15)
+                    time.sleep(10)
         raise RuntimeError("All Groq models failed after retries.")
 
 
@@ -278,7 +512,7 @@ def sanitize_html(raw):
             tag.unwrap()
         else:
             tag.attrs = {}
-    return str(soup)
+    return repair_math_html(str(soup))
 
 
 def render_page(rel_path, title, ch_num, chapter, subject, badge, body, nav_links):
@@ -305,9 +539,10 @@ def render_page(rel_path, title, ch_num, chapter, subject, badge, body, nav_link
     nav_html = "".join(f'<a class="svb-btn" href="{esc(href)}">{esc(lbl)}</a>' for href, lbl in nav_links)
     hero = (
         f'{CSS}<section class="svb"><header class="svb-hero">'
-        f'<p class="svb-meta">Class 12 · {esc(SUBJECTS[subject])} · Chapter {ch_num} · {esc(badge)}</p>'
+        f'<span class="svb-meta">Class 12 · {esc(SUBJECTS[subject])} · Chapter {ch_num} · {esc(badge)}</span>'
         f'<h1>{esc(chapter)}</h1>'
         f'<nav class="svb-nav">{nav_html}</nav></header>{body}</section>'
+        f'<script>{ANIM_AND_THEME_JS}</script>'
     )
     frag = BeautifulSoup(hero, "html.parser")
     for node in list(frag.contents):
@@ -331,7 +566,7 @@ def render_page(rel_path, title, ch_num, chapter, subject, badge, body, nav_link
 
         if main.select_one(".mermaid") and not soup.find("script", src=re.compile("mermaid")):
             mermaid_cfg = soup.new_tag("script")
-            mermaid_cfg.string = "document.addEventListener('DOMContentLoaded',()=>mermaid.initialize({startOnLoad:true, securityLevel:'strict', theme:'default'}));"
+            mermaid_cfg.string = "document.addEventListener('DOMContentLoaded',()=>mermaid.initialize({startOnLoad:true, securityLevel:'strict', theme:'neutral'}));"
             mermaid_lib = soup.new_tag("script", src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js")
             mermaid_lib["defer"] = ""
             head.append(mermaid_lib)
@@ -395,7 +630,7 @@ def build_english(bot, target, rec, state, force):
         res = bot.ask("english", f"""
         Class 12 English Chapter {ch_num}: "{chapter}".
         Return JSON: {{"characters": [{{"name": "...", "role": "...", "sketch_html": "..."}}]}}
-        Provide deep, exam-ready character sketches of all major and minor characters (if it is a poem, analyze the Poet/Speaker and key figures mentioned). Include traits, textual evidence, and role in the plot.
+        Provide deep, exam-ready character sketches of all major and minor characters (if it is a poem, analyze the Poet/Speaker and key figures mentioned).
         """)
         rec["characters"] = res["characters"]
         save_state(state)
@@ -461,9 +696,9 @@ def build_science_math(bot, target, rec, state, force):
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
         Return JSON: {{"topics": ["Topic 1", "Topic 2", ...]}}
-        List 8 to 12 sequential syllabus topics covering the entire chapter completely from basic definitions to advanced derivations/theorems.
+        List 8 to 10 sequential syllabus topics covering the entire chapter completely from basic definitions to advanced derivations/theorems.
         """)
-        rec["topics"] = res["topics"][:12]
+        rec["topics"] = res["topics"][:10]
         save_state(state)
 
     notes_map = rec.setdefault("long_notes", {})
@@ -472,7 +707,7 @@ def build_science_math(bot, target, rec, state, force):
             res = bot.ask(subj, f"""
             CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}" — Topic: "{topic}".
             Return JSON: {{"html": "..."}}
-            Write exhaustive, crystal-clear Long Detailed Notes (350-500 words). Include exact definitions, step-by-step mathematical derivations, laws/theorems, SI units, edge cases, and a solved example. Wrap ALL math/equations (including inside HTML tables) in $...$ or $$...$$. Use clean HTML (p, ul, li, strong, table, tr, th, td).
+            Write exhaustive, crystal-clear Long Detailed Notes (350-450 words). Include exact definitions, step-by-step mathematical derivations, laws/theorems, SI units, edge cases, and a solved example. Wrap ALL math/equations (including inside HTML tables) in $...$ or $$...$$. Use clean HTML (p, ul, li, strong, table, tr, th, td).
             """)
             notes_map[topic] = sanitize_html(res["html"])
             save_state(state)
@@ -512,7 +747,7 @@ def build_science_math(bot, target, rec, state, force):
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
         Return JSON: {{"pyqs": [{{"marks": "2 Marks / 3 Marks / 5 Marks (Case Study / Long)", "tag": "Frequently Repeated Board Concept", "question": "...", "answer_html": "..."}}]}}
-        Create 10 authentic CBSE Board PYQ-pattern subjective questions (covering 2-mark reasoning, 3-mark derivations/problems, and 5-mark long analytical questions) based on actual CBSE Class 12 board exam trends. Do not fabricate fake year numbers; label by marks and concept importance. Provide full marking-scheme answers with LaTeX ($...$ / $$...$$).
+        Create 10 authentic CBSE Board PYQ-pattern subjective questions (covering 2-mark reasoning, 3-mark derivations/problems, and 5-mark long analytical questions) based on actual CBSE Class 12 board exam trends. Provide full marking-scheme answers with LaTeX ($...$ / $$...$$).
         """)
         rec["pyq"] = res["pyqs"]
         save_state(state)
@@ -536,8 +771,7 @@ def build_visual_maps(bot, subj, ch_num, chapter, p_maps, p_notes, rec, state, f
         {{"mindmap_mermaid":"mindmap\\n  root((Chapter))\\n    Topic\\n      Subtopic",
           "flowchart_mermaid":"flowchart TD\\n  A[Start] --> B[Concept]\\n  B --> C[Result]",
           "revision_points":["point 1","point 2"]}}
-        Rules: Mermaid syntax only in diagram fields; no Markdown fences; use short plain labels without parentheses or quotes inside node text;
-        avoid HTML; do not invent syllabus topics.
+        Rules: Mermaid syntax only in diagram fields; no Markdown fences; use short plain labels without parentheses or quotes inside node text; avoid HTML.
         """)
         mind = str(res.get("mindmap_mermaid", "")).strip()
         flow = str(res.get("flowchart_mermaid", "")).strip()
@@ -601,7 +835,6 @@ def update_sitemap():
     items = "\n".join(f"  <url><loc>{esc(u)}</loc><lastmod>{today}</lastmod></url>" for u in urls)
     xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{items}\n</urlset>\n'
     (ROOT / "sitemap.xml").write_text(xml, encoding="utf-8")
-    print(f"sitemap.xml updated with {len(urls)} URLs.")
 
 
 def audit_website():
