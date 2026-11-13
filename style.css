@@ -2289,3 +2289,43 @@ flex-wrap: wrap;
 .site-header, .theme-pop, .cookie, .search-layer { display: none !important; }
 body { background: #fff; }
 }
+/* ===== Topic cards: ek ke neeche ek, full width ===== */
+.chap-wrap, .chap-wrap .topic-card, .chap-wrap .real-life,
+.chap-wrap .resource-grid, .topic-card .real-life, .topic-card .resource-grid {
+  display: block !important;
+  grid-template-columns: none !important;
+  max-width: 100%;
+}
+.topic-card {
+  width: 100%;
+  margin: 0 0 28px;
+  padding: 28px 28px 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold-dark);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+  overflow: visible;
+}
+.topic-card h2 { font-size: clamp(24px, 3vw, 32px); margin-bottom: 14px; color: var(--ink); }
+.topic-card h3 { font-size: 19px; margin: 20px 0 8px; color: var(--ink); }
+.topic-card p, .topic-card li {
+  font-size: 16px; line-height: 1.75; color: var(--ink-2); overflow-wrap: anywhere;
+}
+.topic-card ul { padding-left: 20px; }
+.topic-card .formula-box, .topic-card .practice-box {
+  width: 100%; margin: 16px 0; padding: 14px 16px;
+  border-radius: var(--r-md); border: 1px solid var(--line);
+  background: var(--paper-2); transform: none !important;
+}
+
+/* ===== Math: render ho aur scroll ho, cut na ho ===== */
+mjx-container { max-width: 100%; }
+mjx-container[display="true"] {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding: 8px 0;
+}
+.topic-card mjx-container[display="true"] { margin: 10px 0; }
