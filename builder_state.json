@@ -1,0 +1,283 @@
+{
+  "mathematics::ch1::mathematics/chapter1.html": {
+    "topics": [
+      "Relation – definition, domain, range and representation",
+      "Types of relations – reflexive, symmetric, transitive, equivalence and partial order",
+      "Function – definition, domain, codomain, range and classification (one‑one, onto, bijective, many‑one, etc.)",
+      "Graphical representation of functions and the vertical line test",
+      "Composition of functions – definition, algebraic and graphical aspects",
+      "Inverse of a function – existence, method of finding and properties",
+      "Binary operations – definition, examples and closure property",
+      "Properties of binary operations – associativity, commutativity, identity and inverse elements",
+      "Equivalence relations and partitions; partial order relations and Hasse diagrams"
+    ],
+    "long_notes": {
+      "Relation – definition, domain, range and representation": "<p><strong>Definition of a Relation</strong></p><p>A <strong>relation</strong> $R$ from a set $A$ to a set $B$ is any subset of the Cartesian product $A\\times B$. In symbols, \\[R\\subseteq A\\times B.\\] Each element of $R$ is an ordered pair $(a,b)$ where $a\\in A$ and $b\\in B$.</p><p><strong>Domain and Range</strong></p><ul><li><strong>Domain of $R$</strong> (denoted $\\operatorname{Dom}(R)$) is the set of all first components of the ordered pairs in $R$: \\[\\operatorname{Dom}(R)=\\{a\\in A\\mid \\exists\\,b\\in B,(a,b)\\in R\\}.\\]</li><li><strong>Range of $R$</strong> (denoted $\\operatorname{Ran}(R)$) is the set of all second components: \\[\\operatorname{Ran}(R)=\\{b\\in B\\mid \\exists\\,a\\in A,(a,b)\\in R\\}.\\]</li></ul><p><strong>Ways to Represent a Relation</strong></p><ul><li><strong>Ordered‑pair list</strong>: Write all elements as $(a,b)$.</li><li><strong>Mapping diagram</strong>: Draw two columns for $A$ and $B$ and join each $a\\in A$ to its related $b\\in B$ by an arrow.</li><li><strong>Relation matrix</strong>: If $A=\\{a_1,\\dots,a_m\\}$ and $B=\\{b_1,\\dots,b_n\\}$, the matrix $M_R=[m_{ij}]$ is defined by \\[m_{ij}=\\begin{cases}1,&amp;(a_i,b_j)\\in R,\\\\0,&amp;(a_i,b_j)\\notin R.\\end{cases}\\]</li><li><strong>Digraph (directed graph)</strong>: Vertices are the elements of $A\\cup B$; a directed edge $a\\rightarrow b$ is drawn for each $(a,b)\\in R$.</li></ul><p><strong>Important Properties (CBSE‑relevant)</strong></p><ul><li>For any two relations $R,S\\subseteq A\\times B$, \\[\\operatorname{Dom}(R\\cup S)=\\operatorname{Dom}(R)\\cup\\operatorname{Dom}(S),\\quad \\operatorname{Ran}(R\\cup S)=\\operatorname{Ran}(R)\\cup\\operatorname{Ran}(S).\\]</li><li>If $R$ is empty, $\\operatorname{Dom}(R)=\\operatorname{Ran}(R)=\\emptyset$ (edge case).</li><li>A relation need not be a function; a single element of $A$ may be related to more than one element of $B$.</li></ul><p><strong>Edge Cases to Remember</strong></p><ul><li><em>Empty relation</em>: No ordered pairs; both domain and range are empty.</li><li><em>Repeated ordered pairs</em>: In set notation repetitions are ignored; $(a,b)$ appears at most once.</li><li><em>Relation with elements outside the given sets</em>: By definition all ordered pairs must have first component in $A$ and second in $B$; otherwise the pair is not part of the relation.</li></ul><p><strong>Solved Example (CBSE style)</strong></p><p>Let $A=\\{1,2,3\\}$ and $B=\\{a,b,c\\}$. Define \\[R=\\{(1,a),(2,b),(3,c),(2,a)\\}.\\] Determine the domain, range, matrix and draw the digraph.</p><ol><li><strong>Domain</strong>: Collect first components: $\\{1,2,3\\}$. Hence $\\operatorname{Dom}(R)=\\{1,2,3\\}$.</li><li><strong>Range</strong>: Collect second components: $\\{a,b,c\\}$. Thus $\\operatorname{Ran}(R)=\\{a,b,c\\}$.</li><li><strong>Matrix</strong>: Order $A$ as $1,2,3$ and $B$ as $a,b,c$.<br/><table><tr><th></th><th>a</th><th>b</th><th>c</th></tr><tr><td>1</td><td>1</td><td>0</td><td>0</td></tr><tr><td>2</td><td>1</td><td>1</td><td>0</td></tr><tr><td>3</td><td>0</td><td>0</td><td>1</td></tr></table></li><li><strong>Digraph</strong>: Vertices $\\{1,2,3,a,b,c\\}$ with arrows $1\\rightarrow a$, $2\\rightarrow b$, $2\\rightarrow a$, $3\\rightarrow c$.</li></ol><p>This example illustrates all four representations and confirms the definitions of domain and range.</p><p><strong>Exam Tip</strong>: Always list the ordered pairs first, then directly read off the domain and range. For matrix representation, remember the row index corresponds to the element of the first set and the column index to the element of the second set.</p>",
+      "Types of relations – reflexive, symmetric, transitive, equivalence and partial order": "<p><strong>Definition of a relation</strong> A relation $R$ on a set $A$ is a subset of $A\\\\times A$. If $(a,b)\\in R$ we write $aRb$.</p><p><strong>Reflexive relation</strong> $R$ is reflexive on $A$ iff $\\forall a\\in A,\\;(a,a)\\in R$. In symbols: $\\displaystyle\\bigwedge_{a\\in A}(a,a)\\in R$.</p><p><strong>Symmetric relation</strong> $R$ is symmetric iff $\\forall a,b\\in A,\\;(a,b)\\in R\\Rightarrow(b,a)\\in R$.</p><p><strong>Transitive relation</strong> $R$ is transitive iff $\\forall a,b,c\\in A,\\;(a,b)\\in R\\land(b,c)\\in R\\Rightarrow(a,c)\\in R$.</p><p><strong>Equivalence relation</strong> A relation that is reflexive, symmetric and transitive simultaneously. It partitions $A$ into disjoint equivalence classes.</p><p><strong>Partial order</strong> A relation that is reflexive, antisymmetric (i.e., $aRb$ and $bRa$ imply $a=b$) and transitive. Such a relation is called a <em>poset</em> $(A,\\le)$.</p><table><tr><th>Property</th><th>Symbolic condition</th><th>Example</th></tr><tr><td>Reflexive</td><td>$\\forall a\\in A,\\;(a,a)\\in R$</td><td>$R=\\{(x,x):x\\in \\mathbb{R}\\}$</td></tr><tr><td>Symmetric</td><td>$\\forall a,b,\\;(a,b)\\in R\\Rightarrow(b,a)\\in R$</td><td>$R=\\{(a,b):a-b\\text{ is even}\\}$</td></tr><tr><td>Transitive</td><td>$\\forall a,b,c,\\;(a,b)\\in R\\land(b,c)\\in R\\Rightarrow(a,c)\\in R$</td><td>$R=\\{(a,b):a\\le b\\}$</td></tr><tr><td>Antisymmetric</td><td>$\\forall a,b,\\;(a,b)\\in R\\land(b,a)\\in R\\Rightarrow a=b$</td><td>$R=\\{(a,b):a\\le b\\}$</td></tr></table><p><strong>Edge cases</strong></p><ul><li>If $A=\\varnothing$, the empty relation $\\varnothing$ is vacuously reflexive, symmetric, transitive, hence an equivalence relation.</li><li>The universal relation $A\\\\times A$ is reflexive and symmetric but not transitive in general; it fails to be a partial order because it is not antisymmetric.</li></ul><p><strong>Solved example</strong></p><p>Let $A=\\{1,2,3\\}$ and $R=\\{(1,1),(2,2),(3,3),(1,2),(2,1)\\}$.</p><ol><li>Reflexive? All $(a,a)$ for $a\\in A$ are present → Yes.</li><li>Symmetric? $(1,2)\\in R$ and $(2,1)\\in R$; no other off‑diagonal pairs → Yes.</li><li>Transitive? Check $(1,2)$ and $(2,1)$ → requires $(1,1)$ which is present; similarly $(2,1)$ and $(1,2)$ → requires $(2,2)$. No counter‑example, so $R$ is transitive.</li><li>Since it is reflexive, symmetric and transitive, $R$ is an <strong>equivalence relation</strong>. The equivalence classes are $[1]=\\{1,2\\}$, $[2]=\\{1,2\\}$, $[3]=\\{3\\}$.</li><li>Is $R$ a partial order? Antisymmetry fails because $(1,2)$ and $(2,1)$ are both in $R$ but $1\\neq2$. Hence $R$ is <em>not</em> a partial order.</li></ol><p>Thus the same relation can be an equivalence relation without being a partial order.</p>",
+      "Function – definition, domain, codomain, range and classification (one‑one, onto, bijective, many‑one, etc.)": "<p><strong>Definition of a Function</strong></p>\n<p>A function $f$ from a set $A$ (called the <em>domain</em>) to a set $B$ (called the <em>codomain</em>) is a rule that assigns to each element $x\\in A$ exactly one element $y\\in B$. This is denoted as $f:A\\rightarrow B$ and $y=f(x)$. The set of all actual outputs $\\{f(x):x\\in A\\}$ is called the <em>range</em> (or image) of $f$.</p>\n<p><strong>Domain, Codomain and Range</strong></p>\n<ul>\n<li><strong>Domain ($\\mathcal{D}_f$)</strong>: the set of all admissible inputs. For a real‑valued function given by a formula, the domain is obtained by excluding values that make the expression undefined (e.g., division by zero, negative radicand for even roots).</li>\n<li><strong>Codomain ($\\mathcal{C}_f$)</strong>: the set in which the outputs are declared to lie. It is chosen by the problem‑setter and may be larger than the actual range.</li>\n<li><strong>Range (Image) ($\\mathcal{R}_f$)</strong>: $\\mathcal{R}_f=\\{f(x):x\\in\\mathcal{D}_f\\}\\subseteq\\mathcal{C}_f$.</li>\n</ul>\n<p><strong>Classification of Functions</strong></p>\n<table>\n<tr><th>Type</th><th>Definition</th><th>Symbolic Condition</th></tr>\n<tr><td>One‑to‑One (Injective)</td><td>Different inputs give different outputs.</td><td>$\\forall x_1,x_2\\in\\mathcal{D}_f,\\;f(x_1)=f(x_2)\\Rightarrow x_1=x_2$</td></tr>\n<tr><td>Onto (Surjective)</td><td>Every element of the codomain is hit by at least one input.</td><td>$\\forall y\\in\\mathcal{C}_f,\\;\\exists x\\in\\mathcal{D}_f$ such that $f(x)=y$</td></tr>\n<tr><td>Bijective</td><td>Both injective and surjective.</td><td>Injective $\\&amp;$ Surjective</td></tr>\n<tr><td>Many‑One</td><td>Two or more distinct inputs may map to the same output.</td><td>\\(\\exists x_1\\neq x_2$ with $f(x_1)=f(x_2)$\\)</td></tr>\n<tr><td>Constant</td><td>All inputs map to a single fixed output.</td><td>$\\exists c\\in\\mathcal{C}_f$ such that $f(x)=c\\;\\forall x\\in\\mathcal{D}_f$</td></tr>\n</table>\n<p><strong>Edge Cases and Remarks</strong></p>\n<ul>\n<li>If the domain is the empty set $\\emptyset$, the function is called a <em>null function</em>. It is vacuously both injective and surjective onto any codomain.</li>\n<li>A function can be injective but not surjective if $\\mathcal{R}_f\\subsetneq\\mathcal{C}_f$ (e.g., $f:\\mathbb{R}\\to\\mathbb{R},\\;f(x)=e^x$).</li>\n<li>Physical quantities often carry SI units; when a function models a physical law, the units of domain and codomain must be consistent (e.g., $v(t)=gt$ where $v$ is in m·s$^{-1}$ and $t$ in s).</li>\n</ul>\n<p><strong>Solved Example</strong></p>\n<p>Let $f:\\mathbb{R}\\rightarrow\\mathbb{R}$ be defined by $f(x)=x^{2}$.</p>\n<ol>\n<li><strong>Domain</strong>: All real numbers, $\\mathcal{D}_f=\\mathbb{R}$, because squaring is defined for every $x\\in\\mathbb{R}$.</li>\n<li><strong>Codomain</strong>: Given as $\\mathbb{R}$.</li>\n<li><strong>Range</strong>:\n$$\\mathcal{R}_f=\\{x^{2}:x\\in\\mathbb{R}\\}= [0,\\infty).$$\nThus the range is a proper subset of the codomain.</li>\n<li><strong>Injectivity</strong>: Choose $x_{1}=1$ and $x_{2}=-1$. Then $f(1)=f(-1)=1$ while $1\\neq-1$. Hence $f$ is <em>not</em> one‑to‑one.</li>\n<li><strong>Surjectivity</strong>: Since negative numbers are never obtained, $f$ is <em>not</em> onto $\\mathbb{R}$.</li>\n<li><strong>Conclusion</strong>: $f$ is a many‑one, non‑bijective function with domain $\\mathbb{R}$, codomain $\\mathbb{R}$ and range $[0,\\infty)$.</li>\n</ol>\n<p><strong>Key Take‑aways for Exams</strong></p>\n<ul>\n<li>Always write down domain, codomain and range separately before classifying.</li>\n<li>Use the formal definitions (injective, surjective) to justify your answer; a single counter‑example suffices to disprove injectivity or surjectivity.</li>\n<li>Remember that bijectivity guarantees the existence of an inverse function $f^{-1}:\\mathcal{C}_f\\rightarrow\\mathcal{D}_f$.</li>\n<li>Check edge cases such as empty domain or constant functions, as they often appear in multiple‑choice questions.</li>\n</ul>",
+      "Graphical representation of functions and the vertical line test": "<p><strong>Graphical Representation of Functions and the Vertical Line Test</strong></p><p>A <strong>function</strong> $f$ from a set $A$ (domain) to a set $B$ (codomain) assigns to each element $x\\in A$ exactly one element $y\\in B$, denoted $y=f(x)$. The set of ordered pairs $\\{(x,f(x))\\mid x\\in A\\}$ is called the <strong>graph</strong> of $f$ in the Cartesian plane.</p><p><strong>How to plot a function</strong>:</p><ul><li>Identify the domain $D$ (including any restrictions such as $x\\neq 0$ for $\\frac{1}{x}$).</li><li>Choose a convenient set of $x$‑values in $D$ (including critical points, intercepts, points where the derivative changes sign, etc.).</li><li>Compute the corresponding $y$‑values using the rule $y=f(x)$.</li><li>Mark each $(x,y)$ on the $xy$‑plane and join points smoothly where the function is continuous.</li></ul><p><strong>Vertical Line Test (VLT)</strong></p><p>The VLT provides a visual criterion to decide whether a given curve represents a function $y=f(x)$.</p><p><strong>Theorem (Vertical Line Test)</strong>: A curve in the $xy$‑plane represents a function of $x$ if and only if every vertical line $x=k$ (where $k$ is any real number) intersects the curve at most once.</p><p><em>Proof Sketch</em>:</p><ol><li>Assume the curve is the graph of a function $f$. By definition, for each $x=k$ there is a unique $y$, so the vertical line $x=k$ meets the graph at exactly one point (or none if $k\\notin D$).</li><li>Conversely, suppose every vertical line meets the curve at most once. Define $f(k)$ as the $y$‑coordinate of the intersection point when it exists. Uniqueness of the intersection guarantees that each $k$ in the projection of the curve onto the $x$‑axis has a single image, satisfying the definition of a function.</li></ol><p><strong>Edge Cases</strong></p><ul><li><strong>Vertical segments</strong>: A curve containing a vertical segment fails the VLT because a vertical line coinciding with that segment meets the curve infinitely many times.</li><li><strong>Disconnected graphs</strong>: The VLT applies locally; each component must satisfy the test. For example, $y=\\sqrt{x}$ and $y=-\\sqrt{x}$ together form a sideways parabola which fails the VLT.</li><li><strong>Domain restrictions</strong>: If a curve is defined only for $x\\ge0$, vertical lines with $x&lt;0$ do not intersect, which is permissible.</li></ul><p><strong>Example</strong></p><p>Determine whether the curve $y^2 = x$ represents $y$ as a function of $x$.</p><p><strong>Solution:</strong></p><ol><li>Rewrite: $y = \\pm\\sqrt{x}$, $x\\ge0$.</li><li>For a given $x&gt;0$, the vertical line $x=k$ meets the curve at two points $(k,\\sqrt{k})$ and $(k,-\\sqrt{k})$.</li><li>Since a vertical line intersects more than once, the curve fails the VLT.</li><li>Hence $y$ is <strong>not</strong> a function of $x$ on the whole curve. However, each branch $y=\\sqrt{x}$ and $y=-\\sqrt{x}$ individually passes the VLT and thus defines a function.</li></ol><p><strong>Practical Tips for Exams</strong></p><ul><li>Always state the domain before drawing the graph.</li><li>Mark intercepts: set $x=0$ for $y$‑intercept, $y=0$ for $x$‑intercept.</li><li>Check monotonicity using $\\frac{dy}{dx}$; monotonic intervals guarantee the VLT.</li><li>When given a curve, apply the VLT directly: imagine a vertical line sliding across the $x$‑axis.</li></ul><p>Mastering the graphical representation and the vertical line test equips you to quickly verify functionhood, a prerequisite for further topics such as composition, inverses, and calculus in the CBSE Class 12 syllabus.</p>",
+      "Composition of functions – definition, algebraic and graphical aspects": "<p><strong>Definition:</strong> Let $f:A\\rightarrow B$ and $g:C\\rightarrow D$ be two functions. The <em>composition of $f$ with $g$</em>, denoted $f\\circ g$, is defined only when the range of $g$ is a subset of the domain of $f$ (i.e., $g(C)\\subseteq A$). For every $x\\in C$, \n$$ (f\\circ g)(x)=f\\big(g(x)\\big). $$\nThe resulting function $f\\circ g$ maps $C$ into $D$ (or into $B$ if $f$ maps into $B$).</p>\n<p><strong>Algebraic Aspects</strong></p>\n<ul>\n<li>For functions expressed by formulas, composition is performed by substitution. If $f(x)=\\frac{1}{x-1}$ and $g(x)=\\sqrt{x+3}$, then \n$$ (f\\circ g)(x)=f\\big(g(x)\\big)=\\frac{1}{\\sqrt{x+3}-1},\\qquad x\\ge-3,\\;\\sqrt{x+3}\\neq1. $$</li>\n<li><strong>Domain of $f\\circ g$:</strong> It is the set of all $x\\in C$ such that $x$ belongs to the domain of $g$ and $g(x)$ belongs to the domain of $f$. This is obtained by intersecting the domain of $g$ with the pre‑image $g^{-1}(\\text{Dom}(f))$.</li>\n<li><strong>Associativity:</strong> For three functions $f,g,h$ with compatible domains, \n$$ (f\\circ g)\\circ h = f\\circ (g\\circ h). $$\nProof: For any $x$, \n$$ ((f\\circ g)\\circ h)(x)= (f\\circ g)(h(x))=f\\big(g(h(x))\\big)=f\\big((g\\circ h)(x)\\big)=(f\\circ (g\\circ h))(x). $$\nThus composition is associative.</li>\n<li><strong>Non‑commutativity:</strong> In general, $f\\circ g \\neq g\\circ f$. Example: with $f(x)=x^2$ and $g(x)=x+1$, \n$$ (f\\circ g)(x)=(x+1)^2,\\qquad (g\\circ f)(x)=x^2+1. $$\nThese are different, showing that order matters.</li>\n</ul>\n<p><strong>Graphical Aspects</strong></p>\n<ul>\n<li>On the $xy$‑plane, the graph of $g$ is drawn first. For each $x$, the point $(x,g(x))$ is located; the $y$‑coordinate $g(x)$ then becomes the $x$‑coordinate for $f$.\nThus the graph of $f\\circ g$ can be obtained by \"following\" a point on $g$ horizontally to the $y$‑axis, then moving vertically according to $f$.</li>\n<li>Visually, the composition corresponds to a two‑step mapping: $x\\xrightarrow{\\;g\\;} g(x)\\xrightarrow{\\;f\\;} f(g(x))$.</li>\n</ul>\n<p><strong>Edge Cases &amp; Important Remarks</strong></p>\n<ul>\n<li>If $g$ is not onto $A$, some elements of $A$ may never be used in the composition; this does not affect the definition but restricts the domain.</li>\n<li>If $f$ or $g$ is not a function (fails vertical line test), composition is undefined.</li>\n<li>When $f$ or $g$ is a constant function, $f\\circ g$ becomes constant, irrespective of the inner function.</li>\n<li>Composition with the identity function $I(x)=x$ leaves the other function unchanged: $f\\circ I = I\\circ f = f$.</li>\n</ul>\n<p><strong>Solved Example</strong></p>\n<p>Let \n$$ f(x)=2x+3,\\qquad g(x)=x^{2}. $$\nFind $(f\\circ g)(x)$, $(g\\circ f)(x)$ and state their domains.</p>\n<p><em>Solution:</em></p>\n<ul>\n<li>$(f\\circ g)(x)=f(g(x))=f(x^{2})=2x^{2}+3.$\nDomain: $x\\in\\mathbb{R}$ because $g$ is defined for all real $x$ and $f$ accepts any real input.</li>\n<li>$(g\\circ f)(x)=g(f(x))=g(2x+3)=(2x+3)^{2}=4x^{2}+12x+9.$\nDomain: again $\\mathbb{R}$, since $f$ maps $\\mathbb{R}$ to $\\mathbb{R}$ and $g$ is defined for all real numbers.</li>\n<li>Graphically, the curve $y=2x^{2}+3$ is a parabola opening upwards, shifted up by $3$.\nThe curve $y=4x^{2}+12x+9$ is also a parabola, obtained by first shifting $y=2x$ upward by $3$ and then squaring.\n</li>\n</ul>\n<p><strong>Key Takeaways</strong></p>\n<ul>\n<li>Composition substitutes the output of one function as the input of another.</li>\n<li>Domain of $f\\circ g$ = ${x\\in\\text{Dom}(g): g(x)\\in\\text{Dom}(f)\\}$.</li>\n<li>Composition is associative but not commutative.</li>\n<li>Graphical interpretation helps visualise the two‑step mapping.</li>\n</ul>",
+      "Inverse of a function – existence, method of finding and properties": "<p><strong>Definition (Inverse of a Function)</strong><br/>A function $f:A\\rightarrow B$ is said to have an <em>inverse function</em> $f^{-1}:B\\rightarrow A$ if for every $y\\in B$ there exists a unique $x\\in A$ such that $f(x)=y$. The inverse satisfies $f^{-1}(f(x))=x$ for all $x\\in A$ and $f(f^{-1}(y))=y$ for all $y\\in B$.</p><p><strong>Existence Criteria (One‑to‑One Test)</strong><br/>A function possesses an inverse iff it is <em>bijective</em> (both one‑to‑one and onto).<br/>For real‑valued functions the <strong>Horizontal Line Test</strong> is used: every horizontal line $y=c$ must intersect the graph of $f$ at most once.</p><p><strong>Method of Finding $f^{-1}$</strong></p><ul><li>Write the relation $y=f(x)$.</li><li>Interchange $x$ and $y$: $x=f(y)$.</li><li>Solve the new equation for $y$ in terms of $x$; the resulting expression is $f^{-1}(x)$.</li><li>State the domain of $f^{-1}$, which equals the range of $f$, and its range, which equals the domain of $f$.</li></ul><p><strong>Properties of Inverse Functions</strong></p><table><tr><th>Property</th><th>Mathematical Form</th></tr><tr><td>Involution</td><td>$\\bigl(f^{-1}\\bigr)^{-1}=f$</td></tr><tr><td>Composition</td><td>$f\\circ f^{-1}=I_{B},\\; f^{-1}\\circ f=I_{A}$</td></tr><tr><td>Monotonicity</td><td>If $f$ is strictly increasing (decreasing) on an interval, then $f^{-1}$ is also strictly increasing (decreasing) on the corresponding interval.</td></tr><tr><td>Derivative</td><td>If $f$ is differentiable and $f'(x)\\neq0$, then $\\displaystyle\\bigl(f^{-1}\\bigr)'\\bigl(f(x)\\bigr)=\\frac{1}{f'(x)}$.</td></tr></table><p><strong>Edge Cases &amp; Remarks</strong></p><ul><li>If $f$ fails the horizontal line test (e.g., $f(x)=x^{2}$ on $\\mathbb{R}$), it does not have a global inverse. Restricting the domain to an interval where $f$ is monotonic (e.g., $[0,\\infty)$) restores invertibility.</li><li>Constant functions never have inverses because they are not one‑to‑one.</li><li>When solving for $y$, extraneous solutions may appear; always verify by substituting back into the original relation.</li></ul><p><strong>Solved Example</strong></p><p>Find the inverse of $f(x)=\\frac{2x-3}{5}$ and state its domain and range.</p><p><em>Solution:</em></p><ol><li>Write $y=\\frac{2x-3}{5}$.</li><li>Swap $x$ and $y$: $x=\\frac{2y-3}{5}$.</li><li>Solve for $y$:<br/>$5x=2y-3\\;\\Rightarrow\\;2y=5x+3\\;\\Rightarrow\\;y=\\frac{5x+3}{2}$.</li><li>Thus $f^{-1}(x)=\\frac{5x+3}{2}$.</li><li>Since $f$ is defined for all $x\\in\\mathbb{R}$, its range is $\\mathbb{R}$; consequently the domain of $f^{-1}$ is $\\mathbb{R}$ and its range is also $\\mathbb{R}$.</li></ol><p>Verification: $f\\bigl(f^{-1}(x)\\bigr)=\\frac{2\\left(\\frac{5x+3}{2}\\right)-3}{5}=x$ and $f^{-1}\\bigl(f(x)\\bigr)=\\frac{5\\left(\\frac{2x-3}{5}\\right)+3}{2}=x$, confirming correctness.</p>",
+      "Binary operations – definition, examples and closure property": "<p><strong>Definition:</strong> A <em>binary operation</em> on a non‑empty set $S$ is a rule \\(\\star\\) that assigns to every ordered pair $(a,b)$ with $a,b\\in S$ a unique element $a\\star b\\in S$. The set $S$ together with the rule $\\star$ is denoted $(S,\\star)$. The rule must be well defined for <strong>all</strong> ordered pairs; otherwise it is not a binary operation.</p><p><strong>Closure property (or internal law):</strong> The defining requirement $a\\star b\\in S$ for every $a,b\\in S$ is called the <em>closure property</em>. If the result of the rule ever lies outside $S$, the rule fails to be a binary operation on $S$.</p><p><strong>Typical examples:</strong></p><ul><li>Addition $+$ on the set of integers $\\mathbb Z$: for any $a,b\\in\\mathbb Z$, $a+b\\in\\mathbb Z$ (closed).</li><li>Multiplication $\\times$ on the set of real numbers $\\mathbb R$: $a\\times b\\in\\mathbb R$ (closed).</li><li>Subtraction $-$ on the set of natural numbers $\\mathbb N$ (including $0$) is <strong>not</strong> closed because $3-5=-2\\notin\\mathbb N$.</li><li>Division $\\div$ on $\\mathbb Q\\setminus\\{0\\}$ is closed only when the divisor is non‑zero; otherwise the operation is undefined.</li></ul><p><strong>Edge cases and remarks:</strong></p><ul><li>If $S$ is a singleton, e.g. $S=\\{c\\}$, any rule $c\\star c=c$ automatically satisfies closure.</li><li>When a rule is defined by a formula that involves an external set, one must explicitly verify that the output never leaves $S$.</li><li>Closure is a necessary but not sufficient condition for many algebraic structures; associativity, identity, and inverses are additional requirements.</li></ul><p><strong>Law/Theorem (Closure Test):</strong> Let $\\star$ be a rule on $S$. Then $\\star$ is a binary operation on $S$ iff \\[\\forall a,b\\in S,\\;a\\star b\\in S.\\] This statement follows directly from the definition.</p><p><strong>Solved example (modular addition):</strong></p><p>Let $S=\\{0,1,2\\}$ and define $a\\star b$ by the formula<br/>$$a\\star b\\;=\\;(a+b)\\bmod 3.$$</p><p>We verify closure:</p><ul><li>Take any $a,b\\in S$. Their ordinary sum $a+b$ lies in $\\{0,1,2,3,4\\}$.</li><li>Reducing modulo $3$ yields a remainder $0,1$ or $2$, which is again an element of $S$.</li></ul><p>Hence the rule is closed on $S$ and defines a binary operation.</p><p>Operation table:</p><table><tr><th>$\\star$</th><th>0</th><th>1</th><th>2</th></tr><tr><td>0</td><td>0</td><td>1</td><td>2</td></tr><tr><td>1</td><td>1</td><td>2</td><td>0</td></tr><tr><td>2</td><td>2</td><td>0</td><td>1</td></tr></table><p>Sample computation: $2\\star 2 = (2+2)\\bmod 3 = 4\\bmod 3 = 1$, which belongs to $S$. Thus the operation satisfies the closure property and is a valid binary operation on the set $\\{0,1,2\\}$.</p>",
+      "Properties of binary operations – associativity, commutativity, identity and inverse elements": "<p><strong>Definitions</strong></p><ul><li><strong>Binary Operation</strong> – A rule that assigns to every ordered pair $(a,b)$ of elements from a set $S$ an element $a*b$ in $S$.</li><li><strong>Associativity</strong> – $a*(b*c)=(a*b)*c$ for all $a,b,cin S$.</li><li><strong>Commutativity</strong> – $a*b=b*a$ for all $a,bin S$.</li><li><strong>Identity Element</strong> – $ein S$ such that $a*e=e*a=a$ for all $ain S$.</li><li><strong>Inverse Element</strong> – For $ain S$ an element $a^{-1}in S$ with $a*a^{-1}=a^{-1}*a=e$.</li></ul><p><strong>Derivation of Associativity Law</strong></p><p>Let $*$ be associative. Then for any $a,b,c,din S$:</p><p>$$((a*b)*c)*d = (a*b)*(c*d) = a*(b*(c*d))$$</p><p>Thus nested operations can be regrouped without affecting the result.</p><p><strong>Commutativity Implies Symmetry</strong></p><p>From $a*b=b*a$, we deduce $a*b=c$ iff $b*a=c$, ensuring order does not influence the outcome.</p><p><strong>Uniqueness of Identity</strong></p><p>Assume $e$ and $e'$ are both identities. Then $e=e*e'=e'$. Hence the identity is unique.</p><p><strong>Existence of Inverses</strong></p><p>If every element has an inverse, the operation is called a group operation. Inverse uniqueness follows from $a*a^{-1}=e$ and $a^{-1}*a=e$.</p><p><strong>Edge Cases</strong></p><ul><li>Non‑existence of identity: e.g., $a*b=a+b$ on $mathbb{N}$ has no identity because $a+e=a$ has no solution in $mathbb{N}$.</li><li>Non‑existence of inverses: $a*b=acdot b$ on $mathbb{Z}^+$ has no inverse for $a&gt;1$.</li><li>Associativity may fail: $a*b=a-b$ on $mathbb{R}$ is not associative.</li></ul><p><strong>Example: Operation on Integers</strong></p><p>Define $a*b=a+b+ab$ for $a,binmathbb{Z}$.</p><p><strong>Associativity Check</strong></p><p>Compute $(a*b)*c$:</p><p>$$a*b=a+b+ab$$</p><p>Then $$(a*b)*c=(a+b+ab)+c+(a+b+ab)c$$</p><p>Similarly, $$a*(b*c)=a+(b+c+bc)+a(b+c+bc)$$</p><p>Expanding both expressions gives identical results, proving associativity.</p><p><strong>Commutativity Check</strong></p><p>$$a*b=a+b+ab=b+a+ba=b*a$$</p><p>Thus $*$ is commutative.</p><p><strong>Identity Element</strong></p><p>Find $e$ such that $a*e=a$:</p><p>$$a+e+ae=aimplies e+ae=0implies e(1+a)=0$$</p><p>For all $ainmathbb{Z}$, $e=0$ satisfies the equation. Hence $0$ is the identity.</p><p><strong>Inverse Element</strong></p><p>For $a$, solve $a*b=e=0$:</p><p>$$a+b+ab=0implies b(1+a)=-aimplies b=-\frac{a}{1+a}$$</p><p>Since $ainmathbb{Z}$, $b$ is an integer iff $1+a$ divides $a$. Thus only $a=-1$ has no inverse; all other integers have inverses in $mathbb{Z}$.</p><p>Hence the set $mathbb{Z}setminus{-1}$ with this operation forms a group.</p><p><strong>Conclusion</strong></p><p>Understanding these properties allows students to classify algebraic structures (semigroups, monoids, groups) and solve problems efficiently in the CBSE Class 12 Mathematics curriculum.</p>",
+      "Equivalence relations and partitions; partial order relations and Hasse diagrams": "<p><strong>Definition (Relation):</strong> A relation $R$ from a set $A$ to a set $B$ is a subset of the Cartesian product $A\\times B$. When $A=B$, $R$ is called a relation on $A$.</p>\n<p><strong>Equivalence Relation:</strong> A relation $R$ on a set $A$ is an <em>equivalence relation</em> iff it satisfies:</p>\n<ul>\n<li><strong>Reflexive:</strong> $\\forall a\\in A,\\;(a,a)\\in R$.</li>\n<li><strong>Symmetric:</strong> $\\forall a,b\\in A,\\;(a,b)\\in R \\Rightarrow (b,a)\\in R$.</li>\n<li><strong>Transitive:</strong> $\\forall a,b,c\\in A,\\;(a,b)\\in R\\land(b,c)\\in R \\Rightarrow (a,c)\\in R$.</li>\n</ul>\n<p><strong>Partition of a Set:</strong> A family $\\{A_1,A_2,\\dots ,A_k\\}$ of non‑empty subsets of $A$ is a <em>partition</em> of $A$ if</p>\n<ul>\n<li>$\\bigcup_{i=1}^{k}A_i=A$ (covers $A$), and</li>\n<li>$A_i\\cap A_j=\\emptyset$ for $i\\neq j$ (pairwise disjoint).</li>\n</ul>\n<p><strong>Theorem:</strong> A relation $R$ on $A$ is an equivalence relation <strong>iff</strong> the set of its equivalence classes forms a partition of $A$.</p>\n<p>Proof Sketch:</p>\n<ol>\n<li>If $R$ is an equivalence relation, define $[a]=\\{x\\in A\\mid (a,x)\\in R\\}$. Reflexivity guarantees $a\\in[a]$, symmetry and transitivity ensure $[a]=[b]$ or $[a]\\cap[b]=\\emptyset$. Hence the collection $\\{[a]\\mid a\\in A\\}$ is a partition.</li>\n<li>Conversely, given a partition $\\{A_1,\\dots ,A_k\\}$, define $R=\\bigcup_{i=1}^{k}(A_i\\times A_i)$. By construction $R$ is reflexive, symmetric and transitive, thus an equivalence relation.</li>\n</ol>\n<p><strong>Partial Order Relation (Poset):</strong> A relation $\\le$ on $A$ is a <em>partial order</em> if it is</p>\n<ul>\n<li><strong>Reflexive:</strong> $a\\le a$ for all $a\\in A$.</li>\n<li><strong>Antisymmetric:</strong> $a\\le b$ and $b\\le a$ imply $a=b$.</li>\n<li><strong>Transitive:</strong> $a\\le b$ and $b\\le c$ imply $a\\le c$.</li>\n</ul>\n<p>The ordered pair $(A,\\le)$ is called a <em>partially ordered set</em> (poset).</p>\n<p><strong>Hasse Diagram Rules:</strong></p>\n<ul>\n<li>Place elements as vertices.</li>\n<li>Draw an edge from $a$ to $b$ (with $a\n<li>Edges are drawn upward; the vertical position reflects the order.</li>\n<li>Reflexive loops are omitted; transitive edges are omitted.</li>\n</li></ul>\n<p><strong>Edge Cases:</strong></p>\n<ul>\n<li><em>Empty set:</em> The empty relation on $\\emptyset$ is vacuously reflexive, symmetric and transitive, thus an equivalence relation; its partition is the empty family.</li>\n<li><em>Universal relation $A\\times A$:</em> It is reflexive and symmetric but not antisymmetric, so it is an equivalence relation (all elements equivalent) but not a partial order.</li>\n<li><em>Singleton set $\\{a\\}$:</em> The only possible relation ${(a,a)}$ is both an equivalence relation and a partial order.</li>\n</ul>\n<p><strong>Solved Example – Equivalence Relation and Partition</strong></p>\n<p>Let $A=\\{1,2,3,4\\}$ and $R=\\{(1,1),(2,2),(3,3),(4,4),(1,2),(2,1),(3,4),(4,3)\\}$.</p>\n<ol>\n<li>Check reflexivity – all $(a,a)$ are present ✅.</li>\n<li>Check symmetry – $(1,2)\\in R$ implies $(2,1)\\in R$, similarly for $(3,4)$ ✅.</li>\n<li>Check transitivity – the only non‑trivial chains are $1R2$ and $2R1$, giving $1R1$ (already present); same for $3,4$ ✅.</li>\n</ol>\n<p>Thus $R$ is an equivalence relation. Its equivalence classes are $[1]=\\{1,2\\}$ and $[3]=\\{3,4\\}$. Hence the partition of $A$ induced by $R$ is $\\{\\{1,2\\},\\{3,4\\}\\}$.</p>\n<p><strong>Solved Example – Partial Order and Hasse Diagram</strong></p>\n<p>Consider $B=\\{a,b,c\\}$ with relation $\\le$ defined by $a\\le a$, $b\\le b$, $c\\le c$, $a\\le b$, $a\\le c$.</p>\n<ul>\n<li>Reflexive – true by definition.</li>\n<li>Antisymmetric – there is no pair $x\\neq y$ with $x\\le y$ and $y\\le x$.</li>\n<li>Transitive – $a\\le b$ and $b\\le b$ give $a\\le b$ (already), similarly for $c$; no violation.</li>\n</ul>\n<p>Hence $(B,\\le)$ is a poset. The covering relations are $a\\prec b$ and $a\\prec c$. The Hasse diagram is:</p>\n<table><tr><th>Diagram (textual)</th></tr><tr><td>\n\n   b   c\n    \\ /\n     a\n\n</td></tr></table>\n<p>Only the minimal element $a$ is drawn at the bottom, with edges upward to $b$ and $c$, illustrating the Hasse diagram rules.</p>\n<p>These concepts form the backbone of Chapter 1 and are frequently tested in CBSE Class 12 examinations.</p>"
+    },
+    "short_notes": [
+      {
+        "title": "Important Formulas Table",
+        "html": "<table border='1' cellpadding='5'><tr><th>Concept</th><th>Formula / Expression</th></tr><tr><td>Function composition</td><td>$ (f\\circ g)(x)=f(g(x))$</td></tr><tr><td>Inverse function (if exists)</td><td>$ f^{-1}(f(x))=x$</td></tr><tr><td>Domain of composition</td><td>$ D_{f\\circ g}=\\{x\\in D_g\\mid g(x)\\in D_f\\}$</td></tr><tr><td>Range of composition</td><td>$ R_{f\\circ g}\\subseteq R_f$</td></tr><tr><td>Injective condition</td><td>$\\forall x_1,x_2\\in D_f\\,(f(x_1)=f(x_2)\\Rightarrow x_1=x_2)$</td></tr><tr><td>Surjective condition</td><td>$\\forall y\\in R_f\\,\\exists x\\in D_f\\,\\text{such that}\\,f(x)=y$</td></tr><tr><td>Bijection condition</td><td>Injective \\& Surjective</td></tr></table>"
+      },
+      {
+        "title": "Key Definitions & Laws",
+        "html": "<ul><li><b>Relation</b> – A subset of $A\\times B$.</li><li><b>Function</b> – A relation where each $x\\in A$ is related to a unique $y\\in B$.</li><li><b>Domain</b> – $\\{x\\in A\\mid\\exists y\\in B\\, (x,y)\\in f\\}$.</li><li><b>Range</b> – $\\{y\\in B\\mid\\exists x\\in A\\, (x,y)\\in f\\}$.</li><li><b>Injective (One‑to‑One)</b> – $f(x_1)=f(x_2)\\Rightarrow x_1=x_2$.</li><li><b>Surjective (Onto)</b> – For every $y\\in B$ there exists $x\\in A$ with $f(x)=y$.</li><li><b>Bijection</b> – Both injective and surjective.</li><li><b>Inverse Function</b> – If $f$ is bijective, $f^{-1}:B\\to A$ satisfies $f^{-1}(f(x))=x$ and $f(f^{-1}(y))=y$.</li><li><b>Composition</b> – $f\\circ g$ defined when $\\text{codomain}(g)=\\text{domain}(f)$.</li></ul>"
+      },
+      {
+        "title": "Important Graphs / Theorems Summary",
+        "html": "<p><b>Vertical Line Test</b> – A graph represents a function iff every vertical line intersects it at most once.</p><p><b>Horizontal Line Test</b> – A function is injective iff every horizontal line intersects its graph at most once.</p><p><b>Inverse Function Graph</b> – Graph of $f^{-1}$ is the reflection of $f$ about the line $y=x$.</p><p><b>Theorem</b> – If $f$ is bijective, then $f^{-1}$ exists and is a function.</p><p><b>Composition Property</b> – If $f$ and $g$ are bijective, then $f\\circ g$ is bijective and $(f\\circ g)^{-1}=g^{-1}\\circ f^{-1}$.</p>"
+      },
+      {
+        "title": "Common Exam Mistakes to Avoid",
+        "html": "<ul><li>Assuming a relation is a function without checking uniqueness of outputs.</li><li>Forgetting to specify the domain and range when required.</li><li>Misapplying the vertical line test (e.g., ignoring points of discontinuity).</li><li>Confusing injective with surjective; checking both separately.</li><li>Forgetting that $f^{-1}$ exists only for bijections.</li><li>Incorrectly computing composition domain: using $D_f\\cup D_g$ instead of $\\{x\\in D_g\\mid g(x)\\in D_f\\}$.</li></ul>"
+      }
+    ],
+    "numericals": [
+      {
+        "level": "NCERT Level",
+        "question": "Determine the domain and range of the function $f(x)=sqrt{3x-5}$.",
+        "solution_html": "<p><strong>Given:</strong> $f(x)=sqrt{3x-5}$</p><p><strong>Formula Used:</strong> For $sqrt{g(x)}$ to be real, $g(x)ge 0$.</p><p><strong>Step‑by‑Step Calculation:</strong></p><ol><li>Set $3x-5ge 0$.</li><li>$3xge 5;Rightarrow;xge dfrac{5}{3}$.</li><li>Thus, domain $D=left[dfrac{5}{3},infty\right)$.</li><li>For $xin D$, $f(x)=sqrt{3x-5}ge 0$ and as $x\toinfty$, $f(x)\toinfty$.</li><li>Hence, range $R=[0,infty)$.</li></ol><p><strong>Final Answer:</strong> Domain $=left[dfrac{5}{3},infty\right)$, Range $=[0,infty)$.</p>"
+      },
+      {
+        "level": "Board Standard",
+        "question": "Find the inverse function of $f(x)=dfrac{2x+5}{x-1}$.",
+        "solution_html": "<p><strong>Given:</strong> $y=dfrac{2x+5}{x-1}$</p><p><strong>Formula Used:</strong> Swap $x$ and $y$ and solve for $y$.</p><p><strong>Step‑by‑Step Calculation:</strong></p><ol><li>Write $x=dfrac{2y+5}{y-1}$.</li><li>Cross‑multiply: $x(y-1)=2y+5$.</li><li>$xy-x=2y+5$.</li><li>Collect $y$ terms: $xy-2y=x+5$.</li><li>$y(x-2)=x+5$.</li><li>$y=dfrac{x+5}{x-2}$.</li></ol><p><strong>Final Answer:</strong> $f^{-1}(x)=dfrac{x+5}{,x-2,}$ (domain $x\neq2$).</p>"
+      },
+      {
+        "level": "HOTS",
+        "question": "Determine whether the function $g(x)=x^3-3x^2+4x-2$ is one‑to‑one on $mathbb{R}$.",
+        "solution_html": "<p><strong>Given:</strong> $g(x)=x^3-3x^2+4x-2$</p><p><strong>Formula Used:</strong> A function is one‑to‑one if its derivative does not change sign.</p><p><strong>Step‑by‑Step Calculation:</strong></p><ol><li>$g'(x)=3x^2-6x+4=3(x^2-2x)+4$.</li><li>Compute discriminant: $Delta=(-2)^2-4(1)(\tfrac{4}{3})=4-\tfrac{16}{3}=-\tfrac{4}{3}<0$.</li><li>Since $Delta<0$, $g'(x)>0$ for all $x$ (quadratic always positive).</li><li>Thus $g(x)$ is strictly increasing on $mathbb{R}$.</li></ol><p><strong>Final Answer:</strong> $g(x)$ is one‑to‑one on $mathbb{R}$.</p>"
+      },
+      {
+        "level": "NCERT Level",
+        "question": "Evaluate the composition $(fcirc g)(2)$ where $f(x)=x^2+1$ and $g(x)=3x-4$.",
+        "solution_html": "<p><strong>Given:</strong> $f(x)=x^2+1,; g(x)=3x-4$</p><p><strong>Formula Used:</strong> $(fcirc g)(x)=f(g(x))$.</p><p><strong>Step‑by‑Step Calculation:</strong></p><ol><li>Compute $g(2)=3(2)-4=6-4=2$.</li><li>Compute $f(g(2))=f(2)=2^2+1=5$.</li></ol><p><strong>Final Answer:</strong> $(fcirc g)(2)=5$.</p>"
+      },
+      {
+        "level": "Board Standard",
+        "question": "Find the equation of the line passing through the points $(2,5)$ and $(5,11)$ in slope‑intercept form.",
+        "solution_html": "<p><strong>Given:</strong> Points $(2,5)$ and $(5,11)$</p><p><strong>Formula Used:</strong> Slope $m=dfrac{y_2-y_1}{x_2-x_1}$, equation $y-y_1=m(x-x_1)$.</p><p><strong>Step‑by‑Step Calculation:</strong></p><ol><li>$m=dfrac{11-5}{5-2}=dfrac{6}{3}=2$.</li><li>Using point $(2,5)$: $y-5=2(x-2)$.</li><li>$y-5=2x-4;Rightarrow;y=2x+1$.</li></ol><p><strong>Final Answer:</strong> $y=2x+1$.</p>"
+      },
+      {
+        "level": "NCERT Level",
+        "question": "Solve for $x$ in $2^x=8$.",
+        "solution_html": "<p><strong>Given:</strong> $2^x=8$</p><p><strong>Formula Used:</strong> $a^{log_a b}=b$, or take $log$ on both sides.</p><p><strong>Step‑by‑Step Calculation:</strong></p><ol><li>$8=2^3$.</li><li>Thus $2^x=2^3$.</li><li>Equate exponents: $x=3$.</li></ol><p><strong>Final Answer:</strong> $x=3$.</p>"
+      },
+      {
+        "level": "Board Standard",
+        "question": "Find the range of $f(x)=ln(x-1)+3$ for $x>1$.",
+        "solution_html": "<p><strong>Given:</strong> $f(x)=ln(x-1)+3,;x>1$</p><p><strong>Formula Used:</strong> $ln t$ maps $(0,infty)$ onto $(-infty,infty)$.</p><p><strong>Step‑by‑Step Calculation:</strong></p><ol><li>Let $t=x-1>0$.</li><li>$f(x)=ln t+3$ where $tin(0,infty)$.</li><li>As $t\to0^+$, $ln t\to-infty$; as $t\toinfty$, $ln t\toinfty$.</li><li>Thus $f(x)$ takes all real values shifted by $3$.</li></ol><p><strong>Final Answer:</strong> Range $=(-infty,infty)$.</p>"
+      },
+      {
+        "level": "HOTS",
+        "question": "Determine whether the function $h(x)=dfrac{1}{x-2}$ is onto $mathbb{R}setminus{0}$.",
+        "solution_html": "<p><strong>Given:</strong> $h(x)=dfrac{1}{x-2}$</p><p><strong>Formula Used:</strong> A function is onto if for every $y$ in codomain there exists $x$ such that $h(x)=y$.</p><p><strong>Step‑by‑Step Calculation:</strong></p><ol><li>Let $y\neq0$. Solve $y=dfrac{1}{x-2}$.</li><li>$x-2=dfrac{1}{y};Rightarrow;x=2+dfrac{1}{y}$.</li><li>Since $y\neq0$, $x$ is defined and $x\neq2$.</li><li>Thus for every $y\neq0$, there exists $x$ in domain.</li></ol><p><strong>Final Answer:</strong> $h(x)$ is onto $mathbb{R}setminus{0}$.</p>"
+      },
+      {
+        "level": "NCERT Level",
+        "question": "Find the inverse of $y=\tan^{-1}(x)$.",
+        "solution_html": "<p><strong>Given:</strong> $y=\tan^{-1}(x)$</p><p><strong>Formula Used:</strong> Inverse of $\tan^{-1}$ is $\tan$.</p><p><strong>Step‑by‑Step Calculation:</strong></p><ol><li>Swap $x$ and $y$: $x=\tan^{-1}(y)$.</li><li>Apply $\tan$ to both sides: $\tan x=y$.</li></ol><p><strong>Final Answer:</strong> $f^{-1}(x)=\tan x$ (domain $xin(-\tfrac{pi}{2},\tfrac{pi}{2})$).</p>"
+      },
+      {
+        "level": "Board Standard",
+        "question": "Find the domain of $f(x)=dfrac{x^2-4}{x-2}$.",
+        "solution_html": "<p><strong>Given:</strong> $f(x)=dfrac{x^2-4}{x-2}$</p><p><strong>Formula Used:</strong> Domain excludes values that make denominator zero.</p><p><strong>Step‑by‑Step Calculation:</strong></p><ol><li>$x-2=0;Rightarrow;x=2$.</li><li>Thus $x=2$ is excluded.</li><li>Simplify: $x^2-4=(x-2)(x+2)$, so $f(x)=x+2$ for $x\neq2$.</li></ol><p><strong>Final Answer:</strong> Domain $=mathbb{R}setminus{2}$.</p>"
+      }
+    ],
+    "pyq": [
+      {
+        "marks": "2 Marks",
+        "tag": "Frequently Repeated Board Concept",
+        "question": "Find the domain of the function $f(x)=\\sqrt{2x-5}$ and state its range.",
+        "answer_html": "<p><strong>Solution:</strong></p><p>For the square root to be defined, $2x-5\\ge 0\\Rightarrow x\\ge \\frac{5}{2}$. Hence <em>Domain</em> $=\\left[\\frac{5}{2},\\infty\\right)$.</p><p>Since $f(x)=\\sqrt{2x-5}$ is non‑negative and increases without bound as $x\\to\\infty$, the <em>Range</em> $= [0,\\infty)$.</p><p><strong>Marks:</strong> 1 mark for domain, 1 mark for range.</p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Frequently Repeated Board Concept",
+        "question": "State whether the relation $R=\\{(x,y)\\mid y=x^2+1\\}$ is a function. Justify your answer.",
+        "answer_html": "<p><strong>Solution:</strong></p><p>For each real $x$ there is exactly one value of $y$ given by $y=x^2+1$. Hence each element of the domain is associated with a unique element of the codomain. Therefore $R$ is a function.</p><p><strong>Marks:</strong> 1 mark for stating it is a function, 1 mark for the reason that each $x$ gives a unique $y$.</p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Frequently Repeated Board Concept",
+        "question": "If $f:\\mathbb{R}\\to\\mathbb{R}$ is defined by $f(x)=3x-4$, find $f^{-1}(x)$.",
+        "answer_html": "<p><strong>Solution:</strong></p><p>Let $y=f(x)=3x-4$. Solving for $x$, $x=\\frac{y+4}{3}$. Hence $f^{-1}(x)=\\frac{x+4}{3}$.</p><p><strong>Marks:</strong> 1 mark for setting $y=3x-4$, 1 mark for the final inverse expression.</p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Frequently Repeated Board Concept",
+        "question": "Determine whether the function $g(x)=\\frac{1}{x-2}$ is even, odd or neither.",
+        "answer_html": "<p><strong>Solution:</strong></p><p>Compute $g(-x)=\\frac{1}{-x-2}= -\\frac{1}{x+2}\\neq g(x)$ and $g(-x)\\neq -g(x)$. Hence $g$ is neither even nor odd.</p><p><strong>Marks:</strong> 1 mark for evaluating $g(-x)$, 1 mark for concluding neither.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Frequently Repeated Board Concept",
+        "question": "Find the composition $(f\\circ g)(x)$ when $f(x)=2x+1$ and $g(x)=\\sqrt{x-3}$, stating its domain.",
+        "answer_html": "<p><strong>Solution:</strong></p><p>$(f\\circ g)(x)=f(g(x))=2\\sqrt{x-3}+1$.</p><p>For $g(x)$ to be real, $x-3\\ge 0\\Rightarrow x\\ge 3$. Thus the domain of $(f\\circ g)$ is $[3,\\infty)$.</p><p><strong>Marks:</strong> 1 mark for writing the composition, 1 mark for simplifying, 1 mark for domain.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Frequently Repeated Board Concept",
+        "question": "If $f(x)=\\frac{x+2}{x-1}$, find $f\\bigl(f(3)\\bigr)$.",
+        "answer_html": "<p><strong>Solution:</strong></p><p>First $f(3)=\\frac{3+2}{3-1}=\\frac{5}{2}$. Then $f\\bigl(f(3)\\bigr)=f\\left(\\frac{5}{2}\\right)=\\frac{\\frac{5}{2}+2}{\\frac{5}{2}-1}=\\frac{\\frac{9}{2}}{\\frac{3}{2}}=3$.</p><p><strong>Marks:</strong> 1 mark for $f(3)$, 1 mark for substituting, 1 mark for final value.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Frequently Repeated Board Concept",
+        "question": "Show that the function $h(x)=\\frac{1}{1-e^{-x}}$ is one‑to‑one on its domain and find its inverse function.",
+        "answer_html": "<p><strong>Solution:</strong></p><p>Domain: $x\\neq 0$ (since $e^{-x}=1$ gives denominator zero).<br>Monotonicity: $h'(x)=\\frac{e^{-x}}{(1-e^{-x})^2}>0$ for all $x\\neq 0$, so $h$ is strictly increasing and hence one‑to‑one.<br>Let $y=\\frac{1}{1-e^{-x}}\\Rightarrow 1-e^{-x}=\\frac{1}{y}\\Rightarrow e^{-x}=1-\\frac{1}{y}=\\frac{y-1}{y}$.<br>Taking natural log: $-x=\\ln\\left(\\frac{y-1}{y}\\right)\\Rightarrow x=-\\ln\\left(\\frac{y-1}{y}\\right)=\\ln\\left(\\frac{y}{y-1}\\right)$.</p><p>Thus $h^{-1}(x)=\\ln\\left(\\frac{x}{x-1}\\right)$.</p><p><strong>Marks:</strong> 1 for monotonicity argument, 1 for solving for $x$, 1 for final inverse expression.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Frequently Repeated Board Concept",
+        "question": "Let $f:\\mathbb{R}\\to\\mathbb{R}$ be defined by $f(x)=\\frac{x^2-4}{x-2}$ for $x\\neq 2$ and $f(2)=k$. Find the value of $k$ that makes $f$ continuous at $x=2$, and then determine whether $f$ is differentiable at $x=2$ for that $k$. Provide full justification.",
+        "answer_html": "<p><strong>Solution:</strong></p><p>For $x\\neq 2$, $f(x)=\\frac{x^2-4}{x-2}=\\frac{(x-2)(x+2)}{x-2}=x+2$.</p><p>\\textbf{Continuity:}<br>\\[\\lim_{x\\to2}f(x)=\\lim_{x\\to2}(x+2)=4.\\] To make $f$ continuous at $x=2$ we need $f(2)=k=4$.</p><p>\\textbf{Differentiability:}<br>For $x\\neq2$, $f'(x)=\\frac{d}{dx}(x+2)=1$. The left‑hand and right‑hand derivatives at $x=2$ are both $1$ because the simplified expression $x+2$ is linear everywhere except at the point of removal. Since $\\lim_{x\\to2}f'(x)=1$ and $f$ is continuous at $x=2$, $f$ is differentiable at $x=2$ with $f'(2)=1$.</p><p><strong>Marks:</strong> 2 for finding $\\lim_{x\\to2}f(x)$ and equating to $k$, 1 for stating $k=4$, 1 for computing $f'(x)=1$, 1 for concluding differentiability and giving $f'(2)=1$.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Frequently Repeated Board Concept",
+        "question": "Consider the function $p:\\mathbb{R}\\to\\mathbb{R}$ defined by $p(x)=\\begin{cases} x^2,&x\\le 1\\\\ 2x-1,&x>1\\end{cases}$.\\n(a) Prove that $p$ is continuous on $\\mathbb{R}$.\\n(b) Determine whether $p$ is differentiable at $x=1$. Justify each step.",
+        "answer_html": "<p><strong>Solution:</strong></p><p>\\textbf{(a) Continuity}<br>For $x<1$, $p(x)=x^2$ which is continuous. For $x>1$, $p(x)=2x-1$ which is also continuous. At $x=1$ we check the limit:</p><p>\\[\\lim_{x\\to1^-}p(x)=\\lim_{x\\to1^-}x^2=1,\\qquad \\lim_{x\\to1^+}p(x)=\\lim_{x\\to1^+}(2x-1)=1.\\] Since $p(1)=1^2=1$, the left‑hand limit, right‑hand limit and function value are equal; hence $p$ is continuous at $x=1$. Therefore $p$ is continuous on $\\mathbb{R}$.</p><p>\\textbf{(b) Differentiability at $x=1$}<br>Compute one‑sided derivatives:</p><p>Left derivative: $p'_-(1)=\\lim_{h\\to0^-}\\frac{(1+h)^2-1}{h}=\\lim_{h\\to0^-}\\frac{2h+h^2}{h}=\\lim_{h\\to0^-}(2+h)=2$.</p><p>Right derivative: $p'_+(1)=\\lim_{h\\to0^+}\\frac{[2(1+h)-1]-1}{h}=\\lim_{h\\to0^+}\\frac{2+2h-2}{h}=\\lim_{h\\to0^+}\\frac{2h}{h}=2$.</p><p>Since $p'_-(1)=p'_+(1)=2$, the derivative exists and $p$ is differentiable at $x=1$ with $p'(1)=2$.</p><p><strong>Marks:</strong> 2 for continuity argument (limits and value), 1 for stating continuity, 2 for computing left derivative, 2 for right derivative and concluding differentiability.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Frequently Repeated Board Concept",
+        "question": "Let $f(x)=\\frac{\\ln(x)}{x}$ for $x>0$.\\n(a) Find the critical points of $f$ in the interval $(0,\\infty)$.\\n(b) Determine the nature of each critical point (maximum/minimum) using the second derivative test. Provide full working and reasoning.",
+        "answer_html": "<p><strong>Solution:</strong></p><p>\\textbf{(a) Critical points}<br>First derivative:</p><p>\\[f'(x)=\\frac{\\frac{1}{x}\\cdot x-\\ln(x)\\cdot 1}{x^2}=\\frac{1-\\ln(x)}{x^2}.\\]</p><p>Set $f'(x)=0\\Rightarrow 1-\\ln(x)=0\\Rightarrow \\ln(x)=1\\Rightarrow x=e$. Since $x>0$, the only critical point is $x=e$.</p><p>\\textbf{(b) Second derivative test}<br>Second derivative:</p><p>\\[f''(x)=\\frac{-\\frac{1}{x}\\cdot x^2-(1-\\ln(x))\\cdot 2x}{x^4}=\\frac{-x-(2x)(1-\\ln(x))}{x^4}=\\frac{-x-2x+2x\\ln(x)}{x^4}=\\frac{2\\ln(x)-3}{x^3}.\\]</p><p>Evaluate at $x=e$: $f''(e)=\\frac{2\\cdot1-3}{e^3}=\\frac{-1}{e^3}<0$. Hence the function is concave down at $x=e$ and the critical point is a <em>local maximum</em>.</p><p><strong>Marks:</strong> 2 for computing $f'(x)$ and solving $f'(x)=0$, 1 for stating the critical point, 1 for deriving $f''(x)$, 1 for evaluating $f''(e)$ and concluding maximum.</p>"
+      }
+    ],
+    "mcq": [
+      {
+        "q": "Which of the following is a correct definition of a relation between sets $A$ and $B$?",
+        "options": [
+          "A set of all ordered pairs $(a,b)$ where $a\\in A$ and $b\\in B$",
+          "A set of all unordered pairs ${a,b}$ where $a\\in A$ and $b\\in B$",
+          "A set of all functions from $A$ to $B$",
+          "A set of all subsets of $A\\cup B$"
+        ],
+        "answer": 0,
+        "explain": "By definition, a relation between $A$ and $B$ is a subset of the Cartesian product $A\\times B$, i.e., a set of ordered pairs $(a,b)$ with $a\\in A$ and $b\\in B$."
+      },
+      {
+        "q": "A relation $R$ from set $A$ to set $B$ is called a function if and only if",
+        "options": [
+          "Each element of $A$ is related to at least one element of $B$",
+          "Each element of $B$ is related to at most one element of $A$",
+          "Each element of $A$ is related to at most one element of $B$",
+          "Each element of $B$ is related to at least one element of $A$"
+        ],
+        "answer": 2,
+        "explain": "A function is a special type of relation where each element of the domain is related to at most one element of the codomain."
+      },
+      {
+        "q": "Let $f:\\mathbb{R}\\to\\mathbb{R}$ be defined by $f(x)=x^2$. The domain of $f$ is",
+        "options": [
+          "$\\mathbb{R}$",
+          "$\\mathbb{R}^+$",
+          "$\\\\mathbb{R}\\\\setminus\\\\{0\\\\}$",
+          "$\\\\mathbb{R}\\\\setminus\\\\{1\\\\}$"
+        ],
+        "answer": 0,
+        "explain": "The function $f(x)=x^2$ is defined for every real number, hence its domain is $\\mathbb{R}$."
+      },
+      {
+        "q": "Which of the following functions is not one-to-one?",
+        "options": [
+          "$f(x)=x^2$, $x\\in\\mathbb{R}$",
+          "$f(x)=2x+3$, $x\\in\\mathbb{R}$",
+          "$f(x)=x^3$, $x\\in\\mathbb{R}$",
+          "$f(x)=x+1$, $x\\in\\mathbb{R}$"
+        ],
+        "answer": 0,
+        "explain": "$f(x)=x^2$ is not one-to-one because $f(1)=f(-1)=1$. The other functions are linear or strictly monotonic, hence one-to-one."
+      },
+      {
+        "q": "Let $R$ be a relation on set $S={1,2,3}$. If $R = \\{(1,1),(2,2),(3,3),(1,2),(2,3)\\}$ then $R$ is",
+        "options": [
+          "reflexive",
+          "symmetric",
+          "transitive",
+          "antisymmetric"
+        ],
+        "answer": 3,
+        "explain": "$R$ contains all $(a,a)$ so it is reflexive. It is not symmetric because $(1,2)\\in R$ but $(2,1)\\notin R$. It fails transitivity as $(1,2)$ and $(2,3)$ are in $R$ but $(1,3)$ is missing. Since no pair $(a,b)$ with $a\\neq b$ has its converse, $R$ is antisymmetric."
+      },
+      {
+        "q": "The inverse of a function $f:A\\to B$ is defined as",
+        "options": [
+          "$f^{-1}\\subseteq B\\times A$ such that $(b,a)\\in f^{-1}$ iff $(a,b)\\in f$",
+          "a function $g:B\\to A$ such that $g(f(a))=a$ for all $a\\in A$",
+          "a relation $g:B\\to A$ such that $g(f(a))=a$ for all $a\\in A$",
+          "a function $g:B\\to A$ such that $f(g(b))=b$ for all $b\\in B$"
+        ],
+        "answer": 0,
+        "explain": "The inverse relation $f^{-1}$ is defined by swapping the components of each ordered pair of $f$."
+      },
+      {
+        "q": "If $R$ and $S$ are relations on set $A$, the composition $R\\circ S$ is defined as",
+        "options": [
+          "$\\{(x,z)\\mid \\exists y\\in A,\\ (x,y)\\in R\\ \\text{and}\\ (y,z)\\in S\\}$",
+          "$\\{(x,z)\\mid \\exists y\\in A,\\ (x,y)\\in S\\ \\text{and}\\ (y,z)\\in R\\}$",
+          "$\\{(x,z)\\mid (x,z)\\in R\\ \\text{and}\\ (x,z)\\in S\\}$",
+          "$\\{(x,z)\\mid (x,z)\\in R\\ \\text{or}\\ (x,z)\\in S\\}$"
+        ],
+        "answer": 1,
+        "explain": "By definition, $(x,z)\\in R\\circ S$ iff there exists $y$ such that $(x,y)\\in S$ and $(y,z)\\in R$."
+      },
+      {
+        "q": "Which of the following is an equivalence relation on $\\mathbb{Z}$?",
+        "options": [
+          "$aRb$ iff $a-b$ is even",
+          "$aRb$ iff $a+b$ is odd",
+          "$aRb$ iff $a<b$",
+          "$aRb$ iff $a=b$"
+        ],
+        "answer": 0,
+        "explain": "The relation $aRb$ iff $a-b$ is even is reflexive ($a-a=0$ even), symmetric (if $a-b$ even then $b-a$ even), and transitive (sum of two even differences is even)."
+      },
+      {
+        "q": "Let $R$ be a partial order on set $A$. Then $R$ is",
+        "options": [
+          "reflexive, symmetric, transitive",
+          "reflexive, antisymmetric, transitive",
+          "irreflexive, antisymmetric, transitive",
+          "reflexive, symmetric, antisymmetric"
+        ],
+        "answer": 1,
+        "explain": "A partial order must be reflexive, antisymmetric, and transitive."
+      },
+      {
+        "q": "If $f:\\mathbb{R}\\to\\mathbb{R}$ defined by $f(x)=x+1$ and $g:\\mathbb{R}\\to\\mathbb{R}$ defined by $g(x)=2x$, then $(g\\circ f)(x)$ equals",
+        "options": [
+          "$2x+1$",
+          "$2x+2$",
+          "$2x+3$",
+          "$2x+4$"
+        ],
+        "answer": 1,
+        "explain": "Compute $g(f(x)) = g(x+1) = 2(x+1) = 2x+2$."
+      }
+    ],
+    "visual_maps": {
+      "mindmap": "mindmap\n  root((Relations and Functions))\n    Relations\n      Domain\n      Range\n      Types\n        Ordered Pairs\n    Functions\n      Domain\n      Range\n      Types\n        One-one\n        Onto\n        Bijective\n      Composite\n      Inverse",
+      "flowchart": "flowchart TD\n  R[Relations] --> F[Functions]\n  F --> C[Composite]\n  C --> I[Inverse]\n  F --> O[One-one]\n  F --> S[Onto]\n  O --> B[Bijective]",
+      "revision_points": [
+        "Domain and range of a relation/function",
+        "One‑one (injective), onto (surjective) and bijective definitions",
+        "Composite function: (f∘g)(x)=f(g(x))",
+        "Inverse function exists only for bijective functions",
+        "Representations: mapping diagram, table, graph"
+      ]
+    },
+    "status": "done",
+    "updated": "2026-11-13 11:10:10"
+  }
+}
