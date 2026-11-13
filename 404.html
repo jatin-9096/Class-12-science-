@@ -413,51 +413,123 @@
   </main>
 
   <!-- ============ FOOTER ============ -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href="/">
-            <span class="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 64 64" fill="none">
-                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
-              </svg>
-            </span>
-            <span class="brand-name">Shorveer<em>Notes</em></span>
+  <footer class="sn-clean-footer">
+  <div class="container sn-f-wrap">
+    <div class="sn-f-grid">
+      
+      <!-- Brand & Founder -->
+      <div class="sn-f-col brand-col">
+        <a class="brand" href="/" style="margin-bottom: 12px; display: inline-flex;">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none">
+              <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+            </svg>
+          </span>
+          <span class="brand-name">Shorveer<em>Notes</em></span>
+        </a>
+        <p class="sn-f-desc">A student-focused Class 12 Science learning platform with structured Physics, Chemistry, Mathematics and English resources.</p>
+        <div class="sn-f-author">
+          Created with pride by <strong>Jatin Sandilya</strong>
+        </div>
+        <div style="margin-top: 14px;">
+          <a class="btn btn-dark" style="min-height: 38px; padding: 0 14px; font-size: 13px;" href="https://www.youtube.com/@JSEDIZ" target="_blank" rel="noopener noreferrer">
+            JS EDIZ on YouTube →
           </a>
-          <p>Class 12 Science simplified, visual, and high-yielding for CBSE Board Examinations. Founded by <strong>Jatin Sandilya</strong>.</p>
-        </div>
-
-        <div class="footer-column">
-          <h3>Study Portal</h3>
-          <a href="/physics/index.html">Physics Hub</a>
-          <a href="/chemistry/index.html">Chemistry Notes</a>
-          <a href="/mathematics/index.html">Mathematics Hub</a>
-          <a href="/english/index.html">English Core</a>
-        </div>
-
-        <div class="footer-column">
-          <h3>Platform & Legal</h3>
-          <a href="/exam-info.html">Exam Info</a>
-          <a href="/about-notes.html">About the Notes</a>
-          <a href="/about.html">About Shorveer</a>
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/cookies.html">Cookies</a>
-        </div>
-
-        <div class="footer-column">
-          <h3>Connect</h3>
-          <a href="mailto:support.shorveernotes@gmail.com">Contact Us</a>
-          <a href="https://www.youtube.com/@JSEDIZ" target="_blank" rel="noopener noreferrer">YouTube: @JSEDIZ</a>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <span>© <span id="year"></span> Shorveer Notes · Founded by <strong>Jatin Sandilya</strong></span>
-        <span>Crafted with Warrior Discipline in India</span>
+      <!-- Links: Subjects -->
+      <div class="sn-f-col">
+        <h3 class="sn-f-title">Subjects</h3>
+        <ul class="sn-f-links">
+          <li><a href="physics/index.html">Physics Hub</a></li>
+          <li><a href="chemistry/index.html">Chemistry Hub</a></li>
+          <li><a href="mathematics/index.html">Mathematics Hub</a></li>
+          <li><a href="english/index.html">English Hub</a></li>
+        </ul>
       </div>
+
+      <!-- Links: Site & Policies -->
+      <div class="sn-f-col">
+        <h3 class="sn-f-title">Resources</h3>
+        <ul class="sn-f-links">
+          <li><a href="exam-info.html">Exam Info</a></li>
+          <li><a href="about-notes.html">About Notes</a></li>
+          <li><a href="about.html">About Shorveer</a></li>
+          <li><a href="cookies.html">Cookies & Storage</a></li>
+        </ul>
+      </div>
+
     </div>
-  </footer>
+
+    <!-- Bottom Bar -->
+    <div class="sn-f-bottom">
+      <p>&copy; <span id="year">2026</span> Shorveer Notes · All rights reserved.</p>
+      <p>Built with pride in India 🇮🇳</p>
+    </div>
+  </div>
+
+  <style>
+    .sn-clean-footer {
+      background: var(--paper-2);
+      border-top: 1px solid var(--line);
+      padding: 60px 0 30px;
+      margin-top: 80px;
+      color: var(--ink);
+    }
+    .sn-f-wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .sn-f-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .sn-f-desc {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 12px 0;
+      max-width: 420px;
+    }
+    .sn-f-author {
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .sn-f-author strong { color: var(--ink); }
+    .sn-f-title {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--rust);
+      margin-bottom: 16px;
+    }
+    .sn-f-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .sn-f-links a {
+      color: var(--ink-2);
+      font-size: 14.5px;
+      transition: color .2s ease;
+      text-decoration: none;
+    }
+    .sn-f-links a:hover { color: var(--rust); text-decoration: underline; }
+    .sn-f-bottom {
+      border-top: 1px solid var(--line-soft);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    @media (max-width: 768px) {
+      .sn-f-grid { grid-template-columns: 1fr; gap: 30px; }
+      .sn-f-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</footer>
+
 
   <!-- ============ JAVASCRIPT ENGINE ============ -->
   <script>
