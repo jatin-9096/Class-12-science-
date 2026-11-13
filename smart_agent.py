@@ -288,7 +288,6 @@ def call_json(system, prompt):
 def chapter_system(subject):
     return SYSTEM.replace("{subject}", SUBJECT_LABEL[subject])
 
-
 def subject_of_dir(d):
     d = d.lower()
     for s in SUBJECT_ORDER:
@@ -468,5 +467,271 @@ def list_topics(subject, chapter):
 
 def topic_card(subject, chapter, topic):
     if subject == "english":
-        body_rules = ("Cover: summary of this part, key characters or ideas, literary devices, "
-                 
+        body_rules = (
+            "Cover: summary of this part, key characters or ideas, literary devices, "
+            "theme and message, and what examiners ask about it."
+        )
+        practice_rules = (
+            "Two practice items: one long answer question with a model answer outline, "
+            "and one comparison or extract-based question with a model answer."
+        )
+    else:
+        body_rules = (
+            "Cover: exhaustive theory, definitions, laws, conditions and exceptions, "
+            "with derivation or proof step by step."
+        )
+        practice_rules = (
+            "Two solved Practice Problems with full steps. "
+            "Label each as 'Practice Problem' (never PYQ)."
+        )
+    prompt = (
+        f"{chapter_brief(subject, chapter)}\n"
+        f'Write one topic card for "{topic}". {body_rules}\n'
+        f"Output exactly this HTML, no outer wrapper:\n"
+        f'<section class="topic-card" id="t-{slugify(topic)}">\n'
+        f"<h2>{htmllib.escape(topic)}</h2>\n"
+        f"<p>several paragraphs</p>\n"
+        f"<h3>Explanation</h3>\n"
+        f'<div class="formula-box"><b>Key points</b><ul><li>...</li></ul></div>\n'
+        f'<div class="practice-box"><b>Practice 1</b><p>question and answer</p></div>\n'
+        f'<div class="practice-box"><b>Practice 2</b><p>question and answer</p></div>\n'
+        f"</section>\n"
+        f"{practice_rules} At least 500 words inside the card."
+    )
+    return call_groq(chapter_system(subject), prompt, min_len=400)
+
+
+def theory_html(subject, chapter, topics, rec):
+    done = rec.setdefault("cards", {})
+    jump = "".join(f'<a href="#t-{slugify(t)}">{htmllib.escape(t)}</a>' for t in topics)
+    head = f'<nav class="quick-jump" aria-label="Quick jump"><span class="qj-title">Quick jump</span>{jump}</nav>'
+    cards = []
+    for t in topics:
+        if t not in done:
+            return None
+        cards.append(done[t])
+    return f'<div class="chap-wrap">{head}{"".join(cards)}</div>'
+
+
+def flow_html(subject, chapter, topics):
+    nodes = []
+    for t in topics:
+        prompt = (f"{chapter_brief(subject, chapter)}\n"
+                  f'Return JSON: {{"title": "{t}", "points": ["...", "..."]}} with 3 to 5 short points. '
+                  f"Formulas in $...$.")
+        data = call_json(chapter_system(subject), prompt)
+        pts = "".join(f"<li>{p}</li>" for p in data.get("points", []))
+        nodes.append((t, pts))
+    parts = [f'<div class="flow-node root">{htmllib.escape(chapter)}</div>']
+    for title, pts in nodes:
+        parts.append('<div class="flow-arrow"></div>')
+        parts.append(f'<div class="flow-node"><h3>{htmllib.escape(title)}</h3><ul>{pts}</ul></div>')
+    return f'<div class="chap-wrap"><div class="flow-wrap">{"".join(parts)}</div></div>'
+
+
+def mindmap_html(subject, chapter, topics):
+    prompt = (f"{chapter_brief(subject, chapter)}\n"
+              f"Mind map for topics {json.dumps(topics, ensure_ascii=False)}.\n"
+              f'Return JSON: {{"branches": [{{"title": "...", "points": ["...", "..."]}}]}}. '
+              f"One branch per topic, 3 to 5 points each. Formulas in $...$.")
+    data = call_json(chapter_system(subject), prompt)
+    branches = data.get("branches", []) if isinstance(data, dict) else []
+    if not branches:
+        raise RuntimeError("mindmap empty")
+    cards = "".join(
+        f'<div class="mm-card"><h3>{b.get("title", "")}</h3><ul>'
+        + "".join(f"<li>{p}</li>" for p in b.get("points", [])) + "</ul></div>"
+        for b in branches)
+    return f'<div class="mm-wrap"><div class="mm-root">{htmllib.escape(chapter)}</div>{cards}</div>'
+
+
+def mcq_items(subject, chapter):
+    prompt = (f"{chapter_brief(subject, chapter)}\n"
+              f"{practice_spec(subject)}\n"
+              f"Create {MCQ_COUNT} multiple-choice questions for this chapter. Return a JSON array. Each item:\n"
+              f'{{"q": "question", "options": ["A","B","C","D"], "answer": 0, "explain": "reason"}}\n'
+              f"answer is index 0 to 3.")
+    items = call_json(chapter_system(subject), prompt)
+    good = [i for i in items
+            if isinstance(i, dict) and i.get("q") and isinstance(i.get("options"), list)
+            and len(i["options"]) == 4 and isinstance(i.get("answer"), int)
+            and 0 <= i["answer"] <= 3 and i.get("explain")]
+    if len(good) < 10:
+        raise RuntimeError(f"only {len(good)} valid MCQs")
+    return good
+
+
+def practice_html(subject, chapter):
+    prompt = (f"{chapter_brief(subject, chapter)}\n"
+              f"{practice_spec(subject)}\n"
+              f'Write a practice section as HTML only, no outer wrapper, using <section class="topic-card"> '
+              f"blocks, one per question type, each with a model answer outline.")
+    return call_groq(chapter_system(subject), prompt, min_len=400)
+
+def mcq_page_html(items):
+    data = json.dumps(items, ensure_ascii=False).replace("</", "<\\/")
+    return f"""
+<section class="section container reveal">
+  <div class="mcq-wrap">
+    <div class="mcq-top">
+      <span id="mcq-timer" class="mcq-timer">15:00</span>
+      <button id="mcq-start" class="btn btn-dark" type="button">Start test</button>
+    </div>
+    <div id="mcq-body"></div>
+  </div>
+  <div id="mcq-modal" class="mcq-modal" role="dialog" aria-modal="true">
+    <div class="mcq-box"><div id="mcq-modal-body"></div></div>
+  </div>
+  <script type="application/json" id="mcq-data">{data}</script>
+  <script>{MCQ_JS}</script>
+</section>"""
+
+
+def theory_check(path, subject):
+    soup = read_soup(path)
+    text = soup.get_text(" ", strip=True)
+    low = text.lower()
+    if len(text.split()) < MIN_THEORY_WORDS:
+        return False, "too short"
+    for w in FORBIDDEN.get(subject, []):
+        if re.search(r"\b" + re.escape(w) + r"\b", low):
+            return False, f"off-topic: {w}"
+    if re.search(r"\\\(|\\\[", str(soup)):
+        return False, "bad delimiters"
+    if OLD_SURNAME in str(soup):
+        return False, "old surname"
+    return True, "ok"
+
+
+def step_for(t, rec):
+    s, c, theory = t["subject"], t["chapter"], t["path"]
+    P = part_paths(theory)
+
+    if "topics" not in rec:
+        rec["topics"] = list_topics(s, c)
+        return "topics listed"
+
+    cards = rec.setdefault("cards", {})
+    for topic in rec["topics"]:
+        if topic not in cards:
+            cards[topic] = topic_card(s, c, topic)
+            return f"card: {topic}"
+
+    if not os.path.exists(theory):
+        write_page(theory, f"{c} · Class 12 {SUBJECT_LABEL[s]} | {BRAND}",
+                   "Part 1: Theory and Derivations", s, c,
+                   theory_html(s, c, rec["topics"], rec),
+                   [(os.path.basename(P["mind"]), "View Mind Map", "btn-gold"),
+                    (os.path.basename(P["mcq"]), "Practice Test", "btn-dark"),
+                    (os.path.basename(P["flow"]), "Flow Chart", "btn-light")])
+        return "theory written"
+
+    if not os.path.exists(P["mind"]):
+        write_page(P["mind"], f"Mind Map · {c} | {BRAND}", "Visual mind map", s, c,
+                   mindmap_html(s, c, rec["topics"]),
+                   [(os.path.basename(theory), "Back to theory", "btn-dark"),
+                    (os.path.basename(P["mcq"]), "Practice Test", "btn-gold")])
+        return "mind map written"
+
+    if not os.path.exists(P["flow"]):
+        write_page(P["flow"], f"Flow Chart · {c} | {BRAND}", "Topic flow chart", s, c,
+                   flow_html(s, c, rec["topics"]),
+                   [(os.path.basename(theory), "Back to theory", "btn-dark")])
+        return "flow written"
+
+    if not os.path.exists(P["mcq"]):
+        items = mcq_items(s, c)
+        extra = practice_html(s, c) if s == "english" else ""
+        write_page(P["mcq"], f"Practice · {c} | {BRAND}", "Timed practice test", s, c,
+                   mcq_page_html(items) + (f'<div class="chap-wrap">{extra}</div>' if extra else ""),
+                   [(os.path.basename(theory), "Back to theory", "btn-dark")])
+        return "practice written"
+
+    return None
+
+
+def remove_chapter_files(P):
+    for p in P.values():
+        if os.path.exists(p):
+            os.remove(p)
+
+
+def main():
+    cleanup_loop_artifacts()
+    state = load_state()
+    targets = discover_targets()
+    print(f"Chapters from indexes: {len(targets)}")
+
+    for t in targets:
+        rec = state.setdefault(chapter_key(t), {})
+        if is_locked(t["path"]) or not rec.get("done"):
+            continue
+        ok, why = theory_check(t["path"], t["subject"])
+        if not ok:
+            print(f"[audit] {t['chapter']}: {why} -> auto reset")
+            remove_chapter_files(part_paths(t["path"]))
+            rec.clear()
+            save_state(state)
+            set_output("has_more", "true")
+            return
+
+    for t in targets:
+        key = chapter_key(t)
+        rec = state.setdefault(key, {})
+        if rec.get("done") or rec.get("attempts", 0) >= MAX_ATTEMPTS:
+            continue
+        if is_locked(t["path"]):
+            rec["done"] = True
+            rec["note"] = "hard-locked file"
+            save_state(state)
+            continue
+
+        P = part_paths(t["path"])
+        if all(os.path.exists(p) for p in P.values()):
+            ok, why = theory_check(t["path"], t["subject"])
+            rec["done"] = ok
+            rec["last_error"] = None if ok else why
+            save_state(state)
+            if not ok:
+                remove_chapter_files(P)
+                rec.clear()
+                save_state(state)
+                set_output("has_more", "true")
+                return
+            continue
+
+        rec["attempts"] = rec.get("attempts", 0) + 1
+        print(f"[step] {t['subject']} | {t['chapter']} attempt {rec['attempts']}")
+        try:
+            msg = step_for(t, rec)
+            if msg is None:
+                ok, why = theory_check(t["path"], t["subject"])
+                rec["done"] = ok
+                rec["last_error"] = None if ok else why
+                print("OK" if ok else f"validation: {why}")
+            else:
+                rec["attempts"] = 0
+                print(msg)
+            save_state(state)
+            set_output("has_more", "true")
+            return
+        except DailyQuotaExhausted as e:
+            rec["attempts"] -= 1
+            save_state(state)
+            print(f"Groq daily quota. Agle run par resume. ({e})")
+            set_output("has_more", "false")
+            return
+        except Exception as e:
+            rec["last_error"] = str(e)[:300]
+            save_state(state)
+            print(f"FAILED ({rec['attempts']}/{MAX_ATTEMPTS}): {e}")
+            set_output("has_more", "true")
+            return
+
+    print("Saare chapters complete aur audit pass.")
+    save_state(state)
+    set_output("has_more", "false")
+
+
+if __name__ == "__main__":
+    main()
