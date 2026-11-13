@@ -2,7 +2,7 @@ name: 24x7 Autonomous Builder
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -16,7 +16,7 @@ concurrency:
 jobs:
   run-builder:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v4
@@ -46,12 +46,3 @@ jobs:
             git pull --rebase origin main
             git push origin main
           fi
-
-      - name: Chain next run (10 minute gap)
-        if: steps.builder.outputs.has_more == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          sleep 600
-          gh workflow run "24x7 Autonomous Builder" --ref main
