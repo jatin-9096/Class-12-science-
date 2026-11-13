@@ -2,7 +2,7 @@ name: 24x7 Autonomous Builder
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -16,21 +16,18 @@ concurrency:
 jobs:
   run-builder:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 20
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: pip install groq beautifulsoup4
+      - run: pip install groq beautifulsoup4
 
       - name: Run builder
         id: builder
@@ -50,11 +47,11 @@ jobs:
             git push origin main
           fi
 
-      - name: Chain next run
+      - name: Chain next run (10 minute gap)
         if: steps.builder.outputs.has_more == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
         run: |
-          sleep 60
+          sleep 600
           gh workflow run "24x7 Autonomous Builder" --ref main
