@@ -46,3 +46,12 @@ jobs:
             git pull --rebase origin main
             git push origin main
           fi
+
+      - name: Chain next run
+        if: steps.builder.outputs.has_more == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          sleep 60
+          gh workflow run "24x7 Autonomous Builder" --ref main
