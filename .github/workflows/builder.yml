@@ -2,8 +2,25 @@ name: 24x7 Autonomous Builder
 
 on:
   schedule:
-    - cron: '0 */2 * * *' # हर 2 घंटे में बैकअप चेक
+    - cron: '0 */2 * * *'
   workflow_dispatch:
+    inputs:
+      subject:
+        description: "Subject (mathematics, physics, chemistry, english - खाली छोड़ें तो सब चलेंगे)"
+        required: false
+        default: ""
+      chapter:
+        description: "Chapter number (जैसे 1 या 2 - खाली छोड़ें तो अगला पेंडिंग चलेगा)"
+        required: false
+        default: ""
+      limit:
+        description: "एक बार में कितने चैप्टर बनें"
+        required: false
+        default: "1"
+      force:
+        description: "पुराने पेज दोबारा बनाएं? (true या false)"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -34,7 +51,19 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: |
-          python builder.py --limit 1
+          CMD="python builder.py --limit ${{ github.event.inputs.limit || '1' }}"
+          if [ -n "${{ github.event.inputs.subject }}" ]; then
+            CMD="$CMD --subject ${{ github.event.inputs.subject }}"
+          fi
+          if [ -n "${{ github.event.inputs.chapter }}" ]; then
+            CMD="$CMD --chapter ${{ github.event.inputs.chapter }}"
+          fi
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            CMD="$CMD --force"
+          fi
+          echo "Running: $CMD"
+          $CMD
+
           PENDING=$(python -c "
           import builder
           targets = builder.analyze_website()
@@ -57,7 +86,7 @@ jobs:
           fi
 
       - name: Chain next run
-        if: steps.builder.outputs.has_more == 'true'
+        if: steps.builder.outputs.has_more == 'true' && github.event.inputs.force != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
