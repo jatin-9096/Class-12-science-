@@ -11,8 +11,8 @@ from groq import Groq
 ROOT = Path(__file__).resolve().parent
 STATE_FILE = ROOT / "builder_state.json"
 DOMAIN = "https://shorveernotes.website"
-MODELS = ["openai/gpt-oss-120b", "openai/gpt-oss-20b"]
-REQUEST_DELAY = 15  # 15 सेकंड का सुरक्षित गैप ताकि 8K TPM लिमिट न टूटे और 25 मिनट में जॉब टाइमआउट न हो
+MODELS = ["openai/gpt-oss-120b", "llama-3.3-70b-versatile", "openai/gpt-oss-20b"]
+REQUEST_DELAY = 25  # 8K TPM लिमिट के लिए सुरक्षित अंतराल
 
 SUBJECTS = {
     "mathematics": "Mathematics",
@@ -97,7 +97,6 @@ CSS = r"""<style>
 html { scroll-behavior: smooth; }
 .svb { max-width: 960px; margin: auto; padding: 24px 18px 56px; color: var(--svb-heading); }
 
-/* Hero & Heading Styling */
 .svb-hero {
   position: relative;
   padding: 32px 28px;
@@ -137,7 +136,6 @@ html { scroll-behavior: smooth; }
   letter-spacing: -0.02em;
 }
 
-/* Navigation Pills */
 .svb-nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 6px; }
 .svb-nav a, .svb-btn {
   display: inline-flex;
@@ -161,7 +159,6 @@ html { scroll-behavior: smooth; }
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* Modern Cards with Left Accent & Hover Lift */
 .svb-card {
   position: relative;
   margin: 22px 0;
@@ -211,12 +208,10 @@ html { scroll-behavior: smooth; }
   color: var(--svb-body);
 }
 
-/* Tables */
 .svb-card table { width: 100%; border-collapse: collapse; margin: 16px 0; border-radius: 10px; overflow: hidden; }
 .svb-card th, .svb-card td { border: 1px solid var(--svb-border); padding: 11px 14px; text-align: left; color: var(--svb-body); }
 .svb-card th { background: var(--svb-sub-bg); font-weight: 700; color: var(--svb-heading); }
 
-/* Solution & Note Callout Box */
 .svb-note {
   padding: 16px 18px;
   background: var(--svb-sub-bg);
@@ -240,7 +235,6 @@ html { scroll-behavior: smooth; }
   color: var(--svb-accent);
 }
 
-/* Quiz Styling */
 .svb-quiz-q {
   padding: 20px;
   margin: 16px 0;
@@ -271,32 +265,22 @@ html { scroll-behavior: smooth; }
   background: var(--svb-card-bg);
 }
 
-/* Scroll Reveal Animation */
 .svb-reveal {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.svb-reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .svb-reveal { opacity: 1; transform: none; transition: none; }
-}
+.svb-reveal.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .svb-reveal { opacity: 1; transform: none; transition: none; } }
 
-/* Diagrams & MathJax */
 .mermaid { display: flex; justify-content: center; overflow-x: auto; padding: 12px 0; }
 mjx-container { max-width: 100%; }
 mjx-container[display=true] { overflow-x: auto; max-width: 100%; padding: 6px 0; }
-@media (max-width: 640px) {
-  .svb-hero, .svb-card { padding: 20px 16px; }
-}
+@media (max-width: 640px) { .svb-hero, .svb-card { padding: 20px 16px; } }
 </style>"""
 
 ANIM_AND_THEME_JS = r"""
 (()=>{
-  // 1. Scroll Reveal Animation
   const cards = document.querySelectorAll('.svb-card, .svb-hero, .svb-quiz-q');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries, obs) => {
@@ -307,13 +291,8 @@ ANIM_AND_THEME_JS = r"""
         }
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-    cards.forEach(el => {
-      el.classList.add('svb-reveal');
-      io.observe(el);
-    });
+    cards.forEach(el => { el.classList.add('svb-reveal'); io.observe(el); });
   }
-
-  // 2. Theme Sync Fallback (Blueprint, Chalkboard, Cyberpunk, Dracula, Sunset, Emerald, Minimal, Notebook)
   try {
     const keys = ['sn-theme', 'theme', 'shorveer-theme', 'look', 'color-theme'];
     for (const k of keys) {
@@ -367,9 +346,8 @@ LATEX_COMMANDS = (
 
 
 def fix_json_latex(raw):
-    raw = re.sub(r'(?<!\\)\\(?!["\\/bfnrtu])', r'\\\\', raw)
-    raw = re.sub(rf'(?<!\\)\\({LATEX_COMMANDS})(?![a-zA-Z])', r'\\\\\1', raw)
-    return raw
+    # केवल अवैध JSON बैकस्लैश एस्केप को ठीक करता है (सामान्य अंग्रेजी शब्दों पर स्लैश नहीं लगाएगा)
+    return re.sub(r'(?<!\\)\\(?!["\\/bfnrtu])', r'\\\\', raw)
 
 
 def repair_math_html(html_str):
@@ -470,7 +448,7 @@ class GroqBot:
     def ask(self, subject, prompt):
         system = (
             f"You are an expert CBSE Class 12 {SUBJECTS[subject]} teacher for Shorveer Notes (by Jatin Sandilya). "
-            "Write exhaustive, crystal-clear, exam-oriented content strictly following the latest CBSE Class 12 syllabus. "
+            "Write clear, exam-oriented content strictly following the latest CBSE Class 12 syllabus. "
             "MATH FORMATTING RULE: Wrap EVERY mathematical expression, variable, or formula (including inside HTML <td> table cells) in $...$ for inline or $$...$$ for display equations. Use double backslashes like \\\\frac{a}{b}, \\\\sqrt{x}, \\\\ge, \\\\infty inside JSON strings. Never leave an unmatched $ sign. "
             "Output ONLY valid JSON as requested."
         )
@@ -496,8 +474,13 @@ class GroqBot:
                     return json.loads(fix_json_latex(raw))
                 except Exception as e:
                     self.last_call = time.time()
-                    print(f"[{model}] Error (attempt {attempt+1}): {str(e)[:120]}")
-                    time.sleep(10)
+                    err_msg = str(e)
+                    print(f"[{model}] Error (attempt {attempt+1}): {err_msg[:140]}")
+                    if "429" in err_msg or "rate" in err_msg.lower():
+                        print("Rate limit hit (429). Sleeping 62s to reset 1-minute token window...")
+                        time.sleep(62)
+                    else:
+                        time.sleep(8)
         raise RuntimeError("All Groq models failed after retries.")
 
 
@@ -616,7 +599,7 @@ def build_english(bot, target, rec, state, force):
         res = bot.ask("english", f"""
         Class 12 English Chapter {ch_num}: "{chapter}".
         Return JSON: {{"sections": [{{"heading": "...", "html": "..."}}]}}
-        Include: 1) Introduction & Author Background, 2) Detailed Scene-by-Scene / Stanza-by-Stanza Summary (exhaustive), 3) Central Theme & Message, 4) Literary Devices & Poetic/Prose Style, 5) Important Word Meanings & Phrases (HTML table).
+        Include: 1) Introduction & Author Background, 2) Detailed Scene-by-Scene / Stanza-by-Stanza Summary, 3) Central Theme & Message, 4) Literary Devices & Style, 5) Important Word Meanings & Phrases (HTML table).
         Use clean HTML tags (p, ul, li, strong, table, tr, th, td).
         """)
         rec["summary"] = res["sections"]
@@ -630,7 +613,7 @@ def build_english(bot, target, rec, state, force):
         res = bot.ask("english", f"""
         Class 12 English Chapter {ch_num}: "{chapter}".
         Return JSON: {{"characters": [{{"name": "...", "role": "...", "sketch_html": "..."}}]}}
-        Provide deep, exam-ready character sketches of all major and minor characters (if it is a poem, analyze the Poet/Speaker and key figures mentioned).
+        Provide deep, exam-ready character sketches of all major and minor characters (if poem, analyze Poet/Speaker and key figures).
         """)
         rec["characters"] = res["characters"]
         save_state(state)
@@ -645,7 +628,7 @@ def build_english(bot, target, rec, state, force):
         res = bot.ask("english", f"""
         Class 12 English Chapter {ch_num}: "{chapter}".
         Return JSON: {{"extracts": [{{"passage": "...", "questions": [{{"q": "...", "ans": "..."}}]}}]}}
-        Create 3 important CBSE board-style Reference-to-Context (Extract-Based) passages from this chapter, each with 4 sub-questions and exact answers.
+        Create 3 CBSE board-style Extract-Based (RTC) passages from this chapter, each with 4 sub-questions and exact answers.
         """)
         rec["extracts"] = res["extracts"]
         save_state(state)
@@ -660,7 +643,7 @@ def build_english(bot, target, rec, state, force):
         res = bot.ask("english", f"""
         Class 12 English Chapter {ch_num}: "{chapter}".
         Return JSON: {{"items": [{{"type": "Short Answer / Long Answer / Value-Based Question", "question": "...", "answer": "..."}}]}}
-        Provide 10 high-probability CBSE board questions: 4 Short Answer (40-50 words), 3 Long Answer (120-150 words), and 3 Value-Based / Extrapolation Questions with complete model answers.
+        Provide 10 CBSE board questions: 4 Short Answer (40-50 words), 3 Long Answer (120-150 words), and 3 Value-Based Questions with complete model answers.
         """)
         rec["practice"] = res["items"]
         save_state(state)
@@ -696,9 +679,9 @@ def build_science_math(bot, target, rec, state, force):
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
         Return JSON: {{"topics": ["Topic 1", "Topic 2", ...]}}
-        List 8 to 10 sequential syllabus topics covering the entire chapter completely from basic definitions to advanced derivations/theorems.
+        List 8 to 9 sequential syllabus topics covering the entire chapter completely.
         """)
-        rec["topics"] = res["topics"][:10]
+        rec["topics"] = res["topics"][:9]
         save_state(state)
 
     notes_map = rec.setdefault("long_notes", {})
@@ -707,7 +690,7 @@ def build_science_math(bot, target, rec, state, force):
             res = bot.ask(subj, f"""
             CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}" — Topic: "{topic}".
             Return JSON: {{"html": "..."}}
-            Write exhaustive, crystal-clear Long Detailed Notes (350-450 words). Include exact definitions, step-by-step mathematical derivations, laws/theorems, SI units, edge cases, and a solved example. Wrap ALL math/equations (including inside HTML tables) in $...$ or $$...$$. Use clean HTML (p, ul, li, strong, table, tr, th, td).
+            Write clear, structured Long Detailed Notes (280-360 words). Include exact definitions, step-by-step derivations/theorems, SI units, edge cases, and 1 solved example. Wrap ALL math/equations (including inside HTML tables) in $...$ or $$...$$. Use clean HTML (p, ul, li, strong, table, tr, th, td).
             """)
             notes_map[topic] = sanitize_html(res["html"])
             save_state(state)
@@ -720,7 +703,7 @@ def build_science_math(bot, target, rec, state, force):
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
         Return JSON: {{"cards": [{{"title": "...", "html": "..."}}]}}
-        Create crisp, high-yield Short Revision Notes for last-minute board exam revision: 1) All Important Formulas Table, 2) Key Definitions & Laws, 3) Important Graphs/Reactions/Theorems Summary, 4) Common Exam Mistakes to Avoid. Wrap EVERY formula (including in table cells) in $...$ or $$...$$.
+        Create crisp Short Revision Notes: 1) Important Formulas Table, 2) Key Definitions & Laws, 3) Graphs/Reactions/Theorems Summary, 4) Common Exam Mistakes. Wrap EVERY formula (including in table cells) in $...$ or $$...$$.
         """)
         rec["short_notes"] = res["cards"]
         save_state(state)
@@ -732,7 +715,7 @@ def build_science_math(bot, target, rec, state, force):
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
         Return JSON: {{"problems": [{{"level": "NCERT Level / Board Standard / HOTS", "question": "...", "solution_html": "..."}}]}}
-        Create 10 important solved numericals (or step-by-step proofs/conversions for Math/Organic Chem) covering every formula in the chapter. Show Given, Formula Used, Step-by-Step Calculation, and Final Answer with units using LaTeX ($...$ / $$...$$).
+        Create 8 important solved numericals (or step-by-step proofs/conversions for Math/Organic Chem) covering key formulas. Show Given, Formula, Step-by-Step Calculation, and Final Answer with units using LaTeX ($...$ / $$...$$).
         """)
         rec["numericals"] = res["problems"]
         save_state(state)
@@ -746,8 +729,8 @@ def build_science_math(bot, target, rec, state, force):
     if "pyq" not in rec or force:
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
-        Return JSON: {{"pyqs": [{{"marks": "2 Marks / 3 Marks / 5 Marks (Case Study / Long)", "tag": "Frequently Repeated Board Concept", "question": "...", "answer_html": "..."}}]}}
-        Create 10 authentic CBSE Board PYQ-pattern subjective questions (covering 2-mark reasoning, 3-mark derivations/problems, and 5-mark long analytical questions) based on actual CBSE Class 12 board exam trends. Provide full marking-scheme answers with LaTeX ($...$ / $$...$$).
+        Return JSON: {{"pyqs": [{{"marks": "2 Marks / 3 Marks / 5 Marks", "tag": "Repeated Board Concept", "question": "...", "answer_html": "..."}}]}}
+        Create 8 authentic CBSE Board PYQ-pattern subjective questions (2-mark reasoning, 3-mark derivations/problems, 5-mark analytical questions) based on CBSE Class 12 board exam trends. Provide full marking-scheme answers with LaTeX ($...$ / $$...$$).
         """)
         rec["pyq"] = res["pyqs"]
         save_state(state)
@@ -806,7 +789,7 @@ def build_mcq(bot, subj, ch_num, chapter, p_mcq, p_notes, rec, state, force):
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
         Return JSON: {{"questions": [{{"q": "...", "options": ["A", "B", "C", "D"], "answer": 0, "explain": "..."}}]}}
-        Create 12 high-quality CBSE board-level MCQs (including Assertion-Reason style). 'answer' must be integer 0, 1, 2, or 3. Use $...$ for inline math equations.
+        Create 12 CBSE board-level MCQs (including Assertion-Reason style). 'answer' must be integer 0, 1, 2, or 3. Use $...$ for inline math equations.
         """)
         qs = []
         for q in res.get("questions", []):
