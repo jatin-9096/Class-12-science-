@@ -8,8 +8,8 @@ from bs4 import BeautifulSoup, NavigableString
 from groq import Groq
 
 MODELS = ["openai/gpt-oss-120b", "openai/gpt-oss-20b"]
-MAX_OUT_TOKENS = 3500
-TOKENS_PER_MIN = 6000
+MAX_OUT_TOKENS = 4000
+TOKENS_PER_MIN = 7000
 MAX_ATTEMPTS = 3
 STATE_FILE = "builder_state.json"
 TEMPLATE = "index.html"
