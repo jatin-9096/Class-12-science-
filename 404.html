@@ -1,480 +1,545 @@
- <!DOCTYPE html>
-<html lang="en" data-theme="nebula">
+<!DOCTYPE html>
+<html lang="en" data-theme="notebook">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The page you're looking for could not be found on Shorveer Notes.">
-    <meta name="robots" content="noindex, nofollow">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>404 | Shorveer Notes</title>
+  <meta name="description" content="404 Page Not Found — The study page you're looking for could not be found on Shorveer Notes.">
+  <meta name="author" content="Jatin Sandilya">
+  <meta name="robots" content="noindex, nofollow">
 
-    <!-- Google Fonts for 5 Different Themes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Fira+Code:wght@400;600&family=Inter:wght@400;600;800&family=Orbitron:wght@650;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#fdfaf3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171613" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
 
-    <style>
-        /* =========================================================
-           5 DIFFERENT THEME CONFIGURATIONS (COLORS, FONTS & BG)
-        ========================================================= */
-        
-        /* Theme 1: Nebula Deep Space (Default) */
-        html[data-theme="nebula"] {
-            --font-main: 'Inter', sans-serif;
-            --bg-grad: radial-gradient(circle at 15% 20%, rgba(139, 92, 246, .20), transparent 32%), radial-gradient(circle at 85% 75%, rgba(236, 72, 153, .16), transparent 32%), linear-gradient(135deg, #070b18, #11172b);
-            --card-bg: rgba(255, 255, 255, 0.075);
-            --card-border: rgba(255, 255, 255, 0.13);
-            --text-main: #f8fafc;
-            --text-muted: #a8b1c5;
-            --primary-grad: linear-gradient(135deg, #8b5cf6, #ec4899);
-            --glow-color: rgba(139,92,246,.25);
-        }
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1c1a'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23e8b64c'/%3E%3C/svg%3E">
 
-        /* Theme 2: Cyberpunk Neon Matrix */
-        html[data-theme="cyberpunk"] {
-            --font-main: 'Orbitron', sans-serif;
-            --bg-grad: radial-gradient(circle at 20% 20%, rgba(0, 255, 204, 0.25), transparent 40%), radial-gradient(circle at 80% 80%, rgba(255, 0, 127, 0.25), transparent 40%), linear-gradient(135deg, #050505, #12001a);
-            --card-bg: rgba(0, 255, 204, 0.04);
-            --card-border: rgba(0, 255, 204, 0.3);
-            --text-main: #00ffcc;
-            --text-muted: #ff007f;
-            --primary-grad: linear-gradient(135deg, #00ffcc, #ff007f);
-            --glow-color: rgba(0,255,204,.4);
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        /* Theme 3: Royal Obsidian & Gold */
-        html[data-theme="obsidian"] {
-            --font-main: 'Cinzel', serif;
-            --bg-grad: radial-gradient(circle at 50% 10%, rgba(212, 175, 55, 0.15), transparent 50%), linear-gradient(135deg, #0b0b0b, #1a160d);
-            --card-bg: rgba(212, 175, 55, 0.04);
-            --card-border: rgba(212, 175, 55, 0.25);
-            --text-main: #f3e5ab;
-            --text-muted: #c5a059;
-            --primary-grad: linear-gradient(135deg, #d4af37, #aa771c);
-            --glow-color: rgba(212,175,55,.3);
-        }
+  <!-- Root-relative stylesheet so 404 renders properly at any URL depth -->
+  <link rel="stylesheet" href="/style.css">
 
-        /* Theme 4: Hacking Terminal (Fira Code) */
-        html[data-theme="terminal"] {
-            --font-main: 'Fira Code', monospace;
-            --bg-grad: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.12), transparent 60%), linear-gradient(135deg, #022014, #010c07);
-            --card-bg: rgba(16, 185, 129, 0.05);
-            --card-border: rgba(16, 185, 129, 0.3);
-            --text-main: #34d399;
-            --text-muted: #059669;
-            --primary-grad: linear-gradient(135deg, #10b981, #047857);
-            --glow-color: rgba(16,185,129,.35);
-        }
+  <style>
+    /* 404 Page Specific Layout & Fallback Variables */
+    :root {
+      --bg: #fdfaf3;
+      --card: #ffffff;
+      --ink: #1c1c1a;
+      --muted: #5c5a54;
+      --line: rgba(28, 28, 26, 0.12);
+      --accent: #e8b64c;
+      --accent-2: #bf5a3c;
+    }
 
-        /* Theme 5: Classic Editorial / Academic Serif */
-        html[data-theme="academic"] {
-            --font-main: 'Playfair Display', serif;
-            --bg-grad: radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.15), transparent 40%), linear-gradient(135deg, #1e293b, #0f172a);
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --card-border: rgba(56, 189, 248, 0.2);
-            --text-main: #e2e8f0;
-            --text-muted: #94a3b8;
-            --primary-grad: linear-gradient(135deg, #38bdf8, #2563eb);
-            --glow-color: rgba(56,189,248,.3);
-        }
+    html[data-theme="chalkboard"] {
+      --bg: #1e2a24;
+      --card: #25342d;
+      --ink: #ebe6d5;
+      --muted: #a9b5ad;
+      --line: rgba(235, 230, 213, 0.14);
+      --accent: #f0d97a;
+      --accent-2: #7bc3bf;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    html[data-theme="blueprint"] {
+      --bg: #0f2b4c;
+      --card: #153760;
+      --ink: #e2eefb;
+      --muted: #9bb8d9;
+      --line: rgba(226, 238, 251, 0.16);
+      --accent: #7ec8f5;
+      --accent-2: #ff9d7c;
+    }
 
-        body {
-            min-height: 100vh;
-            width: 100%;
-            overflow-x: hidden;
-            font-family: var(--font-main);
-            color: var(--text-main);
-            background: var(--bg-grad);
-            transition: background .5s ease, color .5s ease;
-        }
+    html[data-theme="sunset"] {
+      --bg: #241226;
+      --card: #311934;
+      --ink: #ffe9d6;
+      --muted: #c8a6be;
+      --line: rgba(255, 233, 214, 0.14);
+      --accent: #ff8a5b;
+      --accent-2: #ffb87a;
+    }
 
-        /* =========================================================
-           BACKGROUND ELEMENTS
-        ========================================================= */
-        .background {
-            position: fixed;
-            inset: 0;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 1;
-        }
+    /* Smooth Preloader */
+    #loadingScreen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      background: var(--bg);
+      color: var(--ink);
+      transition: opacity 0.45s ease, visibility 0.45s ease;
+    }
 
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(2px);
-            opacity: .4;
-            animation: orbFloat 9s ease-in-out infinite;
-        }
+    #loadingScreen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
 
-        .orb-one { width: 260px; height: 260px; top: -90px; left: -80px; background: var(--primary-grad); }
-        .orb-two { width: 340px; height: 340px; right: -120px; bottom: -120px; background: var(--primary-grad); animation-delay: -3s; }
+    .loader-box {
+      text-align: center;
+    }
 
-        @keyframes orbFloat {
-            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-            50% { transform: translate3d(20px, -25px, 0) scale(1.08); }
-        }
+    .loader-ring {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      border: 3px solid var(--line);
+      border-top-color: var(--accent-2);
+      animation: spin404 0.85s linear infinite;
+    }
 
-        /* =========================================================
-           TOPBAR / HEADER
-        ========================================================= */
-        .topbar {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 5%;
-            z-index: 20;
-            background: rgba(7, 11, 24, 0.65);
-            border-bottom: 1px solid var(--card-border);
-            backdrop-filter: blur(18px);
-        }
+    @keyframes spin404 {
+      to { transform: rotate(360deg); }
+    }
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 11px;
-            text-decoration: none;
-            color: var(--text-main);
-        }
+    /* 404 Hero Card */
+    .error-wrap {
+      min-height: calc(100vh - 160px);
+      display: grid;
+      place-items: center;
+      padding: 48px 20px;
+    }
 
-        .brand-mark {
-            width: 38px; height: 38px;
-            display: grid; place-items: center;
-            border-radius: 12px;
-            background: var(--primary-grad);
-            font-weight: 900;
-            color: white;
-            box-shadow: 0 8px 25px var(--glow-color);
-        }
+    .notebook-404 {
+      position: relative;
+      width: min(760px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 48px 40px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      overflow: hidden;
+    }
 
-        .brand-name {
-            font-weight: 800;
-            letter-spacing: 1.2px;
-            font-size: 15px;
-        }
+    /* Subtle ruled notebook lines */
+    .notebook-404::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 31px,
+        var(--line) 32px
+      );
+      opacity: 0.45;
+      pointer-events: none;
+    }
 
-        /* Theme Switcher Dropdown in Header */
-        .theme-switcher-container {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    .notebook-404-inner {
+      position: relative;
+      z-index: 1;
+    }
 
-        .theme-switcher-container label {
-            font-size: 12px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-2);
+      margin-bottom: 18px;
+    }
 
-        #themeSelect {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            color: var(--text-main);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-family: var(--font-main);
-            font-size: 12px;
-            cursor: pointer;
-            outline: none;
-            transition: all .2s;
-        }
+    .big-404 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(5.2rem, 16vw, 8.8rem);
+      font-weight: 700;
+      line-height: 0.92;
+      letter-spacing: -4px;
+      color: var(--ink);
+      margin: 0 0 12px;
+      position: relative;
+      display: inline-block;
+    }
 
-        #themeSelect:hover {
-            border-color: var(--text-main);
-        }
+    .big-404 span {
+      color: var(--accent-2);
+      font-style: italic;
+    }
 
-        /* =========================================================
-           MAIN CARD
-        ========================================================= */
-        main {
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            padding: 100px 20px 40px;
-            position: relative;
-            z-index: 5;
-        }
+    .handwritten-note {
+      font-family: 'Caveat', cursive;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent-2);
+      transform: rotate(-2deg);
+      margin-bottom: 14px;
+    }
 
-        .error-card {
-            width: min(720px, 94vw);
-            padding: 48px 42px;
-            text-align: center;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 32px;
-            backdrop-filter: blur(24px);
-            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,.08);
-            animation: cardEnter .9s cubic-bezier(.2,.8,.2,1) forwards;
-        }
+    .notebook-404 h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(1.65rem, 3.8vw, 2.35rem);
+      line-height: 1.2;
+      margin: 0 0 14px;
+      color: var(--ink);
+    }
 
-        @keyframes cardEnter {
-            from { opacity: 0; transform: translateY(25px) scale(.97); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
+    .notebook-404 p {
+      max-width: 540px;
+      margin: 0 auto 28px;
+      font-size: 15.5px;
+      line-height: 1.65;
+      color: var(--muted);
+    }
 
-        .error-code {
-            font-size: clamp(5rem, 18vw, 9rem);
-            line-height: .9;
-            font-weight: 900;
-            letter-spacing: -4px;
-            margin-bottom: 20px;
-            background: var(--primary-grad);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            filter: drop-shadow(0 15px 30px var(--glow-color));
-        }
+    .error-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
 
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
-            margin-bottom: 16px;
-            border: 1px solid var(--card-border);
-            border-radius: 999px;
-            background: var(--card-bg);
-            color: var(--text-muted);
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-        }
+    .quick-hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      padding-top: 24px;
+      border-top: 1px dashed var(--line);
+      text-align: left;
+    }
 
-        h1 {
-            font-size: clamp(1.6rem, 4vw, 2.4rem);
-            line-height: 1.2;
-            margin-bottom: 14px;
-            font-weight: 800;
-        }
+    .quick-hub-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
 
-        .description {
-            max-width: 570px;
-            margin: 0 auto 30px;
-            color: var(--text-muted);
-            font-size: 14px;
-            line-height: 1.7;
-        }
+    .quick-hub-link:hover {
+      transform: translateY(-2px);
+      border-color: var(--ink);
+    }
 
-        /* =========================================================
-           BUTTONS (FIXED BROKEN LINKS)
-        ========================================================= */
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
+    .quick-hub-link span {
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
 
-        .btn {
-            min-width: 170px;
-            padding: 13px 20px;
-            border-radius: 14px;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-        }
+    @media (max-width: 600px) {
+      .notebook-404 {
+        padding: 34px 20px;
+      }
+      .error-actions {
+        flex-direction: column;
+      }
+      .error-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
 
-        .btn:hover { transform: translateY(-3px); }
-
-        .btn-primary {
-            color: white;
-            border: 1px solid var(--card-border);
-            background: var(--primary-grad);
-            box-shadow: 0 12px 30px var(--glow-color);
-        }
-
-        .btn-secondary {
-            color: var(--text-main);
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,.12);
-        }
-
-        /* =========================================================
-           QUICK LINKS (FIXED PATHS TO ROOT RELATIVE)
-        ========================================================= */
-        .quick-links {
-            border-top: 1px solid var(--card-border);
-            padding-top: 22px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px 24px;
-        }
-
-        .quick-links a {
-            color: var(--text-muted);
-            font-size: 13px;
-            text-decoration: none;
-            transition: color .25s ease;
-        }
-
-        .quick-links a:hover {
-            color: var(--text-main);
-        }
-
-        /* =========================================================
-           LOADING SCREEN OVERLAY
-        ========================================================= */
-        #loadingScreen {
-            position: fixed;
-            inset: 0;
-            z-index: 100;
-            display: grid;
-            place-items: center;
-            background: var(--bg-grad);
-            transition: opacity .5s ease, visibility .5s ease;
-        }
-
-        #loadingScreen.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .loader-ring {
-            width: 70px; height: 70px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            border: 3px solid var(--card-border);
-            border-top-color: var(--text-main);
-            animation: loaderSpin 1s linear infinite;
-        }
-
-        @keyframes loaderSpin {
-            to { transform: rotate(360deg); }
-        }
-
-        @media (max-width: 600px) {
-            .topbar { padding: 0 15px; height: 60px; }
-            .theme-switcher-container label { display: none; }
-            .error-card { padding: 32px 18px; }
-            .buttons { flex-direction: column; }
-            .btn { width: 100%; }
-        }
-    </style>
+  <script>document.documentElement.classList.add('js');</script>
+  <title>404 — Page Missing | Shorveer Notes</title>
 </head>
 
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <div class="background" aria-hidden="true">
-        <div class="orb orb-one"></div>
-        <div class="orb orb-two"></div>
+  <!-- ============ LOADING OVERLAY ============ -->
+  <div id="loadingScreen" aria-hidden="true">
+    <div class="loader-box">
+      <div class="loader-ring"></div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;">Checking Notebook Index...</div>
     </div>
+  </div>
 
-    <!-- TOP BAR -->
-    <header class="topbar">
-        <!-- FIXED BROKEN LINK: Using root-relative link '/' for GitHub pages stability -->
-        <a href="/" class="brand" aria-label="Shorveer Notes Home">
-            <span class="brand-mark">S</span>
-            <span class="brand-name">SHORVEER NOTES</span>
-        </a>
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="/" aria-label="Shorveer Notes home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+          </svg>
+        </span>
+        <span class="brand-name">Shorveer<em>Notes</em></span>
+      </a>
 
-        <!-- 5-Different Themes Switcher Dropdown -->
-        <div class="theme-switcher-container">
-            <label for="themeSelect">🎨 Theme:</label>
-            <select id="themeSelect" aria-label="Choose Website Theme">
-                <option value="nebula">1. Nebula Space</option>
-                <option value="cyberpunk">2. Cyberpunk Neon</option>
-                <option value="obsidian">3. Royal Obsidian</option>
-                <option value="terminal">4. Hacker Terminal</option>
-                <option value="academic">5. Academic Serif</option>
-            </select>
-        </div>
-    </header>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/physics/index.html">Physics</a>
+        <a href="/chemistry/index.html">Chemistry</a>
+        <a href="/about-notes.html">Framework</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
 
-    <!-- LOADING SCREEN -->
-    <div id="loadingScreen">
-        <div style="text-align: center;">
-            <div class="loader-ring"></div>
-            <div style="font-weight: 700; font-size: 16px;">Loading Universe...</div>
-        </div>
+      <div class="nav-actions">
+        <button class="nav-icon" id="themeButton" aria-label="Change theme" aria-expanded="false" title="Change theme">
+          <span class="palette-dot" aria-hidden="true"></span>
+        </button>
+
+        <button class="nav-icon mobile-toggle" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <path d="M3 6h18M3 12h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Home</a>
+      <a href="/physics/index.html">Physics Hub</a>
+      <a href="/chemistry/index.html">Chemistry Hub</a>
+      <a href="/about-notes.html">How notes are made</a>
+      <a href="/about.html">About Shorveer</a>
+      <a href="/privacy.html">Privacy Policy</a>
     </div>
+  </header>
 
-    <!-- MAIN 404 CONTENT -->
-    <main>
-        <section class="error-card">
-            <div class="eyebrow">404 Error - Page Missing</div>
-            <div class="error-code">404</div>
-            <h1>Lost in the Study Space?</h1>
-            <p class="description">
-                The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back on track with your notes.
-            </p>
+  <!-- ============ THEME PICKER POPOVER ============ -->
+  <div class="theme-pop" id="themePop" role="dialog" aria-label="Choose a theme">
+    <h4>Pick a look</h4>
+    <div class="theme-grid">
+      <button class="theme-opt" data-theme-value="notebook" aria-pressed="true">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#fdfaf3"></span>
+          <span style="background:#e8b64c"></span>
+          <span style="background:#bf5a3c"></span>
+          <span style="background:#1c1c1a"></span>
+        </span>
+        <b>Notebook</b>
+        <small>Warm paper, classic</small>
+      </button>
 
-            <!-- NAVIGATION BUTTONS (FIXED RELATIVE LINKS) -->
-            <div class="buttons">
-                <a href="/" class="btn btn-primary">
-                    <span>⌂</span> Back to Home
-                </a>
-                <a href="javascript:void(0)" class="btn btn-secondary" id="backButton">
-                    <span>←</span> Go Back
-                </a>
-            </div>
+      <button class="theme-opt" data-theme-value="chalkboard" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#1e2a24"></span>
+          <span style="background:#f0d97a"></span>
+          <span style="background:#7bc3bf"></span>
+          <span style="background:#ebe6d5"></span>
+        </span>
+        <b>Chalkboard</b>
+        <small>Dark green, chalk</small>
+      </button>
 
-            <!-- QUICK LINKS (FIXED ABSOLUTE/ROOT PATHS TO PREVENT 404 ERRORS) -->
-            <nav class="quick-links" aria-label="Quick navigation">
-                <a href="/about.html">About Us</a>
-                <a href="/about-notes.html">About Our Notes</a>
-                <a href="/exam-info.html">Exam Blueprint</a>
-                <a href="/privacy.html">Privacy Policy</a>
-            </nav>
-        </section>
-    </main>
+      <button class="theme-opt" data-theme-value="blueprint" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#0f2b4c"></span>
+          <span style="background:#7ec8f5"></span>
+          <span style="background:#ff9d7c"></span>
+          <span style="background:#e2eefb"></span>
+        </span>
+        <b>Blueprint</b>
+        <small>Navy, technical</small>
+      </button>
 
-    <!-- JAVASCRIPT FOR THEME SWITCHER & CONTROLS -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const loadingScreen = document.getElementById("loadingScreen");
-            const backButton = document.getElementById("backButton");
-            const themeSelect = document.getElementById("themeSelect");
-            const htmlElement = document.documentElement;
+      <button class="theme-opt" data-theme-value="sunset" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#241226"></span>
+          <span style="background:#ff8a5b"></span>
+          <span style="background:#ffb87a"></span>
+          <span style="background:#ffe9d6"></span>
+        </span>
+        <b>Sunset</b>
+        <small>Plum, warm glow</small>
+      </button>
+    </div>
+    <p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Saved across pages.</p>
+  </div>
 
-            // 1. Hide loading screen smoothly after 1.2s
-            setTimeout(() => {
-                loadingScreen.classList.add("hidden");
-            }, 1200);
+  <!-- ============ MAIN 404 SECTION ============ -->
+  <main id="main" class="error-wrap">
+    <section class="notebook-404" aria-labelledby="errorHeading">
+      <div class="notebook-404-inner">
+        <div class="status-pill">ERR_404 · PAGE_NOT_FOUND</div>
 
-            // 2. Safe Back Button Handler
-            backButton.addEventListener("click", () => {
-                if (document.referrer && document.referrer !== window.location.href) {
-                    window.history.back();
-                } else {
-                    window.location.href = "/";
-                }
-            });
+        <div>
+          <div class="big-404">4<span>0</span>4</div>
+        </div>
 
-            // 3. Theme Switcher Logic (Saves user choice in localStorage)
-            const savedTheme = localStorage.getItem("shorveer_404_theme") || "nebula";
-            htmlElement.setAttribute("data-theme", savedTheme);
-            themeSelect.value = savedTheme;
+        <div class="handwritten-note">Looks like this page was torn out of the notebook!</div>
 
-            themeSelect.addEventListener("change", (e) => {
-                const selectedTheme = e.target.value;
-                htmlElement.setAttribute("data-theme", selectedTheme);
-                localStorage.setItem("shorveer_404_theme", selectedTheme);
-            });
-        });
-    </script>
+        <h1 id="errorHeading">We couldn't find that study page.</h1>
+
+        <p>
+          The chapter link may have moved, been renamed, or doesn't exist yet. Jump straight back to the Class 12 portals or check our Privacy Policy and platform guides below.
+        </p>
+
+        <div class="error-actions">
+          <a href="/" class="btn btn-dark">
+            Back to Home
+            <span class="btn-arrow">→</span>
+          </a>
+          <button type="button" class="btn btn-light" id="backButton">
+            ← Go Back
+          </button>
+        </div>
+
+        <nav class="quick-hub-grid" aria-label="Helpful destinations">
+          <a class="quick-hub-link" href="/physics/index.html">
+            Physics Hub <span>14 Ch</span>
+          </a>
+          <a class="quick-hub-link" href="/chemistry/index.html">
+            Chemistry Hub <span>10 Ch</span>
+          </a>
+          <a class="quick-hub-link" href="/privacy.html">
+            Privacy Policy <span>Legal</span>
+          </a>
+          <a class="quick-hub-link" href="/about-notes.html">
+            About Notes <span>Guide</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+              </svg>
+            </span>
+            <span class="brand-name">Shorveer<em>Notes</em></span>
+          </a>
+          <p>Class 12 Science simplified, visual, and high-yielding for CBSE Board Examinations. Founded by <strong>Jatin Sandilya</strong>.</p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Study Portal</h3>
+          <a href="/physics/index.html">Physics Hub</a>
+          <a href="/chemistry/index.html">Chemistry Notes</a>
+          <a href="/mathematics/index.html">Mathematics Hub</a>
+          <a href="/english/index.html">English Core</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Platform & Legal</h3>
+          <a href="/exam-info.html">Exam Info</a>
+          <a href="/about-notes.html">About the Notes</a>
+          <a href="/about.html">About Shorveer</a>
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/cookies.html">Cookies</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Connect</h3>
+          <a href="mailto:support.shorveernotes@gmail.com">Contact Us</a>
+          <a href="https://www.youtube.com/@JSEDIZ" target="_blank" rel="noopener noreferrer">YouTube: @JSEDIZ</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Shorveer Notes · Founded by <strong>Jatin Sandilya</strong></span>
+        <span>Crafted with Warrior Discipline in India</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ JAVASCRIPT ENGINE ============ -->
+  <script>
+    const store = {
+      get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+      set(k, v) { try { localStorage.setItem(k, v); } catch {} }
+    };
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* Smooth Preloader Dismiss */
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("loadingScreen").classList.add("hidden");
+      }, 450);
+    });
+
+    /* Safe Back Button */
+    document.getElementById("backButton").addEventListener("click", () => {
+      if (document.referrer && document.referrer !== window.location.href) {
+        window.history.back();
+      } else {
+        window.location.href = "/";
+      }
+    });
+
+    /* Synced Global Theme Picker */
+    const html = document.documentElement;
+    const themeButton = document.getElementById("themeButton");
+    const themePop = document.getElementById("themePop");
+    const themeOpts = document.querySelectorAll(".theme-opt");
+    const VALID_THEMES = ["notebook", "chalkboard", "blueprint", "sunset"];
+
+    function applyTheme(name) {
+      if (!VALID_THEMES.includes(name)) name = "notebook";
+      html.setAttribute("data-theme", name);
+      store.set("shorveer-theme-name", name);
+      themeOpts.forEach(btn => {
+        btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name));
+      });
+    }
+
+    applyTheme(store.get("shorveer-theme-name") || "notebook");
+
+    themeButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = themePop.classList.toggle("open");
+      themeButton.setAttribute("aria-expanded", String(open));
+    });
+
+    themeOpts.forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyTheme(btn.dataset.themeValue);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!themePop.contains(e.target) && !themeButton.contains(e.target)) {
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    /* Mobile Menu */
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    function setMenu(open) {
+      mobileMenu.classList.toggle("open", open);
+      menuButton.setAttribute("aria-expanded", String(open));
+    }
+    menuButton.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        setMenu(false);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
 </body>
 </html>
