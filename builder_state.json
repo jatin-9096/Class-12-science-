@@ -1294,7 +1294,18 @@
     "last_error": "All Groq models failed after fast failover."
   },
   "mathematics::ch10::mathematics/chapter10.html": {
-    "last_error": "All Groq models failed after fast failover."
+    "last_error": "All Groq models failed after fast failover.",
+    "topics": [
+      "Vectors and scalars",
+      "Position vector and unit vector",
+      "Vector addition and subtraction",
+      "Scalar product and vector product",
+      "Triple scalar product and its properties",
+      "Vector equation of a line",
+      "Equation of a plane and distance of a point from a plane",
+      "Applications: area, volume and shortest distance"
+    ],
+    "long_notes": {}
   },
   "mathematics::ch11::mathematics/chapter11.html": {
     "last_error": "All Groq models failed after fast failover."
@@ -1326,7 +1337,9 @@
       "Electric dipole in uniform electric field: torque $\\tau = pE\\sin\\theta$, potential energy $U = -pE\\cos\\theta$",
       "Electrostatic shielding, behavior of conductors in electrostatic equilibrium and applications"
     ],
-    "long_notes": {},
+    "long_notes": {
+      "Electric charge, quantization, conservation and conductors vs insulators": "<p><strong>Electric Charge</strong> – a fundamental property of matter that produces electrostatic force. SI unit: coulomb (C). 1 C = $6.241\\times10^{18}$ elementary charges.</p><p><strong>Quantization</strong>: Charge exists only in integral multiples of the elementary charge $e = 1.602\\times10^{-19}\\,\\text{C}$. $$q = n e,\\; n\\in\\mathbb{Z}$$</p><p><strong>Conservation of Charge</strong>: In any isolated system the total charge remains constant. Mathematically, $$\\sum_i q_i = \\text{constant}$$</p><p><strong>Conductors vs Insulators</strong></p><ul><li><strong>Conductors</strong>: Free electrons (or ions) move easily; electric field inside a static conductor is zero; excess charge resides on the surface.</li><li><strong>Insulators (dielectrics)</strong>: Charges are bound; very few free carriers; electric field penetrates the material.</li></ul><table><tr><th>Property</th><th>Conductor</th><th>Insulator</th></tr><tr><td>Free charge carriers</td><td>Abundant</td><td>Scarce</td></tr><tr><td>Electric field (static)</td><td>$0$ inside</td><td>Non‑zero</td></tr><tr><td>Charge distribution</td><td>Surface only</td><td>Throughout volume</td></tr></table><p><strong>Example</strong>: A metal sphere of radius $R=5\\,\\text{cm}$ carries a charge $Q=2\\,\\mu\\text{C}$. Find the surface charge density $\\sigma$ and the electric field just outside the surface.</p><p>Solution:</p><ul><li>Surface area $A = 4\\pi R^2 = 4\\pi (0.05)^2 = 0.0314\\,\\text{m}^2$.</li><li>Surface charge density $\\sigma = \\frac{Q}{A} = \\frac{2\\times10^{-6}}{0.0314}=6.37\\times10^{-5}\\,\\text{C/m}^2$.</li><li>Using $E = \\frac{\\sigma}{\\varepsilon_0}$, with $\\varepsilon_0 = 8.85\\times10^{-12}\\,\\text{F/m}$, $$E = \\frac{6.37\\times10^{-5}}{8.85\\times10^{-12}} \\approx 7.2\\times10^{6}\\,\\text{N/C}$$.</li></ul><p>Key formulas: $q = n e$, $\\sigma = \\frac{Q}{A}$, $E = \\frac{\\sigma}{\\varepsilon_0}$.</p>"
+    },
     "last_error": "All Groq models failed after fast failover."
   },
   "physics::ch2::physics/chapter2.html": {
@@ -1349,7 +1362,9 @@
       "Magnetic hysteresis, domains and Curie temperature",
       "Electromagnetic induction: Faraday’s law and Lenz’s law"
     ],
-    "long_notes": {},
+    "long_notes": {
+      "Magnetic field: definition, lines of force and properties": "<p><strong>Definition:</strong> The magnetic field $\n\\\\vec B$ at a point is defined as the force per unit positive test charge moving with velocity $\n\\\\vec v$ perpendicular to the field, i.e., $\\n\\\\vec B = \\frac{\\n\\\\vec F}{q\\,v\\,\\sin\\theta}$. Its SI unit is the tesla (T), where $1\\,\\text{T}=\\frac{\\text{N}}{\\text{A}\\,\\text{m}}$.</p><p><strong>Lines of magnetic force</strong></p><ul><li>They are continuous loops; they never begin or end.</li><li>Direction of a line at any point is tangent to the direction of $\\n\\\\vec B$.</li><li>Density of lines (lines per unit area) is proportional to the magnitude of $\\n\\\\vec B$.</li><li>Lines never intersect each other.</li></ul><p><strong>Key formula for a long straight conductor</strong></p><p>From the Biot–Savart law, the magnetic field at a perpendicular distance $r$ from a straight wire carrying current $I$ is </p><p>$$\\n\\\\vec B = \\frac{\\n\\\\mu_0 I}{2\\pi r}$$</p><p>where $\\n\\\\mu_0 = 4\\pi\\times10^{-7}\\,\\text{T·m/A}$.</p><p><strong>SI Units</strong></p><table><tr><th>Quantity</th><th>Symbol</th><th>Unit</th></tr><tr><td>Magnetic field</td><td>$\\n\\\\vec B$</td><td>tesla (T)</td></tr><tr><td>Current</td><td>$I$</td><td>ampere (A)</td></tr><tr><td>Permeability of free space</td><td>$\\n\\\\mu_0$</td><td>T·m/A</td></tr></table><p><strong>Solved example</strong></p><p><em>Problem:</em> A long straight wire carries $I=10\\,\\text{A}$. Find the magnetic field $B$ at a point $5\\,\\text{cm}$ from the wire.</p><p><em>Solution:</em> Convert $r=5\\,\\text{cm}=0.05\\,\\text{m}$. Using $B=\\frac{\\mu_0 I}{2\\pi r}$,</p><p>$$\\n\\\\vec B = \\frac{(4\\pi\\times10^{-7})\\times10}{2\\pi\\times0.05}=\\frac{4\\pi\\times10^{-6}}{0.1\\pi}=4\\times10^{-5}\\,\\text{T}$$</p><p>Thus $B=4\\times10^{-5}\\,\\text{T}$ directed azimuthally according to the right‑hand rule.</p>"
+    },
     "last_error": "All Groq models failed after fast failover."
   },
   "physics::ch6::physics/chapter6.html": {
@@ -1382,13 +1397,35 @@
     "last_error": "All Groq models failed after fast failover."
   },
   "physics::ch9::physics/chapter9.html": {
-    "last_error": "All Groq models failed after fast failover."
+    "last_error": "All Groq models failed after fast failover.",
+    "topics": [
+      "Refraction at plane surface",
+      "Refraction at spherical surface",
+      "Lens formula, magnification and power of thin lenses",
+      "Combination of thin lenses and principal planes",
+      "Microscope: construction, magnifying power and resolving power",
+      "Astronomical telescope: construction, angular magnification and focal length relations",
+      "Human eye: accommodation, defects of vision and their correction",
+      "Optical instruments: comparison, limitations and practical considerations"
+    ],
+    "long_notes": {}
   },
   "physics::ch10::physics/chapter10.html": {
     "last_error": "All Groq models failed after fast failover."
   },
   "physics::ch11::physics/chapter11.html": {
-    "last_error": "All Groq models failed after fast failover."
+    "last_error": "All Groq models failed after fast failover.",
+    "topics": [
+      "Photoelectric effect and Einstein’s equation",
+      "Work function, threshold frequency and stopping potential",
+      "Compton effect and wavelength shift formula",
+      "de Broglie hypothesis and matter waves",
+      "Davisson‑Germer experiment",
+      "Matter wave diffraction and electron microscopy",
+      "Wave‑particle duality of photons and electrons",
+      "Applications of wave‑particle duality in modern physics"
+    ],
+    "long_notes": {}
   },
   "physics::ch12::physics/chapter12.html": {
     "topics": [
@@ -1416,6 +1453,23 @@
       "Nuclear forces and stability of nuclei"
     ],
     "long_notes": {},
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "physics::ch14::physics/chapter14.html": {
+    "topics": [
+      "Intrinsic and extrinsic semiconductors",
+      "Charge carriers, concentration and mobility",
+      "Energy band theory and carrier transport",
+      "Formation and properties of p‑n junction",
+      "I‑V characteristics of p‑n junction diode (including Zener, LED, photodiode)",
+      "Solar cell and its characteristics",
+      "Bipolar Junction Transistor (BJT): operation and characteristics",
+      "Metal Oxide Semiconductor Field Effect Transistor (MOSFET): structure and operation"
+    ],
+    "long_notes": {},
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "chemistry::ch1::chemistry/solutions/long-notes.html": {
     "last_error": "All Groq models failed after fast failover."
   }
 }
