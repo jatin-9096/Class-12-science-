@@ -1332,7 +1332,9 @@
       "Distance of a Point from a Plane",
       "Shortest Distance Between Two Skew Lines"
     ],
-    "long_notes": {}
+    "long_notes": {
+      "Direction Cosines and Direction Ratios": "<p><strong>Definition:</strong> For a line making angles $\\alpha, \\beta, \\gamma$ with the positive $x$, $y$, $z$ axes, the numbers $\\cos\\alpha, \\cos\\beta, \\cos\\gamma$ are called <em>direction cosines</em>. The corresponding proportional numbers $l,m,n$ are <em>direction ratios</em> (DR).</p><p><strong>Key Relations</strong></p><ul><li>Direction ratios and cosines: $\\cos\\alpha = \\dfrac{l}{\\sqrt{l^2+m^2+n^2}}$, $\\cos\\beta = \\dfrac{m}{\\sqrt{l^2+m^2+n^2}}$, $\\cos\\gamma = \\dfrac{n}{\\sqrt{l^2+m^2+n^2}}$.</li><li>Fundamental identity: $$\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1.$$</li><li>If two lines have direction ratios $(l_1,m_1,n_1)$ and $(l_2,m_2,n_2)$, the \\angle $\\theta$ between them satisfies $$\\cos\\theta = \\dfrac{l_1l_2+m_1m_2+n_1n_2}{\\sqrt{l_1^2+m_1^2+n_1^2}\\;\\sqrt{l_2^2+m_2^2+n_2^2}}.$$</li></ul><p><strong>SI Unit</strong>: Direction cosines are dimensionless (unit‑less).</p><table><tr><th>Parameter</th><th>Symbol</th><th>Expression</th></tr><tr><td>Direction Ratios</td><td>$l,m,n$</td><td>Proportional \\to components of any vector along the line</td></tr><tr><td>Direction Cosines</td><td>$\\cos\\alpha,\\cos\\beta,\\cos\\gamma$</td><td>$\\cos\\alpha = \\dfrac{l}{\\sqrt{l^2+m^2+n^2}}$, etc.</td></tr></table><p><strong>Example</strong></p><p>Find the direction cosines of the line joining $A(1,2,3)$ and $B(4,6,9)$.</p><ol><li>Direction ratios $l=4-1=3$, $m=6-2=4$, $n=9-3=6$.</li><li>Magnitude $\\sqrt{l^2+m^2+n^2}=\\sqrt{3^2+4^2+6^2}=\\sqrt{61}$.</li><li>Direction cosines: $\\cos\\alpha=\\dfrac{3}{\\sqrt{61}}$, $\\cos\\beta=\\dfrac{4}{\\sqrt{61}}$, $\\cos\\gamma=\\dfrac{6}{\\sqrt{61}}$.</li><li>Verification: $\\left(\\dfrac{3}{\\sqrt{61}}\\right)^2+\\left(\\dfrac{4}{\\sqrt{61}}\\right)^2+\\left(\\dfrac{6}{\\sqrt{61}}\\right)^2=1$.</li></ol>"
+    }
   },
   "mathematics::ch12::mathematics/chapter12.html": {
     "last_error": "All Groq models failed after fast failover.",
@@ -1379,7 +1381,18 @@
     "last_error": "All Groq models failed after fast failover."
   },
   "physics::ch2::physics/chapter2.html": {
-    "last_error": "All Groq models failed after fast failover."
+    "last_error": "All Groq models failed after fast failover.",
+    "topics": [
+      "Electric Potential and Potential Difference",
+      "Equipotential Surfaces",
+      "Potential due to Point Charge and System of Charges",
+      "Relation between Electric Field and Potential Gradient",
+      "Capacitance: Definition and Units",
+      "Combination of Capacitors",
+      "Energy Stored in Capacitors",
+      "Capacitors with Dielectrics and Spherical Capacitor"
+    ],
+    "long_notes": {}
   },
   "physics::ch3::physics/chapter3.html": {
     "last_error": "All Groq models failed after fast failover.",
@@ -1427,7 +1440,18 @@
     "last_error": "All Groq models failed after fast failover."
   },
   "physics::ch6::physics/chapter6.html": {
-    "last_error": "All Groq models failed after fast failover."
+    "last_error": "All Groq models failed after fast failover.",
+    "topics": [
+      "Induced EMF and Faraday's law",
+      "Lenz's law and its applications",
+      "Self induction and mutual induction",
+      "Eddy currents and their effects",
+      "Alternating current (AC) generator and dynamos",
+      "Induction in solenoids, toroids and coils",
+      "Energy stored in magnetic fields and inductors",
+      "Practical applications of electromagnetic induction"
+    ],
+    "long_notes": {}
   },
   "physics::ch7::physics/chapter7.html": {
     "topics": [
@@ -1453,7 +1477,8 @@
       "Polarization of electromagnetic waves"
     ],
     "long_notes": {
-      "Introduction to electromagnetic waves": "<p><strong>Definition:</strong> An electromagnetic (EM) wave is a transverse wave consisting of mutually perpendicular electric ($\\vec{E}$) and magnetic ($\\vec{B}$) fields that propagate through space at the speed of light without requiring a material medium.</p><p><strong>Key Relations and Formulas</strong></p><ul><li>Speed of EM wave in vacuum: $c = \\frac{1}{\\sqrt{\\mu_0\\epsilon_0}} \\;\\text{(m/s)}$</li><li>Relation between field amplitudes: $E = c\\,B$</li><li>Wave equation (for $\\vec{E}$ or $\\vec{B}$): $\\nabla^{2}\\vec{E}=\\mu_0\\epsilon_0\\frac{\\partial^{2}\\vec{E}}{\\partial t^{2}}$</li><li>Frequency‑wavelength relation: $c = \\lambda f$</li><li>Energy density: $u = \\frac{1}{2}\\epsilon_0 E^{2}+\\frac{1}{2}\\mu_0 B^{2}$ (J/m$^3$)</li><li>Poynting vector: $\\vec{S}=\\frac{1}{\\mu_0}\\vec{E}\\times\\vec{B}$, magnitude $S = u\\,c$ (W/m$^2$)</li></ul><p><strong>SI Units</strong></p><table><tr><th>Quantity</th><th>Symbol</th><th>Unit</th></tr><tr><td>Electric field</td><td>$E$</td><td>V·m$^{-1}$</td></tr><tr><td>Magnetic field</td><td>$B$</td><td>T (tesla)</td></tr><tr><td>Permittivity of free space</td><td>$\\epsilon_0$</td><td>F·m$^{-1}$</td></tr><tr><td>Permeability of free space</td><td>$\\mu_0$</td><td>H·m$^{-1}$</td></tr><tr><td>Speed of light</td><td>$c$</td><td>m·s$^{-1}$</td></tr></table><p><strong>Solved Example</strong></p><p>Find the wavelength of an EM wave whose frequency is $f = 5\\times10^{14}\\,\\text{Hz}$.</p><ol><li>Use $c = \\lambda f$.</li><li>Rearrange: $\\lambda = \\frac{c}{f}$.</li><li>Substitute $c = 3\\times10^{8}\\,\\text{m·s}^{-1}$ and $f = 5\\times10^{14}\\,\\text{Hz}$:</li><li>$\\lambda = \\frac{3\\times10^{8}}{5\\times10^{14}} = 6\\times10^{-7}\\,\\text{m}$.</li></ol><p>Thus the wave lies in the visible spectrum (yellow light).</p>"
+      "Introduction to electromagnetic waves": "<p><strong>Definition:</strong> An electromagnetic (EM) wave is a transverse wave consisting of mutually perpendicular electric ($\\vec{E}$) and magnetic ($\\vec{B}$) fields that propagate through space at the speed of light without requiring a material medium.</p><p><strong>Key Relations and Formulas</strong></p><ul><li>Speed of EM wave in vacuum: $c = \\frac{1}{\\sqrt{\\mu_0\\epsilon_0}} \\;\\text{(m/s)}$</li><li>Relation between field amplitudes: $E = c\\,B$</li><li>Wave equation (for $\\vec{E}$ or $\\vec{B}$): $\\nabla^{2}\\vec{E}=\\mu_0\\epsilon_0\\frac{\\partial^{2}\\vec{E}}{\\partial t^{2}}$</li><li>Frequency‑wavelength relation: $c = \\lambda f$</li><li>Energy density: $u = \\frac{1}{2}\\epsilon_0 E^{2}+\\frac{1}{2}\\mu_0 B^{2}$ (J/m$^3$)</li><li>Poynting vector: $\\vec{S}=\\frac{1}{\\mu_0}\\vec{E}\\times\\vec{B}$, magnitude $S = u\\,c$ (W/m$^2$)</li></ul><p><strong>SI Units</strong></p><table><tr><th>Quantity</th><th>Symbol</th><th>Unit</th></tr><tr><td>Electric field</td><td>$E$</td><td>V·m$^{-1}$</td></tr><tr><td>Magnetic field</td><td>$B$</td><td>T (tesla)</td></tr><tr><td>Permittivity of free space</td><td>$\\epsilon_0$</td><td>F·m$^{-1}$</td></tr><tr><td>Permeability of free space</td><td>$\\mu_0$</td><td>H·m$^{-1}$</td></tr><tr><td>Speed of light</td><td>$c$</td><td>m·s$^{-1}$</td></tr></table><p><strong>Solved Example</strong></p><p>Find the wavelength of an EM wave whose frequency is $f = 5\\times10^{14}\\,\\text{Hz}$.</p><ol><li>Use $c = \\lambda f$.</li><li>Rearrange: $\\lambda = \\frac{c}{f}$.</li><li>Substitute $c = 3\\times10^{8}\\,\\text{m·s}^{-1}$ and $f = 5\\times10^{14}\\,\\text{Hz}$:</li><li>$\\lambda = \\frac{3\\times10^{8}}{5\\times10^{14}} = 6\\times10^{-7}\\,\\text{m}$.</li></ol><p>Thus the wave lies in the visible spectrum (yellow light).</p>",
+      "Electromagnetic spectrum and its regions": "<p><strong>Electromagnetic Spectrum</strong> – a continuous range of electromagnetic waves ordered by wavelength ($\\lambda$) or frequency ($\\nu$). The fundamental relation $c = \\lambda \\nu$ (with $c = 3\\times10^8\\,\\text{m s}^{-1}$) connects them.</p><p><strong>Major Regions and Typical Ranges</strong></p><table><tr><th>Region</th><th>Wavelength $\\lambda$ (m)</th><th>Frequency $\\nu$ (Hz)</th><th>Energy $E$ (J)</th></tr><tr><td>Radio</td><td>$&gt;10^{-1}$</td><td>$&lt;10^{9}$</td><td>$&lt;10^{-24}$</td></tr><tr><td>Microwave</td><td>$10^{-3}$ – $10^{-1}$</td><td>$10^{9}$ – $10^{11}$</td><td>$10^{-24}$ – $10^{-22}$</td></tr><tr><td>Infrared</td><td>$7\\times10^{-7}$ – $10^{-3}$</td><td>$3\\times10^{11}$ – $4\\times10^{14}$</td><td>$10^{-22}$ – $10^{-20}$</td></tr><tr><td>Visible</td><td>$4\\times10^{-7}$ – $7\\times10^{-7}$</td><td>$4.3\\times10^{14}$ – $7.5\\times10^{14}$</td><td>$2.5\\times10^{-19}$ – $3.1\\times10^{-19}$</td></tr><tr><td>Ultraviolet</td><td>$10^{-8}$ – $4\\times10^{-7}$</td><td>$7.5\\times10^{14}$ – $3\\times10^{16}$</td><td>$3.1\\times10^{-19}$ – $1.2\\times10^{-17}$</td></tr><tr><td>X‑ray</td><td>$10^{-11}$ – $10^{-8}$</td><td>$3\\times10^{16}$ – $3\\times10^{19}$</td><td>$1.2\\times10^{-17}$ – $1.2\\times10^{-14}$</td></tr><tr><td>Gamma</td><td>$&lt;10^{-11}$</td><td>$&gt;3\\times10^{19}$</td><td>$&gt;1.2\\times10^{-14}$</td></tr></table><p><strong>Key Formulas</strong></p><ul><li>Wave speed: $c = \\lambda \\nu$</li><li>Photon energy: $E = h \\nu = \\dfrac{h c}{\\lambda}$, where $h = 6.626\\times10^{-34}\\,\\text{J s}$.</li></ul><p><strong>SI Units</strong></p><ul><li>$\\lambda$: metre (m)</li><li>$\\nu$: hertz (Hz)</li><li>$E$: joule (J)</li></ul><p><strong>Example</strong>: Find the frequency of an X‑ray having wavelength $\\lambda = 0.1\\,\\text{nm}$.</p><p>Solution:</p><ol><li>Convert wavelength: $0.1\\,\\text{nm}=0.1\\times10^{-9}\\,\\text{m}=1\\times10^{-10}\\,\\text{m}$.</li><li>Use $\\nu = \\dfrac{c}{\\lambda}$:</li><li>$\\nu = \\dfrac{3\\times10^{8}}{1\\times10^{-10}} = 3\\times10^{18}\\,\\text{Hz}$.</li><li>Energy can be obtained if required: $E = h\\nu = 6.626\\times10^{-34}\\times3\\times10^{18}=1.99\\times10^{-15}\\,\\text{J}$.</li></ol><p>Thus the X‑ray lies in the $10^{18}$–$10^{19}\\,\\text{Hz}$ band, characteristic of the X‑ray region.</p>"
     },
     "last_error": "All Groq models failed after fast failover."
   },
@@ -1499,7 +1524,9 @@
       "Electronic configuration and Aufbau principle",
       "Fine structure, Zeeman effect and Lamb shift"
     ],
-    "long_notes": {},
+    "long_notes": {
+      "Bohr’s model of hydrogen atom and postulates": "<p><strong>Bohr’s postulates for hydrogen‑like atoms</strong></p><ul><li>Electrons move in certain <em>stable circular orbits</em> about the nucleus without radiating energy.</li><li>Only those orbits are allowed for which the angular momentum is an integral multiple of reduced Planck constant: $L=n\\hbar$, where $n=1,2,3\\dots$.</li><li>Radiation is emitted or absorbed only when an electron jumps between two allowed orbits. The frequency of the emitted photon is given by $\\nu=\\dfrac{E_i-E_f}{h}$.</li></ul><p><strong>Key formulas (SI units)</strong></p><table><tr><th>Quantity</th><th>Expression</th><th>Unit</th></tr><tr><td>Radius of $n^{th}$ orbit</td><td>$r_n=\\dfrac{n^2 h^2}{4\\pi^2 m_e k e^2}=n^2 a_0$</td><td>metre (m)</td></tr><tr><td>Energy of $n^{th}$ level</td><td>$E_n=-\\dfrac{m_e k^2 e^4}{2 h^2}\\dfrac{1}{n^2}= -\\dfrac{13.6\\text{ eV}}{n^2}$</td><td>joule (J) or electron‑volt (eV)</td></tr><tr><td>Bohr radius</td><td>$a_0=\\dfrac{h^2}{4\\pi^2 m_e k e^2}=5.29\\times10^{-11}$</td><td>metre (m)</td></tr><tr><td>Rydberg constant (in wave number)</td><td>$R_H=\\dfrac{m_e k^2 e^4}{8 h^3 c}=1.097\\times10^7\\ \\text{m}^{-1}$</td><td>m$^{-1}$</td></tr></table><p><strong>Example:</strong> Find the wavelength of the photon emitted when an electron in hydrogen falls from $n_i=3$ to $n_f=2$.</p><p>Energy difference $\\Delta E=E_{3}-E_{2}= -\\dfrac{13.6}{9}+\\dfrac{13.6}{4}=1.89\\text{ eV}$.</p><p>Photon wavelength $\\lambda=\\dfrac{hc}{\\Delta E}=\\dfrac{6.626\\times10^{-34}\\times3.00\\times10^{8}}{1.89\\times1.602\\times10^{-19}}=6.56\\times10^{-7}\\text{ m}=656\\text{ nm}$ (Balmer series).</p>"
+    },
     "last_error": "All Groq models failed after fast failover."
   },
   "physics::ch13::physics/chapter13.html": {
@@ -1533,7 +1560,18 @@
     "last_error": "All Groq models failed after fast failover."
   },
   "chemistry::ch1::chemistry/solutions/long-notes.html": {
-    "last_error": "All Groq models failed after fast failover."
+    "last_error": "All Groq models failed after fast failover.",
+    "topics": [
+      "Concentration terms and units",
+      "Molarity, molarity calculations and solution stoichiometry",
+      "Molality, normality and related concentration concepts",
+      "Mole fraction, mole percent and related expressions",
+      "Colligative properties – boiling point elevation and freezing point depression",
+      "Vapor pressure lowering and Raoult’s law",
+      "Osmotic pressure and its applications",
+      "Preparation of solutions and solution stoichiometry"
+    ],
+    "long_notes": {}
   },
   "chemistry::ch1::chemistry/solutions/mind-map.html": {
     "last_error": "All Groq models failed after fast failover."
