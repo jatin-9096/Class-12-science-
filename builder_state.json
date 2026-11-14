@@ -1440,7 +1440,9 @@
       "Initial value problems and existence‑uniqueness ($y(x_{0})=y_{0}$)",
       "Higher‑order linear differential equations with constant coefficients – complementary function and particular integral ($y^{(n)}+a_{1}y^{(n-1)}+\\dots +a_{n}y=F(x)$)"
     ],
-    "long_notes": {},
+    "long_notes": {
+      "Definition, order and degree of a differential equation": "<p><strong>Definition:</strong> A <em>differential equation</em> is an equation that relates an unknown function $y(x)$ (or $y$) and its derivatives $\\\\frac{dy}{dx}, \\\\frac{d^2y}{dx^2},\\\\dots$.</p><ul><li><strong>Order:</strong> The highest order derivative present in the equation.</li><li><strong>Degree:</strong> The highest power (positive integer) to which the highest order derivative is raised, after the equation is made free from radicals and fractions involving derivatives.</li></ul><p>For a differential equation written in the form $F\\\\big(x, y, y', y'', \\\\dots, y^{(n)}\\\\big)=0$, the <strong>order</strong> is $n$ and the <strong>degree</strong> is the exponent of $y^{(n)}$ after clearing fractions and radicals.</p><table><tr><th>Order $n$</th><th>Highest derivative</th></tr><tr><td>$1$</td><td>$y'$</td></tr><tr><td>$2$</td><td>$y''$</td></tr><tr><td>$\\\\dots$</td><td>$y^{(n)}$</td></tr></table><p><strong>SI Units:</strong> If $x$ is measured in metres (m) and $y$ in seconds (s), then $y'$ has unit $\\\\frac{s}{m}$, $y''$ has unit $\\\\frac{s}{m^2}$, etc.</p><p><strong>Example:</strong> Solve $y' = 3x^2$, with $y(0)=5$.</p><ol><li>Integrate: $\\\\int y'\\\\,dx = \\\\int 3x^2\\\\,dx \\Rightarrow y = x^3 + C$.</li><li>Apply the condition $y(0)=5$: $5 = 0 + C \\Rightarrow C = 5$.</li><li>Solution: $y = x^3 + 5$.</li></ol>"
+    },
     "last_error": "All Groq models failed after fast failover."
   },
   "mathematics::ch10::mathematics/chapter10.html": {
@@ -1602,7 +1604,9 @@
       "Series LCR circuit: impedance, resonance and quality factor",
       "Power factor, its correction and applications"
     ],
-    "long_notes": {},
+    "long_notes": {
+      "Introduction to alternating current and its generation": "<p><strong>Alternating Current (AC) – Introduction</strong></p><p>AC is a time‑varying electric current that periodically reverses its direction. The standard sinusoidal form is</p><table><tr><th>Quantity</th><th>Expression</th><th>SI Unit</th></tr><tr><td>Instantaneous current</td><td>$i = I_m \\sin \\omega t$</td><td>A</td></tr><tr><td>Instantaneous voltage</td><td>$v = V_m \\sin \\omega t$</td><td>V</td></tr><tr><td>RMS current</td><td>$I_{rms}=\\frac{I_m}{\\sqrt{2}}$</td><td>A</td></tr><tr><td>RMS voltage</td><td>$V_{rms}=\\frac{V_m}{\\sqrt{2}}$</td><td>V</td></tr><tr><td>Average power</td><td>$P_{avg}=\\frac{1}{2} V_m I_m \\cos \\phi = V_{rms} I_{rms} \\cos \\phi$</td><td>W</td></tr></table><p><strong>Generation of AC</strong></p><p>When a rectangular coil of $N$ turns, area $A$, rotates with angular speed $\\omega$ in a uniform magnetic field $B$, the magnetic flux is $\\Phi = N B A \\cos \\omega t$. By Faraday’s law, the induced emf is</p><p>$e = -\\frac{d\\Phi}{dt}= N B A \\omega \\sin \\omega t$</p><p>Thus the generated emf is sinusoidal with peak $E_m = N B A \\omega$.</p><p><strong>Key Formulas</strong></p><ul><li>Peak value $X_m$ and RMS value $X_{rms}=\\frac{X_m}{\\sqrt{2}}$.</li><li>Phase difference $\\phi$ between voltage and current.</li><li>Power factor $\\cos \\phi$.</li></ul><p><strong>Example</strong></p><p>Find the rms voltage of an AC source whose peak voltage is $100\\,\\text{V}$.</p><p>Solution: $V_{rms}=\\frac{V_m}{\\sqrt{2}}=\\frac{100}{\\sqrt{2}}\\approx 70.7\\,\\text{V}$.</p>"
+    },
     "last_error": "All Groq models failed after fast failover."
   },
   "physics::ch8::physics/chapter8.html": {
@@ -1663,7 +1667,9 @@
       "Wave‑particle duality of photons and electrons",
       "Applications of wave‑particle duality in modern physics"
     ],
-    "long_notes": {}
+    "long_notes": {
+      "Photoelectric effect and Einstein’s equation": "<p><strong>Photoelectric Effect</strong> – emission of electrons from a metal surface when it is illuminated by light of frequency $\\nu$ greater than a threshold frequency $\\nu_0$.</p><ul><li><strong>Einstein’s equation</strong>: $eV_s = h\\nu - \\phi$, where $V_s$ is the stopping potential (V), $h$ is Planck’s constant ($6.626\\times10^{-34}\\,\\text{J·s}$), $\\nu$ is the frequency of incident radiation (Hz), $\\phi$ is the work function (J or eV), and $e$ is the elementary charge ($1.602\\times10^{-19}\\,\\text{C}$).</li><li>Maximum kinetic energy of emitted electrons: $K_{max}=\\frac{1}{2}m_e v_{max}^2 = h\\nu - \\phi$.</li><li>Threshold condition: $h\\nu_0 = \\phi$.</li></ul><p><strong>Key observations</strong></p><ul><li>Existence of a cut‑off frequency $\\nu_0$; electrons are emitted only if $\\nu&gt;\\nu_0$, irrespective of light intensity.</li><li>Kinetic energy of emitted electrons depends linearly on frequency and is independent of light intensity.</li><li>Increasing intensity raises the number of emitted electrons but not their kinetic energy.</li></ul><p><strong>Important constants</strong></p><table><tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th></tr><tr><td>Planck’s constant</td><td>$h$</td><td>J·s</td></tr><tr><td>Elementary charge</td><td>$e$</td><td>C</td></tr><tr><td>Work function (example)</td><td>$\\phi$</td><td>eV</td></tr></table><p><strong>Sample problem</strong></p><p>Monochromatic light of wavelength $\\lambda = 400\\,\\text{nm}$ shines on a sodium surface whose work function is $\\phi = 2.28\\,\\text{eV}$. Find the stopping potential $V_s$.</p><p>Solution:</p><ol><li>Convert wavelength to frequency: $\\nu = \\frac{c}{\\lambda}=\\frac{3.00\\times10^8}{4.00\\times10^{-7}}=7.50\\times10^{14}\\,\\text{Hz}$.</li><li>Photon energy: $E_{ph}=h\\nu = 6.626\\times10^{-34}\\times7.50\\times10^{14}=4.97\\times10^{-19}\\,\\text{J}=3.10\\,\\text{eV}$.</li><li>Apply Einstein’s equation: $eV_s = E_{ph} - \\phi = 3.10\\,\\text{eV} - 2.28\\,\\text{eV}=0.82\\,\\text{eV}$.</li><li>Since $e=1\\,\\text{eV/V}$, $V_s = 0.82\\,\\text{V}$.</li></ol><p>Thus the stopping potential required to halt the most energetic electrons is $0.82\\,\\text{V}$.</p>"
+    }
   },
   "physics::ch12::physics/chapter12.html": {
     "topics": [
@@ -1741,7 +1747,8 @@
       "Electrochemical series and its applications",
       "Corrosion and its prevention",
       "Applications of electrochemistry (electroplating, batteries, fuel cells)"
-    ]
+    ],
+    "long_notes": {}
   },
   "chemistry::ch2::chemistry/electrochemistry/mind-map.html": {
     "topics": [
