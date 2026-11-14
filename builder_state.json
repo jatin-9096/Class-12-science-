@@ -1248,6 +1248,118 @@
         "question": "Evaluate $$\\lim_{x\\to0}\\frac{\\sin x - x}{x^3}$$ using L'Hôpital's rule, stating the continuity and differentiability conditions required.",
         "answer_html": "<p>Both numerator and denominator tend to $0$ as $x\\to0$, so the limit is of $\\frac{0}{0}$ type.<br/>The functions $\\sin x - x$ and $x^3$ are polynomials/trigonometric functions, hence continuous and differentiable in a neighbourhood of $0$.<br/>Apply L'Hôpital three times:<br/>1st derivative: $$\\lim_{x\\to0}\\frac{\\cos x -1}{3x^2}$$ (still $0/0$).<br/>2nd derivative: $$\\lim_{x\\to0}\\frac{-\\sin x}{6x}$$ (still $0/0$).<br/>3rd derivative: $$\\lim_{x\\to0}\\frac{-\\cos x}{6}=\\frac{-1}{6}.$$<br/>Therefore $$\\lim_{x\\to0}\\frac{\\sin x - x}{x^3}= -\\frac{1}{6}.$$</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "If $f(x)=\\frac{x^2-4}{x-2}$, then $f$ is continuous at $x=2$?",
+        "options": [
+          "Yes, because the limit exists and equals $4$",
+          "No, because denominator becomes zero",
+          "Yes, after simplifying $f(x)=x+2$",
+          "No, the function is not defined at $x=2$"
+        ],
+        "answer": 2,
+        "explain": "Simplifying gives $f(x)=x+2$ for $x\\neq2$, and the limit as $x\\to2$ is $4$, which equals the value of the simplified expression, so $f$ can be made continuous by defining $f(2)=4$."
+      },
+      {
+        "q": "The function $g(x)=\\begin{cases}x^2,&x\\le 1\\\\2x-1,&x>1\\end{cases}$ is differentiable at $x=1$?",
+        "options": [
+          "Yes, because both one‑sided derivatives are $2$",
+          "No, because the left‑hand derivative is $2$ and right‑hand derivative is $2$",
+          "Yes, because the function is continuous and slopes match",
+          "No, because the right‑hand derivative is $2$ while the left‑hand derivative is $2$"
+        ],
+        "answer": 0,
+        "explain": "Left derivative $\\lim_{h\\to0^-}\\frac{(1+h)^2-1}{h}=2$, right derivative $\\lim_{h\\to0^+}\\frac{2(1+h)-1-1}{h}=2$. Both equal, so $g$ is differentiable at $x=1$."
+      },
+      {
+        "q": "Assertion (A): If $f$ is differentiable at $c$, then $f$ is continuous at $c$.\\nReason (R): Differentiability requires the limit $\\lim_{h\\to0}\\frac{f(c+h)-f(c)}{h}$ to exist.",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "Differentiability implies the limit defining the derivative exists, which forces $\\lim_{h\\to0}[f(c+h)-f(c)]=0$, i.e., continuity. Hence R correctly explains A."
+      },
+      {
+        "q": "For $f(x)=\\sin x$, the value of $\\displaystyle\\lim_{h\\to0}\\frac{f(\\pi+h)-f(\\pi)}{h}$ is",
+        "options": [
+          "$-1$",
+          "$0$",
+          "$1$",
+          "Does not exist"
+        ],
+        "answer": 0,
+        "explain": "$f(\\pi+h)=\\sin(\\pi+h)=-\\sin h$, so the limit becomes $\\lim_{h\\to0}\\frac{-\\sin h-0}{h}=-1$."
+      },
+      {
+        "q": "If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then by Rolle's theorem there exists $c\\in(a,b)$ such that",
+        "options": [
+          "$f'(c)=0$",
+          "$f(c)=0$",
+          "$f'(c)=\\frac{f(b)-f(a)}{b-a}$",
+          "$f(c)=\\frac{f(a)+f(b)}{2}$"
+        ],
+        "answer": 0,
+        "explain": "Rolle's theorem requires $f(a)=f(b)$ and guarantees a point $c$ with $f'(c)=0$."
+      },
+      {
+        "q": "The function $h(x)=|x|$ is",
+        "options": [
+          "Continuous and differentiable everywhere",
+          "Continuous everywhere but not differentiable at $x=0$",
+          "Not continuous at $x=0$",
+          "Differentiable everywhere but not continuous at $x=0$"
+        ],
+        "answer": 1,
+        "explain": "$|x|$ is continuous for all $x$, but the left derivative at $0$ is $-1$ and right derivative is $+1$, so not differentiable at $0$."
+      },
+      {
+        "q": "If $f'(x)>0$ for all $x\\in(2,5)$, then $f$ is",
+        "options": [
+          "Increasing on $[2,5]$",
+          "Decreasing on $[2,5]$",
+          "Constant on $[2,5]$",
+          "Neither increasing nor decreasing necessarily"
+        ],
+        "answer": 0,
+        "explain": "Positive derivative on an interval implies the function is strictly increasing on that interval."
+      },
+      {
+        "q": "The function $p(x)=\\begin{cases}\\ln x,&x>0\\\\0,&x\\le0\\end{cases}$ has a point of discontinuity at",
+        "options": [
+          "$x=0$",
+          "$x=1$",
+          "No discontinuity",
+          "Both $x=0$ and $x=1$"
+        ],
+        "answer": 0,
+        "explain": "As $x\\to0^+$, $\\ln x\\to-\\infty$, while $p(0)=0$, so a jump (essential) discontinuity at $x=0$."
+      },
+      {
+        "q": "If $f$ is twice differentiable and $f''(x)>0$ for all $x$, then $f$ is",
+        "options": [
+          "Concave upward and increasing",
+          "Concave upward and decreasing",
+          "Concave downward",
+          "Neither concave upward nor downward necessarily"
+        ],
+        "answer": 0,
+        "explain": "Positive second derivative means the graph is concave upward; the sign of $f'$ determines increasing/decreasing, but $f''>0$ alone guarantees concave upward."
+      },
+      {
+        "q": "Assertion (A): If $\\displaystyle\\lim_{x\\to c}\\frac{f(x)-f(c)}{x-c}=L$, then $f$ is continuous at $c$.\\nReason (R): The existence of the limit forces $\\displaystyle\\lim_{x\\to c}f(x)=f(c)$.",
+        "options": [
+          "Both A and R are true and R correctly explains A",
+          "Both A and R are true but R is not the correct explanation",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "The limit definition is exactly the derivative; its existence implies $\\lim_{x\\to c}[f(x)-f(c)]=0$, i.e., $\\lim_{x\\to c}f(x)=f(c)$, so $f$ is continuous at $c$."
+      }
     ]
   },
   "mathematics::ch6::mathematics/chapter6.html": {
@@ -1497,7 +1609,18 @@
     "long_notes": {}
   },
   "physics::ch10::physics/chapter10.html": {
-    "last_error": "All Groq models failed after fast failover."
+    "last_error": "All Groq models failed after fast failover.",
+    "topics": [
+      "Interference of Light",
+      "Young’s Double Slit Experiment",
+      "Division of Amplitude",
+      "Division of Wavefront",
+      "Interference due to Thin Film",
+      "Newton’s Rings",
+      "Resolving Power of Optical Instruments",
+      "Diffraction (Single Slit)"
+    ],
+    "long_notes": {}
   },
   "physics::ch11::physics/chapter11.html": {
     "last_error": "All Groq models failed after fast failover.",
@@ -1556,7 +1679,9 @@
       "Bipolar Junction Transistor (BJT): operation and characteristics",
       "Metal Oxide Semiconductor Field Effect Transistor (MOSFET): structure and operation"
     ],
-    "long_notes": {},
+    "long_notes": {
+      "Intrinsic and extrinsic semiconductors": "<p><strong>Intrinsic Semiconductor</strong> – a pure semiconductor crystal with no intentional impurity. At thermal equilibrium the electron ($n$) and hole ($p$) concentrations are equal:</p><ul><li>$n = p = n_i$</li><li>Intrinsic carrier concentration $$n_i = \\sqrt{N_c N_v}\\,\\exp\\left(-\\frac{E_g}{2kT}\\right)$$ where $N_c$, $N_v$ are effective density of states, $E_g$ band gap, $k$ Boltzmann constant, $T$ absolute temperature.</li></ul><p><strong>Extrinsic Semiconductor</strong> – semiconductor doped with donor ($N_D$) or acceptor ($N_A$) atoms.</p><ul><li>n‑type: $N_D \\gg N_A$, majority carriers electrons $n \\approx N_D$, minority holes $p = \\frac{n_i^2}{n}$.</li><li>p‑type: $N_A \\gg N_D$, majority carriers holes $p \\approx N_A$, minority electrons $n = \\frac{n_i^2}{p}$.</li><li>Mass‑action law: $$n p = n_i^2$$</li></ul><table><tr><th>Property</th><th>Intrinsic</th><th>Extrinsic (n‑type)</th></tr><tr><td>Majority carrier</td><td>Both $n$ and $p$</td><td>Electrons ($n \\approx N_D$)</td></tr><tr><td>Minority carrier</td><td>Both $n$ and $p$</td><td>Holes ($p = n_i^2 / N_D$)</td></tr><tr><td>Conductivity</td><td>$\\sigma = q (n_i \\mu_n + n_i \\mu_p)$</td><td>$\\sigma = q (N_D \\mu_n + p \\mu_p)$</td></tr></table><p><strong>SI Units</strong></p><ul><li>Carrier concentration: $\\text{cm}^{-3}$ (or $\\text{m}^{-3}$)</li><li>Mobility $\\mu$: $\\text{cm}^2\\,\\text{V}^{-1}\\,\\text{s}^{-1}$</li><li>Conductivity $\\sigma$: $\\text{S}\\,\\text{m}^{-1}$</li></ul><p><strong>Example</strong></p><p>Given $N_D = 10^{16}\\,\\text{cm}^{-3}$, $n_i = 1.5\\times10^{10}\\,\\text{cm}^{-3}$ at $300\\,$K, find electron concentration $n$ and hole concentration $p$.</p><ol><li>For an n‑type, $n \\approx N_D = 10^{16}\\,\\text{cm}^{-3}$.</li><li>Use mass‑action law: $p = \\frac{n_i^2}{n} = \\frac{(1.5\\times10^{10})^2}{10^{16}} = 2.25\\times10^{4}\\,\\text{cm}^{-3}$.</li><li>Thus $\\sigma = q (n \\mu_n + p \\mu_p)$. (Numerical substitution omitted for brevity.)</li></ol>"
+    },
     "last_error": "All Groq models failed after fast failover."
   },
   "chemistry::ch1::chemistry/solutions/long-notes.html": {
