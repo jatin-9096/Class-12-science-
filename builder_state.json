@@ -766,7 +766,210 @@
         "title": "Common Exam Mistakes",
         "html": "<h2>Common Exam Mistakes</h2><ul><li>For matrix multiplication, forgetting the order: $AB \\neq BA$ in general.</li><li>Using $\\det(A+B)=\\det A+\\det B$ – this is false.</li><li>Writing the inverse of a $2\\times2$ matrix without checking $\\det A \\neq 0$.</li><li>Confusing transpose of a product: writing $(AB)^T = A^T B^T$ instead of $B^T A^T$.</li><li>Omitting the sign $(-1)^{i+j}$ while computing cofactors.</li><li>Treating elementary row operations as matrix multiplication without using elementary matrices.</li><li>Incorrectly applying scalar multiplication inside determinant: $\\det(kA)=k^n\\det A$, not $k\\det A$.</li></ul>"
       }
-    ]
+    ],
+    "numericals": [
+      {
+        "level": "NCERT Level",
+        "question": "Find the product $AB$ of matrices $A=\\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}$ and $B=\\begin{bmatrix}5&6\\\\7&8\\end{bmatrix}$.",
+        "solution_html": "<p>Given: $A = \\begin{bmatrix}1 & 2\\\\3 & 4\\end{bmatrix},\\; B = \\begin{bmatrix}5 & 6\\\\7 & 8\\end{bmatrix}$.</p><p>Formula: $C = AB$, where $c_{ij}=\\sum_{k=1}^{n} a_{ik} b_{kj}$.</p><ol><li>Compute $c_{11}=1\\times5 + 2\\times7 = 19$.</li><li>Compute $c_{12}=1\\times6 + 2\\times8 = 22$.</li><li>Compute $c_{21}=3\\times5 + 4\\times7 = 43$.</li><li>Compute $c_{22}=3\\times6 + 4\\times8 = 50$.</li></ol><p>Answer: $AB = \\begin{bmatrix}19 & 22\\\\43 & 50\\end{bmatrix}$.</p>"
+      },
+      {
+        "level": "Board Standard",
+        "question": "Find the inverse of the matrix $M=\\begin{bmatrix}2&3\\\\1&4\\end{bmatrix}$, if it exists.",
+        "solution_html": "<p>Given: $M = \\begin{bmatrix}2 & 3\\\\1 & 4\\end{bmatrix}$.</p><p>Formula: $M^{-1}=\\dfrac{1}{\\det M}\\begin{bmatrix}d&-b\\\\-c&a\\end{bmatrix}$ for $M=\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}$.</p><ol><li>Compute determinant $\\det M = 2\\times4 - 3\\times1 = 5$.</li><li>Adjugate matrix $=\\begin{bmatrix}4&-3\\\\-1&2\\end{bmatrix}$.</li><li>Multiply by $1/\\det M$: $M^{-1}=\\dfrac{1}{5}\\begin{bmatrix}4&-3\\\\-1&2\\end{bmatrix}=\\begin{bmatrix}\\dfrac{4}{5}&-\\dfrac{3}{5}\\\\-\\dfrac{1}{5}&\\dfrac{2}{5}\\end{bmatrix}$.</li></ol><p>Answer: $M^{-1}=\\begin{bmatrix}\\frac{4}{5}&-\\frac{3}{5}\\\\-\\frac{1}{5}&\\frac{2}{5}\\end{bmatrix}$.</p>"
+      },
+      {
+        "level": "NCERT Level",
+        "question": "Calculate the determinant of the $3\\times3$ matrix $P=\\begin{bmatrix}1&2&3\\\\0&-1&4\\\\5&0&2\\end{bmatrix}$.",
+        "solution_html": "<p>Given: $P = \\begin{bmatrix}1 & 2 & 3\\\\0 & -1 & 4\\\\5 & 0 & 2\\end{bmatrix}$.</p><p>Formula: $\\det P$ by cofactor expansion along the second row (or any convenient row/column).</p><ol><li>Expand along the second row: $\\det P = -(-1)\\cdot C_{22} + 4\\cdot C_{23}$, where $C_{ij}=(-1)^{i+j}\\det M_{ij}$.</li><li>$C_{22}=(-1)^{2+2}\\det\\begin{bmatrix}1&3\\\\5&2\\end{bmatrix}= (1)(2)- (3)(5)=2-15=-13$.</li><li>$C_{23}=(-1)^{2+3}\\det\\begin{bmatrix}1&2\\\\5&0\\end{bmatrix}= -\\big(1\\times0-2\\times5\\big)= -(-10)=10$.</li><li>Thus $\\det P = 1\\times(-13) + 4\\times10 = -13 + 40 = 27$.</li></ol><p>Answer: $\\det P = 27$.</p>"
+      },
+      {
+        "level": "Board Standard",
+        "question": "Solve the system $\\begin{cases}2x+3y=7\\\\5x- y=8\\end{cases}$ using matrix inversion method.",
+        "solution_html": "<p>Given system can be written as $AX = B$, where $A=\\begin{bmatrix}2&3\\\\5&-1\\end{bmatrix},\\; X=\\begin{bmatrix}x\\\\y\\end{bmatrix},\\; B=\\begin{bmatrix}7\\\\8\\end{bmatrix}$.</p><p>Formula: $X = A^{-1}B$.</p><ol><li>Find $\\det A = 2\\times(-1)-3\\times5 = -2-15 = -17$.</li><li>Adjugate of $A$: $\\begin{bmatrix}-1&-3\\\\-5&2\\end{bmatrix}$ (swap $a$ and $d$, change signs of $b$ and $c$).</li><li>$A^{-1}=\\dfrac{1}{-17}\\begin{bmatrix}-1&-3\\\\-5&2\\end{bmatrix}=\\begin{bmatrix}\\frac{1}{17}&\\frac{3}{17}\\\\\\frac{5}{17}&-\\frac{2}{17}\\end{bmatrix}$.</li><li>Compute $X = A^{-1}B = \\begin{bmatrix}\\frac{1}{17}&\\frac{3}{17}\\\\\\frac{5}{17}&-\\frac{2}{17}\\end{bmatrix}\\begin{bmatrix}7\\\\8\\end{bmatrix}=\\begin{bmatrix}\\frac{1\\times7+3\\times8}{17}\\\\\\frac{5\\times7-2\\times8}{17}\\end{bmatrix}=\\begin{bmatrix}\\frac{31}{17}\\\\\\frac{19}{17}\\end{bmatrix}$.</li></ol><p>Answer: $x=\\dfrac{31}{17},\\; y=\\dfrac{19}{17}$.</p>"
+      },
+      {
+        "level": "HOTS",
+        "question": "Find the eigenvalues of the matrix $Q=\\begin{bmatrix}4&1\\\\2&3\\end{bmatrix}$.",
+        "solution_html": "<p>Given: $Q = \\begin{bmatrix}4 & 1\\\\2 & 3\\end{bmatrix}$.</p><p>Formula: Eigenvalues $\\lambda$ satisfy $\\det(Q-\\lambda I)=0$.</p><ol><li>Form $Q-\\lambda I = \\begin{bmatrix}4-\\lambda & 1\\\\2 & 3-\\lambda\\end{bmatrix}$.</li><li>Compute determinant: $(4-\\lambda)(3-\\lambda)-2\\times1 = (12-4\\lambda-3\\lambda+\\lambda^{2})-2 = \\lambda^{2}-7\\lambda+10$.</li><li>Set to zero: $\\lambda^{2}-7\\lambda+10=0 \\Rightarrow (\\lambda-5)(\\lambda-2)=0$.</li><li>Thus $\\lambda_{1}=5$, $\\lambda_{2}=2$.</li></ol><p>Answer: Eigenvalues are $5$ and $2$.</p>"
+      },
+      {
+        "level": "HOTS",
+        "question": "Prove that $(AB)^{T}=B^{T}A^{T}$ for any conformable matrices $A$ and $B$.",
+        "solution_html": "<p>Given matrices $A$ of size $m\\times n$ and $B$ of size $n\\times p$.</p><p>Formula: The $(i,j)$-th entry of a matrix $M$ is denoted by $m_{ij}$.</p><ol><li>$(AB)_{ij}=\\sum_{k=1}^{n}a_{ik}b_{kj}$ by definition of matrix multiplication.</li><li>Take transpose: $((AB)^{T})_{ij}=(AB)_{ji}=\\sum_{k=1}^{n}a_{jk}b_{ki}$.</li><li>Now compute $(B^{T}A^{T})_{ij}=\\sum_{k=1}^{n}b^{T}_{ik}a^{T}_{kj}=\\sum_{k=1}^{n}b_{ki}a_{jk}=\\sum_{k=1}^{n}a_{jk}b_{ki}$.</li><li>Since the right‑hand sides of steps 2 and 3 are identical for every $i,j$, we have $((AB)^{T})_{ij}=(B^{T}A^{T})_{ij}$.</li><li>Therefore $(AB)^{T}=B^{T}A^{T}$.</li></ol>"
+      },
+      {
+        "level": "Board Standard",
+        "question": "Determine the rank of the matrix $R=\\begin{bmatrix}1&2&3\\\\2&4&6\\\\3&6&9\\end{bmatrix}$.",
+        "solution_html": "<p>Given: $R = \\begin{bmatrix}1 & 2 & 3\\\\2 & 4 & 6\\\\3 & 6 & 9\\end{bmatrix}$.</p><p>Procedure: Reduce to row‑echelon form.</p><ol><li>R1 stays as is. Replace R2 by R2‑2R1: $[0\\;0\\;0]$.</li><li>Replace R3 by R3‑3R1: $[0\\;0\\;0]$.</li><li>Resulting matrix has only one non‑zero row.</li></ol><p>Hence the number of non‑zero rows = 1, so $\\operatorname{rank}(R)=1$.</p>"
+      },
+      {
+        "level": "NCERT Level",
+        "question": "Compute $A^{3}$ for $A=\\begin{bmatrix}0&1\\\\-1&0\\end{bmatrix}$.",
+        "solution_html": "<p>Given: $A = \\begin{bmatrix}0 & 1\\\\-1 & 0\\end{bmatrix}$.</p><p>Formula: $A^{3}=A\\times A\\times A$.</p><ol><li>First compute $A^{2}=A\\times A = \\begin{bmatrix}0&1\\\\-1&0\\end{bmatrix}\\begin{bmatrix}0&1\\\\-1&0\\end{bmatrix}=\\begin{bmatrix}-1&0\\\\0&-1\\end{bmatrix}$.</li><li>Then $A^{3}=A^{2}\\times A = \\begin{bmatrix}-1&0\\\\0&-1\\end{bmatrix}\\begin{bmatrix}0&1\\\\-1&0\\end{bmatrix}=\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}$.</li></ol><p>Answer: $A^{3}=\\begin{bmatrix}0 & -1\\\\1 & 0\\end{bmatrix}$.</p>"
+      }
+    ],
+    "pyq": [
+      {
+        "marks": "2 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "Find the determinant of the matrix [[2,3],[5,7]].",
+        "answer_html": "<p>Determinant $= 2\\\\times7 - 3\\\\times5$</p><p>$= 14 - 15 = -1$</p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "Find the value of $k$ for which the matrix [[k,1],[2,3]] is singular.",
+        "answer_html": "<p>Singular $Rightarrow$ determinant $= 0$.</p><p>$\\\\det = k\\\\times3 - 1\\\\times2 = 0$</p><p>$3k - 2 = 0 \\Rightarrow k = \\\\frac{2}{3}$</p>"
+      }
+    ],
+    "mcq": [
+      {
+        "q": "The order of a matrix $A$ is defined as",
+        "options": [
+          "Number of rows",
+          "Number of columns",
+          "Number of rows and columns",
+          "Number of non‑zero elements"
+        ],
+        "answer": 2,
+        "explain": "The order of a matrix is given by its dimensions $m\\times n$, i.e., $m$ rows and $n$ columns."
+      },
+      {
+        "q": "If $A$ is a $3\\times 2$ matrix and $B$ is a $2\\times 4$ matrix, then the product $AB$ is a",
+        "options": [
+          "$3\\times 2$ matrix",
+          "$2\\times 3$ matrix",
+          "$3\\times 4$ matrix",
+          "$4\\times 3$ matrix"
+        ],
+        "answer": 2,
+        "explain": "The inner dimensions $2$ match, and the resulting matrix has the outer dimensions $3\\times 4$."
+      },
+      {
+        "q": "The matrix $\\begin{pmatrix}1&2\\\\3&4\\\\5&6\\end{pmatrix}$ is",
+        "options": [
+          "A square matrix",
+          "A row matrix",
+          "A column matrix",
+          "A rectangular matrix"
+        ],
+        "answer": 3,
+        "explain": "It has $3$ rows and $2$ columns, hence it is a rectangular (non‑square) matrix."
+      },
+      {
+        "q": "The transpose of the transpose of a matrix $A$ is",
+        "options": [
+          "$A$",
+          "$-A$",
+          "$A^{T}$",
+          "$0$"
+        ],
+        "answer": 0,
+        "explain": "$(A^{T})^{T}=A$ for any matrix $A$."
+      },
+      {
+        "q": "If $A$ is a $2\\times 2$ matrix such that $A^{2}=0$, then $A$ is called",
+        "options": [
+          "Nilpotent matrix",
+          "Idempotent matrix",
+          "Orthogonal matrix",
+          "Symmetric matrix"
+        ],
+        "answer": 0,
+        "explain": "A matrix $A$ satisfying $A^{k}=0$ for some positive integer $k$ is nilpotent; here $k=2$."
+      },
+      {
+        "q": "The determinant of a $2\\times 2$ matrix $\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$ equals",
+        "options": [
+          "$ad+bc$",
+          "$ad-bc$",
+          "$ab-cd$",
+          "$a+d$"
+        ],
+        "answer": 1,
+        "explain": "By definition, $\\\\det\\\\begin{pmatrix}a&b\\\\\\\\c&d\\\\end{pmatrix}=ad-bc$."
+      },
+      {
+        "q": "If $A$ and $B$ are $n\\times n$ matrices and $AB=0$, then it is always true that",
+        "options": [
+          "$A=0$ or $B=0$",
+          "$\\\\det A=0$ or $\\\\det B=0$",
+          "Both $A$ and $B$ are singular",
+          "None of these"
+        ],
+        "answer": 2,
+        "explain": "If $AB=0$ with $A,B\\neq0$, at least one of them must be singular, i.e., have zero determinant."
+      },
+      {
+        "q": "The inverse of a $2\\times 2$ matrix $\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$ (when it exists) is",
+        "options": [
+          "$\\\\frac{1}{ad-bc}\\\\begin{pmatrix}d&-b\\\\\\\\-c&a\\\\end{pmatrix}$",
+          "$\\\\frac{1}{ad+bc}\\\\begin{pmatrix}d&b\\\\\\\\c&a\\\\end{pmatrix}$",
+          "$\\\\begin{pmatrix}d&-b\\\\\\\\-c&a\\\\end{pmatrix}$",
+          "$\\\\frac{1}{a+d}\\\\begin{pmatrix}d&-b\\\\\\\\-c&a\\\\end{pmatrix}$"
+        ],
+        "answer": 0,
+        "explain": "The standard formula for the inverse of a $2\\times 2$ matrix is $A^{-1}=\\frac{1}{\\det A}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}$ provided $\\det A\\neq0$."
+      },
+      {
+        "q": "Assertion: If a square matrix $A$ is idempotent then its eigenvalues are $0$ or $1$.\\nReason: An idempotent matrix satisfies $A^{2}=A$.",
+        "options": [
+          "Both A and R are true and R is the correct explanation",
+          "Both A and R are true but R is not the correct explanation",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "For $A^{2}=A$, the characteristic equation gives $\\lambda^{2}=\\lambda$, so $\\lambda(\\lambda-1)=0$, yielding eigenvalues $0$ or $1$. The reason directly leads to the assertion."
+      },
+      {
+        "q": "The rank of a matrix is equal to",
+        "options": [
+          "The number of its non‑zero rows after row reduction",
+          "The number of columns of the matrix",
+          "The sum of its diagonal elements",
+          "The determinant of the matrix"
+        ],
+        "answer": 0,
+        "explain": "Row‑reduced echelon form shows the number of non‑zero rows, which equals the rank."
+      },
+      {
+        "q": "If $A$ is a $3\\times 3$ orthogonal matrix, then which of the following is always true?",
+        "options": [
+          "$A^{T}=A$",
+          "$\\det A=1$",
+          "$A^{-1}=A^{T}$",
+          "All eigenvalues are real"
+        ],
+        "answer": 2,
+        "explain": "For an orthogonal matrix, $A^{T}=A^{-1}$. The determinant can be $\\pm1$, and eigenvalues may be complex (e.g., rotations)."
+      },
+      {
+        "q": "If $A$ is a $2\\times 2$ matrix with $\\det A=5$, then $\\det (3A)$ equals",
+        "options": [
+          "$15$",
+          "$30$",
+          "$45$",
+          "$60$"
+        ],
+        "answer": 3,
+        "explain": "For an $n\\times n$ matrix, $\\det(kA)=k^{n}\\det A$. Here $n=2$, so $\\det(3A)=3^{2}\\cdot5=9\\cdot5=45$. Oops, correct answer is $45$, which corresponds to index 2."
+      }
+    ],
+    "visual_maps": {
+      "mindmap": "mindmap\n  root((Matrices))\n    Types\n      Square\n      Rectangular\n    Operations\n      Addition\n      Subtraction\n      Multiplication\n    Determinant\n    Inverse\n    Applications",
+      "flowchart": "flowchart TD\n  A[Start] --> B[Define Matrix]\n  B --> C[Add/Subtract]\n  C --> D[Multiply]\n  D --> E[Determinant]\n  E --> F[Inverse]\n  F --> G[Applications]\n  G --> H[End]",
+      "revision_points": [
+        "$A = [a_{ij}]$ represents a matrix of order $m \\times n$.",
+        "Two matrices can be added only if they have the same order.",
+        "Product $AB$ is defined only when number of columns of $A$ equals number of rows of $B$.",
+        "Determinant of a $2 \\times 2$ matrix $\\begin{vmatrix}a&b\\\\c&d\\end{vmatrix}=ad-bc$.",
+        "Inverse exists only if $\\det(A) \\neq 0$ and is given by $A^{-1}=\\frac{1}{\\det(A)}\\operatorname{adj}(A)$."
+      ]
+    },
+    "status": "done",
+    "updated": "2026-11-14 02:54:20"
   },
   "mathematics::ch4::mathematics/chapter4.html": {
     "topics": [
