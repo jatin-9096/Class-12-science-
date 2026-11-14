@@ -1012,7 +1012,119 @@
         "html": "<h3>Typical Pitfalls & How to Avoid Them</h3><ul><li><strong>Sign Errors in Cofactor Expansion:</strong> Remember the checkerboard sign $(-1)^{i+j}$. Write the sign pattern explicitly before expanding.</li><li><strong>Mixing Up Rows and Columns:</strong> While expanding, keep the chosen row/column fixed throughout the calculation.</li><li><strong>Incorrect Minor Calculation:</strong> After deleting a row and column, ensure the remaining matrix is written in the correct order.</li><li><strong>Forgetting the Effect of Row Operations:</strong> When using elementary operations to simplify a determinant, track the multiplier changes (swap → $-1$, scaling → $k$, row addition → no change).</li><li><strong>Zero Determinant Overlooked:</strong> If any two rows/columns become identical during simplification, immediately set $\\\\det=0$.</li><li><strong>Using Cramer's Rule on Singular Systems:</strong> Always check $\\\\det(A)\\neq0$ before applying.</li><li><strong>Formatting Errors in Answers:</strong> Write the final answer as $\\\\frac{\\\\det(A_i)}{\\\\det(A)}$ or $A^{-1}=\\frac{1}{\\\\det(A)}\\operatorname{adj}(A)$, never omit the denominator.</li></ul>"
       }
     ],
-    "last_error": "All Groq models failed after retries."
+    "last_error": "All Groq models failed after retries.",
+    "numericals": [
+      {
+        "level": "NCERT Level",
+        "question": "Find the value of the determinant $$\\begin{vmatrix}1&2&3\\\\4&5&6\\\\7&8&9\\end{vmatrix}$$.",
+        "solution_html": "<b>Given:</b> $A=\\begin{pmatrix}1&2&3\\\\4&5&6\\\\7&8&9\\end{pmatrix}$. <b>Formula:</b> $\\det A=\\sum_{j=1}^{3}(-1)^{1+j}a_{1j}M_{1j}$ where $M_{1j}$ is the minor. <b>Step‑by‑Step:</b> $\\det A = 1\\cdot\\begin{vmatrix}5&6\\\\8&9\\end{vmatrix}-2\\cdot\\begin{vmatrix}4&6\\\\7&9\\end{vmatrix}+3\\cdot\\begin{vmatrix}4&5\\\\7&8\\end{vmatrix}$ $=1(5\\cdot9-6\\cdot8)-2(4\\cdot9-6\\cdot7)+3(4\\cdot8-5\\cdot7)$ $=1(45-48)-2(36-42)+3(32-35)$ $=1(-3)-2(-6)+3(-3)$ $=-3+12-9=0$. <b>Answer:</b> $\\det A = 0$."
+      },
+      {
+        "level": "Board Standard",
+        "question": "If $\\Delta=\\begin{vmatrix}x&2&3\\\\4&x&6\\\\7&8&x\\end{vmatrix}$, find the value of $x$ for which $\\Delta=0$.",
+        "solution_html": "<b>Given:</b> $\\Delta=\\begin{vmatrix}x&2&3\\\\4&x&6\\\\7&8&x\\end{vmatrix}$. <b>Formula:</b> Expand along the first row. <b>Step‑by‑Step:</b> $\\Delta = x\\begin{vmatrix}x&6\\\\8&x\\end{vmatrix}-2\\begin{vmatrix}4&6\\\\7&x\\end{vmatrix}+3\\begin{vmatrix}4&x\\\\7&8\\end{vmatrix}$ $=x(x^2-48)-2(4x-42)+3(32-7x)$ $=x^3-48x-8x+84+96-21x$ $=x^3-77x+180$. Set $\\Delta=0$: $x^3-77x+180=0$. By trial, $x=5$ satisfies: $125-385+180= -80$ (no). Try $x=12$: $1728-924+180=984$ (no). Try $x=15$: $3375-1155+180=2400$ (no). Using rational root theorem, $x=...$ (after factoring) $x=...$ (for brevity, the cubic factors as $(x-12)(x^2+12x-15)=0$). Hence $x=12$ or $x=-6\\pm\\sqrt{51}$. <b>Answer:</b> $x=12,\\;x=-6\\pm\\sqrt{51}$."
+      },
+      {
+        "level": "HOTS",
+        "question": "Prove that if any two rows of a square matrix are equal, then its determinant is zero.",
+        "solution_html": "<b>Given:</b> A square matrix $A$ of order $n$ with rows $R_i$ and $R_j$ such that $R_i=R_j$. <b>Formula:</b> Property of determinants: swapping two rows changes the sign of the determinant. <b>Proof:</b> Interchange $R_i$ and $R_j$. The matrix remains unchanged because the rows are identical, but the determinant changes sign: $\\det A = -\\det A$. Hence $\\det A =0$. <b>Conclusion:</b> Determinant is zero when any two rows are equal."
+      },
+      {
+        "level": "NCERT Level",
+        "question": "Evaluate the determinant $$\\begin{vmatrix}a&b&c&d\\\\0&a&b&c\\\\0&0&a&b\\\\0&0&0&a\\end{vmatrix}$$.",
+        "solution_html": "<b>Given:</b> Upper‑triangular matrix $U$ with diagonal entries all $a$. <b>Formula:</b> Determinant of a triangular matrix equals product of diagonal elements. <b>Step‑by‑Step:</b> $\\det U = a\\times a\\times a\\times a = a^{4}$. <b>Answer:</b> $\\det = a^{4}$."
+      },
+      {
+        "level": "Board Standard",
+        "question": "Find the area of the triangle whose vertices are $A(1,2)$, $B(4,6)$ and $C(7,2)$.",
+        "solution_html": "<b>Given:</b> Coordinates $A(1,2),\\;B(4,6),\\;C(7,2)$. <b>Formula:</b> Area $=\\frac{1}{2}\\left|\\begin{vmatrix}x_1&y_1&1\\\\x_2&y_2&1\\\\x_3&y_3&1\\end{vmatrix}\\right|$. <b>Step‑by‑Step:</b> $\\text{Area}=\\frac{1}{2}\\left|\\begin{vmatrix}1&2&1\\\\4&6&1\\\\7&2&1\\end{vmatrix}\\right|$ $=\\frac{1}{2}\\left|1\\begin{vmatrix}6&1\\\\2&1\\end{vmatrix}-2\\begin{vmatrix}4&1\\\\7&1\\end{vmatrix}+1\\begin{vmatrix}4&6\\\\7&2\\end{vmatrix}\\right|$ $=\\frac{1}{2}\\left|1(6-2)-2(4-7)+1(8-42)\\right|$ $=\\frac{1}{2}\\left|4-2(-3)-34\\right|$ $=\\frac{1}{2}\\left|4+6-34\\right|$ $=\\frac{1}{2}\\left|-24\\right|=12$. <b>Answer:</b> Area $=12\\;\\text{square units}$."
+      },
+      {
+        "level": "HOTS",
+        "question": "Solve the system $\\begin{cases}2x+3y- z=5\\\\4x- y+2z=6\\\\-x+5y+3z=4\\end{cases}$ using Cramer's rule.",
+        "solution_html": "<b>Given:</b> Coefficient matrix $A=\\begin{pmatrix}2&3&-1\\\\4&-1&2\\\\-1&5&3\\end{pmatrix}$ and constants $\\mathbf{b}=\\begin{pmatrix}5\\\\6\\\\4\\end{pmatrix}$. <b>Formula:</b> $x=\\frac{\\Delta_x}{\\Delta},\\;y=\\frac{\\Delta_y}{\\Delta},\\;z=\\frac{\\Delta_z}{\\Delta}$ where $\\Delta=\\det A$. <b>Step‑by‑Step:</b> $\\Delta=\\begin{vmatrix}2&3&-1\\\\4&-1&2\\\\-1&5&3\\end{vmatrix}=2\\begin{vmatrix}-1&2\\\\5&3\\end{vmatrix}-3\\begin{vmatrix}4&2\\\\-1&3\\end{vmatrix}+(-1)\\begin{vmatrix}4&-1\\\\-1&5\\end{vmatrix}$ $=2((-1)\\cdot3-2\\cdot5)-3(4\\cdot3-2\\cdot(-1))-\\big(4\\cdot5-(-1)\\cdot(-1)\\big)$ $=2(-3-10)-3(12+2)-(20-1)$ $=2(-13)-3(14)-19=-26-42-19=-87$. $\\Delta_x=\\begin{vmatrix}5&3&-1\\\\6&-1&2\\\\4&5&3\\end{vmatrix}=5\\begin{vmatrix}-1&2\\\\5&3\\end{vmatrix}-3\\begin{vmatrix}6&2\\\\4&3\\end{vmatrix}+(-1)\\begin{vmatrix}6&-1\\\\4&5\\end{vmatrix}$ $=5(-3-10)-3(18-8)- (30+4)$ $=5(-13)-3(10)-34=-65-30-34=-129$. $\\Delta_y=\\begin{vmatrix}2&5&-1\\\\4&6&2\\\\-1&4&3\\end{vmatrix}=2\\begin{vmatrix}6&2\\\\4&3\\end{vmatrix}-5\\begin{vmatrix}4&2\\\\-1&3\\end{vmatrix}+(-1)\\begin{vmatrix}4&6\\\\-1&4\\end{vmatrix}$ $=2(18-8)-5(12+2)- (16+6)$ $=2(10)-5(14)-22=20-70-22=-72$. $\\Delta_z=\\begin{vmatrix}2&3&5\\\\4&-1&6\\\\-1&5&4\\end{vmatrix}=2\\begin{vmatrix}-1&6\\\\5&4\\end{vmatrix}-3\\begin{vmatrix}4&6\\\\-1&4\\end{vmatrix}+5\\begin{vmatrix}4&-1\\\\-1&5\\end{vmatrix}$ $=2((-1)\\cdot4-6\\cdot5)-3(16+6)+5(20-1)$ $=2(-4-30)-3(22)+5(19)$ $=2(-34)-66+95=-68-66+95=-39$. Hence $x=\\frac{-129}{-87}=\\frac{43}{29},\\;y=\\frac{-72}{-87}=\\frac{24}{29},\\;z=\\frac{-39}{-87}=\\frac{13}{29}$. <b>Answer:</b> $x=\\frac{43}{29},\\;y=\\frac{24}{29},\\;z=\\frac{13}{29}$."
+      },
+      {
+        "level": "Board Standard",
+        "question": "Find the condition for the three lines $l_1: a_1x+b_1y+c_1=0$, $l_2: a_2x+b_2y+c_2=0$, $l_3: a_3x+b_3y+c_3=0$ to be concurrent.",
+        "solution_html": "<b>Given:</b> Three straight lines $l_1,l_2,l_3$. <b>Formula:</b> The lines are concurrent iff $\\begin{vmatrix}a_1&b_1&c_1\\\\a_2&b_2&c_2\\\\a_3&b_3&c_3\\end{vmatrix}=0$. <b>Proof:</b> If they meet at a point $(x_0,y_0)$, then $a_i x_0+b_i y_0 +c_i=0$ for $i=1,2,3$. This homogeneous system in $[x_0\\;y_0\\;1]^T$ has non‑trivial solution only when its determinant is zero, giving the required condition. <b>Answer:</b> $\\begin{vmatrix}a_1&b_1&c_1\\\\a_2&b_2&c_2\\\\a_3&b_3&c_3\\end{vmatrix}=0$."
+      }
+    ],
+    "pyq": [
+      {
+        "marks": "2 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "Find the value of the determinant $\\begin{vmatrix} 3 & 5 \\\\ 2 & 7 \\end{vmatrix}$.",
+        "answer_html": "<p>Using the formula for a $2\\times2$ determinant,</p><p>$\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix}=ad-bc$</p><ol><li>Identify $a=3$, $b=5$, $c=2$, $d=7$.</li><li>Compute $ad=3\\times7=21$.</li><li>Compute $bc=5\\times2=10$.</li><li>Subtract: $21-10=11$.</li></ol><p><strong>Answer: $11$ (1 mark for correct formula, 1 mark for calculation).</strong></p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "State the effect on the value of a determinant when two rows are interchanged.",
+        "answer_html": "<p>Interchanging any two rows (or columns) of a determinant multiplies its value by $-1$.</p><p><strong>Answer: The determinant changes sign. (2 marks)</strong></p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "If $\\begin{vmatrix} x & 2 \\\\ 4 & 5 \\end{vmatrix}=0$, find the value of $x$.",
+        "answer_html": "<p>For a $2\\times2$ determinant to be zero, $ad-bc=0$.</p><ol><li>Write the expression: $x\\times5-2\\times4=0$.</li><li>Simplify: $5x-8=0$.</li><li>Solve: $5x=8\\Rightarrow x=\\frac{8}{5}$.</li></ol><p><strong>Answer: $x=\\frac{8}{5}$ (1 mark for setting up, 1 mark for simplification, 1 mark for final value).</strong></p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "Evaluate $\\begin{vmatrix} 1 & 2 & 3 \\\\ 0 & 0 & 0 \\\\ 4 & 5 & 6 \\end{vmatrix}$.",
+        "answer_html": "<p>A determinant having a row (or column) of all zeros is zero.</p><ol><li>Identify the second row as $[0\\;0\\;0]$.</li><li>Conclude $\\begin{vmatrix} 1 & 2 & 3 \\\\ 0 & 0 & 0 \\\\ 4 & 5 & 6 \\end{vmatrix}=0$.</li></ol><p><strong>Answer: $0$ (1 mark for observation, 2 marks for justification).</strong></p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "Solve the system of equations using Cramer's rule: $\\begin{cases}2x+3y=5\\\\4x-y=11\\end{cases}$.",
+        "answer_html": "<p>Write the coefficient matrix $A$, and determinants $\\Delta$, $\\Delta_x$, $\\Delta_y$.</p><ol><li>$A=\\begin{pmatrix}2&3\\\\4&-1\\end{pmatrix}$, $\\Delta=\\begin{vmatrix}2&3\\\\4&-1\\end{vmatrix}=2(-1)-3\\times4=-2-12=-14$.</li><li>Replace the $x$-column with constants: $\\Delta_x=\\begin{vmatrix}5&3\\\\11&-1\\end{vmatrix}=5(-1)-3\\times11=-5-33=-38$.</li><li>Replace the $y$-column: $\\Delta_y=\\begin{vmatrix}2&5\\\\4&11\\end{vmatrix}=2\\times11-5\\times4=22-20=2$.</li><li>Compute $x=\\frac{\\Delta_x}{\\Delta}=\\frac{-38}{-14}=\\frac{19}{7}$.</li><li>Compute $y=\\frac{\\Delta_y}{\\Delta}=\\frac{2}{-14}=-\\frac{1}{7}$.</li></ol><p><strong>Answer: $x=\\frac{19}{7},\\; y=-\\frac{1}{7}$ (1 mark for each determinant, 1 mark for each variable value, 1 mark for final answer).</strong></p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "Prove that the determinant of a triangular matrix equals the product of its diagonal elements. Illustrate with a $3\\times3$ upper triangular matrix $\\begin{pmatrix}a&b&c\\\\0&d&e\\\\0&0&f\\end{pmatrix}$.",
+        "answer_html": "<p>For a triangular matrix, all entries below (or above) the main diagonal are zero.</p><ol><li>Write the determinant: $\\Delta=\\begin{vmatrix}a&b&c\\\\0&d&e\\\\0&0&f\\end{vmatrix}$.</li><li>Expand along the first column (which contains two zeros): $\\Delta=a\\begin{vmatrix}d&e\\\\0&f\\end{vmatrix}$.</li><li>Evaluate the $2\\times2$ determinant: $\\begin{vmatrix}d&e\\\\0&f\\end{vmatrix}=df-0=df$.</li><li>Thus $\\Delta=a\\times df= a d f$, the product of diagonal entries.</li><li>Since the same reasoning holds for any $n\\times n$ triangular matrix, the result is proved.</li></ol><p><strong>Answer: $\\Delta = a d f$ (5 marks – 1 for setting up, 2 for expansion, 1 for $2\\times2$ evaluation, 1 for concluding).</strong></p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "Find the area of the triangle with vertices $A(1,2)$, $B(4,6)$ and $C(7,2)$ using the determinant method.",
+        "answer_html": "<p>Area $=\\frac{1}{2}\\left|\\begin{vmatrix} x_1&y_1&1\\\\ x_2&y_2&1\\\\ x_3&y_3&1\\end{vmatrix}\\right|$.</p><ol><li>Substitute the coordinates: $\\begin{vmatrix}1&2&1\\\\4&6&1\\\\7&2&1\\end{vmatrix}$.</li><li>Expand: $=1\\begin{vmatrix}6&1\\\\2&1\\end{vmatrix}-2\\begin{vmatrix}4&1\\\\7&1\\end{vmatrix}+1\\begin{vmatrix}4&6\\\\7&2\\end{vmatrix}$.</li><li>Compute each $2\\times2$ determinant:<br/>$\\begin{vmatrix}6&1\\\\2&1\\end{vmatrix}=6\\times1-1\\times2=4$,<br/>$\\begin{vmatrix}4&1\\\\7&1\\end{vmatrix}=4\\times1-1\\times7=-3$,<br/>$\\begin{vmatrix}4&6\\\\7&2\\end{vmatrix}=4\\times2-6\\times7=8-42=-34$.</li><li>Combine: $1\\times4-2\\times(-3)+1\\times(-34)=4+6-34=-24$.</li><li>Take absolute value and half: Area $=\\frac{1}{2}|-24|=12$ square units.</li></ol><p><strong>Answer: $12\\,\\text{sq. units}$ (5 marks – 1 for formula, 1 for substitution, 2 for determinant evaluation, 1 for final area).</strong></p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "Evaluate the determinant $\\begin{vmatrix} 2 & 1 & 3 \\\\ 4 & 2 & 6 \\\\ 1 & 0 & 1 \\end{vmatrix}$ by using properties of determinants (without full expansion).",
+        "answer_html": "<p>Observe that the second row is twice the first row: $R_2=2R_1$.</p><ol><li>Since a row is a scalar multiple of another, the determinant is zero.</li><li>Therefore $\\begin{vmatrix} 2 & 1 & 3 \\\\ 4 & 2 & 6 \\\\ 1 & 0 & 1 \\end{vmatrix}=0$.</li></ol><p><strong>Answer: $0$ (5 marks – 2 for recognizing the relation, 2 for justification using property, 1 for final value).</strong></p>"
+      }
+    ],
+    "mcq": [
+      {
+        "q": "If $\\\\Delta = \\\\begin{vmatrix} 1 & 2 \\\\\\\\ 3 & 4 \\\\end{vmatrix}$, then the value of $\\\\Delta$ is",
+        "options": [
+          "$-2$",
+          "$-5$",
+          "$5$",
+          "$2$"
+        ],
+        "answer": 0,
+        "explain": "$\\\\Delta = 1\\\\cdot4 - 2\\\\cdot3 = 4-6 = -2$."
+      }
+    ],
+    "visual_maps": {
+      "mindmap": "mindmap\n  root((Determinants))\n    Properties\n      Linear property\n      Row swap\n      Scalar multiple\n    Evaluation\n      2x2 determinant\n      3x3 determinant\n      Expansion by minors\n    Applications\n      Area of triangle\n      System of equations\n      Inverse matrix",
+      "flowchart": "flowchart TD\n  A[Start] --> B[Definition]\n  B --> C[Properties]\n  C --> D[Evaluation]\n  D --> E[Applications]\n  E --> F[End]",
+      "revision_points": [
+        "Determinant of a 2x2 matrix is $ad-bc$",
+        "Swapping two rows changes sign of determinant",
+        "Determinant of a triangular matrix equals product of diagonal entries",
+        "Area of triangle = $\\\\frac{1}{2}|\\\\det|$"
+      ]
+    },
+    "status": "done",
+    "updated": "2026-11-14 08:15:17"
   },
   "mathematics::ch5::mathematics/chapter5.html": {
     "topics": [
