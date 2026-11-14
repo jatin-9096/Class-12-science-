@@ -11,8 +11,8 @@ from groq import Groq
 ROOT = Path(__file__).resolve().parent
 STATE_FILE = ROOT / "builder_state.json"
 DOMAIN = "https://shorveernotes.website"
-MODELS = ["openai/gpt-oss-120b", "llama-3.3-70b-versatile", "openai/gpt-oss-20b"]
-REQUEST_DELAY = 25  # 8K TPM लिमिट के लिए सुरक्षित अंतराल
+MODELS = ["llama-3.3-70b-versatile", "openai/gpt-oss-120b", "llama-3.1-8b-instant"]
+REQUEST_DELAY = 8  # तेज़ और सेफ गैप (3-4 मिनट में पूरा चैप्टर तैयार)
 
 SUBJECTS = {
     "mathematics": "Mathematics",
@@ -96,183 +96,58 @@ CSS = r"""<style>
 }
 html { scroll-behavior: smooth; }
 .svb { max-width: 960px; margin: auto; padding: 24px 18px 56px; color: var(--svb-heading); }
-
 .svb-hero {
-  position: relative;
-  padding: 32px 28px;
-  margin-bottom: 24px;
-  background: var(--svb-card-bg);
-  border: 1px solid var(--svb-border);
-  border-radius: var(--r-lg, 18px);
-  box-shadow: var(--shadow-sm, 0 4px 20px rgba(0,0,0,0.05));
-  overflow: hidden;
+  position: relative; padding: 32px 28px; margin-bottom: 24px;
+  background: var(--svb-card-bg); border: 1px solid var(--svb-border);
+  border-radius: var(--r-lg, 18px); box-shadow: var(--shadow-sm, 0 4px 20px rgba(0,0,0,0.05)); overflow: hidden;
 }
 .svb-hero::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
   background: linear-gradient(90deg, var(--svb-accent), var(--gold, #e8b64c));
 }
 .svb-meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: var(--svb-sub-bg);
-  border: 1px solid var(--svb-border);
-  color: var(--svb-accent);
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: 999px;
+  background: var(--svb-sub-bg); border: 1px solid var(--svb-border); color: var(--svb-accent);
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
 }
-.svb-hero h1 {
-  font-size: clamp(28px, 4.8vw, 44px);
-  line-height: 1.2;
-  margin: 14px 0 8px;
-  color: var(--svb-heading);
-  letter-spacing: -0.02em;
-}
-
+.svb-hero h1 { font-size: clamp(28px, 4.8vw, 44px); line-height: 1.2; margin: 14px 0 8px; color: var(--svb-heading); letter-spacing: -0.02em; }
 .svb-nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 6px; }
 .svb-nav a, .svb-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 9px 16px;
-  border: 1px solid var(--svb-border);
-  border-radius: 999px;
-  text-decoration: none;
-  cursor: pointer;
-  background: var(--svb-card-bg);
-  color: var(--svb-heading);
-  font-size: 14px;
-  font-weight: 600;
+  display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px;
+  border: 1px solid var(--svb-border); border-radius: 999px; text-decoration: none; cursor: pointer;
+  background: var(--svb-card-bg); color: var(--svb-heading); font-size: 14px; font-weight: 600;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
-.svb-nav a:hover, .svb-btn:hover {
-  transform: translateY(-2px);
-  border-color: var(--svb-accent);
-  background: var(--svb-sub-bg);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
+.svb-nav a:hover, .svb-btn:hover { transform: translateY(-2px); border-color: var(--svb-accent); background: var(--svb-sub-bg); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
 .svb-card {
-  position: relative;
-  margin: 22px 0;
-  padding: 26px 28px;
-  background: var(--svb-card-bg);
-  border: 1px solid var(--svb-border);
-  border-left: 4px solid var(--svb-accent);
-  border-radius: var(--r-md, 16px);
-  box-shadow: var(--shadow-sm, 0 2px 12px rgba(0,0,0,0.04));
-  color: var(--svb-heading);
+  position: relative; margin: 22px 0; padding: 26px 28px;
+  background: var(--svb-card-bg); border: 1px solid var(--svb-border); border-left: 4px solid var(--svb-accent);
+  border-radius: var(--r-md, 16px); box-shadow: var(--shadow-sm, 0 2px 12px rgba(0,0,0,0.04)); color: var(--svb-heading);
   transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease, border-color 0.28s ease;
 }
-.svb-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.09);
-  border-color: var(--svb-accent);
-}
+.svb-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.09); border-color: var(--svb-accent); }
 .svb-card h2 {
-  font-size: clamp(21px, 2.8vw, 28px);
-  margin: 0 0 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--svb-border);
-  color: var(--svb-heading);
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-size: clamp(21px, 2.8vw, 28px); margin: 0 0 14px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--svb-border); color: var(--svb-heading); display: flex; align-items: center; gap: 10px;
 }
-.svb-card h2::before {
-  content: "";
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--svb-accent);
-  flex-shrink: 0;
-}
+.svb-card h2::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--svb-accent); flex-shrink: 0; }
 .svb-card h3 { font-size: 18.5px; margin: 16px 0 8px; color: var(--svb-heading); }
 .svb-card p, .svb-card li { line-height: 1.85; color: var(--svb-body); overflow-wrap: anywhere; }
 .svb-card ul, .svb-card ol { padding-left: 22px; margin: 10px 0; }
-.svb-card blockquote {
-  margin: 14px 0;
-  padding: 14px 18px;
-  background: var(--svb-sub-bg);
-  border-left: 3px solid var(--svb-accent);
-  border-radius: 8px;
-  font-style: italic;
-  color: var(--svb-body);
-}
-
+.svb-card blockquote { margin: 14px 0; padding: 14px 18px; background: var(--svb-sub-bg); border-left: 3px solid var(--svb-accent); border-radius: 8px; font-style: italic; color: var(--svb-body); }
 .svb-card table { width: 100%; border-collapse: collapse; margin: 16px 0; border-radius: 10px; overflow: hidden; }
 .svb-card th, .svb-card td { border: 1px solid var(--svb-border); padding: 11px 14px; text-align: left; color: var(--svb-body); }
 .svb-card th { background: var(--svb-sub-bg); font-weight: 700; color: var(--svb-heading); }
-
-.svb-note {
-  padding: 16px 18px;
-  background: var(--svb-sub-bg);
-  border: 1px solid var(--svb-border);
-  border-left: 4px solid var(--gold-dark, var(--svb-accent));
-  border-radius: 10px;
-  margin-top: 14px;
-  color: var(--svb-heading);
-}
-.svb-badge {
-  display: inline-block;
-  padding: 4px 11px;
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  background: var(--svb-sub-bg);
-  border: 1px solid var(--svb-border);
-  border-radius: 6px;
-  margin-bottom: 10px;
-  color: var(--svb-accent);
-}
-
-.svb-quiz-q {
-  padding: 20px;
-  margin: 16px 0;
-  border: 1px solid var(--svb-border);
-  border-left: 4px solid var(--svb-accent);
-  border-radius: 12px;
-  background: var(--svb-card-bg);
-}
+.svb-note { padding: 16px 18px; background: var(--svb-sub-bg); border: 1px solid var(--svb-border); border-left: 4px solid var(--gold-dark, var(--svb-accent)); border-radius: 10px; margin-top: 14px; color: var(--svb-heading); }
+.svb-badge { display: inline-block; padding: 4px 11px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; background: var(--svb-sub-bg); border: 1px solid var(--svb-border); border-radius: 6px; margin-bottom: 10px; color: var(--svb-accent); }
+.svb-quiz-q { padding: 20px; margin: 16px 0; border: 1px solid var(--svb-border); border-left: 4px solid var(--svb-accent); border-radius: 12px; background: var(--svb-card-bg); }
 .svb-quiz-q legend { font-weight: 700; padding: 0 8px; color: var(--svb-heading); }
-.svb-opt {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  margin: 6px 0;
-  border-radius: 8px;
-  cursor: pointer;
-  color: var(--svb-body);
-  transition: background 0.15s ease;
-}
+.svb-opt { display: flex; align-items: center; gap: 10px; padding: 10px 12px; margin: 6px 0; border-radius: 8px; cursor: pointer; color: var(--svb-body); transition: background 0.15s ease; }
 .svb-opt:hover { background: var(--svb-sub-bg); }
-.svb-result {
-  padding: 18px;
-  margin: 14px 0;
-  border: 1px solid var(--svb-border);
-  border-left: 4px solid var(--svb-accent);
-  border-radius: 12px;
-  background: var(--svb-card-bg);
-}
-
-.svb-reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-}
+.svb-result { padding: 18px; margin: 14px 0; border: 1px solid var(--svb-border); border-left: 4px solid var(--svb-accent); border-radius: 12px; background: var(--svb-card-bg); }
+.svb-reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
 .svb-reveal.is-visible { opacity: 1; transform: translateY(0); }
 @media (prefers-reduced-motion: reduce) { .svb-reveal { opacity: 1; transform: none; transition: none; } }
-
 .mermaid { display: flex; justify-content: center; overflow-x: auto; padding: 12px 0; }
 mjx-container { max-width: 100%; }
 mjx-container[display=true] { overflow-x: auto; max-width: 100%; padding: 6px 0; }
@@ -346,7 +221,6 @@ LATEX_COMMANDS = (
 
 
 def fix_json_latex(raw):
-    # केवल अवैध JSON बैकस्लैश एस्केप को ठीक करता है (सामान्य अंग्रेजी शब्दों पर स्लैश नहीं लगाएगा)
     return re.sub(r'(?<!\\)\\(?!["\\/bfnrtu])', r'\\\\', raw)
 
 
@@ -448,12 +322,12 @@ class GroqBot:
     def ask(self, subject, prompt):
         system = (
             f"You are an expert CBSE Class 12 {SUBJECTS[subject]} teacher for Shorveer Notes (by Jatin Sandilya). "
-            "Write clear, exam-oriented content strictly following the latest CBSE Class 12 syllabus. "
+            "Write concise, crisp, exam-oriented content strictly following the latest CBSE Class 12 syllabus. "
             "MATH FORMATTING RULE: Wrap EVERY mathematical expression, variable, or formula (including inside HTML <td> table cells) in $...$ for inline or $$...$$ for display equations. Use double backslashes like \\\\frac{a}{b}, \\\\sqrt{x}, \\\\ge, \\\\infty inside JSON strings. Never leave an unmatched $ sign. "
             "Output ONLY valid JSON as requested."
         )
-        for model in MODELS:
-            for attempt in range(2):
+        for round_idx in range(2):
+            for model in MODELS:
                 wait = REQUEST_DELAY - (time.time() - self.last_call)
                 if wait > 0:
                     time.sleep(wait)
@@ -461,7 +335,7 @@ class GroqBot:
                     res = self.client.chat.completions.create(
                         model=model,
                         temperature=0.2,
-                        max_completion_tokens=4096,
+                        max_completion_tokens=2400,
                         response_format={"type": "json_object"},
                         messages=[
                             {"role": "system", "content": system},
@@ -474,14 +348,13 @@ class GroqBot:
                     return json.loads(fix_json_latex(raw))
                 except Exception as e:
                     self.last_call = time.time()
-                    err_msg = str(e)
-                    print(f"[{model}] Error (attempt {attempt+1}): {err_msg[:140]}")
-                    if "429" in err_msg or "rate" in err_msg.lower():
-                        print("Rate limit hit (429). Sleeping 62s to reset 1-minute token window...")
-                        time.sleep(62)
-                    else:
-                        time.sleep(8)
-        raise RuntimeError("All Groq models failed after retries.")
+                    print(f"[{model}] Switching model due to: {str(e)[:120]}")
+                    time.sleep(2)
+            # अगर तीनों मॉडल एक साथ लिमिट हिट करें तो केवल 25 सेकंड रुकें
+            if round_idx == 0:
+                print("All models busy, cooling down 25s...")
+                time.sleep(25)
+        raise RuntimeError("All Groq models failed after fast failover.")
 
 
 def sanitize_html(raw):
@@ -599,8 +472,8 @@ def build_english(bot, target, rec, state, force):
         res = bot.ask("english", f"""
         Class 12 English Chapter {ch_num}: "{chapter}".
         Return JSON: {{"sections": [{{"heading": "...", "html": "..."}}]}}
-        Include: 1) Introduction & Author Background, 2) Detailed Scene-by-Scene / Stanza-by-Stanza Summary, 3) Central Theme & Message, 4) Literary Devices & Style, 5) Important Word Meanings & Phrases (HTML table).
-        Use clean HTML tags (p, ul, li, strong, table, tr, th, td).
+        Include: 1) Introduction & Author Background, 2) Detailed Scene-by-Scene Summary, 3) Central Theme & Message, 4) Literary Devices & Style, 5) Important Word Meanings (HTML table).
+        Use clean HTML tags (p, ul, li, strong, table, tr, th, td). Keep total JSON concise.
         """)
         rec["summary"] = res["sections"]
         save_state(state)
@@ -613,7 +486,7 @@ def build_english(bot, target, rec, state, force):
         res = bot.ask("english", f"""
         Class 12 English Chapter {ch_num}: "{chapter}".
         Return JSON: {{"characters": [{{"name": "...", "role": "...", "sketch_html": "..."}}]}}
-        Provide deep, exam-ready character sketches of all major and minor characters (if poem, analyze Poet/Speaker and key figures).
+        Provide exam-ready character sketches of all major and minor characters (if poem, analyze Poet/Speaker and key figures).
         """)
         rec["characters"] = res["characters"]
         save_state(state)
@@ -643,7 +516,7 @@ def build_english(bot, target, rec, state, force):
         res = bot.ask("english", f"""
         Class 12 English Chapter {ch_num}: "{chapter}".
         Return JSON: {{"items": [{{"type": "Short Answer / Long Answer / Value-Based Question", "question": "...", "answer": "..."}}]}}
-        Provide 10 CBSE board questions: 4 Short Answer (40-50 words), 3 Long Answer (120-150 words), and 3 Value-Based Questions with complete model answers.
+        Provide 8 CBSE board questions: 3 Short Answer, 3 Long Answer, and 2 Value-Based Questions with complete model answers.
         """)
         rec["practice"] = res["items"]
         save_state(state)
@@ -679,9 +552,9 @@ def build_science_math(bot, target, rec, state, force):
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
         Return JSON: {{"topics": ["Topic 1", "Topic 2", ...]}}
-        List 8 to 9 sequential syllabus topics covering the entire chapter completely.
+        List 7 to 8 sequential syllabus topics covering the entire chapter completely.
         """)
-        rec["topics"] = res["topics"][:9]
+        rec["topics"] = res["topics"][:8]
         save_state(state)
 
     notes_map = rec.setdefault("long_notes", {})
@@ -690,7 +563,7 @@ def build_science_math(bot, target, rec, state, force):
             res = bot.ask(subj, f"""
             CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}" — Topic: "{topic}".
             Return JSON: {{"html": "..."}}
-            Write clear, structured Long Detailed Notes (280-360 words). Include exact definitions, step-by-step derivations/theorems, SI units, edge cases, and 1 solved example. Wrap ALL math/equations (including inside HTML tables) in $...$ or $$...$$. Use clean HTML (p, ul, li, strong, table, tr, th, td).
+            Write crisp, high-yield Detailed Notes (220-280 words). Include exact definitions, key derivations/formulas, SI units, and 1 solved example. Wrap ALL math (including in HTML tables) in $...$ or $$...$$. Use clean HTML (p, ul, li, strong, table, tr, th, td).
             """)
             notes_map[topic] = sanitize_html(res["html"])
             save_state(state)
@@ -703,7 +576,7 @@ def build_science_math(bot, target, rec, state, force):
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
         Return JSON: {{"cards": [{{"title": "...", "html": "..."}}]}}
-        Create crisp Short Revision Notes: 1) Important Formulas Table, 2) Key Definitions & Laws, 3) Graphs/Reactions/Theorems Summary, 4) Common Exam Mistakes. Wrap EVERY formula (including in table cells) in $...$ or $$...$$.
+        Create crisp Short Revision Notes: 1) Important Formulas Table, 2) Key Definitions & Laws, 3) Summary & Common Mistakes. Wrap EVERY formula (including in table cells) in $...$ or $$...$$.
         """)
         rec["short_notes"] = res["cards"]
         save_state(state)
@@ -714,8 +587,8 @@ def build_science_math(bot, target, rec, state, force):
     if "numericals" not in rec or force:
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
-        Return JSON: {{"problems": [{{"level": "NCERT Level / Board Standard / HOTS", "question": "...", "solution_html": "..."}}]}}
-        Create 8 important solved numericals (or step-by-step proofs/conversions for Math/Organic Chem) covering key formulas. Show Given, Formula, Step-by-Step Calculation, and Final Answer with units using LaTeX ($...$ / $$...$$).
+        Return JSON: {{"problems": [{{"level": "NCERT / Board Standard / HOTS", "question": "...", "solution_html": "..."}}]}}
+        Create 6 important solved numericals/proofs covering key formulas. Show Given, Formula, Step-by-Step Calculation, and Final Answer with units using LaTeX ($...$ / $$...$$).
         """)
         rec["numericals"] = res["problems"]
         save_state(state)
@@ -729,8 +602,8 @@ def build_science_math(bot, target, rec, state, force):
     if "pyq" not in rec or force:
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
-        Return JSON: {{"pyqs": [{{"marks": "2 Marks / 3 Marks / 5 Marks", "tag": "Repeated Board Concept", "question": "...", "answer_html": "..."}}]}}
-        Create 8 authentic CBSE Board PYQ-pattern subjective questions (2-mark reasoning, 3-mark derivations/problems, 5-mark analytical questions) based on CBSE Class 12 board exam trends. Provide full marking-scheme answers with LaTeX ($...$ / $$...$$).
+        Return JSON: {{"pyqs": [{{"marks": "2 Marks / 3 Marks / 5 Marks", "tag": "Board Important", "question": "...", "answer_html": "..."}}]}}
+        Create 6 authentic CBSE Board PYQ-pattern subjective questions (2-mark, 3-mark, and 5-mark) with concise marking-scheme answers using LaTeX ($...$ / $$...$$).
         """)
         rec["pyq"] = res["pyqs"]
         save_state(state)
@@ -749,12 +622,12 @@ def build_visual_maps(bot, subj, ch_num, chapter, p_maps, p_notes, rec, state, f
     if "visual_maps" not in rec or force:
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
-        Create two accurate, compact visual learning diagrams based on the chapter.
+        Create two compact visual diagrams based on the chapter.
         Return JSON only in this exact shape:
         {{"mindmap_mermaid":"mindmap\\n  root((Chapter))\\n    Topic\\n      Subtopic",
           "flowchart_mermaid":"flowchart TD\\n  A[Start] --> B[Concept]\\n  B --> C[Result]",
           "revision_points":["point 1","point 2"]}}
-        Rules: Mermaid syntax only in diagram fields; no Markdown fences; use short plain labels without parentheses or quotes inside node text; avoid HTML.
+        Rules: Mermaid syntax only; no Markdown fences; short plain labels without parentheses or quotes inside node text.
         """)
         mind = str(res.get("mindmap_mermaid", "")).strip()
         flow = str(res.get("flowchart_mermaid", "")).strip()
@@ -765,7 +638,7 @@ def build_visual_maps(bot, subj, ch_num, chapter, p_maps, p_notes, rec, state, f
         rec["visual_maps"] = {
             "mindmap": mind,
             "flowchart": flow,
-            "revision_points": [str(x) for x in res.get("revision_points", [])[:12]]
+            "revision_points": [str(x) for x in res.get("revision_points", [])[:10]]
         }
         save_state(state)
 
@@ -789,13 +662,13 @@ def build_mcq(bot, subj, ch_num, chapter, p_mcq, p_notes, rec, state, force):
         res = bot.ask(subj, f"""
         CBSE Class 12 {SUBJECTS[subj]} Chapter {ch_num}: "{chapter}".
         Return JSON: {{"questions": [{{"q": "...", "options": ["A", "B", "C", "D"], "answer": 0, "explain": "..."}}]}}
-        Create 12 CBSE board-level MCQs (including Assertion-Reason style). 'answer' must be integer 0, 1, 2, or 3. Use $...$ for inline math equations.
+        Create 10 CBSE board-level MCQs (including Assertion-Reason style). 'answer' must be integer 0, 1, 2, or 3. Use $...$ for inline math equations.
         """)
         qs = []
         for q in res.get("questions", []):
             if isinstance(q, dict) and isinstance(q.get("options"), list) and len(q["options"]) == 4 and isinstance(q.get("answer"), int) and 0 <= q["answer"] < 4:
                 qs.append({"q": str(q["q"]), "options": [str(o) for o in q["options"]], "answer": q["answer"], "explain": str(q.get("explain", ""))})
-        rec["mcq"] = qs[:12]
+        rec["mcq"] = qs[:10]
         save_state(state)
 
     payload = json.dumps(rec["mcq"], ensure_ascii=False).replace("</", "<\\/")
