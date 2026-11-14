@@ -485,7 +485,245 @@
         "html": "<h3>Common Exam Mistakes</h3><ul><li>Confusing domain and range – always write domain $[-1,1]$ for $\\sin^{-1}$ and $\\cos^{-1}$, and range as per principal values.</li><li>Using $\\sin^{-1}x$ as $\\arcsin x$ without restricting $x$ to $[-1,1]$ in integration problems.</li><li>Sign error in derivatives: $\\frac{d}{dx}\\cos^{-1}x$ is negative.</li><li>For $\\tan^{-1}x$, forgetting the vertical asymptotes $y=\\pm\\frac{\\pi}{2}$ while sketching the graph.</li><li>Applying co‑function identity incorrectly for negative arguments – remember $\\cos^{-1}(-x)=\\pi-\\cos^{-1}x$.</li><li>Mixing up $\\sec^{-1}x$ and $\\csc^{-1}x$ ranges; they follow the same principal values as $\\cos^{-1}$ and $\\sin^{-1}$ respectively.</li></ul>"
       }
     ],
-    "last_error": "All Groq models failed after retries."
+    "last_error": "All Groq models failed after retries.",
+    "numericals": [
+      {
+        "level": "NCERT Level",
+        "question": "Evaluate $\\sin^{-1}\\left(\\frac{3}{5}\\right)+\\cos^{-1}\\left(\\frac{4}{5}\\right)$.",
+        "solution_html": "<p><b>Given:</b> $\\sin^{-1}\\left(\\frac{3}{5}\\right)$ and $\\cos^{-1}\\left(\\frac{4}{5}\\right)$.</p><p><b>Formula:</b> $\\sin^{-1}x+\\cos^{-1}x=\\frac{\\pi}{2}$.</p><p><b>Solution:</b></p><ol><li>Verify that $\\left(\\frac{3}{5}\\right)^{2}+\\left(\\frac{4}{5}\\right)^{2}=1$, so the identity is applicable.</li><li>Apply the identity directly to obtain $\\sin^{-1}\\left(\\frac{3}{5}\\right)+\\cos^{-1}\\left(\\frac{4}{5}\\right)=\\frac{\\pi}{2}$.</li></ol><p><b>Answer:</b> $\\frac{\\pi}{2}$ rad.</p>"
+      },
+      {
+        "level": "NCERT Level",
+        "question": "Find the principal value of $\\cos^{-1}\\left(-\\frac{1}{2}\\right)$.",
+        "solution_html": "<p><b>Given:</b> $\\cos^{-1}\\left(-\\frac{1}{2}\\right)$.</p><p><b>Domain of principal value:</b> $[0,\\pi]$.</p><p><b>Solution:</b></p><ol><li>We need an angle $\\theta\\in[0,\\pi]$ such that $\\cos\\theta=-\\frac{1}{2}$.</li><li>From the unit circle, $\\cos\\theta=-\\frac{1}{2}$ at $\\theta=\\frac{2\\pi}{3}$.</li></ol><p><b>Answer:</b> $\\frac{2\\pi}{3}$ rad.</p>"
+      },
+      {
+        "level": "NCERT Level",
+        "question": "Prove that $\\sin^{-1}x+\\sin^{-1}y=\\sin^{-1}\\left(x\\sqrt{1-y^{2}}+y\\sqrt{1-x^{2}}\\right)$, where $x,y\\in[-1,1]$ and $x\\sqrt{1-y^{2}}+y\\sqrt{1-x^{2}}\\in[-1,1]$.",
+        "solution_html": "<p><b>Given:</b> $x,y\\in[-1,1]$ and the expression inside $\\sin^{-1}$ lies in $[-1,1]$.</p><p><b>Proof:</b></p><ol><li>Let $\\alpha=\\sin^{-1}x$ and $\\beta=\\sin^{-1}y$. Then $\\sin\\alpha=x$, $\\sin\\beta=y$, $\\cos\\alpha=\\sqrt{1-x^{2}}$, $\\cos\\beta=\\sqrt{1-y^{2}}$ (principal values give non‑negative cosines).</li><li>Consider $\\sin(\\alpha+\\beta)=\\sin\\alpha\\cos\\beta+\\cos\\alpha\\sin\\beta$.</li><li>Substituting the values, $\\sin(\\alpha+\\beta)=x\\sqrt{1-y^{2}}+y\\sqrt{1-x^{2}}$.</li><li>Since $\\alpha,\\beta\\in[-\\frac{\\pi}{2},\\frac{\\pi}{2}]$, their sum $\\alpha+\\beta$ lies in $[-\\pi,\\pi]$ and the principal value of $\\sin^{-1}$ of the RHS equals $\\alpha+\\beta$.</li><li>Hence $\\sin^{-1}x+\\sin^{-1}y=\\sin^{-1}\\left(x\\sqrt{1-y^{2}}+y\\sqrt{1-x^{2}}\\right)$.</li></ol><p><b>Conclusion:</b> The identity holds under the stated conditions.</p>"
+      },
+      {
+        "level": "NCERT Level",
+        "question": "Differentiate $y=\\tan^{-1}\\bigl(\\sqrt{1-x^{2}}\\bigr)$ with respect to $x$.",
+        "solution_html": "<p><b>Given:</b> $y=\\tan^{-1}\\bigl(\\sqrt{1-x^{2}}\\bigr)$.</p><p><b>Formulae:</b> $\\frac{d}{dx}\\tan^{-1}u=\\frac{1}{1+u^{2}}\\cdot\\frac{du}{dx}$, $\\frac{d}{dx}\\sqrt{1-x^{2}}=\\frac{-x}{\\sqrt{1-x^{2}}}$.</p><p><b>Solution:</b></p><ol><li>Let $u=\\sqrt{1-x^{2}}$. Then $\\frac{du}{dx}=\\frac{-x}{\\sqrt{1-x^{2}}}$.</li><li>Compute $1+u^{2}=1+(1-x^{2})=2-x^{2}$.</li><li>Apply the chain rule: $\\frac{dy}{dx}=\\frac{1}{2-x^{2}}\\cdot\\frac{-x}{\\sqrt{1-x^{2}}}=\\frac{-x}{(2-x^{2})\\sqrt{1-x^{2}}}$.</li></ol><p><b>Answer:</b> $\\displaystyle \\frac{dy}{dx}=\\frac{-x}{(2-x^{2})\\sqrt{1-x^{2}}}$.</p>"
+      },
+      {
+        "level": "NCERT Level",
+        "question": "Evaluate the integral $\\displaystyle\\int\\frac{dx}{\\sqrt{1-x^{2}}}$.",
+        "solution_html": "<p><b>Given Integral:</b> $\\displaystyle\\int\\frac{dx}{\\sqrt{1-x^{2}}}$.</p><p><b>Formula:</b> $\\frac{d}{dx}\\sin^{-1}x=\\frac{1}{\\sqrt{1-x^{2}}}$.</p><p><b>Solution:</b> By recognizing the integrand as the derivative of $\\sin^{-1}x$, we have<br/>$$\\int\\frac{dx}{\\sqrt{1-x^{2}}}=\\sin^{-1}x+C.$$</p><p><b>Answer:</b> $\\sin^{-1}x+C$.</p>"
+      },
+      {
+        "level": "NCERT Level",
+        "question": "Solve the equation $\\sin^{-1}(2x)=\\frac{\\pi}{6}$ for $x$.",
+        "solution_html": "<p><b>Given Equation:</b> $\\sin^{-1}(2x)=\\frac{\\pi}{6}$.</p><p><b>Domain:</b> $|2x|\\le 1\\;\\Rightarrow\\;|x|\\le\\frac{1}{2}$.</p><p><b>Solution:</b></p><ol><li>Take sine on both sides: $2x=\\sin\\left(\\frac{\\pi}{6}\\right)=\\frac{1}{2}$.</li><li>Hence $x=\\frac{1}{4}$, which satisfies $|x|\\le\\frac{1}{2}$.</li></ol><p><b>Answer:</b> $x=\\frac{1}{4}$.</p>"
+      },
+      {
+        "level": "NCERT Level",
+        "question": "Find the value of $\\tan\\bigl(\\sin^{-1}\\frac{3}{5}\\bigr)$.",
+        "solution_html": "<p><b>Given:</b> $\\theta=\\sin^{-1}\\frac{3}{5}$, so $\\sin\\theta=\\frac{3}{5}$.</p><p><b>Construction:</b> In a right triangle, opposite side $=3$, hypotenuse $=5$, therefore adjacent $=\\sqrt{5^{2}-3^{2}}=\\sqrt{16}=4$.</p><p><b>Compute:</b> $\\tan\\theta=\\frac{\\text{opposite}}{\\text{adjacent}}=\\frac{3}{4}$.</p><p><b>Answer:</b> $\\frac{3}{4}$.</p>"
+      },
+      {
+        "level": "NCERT Level",
+        "question": "Prove that $\\cos^{-1}x=\\frac{\\pi}{2}-\\sin^{-1}x$ for $x\\in[-1,1]$.",
+        "solution_html": "<p><b>Given:</b> $x\\in[-1,1]$.</p><p><b>Proof:</b></p><ol><li>Let $\\theta=\\sin^{-1}x$, so $\\sin\\theta=x$ and $\\theta\\in\\left[-\\frac{\\pi}{2},\\frac{\\pi}{2}\\right]$.</li><li>Consider $\\phi=\\frac{\\pi}{2}-\\theta$. Then $\\phi\\in[0,\\pi]$, the principal range of $\\cos^{-1}$.</li><li>Compute $\\cos\\phi=\\cos\\left(\\frac{\\pi}{2}-\\theta\\right)=\\sin\\theta=x$.</li><li>Since $\\phi$ is the angle in $[0,\\pi]$ whose cosine is $x$, $\\phi=\\cos^{-1}x$.</li><li>Thus $\\cos^{-1}x=\\frac{\\pi}{2}-\\theta=\\frac{\\pi}{2}-\\sin^{-1}x$.</li></ol><p><b>Conclusion:</b> The identity holds for all $x\\in[-1,1]$.</p>"
+      }
+    ],
+    "pyq": [
+      {
+        "marks": "2 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "State the principal value ranges of $\\sin^{-1}x$ and $\\cos^{-1}x$.",
+        "answer_html": "<p>Principal value ranges:</p><ol><li>$\\sin^{-1}x \\in [-\\\\frac{\\\\pi}{2},\\\\frac{\\\\pi}{2}]$</li><li>$\\cos^{-1}x \\in [0,\\\\pi]$</li></ol><p>Marking Scheme: 1 mark for each correct range (total 2 marks).</p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "If $\\theta = \\tan^{-1}\\frac{3}{4}$, find $\\sin\\theta$.",
+        "answer_html": "<p>Let $\\tan\\theta=\\frac{3}{4}$, then opposite=3, adjacent=4, hypotenuse$=\\sqrt{3^{2}+4^{2}}=5$.</p><p>$\\sin\\theta=\\frac{\\text{opposite}}{\\text{hypotenuse}}=\\frac{3}{5}$.</p><p>Marking Scheme: 1 mark for constructing the right triangle, 1 mark for the final value $\\frac{3}{5}$.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "Prove that $\\sin^{-1}x+\\cos^{-1}x=\\frac{\\pi}{2}$ for $-1\\le x\\le1$.",
+        "answer_html": "<p>Let $\\alpha=\\sin^{-1}x$, so $\\sin\\alpha=x$ and $\\alpha\\in[-\\\\frac{\\\\pi}{2},\\\\frac{\\\\pi}{2}]$.</p><p>Define $\\beta=\\cos^{-1}x$, then $\\cos\\beta=x$ and $\\beta\\in[0,\\\\pi]$.</p><p>Since $\\sin\\alpha=x=\\cos\\beta$, we have $\\alpha+\\beta=\\frac{\\\\pi}{2}$ (co‑function identity).</p><p>Thus $\\sin^{-1}x+\\cos^{-1}x=\\frac{\\\\pi}{2}$.</p><p>Marking Scheme: 1 mark for setting $\\alpha$, 1 mark for using $\\cos\\beta$, 1 mark for concluding $\\alpha+\\beta=\\frac{\\\\pi}{2}$.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "If $\\alpha=\\sin^{-1}\\frac{3}{5}$, find $\\tan\\alpha$.",
+        "answer_html": "<p>From $\\sin\\alpha=\\frac{3}{5}$, construct a right triangle: opposite=3, hypotenuse=5, adjacent=$\\sqrt{5^{2}-3^{2}}=\\sqrt{16}=4$.</p><p>$\\tan\\alpha=\\frac{\\text{opposite}}{\\text{adjacent}}=\\frac{3}{4}$.</p><p>Marking Scheme: 1 mark for triangle, 1 mark for finding adjacent side, 1 mark for $\\frac{3}{4}$.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "Solve for $x$ in $\\sin^{-1}x+\\cos^{-1}(2x)=\\frac{\\pi}{2}$.",
+        "answer_html": "<p>Using the identity $\\sin^{-1}u+\\cos^{-1}u=\\frac{\\\\pi}{2}$, we require $2x=x$.</p><p>Hence $x=0$.</p><p>Check domain: $-1\\le x\\le1$ and $-1\\le2x\\le1\\Rightarrow -\\frac{1}{2}\\le x\\le\\frac{1}{2}$, $x=0$ satisfies.</p><p>Marking Scheme:</p><ol><li>State the identity (1 mark).</li><li>Equate arguments $2x=x$ (1 mark).</li><li>Solve $x=0$ (1 mark).</li><li>State domain check and verify (2 marks).</li></ol>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "If $\\theta$ satisfies $\\tan^{-1}\\theta+\\cot^{-1}\\theta=\\frac{\\pi}{2}$, find $\\theta$.",
+        "answer_html": "<p>Recall $\\cot^{-1}\\theta=\\tan^{-1}\\frac{1}{\\theta}$ for $\\theta>0$ (principal values). Hence</p><p>$\\tan^{-1}\\theta+\\tan^{-1}\\frac{1}{\\theta}=\\frac{\\\\pi}{2}$.</p><p>Using the addition formula $\\tan^{-1}a+\\tan^{-1}b=\\tan^{-1}\\frac{a+b}{1-ab}$ (when $ab<1$) gives</p><p>$\\tan^{-1}\\frac{\\theta+\\frac{1}{\\theta}}{1-1}=\\frac{\\\\pi}{2}$.</p><p>Since denominator $0$, the argument of $\\tan^{-1}$ must be $\\pm\\infty$, which occurs when $\\theta+\\frac{1}{\\theta}\\to\\pm\\infty$. This happens only when $\\theta>0$ and $\\theta\\to\\infty$ or $\\theta\\to0^{+}$.</p><p>From the principal value condition, the only finite solution is $\\theta=1$ (because $\\tan^{-1}1+\\cot^{-1}1=\\frac{\\\\pi}{4}+\\frac{\\\\pi}{4}=\\frac{\\\\pi}{2}$).</p><p>Thus $\\boxed{\\theta=1}$.</p><p>Marking Scheme:</p><ol><li>Convert $\\cot^{-1}$ to $\\tan^{-1}$ (1 mark).</li><li>Apply addition formula or reasoning (1 mark).</li><li>Identify $\\theta=1$ as the valid solution (2 marks).</li><li>State verification $\\tan^{-1}1+\\cot^{-1}1=\\frac{\\\\pi}{2}$ (1 mark).</li></ol>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "Show that $\\sec^{-1}x=\\cos^{-1}\\frac{1}{x}$ for $|x|\\ge1$ and discuss its domain.",
+        "answer_html": "<p>By definition $\\sec^{-1}x$ is the angle $\\theta$ such that $\\sec\\theta=x$ and $\\theta\\in[0,\\\\pi]\\setminus\\{\\\\frac{\\\\pi}{2}\\}$.</p><p>Since $\\sec\\theta=\\frac{1}{\\cos\\theta}=x$, we have $\\cos\\theta=\\frac{1}{x}$.</p><p>Therefore $\\theta=\\cos^{-1}\\frac{1}{x}$, giving $\\sec^{-1}x=\\cos^{-1}\\frac{1}{x}$.</p><p>Domain discussion:</p><ul><li>$\\sec\\theta$ is defined for $\\theta\\neq\\frac{\\\\pi}{2}$, so $x\\neq0$.</li><li>Because $|\\sec\\theta|\\ge1$, we require $|x|\\ge1$.</li><li>For $x>0$, $\\theta\\in[0,\\\\frac{\\\\pi}{2})\\cup(\\\\frac{\\\\pi}{2},\\\\pi]$ maps to $\\cos^{-1}(1/x)\\in[0,\\\\frac{\\\\pi}{2})\\cup(\\\\frac{\\\\pi}{2},\\\\pi]$.</li><li>For $x<0$, $\\theta\\in[\\\\pi/2,\\\\pi]$ and $\\cos^{-1}(1/x)\\in[\\\\pi/2,\\\\pi]$.</li></ul><p>Thus the identity holds for all $x$ with $|x|\\ge1$.</p><p>Marking Scheme:</p><ol><li>State definition of $\\sec^{-1}x$ (1 mark).</li><li>Derive $\\cos\\theta=1/x$ and write $\\theta=\\cos^{-1}(1/x)$ (2 marks).</li><li>Explain domain $|x|\\ge1$ and exclude $x=0$ (1 mark).</li><li>Summarise the result (1 mark).</li></ol>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Repeated Board Concept",
+        "question": "A particle moves such that its displacement $s$ (in metres) after time $t$ seconds is given by $s=\\tan^{-1}(t)$. Find the velocity and acceleration at $t=1\\,\\text{s}$.",
+        "answer_html": "<p>Displacement: $s=\\tan^{-1}t$.</p><p>Velocity $v=\\frac{ds}{dt}=\\frac{1}{1+t^{2}}$ (derivative of $\\tan^{-1}t$).</p><p>Acceleration $a=\\frac{dv}{dt}=\\frac{d}{dt}\\left(\\frac{1}{1+t^{2}}\\right)=-\\frac{2t}{(1+t^{2})^{2}}$.</p><p>At $t=1$:</p><ul><li>$v(1)=\\frac{1}{1+1^{2}}=\\frac{1}{2}$ m/s.</li><li>$a(1)=-\\frac{2\\cdot1}{(1+1^{2})^{2}}=-\\frac{2}{4}=-\\frac{1}{2}$ m/s$^{2}$.</li></ul><p>Marking Scheme:</p><ol><li>Differentiate $\\tan^{-1}t$ to get $v$ (1 mark).</li><li>Differentiate $v$ to get $a$ (1 mark).</li><li>Substitute $t=1$ in $v$ (1 mark).</li><li>Substitute $t=1$ in $a$ (1 mark).</li><li>State final numerical answers with units (1 mark).</li></ol>"
+      }
+    ],
+    "mcq": [
+      {
+        "q": "Find the principal value of $\\\\sin^{-1}(\\\\frac{1}{2})$.",
+        "options": [
+          "$\\\\frac{\\\\pi}{6}$",
+          "$\\\\frac{\\\\pi}{3}$",
+          "$\\\\frac{5\\\\pi}{6}$",
+          "$\\\\frac{\\\\pi}{2}$"
+        ],
+        "answer": 0,
+        "explain": "The principal value of $\\\\sin^{-1}x$ lies in $[-\\\\frac{\\\\pi}{2},\\\\frac{\\\\pi}{2}]$. Since $\\\\sin\\\\frac{\\\\pi}{6}=\\\\frac{1}{2}$, $\\\\sin^{-1}(\\\\frac{1}{2})=\\\\frac{\\\\pi}{6}$."
+      },
+      {
+        "q": "What is the domain of $y=\\\\tan^{-1}x$?",
+        "options": [
+          "$(-\\\\infty,\\\\infty)$",
+          "$(-\\\\frac{\\\\pi}{2},\\\\frac{\\\\pi}{2})$",
+          "$[0,\\\\pi]$",
+          "$(-\\\\pi,\\\\pi)$"
+        ],
+        "answer": 0,
+        "explain": "The inverse tangent function is defined for every real number, so its domain is $(-\\\\infty,\\\\infty)$."
+      },
+      {
+        "q": "State the range of $y=\\\\cos^{-1}x$.",
+        "options": [
+          "$[0,\\\\pi]$",
+          "$[-\\\\frac{\\\\pi}{2},\\\\frac{\\\\pi}{2}]$",
+          "$(-\\\\infty,\\\\infty)$",
+          "$[0,2\\\\pi]$"
+        ],
+        "answer": 0,
+        "explain": "By definition, $\\\\cos^{-1}x$ takes values in $[0,\\\\pi]$ for $x\\in[-1,1]$."
+      },
+      {
+        "q": "Evaluate $\\\\sin^{-1}(\\\\sin\\\\frac{5\\\\pi}{4})$.",
+        "options": [
+          "$\\\\frac{\\\\pi}{4}$",
+          "$-\\\\frac{\\\\pi}{4}$",
+          "$\\\\frac{5\\\\pi}{4}$",
+          "$-\\\\frac{5\\\\pi}{4}$"
+        ],
+        "answer": 1,
+        "explain": "$\\\\sin\\\\frac{5\\\\pi}{4}=-\\\\frac{\\\\sqrt{2}}{2}$. The principal value of $\\\\sin^{-1}$ lies in $[-\\\\frac{\\\\pi}{2},\\\\frac{\\\\pi}{2}]$, so $\\\\sin^{-1}(-\\\\frac{\\\\sqrt{2}}{2})=-\\\\frac{\\\\pi}{4}$."
+      },
+      {
+        "q": "If $\\\\theta=\\\\tan^{-1}x$, then $\\\\frac{d\\\\theta}{dx}$ equals?",
+        "options": [
+          "$\\\\frac{1}{1+x^{2}}$",
+          "$\\\\frac{1}{\\\\sqrt{1-x^{2}}}$",
+          "$\\\\frac{x}{1+x^{2}}$",
+          "$\\\\frac{1}{1-x^{2}}$"
+        ],
+        "answer": 0,
+        "explain": "Differentiating $\\\\theta=\\\\tan^{-1}x$ gives $\\\\frac{d\\\\theta}{dx}=\\\\frac{1}{1+x^{2}}$."
+      },
+      {
+        "q": "Solve for $x$: $\\\\sin^{-1}x+\\\\cos^{-1}x=\\\\frac{\\\\pi}{2}$.",
+        "options": [
+          "$x\\\\in[-1,1]$",
+          "$x=0$",
+          "$x=\\\\frac{\\\\sqrt{2}}{2}$",
+          "$x=1$"
+        ],
+        "answer": 0,
+        "explain": "For any $x$ in $[-1,1]$, $\\\\sin^{-1}x+\\\\cos^{-1}x=\\\\frac{\\\\pi}{2}$ holds, so the solution set is $[-1,1]$."
+      },
+      {
+        "q": "Evaluate $\\\\int_{0}^{1}\\\\frac{dx}{\\\\sqrt{1-x^{2}}}$.",
+        "options": [
+          "$\\\\frac{\\\\pi}{2}$",
+          "$1$",
+          "$\\\\frac{\\\\pi}{4}$",
+          "$\\\\ln(1+\\\\sqrt{2})$"
+        ],
+        "answer": 0,
+        "explain": "The antiderivative is $\\\\sin^{-1}x$. Hence the integral equals $\\\\sin^{-1}1-\\\\sin^{-1}0=\\\\frac{\\\\pi}{2}$."
+      },
+      {
+        "q": "Assertion (A): $\\\\sin^{-1}x+\\\\sin^{-1}y=\\\\sin^{-1}(x\\\\sqrt{1-y^{2}}+y\\\\sqrt{1-x^{2}})$ for $x,y\\\\in[-1,1]$.\\nReason (R): The formula is derived from the addition formula of sine.",
+        "options": [
+          "Both A and R are true and R is correct explanation",
+          "Both A and R are true but R is not correct explanation",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 3,
+        "explain": "The given identity holds only under additional restrictions on $x$ and $y$; therefore the assertion is false. The reason is true because it indeed comes from the sine addition formula."
+      },
+      {
+        "q": "Find the principal value of $\\\\tan^{-1}(\\\\tan\\\\frac{7\\\\pi}{4})$.",
+        "options": [
+          "$\\\\frac{\\\\pi}{4}$",
+          "$-\\\\frac{\\\\pi}{4}$",
+          "$\\\\frac{7\\\\pi}{4}$",
+          "$-\\\\frac{7\\\\pi}{4}$"
+        ],
+        "answer": 1,
+        "explain": "$\\\\tan\\\\frac{7\\\\pi}{4}=\\\\tan(-\\\\frac{\\\\pi}{4})=-1$. The principal value of $\\\\tan^{-1}$ lies in $(-\\\\frac{\\\\pi}{2},\\\\frac{\\\\pi}{2})$, so $\\\\tan^{-1}(-1)=-\\\\frac{\\\\pi}{4}$."
+      },
+      {
+        "q": "If $\\\\theta=\\\\cos^{-1}x$, then $\\\\frac{d\\\\theta}{dx}$ equals?",
+        "options": [
+          "$-\\\\frac{1}{\\\\sqrt{1-x^{2}}}$",
+          "$\\\\frac{1}{\\\\sqrt{1-x^{2}}}$",
+          "$-\\\\frac{x}{\\\\sqrt{1-x^{2}}}$",
+          "$\\\\frac{x}{\\\\sqrt{1-x^{2}}}$"
+        ],
+        "answer": 0,
+        "explain": "Differentiating $\\\\theta=\\\\cos^{-1}x$ gives $\\\\frac{d\\\\theta}{dx}= -\\frac{1}{\\\\sqrt{1-x^{2}}}$."
+      },
+      {
+        "q": "Solve $\\\\tan^{-1}x=\\\\frac{\\\\pi}{3}$.",
+        "options": [
+          "$x=\\\\sqrt{3}$",
+          "$x=\\\\frac{1}{\\\\sqrt{3}}$",
+          "$x=1$",
+          "$x=0$"
+        ],
+        "answer": 0,
+        "explain": "Taking tangent on both sides, $x=\\\\tan\\\\frac{\\\\pi}{3}=\\\\sqrt{3}$."
+      },
+      {
+        "q": "Evaluate $\\\\sin^{-1}\\left(\\\\frac{2t}{1+t^{2}}\\right)$ for $t>0$.",
+        "options": [
+          "$2\\\\tan^{-1}t$",
+          "$\\\\tan^{-1}t$",
+          "$\\\\frac{\\\\pi}{2}-2\\\\tan^{-1}t$",
+          "$\\\\pi-2\\\\tan^{-1}t$"
+        ],
+        "answer": 0,
+        "explain": "Using the identity $\\\\sin(2\\\\theta)=\\\\frac{2\\\\tan\\\\theta}{1+\\\\tan^{2}\\theta}$, let $\\\\theta=\\\\tan^{-1}t$. Then $\\\\sin^{-1}\\left(\\\\frac{2t}{1+t^{2}}\\right)=2\\\\theta=2\\\\tan^{-1}t$ (principal value for $0<t\\le1$)."
+      }
+    ],
+    "visual_maps": {
+      "mindmap": "mindmap\\n  root((Inverse Trig Functions))\\n    Definitions\\n      PrincipalValues\\n    Graphs\\n      SinInv\\n      CosInv\\n    Identities\\n      CoDomain\\n    Applications\\n      SolveEquations",
+      "flowchart": "flowchart TD\\n  A[Start] --> B[Domain & Range]\\n  B --> C[Principal Value]\\n  C --> D[Graph Sketch]\\n  D --> E[Equation Solving]\\n  E --> F[End]",
+      "revision_points": [
+        "Domain of $\\sin^{-1}x$ and $\\cos^{-1}x$ is $[-1,1]$",
+        "Range of $\\sin^{-1}x$ is $[-\\frac{\\pi}{2},\\frac{\\pi}{2}]$ and of $\\cos^{-1}x$ is $[0,\\pi]$",
+        "Key identity $\\sin^{-1}x + \\cos^{-1}x = \\frac{\\pi}{2}$ holds for $x\\in[-1,1]$",
+        "For $y=\\tan^{-1}x$, $\\tan y = x$ and $y\\in(-\\frac{\\pi}{2},\\frac{\\pi}{2})$"
+      ]
+    },
+    "status": "done",
+    "updated": "2026-11-14 00:34:05"
   },
   "mathematics::ch3::mathematics/chapter3.html": {
     "topics": [
