@@ -2,23 +2,23 @@ name: 24x7 Autonomous Builder
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
     inputs:
       subject:
-        description: "Subject (mathematics, physics, chemistry, english - खाली छोड़ें तो सब चलेंगे)"
+        description: "Subject (mathematics, physics, chemistry, english)"
         required: false
         default: ""
       chapter:
-        description: "Chapter number (जैसे 1 या 2 - खाली छोड़ें तो अगला पेंडिंग चलेगा)"
+        description: "Chapter number (e.g., 1, 2)"
         required: false
         default: ""
       limit:
-        description: "एक बार में कितने चैप्टर बनें"
+        description: "Chapters per run"
         required: false
         default: "1"
       force:
-        description: "पुराने पेज दोबारा बनाएं? (true या false)"
+        description: "Force overwrite? (true/false)"
         required: false
         default: "false"
 
@@ -33,7 +33,7 @@ concurrency:
 jobs:
   run-builder:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 35
 
     steps:
       - uses: actions/checkout@v4
@@ -61,17 +61,7 @@ jobs:
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
             CMD="$CMD --force"
           fi
-          echo "Running: $CMD"
           $CMD
-
-          PENDING=$(python -c "
-          import builder
-          targets = builder.analyze_website()
-          state = builder.load_state()
-          left = [t for t in targets if state.get(f\"{t['subject']}::ch{t['chapter_num']}::{t['path']}\", {}).get('status') != 'done']
-          print('true' if left else 'false')
-          ")
-          echo "has_more=$PENDING" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push
         if: always()
@@ -86,10 +76,19 @@ jobs:
           fi
 
       - name: Chain next run
-        if: steps.builder.outputs.has_more == 'true' && github.event.inputs.force != 'true'
+        if: always() && github.event.inputs.force != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
         run: |
-          sleep 60
-          gh workflow run "24x7 Autonomous Builder" --ref main
+          PENDING=$(python -c "
+          import builder
+          targets = builder.analyze_website()
+          state = builder.load_state()
+          left = [t for t in targets if state.get(f\"{t['subject']}::ch{t['chapter_num']}::{t['path']}\", {}).get('status') != 'done']
+          print('true' if left else 'false')
+          ")
+          if [ "$PENDING" = "true" ]; then
+            sleep 20
+            gh workflow run "24x7 Autonomous Builder" --ref main
+          fi
