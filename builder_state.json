@@ -1150,7 +1150,7 @@
       "Taylor’s series and Maclaurin series with remainder term $f(x)=\\sum_{n=0}^{\\infty}\\frac{f^{(n)}(a)}{n!}(x-a)^{n}$": "<p><strong>Definition (Taylor’s Series)</strong> If a function $f$ is infinitely differentiable at a point $a$, its value at any $x$ in the neighbourhood of $a$ can be expressed as</p>\n$$f(x)=\\\\sum_{n=0}^{\\\\infty}\\\\frac{f^{(n)}(a)}{n!}(x-a)^{n}$$\n<p><strong>Maclaurin Series</strong> is the special case $a=0$:</p>\n$$f(x)=\\\\sum_{n=0}^{\\\\infty}\\\\frac{f^{(n)}(0)}{n!}x^{n}$$\n<p><strong>Derivation (using repeated integration)</strong> Starting from $f(x)=f(a)+\\\\int_{a}^{x}f'(t)dt$ and repeatedly integrating by parts yields the general term $\\\\frac{f^{(n)}(a)}{n!}(x-a)^{n}$.</p>\n<p><strong>Remainder (Error) Term</strong></p>\n<table>\n<tr><th>Form</th><th>Expression</th></tr>\n<tr><td>Lagrange</td><td>$R_{n}(x)=\\\\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}$, $c\\in(a,x)$</td></tr>\n<tr><td>Cauchy</td><td>$R_{n}(x)=\\\\frac{f^{(n+1)}(c)}{n!}(x-a)^{n+1}\\\\frac{(x-c)^{n}}{(x-a)^{n}}$</td></tr>\n<tr><td>Integral</td><td>$R_{n}(x)=\\\\frac{1}{n!}\\\\int_{a}^{x}f^{(n+1)}(t)(x-t)^{n}dt$</td></tr>\n</table>\n<p><strong>Important Points</strong></p>\n<ul>\n<li>All terms have the same physical unit as $f(x)$. If $f$ is measured \\in joules, every term of the series is \\in joules.</li>\n<li>The series converges only when $|x-a|\n<li>If $f$ is not analytic at $a$ (e.g., $|x|$ at $0$), the Taylor series exists but does not represent $f$.</li>\n<li>For $n\\to\\infty$, $R_{n}(x)\\to0$ within the interval of convergence.</li>\n</li></ul>\n<p><strong>Example</strong> Find the Maclaurin series of $e^{x}$ up to $x^{4}$ and estimate the remainder for $x=0.5$.</p>\n<p>Since $f^{(n)}(x)=e^{x}$, $f^{(n)}(0)=1$ for all $n$. Hence</p>\n$$e^{x}\\approx 1+x+\\\\frac{x^{2}}{2!}+\\\\frac{x^{3}}{3!}+\\\\frac{x^{4}}{4!}$$\n<p>For $x=0.5$, the Lagrange remainder is</p>\n$$R_{4}(0.5)=\\\\frac{e^{c}}{5!}(0.5)^{5},\\;c\\in(0,0.5)$$\n<p>Since $e^{c}\\le e^{0.5}\\approx1.65$, $|R_{4}(0.5)|\\le\\\\frac{1.65}{120}\\\\times0.03125\\approx4.3\\\\times10^{-4}$, confirming high accuracy.</p>",
       "Applications: maxima/minima ($f'(x)=0$), curve sketching and approximation using Taylor series": "<p><strong>Definition:</strong> A point $c$ in the domain of $f$ is called a <em>local maximum</em> if $f(c)\\ge f(x)$ for every $x$ in some neighbourhood of $c$. It is a <em>local minimum</em> if $f(c)\\le f(x)$. If both hold, $c$ is a <em>stationary point</em>.</p><p><strong>First‑Derivative Test</strong></p><ul><li>Find all points where $f'(x)=0$ or $f'(x)$ does not exist.</li><li>Check the sign of $f'(x)$ on the left and right of each point.</li><li>If the sign changes $+$ to $-$, the point is a local maximum; $-$ to $+$ gives a local minimum.</li></ul><p><strong>Second‑Derivative Test</strong></p><ul><li>At a stationary point $c$ where $f'(c)=0$, compute $f''(c)$.</li><li>If $f''(c)&gt;0$, $c$ is a local minimum; if $f''(c)&lt;0$, $c$ is a local maximum.</li><li>If $f''(c)=0$, the test is inconclusive – revert to the first‑derivative test or higher‑order derivatives.</li></ul><p><strong>Curve Sketching – Stepwise Procedure</strong></p><table><tr><th>Step</th><th>Action</th></tr><tr><td>1</td><td>Find domain and intercepts.</td></tr><tr><td>2</td><td>Compute $f'(x)$ and locate stationary points.</td></tr><tr><td>3</td><td>Apply first‑ and second‑derivative tests for maxima/minima.</td></tr><tr><td>4</td><td>Determine intervals of increase/decrease from the sign of $f'(x)$.</td></tr><tr><td>5</td><td>Find $f''(x)$ to locate points of inflection (where $f''(x)=0$ and changes sign).</td></tr><tr><td>6</td><td>Analyse asymptotes (vertical, horizontal, oblique).</td></tr><tr><td>7</td><td>Combine all information to draw a smooth curve.</td></tr></table><p><strong>Taylor Series Approximation</strong></p><p>For a function $f$ having derivatives of all orders at $a$, the $n^{\\text{th}}$‑order Taylor polynomial is</p><p>$$\\displaystyle T_n(x)=\\sum_{k=0}^{n}\\frac{f^{(k)}(a)}{k!}(x-a)^k$$</p><p>The remainder \\in Lagrange form is</p><p>$$\\displaystyle R_n(x)=\\frac{f^{(n+1)}(\\xi)}{(n+1)!}(x-a)^{n+1},\\qquad \\xi\\in(a,x)$$</p><p>When $|x-a|$ is small, $T_n(x)$ gives an accurate approximation; the error decreases as $n$ increases.</p><p><strong>Example:</strong> Sketch $f(x)=x^3-3x+2$ and find its local extrema.</p><p>1. $f'(x)=3x^2-3=3(x^2-1)=0\\Rightarrow x=\\pm1$.</p><p>2. $f''(x)=6x$. At $x=1$, $f''(1)=6&gt;0$ ⇒ local minimum; at $x=-1$, $f''(-1)=-6&lt;0$ ⇒ local maximum.</p><p>3. Values: $f(1)=0$, $f(-1)=4$.</p><p>4. Sign chart of $f'(x)$ shows increase on $(-\\infty,-1)$, decrease on $(-1,1)$, increase on $(1,\\infty)$.</p><p>5. Taylor expansion about $a=0$ up \\to $3^{\\text{rd}}$ order:</p><p>$$\\displaystyle f(x)=2-3x+x^3$$ (since $f(0)=2$, $f'(0)=-3$, $f''(0)=0$, $f'''(0)=6$).</p><p>Using $T_3(x)=2-3x+x^3$ approximates $f(x)$ near the origin with negligible error \\because higher‑order terms vanish.</p><p>Thus the curve has a maximum at $(-1,4)$, a minimum at $(1,0)$, and the Taylor polynomial provides a quick local approximation.</p>"
     },
-    "last_error": "All Groq models failed after retries.",
+    "last_error": "All Groq models failed after fast failover.",
     "short_notes": [
       {
         "title": "Important Formulas",
@@ -1210,6 +1210,44 @@
         "question": "A rectangle is inscribed in the semicircle $y=\\\\sqrt{4-x^2}$ (upper half). Find the dimensions for maximum area using differentiation.",
         "solution_html": "<p><strong>Given:</strong> Semicircle $y=\\\\sqrt{4-x^2}$, radius $2$. Let half‑width be $x$; then height $y=\\\\sqrt{4-x^2}$. Full width $=2x$, area $A=2x\\cdot y=2x\\\\sqrt{4-x^2}$.</p><p><strong>Maximisation:</strong> Differentiate $A$ w.r.t. $x$ and set to zero.</p><ol><li>$A(x)=2x(4-x^2)^{1/2}$.</li><li>$A'(x)=2(4-x^2)^{1/2}+2x\\cdot\\frac{1}{2}(4-x^2)^{-1/2}(-2x)$.</li><li>Simplify: $A'(x)=2\\sqrt{4-x^2}-\\frac{2x^2}{\\sqrt{4-x^2}}$.</li><li>Set $A'(x)=0\\Rightarrow 2\\sqrt{4-x^2}=\\frac{2x^2}{\\sqrt{4-x^2}}\\Rightarrow 4-x^2=x^2\\Rightarrow x^2=2\\Rightarrow x=\\sqrt{2}$.</li></ol><p>Thus width $=2x=2\\sqrt{2}$, height $=\\\\sqrt{4-2}=\\\\sqrt{2}$.</p><p><strong>Answer:</strong> Maximum area $A_{max}=2\\sqrt{2}\\times\\\\sqrt{2}=4$ square units; dimensions $\\text{width}=2\\\\sqrt{2}$, $\\text{height}=\\\\sqrt{2}$.</p>"
       }
+    ],
+    "pyq": [
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "State the definition of continuity of a function $f$ at a point $c$.",
+        "answer_html": "<p>Function $f$ is continuous at $c$ if $\\lim_{x\\to c}f(x)=f(c)$, i.e. the limit exists and equals the function value.</p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "Explain why a function differentiable at $c$ must be continuous at $c$.",
+        "answer_html": "<p>If $f$ is differentiable at $c$, then $f'(c)=\\lim_{h\\to0}\\frac{f(c+h)-f(c)}{h}$ exists. Multiplying by $h$ and letting $h\\to0$ gives $\\lim_{h\\to0}[f(c+h)-f(c)]=0$, so $\\lim_{x\\to c}f(x)=f(c)$. Hence $f$ is continuous at $c$.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "For the piecewise function $f(x)=\\begin{cases}x^2,&x<1\\\\2x-1,&x\\ge 1\\end{cases}$, find the intervals where $f$ is continuous.",
+        "answer_html": "<p>Check continuity at the junction $x=1$.<br/>Left limit: $\\lim_{x\\to1^-}x^2=1$.<br/>Right limit: $\\lim_{x\\to1^+}(2x-1)=1$.<br/>Since both limits equal $f(1)=2(1)-1=1$, $f$ is continuous at $x=1$.<br/>Both pieces are polynomials, hence continuous on $(-\\infty,1)$ and $[1,\\infty)$.<br/>Therefore $f$ is continuous on $(-\\infty,\\infty)$.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Determine the points at which the function $g(x)=\\begin{cases}\\sin x,&x\\le 0\\\\x^2,&x>0\\end{cases}$ is differentiable.",
+        "answer_html": "<p>First check continuity at $x=0$.<br/>$\\lim_{x\\to0^-}\\sin x=0$, $\\lim_{x\\to0^+}x^2=0$, and $g(0)=\\sin0=0$ ⇒ continuous.<br/>Now compute one‑sided derivatives.<br/>Left derivative: $g'_-(0)=\\lim_{h\\to0^-}\\frac{\\sin h-0}{h}=\\lim_{h\\to0}\\frac{\\sin h}{h}=1$.<br/>Right derivative: $g'_+(0)=\\lim_{h\\to0^+}\\frac{h^2-0}{h}=\\lim_{h\\to0^+}h=0$.<br/>Since $1\\neq0$, $g$ is not differentiable at $0$.<br/>Elsewhere each piece is differentiable, so $g$ is differentiable for $x\\neq0$.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "State and prove the Mean Value Theorem for a function $f$ continuous on $[a,b]$ and differentiable on $(a,b)$.",
+        "answer_html": "<p><strong>Statement:</strong> If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then there exists at least one $c\\in(a,b)$ such that $$f'(c)=\\frac{f(b)-f(a)}{b-a}.$$<br/><br/><strong>Proof (Rolle's theorem + construction):</strong><br/>1. Define $\\phi(x)=f(x)-\\frac{f(b)-f(a)}{b-a}(x-a)$.<br/>2. $\\phi$ is continuous on $[a,b]$ and differentiable on $(a,b)$. Moreover $\\phi(a)=\\phi(b)$.<br/>3. By Rolle's theorem, there exists $c\\in(a,b)$ with $\\phi'(c)=0$.<br/>4. $\\phi'(c)=f'(c)-\\frac{f(b)-f(a)}{b-a}=0$ ⇒ $f'(c)=\\frac{f(b)-f(a)}{b-a}$.<br/>Thus the theorem holds.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "Evaluate $$\\lim_{x\\to0}\\frac{\\sin x - x}{x^3}$$ using L'Hôpital's rule, stating the continuity and differentiability conditions required.",
+        "answer_html": "<p>Both numerator and denominator tend to $0$ as $x\\to0$, so the limit is of $\\frac{0}{0}$ type.<br/>The functions $\\sin x - x$ and $x^3$ are polynomials/trigonometric functions, hence continuous and differentiable in a neighbourhood of $0$.<br/>Apply L'Hôpital three times:<br/>1st derivative: $$\\lim_{x\\to0}\\frac{\\cos x -1}{3x^2}$$ (still $0/0$).<br/>2nd derivative: $$\\lim_{x\\to0}\\frac{-\\sin x}{6x}$$ (still $0/0$).<br/>3rd derivative: $$\\lim_{x\\to0}\\frac{-\\cos x}{6}=\\frac{-1}{6}.$$<br/>Therefore $$\\lim_{x\\to0}\\frac{\\sin x - x}{x^3}= -\\frac{1}{6}.$$</p>"
+      }
     ]
   },
   "mathematics::ch6::mathematics/chapter6.html": {
@@ -1232,6 +1270,152 @@
       "Tangents and normals to curves": "<p><strong>Definition:</strong> For a curve $y=f(x)$, the tangent at point $P(x_{0},y_{0})$ is the straight line that touches the curve at $P$ and has the same instantaneous rate of change as the curve there. The slope of the tangent is the derivative $m_{t}=\\left.\frac{dy}{dx}\right|_{x=x_{0}}$. The normal is the line perpendicular to the tangent at $P$, with slope $m_{n}=-\frac{1}{m_{t}}$ (provided $m_{t}\neq0$).</p><p><strong>Derivation of Tangent Equation:</strong></p><ul><li>Let $P(x_{0},y_{0})$ be on the curve. The differential $dy$ at $x_{0}$ is $dy=m_{t},dx$.</li><li>Using point–slope form, the tangent line is $y-y_{0}=m_{t}(x-x_{0})$.</li></ul><p><strong>Normal Equation:</strong> Replace $m_{t}$ by $-1/m_{t}$ in the point–slope form: $y-y_{0}=-\frac{1}{m_{t}}(x-x_{0})$.</p><p><strong>SI Units:</strong> Coordinates $(x,y)$ are measured in metres (m). The derivative $\frac{dy}{dx}$ is dimensionless (ratio of metres to metres). Hence the slope of tangent and normal is unitless.</p><p><strong>Edge Cases:</strong></p><ul><li><strong>Horizontal Tangent:</strong> $m_{t}=0$ → tangent is $y=y_{0}$; normal is vertical line $x=x_{0}$.</li><li><strong>Vertical Tangent:</strong> $m_{t}\toinfty$ (derivative undefined). Use implicit or parametric form: if $\frac{dx}{dy}\neq0$, normal slope is $-\frac{dx}{dy}$.</li></ul><p><strong>Example:</strong> Find tangent and normal to $y=x^{3}-3x^{2}+2x$ at $x=1$.</p><p>1. Compute derivative: $\\frac{dy}{dx}=3x^{2}-6x+2$.</p><p>2. At $x=1$, $m_{t}=3(1)^{2}-6(1)+2=-1$.</p><p>3. Point on curve: $y(1)=1-3+2=0$ → $P(1,0)$.</p><p>4. Tangent: $y-0=-1(x-1)$ → $y=-x+1$.</p><p>5. Normal: slope $m_{n}=1$ → $y-0=1(x-1)$ → $y=x-1$.</p><p>Thus, tangent: $y=-x+1$, normal: $y=x-1$.</p>",
       "Optimization problems (maximum/minimum)": "<p><strong>Definition:</strong> An <em>optimization problem</em> seeks the maximum or minimum value of a real‑valued function $f(x)$ subject to given constraints. The required value is called the <em>extremum</em>. In physics and engineering the result is expressed in SI units (e.g., metres, joules).</p><p><strong>Key Theorem (First‑Derivative Test):</strong> If $f$ is differentiable on an open interval and $f'(c)=0$, then:</p><ul><li>if $f'$ changes from $+$ to $-$ at $c$, $f(c)$ is a local maximum;</li><li>if $f'$ changes from $-$ to $+$ at $c$, $f(c)$ is a local minimum.</li></ul><p><strong>Second‑Derivative Test:</strong> For a critical point $c$ where $f'(c)=0$:</p><ul><li>if $f''(c)&gt;0$, $f(c)$ is a local minimum;</li><li>if $f''(c)&lt;0$, $f(c)$ is a local maximum;</li><li>if $f''(c)=0$, the test is inconclusive.</li></ul><p><strong>General Procedure</strong></p><ol><li>Translate the word problem into a mathematical function $f(x)$.</li><li>Identify the domain $D$ from the constraints.</li><li>Compute $f'(x)$ and solve $f'(x)=0$ to obtain critical points.</li><li>Apply the first‑ or second‑derivative test to classify each critical point.</li><li>Evaluate $f$ at critical points and at the end‑points of $D$; the largest (or smallest) value is the required optimum.</li></ol><p><strong>Edge Cases</strong></p><ul><li>When the domain is closed and bounded, the Extreme Value Theorem guarantees existence of global extrema.</li><li>If $f'(x)$ does not exist at a point, that point must be examined separately.</li><li>Multiple constraints may lead to a system of equations; Lagrange multipliers are used (beyond CBSE scope).</li></ul><table><tr><th>Parameter</th><th>SI Unit</th></tr><tr><td>Length</td><td>metre (m)</td></tr><tr><td>Area</td><td>square metre (m$^2$)</td></tr><tr><td>Volume</td><td>cubic metre (m$^3$)</td></tr></table><p><strong>Example</strong>: Find the dimensions of a rectangle of maximum area that can be inscribed in a circle of radius $r=5\\ \\text{m}$.</p><p>Solution:</p><ol><li>Let the rectangle have half‑sides $x$ and $y$. The circle gives $x^2+y^2=r^2$.</li><li>Area $A=4xy$. From the constraint $y=\\sqrt{r^2-x^2}$, so $A(x)=4x\\sqrt{r^2-x^2}$.</li><li>Differentiate: $A'(x)=4\\sqrt{r^2-x^2}-\\frac{4x^2}{\\sqrt{r^2-x^2}}$.</li><li>Set $A'(x)=0\\;\\Rightarrow\\; r^2-2x^2=0\\;\\Rightarrow\\; x=\\frac{r}{\\sqrt{2}}$.</li><li>Then $y=\\frac{r}{\\sqrt{2}}$; the rectangle is a square of side $s=\\sqrt{2}\\,x=r\\sqrt{2}$.</li><li>Maximum area $A_{\\max}=2r^2=2(5^2)=50\\ \\text{m}^2$.</li></ol><p>Thus the optimal rectangle is a square of side $5\\sqrt{2}\\ \\text{m}$ with area $50\\ \\text{m}^2$.</p>",
       "Related rates problems": "<p><strong>Related Rates – Definition</strong></p><p>When two or more quantities are linked by an equation and each varies with time, the rate of change of one quantity with respect to time is called a <em>related rate</em>. If the relation is $F(x(t),y(t),dots)=0$, then differentiating implicitly with respect to $t$ gives the chain rule: $$\\frac{dF}{dt}=\\frac{\\partial F}{\\partial x}\\frac{dx}{dt}+\\frac{\\partial F}{\\partial y}\\frac{dy}{dt}+\\cdots=0.$$</p><p><strong>Step‑by‑Step Procedure</strong></p><ul><li>Identify the variables and write the governing equation.</li><li>Differentiate implicitly with respect \\to $t$ using the chain rule.</li><li>Substitute known rates (e.g. $\\frac{dx}{dt}$) and solve for the unknown rate.</li><li>Check units: if $x$ is \\in metres and $t$ \\in seconds, then $\\frac{dx}{dt}$ is \\in $\\mathrm{m/s}$.</li></ul><p><strong>SI Units &amp; Edge Cases</strong></p><ul><li>All quantities should be expressed \\in SI units before differentiation.</li><li>If a variable is independent of time, its derivative is zero.</li><li>When the denominator \\in the differentiated equation becomes zero, the related rate may be undefined or infinite; interpret physically (e.g. a point moving at a cusp).</li></ul><p><strong>Example – Water Tank</strong></p><p>A cylindrical tank of radius $r=2\\,\\mathrm{m}$ is being filled at a constant rate $\\frac{dV}{dt}=5\\,\\mathrm{m^3/s}$. Find $\\frac{dh}{dt}$ when the water depth $h=3\\,\\mathrm{m}$.</p><table><tr><th>Step</th><th>Equation</th><th>Substitution</th></tr><tr><td>1</td><td>Volume of cylinder: $V=\\pi r^2h$</td><td></td></tr><tr><td>2</td><td>Differentiate: $\\frac{dV}{dt}=\\pi r^2\\frac{dh}{dt}$</td><td></td></tr><tr><td>3</td><td>Insert known values: $5=\\pi(2)^2\\frac{dh}{dt}$</td><td></td></tr><tr><td>4</td><td>Solve: $\\frac{dh}{dt}=\\frac{5}{4\\pi}\\approx0.398\\,\\mathrm{m/s}$</td><td></td></tr></table><p>Thus the water level rises at approximately $0.398\\,\\mathrm{m/s}$ when $h=3\\,\\mathrm{m}$.</p>"
-    }
+    },
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "mathematics::ch7::mathematics/chapter7.html": {
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "mathematics::ch8::mathematics/chapter8.html": {
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "mathematics::ch9::mathematics/chapter9.html": {
+    "topics": [
+      "Definition, order and degree of a differential equation",
+      "Formation of differential equations from a given family of curves",
+      "Solution of first‑order differential equations – separable variables ($\\frac{dy}{dx}=f(x)g(y)$)",
+      "Solution of first‑order linear differential equations – integrating factor ($y'+P(x)y=Q(x)$)",
+      "Exact differential equations and method of making them exact ($M(x,y)dx+N(x,y)dy=0$)",
+      "Bernoulli and homogeneous equations ($y'+P(x)y=Q(x)y^{n}$)",
+      "Initial value problems and existence‑uniqueness ($y(x_{0})=y_{0}$)",
+      "Higher‑order linear differential equations with constant coefficients – complementary function and particular integral ($y^{(n)}+a_{1}y^{(n-1)}+\\dots +a_{n}y=F(x)$)"
+    ],
+    "long_notes": {},
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "mathematics::ch10::mathematics/chapter10.html": {
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "mathematics::ch11::mathematics/chapter11.html": {
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "mathematics::ch12::mathematics/chapter12.html": {
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "mathematics::ch13::mathematics/chapter13.html": {
+    "topics": [
+      "Random Experiments and Sample Space",
+      "Events and Their Operations",
+      "Probability of an Event",
+      "Conditional Probability and Multiplication Rule",
+      "Bayes’ Theorem",
+      "Independent Events",
+      "Discrete Random Variables and Probability Distribution",
+      "Mean and Variance of Discrete Random Variables"
+    ],
+    "long_notes": {},
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "physics::ch1::physics/chapter1.html": {
+    "topics": [
+      "Electric charge, quantization, conservation and conductors vs insulators",
+      "Coulomb's law: $F = k\\frac{q_1 q_2}{r^2}$ and superposition principle",
+      "Electric field: definition $\\vec E = \\frac{\\vec F}{q}$, field lines and representation",
+      "Electric field due to point charge, uniformly charged sphere (solid and hollow) and dipole $\\vec E = \\frac{1}{4\\pi\\epsilon_0}\\frac{q}{r^2}\\hat r$",
+      "Electric flux $\\Phi_E = \\int \\vec E \\cdot d\\vec A$ and Gauss's law $\\oint \\vec E \\cdot d\\vec A = \\frac{Q_{enc}}{\\epsilon_0}$",
+      "Electric dipole in uniform electric field: torque $\\tau = pE\\sin\\theta$, potential energy $U = -pE\\cos\\theta$",
+      "Electrostatic shielding, behavior of conductors in electrostatic equilibrium and applications"
+    ],
+    "long_notes": {},
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "physics::ch2::physics/chapter2.html": {
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "physics::ch3::physics/chapter3.html": {
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "physics::ch4::physics/chapter4.html": {
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "physics::ch5::physics/chapter5.html": {
+    "topics": [
+      "Magnetic field: definition, lines of force and properties",
+      "Motion of charged particles in a magnetic field and cyclotron motion",
+      "Force on a current‑carrying conductor and Hall effect",
+      "Torque on a current loop and magnetic dipole moment",
+      "Earth’s magnetic field and magnetic declination",
+      "Magnetic materials: diamagnetism, paramagnetism and ferromagnetism",
+      "Magnetic hysteresis, domains and Curie temperature",
+      "Electromagnetic induction: Faraday’s law and Lenz’s law"
+    ],
+    "long_notes": {},
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "physics::ch6::physics/chapter6.html": {
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "physics::ch7::physics/chapter7.html": {
+    "topics": [
+      "Introduction to alternating current and its generation",
+      "Sinusoidal alternating current: mathematical description and phasors",
+      "RMS and average values of alternating quantities",
+      "Power in AC circuits: instantaneous, average, apparent, real and reactive power",
+      "Phase relationships between voltage and current in resistive, inductive and capacitive circuits",
+      "Series LCR circuit: impedance, resonance and quality factor",
+      "Power factor, its correction and applications"
+    ],
+    "long_notes": {},
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "physics::ch8::physics/chapter8.html": {
+    "topics": [
+      "Introduction to electromagnetic waves",
+      "Electromagnetic spectrum and its regions",
+      "Derivation of the electromagnetic wave equation",
+      "Propagation of electromagnetic waves in vacuum",
+      "Energy, momentum and radiation pressure of electromagnetic waves",
+      "Poynting vector and intensity of electromagnetic waves",
+      "Polarization of electromagnetic waves"
+    ],
+    "long_notes": {},
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "physics::ch9::physics/chapter9.html": {
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "physics::ch10::physics/chapter10.html": {
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "physics::ch11::physics/chapter11.html": {
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "physics::ch12::physics/chapter12.html": {
+    "topics": [
+      "Bohr’s model of hydrogen atom and postulates",
+      "Hydrogen spectrum and Rydberg’s formula",
+      "De Broglie hypothesis and matter waves",
+      "Quantum numbers and their significance",
+      "Schrödinger equation for hydrogen atom",
+      "Atomic orbitals and probability density",
+      "Electronic configuration and Aufbau principle",
+      "Fine structure, Zeeman effect and Lamb shift"
+    ],
+    "long_notes": {},
+    "last_error": "All Groq models failed after fast failover."
+  },
+  "physics::ch13::physics/chapter13.html": {
+    "topics": [
+      "Radioactivity and its types",
+      "Nuclear decay law and decay constant",
+      "Half‑life, mean life and activity",
+      "Mass defect, binding energy and nuclear stability",
+      "Nuclear fission and its energetics",
+      "Nuclear fusion and its conditions",
+      "Applications of nuclear physics (power generation, medical, industrial)",
+      "Nuclear forces and stability of nuclei"
+    ],
+    "long_notes": {},
+    "last_error": "All Groq models failed after fast failover."
   }
 }
