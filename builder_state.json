@@ -1701,7 +1701,21 @@
       "Vector equation of a line": "<p><strong>Definition:</strong> The vector equation of a line in three‑dimensional space is expressed as</p><p>$$\\\\vec r = \\\\vec a + \\\\lambda \\\\vec b$$</p><p>where $\\\\vec a$ is the position vector of any point $A$ on the line (SI unit: m), $\\\\vec b$ is a non‑zero direction vector (or direction ratios) of the line (dimensionless), and $\\\\lambda$ is a real parameter.</p><ul><li><strong>Parametric form:</strong> If $\\\\vec a = \\\\<li><strong>Symmetric form:</strong> Eliminating $\\\\lambda$ gives $$\\\\frac{x - x_1}{l} = \\\\frac{y - y_1}{m} = \\\\frac{z - z_1}{n}$$ provided $l,m,n \\\\neq 0$.</li></li></ul><p><strong>Key points:</strong></p><ul><li>Direction ratios $(l,m,n)$ are proportional \\to the components of $\\\\vec b$.</li><li>If the line is required \\in unit vector form, use $\\\\hat u = \\\\frac{\\\\vec b}{|\\\\vec b|}$ and write $\\\\vec r = \\\\vec a + \\\\lambda \\\\hat u$.</li><li>The line is unique for a given $\\\\vec a$ and $\\\\vec b$ (except when $\\\\vec b = \\\\vec 0$).</li></ul><p><strong>Example:</strong> Find the vector equation of the line passing through $P(1, -2, 0)$ and parallel \\to the vector $\\\\vec d = \\\\<p>Solution: $\\\\vec a = \\\\<p>$$\\\\vec r = \\\\<p>Parametric equations: $x = 1 + 3\\\\lambda$, $y = -2 + 4\\\\lambda$, $z = -5\\\\lambda$. Symmetric form: $$\\\\frac{x-1}{3} = \\\\frac{y+2}{4} = \\\\frac{z}{-5}$$</p></p></p></p>",
       "Equation of a plane and distance of a point from a plane": "<p><strong>Definition:</strong> A plane is a flat two‑dimensional surface extending infinitely. If $\\mathbf{n}= (a,b,c)$ is a normal vector and $P_0(x_0,y_0,z_0)$ lies on the plane, the vector equation is $\\mathbf{n}\\cdot(\\mathbf{r}-\\mathbf{r}_0)=0$.</p><p><strong>Scalar form:</strong> Expanding gives $a(x-x_0)+b(y-y_0)+c(z-z_0)=0$ or $ax+by+cz=d$ where $d=ax_0+by_0+cz_0$.</p><p><strong>Distance of a point from a plane:</strong> For $ax+by+cz+d=0$ and $P_1(x_1,y_1,z_1)$, $$\\\\frac{|ax_1+by_1+cz_1+d|}{\\\\sqrt{a^2+b^2+c^2}}$$ gives the perpendicular distance (SI unit: metre, m).</p><table><tr><th>Quantity</th><th>Formula</th></tr><tr><td>Plane (scalar)</td><td>$ax+by+cz=d$</td></tr><tr><td>Distance</td><td>$$\\\\frac{|ax_1+by_1+cz_1+d|}{\\\\sqrt{a^2+b^2+c^2}}$$</td></tr></table><p><strong>Example:</strong> Find the distance of $P(2,1,3)$ from the plane $2x-y+z-5=0$.</p><ul><li>Numerator $=|2(2)-1(1)+1(3)-5|=|1|=1$.</li><li>Denominator $=\\\\sqrt{2^2+(-1)^2+1^2}=\\\\sqrt{6}$.</li></ul><p>Hence $\\\\displaystyle\\\\text{distance}=\\\\frac{1}{\\\\sqrt{6}}\\\\,\\\\text{m}$.</p>",
       "Applications: area, volume and shortest distance": "<p><strong>Definition:</strong> The <em>area</em> of a parallelogram formed by vectors $\\mathbf{a}$ and $\\mathbf{b}$ is $|\\mathbf{a}\\times\\mathbf{b}|$ and the volume of a parallelepiped formed by $\\mathbf{a},\\mathbf{b},\\mathbf{c}$ is $|\\mathbf{a}\\cdot(\\mathbf{b}\\times\\mathbf{c})|$.</p><p><strong>Key formulas (SI units):</strong></p><ul><li>Area of triangle $=\\frac12|\\mathbf{a}\\times\\mathbf{b}|$  (m$^2$).</li><li>Area of quadrilateral (split into two triangles) $=\\frac12|\\mathbf{a}\\times\\mathbf{b}|+\\frac12|\\mathbf{c}\\times\\mathbf{d}|$.</li><li>Volume of tetrahedron $=\\frac16|\\mathbf{a}\\cdot(\\mathbf{b}\\times\\mathbf{c})|$  (m$^3$).</li><li>Shortest distance from point $P(\\mathbf{r}_0)$ to line $\\mathbf{r}=\\mathbf{a}+\\lambda\\mathbf{b}$: $d=\\frac{|\\mathbf{b}\\times(\\mathbf{r}_0-\\mathbf{a})|}{|\\mathbf{b}|}$ (m).</li><li>Shortest distance between skew lines $\\mathbf{r}=\\mathbf{a}_1+\\lambda\\mathbf{b}_1$ and $\\mathbf{r}=\\mathbf{a}_2+\\mu\\mathbf{b}_2$: $d=\\frac{|(\\mathbf{a}_2-\\mathbf{a}_1)\\cdot(\\mathbf{b}_1\\times\\mathbf{b}_2)|}{|\\mathbf{b}_1\\times\\mathbf{b}_2|}$.</li></ul><p><strong>Example:</strong> Find the area of triangle with vertices $A(1,2,3),\\;B(4,0,1),\\;C(2,5,6)$.</p><table><tr><th>Step</th><th>Computation</th></tr><tr><td>1. Vectors</td><td>$\\mathbf{AB}=\\langle3,-2,-2\\rangle$, $\\mathbf{AC}=\\langle1,3,3\\rangle$</td></tr><tr><td>2. Cross product</td><td>$\\mathbf{AB}\\times\\mathbf{AC}=\\langle(-2)(3)-(-2)(3),\\; -[3\\cdot3-(-2)\\cdot1],\\;3\\cdot3-(-2)\\cdot1\\rangle=\\langle0,-11,11\\rangle$</td></tr><tr><td>3. Magnitude</td><td>$|\\mathbf{AB}\\times\\mathbf{AC}|=\\sqrt{0^2+(-11)^2+11^2}=\\sqrt{242}$</td></tr><tr><td>4. Area</td><td>$\\text{Area}=\\frac12\\sqrt{242}=\\frac{\\sqrt{242}}{2}\\;\\text{m}^2$</td></tr></table><p>This concise set of formulas and the worked example cover the typical CBSE Class 12 “Applications: area, volume and shortest distance” problems.</p>"
-    }
+    },
+    "short_notes": [
+      {
+        "title": "Important Formulas",
+        "html": "<h3>Important Formulas</h3><table border='1' cellpadding='5'><tr><th>Concept</th><th>Formula</th></tr><tr><td>Vector in component form</td><td>$\\vec{a}=a_1\\hat{i}+a_2\\hat{j}+a_3\\hat{k}$</td></tr><tr><td>Magnitude of a vector</td><td>$\\|\\vec{a}\\|=\\sqrt{a_1^2+a_2^2+a_3^2}$</td></tr><tr><td>Direction cosines</td><td>$\\cos\\alpha=\\frac{a_1}{\\|\\vec{a}\\|},\\;\\cos\\beta=\\frac{a_2}{\\|\\vec{a}\\|},\\;\\cos\\gamma=\\frac{a_3}{\\|\\vec{a}\\|}$</td></tr><tr><td>Scalar product (dot product)</td><td>$\\vec{a}\\cdot\\vec{b}=a_1b_1+a_2b_2+a_3b_3=\\|\\vec{a}\\|\\|\\vec{b}\\|\\cos\\theta$</td></tr><tr><td>Vector product (cross product)</td><td>$\\vec{a}\\times\\vec{b}=\\begin{vmatrix}\\hat{i}&\\hat{j}&\\hat{k}\\\\a_1&a_2&a_3\\\\b_1&b_2&b_3\\end{vmatrix}=\\|\\vec{a}\\|\\|\\vec{b}\\|\\sin\\theta\\,\\hat{n}$</td></tr><tr><td>Triple scalar product</td><td>$[\\vec{a}\\,\\vec{b}\\,\\vec{c}]=\\vec{a}\\cdot(\\vec{b}\\times\\vec{c})$</td></tr><tr><td>Triple vector product</td><td>$\\vec{a}\\times(\\vec{b}\\times\\vec{c})=(\\vec{a}\\cdot\\vec{c})\\vec{b}-(\\vec{a}\\cdot\\vec{b})\\vec{c}$</td></tr><tr><td>Equation of a line (vector form)</td><td>$\\vec{r}=\\vec{a}+\\lambda\\vec{b}$</td></tr><tr><td>Equation of a plane</td><td>$\\vec{r}\\cdot\\vec{n}=p$  or  $ax+by+cz=p$ where $\\vec{n}=a\\hat{i}+b\\hat{j}+c\\hat{k}$</td></tr></table>"
+      },
+      {
+        "title": "Key Definitions & Laws",
+        "html": "<h3>Key Definitions &amp; Laws</h3><ul><li><strong>Vector:</strong> Quantity having both magnitude and direction, represented by a directed line segment.</li><li><strong>Unit Vector:</strong> Vector of magnitude 1, denoted $\\hat{u}=\\frac{\\vec{u}}{\\|\\vec{u}\\|}$.</li><li><strong>Collinear Vectors:</strong> Vectors lying on the same straight line; one is a scalar multiple of the other.</li><li><strong>Coplanar Vectors:</strong> Vectors that lie in the same plane; $[\\vec{a}\\,\\vec{b}\\,\\vec{c}]=0$.</li><li><strong>Scalar (Dot) Product Properties:</strong> Commutative, distributive over addition, $\\vec{a}\\cdot\\vec{b}=\\vec{b}\\cdot\\vec{a}$.</li><li><strong>Vector (Cross) Product Properties:</strong> Anticommutative $\\vec{a}\\times\\vec{b}=-(\\vec{b}\\times\\vec{a})$, distributive over addition, $\\vec{a}\\times(\\vec{b}+\\vec{c})=\\vec{a}\\times\\vec{b}+\\vec{a}\\times\\vec{c}$.</li><li><strong>Mixed Product (Scalar Triple Product):</strong> Gives volume of parallelepiped; cyclic permutations do not change its value.</li><li><strong>Direction Ratios &amp; Direction Cosines:</strong> Ratios $a_1:a_2:a_3$ are direction ratios; cosines satisfy $\\cos^2\\alpha+\\cos^2\\beta+\\cos^2\\gamma=1$.</li></ul>"
+      },
+      {
+        "title": "Summary & Common Mistakes",
+        "html": "<h3>Summary &amp; Common Mistakes</h3><p>Vector Algebra in Class 12 focuses on representing vectors in component form, performing dot and cross products, and applying them to lines and planes. Remember the following:</p><ul><li>Always use the same origin while writing component vectors.</li><li>For dot product, ensure you use $\\cos\\theta$ (not $\\sin\\theta$) and for cross product use $\\sin\\theta$ (not $\\cos\\theta$).</li><li>When computing the cross product, the determinant method must be applied correctly; mixing up rows and columns leads to sign errors.</li><li>The triple scalar product is zero for coplanar vectors – a frequent source of mistakes in checking coplanarity.</li><li>In the equation of a plane, $ax+by+cz=p$, $p$ is the perpendicular distance from the origin only when $\\sqrt{a^2+b^2+c^2}=1$ (i.e., when $\\vec{n}$ is a unit normal).</li><li>Do not confuse the vector triple product identity with the scalar triple product; the former expands to a linear combination of vectors.</li></ul><p>Practice these formulas with varied numerical problems to avoid sign and angle‑misinterpretation errors.</p>"
+      }
+    ]
   },
   "mathematics::ch11::mathematics/chapter11.html": {
     "last_error": "All Groq models failed after fast failover.",
@@ -1976,6 +1990,118 @@
         "tag": "Board Important",
         "question": "A solenoid of length $l$, $N$ turns, carries current $I$. (i) Derive the expression for magnetic field inside the solenoid. (ii) Calculate $B$ for $l=0.30\\,\\text{m}$, $N=1200$, $I=2.5\\,\\text{A}$.",
         "answer_html": "<ol><li>Number of turns per unit length $n=\\frac{N}{l}$. Using Ampère's law for a rectangular path inside the solenoid, $\\oint\\mathbf{B}\\cdot d\\mathbf{l}=\\mu_0 I_{\\text{enc}}$ gives $B\\,l = \\mu_0 n I\\,l$.<br/>Thus $\\displaystyle B = \\mu_0 n I = \\mu_0 \\frac{N}{l} I$ (field is uniform and parallel to the axis).</li><li>Substituting values: $\\displaystyle B = 4\\pi\\times10^{-7}\\times\\frac{1200}{0.30}\\times2.5$ T<br/>$\\displaystyle B = 4\\pi\\times10^{-7}\\times4000\\times2.5$ T<br/>$\\displaystyle B = 4\\pi\\times10^{-7}\\times10\\,000$ T<br/>$\\displaystyle B = 4\\pi\\times10^{-3}$ T $\\approx 1.26\\times10^{-2}\\,\\text{T}$.</li></ol>"
+      }
+    ],
+    "mcq": [
+      {
+        "q": "A charge $q$ moves with velocity $\\vec{v}$ perpendicular to a uniform magnetic field $\\vec{B}$. What is the magnitude of the magnetic force on the charge?",
+        "options": [
+          "$qvB$",
+          "$\\frac{qv}{B}$",
+          "$qv^2B$",
+          "$\\frac{qB}{v}$"
+        ],
+        "answer": 0,
+        "explain": "The magnetic force is given by $F = q\\,v\\,B\\,\\sin90^{\\circ}=qvB$."
+      },
+      {
+        "q": "A long straight wire carries a current $I$. At a distance $r$ from the wire, the magnetic field magnitude is $B = \\frac{\\mu_0 I}{2\\pi r}$. If the current is doubled, the field at the same point becomes:",
+        "options": [
+          "$\\frac{\\mu_0 I}{\\pi r}$",
+          "$\\frac{\\mu_0 I}{4\\pi r}$",
+          "$\\frac{\\mu_0 I}{2\\pi r}$",
+          "$2\\times \\frac{\\mu_0 I}{2\\pi r}$"
+        ],
+        "answer": 3,
+        "explain": "Since $B\\propto I$, doubling $I$ doubles $B$, giving $2\\times \\frac{\\mu_0 I}{2\\pi r}$."
+      },
+      {
+        "q": "A particle of charge $+e$ moves in a circular path of radius $r$ in a uniform magnetic field $B$ with speed $v$. Which expression gives the radius of its path?",
+        "options": [
+          "$\\frac{mv}{eB}$",
+          "$\\frac{eB}{mv}$",
+          "$\\frac{mv^2}{eB}$",
+          "$\\frac{eB}{mv^2}$"
+        ],
+        "answer": 0,
+        "explain": "Equating centripetal force $\\frac{mv^2}{r}$ to magnetic force $e v B$ gives $r = \\frac{mv}{eB}$."
+      },
+      {
+        "q": "A rectangular loop of wire of dimensions $l\\times w$ lies in a uniform magnetic field $B$ directed into the page. The loop is rotated about an axis along its side of length $w$ with angular speed $\\omega$. What is the peak emf induced in the loop?",
+        "options": [
+          "$B l \\omega$",
+          "$B w \\omega$",
+          "$B l w \\omega$",
+          "$\\frac{1}{2} B l w \\omega$"
+        ],
+        "answer": 0,
+        "explain": "The effective area changing is $A = l\\,x$, where $x = w\\sin\\omega t$. Peak $\\varepsilon = B l \\omega w = B l \\omega$ (since $w$ is the radius of rotation)."
+      },
+      {
+        "q": "Assertion: The magnetic field inside a long solenoid is uniform and parallel to its axis. Reason: The magnetic field lines inside a solenoid are produced by the superposition of fields due to each turn, which cancel outside and reinforce inside. Which is correct?",
+        "options": [
+          "Both A and R are true and R is the correct explanation",
+          "Both A and R are true but R is not the correct explanation",
+          "A is true but R is false",
+          "Both A and R are false"
+        ],
+        "answer": 0,
+        "explain": "Both statements are true and the reason correctly explains the uniform field inside a solenoid."
+      },
+      {
+        "q": "A conductor of length $l$ moves with velocity $\\vec{v}$ perpendicular to a uniform magnetic field $\\vec{B}$. What is the magnitude of the induced emf between its ends?",
+        "options": [
+          "$Bvl$",
+          "$\\frac{Bv}{l}$",
+          "$\\frac{B l}{v}$",
+          "$\\frac{v}{Bl}$"
+        ],
+        "answer": 0,
+        "explain": "Motional emf $\\varepsilon = B l v \\sin90^{\\circ}=Bvl$."
+      },
+      {
+        "q": "Two parallel wires, 5 cm apart, carry currents $I_1=3\\,\\text{A}$ and $I_2=5\\,\\text{A}$ in the same direction. What is the force per unit length on each wire?",
+        "options": [
+          "$\\frac{\\mu_0 I_1 I_2}{2\\pi d}$ attractive",
+          "$\\frac{\\mu_0 I_1 I_2}{2\\pi d}$ repulsive",
+          "$\\frac{\\mu_0 (I_1-I_2)}{2\\pi d}$ attractive",
+          "Zero"
+        ],
+        "answer": 0,
+        "explain": "Parallel currents attract; magnitude $F/L = \\frac{\\mu_0 I_1 I_2}{2\\pi d}$ with $d=0.05\\,\\text{m}$."
+      },
+      {
+        "q": "A charged particle enters a region of uniform magnetic field $\\vec{B}$ at an angle $\\theta$ to the field direction. The trajectory of the particle is:",
+        "options": [
+          "Circular",
+          "Helical",
+          "Parabolic",
+          "Straight line"
+        ],
+        "answer": 1,
+        "explain": "Component of velocity parallel to $\\vec{B}$ remains unchanged, while perpendicular component causes circular motion, resulting in a helix."
+      },
+      {
+        "q": "A coil of $N$ turns and area $A$ rotates with angular speed $\\omega$ in a uniform magnetic field $B$. What is the maximum induced emf?",
+        "options": [
+          "$N B A \\omega$",
+          "$\\frac{1}{2} N B A \\omega$",
+          "$N B A \\omega^2$",
+          "$\\frac{N B A}{\\omega}$"
+        ],
+        "answer": 0,
+        "explain": "Peak emf $\\varepsilon_{max}=N B A \\omega$ from $\\varepsilon = -N \\frac{d\\Phi}{dt}=N B A \\omega \\sin\\omega t$."
+      },
+      {
+        "q": "A current-carrying rectangular loop of length $l$ and width $w$ is placed in a uniform magnetic field $B$ such that the field is parallel to the plane of the loop. The net force on the loop is:",
+        "options": [
+          "Zero",
+          "$I B l$ upward",
+          "$I B w$ to the right",
+          "$I B (l+w)$"
+        ],
+        "answer": 0,
+        "explain": "For a loop in a field parallel to its plane, forces on opposite sides are equal and opposite, giving zero net force (though a torque may exist)."
       }
     ]
   },
@@ -2461,6 +2587,118 @@
         "question": "Calculate the speed and total energy of an electron in the third Bohr orbit ($n=3$) of a hydrogen atom. Use $k=9\\times10^9\\,\\text{N m}^2\\text{C}^{-2}$, $e=1.6\\times10^{-19}\\,\\text{C}$, $h=6.626\\times10^{-34}\\,\\text{J s}$, $m_e=9.11\\times10^{-31}\\,\\text{kg}$.",
         "answer_html": "<p>For the $n^{th}$ orbit, Bohr gave $$v_n = \\frac{Z e^2}{2\\varepsilon_0 h}\\frac{1}{n}\\;\\text{or equivalently}\\;v_n = \\frac{ke^2}{\\hbar}\\frac{1}{n}$$ Using $\\hbar =\\frac{h}{2\\pi}$ and $Z=1$ for hydrogen:<br/>$$v_3 = \\frac{ke^2}{\\hbar}\\frac{1}{3}=\\frac{9\\times10^9\\times(1.6\\times10^{-19})^2}{1.055\\times10^{-34}}\\times\\frac{1}{3}\\approx 9.1\\times10^5\\,\\text{m s}^{-1}$$<br/><br/>Total energy $E_n = -\\frac{ke^2}{2r_n}$ and $r_n = n^2 a_0$ with $a_0=0.529\\,\\text{Å}=5.29\\times10^{-11}\\,\\text{m}$. Hence<br/>$$E_3 = -\\frac{13.6\\,\\text{eV}}{n^2}= -\\frac{13.6}{9}\\,\\text{eV}\\approx -1.51\\,\\text{eV}$$ (or $-2.42\\times10^{-19}\\,\\text{J}$).<br/>Thus, $v_3\\approx9.1\\times10^5\\,\\text{m s}^{-1}$ and $E_3\\approx-1.51\\,\\text{eV}$.</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "Which of the following statements about the Bohr model of the hydrogen atom is correct?",
+        "options": [
+          "Electrons move in elliptical orbits",
+          "Energy of an electron is quantized",
+          "Electrons emit radiation while in stable orbit",
+          "Angular momentum is not quantized"
+        ],
+        "answer": 1,
+        "explain": "In Bohr's model, the electron's energy levels are quantized, leading to discrete spectral lines."
+      },
+      {
+        "q": "In the de Broglie hypothesis, the wavelength associated with a particle of momentum $p$ is given by",
+        "options": [
+          "$\\lambda = \\frac{h}{p}$",
+          "$\\lambda = hp$",
+          "$\\lambda = \\frac{p}{h}$",
+          "$\\lambda = h p^2$"
+        ],
+        "answer": 0,
+        "explain": "De Broglie's relation states $\\lambda = \\frac{h}{p}$, where $h$ is Planck's constant."
+      },
+      {
+        "q": "Which of the following correctly describes the photoelectric effect?",
+        "options": [
+          "Current increases with increase in frequency irrespective of intensity",
+          "Kinetic energy of emitted electrons depends on intensity of light",
+          "There exists a threshold frequency below which no electrons are emitted",
+          "Electrons are emitted from any metal at any frequency"
+        ],
+        "answer": 2,
+        "explain": "A minimum (threshold) frequency is required for electrons to be emitted; below it, no electrons are released."
+      },
+      {
+        "q": "The Rydberg formula for hydrogen spectral lines is $\\frac{1}{\\lambda}=R\\left(\\frac{1}{n_1^2}-\\frac{1}{n_2^2}\\right)$. For the Balmer series, $n_1$ equals",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": 1,
+        "explain": "Balmer series corresponds to transitions ending at $n_1=2$."
+      },
+      {
+        "q": "Which of the following is true about the Heisenberg uncertainty principle?",
+        "options": [
+          "$\\Delta x\\,\\Delta p \\ge \\frac{\\hbar}{2}$",
+          "$\\Delta x\\,\\Delta p \\le \\frac{\\hbar}{2}$",
+          "$\\Delta x\\,\\Delta p = 0$",
+          "It applies only to macroscopic objects"
+        ],
+        "answer": 0,
+        "explain": "The principle states $\\Delta x\\,\\Delta p \\ge \\frac{\\hbar}{2}$, limiting simultaneous precision of position and momentum."
+      },
+      {
+        "q": "Assertion (A): The ground state energy of a particle in a one‑dimensional infinite potential well of width $a$ is $\\frac{\\pi^2\\hbar^2}{2ma^2}$. Reason (R): The wavefunction must have a node at each wall of the well.",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "The ground state corresponds to $n=1$, giving $E_1=\\frac{\\pi^2\\hbar^2}{2ma^2}$, and the wavefunction indeed vanishes at the walls, creating nodes."
+      },
+      {
+        "q": "The fine‑structure constant $\\alpha$ is defined as $\\alpha = \\frac{e^2}{4\\pi\\varepsilon_0\\hbar c}$. Its approximate numerical value is",
+        "options": [
+          "$\\frac{1}{137}$",
+          "$\\frac{1}{2}$",
+          "$\\pi$",
+          "$10$"
+        ],
+        "answer": 0,
+        "explain": "The dimensionless constant $\\alpha \\approx 1/137$, characterising the strength of electromagnetic interaction."
+      },
+      {
+        "q": "Which of the following correctly gives the relation between the energy $E$ of a photon and its wavelength $\\lambda$?",
+        "options": [
+          "$E = h\\lambda$",
+          "$E = \\frac{h}{\\lambda}$",
+          "$E = \\frac{hc}{\\lambda}$",
+          "$E = hc\\lambda$"
+        ],
+        "answer": 2,
+        "explain": "Photon energy is $E = \\frac{hc}{\\lambda}$, where $h$ is Planck's constant and $c$ is the speed of light."
+      },
+      {
+        "q": "In the Stern‑Gerlach experiment, silver atoms are passed through a non‑uniform magnetic field. The observed splitting is due to",
+        "options": [
+          "Orbital angular momentum only",
+          "Spin angular momentum only",
+          "Both orbital and spin angular momentum",
+          "Nuclear spin"
+        ],
+        "answer": 1,
+        "explain": "The splitting arises from the intrinsic spin $\\frac{1}{2}$ of the electron in silver atoms."
+      },
+      {
+        "q": "Which statement about the Lamb shift is correct?",
+        "options": [
+          "It is a shift in energy levels due to electron‑electron repulsion",
+          "It confirms the existence of vacuum fluctuations",
+          "It occurs only in multi‑electron atoms",
+          "It disproves quantum electrodynamics"
+        ],
+        "answer": 1,
+        "explain": "The Lamb shift results from interactions of electrons with vacuum fluctuations, supporting quantum electrodynamics."
+      }
     ]
   },
   "physics::ch13::physics/chapter13.html": {
@@ -2560,7 +2798,8 @@
       "Mole fraction and mole percent": "<p><strong>Definition:</strong> The mole fraction of component $i$ in a mixture is the ratio of the amount of substance of that component to the total amount of substance.</p>\n<p>$$X_i = \\\\frac{n_i}{\\\\sum_{j} n_j}$$</p>\n<p>It is a dimension‑less quantity (SI unit: –).</p>\n<p><strong>Mole percent (mole %)</strong> is simply the mole \\frac{t}ion expressed \\in per cent:</p>\n<p>$$\\\\text{Mole \\%}_i = X_i \\\\times 100$$</p>\n<p><strong>Key relations</strong></p>\n<ul>\n<li>Mass \\frac{t}ion $w_i = \\\\frac{m_i}{\\\\sum m_j}$.</li>\n<li>Connecting $X_i$ and $w_i$: $$X_i = \\\\frac{w_i / M_i}{\\\\sum_{j} w_j / M_j}$$ where $M_i$ is molar mass (kg·mol$^{-1}$).</li>\n</ul>\n<p><strong>Typical values</strong></p>\n<table>\n<tr><th>Component</th><th>$n$ (mol)</th><th>$X_i$</th></tr>\n<tr><td>Water</td><td>2</td><td>$\\\\frac{2}{5}=0.40$</td></tr>\n<tr><td>Ethanol</td><td>3</td><td>$\\\\frac{3}{5}=0.60$</td></tr>\n</table>\n<p><strong>Example:</strong> A solution contains 2 mol of $\\\\mathrm{H_2O}$ and 3 mol of $\\\\mathrm{C_2H_5OH}$. Find the mole \\frac{t}ion and mole percent of water.</p>\n<p>Solution: Total moles $n_{\\\\text{tot}} = 2 + 3 = 5$ mol.<br/>$$X_{\\\\mathrm{H_2O}} = \\\\frac{2}{5} = 0.40$$<br/>$$\\\\text{Mole \\%}_{\\\\mathrm{H_2O}} = 0.40 \\\\times 100 = 40\\%$$</p>\n<p>Thus water constitutes 0.40 mole fraction or 40 % mole percent of the mixture.</p>",
       "Colligative properties – boiling point elevation and freezing point depression": "<p><strong>Colligative properties</strong> depend only on the number of solute particles, not on their nature. The two most important for Class‑12 are boiling‑point elevation ($\\Delta T_b$) and freezing‑point depression ($\\Delta T_f$).</p><p><strong>Key definitions</strong></p><ul><li>Molality, $m = \\frac{n_{solute}}{mass_{solvent}\\;(kg)}$ (unit: mol·kg⁻¹).</li><li>Van’t Hoff factor, $i$, number of particles formed per formula unit (e.g., $i=2$ for NaCl).</li></ul><p><strong>Boiling‑point elevation</strong></p><p>The rise in boiling point is given by</p><p>$\\Delta T_b = K_b\\,m$</p><p>where the ebullioscopic constant</p><p>$K_b = i\\,\\frac{R\\,T_b^2}{\\Delta H_{vap}}$</p><p>($R=8.314\\,J\\,mol^{-1}\\,K^{-1}$, $T_b$ = normal boiling point in K, $\\Delta H_{vap}$ = molar enthalpy of vaporisation in J·mol⁻¹). SI unit of $\\Delta T_b$ and $K_b$ is kelvin (K).</p><p><strong>Freezing‑point depression</strong></p><p>The depression in freezing point is</p><p>$\\Delta T_f = K_f\\,m$</p><p>with the cryoscopic constant</p><p>$K_f = i\\,\\frac{R\\,T_f^2}{\\Delta H_{fus}}$</p><p>($T_f$ = normal freezing point, $\\Delta H_{fus}$ = molar enthalpy of fusion). Units are identical to those of $K_b$.</p><p><strong>Derivation (outline)</strong></p><ul><li>Start from Raoult’s law: $P_{solution}=x_{solvent}\\,P^\\circ_{solvent}$.</li><li>Equate chemical potentials of liquid and vapour at the new boiling/freezing point.</li><li>Replace mole fraction $x_{solvent}=\\frac{1}{1+im}$ and linearise for dilute solutions ($im\\ll1$).</li><li>Obtain $\\Delta T = \\frac{RT^2}{\\Delta H}\\,i m$, which defines $K_b$ or $K_f$.</li></ul><p><strong>Table of symbols</strong></p><table><tr><th>Symbol</th><th>Meaning</th><th>Unit</th></tr><tr><td>$\\Delta T_b$</td><td>Boiling‑point elevation</td><td>K</td></tr><tr><td>$\\Delta T_f$</td><td>Freezing‑point depression</td><td>K</td></tr><tr><td>$K_b$</td><td>Ebullioscopic constant</td><td>K·kg·mol⁻¹</td></tr><tr><td>$K_f$</td><td>Cryoscopic constant</td><td>K·kg·mol⁻¹</td></tr><tr><td>$m$</td><td>Molality</td><td>mol·kg⁻¹</td></tr></table><p><strong>Solved example</strong></p><p>Calculate the boiling‑point elevation when 0.500 mol of a non‑volatile solute ($i=1$) is dissolved in 250 g of water. $K_b$(water) = 0.512 K·kg·mol⁻¹.</p><p>Molality: $m = \\frac{0.500}{0.250}=2.00\\;\\text{mol·kg}^{-1}$.</p><p>Elevation: $\\Delta T_b = K_b\\,m = 0.512\\times2.00 = 1.024\\;\\text{K}$.</p><p>New boiling point = $100.0\\;\\degree C + 1.024\\;\\text{K} \\approx 101.0\\;\\degree C$.</p>",
       "Vapor pressure lowering – Raoult’s law": "<p><strong>Vapor pressure lowering (Raoult’s law)</strong> – When a non‑volatile solute is dissolved in a volatile solvent, the vapour pressure of the solution ($P$) becomes lower than that of the pure solvent ($P^{\\circ}_{\\text{solvent}}$). The decrease, $\\Delta P$, is directly proportional to the mole fraction of the solute.</p><p><strong>Key formula</strong></p><ul><li>$\\Delta P = P^{\\circ}_{\\text{solvent}}-P = X_{\\text{solute}}\\,P^{\\circ}_{\\text{solvent}}$</li><li>$P = X_{\\text{solvent}}\\,P^{\\circ}_{\\text{solvent}}$ where $X_{\\text{solvent}}=1-X_{\\text{solute}}$</li></ul><p><strong>Derivation (outline)</strong></p><ol><li>For an ideal solution, the escaping tendency of each component is proportional to its mole fraction.</li><li>Hence $P_{\\text{solvent}} = X_{\\text{solvent}}\\,P^{\\circ}_{\\text{solvent}}$.</li><li>Since $X_{\\text{solvent}} = 1- X_{\\text{solute}}$, substitute to obtain $\\Delta P = X_{\\text{solute}}\\,P^{\\circ}_{\\text{solvent}}$.</li></ol><p><strong>Symbols &amp; SI units</strong></p><table><tr><th>Symbol</th><th>Meaning</th><th>Unit</th></tr><tr><td>$\\Delta P$</td><td>Vapour‑pressure lowering</td><td>Pa (or atm, mmHg)</td></tr><tr><td>$P^{\\circ}_{\\text{solvent}}$</td><td>Vapour pressure of pure solvent</td><td>Pa</td></tr><tr><td>$X_{\\text{solute}}$</td><td>Mole fraction of solute</td><td>dimensionless</td></tr></table><p><strong>Solved example</strong></p><p>Calculate the vapour‑pressure lowering when 1.00 mol of a non‑volatile solute is dissolved in 1.00 kg of water. $P^{\\circ}_{\\text{water}} = 23.8\\,\\text{mmHg}$ at 25 °C.</p><p>Number of moles of water $=\\frac{1000\\,\\text{g}}{18.0\\,\\text{g mol}^{-1}}=55.5\\,\\text{mol}$.</p><p>Mole fraction of solute $X_{\\text{solute}} = \\frac{1.00}{1.00+55.5}=0.0177$.</p><p>Vapour‑pressure lowering $\\Delta P = X_{\\text{solute}}\\,P^{\\circ}_{\\text{water}} = 0.0177\\times23.8=0.42\\,\\text{mmHg}$.</p><p>New vapour pressure $P = 23.8-0.42 = 23.38\\,\\text{mmHg}$.</p><p>This illustrates the linear dependence of $\\Delta P$ on the solute mole fraction as stated by Raoult’s law.</p>",
-      "Ideal and non‑ideal solutions": "<p><strong>Ideal Solution</strong> – a binary mixture that obeys Raoult’s law for the entire composition range. The mole fraction of component $i$ in the vapour phase $y_i$ equals its mole fraction in the liquid $x_i$ when the vapour behaves ideally.</p><p><strong>Raoult’s law</strong> : $P=\\sum_{i}x_iP_i^{*}$ where $P$ is the total vapour pressure (Pa) and $P_i^{*}$ is the vapour pressure of pure $i$ (Pa).</p><p><strong>Non‑ideal Solution</strong> – shows deviation from Raoult’s law. Positive deviation ($P&gt;\\sum x_iP_i^{*}$) indicates weaker intermolecular forces; negative deviation indicates stronger forces.</p><ul><li>Activity $a_i=\\gamma_i x_i$, $\\gamma_i$ being the activity coefficient (dimensionless).</li><li>Modified Raoult’s law: $P_i=\\gamma_i x_i P_i^{*}$.</li><li>Relative volatility $\\alpha_{AB}=\\dfrac{K_A}{K_B}=\\dfrac{\\gamma_A P_A^{*}}{\\gamma_B P_B^{*}}$.</li><li>Henry’s law for a dilute component: $P_i=k_H x_i$ (Pa, $k_H$ in Pa).</li><li>Excess Gibbs energy $G^{E}=RT\\sum_{i}x_i\\ln\\gamma_i$ (J·mol$^{-1}$).</li></ul><table><tr><th>Term</th><th>Expression</th><th>Units</th></tr><tr><td>Partial pressure (ideal)</td><td>$P_i=x_iP_i^{*}$</td><td>Pa</td></tr><tr><td>Partial pressure (non‑ideal)</td><td>$P_i=\\gamma_i x_i P_i^{*}$</td><td>Pa</td></tr><tr><td>Activity coefficient</td><td>$\\gamma_i=\\dfrac{P_i}{x_iP_i^{*}}$</td><td>–</td></tr></table><p><strong>Example</strong>: Calculate the total vapour pressure of an ideal binary solution containing 0.40 mol fraction ethanol ($P_{EtOH}^{*}=7.9\\ \\text{kPa}$) and 0.60 mol fraction water ($P_{H_2O}^{*}=3.2\\ \\text{kPa}$).</p><p>Solution: $P=0.40\\times7.9+0.60\\times3.2=3.16+1.92=5.08\\ \\text{kPa}$.</p>"
+      "Ideal and non‑ideal solutions": "<p><strong>Ideal Solution</strong> – a binary mixture that obeys Raoult’s law for the entire composition range. The mole fraction of component $i$ in the vapour phase $y_i$ equals its mole fraction in the liquid $x_i$ when the vapour behaves ideally.</p><p><strong>Raoult’s law</strong> : $P=\\sum_{i}x_iP_i^{*}$ where $P$ is the total vapour pressure (Pa) and $P_i^{*}$ is the vapour pressure of pure $i$ (Pa).</p><p><strong>Non‑ideal Solution</strong> – shows deviation from Raoult’s law. Positive deviation ($P&gt;\\sum x_iP_i^{*}$) indicates weaker intermolecular forces; negative deviation indicates stronger forces.</p><ul><li>Activity $a_i=\\gamma_i x_i$, $\\gamma_i$ being the activity coefficient (dimensionless).</li><li>Modified Raoult’s law: $P_i=\\gamma_i x_i P_i^{*}$.</li><li>Relative volatility $\\alpha_{AB}=\\dfrac{K_A}{K_B}=\\dfrac{\\gamma_A P_A^{*}}{\\gamma_B P_B^{*}}$.</li><li>Henry’s law for a dilute component: $P_i=k_H x_i$ (Pa, $k_H$ in Pa).</li><li>Excess Gibbs energy $G^{E}=RT\\sum_{i}x_i\\ln\\gamma_i$ (J·mol$^{-1}$).</li></ul><table><tr><th>Term</th><th>Expression</th><th>Units</th></tr><tr><td>Partial pressure (ideal)</td><td>$P_i=x_iP_i^{*}$</td><td>Pa</td></tr><tr><td>Partial pressure (non‑ideal)</td><td>$P_i=\\gamma_i x_i P_i^{*}$</td><td>Pa</td></tr><tr><td>Activity coefficient</td><td>$\\gamma_i=\\dfrac{P_i}{x_iP_i^{*}}$</td><td>–</td></tr></table><p><strong>Example</strong>: Calculate the total vapour pressure of an ideal binary solution containing 0.40 mol fraction ethanol ($P_{EtOH}^{*}=7.9\\ \\text{kPa}$) and 0.60 mol fraction water ($P_{H_2O}^{*}=3.2\\ \\text{kPa}$).</p><p>Solution: $P=0.40\\times7.9+0.60\\times3.2=3.16+1.92=5.08\\ \\text{kPa}$.</p>",
+      "Solubility product (Ksp) and common ion effect": "<p><strong>Solubility product (K<sub>sp</sub>)</strong> – For a sparingly soluble salt <em>AB</em> that dissociates as <em>AB(s) ⇒ A<sup>+</sup> + B<sup>-</sup></em>, the equilibrium constant is</p><table><tr><th>Expression</th><th>Units</th></tr><tr><td>$K_{sp}= [A^{+}][B^{-}]$</td><td>$\\text{mol}^2\\ \\text{L}^{-2}$ (often quoted as dimensionless)</td></tr></table><p>Derivation: The general equilibrium constant is $K = \\dfrac{[A^{+}][B^{-}]}{[AB]}$. The activity of a pure solid is taken as 1, so $K_{sp}= [A^{+}][B^{-}]$.</p><p><strong>Common‑ion effect</strong> – Adding an ion common to the salt shifts the equilibrium to the left, decreasing solubility. For a 1:1 salt, if the concentration of the common ion is $c$, the new solubility $s$ is</p><p>$s = \\dfrac{K_{sp}}{c}$</p><p><strong>Key points</strong></p><ul><li>Only concentrations of aqueous ions appear in $K_{sp}$.</li><li>$K_{sp}$ is temperature dependent; larger $K_{sp}$ means higher solubility.</li><li>Units are often omitted because $K_{sp}$ is expressed in terms of activities.</li></ul><p><strong>Example</strong></p><p>Calculate the solubility of AgCl in a 0.10 M NaCl solution. $K_{sp}(\\text{AgCl}) = 1.8\\times10^{-10}$.</p><p>Using the common‑ion expression:</p><p>$s = \\dfrac{1.8\\times10^{-10}}{0.10} = 1.8\\times10^{-9}\\ \\text{M}$</p><p>Thus the solubility of AgCl is $1.8\\times10^{-9}$ mol L<sup>-1</sup>, much lower than in pure water.</p>"
     }
   },
   "chemistry::ch2::chemistry/electrochemistry/long-notes.html": {
@@ -2626,7 +2865,9 @@
       "Catalysis – homogeneous and heterogeneous",
       "Reaction mechanisms and complex reactions"
     ],
-    "long_notes": {},
+    "long_notes": {
+      "Rate of reaction and its expression": "<p><strong>Rate of Reaction</strong> – change in concentration of a reactant or product per unit time.</p><p>Mathematically, $r = -\\frac{1}{\\nu_i}\\frac{d[C_i]}{dt} = \\frac{1}{\\nu_j}\\frac{d[C_j]}{dt}$ where $\\nu$ are stoichiometric coefficients.</p><p>SI unit: $mol\\,L^{-1}\\,s^{-1}$.</p><p><strong>Rate Law</strong></p><ul><li>For an elementary step: $r = k\\prod_i [A_i]^{\\nu_i}$.</li><li>Overall order $n = \\sum_i \\nu_i$.</li><li>Zero, first and second order special cases are given below.</li></ul><table><tr><th>Order</th><th>Rate Law</th><th>Integrated Form</th></tr><tr><td>Zero</td><td>$r = k$</td><td>$[A] = [A]_0 - kt$</td></tr><tr><td>First</td><td>$r = k[A]$</td><td>$\\ln\\frac{[A]}{[A]_0} = -kt$</td></tr><tr><td>Second</td><td>$r = k[A]^2$</td><td>$\\frac{1}{[A]} = \\frac{1}{[A]_0} + kt$</td></tr></table><p><strong>Example:</strong> The decomposition of $N_2O_5$ follows first‑order kinetics. At $298\\,K$, $[N_2O_5]_0 = 0.10\\,M$ and after $30\\,min$ the concentration becomes $0.040\\,M$. Find $k$ and the half‑life.</p><p>For a first‑order reaction, $\\ln\\frac{[A]}{[A]_0} = -kt$.</p><p>\\[k = -\\frac{1}{t}\\ln\\frac{[A]}{[A]_0}= -\\frac{1}{1800\\,s}\\ln\\frac{0.040}{0.10}= \\frac{0.9163}{1800}=5.1\\times10^{-4}\\,s^{-1}\\]</p><p>Half‑life $t_{1/2}=\\frac{\\ln2}{k}=\\frac{0.693}{5.1\\times10^{-4}}\\approx1.36\\times10^{3}\\,s\\approx22.7\\,min$.</p>"
+    },
     "last_error": "All Groq models failed after fast failover."
   },
   "chemistry::ch4::chemistry/d-and-f-block/long-notes.html": {
