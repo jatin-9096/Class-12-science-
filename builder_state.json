@@ -1939,6 +1939,44 @@
         "question": "An electron (mass $9.11\\times10^{-31}\\,\\text{kg}$, charge $-e$) moves with speed $1\\times10^{7}\\,\\text{m/s}$ perpendicular to a uniform magnetic field of $0.8\\,\\text{T}$. Determine the period of its circular motion.",
         "solution_html": "<b>Given:</b> $m=9.11\\\\times10^{-31}\\\\,\\\\text{kg}$, $q=-e=-1.6\\\\times10^{-19}\\\\,\\\\text{C}$, $v=1\\\\times10^{7}\\\\,\\\\text{m/s}$, $B=0.8\\\\,\\\\text{T}$<br><b>Formula:</b> $T=\\\\frac{2\\\\pi m}{|q|B}$<br><b>Solution:</b> $T=\\\\frac{2\\\\pi\\\\times9.11\\\\times10^{-31}}{1.6\\\\times10^{-19}\\\\times0.8}=\\\\frac{5.73\\\\times10^{-30}}{1.28\\\\times10^{-19}}=4.48\\\\times10^{-11}\\\\,\\\\text{s}$<br><b>Answer:</b> $T\\\\approx4.5\\\\times10^{-11}\\\\,\\\\text{s}$"
       }
+    ],
+    "pyq": [
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "State the Biot–Savart law for a moving point charge.",
+        "answer_html": "<p>Biot–Savart law for a moving charge $q$ with velocity $\\mathbf{v}$ at a field point located by unit vector $\\hat{r}$ and distance $r$ is<br/>$\\displaystyle \\mathbf{B}=\\frac{\\mu_0}{4\\pi}\\frac{q\\,\\mathbf{v}\\times\\hat{r}}{r^{2}}$.</p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "Write the expression for magnetic field at the centre of a circular loop of radius $R$ carrying current $I$.",
+        "answer_html": "<p>For a circular loop, all current elements are at the same distance $R$ from the centre and $d\\mathbf{l}\\perp\\hat{r}$. Hence<br/>$\\displaystyle B=\\frac{\\mu_0 I}{2R}$ directed perpendicular to the plane of the loop (by right‑hand rule).</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Derive the magnetic field on the axis of a circular loop of radius $R$ carrying current $I$ at a point $P$ at a distance $x$ from the centre.",
+        "answer_html": "<ol><li>Consider an element $d\\mathbf{l}$; its contribution $d\\mathbf{B}=\\frac{\\mu_0 I}{4\\pi}\\frac{d\\mathbf{l}\\times\\hat{r}}{r^{2}}$.<br/>All $d\\mathbf{l}$ are symmetric, so only the axial components add.</li><li>For the loop, $r=\\sqrt{R^{2}+x^{2}}$ and $\\cos\\theta=\\frac{x}{r}$.<br/>Hence $dB_{\\text{axial}}=\\frac{\\mu_0 I}{4\\pi}\\frac{d l\\,\\sin\\theta}{r^{2}}\\cos\\theta$.</li><li>Integrate around the loop: $\\displaystyle B_{x}=\\frac{\\mu_0 I R^{2}}{2(R^{2}+x^{2})^{3/2}}$, directed along the axis (right‑hand rule).</li></ol>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Explain why a charged particle moving parallel to a uniform magnetic field experiences no magnetic force.",
+        "answer_html": "<p>Magnetic force is given by $\\mathbf{F}=q\\,\\mathbf{v}\\times\\mathbf{B}$. The cross product is zero when $\\mathbf{v}$ is parallel (or antiparallel) to $\\mathbf{B}$ because $\\sin\\theta=0$ for $\\theta=0^{\\circ}$ or $180^{\\circ}$. Hence $\\mathbf{F}=0$ and the particle moves undeflected.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "A long straight wire carries current $I$. A particle of charge $q$ moves with speed $v$ at an angle $\\theta$ to the wire. (i) Find the magnitude and direction of the magnetic force on the particle. (ii) Determine the radius of the circular component of its motion.",
+        "answer_html": "<ol><li>Magnetic field due to the wire at distance $r$ is $B=\\frac{\\mu_0 I}{2\\pi r}$ (circular around the wire).<br/>Force magnitude: $F = qvB\\sin\\theta = \\frac{\\mu_0 I q v}{2\\pi r}\\sin\\theta$.<br/>Direction: given by $\\mathbf{F}=q\\mathbf{v}\\times\\mathbf{B}$ – radially inward/outward in the plane perpendicular to the wire, following the right‑hand rule.</li><li>The component of velocity perpendicular to $\\mathbf{B}$ is $v_{\\perp}=v\\sin\\theta$. This component produces uniform circular motion with centripetal force $F = m v_{\\perp}^{2}/R$.<br/>Equating, $\\frac{\\mu_0 I q v}{2\\pi r}\\sin\\theta = m\\frac{(v\\sin\\theta)^{2}}{R}$.<br/>Hence $R = \\frac{2\\pi m r v\\sin\\theta}{\\mu_0 I q}$.</li></ol>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "A solenoid of length $l$, $N$ turns, carries current $I$. (i) Derive the expression for magnetic field inside the solenoid. (ii) Calculate $B$ for $l=0.30\\,\\text{m}$, $N=1200$, $I=2.5\\,\\text{A}$.",
+        "answer_html": "<ol><li>Number of turns per unit length $n=\\frac{N}{l}$. Using Ampère's law for a rectangular path inside the solenoid, $\\oint\\mathbf{B}\\cdot d\\mathbf{l}=\\mu_0 I_{\\text{enc}}$ gives $B\\,l = \\mu_0 n I\\,l$.<br/>Thus $\\displaystyle B = \\mu_0 n I = \\mu_0 \\frac{N}{l} I$ (field is uniform and parallel to the axis).</li><li>Substituting values: $\\displaystyle B = 4\\pi\\times10^{-7}\\times\\frac{1200}{0.30}\\times2.5$ T<br/>$\\displaystyle B = 4\\pi\\times10^{-7}\\times4000\\times2.5$ T<br/>$\\displaystyle B = 4\\pi\\times10^{-7}\\times10\\,000$ T<br/>$\\displaystyle B = 4\\pi\\times10^{-3}$ T $\\approx 1.26\\times10^{-2}\\,\\text{T}$.</li></ol>"
+      }
     ]
   },
   "physics::ch5::physics/chapter5.html": {
@@ -2385,6 +2423,44 @@
         "question": "Find the radius of the $n=3$ orbit of a hydrogen atom using the Bohr model.",
         "solution_html": "<p><b>Given:</b> Bohr radius $a_{0}=5.29\\times10^{-11}\\,\\text{m}$, principal quantum number $n=3$.</p><p><b>Formula:</b> $r_{n}=n^{2}a_{0}$.</p><p><b>Calculation:</b> $r_{3}=3^{2}\\times5.29\\times10^{-11}=9\\times5.29\\times10^{-11}=4.76\\times10^{-10}\\,\\text{m}$.</p><p><b>Answer:</b> $r_{3}=4.76\\times10^{-10}\\,\\text{m}$.</p>"
       }
+    ],
+    "pyq": [
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "State de Broglie's hypothesis and write the expression for the wavelength associated with a moving particle.",
+        "answer_html": "<p>De Broglie's hypothesis: <em>Every moving particle exhibits wave nature.</em> The wavelength $\\lambda$ is given by $$\\lambda = \\frac{h}{p}=\\frac{h}{mv}$$ where $h$ is Planck's constant, $m$ the mass and $v$ the velocity of the particle.</p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "Write Bohr's postulate regarding the angular momentum of an electron in a stationary orbit.",
+        "answer_html": "<p>Bohr postulated that the angular momentum $L$ of an electron in a stationary orbit is quantized: $$L = mvr = n\\frac{h}{2\\pi}$$ where $n=1,2,3\\dots$ is the principal quantum number.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Explain why hydrogen shows both emission and absorption spectra.",
+        "answer_html": "<p>When an electron in a hydrogen atom drops from a higher energy level $E_i$ to a lower level $E_f$, a photon of energy $\\Delta E = E_i-E_f$ is emitted → emission spectrum. Conversely, if the atom absorbs a photon of exactly this energy, the electron is excited from $E_f$ to $E_i$ → absorption spectrum. Thus discrete energy differences give rise to line spectra in both processes.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Derive the expression for the radius of the $n^{th}$ Bohr orbit of hydrogen.",
+        "answer_html": "<p>From centripetal force $\\frac{mv^2}{r}=\\frac{ke^2}{r^2}$ and Bohr's angular momentum $mvr=n\\frac{h}{2\\pi}$, eliminating $v$ gives $$r_n = \\frac{n^2 h^2}{4\\pi^2 k m e^2}= n^2 a_0$$ where $a_0=\\frac{h^2}{4\\pi^2 k m e^2}=0.529\\,\\text{Å}$ is the Bohr radius.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "Discuss the limitations of Bohr's model and how the quantum mechanical model overcomes them.",
+        "answer_html": "<p><strong>Limitations of Bohr's model:</strong><br/>1. Applies only to hydrogen‑like (single‑electron) atoms.<br/>2. Cannot explain fine structure, Zeeman effect, or spectra of multi‑electron atoms.<br/>3. Treats electron as a particle in a fixed orbit, ignoring wave nature.<br/>4. No provision for electron spin.<br/><br/><strong>Quantum mechanical resolution:</strong><br/>1. Schr\\\"odinger equation treats electrons as wavefunctions $\\psi(r,\\theta,\\phi)$, valid for any atom.<br/>2. Energy levels arise from solving the equation, naturally giving fine structure and Zeeman splitting.<br/>3. Probability density $|\\psi|^2$ replaces definite orbits, embodying wave‑particle duality.<br/>4. Spin is introduced as an intrinsic quantum number, leading to Pauli exclusion principle.<br/>Thus the quantum model provides a comprehensive, experimentally verified description of atomic structure.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "Calculate the speed and total energy of an electron in the third Bohr orbit ($n=3$) of a hydrogen atom. Use $k=9\\times10^9\\,\\text{N m}^2\\text{C}^{-2}$, $e=1.6\\times10^{-19}\\,\\text{C}$, $h=6.626\\times10^{-34}\\,\\text{J s}$, $m_e=9.11\\times10^{-31}\\,\\text{kg}$.",
+        "answer_html": "<p>For the $n^{th}$ orbit, Bohr gave $$v_n = \\frac{Z e^2}{2\\varepsilon_0 h}\\frac{1}{n}\\;\\text{or equivalently}\\;v_n = \\frac{ke^2}{\\hbar}\\frac{1}{n}$$ Using $\\hbar =\\frac{h}{2\\pi}$ and $Z=1$ for hydrogen:<br/>$$v_3 = \\frac{ke^2}{\\hbar}\\frac{1}{3}=\\frac{9\\times10^9\\times(1.6\\times10^{-19})^2}{1.055\\times10^{-34}}\\times\\frac{1}{3}\\approx 9.1\\times10^5\\,\\text{m s}^{-1}$$<br/><br/>Total energy $E_n = -\\frac{ke^2}{2r_n}$ and $r_n = n^2 a_0$ with $a_0=0.529\\,\\text{Å}=5.29\\times10^{-11}\\,\\text{m}$. Hence<br/>$$E_3 = -\\frac{13.6\\,\\text{eV}}{n^2}= -\\frac{13.6}{9}\\,\\text{eV}\\approx -1.51\\,\\text{eV}$$ (or $-2.42\\times10^{-19}\\,\\text{J}$).<br/>Thus, $v_3\\approx9.1\\times10^5\\,\\text{m s}^{-1}$ and $E_3\\approx-1.51\\,\\text{eV}$.</p>"
+      }
     ]
   },
   "physics::ch13::physics/chapter13.html": {
@@ -2450,7 +2526,21 @@
       "Vapor pressure lowering and Raoult’s law": "<p><strong>Vapor pressure lowering</strong> is the decrease in the equilibrium vapor pressure of a solvent when a non‑volatile solute is dissolved.</p><p><strong>Raoult’s law (ideal solution)</strong> : $P_{\\text{solution}} = X_{\\text{solvent}}\\,P^{\\circ}_{\\text{solvent}}$</p><p>where $P_{\\text{solution}}$ = vapor pressure of the solution, $X_{\\text{solvent}}$ = mole fraction of solvent, $P^{\\circ}_{\\text{solvent}}$ = vapor pressure of pure solvent (at same $T$). </p><p>Vapor‑pressure lowering, $\\Delta P$, is obtained by subtracting the two pressures:</p><p>$$\\Delta P = P^{\\circ}_{\\text{solvent}} - P_{\\text{solution}} = X_{\\text{solute}}\\,P^{\\circ}_{\\text{solvent}}$$</p><p>Since $X_{\\text{solute}} = \\dfrac{n_{\\text{solute}}}{n_{\\text{solute}}+n_{\\text{solvent}}}$, for dilute solutions $X_{\\text{solute}}\\approx\\dfrac{n_{\\text{solute}}}{n_{\\text{solvent}}}$ and $\\Delta P$ is directly proportional \\to the amount of solute (a colligative property). </p><table><tr><th>Symbol</th><th>Meaning</th><th>Unit</th></tr><tr><td>$P_{\\text{solution}}$</td><td>Vapor pressure of solution</td><td>Pa or atm</td></tr><tr><td>$P^{\\circ}_{\\text{solvent}}$</td><td>Vapor pressure of pure solvent</td><td>Pa or atm</td></tr><tr><td>$X_{\\text{solvent}}$, $X_{\\text{solute}}$</td><td>Mole \\frac{t}ions</td><td>–</td></tr><tr><td>$\\Delta P$</td><td>Vapor‑pressure lowering</td><td>Pa or atm</td></tr></table><p><strong>Example</strong> : Calculate $\\Delta P$ when 1 mol of a non‑volatile solute is dissolved \\in 1 kg of water at $25^{\\circ}\\mathrm{C}$ ($P^{\\circ}_{\\text{water}}=23.8\\ \\text{mmHg}$).</p><ul><li>$n_{\\text{solvent}} = \\dfrac{1000\\ \\text{g}}{18\\ \\text{g mol}^{-1}} = 55.56\\ \\text{mol}$</li><li>$X_{\\text{solute}} = \\dfrac{1}{1+55.56}=0.0177$</li><li>$\\Delta P = 0.0177 \\times 23.8 = 0.421\\ \\text{mmHg}$</li><li>$P_{\\text{solution}} = 23.8 - 0.421 = 23.38\\ \\text{mmHg}$</li></ul><p>Thus, the solution’s vapor pressure is lowered by $0.42\\ \\text{mmHg}$, illustrating Raoult’s law.</p>",
       "Osmotic pressure and its applications": "<p><strong>Definition:</strong> Osmotic pressure ($\\pi$) is the minimum pressure that must be applied on the solution side of a semipermeable membrane to stop the net flow of solvent from pure solvent to the solution.</p><p><strong>Derivation (van’t Hoff):</strong> At equilibrium the chemical potentials of the solvent are equal: $\\mu_1^{\\text{pure}} = \\mu_1^{\\text{solution}} + V_1\\pi$. Using $\\mu = \\mu^\\circ + RT\\ln a$ and for a dilute solution $a \\approx 1-\\frac{n_2}{n_1}$, we obtain $\\pi = iMRT$, where $i$ is the van’t Hoff factor.</p><table><tr><th>Symbol</th><th>Meaning</th><th>Unit</th></tr><tr><td>$\\pi$</td><td>Osmotic pressure</td><td>Pa</td></tr><tr><td>$i$</td><td>van’t Hoff factor</td><td>–</td></tr><tr><td>$M$</td><td>Molarity</td><td>mol·L$^{-1}$</td></tr><tr><td>$R$</td><td>Universal gas constant</td><td>8.314 J·mol$^{-1}$·K$^{-1}$</td></tr><tr><td>$T$</td><td>Absolute temperature</td><td>K</td></tr></table><p><strong>Key formula:</strong> $\\pi = iMRT$ (SI: $\\pi$ in Pa, $M$ in mol·m$^{-3}$, $T$ in K).</p><p><strong>Units:</strong> 1 Pa = 1 N·m$^{-2}$; often expressed in atm (1 atm = $1.013\\times10^5$ Pa).</p><p><strong>Example:</strong> Calculate $\\pi$ for a 0.10 mol·L$^{-1}$ glucose solution at $25^{\\circ}$C (298 K). Glucose does not dissociate, so $i=1$.</p><p>Solution: $M = 0.10\\,\\text{mol·L}^{-1}=0.10\\times10^{3}\\,\\text{mol·m}^{-3}=100\\,\\text{mol·m}^{-3}$. $\\pi = iMRT = 1\\times100\\times8.314\\times298 \\approx 2.48\\times10^{5}\\,\\text{Pa}=2.45\\,\\text{atm}$.</p>",
       "Preparation of solutions and solution stoichiometry": "<p><strong>Solution:</strong> A homogeneous mixture of two or more substances. The component present in larger amount is the <strong>solvent</strong> and the other(s) are <strong>solutes</strong>.</p><p><strong>Concentration terms (SI units)</strong></p><table><tr><th>Term</th><th>Formula</th><th>Unit</th></tr><tr><td>Molarity (M)</td><td>$M = \\frac{n}{V}$</td><td>mol L$^{-1}$</td></tr><tr><td>Molality (m)</td><td>$m = \\frac{n}{W_{solvent}}$</td><td>mol kg$^{-1}$</td></tr><tr><td>Normality (N)</td><td>$N = \\frac{equivalents}{V}$</td><td>eq L$^{-1}$</td></tr><tr><td>Mass % (w/w)</td><td>$\\% w/w = \\frac{mass_{solute}}{mass_{solution}}\\times100$</td><td>%</td></tr><tr><td>Mole fraction (X)</td><td>$X_{solute}=\\frac{n_{solute}}{n_{total}}$</td><td>dimensionless</td></tr></table><p><strong>Preparation of a solution</strong></p><ul><li>Weigh the required amount of solute.</li><li>Dissolve in a portion of solvent (usually water) in a beaker.</li><li>Transfer to a volumetric flask and make up to the mark with solvent.</li></ul><p><strong>Solution stoichiometry</strong></p><ul><li>For dilution: $C_1V_1 = C_2V_2$ where $C$ is concentration and $V$ is volume.</li><li>For reacting solutions: use $n = M\\times V$ to find moles, then apply stoichiometric coefficients.</li></ul><p><strong>Example</strong></p><p>Prepare $250\\,\\text{mL}$ of $0.2\\,\\text{M}$ NaCl solution.</p><ol><li>Calculate moles needed: $n = M\\times V = 0.2\\times0.250 = 0.050\\,\\text{mol}$.</li><li>Mass of NaCl: $m = n\\times M_{w}=0.050\\times58.44 = 2.92\\,\\text{g}$.</li><li>Weigh $2.92\\,\\text{g}$ NaCl, dissolve in about $150\\,\\text{mL}$ water, transfer to a $250\\,\\text{mL}$ volumetric flask and make up to the mark.</li></ol>"
-    }
+    },
+    "short_notes": [
+      {
+        "title": "Important Formulas",
+        "html": "<h3>Important Formulas</h3><table border='1' cellpadding='5'><tr><th>Quantity</th><th>Formula</th></tr><tr><td>Molarity (M)</td><td>$M = \\\\frac{n}{V}$</td></tr><tr><td>Molality (m)</td><td>$m = \\\\frac{n}{W}$</td></tr><tr><td>Normality (N)</td><td>$N = \\\\frac{eq.~wt}{V}$</td></tr><tr><td>Percent by mass (% w/w)</td><td>$\\\\% w/w = \\\\frac{mass~solute}{mass~solution}\\\\times100$</td></tr><tr><td>Percent by volume (% v/v)</td><td>$\\\\% v/v = \\\\frac{vol~solute}{vol~solution}\\\\times100$</td></tr><tr><td>Mole fraction (X<sub>A</sub>)</td><td>$X_A = \\\\frac{n_A}{n_A+n_B}$</td></tr><tr><td>Raoult's law</td><td>$P_{solution}=X_{solvent}P^0_{solvent}$</td></tr><tr><td>Henry's law</td><td>$C = kP$</td></tr><tr><td>Freezing point depression</td><td>$\\\\Delta T_f = iK_f m$</td></tr><tr><td>Boiling point elevation</td><td>$\\\\Delta T_b = iK_b m$</td></tr><tr><td>Osmotic pressure</td><td>$\\\\Pi = iMRT$</td></tr></table>"
+      },
+      {
+        "title": "Key Definitions & Laws",
+        "html": "<h3>Key Definitions & Laws</h3><ul><li><strong>Solution:</strong> Homogeneous mixture of solute and solvent at molecular level.</li><li><strong>Solute & Solvent:</strong> Substance present in lesser amount (solute) and greater amount (solvent).</li><li><strong>Concentration Terms:</strong> Molarity, Molality, Normality, % w/w, % v/v, Mole fraction.</li><li><strong>Colligative Properties:</strong> Depend only on number of solute particles, not their nature. Include freezing point depression, boiling point elevation, osmotic pressure, vapour pressure lowering.</li><li><strong>Raoult's Law:</strong> Vapour pressure of a solution is proportional to the mole fraction of the solvent.</li><li><strong>Henry's Law:</strong> Solubility of a gas in a liquid is directly proportional to its partial pressure.</li><li><strong>Van't Hoff factor (i):</strong> Number of particles formed per formula unit of solute in solution.</li></ul>"
+      },
+      {
+        "title": "Summary & Common Mistakes",
+        "html": "<h3>Summary & Common Mistakes</h3><p>• Always convert volume to litres for molarity and mass to kilograms for molality.<br>• Use $W$ (kg) for molality, not $V$.<br>• Normality uses equivalent weight; remember $N = \\frac{eq.~wt}{V}$, not $\\frac{n}{V}$ unless $i=1$.<br>• For % calculations, ensure both numerator and denominator are in the same units (mass or volume).<br>• In colligative property formulas, include the van't Hoff factor $i$; forgetting $i$ leads to under‑/over‑estimation.<br>• Raoult's law applies only to ideal solutions of non‑volatile solutes; using it for volatile solutes gives wrong vapour pressure.<br>• Henry's law constant $k$ varies with temperature; do not use a value meant for a different temperature.<br>• Osmotic pressure $Pi = iMRT$ requires $M$ in mol L$^{-1}$ and $R = 0.0821$ L·atm·K$^{-1}$·mol$^{-1}$; mixing units causes errors.</p>"
+      }
+    ]
   },
   "chemistry::ch1::chemistry/solutions/mind-map.html": {
     "last_error": "All Groq models failed after fast failover.",
