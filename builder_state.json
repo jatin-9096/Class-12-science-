@@ -1586,7 +1586,8 @@
       "Fundamental theorem of calculus": "<p><strong>Fundamental Theorem of Calculus (FTC)</strong></p><p>FTC connects differentiation and integration. It has two parts.</p><ul><li><strong>First Part:</strong> If $f$ is continuous on $[a,b]$ and $F(x)=\\int_{a}^{x}f(t)\\,dt$, then $F$ is differentiable on $(a,b)$ and $F'(x)=f(x)$.</li><li><strong>Second Part:</strong> If $F$ is any antiderivative of $f$ on $[a,b]$, then $\\int_{a}^{b}f(x)\\,dx = F(b)-F(a)$.</li></ul><p>These results allow evaluation of definite integrals by finding antiderivatives.</p><table><tr><th>Notation</th><th>Result</th></tr><tr><td>$F(x)=\\int_{a}^{x}f(t)\\,dt$</td><td>$F'(x)=f(x)$</td></tr><tr><td>$\\int_{a}^{b}f(x)\\,dx$</td><td>$F(b)-F(a)$ where $F' = f$</td></tr></table><p><strong>Derivation (First Part)</strong></p><p>Using the limit definition of derivative:</p>$$F'(x)=\\lim_{h\\to0}\\frac{\\int_{a}^{x+h}f(t)\\,dt-\\int_{a}^{x}f(t)\\,dt}{h}=\\lim_{h\\to0}\\frac{\\int_{x}^{x+h}f(t)\\,dt}{h}=f(x)$$<p>Continuity of $f$ justifies the last step.</p><p><strong>SI Units</strong></p><p>If $f$ has unit $U$ and $x$ has unit $L$, then $\\int f(x)\\,dx$ has unit $U\\cdot L$ (e.g., $\\text{m/s}\\times\\text{s}=\\text{m}$).</p><p><strong>Example</strong></p><p>Evaluate $\\int_{0}^{\\pi}\\sin x\\,dx$.</p><p>Antiderivative $F(x) = -\\cos x$. Using the second part:</p>$$\\int_{0}^{\\pi}\\sin x\\,dx = [-\\cos x]_{0}^{\\pi}=(-\\cos\\pi)-(-\\cos0)=(-(-1))-(-1)=2.$$<p>Thus the area under $\\sin x$ from $0$ \\to $\\pi$ is $2$ (unit $U\\cdot L$).</p>",
       "Integration by substitution": "<p><strong>Definition:</strong> Integration by substitution (also called $u$‑substitution) is a technique to evaluate integrals of the form $\\int f(g(x))g'(x)\\,dx$ by converting them into a simpler integral in the new variable $u$ where $u=g(x)$.</p><p><strong>Formula:</strong></p><table><tr><th>Original Integral</th><th>Substituted Form</th></tr><tr><td>$\\int f(g(x))g'(x)\\,dx$</td><td>$\\int f(u)\\,du$</td></tr></table><p><strong>Derivation:</strong> Let $u=g(x)\\Rightarrow du=g'(x)\\,dx$. Replacing $g'(x)dx$ by $du$ transforms the integral directly.</p><p><strong>Steps:</strong></p><ul><li>Identify a function $u=g(x)$ whose derivative $g'(x)$ appears (or can be created) in the integrand.</li><li>Express $du=g'(x)\\,dx$ and replace $g'(x)dx$ with $du$.</li><li>Rewrite the entire integrand in terms of $u$ and $du$.</li><li>Integrate with respect to $u$.</li><li>Substitute back $u=g(x)$ (or adjust limits for definite integrals).</li></ul><p><strong>Definite Integral Rule:</strong> $\\int_{a}^{b} f(g(x))g'(x)\\,dx = \\int_{g(a)}^{g(b)} f(u)\\,du$.</p><p><strong>SI Unit:</strong> The unit of a definite integral equals the unit of the integrand multiplied by the unit of the variable of integration (e.g., $\\text{m}\\cdot\\text{s}$ for $\\int v\\,dt$).</p><p><strong>Common Pitfall:</strong> If $g'(x)$ is not explicitly present, multiply and divide the integrand by the required factor to create $du$.</p><p><strong>Example (Indefinite):</strong></p><p>Evaluate $\\int 2x\\cos(x^2)\\,dx$.</p><p>Solution: Choose $u=x^2\\Rightarrow du=2x\\,dx$. Then</p><p>$\\int 2x\\cos(x^2)\\,dx = \\int \\cos(u)\\,du = \\sin(u)+C = \\sin(x^2)+C$.</p><p><strong>Example (Definite):</strong></p><p>Compute $\\int_{0}^{1} 2x\\cos(x^2)\\,dx$.</p><p>With $u=x^2$, limits change: $u(0)=0$, $u(1)=1$. Hence</p><p>$\\int_{0}^{1} 2x\\cos(x^2)\\,dx = \\int_{0}^{1} \\cos(u)\\,du = \\sin(u)\\big|_{0}^{1}=\\sin 1-\\sin 0=\\sin 1$.</p>",
       "Integration by parts": "<p><strong>Definition:</strong> Integration by parts is a technique derived from the product rule of differentiation, used to evaluate integrals of the form $\\int f(x)g'(x)dx$ where the integrand is a product of two functions.</p><p>Let $u=f(x)$ and $dv=g'(x)dx$. Then $du=f'(x)dx$ and $v=\\int g'(x)dx$. The fundamental formula is</p>$$\\\\int u\\\\,dv = uv - \\\\int v\\\\,du$$<p><strong>Key points:</strong></p><ul><li>Choose $u$ such that $du$ simplifies the integral.</li><li>Choose $dv$ whose antiderivative $v$ is easily obtainable.</li><li>Repeated application may be required for higher powers.</li><li>If the resulting integral is more complicated, revert \\to another method.</li></ul><p><strong>SI‑unit note:</strong> If $x$ has unit $U_x$ and $f(x)$ has unit $U_f$, then $\\int f(x)dx$ carries unit $U_f\\times U_x$.</p><p><strong>Example:</strong> Evaluate $\\int x e^{x}dx$.</p><p>Choose $u=x \\;\\Rightarrow\\; du=dx$ and $dv=e^{x}dx \\;\\Rightarrow\\; v=e^{x}$.</p><p>Apply the formula:</p>$$\\\\int x e^{x}dx = x e^{x} - \\\\int e^{x}dx$$<p>The remaining integral is $\\int e^{x}dx = e^{x}$, so</p>$$\\\\int x e^{x}dx = x e^{x} - e^{x} + C$$<p>or $\\boxed{e^{x}(x-1)+C}$.</p>",
-      "Improper integrals": "<p><strong>Improper Integrals</strong></p>\n<p>An integral is called improper when either the interval of integration is unbounded or the integrand becomes unbounded at some point in the interval.</p>\n<p><strong>Two Types</strong></p>\n<ul>\n<li>Infinite limits: $\\\\int_{a}^{\\\\infty} f(x)\\\\,dx$ or $\\\\int_{-\\\\infty}^{b} f(x)\\\\,dx$.</li>\n<li>Integrand singularity: $\\\\int_{a}^{b} f(x)\\\\,dx$ where $f(x)$ has a vertical asymptote at $c\\\\in(a,b)$.</li>\n</ul>\n<p><strong>Convergence Criteria</strong></p>\n<ul>\n<li>Limit definition: $\\\\int_{a}^{\\\\infty} f(x)\\\\,dx = \\\\lim_{t\\\\to\\\\infty} \\\\int_{a}^{t} f(x)\\\\,dx$; converges if the limit exists finite.</li>\n<li>p‑test: $\\\\int_{1}^{\\\\infty} \\\\frac{1}{x^{p}}\\\\,dx$ converges iff $p&gt;1$; $\\\\int_{0}^{1} \\\\frac{1}{x^{p}}\\\\,dx$ converges iff $p&lt;1$.</li>\n<li>Comparison test: If $0\\\\le f(x)\\\\le g(x)$ and $\\\\int g$ converges, then $\\\\int f$ converges.</li>\n</ul>\n<p><strong>Key Formulas</strong></p>\n<table>\n<tr><th>Integral</th><th>Result (Convergent)</th></tr>\n<tr><td>$\\\\int_{a}^{\\\\infty} e^{-k x}\\\\,dx$</td><td>$\\\\frac{e^{-k a}}{k}$, $k&gt;0$</td></tr>\n<tr><td>$\\\\int_{0}^{\\\\infty} \\\\frac{dx}{(x^2+1)}$</td><td>$\\\\frac{\\\\pi}{2}$</td></tr>\n</table>\n<p><strong>Example</strong></p>\n<p>Evaluate $\\\\int_{1}^{\\\\infty} \\\\frac{1}{x^{2}}\\\\,dx$.</p>\n<p>Solution:</p>\n<ol>\n<li>Write as limit: $\\\\displaystyle \\\\lim_{t\\\\to\\\\infty} \\\\int_{1}^{t} x^{-2}\\\\,dx$.</li>\n<li>Integrate: $\\\\int x^{-2}\\\\,dx = -x^{-1}$.</li>\n<li>Apply limits: $\\\\displaystyle \\\\lim_{t\\\\to\\\\infty} \\left[-\\\\frac{1}{x}\\right]_{1}^{t}= \\\\lim_{t\\\\to\\\\infty} \\left(-\\\\frac{1}{t}+1\\right)=1$.</li>\n</ol>\n<p>The integral converges to $1$, showing that a $p$‑value of $2&gt;1$ satisfies the p‑test.</p>"
+      "Improper integrals": "<p><strong>Improper Integrals</strong></p>\n<p>An integral is called improper when either the interval of integration is unbounded or the integrand becomes unbounded at some point in the interval.</p>\n<p><strong>Two Types</strong></p>\n<ul>\n<li>Infinite limits: $\\\\int_{a}^{\\\\infty} f(x)\\\\,dx$ or $\\\\int_{-\\\\infty}^{b} f(x)\\\\,dx$.</li>\n<li>Integrand singularity: $\\\\int_{a}^{b} f(x)\\\\,dx$ where $f(x)$ has a vertical asymptote at $c\\\\in(a,b)$.</li>\n</ul>\n<p><strong>Convergence Criteria</strong></p>\n<ul>\n<li>Limit definition: $\\\\int_{a}^{\\\\infty} f(x)\\\\,dx = \\\\lim_{t\\\\to\\\\infty} \\\\int_{a}^{t} f(x)\\\\,dx$; converges if the limit exists finite.</li>\n<li>p‑test: $\\\\int_{1}^{\\\\infty} \\\\frac{1}{x^{p}}\\\\,dx$ converges iff $p&gt;1$; $\\\\int_{0}^{1} \\\\frac{1}{x^{p}}\\\\,dx$ converges iff $p&lt;1$.</li>\n<li>Comparison test: If $0\\\\le f(x)\\\\le g(x)$ and $\\\\int g$ converges, then $\\\\int f$ converges.</li>\n</ul>\n<p><strong>Key Formulas</strong></p>\n<table>\n<tr><th>Integral</th><th>Result (Convergent)</th></tr>\n<tr><td>$\\\\int_{a}^{\\\\infty} e^{-k x}\\\\,dx$</td><td>$\\\\frac{e^{-k a}}{k}$, $k&gt;0$</td></tr>\n<tr><td>$\\\\int_{0}^{\\\\infty} \\\\frac{dx}{(x^2+1)}$</td><td>$\\\\frac{\\\\pi}{2}$</td></tr>\n</table>\n<p><strong>Example</strong></p>\n<p>Evaluate $\\\\int_{1}^{\\\\infty} \\\\frac{1}{x^{2}}\\\\,dx$.</p>\n<p>Solution:</p>\n<ol>\n<li>Write as limit: $\\\\displaystyle \\\\lim_{t\\\\to\\\\infty} \\\\int_{1}^{t} x^{-2}\\\\,dx$.</li>\n<li>Integrate: $\\\\int x^{-2}\\\\,dx = -x^{-1}$.</li>\n<li>Apply limits: $\\\\displaystyle \\\\lim_{t\\\\to\\\\infty} \\left[-\\\\frac{1}{x}\\right]_{1}^{t}= \\\\lim_{t\\\\to\\\\infty} \\left(-\\\\frac{1}{t}+1\\right)=1$.</li>\n</ol>\n<p>The integral converges to $1$, showing that a $p$‑value of $2&gt;1$ satisfies the p‑test.</p>",
+      "Application of definite integrals – area under a curve and volume of solids of revolution": "<p><strong>Definition:</strong> The definite integral $\\\\int_{a}^{b} f(x)\\\\,dx$ represents the signed area between the curve $y=f(x)$ and the $x$‑axis from $x=a$ to $x=b$. When $f(x)\\\\ge0$, it equals the geometric area (SI unit $m^{2}$).</p><p><strong>Key Formulas</strong></p><table><tr><th>Quantity</th><th>Formula</th></tr><tr><td>Area under a single curve</td><td>$\\\\int_{a}^{b} f(x)\\\\,dx$</td></tr><tr><td>Area between two curves $y=f(x)$ and $y=g(x)$</td><td>$\\\\int_{a}^{b} [f(x)-g(x)]\\\\,dx$</td></tr><tr><td>Volume (Disc/Washer) about $x$‑axis</td><td>$\\\\pi \\\\int_{a}^{b} [R(x)]^{2}\\\\,dx$</td></tr><tr><td>Volume (Shell) about $y$‑axis</td><td>$2\\\\pi \\\\int_{a}^{b} r(x)h(x)\\\\,dx$</td></tr></table><p><strong>Derivation (Disc Method)</strong> Rotating a thin strip of width $dx$ at position $x$ gives a disc of radius $R(x)$. Its volume $dV=\\\\pi [R(x)]^{2}dx$. Summing from $a$ to $b$ yields $V=\\\\pi\\\\int_{a}^{b}[R(x)]^{2}dx$.</p><p><strong>SI Units</strong>: Area – $m^{2}$; Volume – $m^{3}$.</p><p><strong>Example (Area between curves)</strong></p><p>Find the area enclosed by $y=2x$ and $y=x^{2}$.</p><ul><li>Intersection: $x^{2}=2x \\\\Rightarrow x=0,2$.</li><li>Upper curve $y=2x$, lower $y=x^{2}$ on $[0,2]$.</li><li>Area $=\\\\int_{0}^{2} (2x-x^{2})\\\\,dx = \\\\left[x^{2}-\\\\frac{x^{3}}{3}\\\\right]_{0}^{2}=4-\\\\frac{8}{3}=\\\\frac{4}{3}$ $\\\\text{units}^{2}$.</li></ul>"
     }
   },
   "mathematics::ch8::mathematics/chapter8.html": {
@@ -1686,7 +1687,21 @@
       "Angle Between Two Planes": "<p><strong>Definition:</strong> The angle $\\theta$ between two planes is defined as the acute angle between their normal vectors.</p><p><strong>Key formula:</strong></p><table><tr><th>Expression</th><th>Result</th></tr><tr><td>$\\cos\\theta = \\dfrac{|\\vec n_1\\cdot\\vec n_2|}{\\|\\vec n_1\\|\\,\\|\\vec n_2\\|}$</td><td>Angle between planes</td></tr></table><p>For a plane $ax+by+cz+d=0$, the normal vector is $\\vec n=(a,b,c)$. Steps to find $\\theta$:</p><ul><li>Write each plane in the form $ax+by+cz+d=0$.</li><li>Identify normals $\\vec n_1$ and $\\vec n_2$.</li><li>Compute dot product $\\vec n_1\\cdot\\vec n_2$.</li><li>Find magnitudes $\\|\\vec n_1\\|$ and $\\|\\vec n_2\\|$.</li><li>Use the formula above and take the acute value.</li></ul><p><strong>SI unit:</strong> Radian (rad).</p><p><strong>Example:</strong> Find the angle between the planes $2x-y+2z-3=0$ and $x+2y-2z+1=0$.</p><p>Normals: $\\vec n_1=(2,-1,2)$, $\\vec n_2=(1,2,-2)$.<br/>Dot product $\\vec n_1\\cdot\\vec n_2 = 2\\cdot1+(-1)\\cdot2+2\\cdot(-2) = -4$.<br/>Magnitudes $\\|\\vec n_1\\|=\\sqrt{2^2+(-1)^2+2^2}=3$, $\\|\\vec n_2\\|=\\sqrt{1^2+2^2+(-2)^2}=3$.<br/>$$\\cos\\theta = \\dfrac{| -4 |}{3\\times3}=\\dfrac{4}{9}$$<br/>Hence $\\theta = \\cos^{-1}\\left(\\dfrac{4}{9}\\right) \\approx 62.9^{\\circ}$.</p>",
       "Distance of a Point from a Plane": "<p><strong>Definition:</strong> The perpendicular distance of a point $P(x_0,y_0,z_0)$ from a plane $Ax+By+Cz+D=0$ is the length of the line segment drawn from $P$ to its foot on the plane along the normal direction.</p><p><strong>Formula (derived):</strong></p><p>Let $\\mathbf{n}= (A,B,C)$ be the normal vector of the plane. The vector $\\overrightarrow{OP}= (x_0,y_0,z_0)$. The projection of $\\overrightarrow{OP}$ on $\\mathbf{n}$ gives the signed distance $d_s = \\frac{Ax_0+By_0+Cz_0+D}{\\sqrt{A^2+B^2+C^2}}$. Taking absolute value, the required distance is</p><p>$$d = \\frac{|Ax_0+By_0+Cz_0+D|}{\\sqrt{A^2+B^2+C^2}}$$</p><p><strong>SI Unit:</strong> metre (m) – same as the coordinate units.</p><p><strong>Key Points:</strong></p><ul><li>Only the coefficients $A,B,C$ (components of the normal) appear \\in the denominator.</li><li>If the plane is written as $\\mathbf{n}\\cdot\\mathbf{r}+D=0$, the formula remains unchanged.</li><li>The sign of the numerator indicates on which side of the plane the point lies.</li></ul><p><strong>Example:</strong> Find the distance of $P(2,-1,3)$ from the plane $2x - y + 2z -5 =0$.</p><table><tr><th>Step</th><th>Computation</th></tr><tr><td>Substitute coordinates</td><td>$|2(2) - (-1) + 2(3) -5| = |4+1+6-5| = |6| = 6$</td></tr><tr><td>Denominator</td><td>$\\sqrt{2^2 + (-1)^2 + 2^2} = \\sqrt{4+1+4}=\\sqrt{9}=3$</td></tr><tr><td>Distance</td><td>$d = \\frac{6}{3}=2$ m</td></tr></table>",
       "Shortest Distance Between Two Skew Lines": "<p><strong>Definition:</strong> Two lines in space are <em>skew</em> when they are neither parallel nor intersecting. The shortest distance between them is the length of the common perpendicular joining the lines.</p><p><strong>General equations of the lines</strong></p><ul><li>Line 1: $\\mathbf{r}=\\mathbf{a}_1+\\lambda\\mathbf{d}_1$</li><li>Line 2: $\\mathbf{r}=\\mathbf{a}_2+\\mu\\mathbf{d}_2$</li></ul><p><strong>Formula for shortest distance</strong></p><table><tr><th>Expression</th><th>Result</th></tr><tr><td>$d$</td><td>$\\displaystyle d=\\frac{|(\\mathbf{a}_2-\\mathbf{a}_1)\\cdot(\\mathbf{d}_1\\times\\mathbf{d}_2)|}{|\\mathbf{d}_1\\times\\mathbf{d}_2|}$</td></tr></table><p><strong>Derivation (brief)</strong></p><ul><li>Vector joining any point on line 1 to any point on line 2 is $\\mathbf{A}=\\mathbf{a}_2-\\mathbf{a}_1+\\mu\\mathbf{d}_2-\\lambda\\mathbf{d}_1$.</li><li>For the perpendicular distance, $\\mathbf{A}$ must be parallel to $\\mathbf{d}_1\\times\\mathbf{d}_2$; thus $\\mathbf{A}=k(\\mathbf{d}_1\\times\\mathbf{d}_2)$.</li><li>Taking dot product with $\\mathbf{d}_1\\times\\mathbf{d}_2$ gives $k=\\dfrac{(\\mathbf{a}_2-\\mathbf{a}_1)\\cdot(\\mathbf{d}_1\\times\\mathbf{d}_2)}{|\\mathbf{d}_1\\times\\mathbf{d}_2|^2}$.</li><li>Hence $d=|k|\\,|\\mathbf{d}_1\\times\\mathbf{d}_2|=\\dfrac{|(\\mathbf{a}_2-\\mathbf{a}_1)\\cdot(\\mathbf{d}_1\\times\\mathbf{d}_2)|}{|\\mathbf{d}_1\\times\\mathbf{d}_2|}$.</li></ul><p><strong>SI Unit</strong>: Length – metre (m).</p><p><strong>Example</strong></p><p>Line 1 passes through $\\mathbf{a}_1=(1,2,3)$ with direction $\\mathbf{d}_1=(2,-1,1)$.<br/>Line 2 passes through $\\mathbf{a}_2=(4,0,1)$ with direction $\\mathbf{d}_2=(1,2,-1)$. Find the shortest distance.</p><p>Solution:</p><ul><li>$\\mathbf{d}_1\\times\\mathbf{d}_2=\\begin{vmatrix}\\mathbf{i}&amp;\\mathbf{j}&amp;\\mathbf{k}\\\\2&amp;-1&amp;1\\\\1&amp;2&amp;-1\\end{vmatrix}=(-1,\\,3,\\,5)$, $|\\mathbf{d}_1\\times\\mathbf{d}_2|=\\sqrt{35}$.</li><li>$\\mathbf{a}_2-\\mathbf{a}_1=(3,-2,-2)$.</li><li>$(\\mathbf{a}_2-\\mathbf{a}_1)\\cdot(\\mathbf{d}_1\\times\\mathbf{d}_2)=3(-1)+(-2)(3)+(-2)(5)=-19$, $|\\cdot|=19$.</li><li>$$d=\\frac{19}{\\sqrt{35}}\\approx3.21\\ \\text{m}$$</li></ul><p>Thus the minimum distance between the given skew lines is $\\approx3.21\\,\\text{m}$.</p>"
-    }
+    },
+    "short_notes": [
+      {
+        "title": "Important Formulas",
+        "html": "<table border=\"1\" cellpadding=\"5\" cellspacing=\"0\"><tr><th>Concept</th><th>Formula</th></tr><tr><td>Distance between two points</td><td>$\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}$</td></tr><tr><td>Section formula (internal)</td><td>$\\left(\\frac{mx_2+nx_1}{m+n},\\frac{my_2+ny_1}{m+n},\\frac{mz_2+nz_1}{m+n}\\right)$</td></tr><tr><td>Section formula (external)</td><td>$\\left(\\frac{mx_2-nx_1}{m-n},\\frac{my_2-ny_1}{m-n},\\frac{mz_2-nz_1}{m-n}\\right)$</td></tr><tr><td>Direction ratios and cosines</td><td>DR: $(a,b,c)$, $l=\\frac{a}{\\sqrt{a^2+b^2+c^2}},\\;m=\\frac{b}{\\sqrt{a^2+b^2+c^2}},\\;n=\\frac{c}{\\sqrt{a^2+b^2+c^2}}$</td></tr><tr><td>Equation of a line</td><td>$\\frac{x-x_1}{a}=\\frac{y-y_1}{b}=\\frac{z-z_1}{c}$</td></tr><tr><td>Angle between two lines</td><td>$\\cos\\theta=\\frac{a_1a_2+b_1b_2+c_1c_2}{\\sqrt{a_1^2+b_1^2+c_1^2}\\sqrt{a_2^2+b_2^2+c_2^2}}$</td></tr><tr><td>Equation of a plane</td><td>$ax+by+cz+d=0$</td></tr><tr><td>Distance from point to plane</td><td>$\\frac{|ax_1+by_1+cz_1+d|}{\\sqrt{a^2+b^2+c^2}}$</td></tr><tr><td>Angle between line (l,m,n) and plane (a,b,c)</td><td>$\\sin\\theta=\\frac{|al+bm+cn|}{\\sqrt{a^2+b^2+c^2}\\sqrt{l^2+m^2+n^2}}$</td></tr><tr><td>Angle between two planes</td><td>$\\cos\\theta=\\frac{a_1a_2+b_1b_2+c_1c_2}{\\sqrt{a_1^2+b_1^2+c_1^2}\\sqrt{a_2^2+b_2^2+c_2^2}}$</td></tr><tr><td>Shortest distance between skew lines</td><td>$\\frac{|(\\vec{r_2}-\\vec{r_1})\\cdot(\\vec{d_1}\\times\\vec{d_2})|}{|\\vec{d_1}\\times\\vec{d_2}|}$</td></tr></table>"
+      },
+      {
+        "title": "Key Definitions & Laws",
+        "html": "<ul><li><b>Point:</b> Position in space represented by coordinates $(x,y,z)$.</li><li><b>Line:</b> Set of points satisfying $\\frac{x-x_1}{a}=\\frac{y-y_1}{b}=\\frac{z-z_1}{c}$; $a,b,c$ are direction ratios.</li><li><b>Plane:</b> Set of points satisfying $ax+by+cz+d=0$; $(a,b,c)$ is a normal vector.</li><li><b>Direction Ratios (DR):</b> Any proportional set $(a,b,c)$ defining line direction.</li><li><b>Direction Cosines:</b> Cosines of angles made by a line with axes: $l,m,n$ with $l^2+m^2+n^2=1$.</li><li><b>Coplanar:</b> Three or more points/lines lie in the same plane.</li><li><b>Skew Lines:</b> Non‑parallel, non‑intersecting lines that are not coplanar.</li><li><b>Perpendicular Distance:</b> Shortest distance from a point to a line/plane, given by the respective formulas.</li></ul>"
+      },
+      {
+        "title": "Summary & Common Mistakes",
+        "html": "<p><b>Quick Summary:</b> Master the coordinate forms of line and plane, use section formulas for division of a line, apply dot and cross product ideas for angles and distances, and always check sign conventions in plane equations.</p><p><b>Common Errors to Avoid:</b></p><ul><li>Using $+$ instead of $-$ (or vice‑versa) in the constant term $d$ of plane equation.</li><li>Confusing internal and external division formulas – denominator changes from $m+n$ to $m-n$.</li><li>Forgetting to take absolute value in distance formulas, leading to negative distances.</li><li>Mixing up $sin\\theta$ and $cos\\theta$ when finding angle between line and plane.</li><li>Not simplifying direction ratios to direction cosines before applying angle formulas.</li><li>Ignoring the condition $l^2+m^2+n^2=1$ for direction cosines.</li></ul>"
+      }
+    ]
   },
   "mathematics::ch12::mathematics/chapter12.html": {
     "last_error": "All Groq models failed after fast failover.",
@@ -1938,6 +1953,118 @@
         "question": "Explain the hysteresis loop of a ferromagnetic material and define coercivity, retentivity and saturation magnetization.",
         "answer_html": "<p>The hysteresis loop is the $B$–$H$ curve obtained when a ferromagnetic specimen is cycled through a complete magnetisation–demagnetisation cycle. Key points:<br/>\\textbf{Saturation magnetization ($M_s$)}: the maximum magnetisation when all domains are aligned; corresponds to the flat top of the loop.<br/>\\textbf{Retentivity (or remanence, $B_r$)}: the residual magnetic flux density left in the material when the external field $H$ is reduced to zero; it is the $B$ value at $H=0$ on the descending branch.<br/>\\textbf{Coercivity ($H_c$)}: the magnitude of reverse field required to reduce the flux density to zero; it is the $H$ value at $B=0$ on the descending branch.<br/>The area of the loop represents energy loss per cycle.</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "The magnetic field at a distance $r$ from a long straight wire carrying current $I$ is given by",
+        "options": [
+          "$B=\\frac{\\mu_0 I}{2\\pi r}$",
+          "$B=\\frac{\\mu_0 I}{4\\pi r}$",
+          "$B=\\frac{\\mu_0 I}{\\pi r}$",
+          "$B=\\frac{2\\mu_0 I}{\\pi r}$"
+        ],
+        "answer": 0,
+        "explain": "Using Ampère's circuital law for a straight conductor, $\\oint \\mathbf{B}\\cdot d\\mathbf{l}=\\mu_0 I_{enc}$ gives $B(2\\pi r)=\\mu_0 I \\Rightarrow B=\\frac{\\mu_0 I}{2\\pi r}$."
+      },
+      {
+        "q": "A rectangular loop of area $A$ carries current $I$ in a uniform magnetic field $B$ directed perpendicular to the plane of the loop. The magnitude of the torque on the loop is",
+        "options": [
+          "$\\tau = IAB$",
+          "$\\tau = \\frac{1}{2}IAB$",
+          "$\\tau = 2IAB$",
+          "$\\tau = IAB\\sin 45^{\\circ}$"
+        ],
+        "answer": 0,
+        "explain": "Torque $\\tau = \\mathbf{\\mu}\\times \\mathbf{B}$ with magnetic dipole moment $\\mu = IA$ and $\\sin 90^{\\circ}=1$, so $\\tau = IAB$."
+      },
+      {
+        "q": "The magnetic dipole moment of a current loop is",
+        "options": [
+          "$\\mu = I\\,\\text{area}$",
+          "$\\mu = \\frac{I}{\\text{area}}$",
+          "$\\mu = I\\,\\text{perimeter}$",
+          "$\\mu = \\frac{I\\,\\text{area}}{2}$"
+        ],
+        "answer": 0,
+        "explain": "By definition, $\\mu = I\\times \\text{area}$ vector normal to the plane of the loop."
+      },
+      {
+        "q": "A charge $q$ moves with velocity $v$ perpendicular to a uniform magnetic field $B$. The magnetic force on the charge is",
+        "options": [
+          "$F = qvB$",
+          "$F = \\frac{qv}{B}$",
+          "$F = qvB\\sin 30^{\\circ}$",
+          "$F = qv^2B$"
+        ],
+        "answer": 0,
+        "explain": "Lorentz force $\\mathbf{F}=q\\mathbf{v}\\times\\mathbf{B}$; for $\\mathbf{v}\\perp\\mathbf{B}$, $F = qvB$."
+      },
+      {
+        "q": "In the Hall effect experiment, the Hall voltage is directly proportional to",
+        "options": [
+          "magnetic field $B$",
+          "current $I$",
+          "thickness of the plate",
+          "temperature"
+        ],
+        "answer": 0,
+        "explain": "Hall voltage $V_H = \\frac{IB}{ned}$; it varies linearly with $B$ (and also with $I$, but the primary proportionality asked is with $B$)."
+      },
+      {
+        "q": "The magnetic field inside a long solenoid (length $\\gg$ radius) carrying current $I$ is",
+        "options": [
+          "$B=\\mu_0 n I$",
+          "$B=\\frac{\\mu_0 n I}{2}$",
+          "$B=\\frac{\\mu_0 I}{2\\pi r}$",
+          "$B=0$"
+        ],
+        "answer": 0,
+        "explain": "For an ideal solenoid, $B=\\mu_0 n I$, where $n$ is turns per unit length."
+      },
+      {
+        "q": "A material with magnetic susceptibility $\\chi_m = -1.0\\times10^{-5}$ is",
+        "options": [
+          "diamagnetic",
+          "paramagnetic",
+          "ferromagnetic",
+          "antiferromagnetic"
+        ],
+        "answer": 0,
+        "explain": "Negative susceptibility indicates diamagnetism."
+      },
+      {
+        "q": "Paramagnetic substances differ from diamagnetic substances because",
+        "options": [
+          "their $\\chi_m$ is positive",
+          "their $\\chi_m$ is zero",
+          "their $\\chi_m$ is negative",
+          "they have permanent magnetic dipoles"
+        ],
+        "answer": 0,
+        "explain": "Paramagnets have small positive susceptibility; diamagnets have small negative susceptibility."
+      },
+      {
+        "q": "Assertion (A): The Earth’s magnetic field is directed from the geographic south to the geographic north.\nReason (R): The magnetic north pole of the Earth is actually a magnetic south pole.\n",
+        "options": [
+          "Both A and R are true and R correctly explains A",
+          "Both A and R are true but R does not explain A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "The field lines emerge from the magnetic south pole (geographic north) and enter the magnetic north pole (geographic south); thus the field direction is from geographic south to north, and the magnetic north pole is indeed a magnetic south pole, so R explains A."
+      },
+      {
+        "q": "Assertion (A): A thin copper sheet can shield a region from external magnetic fields.\nReason (R): Copper is a good conductor and supports induced eddy currents that oppose the change in magnetic flux.\n",
+        "options": [
+          "Both A and R are true and R correctly explains A",
+          "Both A and R are true but R does not explain A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "Conducting sheets produce eddy currents (Lenz’s law) that oppose time‑varying magnetic fields, providing magnetic shielding; thus both statements are true and R explains A."
+      }
     ]
   },
   "physics::ch6::physics/chapter6.html": {
@@ -2091,7 +2218,21 @@
       "Electronic configuration and Aufbau principle": "<p><strong>Electronic configuration</strong> is the distribution of $Z$ electrons among the atomic orbitals in the ground state of a neutral atom.</p><p><strong>Aufbau principle</strong> states that electrons occupy the lowest‑energy orbital available before filling higher‑energy ones.</p><ul><li>Orbitals are filled in the order given by increasing $n+\\ell$ value (Madelung rule). If two subshells have the same $n+\\ell$, the one with lower $n$ fills first.</li><li><strong>Pauli exclusion principle</strong>: No two electrons in an atom can have the same set of four quantum numbers.</li><li><strong>Hund’s rule</strong>: For degenerate orbitals, electrons occupy separate orbitals with parallel spins before pairing.</li></ul><table><tr><th>Order of filling</th><th>Configuration</th></tr><tr><td>$1s$</td><td>$1s^{2}$</td></tr><tr><td>$2s$</td><td>$2s^{2}$</td></tr><tr><td>$2p$</td><td>$2p^{6}$</td></tr><tr><td>$3s$</td><td>$3s^{2}$</td></tr><tr><td>$3p$</td><td>$3p^{6}$</td></tr><tr><td>$4s$</td><td>$4s^{2}$</td></tr><tr><td>$3d$</td><td>$3d^{10}$</td></tr><tr><td>$4p$</td><td>$4p^{6}$</td></tr></table><p>The maximum number of electrons that a subshell with azimuthal quantum number $l$ can hold is derived from spin multiplicity:</p><p>$$N_{max}=2(2l+1)$$ where $l=0,1,2,3$ correspond \\to $s,p,d,f$ respectively. SI unit of electron binding energy is the joule (J), commonly expressed \\in electron‑volts (eV, $1\\,\\text{eV}=1.602\\times10^{-19}\\,\\text{J}$).</p><p><strong>Example:</strong> Find the ground‑state configuration of oxygen ($Z=8$).</p><ol><li>Fill orbitals following the order: $1s$, $2s$, $2p$.</li><li>$1s$ holds $2$ electrons → $1s^{2}$.</li><li>$2s$ holds $2$ electrons → $2s^{2}$.</li></ol><p>Thus, the electronic configuration of oxygen is $\\boxed{1s^{2}\\,2s^{2}\\,2p^{4}}$.</p>",
       "Fine structure, Zeeman effect and Lamb shift": "<p><strong>Fine Structure</strong> – Small splitting of hydrogen‑like spectral lines due to relativistic correction, spin‑orbit coupling and Darwin term.</p><p>Energy correction (Dirac theory):</p><table><tr><th>Formula</th></tr><tr><td>$$\\Delta E_{fs}= \\frac{Z^4\\alpha^2}{n^3}\\left(\\frac{1}{j+1/2}-\\frac{3}{4n}\\right)E_h$$</td></tr></table><p>SI unit: joule (J). $E_h=4.36\\times10^{-18}\\,\\text{J}$.</p><p><strong>Zeeman Effect</strong></p><ul><li><strong>Normal Zeeman</strong> (spin ignored): $$\\Delta E = \\mu_B B m_l$$</li><li><strong>Anomalous Zeeman</strong>: $$\\Delta E = \\mu_B B g_J m_J$$ with $$g_J = 1+\\frac{j(j+1)+s(s+1)-l(l+1)}{2j(j+1)}$$</li></ul><p>Bohr magneton $$\\mu_B = \\frac{e\\hbar}{2m_e}=9.274\\times10^{-24}\\,\\text{J/T}$$.</p><p><strong>Lamb Shift</strong> – Difference between $2S_{1/2}$ and $2P_{1/2}$ levels \\in hydrogen caused by vacuum fluctuations.</p><p>Approximate expression:</p><table><tr><th>Formula</th></tr><tr><td>$$\\Delta E_{Lamb}\\approx \\frac{\\alpha^5 m_e c^2}{6\\pi}\\ln\\frac{1}{\\alpha}$$</td></tr></table><p>Measured value: $1057\\,\\text{MHz}=4.37\\times10^{-6}\\,\\text{eV}$.</p><p><strong>Example</strong>: Normal Zeeman splitting for hydrogen $n=2$, $l=1$ \\in $B=1\\,\\text{T}$.</p><p>Using $$\\Delta E = \\mu_B B m_l$$ with $m_l = -1,0,+1$:</p><ul><li>$m_l=+1$: $$\\Delta E = 9.274\\times10^{-24}\\,\\text{J}$$</li><li>$m_l=0$: $$\\Delta E = 0$$</li><li>$m_l=-1$: $$\\Delta E = -9.274\\times10^{-24}\\,\\text{J}$$</li></ul><p>Corresponding wavelength shift $\\Delta \\lambda = \\frac{\\lambda^2}{hc}\\Delta E$ (use $\\lambda=656.3\\,\\text{nm}$ for H$_\\alpha$).</p>"
     },
-    "last_error": "All Groq models failed after fast failover."
+    "last_error": "All Groq models failed after fast failover.",
+    "short_notes": [
+      {
+        "title": "Important Formulas",
+        "html": "<table border=\"1\" cellpadding=\"5\" cellspacing=\"0\"><tr><th>Formula</th><th>Expression</th></tr><tr><td>De Broglie wavelength</td><td>$\\\\lambda = \\\\frac{h}{p}$</td></tr><tr><td>Momentum of electron (non‑relativistic)</td><td>$p = m v$</td></tr><tr><td>Bohr radius</td><td>$a_0 = \\\\frac{4\\\\pi \\\\varepsilon_0 \\\\hbar^2}{m e^2}$</td></tr><tr><td>Energy of nth orbit (hydrogen‑like)</td><td>$E_n = -\\\\frac{Z^2 R_H}{n^2}$</td></tr><tr><td>Rydberg formula (wave number)</td><td>$\\\\tilde{\\\\nu} = R_H \\\\left(\\\\frac{1}{n_1^2} - \\\\frac{1}{n_2^2}\\\\right)$</td></tr><tr><td>Photoelectric equation</td><td>$K_{max} = h\\\\nu - \\\\phi$</td></tr><tr><td>Compton shift</td><td>$\\\\Delta \\\\lambda = \\\\frac{h}{m_e c}\\\\left(1-\\\\cos\\\\theta\\\\right)$</td></tr><tr><td>Uncertainty principle</td><td>$\\\\Delta x\\\\,\\\\Delta p \\ge \\\\frac{\\\\hbar}{2}$</td></tr></table>"
+      },
+      {
+        "title": "Key Definitions & Laws",
+        "html": "<ul><li><strong>Atom:</strong> Smallest unit of an element retaining chemical identity; consists of nucleus (protons + neutrons) and electrons.</li><li><strong>Isotope:</strong> Atoms of same element with different neutron numbers.</li><li><strong>Quantum Numbers:</strong> $n$ (principal), $l$ (azimuthal), $m_l$ (magnetic), $m_s$ (spin).</li><li><strong>Bohr&rsquo;s Postulates:</strong> (i) Electrons move in certain stable orbits without radiating energy; (ii) Radiation occurs when an electron jumps between orbits, emitting/absorbing a photon of energy $\\Delta E = h\\nu$.</li><li><strong>de Broglie Hypothesis:</strong> Particles exhibit wave nature with wavelength $\\lambda = h/p$.</li><li><strong>Rydberg Constant ($R_H$):</strong> $R_H = 1.097\\times10^7\\,\\text{m}^{-1}$ for hydrogen.</li><li><strong>Photoelectric Effect Law:</strong> Maximum kinetic energy $K_{max}=h\\nu-\\phi$, where $\\phi$ is work function.</li><li><strong>Compton Effect:</strong> Wavelength shift $\\Delta\\lambda = \\frac{h}{m_ec}(1-\\cos\\theta)$.</li><li><strong>Heisenberg Uncertainty Principle:</strong> $\\Delta x\\,\\Delta p \\ge \\hbar/2$.</li></ul>"
+      },
+      {
+        "title": "Summary & Common Mistakes",
+        "html": "<p><strong>Summary:</strong> Chapter 12 establishes the atomic model from Rutherford to Bohr and then to quantum mechanics. Key ideas are quantisation of energy, wave‑particle duality, and the role of quantum numbers in defining electron states. The formulas derived from Bohr’s model apply accurately only to hydrogen‑like atoms; for multi‑electron atoms, quantum mechanics (Schr&ouml;dinger equation) is required.</p><p><strong>Common Mistakes:</strong></p><ul><li>Using Bohr’s energy formula for atoms with $Z>1$ without the $Z^2$ factor.</li><li>Confusing de Broglie wavelength $\\lambda = h/p$ with $\\lambda = h/mv$ (the latter is valid only for non‑relativistic speeds).</li><li>Omitting the work function $\\phi$ while applying the photoelectric equation, leading to negative $K_{max}$.</li><li>Treating $\\Delta x\\,\\Delta p = \\hbar/2$ as an equality; it is an inequality.</li><li>Mixing up the symbols $n$ (principal quantum number) and $l$ (azimuthal) in selection rules.</li></ul>"
+      }
+    ]
   },
   "physics::ch13::physics/chapter13.html": {
     "topics": [
