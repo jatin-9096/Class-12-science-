@@ -1957,7 +1957,19 @@
         "answer": 1,
         "explain": "The method evaluates the objective function at each vertex (intersection of constraint lines) of the feasible polygon to find the optimum."
       }
-    ]
+    ],
+    "visual_maps": {
+      "mindmap": "mindmap\n  root((Linear Programming))\n    Formulation\n      Objective Function\n      Constraints\n    Graphical Method\n      Feasible Region\n      Corner Point Method\n    Simplex Method\n      Tableau\n      Pivot Operations",
+      "flowchart": "flowchart TD\n  A[Start] --> B[Formulate LP]\n  B --> C[Identify Constraints]\n  C --> D[Graphical Solution]\n  D --> E[Optimal Solution]\n  E --> F[End]",
+      "revision_points": [
+        "Formulate LP as max/min of a linear objective subject to linear inequalities",
+        "Graphical method works only for two variables; optimal point lies at a corner point",
+        "Simplex method iterates through basic feasible solutions using pivot operations",
+        "Slack, surplus and artificial variables convert inequalities to equations"
+      ]
+    },
+    "status": "done",
+    "updated": "2026-11-16 12:35:11"
   },
   "mathematics::ch13::mathematics/chapter13.html": {
     "topics": [
