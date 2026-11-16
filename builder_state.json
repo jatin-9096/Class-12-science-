@@ -3839,6 +3839,107 @@
         "question": "Discuss two important applications of nuclear reactions: (i) in medicine and (ii) in power generation. Give one specific example for each and explain the underlying principle briefly.",
         "answer_html": "<p>(i) Medicine – Positron Emission Tomography (PET) uses $^{18}$F produced by $^{18}$O(p,n)$^{18}$F reaction. $^{18}$F decays by $\n\nbeta^+$ emission, emitting positrons that annihilate with electrons, producing detectable $\n\ngamma$ rays.<br/>(ii) Power generation – Nuclear fission in reactors (e.g., $^{235}$U + n $\n\n\\rightarrow$ $^{236}$U* $\n\n\\rightarrow$ fission fragments + 2–3 neutrons + $\\sim$200 MeV). The released energy heats water to produce steam for turbines.<br/>Marks: 2 for medical application (reaction & principle), 2 for power generation (reaction & principle), 1 for clear example.</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "The mass defect of a nucleus is defined as:",
+        "options": [
+          "Difference between the sum of masses of free nucleons and the actual nuclear mass",
+          "Difference between the mass of the heaviest isotope and the lightest isotope",
+          "Difference between the atomic mass unit and the mass of a proton",
+          "Difference between the mass of an electron and a neutron"
+        ],
+        "answer": 0,
+        "explain": "Mass defect $\\Delta m$ = $\\sum m_{\\text{free nucleons}} - m_{\\text{nucleus}}$, which accounts for the binding energy."
+      },
+      {
+        "q": "If the binding energy per nucleon of a nucleus is $8\\,\\text{MeV}$, what is the total binding energy of $^{56}_{26}\\text{Fe}$?",
+        "options": [
+          "$448\\,\\text{MeV}$",
+          "$8\\,\\text{MeV}$",
+          "$56\\,\\text{MeV}$",
+          "$7.1\\,\\text{MeV}$"
+        ],
+        "answer": 0,
+        "explain": "Total binding energy $= A \\times \\text{BE per nucleon} = 56 \\times 8 = 448\\,\\text{MeV}$."
+      },
+      {
+        "q": "The radius of a nucleus is given by $R = r_0 A^{1/3}$. For $^{208}_{82}\\text{Pb}$, if $r_0 = 1.2\\,\\text{fm}$, the radius is approximately:",
+        "options": [
+          "$7.0\\,\\text{fm}$",
+          "$5.0\\,\\text{fm}$",
+          "$9.0\\,\\text{fm}$",
+          "$3.0\\,\\text{fm}$"
+        ],
+        "answer": 0,
+        "explain": "$R = 1.2 \\times 208^{1/3} \\approx 1.2 \\times 5.9 \\approx 7.1\\,\\text{fm}$."
+      },
+      {
+        "q": "Which of the following decays does NOT change the mass number of the parent nucleus?",
+        "options": [
+          "$\\alpha$ decay",
+          "$\\beta^{-}$ decay",
+          "$\\beta^{+}$ decay",
+          "Both $\\beta^{-}$ and $\\beta^{+}$ decays"
+        ],
+        "answer": 3,
+        "explain": "In $\\beta^{-}$ and $\\beta^{+}$ decays, a neutron converts to a proton (or vice‑versa) keeping the mass number $A$ unchanged."
+      },
+      {
+        "q": "The most stable nucleus for a given mass number $A$ lies close to:",
+        "options": [
+          "$N = Z$",
+          "$N = Z + 1$",
+          "$N = 2Z$",
+          "$Z = 0$"
+        ],
+        "answer": 0,
+        "explain": "For light nuclei, stability is achieved when the number of neutrons $N$ equals the number of protons $Z$."
+      },
+      {
+        "q": "In a nuclear reaction $^{14}_{7}\\text{N} + ^{4}_{2}\\alpha \\rightarrow ^{17}_{8}\\text{O} + ^{1}_{0}n$, the Q‑value is $+4.8\\,\\text{MeV}$. This reaction is:",
+        "options": [
+          "Endothermic",
+          "Exothermic",
+          "Neither; Q‑value does not indicate energy change",
+          "Impossible due to charge conservation"
+        ],
+        "answer": 1,
+        "explain": "Positive Q‑value ($+4.8\\,\\text{MeV}$) means the reaction releases energy; it is exothermic."
+      },
+      {
+        "q": "Which of the following statements about nuclear fission is correct?",
+        "options": [
+          "It always produces two nuclei of equal mass",
+          "It is accompanied by the emission of $\\gamma$‑rays only",
+          "It releases a large amount of binding energy per nucleon",
+          "It occurs spontaneously for all heavy nuclei"
+        ],
+        "answer": 2,
+        "explain": "Fission of heavy nuclei releases a large binding energy because the fragments have higher binding energy per nucleon."
+      },
+      {
+        "q": "The half‑life of a radioactive isotope is $2.0\\,\\text{h}$. After $6.0\\,\\text{h}$, the fraction of the original sample remaining is:",
+        "options": [
+          "$\\frac{1}{8}$",
+          "$\\frac{1}{4}$",
+          "$\\frac{1}{2}$",
+          "$\\frac{3}{8}$"
+        ],
+        "answer": 0,
+        "explain": "After each half‑life the amount halves: $\\left(\\frac{1}{2}\\right)^3 = \\frac{1}{8}$."
+      },
+      {
+        "q": "Assertion (A): In $\\beta^{-}$ decay, the emitted electron and antineutrino share the decay energy continuously.",
+        "options": [
+          "Both A and R are true and R correctly explains A",
+          "Both A and R are true but R does not explain A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "In $\\beta^{-}$ decay, the electron and antineutrino are emitted simultaneously and share the available energy; the reason (R) correctly explains the assertion (A)."
+      }
     ]
   },
   "physics::ch14::physics/chapter14.html": {
@@ -4205,7 +4306,8 @@
       "Electrochemical cells and cell notation": "<p><strong>Electrochemical Cell</strong> – a device that converts chemical energy into electrical energy (galvanic) or vice‑versa (electrolytic).</p><p><strong>Cell notation</strong> represents the cell in a compact form:</p><table><tr><th>Component</th><th>Symbol</th></tr><tr><td>Anode (oxidation)</td><td>$\\text{Zn(s)}|\\text{Zn}^{2+}(a)$</td></tr><tr><td>Cathode (reduction)</td><td>$\\text{Cu}^{2+}(a)|\\text{Cu(s)}$</td></tr><tr><td>Salt bridge</td><td>$||$</td></tr></table><p>The general format is $\\text{anode}|\\text{anode\\ ion\\ (aq)}||\\text{cathode\\ ion\\ (aq)}|\\text{cathode}$.</p><ul><li><strong>Standard EMF</strong>: $E^\\circ_{cell}=E^\\circ_{cathode}-E^\\circ_{anode}$ (V).</li><li><strong>Nernst equation</strong>: $$E=E^\\circ-\\frac{RT}{nF}\\ln Q$$ where $n$ = electrons transferred, $F=96485\\ \\text{C mol}^{-1}$, $R=8.314\\ \\text{J mol}^{-1}\\text{K}^{-1}$, $T$ \\in K.</li><li>At $298\\ \\text{K}$, $\\frac{RT}{F}=0.0257\\ \\text{V}$, so $$E=E^\\circ-\\frac{0.0257}{n}\\ln Q$$.</li></ul><p><strong>Solved Example</strong></p><p>Find $E_{cell}$ for the Daniell cell $\\text{Zn(s)}|\\text{Zn}^{2+}(0.010\\ \\text{M})||\\text{Cu}^{2+}(0.10\\ \\text{M})|\\text{Cu(s)}$ at $298\\ \\text{K}$. $E^\\circ_{\\text{Zn}^{2+}/\\text{Zn}}=-0.76\\ \\text{V}$, $E^\\circ_{\\text{Cu}^{2+}/\\text{Cu}}=+0.34\\ \\text{V}$.</p><p>Solution: $E^\\circ_{cell}=0.34-(-0.76)=1.10\\ \\text{V}$. $Q=\\frac{[\\text{Zn}^{2+}]}{[\\text{Cu}^{2+}]}=\\frac{0.010}{0.10}=0.10$. $n=2$. $$E=1.10-\\frac{0.0257}{2}\\ln(0.10)=1.10-0.01285\\times(-2.302)=1.10+0.0296\\approx1.13\\ \\text{V}$$.</p><p>Key points: EMF is positive for spontaneous galvanic cells; cell notation reads left to right (anode to cathode); the salt bridge maintains charge neutrality.</p>",
       "Galvanic (voltaic) cells and EMF": "<p><strong>Galvanic (Voltaic) Cell – Definition</strong><br/>A galvanic cell is a spontaneous electrochemical system that converts chemical energy into electrical energy. It consists of two half‑cells, each containing an electrode immersed in an electrolyte, connected by a salt bridge or porous membrane.</p><p><strong>Cell Notation</strong><br/>General form: $\\text{Zn(s)}|\\text{Zn}^{2+}(aq)\\,||\\,\\text{Cu}^{2+}(aq)|\\text{Cu(s)}$ where “|” separates different phases and “||” denotes the salt bridge.</p><p><strong>Key Formulas</strong></p><ul><li>Cell EMF (standard): $E^{\\circ}_{cell}=E^{\\circ}_{cathode}-E^{\\circ}_{anode}$ (unit: V).</li><li>Nernst Equation (at $T$ K): $$E_{cell}=E^{\\circ}_{cell}-\\frac{RT}{nF}\\ln Q$$ where $R=8.314\\,\\text{J mol}^{-1}\\text{K}^{-1}$, $F=96485\\,\\text{C mol}^{-1}$, $n$ = electrons transferred, $Q$ = reaction quotient.</li><li>Relation with Gibbs free energy: $\\Delta G=-nF E_{cell}$ (unit: J).</li></ul><p><strong>Units</strong></p><ul><li>EMF – volt (V)</li><li>Standard electrode potential – V</li><li>Gibbs free energy – joule (J)</li></ul><p><strong>Worked Example</strong></p><p>Calculate the EMF of the cell $\\text{Zn(s)}|\\text{Zn}^{2+}(1.0\\,\\text{M})||\\text{Cu}^{2+}(0.10\\,\\text{M})|\\text{Cu(s)}$ at $25^{\\circ}\\text{C}$.</p><ol><li>Standard potentials: $E^{\\circ}_{\\text{Cu}^{2+}/\\text{Cu}}=+0.34\\,\\text{V}$, $E^{\\circ}_{\\text{Zn}^{2+}/\\text{Zn}}=-0.76\\,\\text{V}$.</li><li>$E^{\\circ}_{cell}=0.34-(-0.76)=1.10\\,\\text{V}$.</li><li>Reaction: $\\text{Zn(s)}+\\text{Cu}^{2+}\\rightarrow\\text{Zn}^{2+}+\\text{Cu(s)}$, $n=2$.</li><li>Reaction quotient $Q=\\frac{[\\text{Zn}^{2+}]}{[\\text{Cu}^{2+}]}=\\frac{1.0}{0.10}=10$.</li><li>At $25^{\\circ}\\text{C}$, $\\frac{RT}{F}=0.0257\\,\\text{V}$, so $$E_{cell}=1.10-\\frac{0.0257}{2}\\ln 10=1.10-0.0296=1.07\\,\\text{V}.$$</li></ol><p>Thus, the cell EMF is $1.07\\,\\text{V}$, confirming the spontaneous nature of the reaction.</p>",
       "Standard electrode potentials and the electrochemical series": "<p><strong>Standard Electrode Potential (E°)</strong> – The potential of a half‑cell measured under standard conditions (1 M, 1 atm, 25 °C) when connected to the standard hydrogen electrode (SHE, set at 0 V). Unit: $\\text{V}$.</p><p><strong>Electrochemical Series</strong> – List of elements/ions arranged in decreasing order of $E^\\circ$ values. It predicts spontaneity, direction of redox reactions and relative reactivity.</p><p><strong>Key Relations</strong></p><ul><li>$E^\\circ_{\\text{cell}} = E^\\circ_{\\text{cathode}} - E^\\circ_{\\text{anode}}$</li><li>$\\Delta G = -nFE^\\circ_{\\text{cell}}$  ($n$ = moles of electrons, $F = 96\\,485\\,\\text{C mol}^{-1}$)</li><li>$K = 10^{\\frac{nE^\\circ_{\\text{cell}}}{0.0592}}$  (at 25 °C)</li></ul><p><strong>Derivation of $\\Delta G$ relation</strong></p><p>From the definition of electrical work $W = -nFE$, and the thermodynamic identity $\\Delta G = W$ for a reversible cell, we obtain $\\Delta G = -nFE^\\circ_{\\text{cell}}$.</p><p><strong>SI Units</strong></p><ul><li>Electrode potential – volt (V)</li><li>Free energy – joule (J)</li><li>Faraday constant – coulomb per mole (C mol⁻¹)</li></ul><p><strong>Example</strong></p><p>Find $E^\\circ_{\\text{cell}}$ and $\\Delta G$ for the reaction:<br/>$\\text{Zn}(s) + \\text{Cu}^{2+}(aq) \\rightarrow \\text{Zn}^{2+}(aq) + \\text{Cu}(s)$<br/>Given $E^\\circ_{\\text{Cu}^{2+}/\\text{Cu}} = +0.34\\,\\text{V}$ and $E^\\circ_{\\text{Zn}^{2+}/\\text{Zn}} = -0.76\\,\\text{V}$.</p><p>Solution:</p><table><tr><th>Half‑cell</th><th>$E^\\circ$ (V)</th></tr><tr><td>Cu$^{2+}$ + 2e$^-$ → Cu</td><td>+0.34</td></tr><tr><td>Zn → Zn$^{2+}$ + 2e$^-$ (oxidation)</td><td>+0.76</td></tr></table><p>Since Zn is oxidised, its $E^\\circ$ is taken as $+0.76\\,\\text{V}$ (reverse of reduction value).<br/>$E^\\circ_{\\text{cell}} = 0.34 - (-0.76) = 1.10\\,\\text{V}$.</p><p>$\\Delta G = -nFE^\\circ_{\\text{cell}} = -(2)(96\\,485)(1.10) = -2.12\\times10^{5}\\,\\text{J mol}^{-1}$.</p><p>The positive $E^\\circ_{\\text{cell}}$ and negative $\\Delta G$ confirm the reaction is spontaneous under standard conditions.</p>",
-      "Nernst equation and calculation of cell potential": "<p><strong>Definition:</strong> The Nernst equation relates the cell potential $E$ of an electrochemical cell to the activities (or concentrations) of the reacting species.</p><p><strong>General form</strong></p><p>$E = E^{\\circ} - \\frac{RT}{nF}\\ln Q$</p><p>At $25^{\\circ}\\text{C}$ (298 K) it is written in base‑10 logarithm as</p><p>$E = E^{\\circ} - \\frac{0.05916\\text{ V}}{n}\\log_{10} Q$</p><p><strong>Symbols and SI units</strong></p><ul><li>$E$, $E^{\\circ}$ – cell potential, volts (V)</li><li>$R$ – universal gas constant, $8.314\\ \\text{J mol}^{-1}\\text{K}^{-1}$</li><li>$T$ – temperature, kelvin (K)</li><li>$n$ – number of electrons transferred in the overall reaction (dimensionless)</li><li>$F$ – Faraday constant, $96485\\ \\text{C mol}^{-1}$</li><li>$Q$ – reaction quotient (dimensionless)</li></ul><p><strong>Derivation (brief)</strong></p><p>From thermodynamics $\\Delta G = -nFE$ and $\\Delta G = \\Delta G^{\\circ} + RT\\ln Q$.</p><p>Equating and using $\\Delta G^{\\circ} = -nFE^{\\circ}$ gives $E = E^{\\circ} - \\frac{RT}{nF}\\ln Q$.</p><p><strong>Example</strong></p><p>Calculate $E$ at $25^{\\circ}\\text{C}$ for the cell:</p><p>$$\\text{Cu(s)}\\;|\\;\\text{Cu}^{2+}(0.01\\,\\text{M})\\;||\\;\\text{Fe}^{3+}(0.10\\,\\text{M}),\\;\\text{Fe}^{2+}(0.01\\,\\text{M})\\;|\\;\\text{Fe(s)}$$</p><p>Given $E^{\\circ}(\\text{Fe}^{3+}/\\text{Fe}^{2+}) = +0.771\\,\\text{V}$ and $E^{\\circ}(\\text{Cu}^{2+}/\\text{Cu}) = +0.337\\,\\text{V}$.</p><p>Overall reaction (2 e⁻ transferred):<br/>$2\\text{Fe}^{3+} + \\text{Cu} \\rightarrow 2\\text{Fe}^{2+} + \\text{Cu}^{2+}$</p><p>$E^{\\circ}_{\\text{cell}} = E^{\\circ}_{\\text{cathode}} - E^{\\circ}_{\\text{anode}} = 0.771 - 0.337 = 0.434\\,\\text{V}$</p><p>Reaction quotient $Q = \\frac{[\\text{Fe}^{2+}]^{2}[\\text{Cu}^{2+}]}{[\\text{Fe}^{3+}]^{2}} = \\frac{(0.01)^{2}(0.01)}{(0.10)^{2}} = 1\\times10^{-4}$</p><p>Using the Nernst equation (n = 2):<br/>$E = 0.434 - \\frac{0.05916}{2}\\log_{10}(1\\times10^{-4})$<br/>$\\log_{10}(1\\times10^{-4}) = -4$<br/>$E = 0.434 - \\frac{0.05916}{2}(-4) = 0.434 + 0.1183 = 0.552\\,\\text{V}$</p><p><strong>Key points</strong></p><ul><li>At standard conditions ($Q=1$) $E = E^{\\circ}$.</li><li>Increasing reactant activity (\\in denominator of $Q$) makes $E$ more positive.</li><li>Temperature dependence enters through the $\\frac{RT}{nF}$ term.</li></ul>"
+      "Nernst equation and calculation of cell potential": "<p><strong>Definition:</strong> The Nernst equation relates the cell potential $E$ of an electrochemical cell to the activities (or concentrations) of the reacting species.</p><p><strong>General form</strong></p><p>$E = E^{\\circ} - \\frac{RT}{nF}\\ln Q$</p><p>At $25^{\\circ}\\text{C}$ (298 K) it is written in base‑10 logarithm as</p><p>$E = E^{\\circ} - \\frac{0.05916\\text{ V}}{n}\\log_{10} Q$</p><p><strong>Symbols and SI units</strong></p><ul><li>$E$, $E^{\\circ}$ – cell potential, volts (V)</li><li>$R$ – universal gas constant, $8.314\\ \\text{J mol}^{-1}\\text{K}^{-1}$</li><li>$T$ – temperature, kelvin (K)</li><li>$n$ – number of electrons transferred in the overall reaction (dimensionless)</li><li>$F$ – Faraday constant, $96485\\ \\text{C mol}^{-1}$</li><li>$Q$ – reaction quotient (dimensionless)</li></ul><p><strong>Derivation (brief)</strong></p><p>From thermodynamics $\\Delta G = -nFE$ and $\\Delta G = \\Delta G^{\\circ} + RT\\ln Q$.</p><p>Equating and using $\\Delta G^{\\circ} = -nFE^{\\circ}$ gives $E = E^{\\circ} - \\frac{RT}{nF}\\ln Q$.</p><p><strong>Example</strong></p><p>Calculate $E$ at $25^{\\circ}\\text{C}$ for the cell:</p><p>$$\\text{Cu(s)}\\;|\\;\\text{Cu}^{2+}(0.01\\,\\text{M})\\;||\\;\\text{Fe}^{3+}(0.10\\,\\text{M}),\\;\\text{Fe}^{2+}(0.01\\,\\text{M})\\;|\\;\\text{Fe(s)}$$</p><p>Given $E^{\\circ}(\\text{Fe}^{3+}/\\text{Fe}^{2+}) = +0.771\\,\\text{V}$ and $E^{\\circ}(\\text{Cu}^{2+}/\\text{Cu}) = +0.337\\,\\text{V}$.</p><p>Overall reaction (2 e⁻ transferred):<br/>$2\\text{Fe}^{3+} + \\text{Cu} \\rightarrow 2\\text{Fe}^{2+} + \\text{Cu}^{2+}$</p><p>$E^{\\circ}_{\\text{cell}} = E^{\\circ}_{\\text{cathode}} - E^{\\circ}_{\\text{anode}} = 0.771 - 0.337 = 0.434\\,\\text{V}$</p><p>Reaction quotient $Q = \\frac{[\\text{Fe}^{2+}]^{2}[\\text{Cu}^{2+}]}{[\\text{Fe}^{3+}]^{2}} = \\frac{(0.01)^{2}(0.01)}{(0.10)^{2}} = 1\\times10^{-4}$</p><p>Using the Nernst equation (n = 2):<br/>$E = 0.434 - \\frac{0.05916}{2}\\log_{10}(1\\times10^{-4})$<br/>$\\log_{10}(1\\times10^{-4}) = -4$<br/>$E = 0.434 - \\frac{0.05916}{2}(-4) = 0.434 + 0.1183 = 0.552\\,\\text{V}$</p><p><strong>Key points</strong></p><ul><li>At standard conditions ($Q=1$) $E = E^{\\circ}$.</li><li>Increasing reactant activity (\\in denominator of $Q$) makes $E$ more positive.</li><li>Temperature dependence enters through the $\\frac{RT}{nF}$ term.</li></ul>",
+      "Electrolytic cells and Faraday’s laws of electrolysis": "<p><strong>Electrolytic Cell:</strong> An electrolytic cell converts electrical energy into chemical change. It consists of two electrodes immersed in an electrolyte and is driven by an external DC source.</p><p><strong>Faraday’s First Law:</strong> The mass ($m$) of a substance liberated at an electrode is directly proportional to the quantity of electricity ($Q$) passed.</p><p>$$m = \\frac{Q\\,M}{nF}$$</p><p>where $M$ = molar mass (g·mol$^{-1}$), $n$ = valency change, $F = 96\\,485\\,\\text{C·mol}^{-1}$ (Faraday constant).</p><p><strong>Faraday’s Second Law:</strong> The masses of different substances liberated by the same quantity of electricity are proportional \\to their equivalent weights ($E = \\frac{M}{n}$).</p><p>$$\\frac{m_1}{m_2}=\\frac{E_1}{E_2}$$</p><p><strong>SI Units</strong></p><ul><li>Charge, $Q$: coulomb (C)</li><li>Current, $I$: ampere (A)</li><li>Time, $t$: second (s)</li><li>Molar mass, $M$: gram per mole (g·mol$^{-1}$)</li></ul><p><strong>Key Relations</strong></p><table><tr><th>Quantity</th><th>Expression</th><th>Unit</th></tr><tr><td>Charge</td><td>$Q = I t$</td><td>C</td></tr><tr><td>Faraday constant</td><td>$F = N_A e = 96\\,485$</td><td>C·mol$^{-1}$</td></tr></table><p><strong>Solved Example</strong></p><p>In the electrolysis of $\\text{CuSO}_4$, 2.00 A current is passed for 3.00 h. Find the mass of copper deposited at the cathode.</p><p>Given: $I = 2.00\\,\\text{A}$, $t = 3.00\\,\\text{h}=3.00\\times3600\\,\\text{s}=10800\\,\\text{s}$, $M_{Cu}=63.55\\,\\text{g·mol}^{-1}$, $n=2$.</p><p>First, $Q = I t = 2.00 \\times 10800 = 2.16\\times10^{4}\\,\\text{C}$.</p><p>Then, $m = \\frac{Q M}{nF}=\\frac{2.16\\times10^{4}\\times63.55}{2\\times96\\,485}=7.1\\,\\text{g}$ (\\approx).</p><p>Thus, $7.1\\,\\text{g}$ of Cu is deposited.</p>"
     },
     "last_error": "All Groq models failed after fast failover."
   },
@@ -4352,7 +4454,10 @@
       "Reactions of haloarenes (electrophilic aromatic substitution and nucleophilic substitution)",
       "Mechanistic aspects and factors affecting reaction rates",
       "Industrial applications and environmental impact"
-    ]
+    ],
+    "long_notes": {
+      "Nomenclature and classification of haloalkanes and haloarenes": "<p><strong>Definition:</strong> Haloalkanes (alkyl halides) are organic compounds containing a carbon‑halogen bond of the type $R\\!\\! -\\!X$ where $R$ is an alkyl group and $X$ = $F,\\,Cl,\\,Br,\\,I$. Haloarenes (aryl halides) have the halogen directly attached to an aromatic ring ($Ar\\!\\! -\\!X$).</p><p><strong>Classification:</strong></p><ul><li>Based on the hybridisation of the carbon bearing $X$: $sp^3$ (saturated), $sp^2$ (allylic/vinylic), $sp$ (acetylenic).</li><li>According to the number of halogen atoms: monohalo, dihalo, polyhalo.</li><li>According to the nature of $X$: primary, secondary, tertiary (for haloalkanes).</li></ul><p><strong>Key Nomenclature Rules (IUPAC):</strong></p><ol><li>Identify the longest carbon chain containing the carbon attached to $X$; this becomes the parent hydrocarbon.</li><li>Number the chain to give the carbon bearing $X$ the lowest possible locant.</li><li>Replace the terminal “‑e” of the parent name with “‑halo” (e.g., $\\text{propane} \\rightarrow \\text{chloropropane}$).</li><li>If more than one halogen is present, list them alphabetically with their locants (e.g., $1\\!\\! -\\!bromo\\!\\! -\\!2\\!\\! -\\!chloro\\!\\! -\\!propane$).</li><li>For haloarenes, the aromatic ring is the parent; the halogen is indicated as a prefix (e.g., $\\text{bromobenzene}$).</li></ol><p><strong>Physical Data (Typical):</strong></p><table><tr><th>Type</th><th>General Formula</th><th>Example</th><th>Boiling Point ($^\\circ$C)</th></tr><tr><td>Alkyl halide</td><td>$R\\!\\! -\\!X$</td><td>CH$_3$CH$_2$Cl</td><td>12.3</td></tr><tr><td>Aryl halide</td><td>$Ar\\!\\! -\\!X$</td><td>C$_6$H$_5$Br</td><td>156</td></tr></table><p><strong>Solved Example:</strong></p><p>Find the IUPAC name of $\\text{CH}_3\\!\\! -\\!\\text{CH}_2\\!\\! -\\!\\text{CH}_2\\!\\! -\\!\\text{Cl}$.</p><ol><li>Longest chain = 3 carbon atoms → parent = $\\text{propane}$.</li><li>Number from the end nearest the halogen → chlorine on carbon‑1.</li><li>Replace “‑e” with “‑chloro” and add locant: $1\\!\\! -\\!\\text{chloropropane}$.</li></ol>"
+    }
   },
   "chemistry::ch6::chemistry/haloalkanes/mind-map.html": {
     "last_error": "All Groq models failed after fast failover."
