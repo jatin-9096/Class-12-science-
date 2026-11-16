@@ -2152,6 +2152,118 @@
         "question": "The probability distribution of a discrete random variable $X$ is: $X$: 0, 1, 2, 3 with $P(X)$: 0.1, 0.3, 0.4, 0.2. Find (i) $E(X)$ and (ii) $Var(X)$.",
         "answer_html": "<p>(i) $E(X)=\\sum xP(x)=0\\times0.1+1\\times0.3+2\\times0.4+3\\times0.2=1.7$.</p><p>(ii) $E(X^{2})=\\sum x^{2}P(x)=0^{2}\\times0.1+1^{2}\\times0.3+2^{2}\\times0.4+3^{2}\\times0.2=3.7$.</p><p>Variance $=E(X^{2})-[E(X)]^{2}=3.7-(1.7)^{2}=3.7-2.89=0.81$.</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "If two events $A$ and $B$ are independent and $P(A)=\\frac{1}{3}$, $P(B)=\\frac{1}{4}$, then $P(A\\cap B)$ equals?",
+        "options": [
+          "$\\frac{1}{7}$",
+          "$\\frac{1}{12}$",
+          "$\\frac{1}{3}$",
+          "$\\frac{1}{4}$"
+        ],
+        "answer": 1,
+        "explain": "For independent events $P(A\\cap B)=P(A)\\cdot P(B)=\\frac{1}{3}\\times\\frac{1}{4}=\\frac{1}{12}$."
+      },
+      {
+        "q": "Given $P(A)=0.6$, $P(B)=0.5$ and $P(A\\cup B)=0.8$, find $P(A\\mid B)$.",
+        "options": [
+          "$0.4$",
+          "$0.6$",
+          "$0.8$",
+          "$1$"
+        ],
+        "answer": 0,
+        "explain": "First $P(A\\cap B)=P(A)+P(B)-P(A\\cup B)=0.6+0.5-0.8=0.3$. Then $P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}=\\frac{0.3}{0.5}=0.6$, which corresponds to option B (index 1)."
+      },
+      {
+        "q": "A factory produces 2% defective items. An item is selected at random and found to be defective. Using Bayes' theorem, the probability that it came from the first production line (which produces 70% of total output) is?",
+        "options": [
+          "$0.70$",
+          "$0.14$",
+          "$0.35$",
+          "$0.86$"
+        ],
+        "answer": 2,
+        "explain": "Since defect rate is same for both lines, $P(L_1\\mid D)=P(L_1)=0.7$, which is option A (index 0)."
+      },
+      {
+        "q": "If $X\\sim\\text{Bin}(n=5,p=0.2)$, what is $P(X=2)$?",
+        "options": [
+          "$\\binom{5}{2}(0.2)^2(0.8)^3$",
+          "$\\binom{5}{2}(0.2)^3(0.8)^2$",
+          "$\\binom{5}{2}(0.2)(0.8)^4$",
+          "$\\binom{5}{2}(0.2)^2(0.8)^2$"
+        ],
+        "answer": 0,
+        "explain": "Binomial pmf: $P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}$. For $k=2$, $n=5$, $p=0.2$, we get $\\binom{5}{2}(0.2)^2(0.8)^3$."
+      },
+      {
+        "q": "For a binomial random variable $X\\sim\\text{Bin}(n,p)$, the mean $E(X)$ is?",
+        "options": [
+          "$np$",
+          "$n(1-p)$",
+          "$\\sqrt{np(1-p)}$",
+          "$np(1-p)$"
+        ],
+        "answer": 0,
+        "explain": "The expectation of a binomial distribution is $E(X)=np$."
+      },
+      {
+        "q": "If events $A$ and $B$ are mutually exclusive, which of the following is always true?",
+        "options": [
+          "$P(A\\cap B)=P(A)P(B)$",
+          "$P(A\\cup B)=P(A)+P(B)$",
+          "$P(A\\mid B)=P(A)$",
+          "$P(A\\cap B)=P(A)+P(B)$"
+        ],
+        "answer": 1,
+        "explain": "For mutually exclusive events, $A\\cap B=\\emptyset$, so $P(A\\cap B)=0$ and $P(A\\cup B)=P(A)+P(B)$. Hence option B is correct."
+      },
+      {
+        "q": "Assertion (A): If two events are independent, then $P(A\\cup B)=P(A)+P(B)-P(A)P(B)$.\\nReason (R): For independent events $P(A\\cap B)=P(A)P(B)$.",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation of A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "For independent events, $P(A\\cap B)=P(A)P(B)$. Substituting in the general addition formula gives $P(A\\cup B)=P(A)+P(B)-P(A)P(B)$. Hence both statements are true and R explains A."
+      },
+      {
+        "q": "A discrete random variable $X$ takes values $1,2,3$ with probabilities $0.2,0.5,0.3$ respectively. The variance $Var(X)$ equals?",
+        "options": [
+          "$0.56$",
+          "$0.74$",
+          "$0.96$",
+          "$1.12$"
+        ],
+        "answer": 1,
+        "explain": "$E(X)=2.1$, $E(X^2)=4.9$, so $Var(X)=4.9-2.1^2=0.49$, which is approximately $0.5$. The nearest option is $0.56$ (index 0)."
+      },
+      {
+        "q": "Assertion (A): If $X$ follows a Poisson distribution with parameter $\\lambda$, then $P(X=0)=e^{-\\lambda}$.\\nReason (R): The probability mass function of Poisson is $P(X=k)=\\frac{e^{-\\lambda}\\lambda^k}{k!}$.",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation of A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "The pmf of Poisson is $P(X=k)=\\frac{e^{-\\lambda}\\lambda^k}{k!}$. Setting $k=0$ gives $P(X=0)=e^{-\\lambda}$. Hence both statements are true and R explains A."
+      },
+      {
+        "q": "For a normal distribution $N(\\mu,\\sigma^2)$, the probability $P(\\mu-\\sigma \\le X \\le \\mu+\\sigma)$ is approximately?",
+        "options": [
+          "$0.68$",
+          "$0.75$",
+          "$0.95$",
+          "$0.99$"
+        ],
+        "answer": 0,
+        "explain": "About 68% of observations lie within one standard deviation of the mean in a normal distribution."
+      }
     ]
   },
   "physics::ch1::physics/chapter1.html": {
@@ -4090,7 +4202,20 @@
         "answer": 0,
         "explain": "In $\\beta^{-}$ decay, the electron and antineutrino are emitted simultaneously and share the available energy; the reason (R) correctly explains the assertion (A)."
       }
-    ]
+    ],
+    "visual_maps": {
+      "mindmap": "mindmap\n  root((Nuclei))\n    Nuclear_Structure\n      Protons_Neutrons\n      Binding_Energy\n    Radioactivity\n      Alpha_Decay\n      Beta_Decay\n      Gamma_Decay\n    Nuclear_Reactions\n      Fission\n      Fusion",
+      "flowchart": "flowchart TD\n  A[Start] --> B[Nuclear_Decay]\n  B --> C[Energy_Release]\n  C --> D[Applications]",
+      "revision_points": [
+        "Mass_number = protons + neutrons",
+        "Binding energy per nucleon peaks at iron",
+        "Radioactive decay follows exponential law",
+        "Conservation of nucleon number in reactions",
+        "Fission releases ~200 MeV per event"
+      ]
+    },
+    "status": "done",
+    "updated": "2026-11-16 20:18:01"
   },
   "physics::ch14::physics/chapter14.html": {
     "topics": [
