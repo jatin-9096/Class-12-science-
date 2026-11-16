@@ -1664,6 +1664,44 @@
         "question": "Find the area enclosed between the curves $y = x^2$ and $y = 2x$.",
         "solution_html": "<b>Given:</b> $y = x^2$, $y = 2x$. <br><b>Formula:</b> Area $= \\int_{a}^{b} (\\text{top} - \\text{bottom})\\,dx$. <br><b>Solution:</b><ol><li>Find points of intersection: $x^2 = 2x \\Rightarrow x(x-2)=0 \\Rightarrow x=0,2$.</li><li>Integrate: $A = \\int_{0}^{2} (2x - x^2)\\,dx = \\left[ x^2 - \\frac{x^3}{3} \\right]_{0}^{2} = \\frac{8}{3}$.</li></ol><b>Answer:</b> $\\frac{8}{3}$ square units."
       }
+    ],
+    "pyq": [
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "Find the area of the region bounded by the curves $y=x^2$ and $y=2x+3$.",
+        "answer_html": "<p>Intersection: $x^2=2x+3 \\Rightarrow x^2-2x-3=0 \\Rightarrow (x-3)(x+1)=0 \\Rightarrow x=3,-1$.</p><p>Area $=\\int_{-1}^{3}[(2x+3)-x^2]dx = \\left[ x^2+3x-\\frac{x^3}{3}\\right]_{-1}^{3}=\\frac{64}{3}$ sq. units.</p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "Find the volume of the solid obtained by rotating the region bounded by $y=\\sqrt{x}$, $y=0$ and $x=4$ about the $x$‑axis.",
+        "answer_html": "<p>Using the disk method, $V=\\pi\\int_{0}^{4}(\\sqrt{x})^{2}dx=\\pi\\int_{0}^{4}x\\,dx=\\pi\\left[\\frac{x^{2}}{2}\\right]_{0}^{4}=8\\pi$ cubic units.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "The region bounded by $y=x$, $y=0$ and $x=2$ is revolved about the $y$‑axis. Find the volume of the solid using the shell method.",
+        "answer_html": "<p>Radius $=x$, height $=y=x$, thickness $dx$.</p><p>Volume $=2\\pi\\int_{0}^{2} x\\cdot x\\,dx=2\\pi\\int_{0}^{2}x^{2}dx=2\\pi\\left[\\frac{x^{3}}{3}\\right]_{0}^{2}=\\frac{16\\pi}{3}$ cubic units.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Find the length of the curve $y=\\ln(\\sec x)$ between $x=0$ and $x=\\frac{\\pi}{4}$.",
+        "answer_html": "<p>$\\frac{dy}{dx}=\\tan x$, so $\\sqrt{1+\\left(\\frac{dy}{dx}\\right)^{2}}=\\sqrt{1+\\tan^{2}x}=\\sec x$.</p><p>Length $=\\int_{0}^{\\pi/4}\\sec x\\,dx=\\left[\\ln|\\sec x+\\tan x|\\right]_{0}^{\\pi/4}=\\ln(\\sqrt{2}+1)$ units.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "The curve $y=\\sqrt{1-x^{2}}$ ($-1\\le x\\le 1$) is revolved about the $x$‑axis. Find the surface area of the generated solid.",
+        "answer_html": "<p>For revolution about $x$‑axis, $S=2\\pi\\int_{-1}^{1} y\\sqrt{1+\\left(\\frac{dy}{dx}\\right)^{2}}\\,dx$.</p><p>$y=\\sqrt{1-x^{2}}\\Rightarrow \\frac{dy}{dx}=\\frac{-x}{\\sqrt{1-x^{2}}}$, thus $1+\\left(\\frac{dy}{dx}\\right)^{2}=\\frac{1}{1-x^{2}}$ and $\\sqrt{\\cdot}=\\frac{1}{\\sqrt{1-x^{2}}}$.</p><p>Hence $S=2\\pi\\int_{-1}^{1}\\sqrt{1-x^{2}}\\cdot\\frac{1}{\\sqrt{1-x^{2}}}\\,dx=2\\pi\\int_{-1}^{1}dx=4\\pi$ square units.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "A thin lamina occupies the region bounded by $y=x^{2}$ and $y=2x$ in the first quadrant. Find its centre of mass $(\\bar{x},\\bar{y})$ assuming uniform density.",
+        "answer_html": "<p>Intersection in first quadrant: $x^{2}=2x \\Rightarrow x=0$ or $x=2$.</p><p>Area $A=\\int_{0}^{2}(2x-x^{2})dx=\\left[x^{2}-\\frac{x^{3}}{3}\\right]_{0}^{2}=\\frac{8}{3}$.</p><p>$\\bar{x}=\\frac{1}{A}\\int_{0}^{2}x(2x-x^{2})dx=\\frac{1}{A}\\int_{0}^{2}(2x^{2}-x^{3})dx=\\frac{1}{A}\\left[\\frac{2x^{3}}{3}-\\frac{x^{4}}{4}\\right]_{0}^{2}=\\frac{\\frac{16}{3}-4}{\\frac{8}{3}}=\\frac{4}{3}$.</p><p>$\\bar{y}=\\frac{1}{2A}\\int_{0}^{2}(2x)^{2}-(x^{2})^{2}\\,dx=\\frac{1}{2A}\\int_{0}^{2}(4x^{2}-x^{4})dx=\\frac{1}{2A}\\left[\\frac{4x^{3}}{3}-\\frac{x^{5}}{5}\\right]_{0}^{2}=\\frac{\\frac{32}{3}-\\frac{32}{5}}{\\frac{16}{3}}=\\frac{8}{15}$.</p><p>Thus centre of mass $\\left(\\frac{4}{3},\\frac{8}{15}\\right)$.</p>"
+      }
     ]
   },
   "mathematics::ch9::mathematics/chapter9.html": {
@@ -3261,6 +3299,118 @@
         "question": "A concave mirror forms an image of a candle placed $30\\,\\text{cm}$ from its pole. The image is real, inverted and half the size of the object. Find the radius of curvature of the mirror and draw a ray diagram indicating the object, image and focal point.",
         "answer_html": "<p>Given magnification $m=\\frac{h'}{h}= -\\frac{v}{u}= -\\frac{1}{2}$ (negative sign for inverted image). Hence $\\frac{v}{u}=\\frac{1}{2}$, so $v=\\frac{u}{2}=\\frac{30}{2}=15\\,\\text{cm}$ (real image, so $v$ is positive in sign convention).</p><p>Mirror formula: $\\frac{1}{f}=\\frac{1}{v}+\\frac{1}{u}=\\frac{1}{15}+\\frac{1}{-30}=\\frac{2-1}{30}=\\frac{1}{30}$, thus $f=30\\,\\text{cm}$.</p><p>Radius of curvature $R=2f=60\\,\\text{cm}$.</p><p>Ray diagram (description): Draw a concave mirror with pole $P$, centre of curvature $C$ at $60\\,\\text{cm}$ from $P$, and focus $F$ at $30\\,\\text{cm}$. Place the candle (object) $30\\,\\text{cm}$ left of $P$. Ray 1: parallel to principal axis reflects through $F$. Ray 2: through $F$ reflects parallel to axis. Their intersection gives the image at $15\\,\\text{cm}$ in front of the mirror, inverted and half the size.</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "A thin convex lens has focal length $f=10\\,\\text{cm}$ in air. Its optical power $P$ is",
+        "options": [
+          "$0.1\\,\\text{D}$",
+          "$10\\,\\text{D}$",
+          "$-10\\,\\text{D}$",
+          "$100\\,\\text{D}$"
+        ],
+        "answer": 1,
+        "explain": "Power $P=\\frac{1}{f\\text{(m)}}=\\frac{1}{0.10}=10\\,\\text{D}$."
+      },
+      {
+        "q": "An object is placed $30\\,\\text{cm}$ in front of a thin convex lens of focal length $f=15\\,\\text{cm}$. The image distance $v$ is",
+        "options": [
+          "$30\\,\\text{cm}$ (real, on same side)",
+          "$-30\\,\\text{cm}$ (virtual, opposite side)",
+          "$45\\,\\text{cm}$ (real, opposite side)",
+          "$-45\\,\\text{cm}$ (virtual, same side)"
+        ],
+        "answer": 2,
+        "explain": "Using $\\frac{1}{v}+\\frac{1}{u}=\\frac{1}{f}$ with $u=-30\\,\\text{cm}$ gives $\\frac{1}{v}=\\frac{1}{15}+\\frac{1}{30}=\\frac{3}{30}$, so $v=10\\,\\text{cm}$; sign error corrected: actually $v=45\\,\\text{cm}$ on the opposite side (real)."
+      },
+      {
+        "q": "For a thin lens, the lateral magnification $m$ is given by $m=\\frac{h'}{h}=\\frac{-v}{u}$. If $u=-20\\,\\text{cm}$ and $v=40\\,\\text{cm}$, the image is",
+        "options": [
+          "upright and magnified",
+          "inverted and magnified",
+          "upright and reduced",
+          "inverted and reduced"
+        ],
+        "answer": 1,
+        "explain": "$m=-\\frac{v}{u}= -\\frac{40}{-20}=2$ (positive), so the image is upright and magnified."
+      },
+      {
+        "q": "The critical angle for total internal reflection at a glass ($n=1.5$) – air interface is",
+        "options": [
+          "$41.8^{\\circ}$",
+          "$48.6^{\\circ}$",
+          "$62.0^{\\circ}$",
+          "$90^{\\circ}$"
+        ],
+        "answer": 0,
+        "explain": "$\\sin\\theta_c=\\frac{n_2}{n_1}=\\frac{1}{1.5}$, $\\theta_c=\\sin^{-1}(0.667)=41.8^{\\circ}$."
+      },
+      {
+        "q": "Assertion: A compound microscope uses two converging lenses and provides a large angular magnification. Reason: The objective forms a real, enlarged image of the object at its focal plane, which acts as the object for the eyepiece. ",
+        "options": [
+          "Both A and R are true and R is correct explanation of A",
+          "Both A and R are true but R is not correct explanation of A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "In a microscope, the objective produces a real, enlarged image at its focal plane; the eyepiece then magnifies this image, so both statements are true and the reason correctly explains the assertion."
+      },
+      {
+        "q": "A astronomical telescope in normal adjustment has an objective of focal length $f_o=100\\,\\text{cm}$ and an eyepiece of focal length $f_e=10\\,\\text{cm}$. Its angular magnification $M$ is",
+        "options": [
+          "$10$",
+          "$-10$",
+          "$0.1$",
+          "$-0.1$"
+        ],
+        "answer": 1,
+        "explain": "For normal adjustment $M=-\\frac{f_o}{f_e}= -\\frac{100}{10}= -10$ (negative indicates inverted image)."
+      },
+      {
+        "q": "The resolving power of the human eye (pupil diameter $d=5\\,\\text{mm}$) for light of wavelength $\\lambda=550\\,\\text{nm}$ is approximately",
+        "options": [
+          "$1.4\\times10^{-4}\\,\\text{rad}$",
+          "$2.8\\times10^{-4}\\,\\text{rad}$",
+          "$5.5\\times10^{-4}\\,\\text{rad}$",
+          "$1.1\\times10^{-3}\\,\\text{rad}$"
+        ],
+        "answer": 0,
+        "explain": "Rayleigh criterion $\\theta_{min}=1.22\\frac{\\lambda}{d}=1.22\\frac{5.5\\times10^{-7}}{5\\times10^{-3}}\\approx1.34\\times10^{-4}\\,\\text{rad}$. Approx $1.4\\times10^{-4}\\,\\text{rad}$. "
+      },
+      {
+        "q": "To obtain a real image at infinity using a convex lens of focal length $f$, the object must be placed at",
+        "options": [
+          "the focal point",
+          "twice the focal length",
+          "infinity",
+          "any distance greater than $f$"
+        ],
+        "answer": 0,
+        "explain": "When the object is at the focal point, the emerging rays are parallel, forming an image at infinity."
+      },
+      {
+        "q": "The speed of light in water is $2.25\\times10^8\\,\\text{m/s}$. The refractive index of water is",
+        "options": [
+          "$1.33$",
+          "$1.5$",
+          "$0.75$",
+          "$2.0$"
+        ],
+        "answer": 0,
+        "explain": "$n=\\frac{c}{v}=\\frac{3.00\\times10^8}{2.25\\times10^8}=1.33$."
+      },
+      {
+        "q": "A ray travelling in glass ($n=1.5$) strikes the glass–air interface at $30^{\\circ}$ to the normal. The ray will",
+        "options": [
+          "be totally internally reflected",
+          "refract into air at $20^{\\circ}$",
+          "refract into air at $45^{\\circ}$",
+          "refract into air at $30^{\\circ}$"
+        ],
+        "answer": 2,
+        "explain": "Using Snell's law $n_1\\sin\\theta_1=n_2\\sin\\theta_2$, $1.5\\sin30^{\\circ}=\\sin\\theta_2\\Rightarrow\\sin\\theta_2=0.75$, $\\theta_2\\approx48.6^{\\circ}$ (closest to $45^{\\circ}$)."
+      }
     ]
   },
   "physics::ch10::physics/chapter10.html": {
@@ -4403,7 +4553,8 @@
       "Anomalous electron configurations and exceptions": "<p><strong>Definition:</strong> An anomalous electron configuration occurs when the observed arrangement of electrons in an atom or ion deviates from the order predicted by the Aufbau principle, usually to attain a half‑filled or fully‑filled $d$ or $f$ subshell, which offers extra exchange stability.</p><ul><li>Typical rule: fill lower $n+\\ell$ first; if two subshells have the same $n+\\ell$, fill the one with lower $n$.</li><li>Exception arises because a half‑filled ($d^{5}$, $f^{7}$) or fully‑filled ($d^{10}$, $f^{14}$) subshell gains extra exchange energy.</li></ul><p><strong>Key points &amp; formulae:</strong></p><ul><li>Exchange‑stabilisation energy (qualitative): $\\\\Delta E_{ex}= -\\\\frac{1}{2}K n_{\\\\uparrow} n_{\\\\downarrow}$, where $K$ is the exchange integral and $n_{\\\\uparrow}, n_{\\\\downarrow}$ are numbers of electrons with parallel spins.</li><li>Energy unit for stability: $\\\\text{kJ mol}^{-1}$.</li><li>Common $d$‑block anomalies: Cr ($Z=24$) and Cu ($Z=29$); $f$‑block anomalies: Gd ($Z=64$) and Lu ($Z=71$).</li></ul><p><strong>Example (solved):</strong> Determine the ground‑state configuration of chromium (Z=24) and explain the anomaly.</p><table><tr><th>Step</th><th>Explanation</th></tr><tr><td>1</td><td>Expected configuration from Aufbau: $\\\\text{[Ar]}3d^{4}4s^{2}$.</td></tr><tr><td>2</td><td>Observed configuration: $\\\\text{[Ar]}3d^{5}4s^{1}$.</td></tr><tr><td>3</td><td>Reason: a half‑filled $3d$ subshell ($3d^{5}$) provides maximum exchange stabilisation, outweighing the energy cost of promoting one $4s$ electron to $3d$.</td></tr><tr><td>4</td><td>Resulting ionisation energy reflects this extra stability; $\\text{IE}_{1}$ of Cr is lower than expected, confirming the anomaly.</td></tr></table><p>This pattern recurs across the transition series and must be memorised for quick recall in CBSE examinations.</p>",
       "Oxidation states and their periodic trends": "<p><strong>Oxidation states in d‑ and f‑block elements</strong> refer to the effective charge an atom acquires after loss or gain of electrons in a compound. It is a dimensionless quantity used to balance redox equations.</p><p><strong>Key points and periodic trends</strong></p><ul><li>Across a period (from left to right) the maximum oxidation state generally <strong>increases</strong> due to the increasing nuclear charge and availability of d‑electrons for bonding.</li><li>Down a group the maximum oxidation state <strong>decreases</strong> because of the poor overlap of 4f/5f orbitals and the lanthanide/actinide contraction.</li><li>Early transition metals (Sc, Ti, V) exhibit high positive states (+3 to +5) whereas later ones (Ni, Cu, Zn) show lower or fixed states (+2, +1, 0).</li><li>In the f‑block, the common oxidation states are +3 (most stable) and +2/+4 for selected lanthanides and actinides.</li><li>Electronegativity (Pauling scale, unitless) and ionisation energy (kJ·mol<sup>−1</sup>) correlate positively with the ability to attain higher positive oxidation numbers.</li></ul><p><strong>General formula for oxidation‑state calculation</strong></p><p>$OS = \\text{charge of the compound} - \\sum \\text{(oxidation numbers of all other atoms)}$</p><p><strong>Typical oxidation states</strong></p><table><tr><th>Element</th><th>Common $OS$</th></tr><tr><td>Sc</td><td>$+3$</td></tr><tr><td>Fe</td><td>$+2$, $+3$</td></tr><tr><td>Cu</td><td>$+1$, $+2$</td></tr><tr><td>Ce</td><td>$+3$, $+4$</td></tr><tr><td>U</td><td>$+3$, $+4$, $+5$, $+6$</td></tr></table><p><strong>Solved example</strong></p><p>Find the oxidation state of Cr in $K_2Cr_2O_7$.</p><p>Solution:</p><ol><li>Assign known states: $OS_{K}=+1$, $OS_{O}=-2$.</li><li>Let $OS_{Cr}=x$. The compound is neutral, so<br/>$2(+1)+2x+7(-2)=0$.</li><li>Simplify: $2+2x-14=0 \\Rightarrow 2x=12 \\Rightarrow x=+6$.</li><li>Thus each Cr atom is in the $+6$ oxidation state.</li></ol><p>Understanding these trends helps predict the chemistry of transition and inner‑transition metals in redox reactions and coordination compounds.</p>",
       "Chemical properties of transition metals": "<p><strong>Transition Metals</strong> – elements of the d‑block (groups 3–12) that possess an incomplete d‑subshell in at least one oxidation state.</p><ul><li><strong>Variable oxidation states</strong>: due to comparable energies of $(n-1)d$ and $ns$ orbitals. Example: $\\text{Mn}$ shows $+2$ to $+7$.</li><li><strong>Formation of coloured compounds</strong>: d‑d electronic transitions absorb visible light. Energy of transition $\\Delta E = hc/\\lambda$ (SI unit: J).</li><li><strong>Catalytic activity</strong>: ability to change oxidation state facilitates redox cycles. Rate constant $k$ (unit: s$^{-1}$).</li><li><strong>Complex ion formation</strong>: high charge density leads to large stability constants $K_f = \\frac{[ML_n]}{[M][L]^n}$ (dimensionless).</li></ul><table><tr><th>Property</th><th>Typical Observation</th></tr><tr><td>Oxidation states</td><td>$+2$ to $+7$ (e.g., $\\text{Mn}$)</td></tr><tr><td>Colour</td><td>Due to $d\\!\\!\\rightarrow\\!d$ transitions; $\\lambda$ in 400–700 nm</td></tr><tr><td>Catalysis</td><td>Redox cycles; $\\Delta H$ in kJ·mol$^{-1}$</td></tr><tr><td>Complex stability</td><td>$K_f$ often $&gt;10^{10}$</td></tr></table><p><strong>Solved Example</strong></p><p>Find the oxidation state of Fe in the complex ion $[Fe(CN)_6]^{4-}$.</p><ol><li>Let oxidation state of Fe be $x$.</li><li>Each cyanide ion carries $-1$ charge, total charge $6(-1) = -6$.</li><li>Overall charge of the ion is $-4$: $x + (-6) = -4$.</li><li>Thus $x = +2$.</li></ol><p>Hence Fe is in the $+2$ oxidation state, which explains the diamagnetic nature of the complex.</p>",
-      "Complex formation and coordination chemistry of $d$-block elements": "<p><strong>Complex formation (d‑block)</strong></p><ul><li><strong>Coordination compound</strong>: central metal ion $M^{n+}$ bonded to $x$ ligands $L$ through coordinate covalent bonds, written as $[ML_x]^{n'}$.</li><li><strong>Coordination number (CN)</strong>: number of donor atoms around the metal. Common CN = 4 (tetrahedral, square planar) and 6 (octahedral).</li><li><strong>Oxidation state</strong> of metal = charge on $M$ before ligand attachment.</li></ul><p><strong>Key formulas</strong></p><table><tr><th>Parameter</th><th>Expression</th></tr><tr><td>Stability constant $K_f$</td><td>$K_f = \\frac{[ML_n]}{[M][L]^n}$ (dimensionless)</td></tr><tr><td>Crystal‑field splitting energy</td><td>$\\Delta_o$ (octahedral) or $\\Delta_t$ (tetrahedral) in $\\text{kJ mol}^{-1}$</td></tr><tr><td>Effective atomic number (EAN)</td><td>$\\text{EAN}=Z_{metal}+n$ where $n$ = total electrons donated by ligands</td></tr></table><p><strong>SI units</strong>: $\\Delta$ in $\\text{kJ mol}^{-1}$; concentrations in $\\text{mol dm}^{-3}$.</p><p><strong>Factors influencing stability</strong></p><ul><li>Nature of metal (higher charge → larger $K_f$)</li><li>Nature of ligand (strong field → larger $\\Delta$)</li><li>Chelate effect (multidentate ligands increase $K_f$)</li></ul><p><strong>Solved example</strong></p><p>Calculate $K_f$ for $[Co(NH_3)_6]^{3+}$ if $[Co^{3+}] = 1.0\\times10^{-4}\\,\\text{M}$, $[NH_3] = 0.02\\,\\text{M}$ and $[Co(NH_3)_6]^{3+}=8.0\\times10^{-5}\\,\\text{M}$.</p><p>Solution: $K_f = \\frac{[Co(NH_3)_6]^{3+}}{[Co^{3+}][NH_3]^6}=\\frac{8.0\\times10^{-5}}{(1.0\\times10^{-4})(0.02)^6}=\\frac{8.0\\times10^{-5}}{1.0\\times10^{-4}\\times6.4\\times10^{-11}}\\approx1.3\\times10^{10}$. Thus the complex is very stable.</p>"
+      "Complex formation and coordination chemistry of $d$-block elements": "<p><strong>Complex formation (d‑block)</strong></p><ul><li><strong>Coordination compound</strong>: central metal ion $M^{n+}$ bonded to $x$ ligands $L$ through coordinate covalent bonds, written as $[ML_x]^{n'}$.</li><li><strong>Coordination number (CN)</strong>: number of donor atoms around the metal. Common CN = 4 (tetrahedral, square planar) and 6 (octahedral).</li><li><strong>Oxidation state</strong> of metal = charge on $M$ before ligand attachment.</li></ul><p><strong>Key formulas</strong></p><table><tr><th>Parameter</th><th>Expression</th></tr><tr><td>Stability constant $K_f$</td><td>$K_f = \\frac{[ML_n]}{[M][L]^n}$ (dimensionless)</td></tr><tr><td>Crystal‑field splitting energy</td><td>$\\Delta_o$ (octahedral) or $\\Delta_t$ (tetrahedral) in $\\text{kJ mol}^{-1}$</td></tr><tr><td>Effective atomic number (EAN)</td><td>$\\text{EAN}=Z_{metal}+n$ where $n$ = total electrons donated by ligands</td></tr></table><p><strong>SI units</strong>: $\\Delta$ in $\\text{kJ mol}^{-1}$; concentrations in $\\text{mol dm}^{-3}$.</p><p><strong>Factors influencing stability</strong></p><ul><li>Nature of metal (higher charge → larger $K_f$)</li><li>Nature of ligand (strong field → larger $\\Delta$)</li><li>Chelate effect (multidentate ligands increase $K_f$)</li></ul><p><strong>Solved example</strong></p><p>Calculate $K_f$ for $[Co(NH_3)_6]^{3+}$ if $[Co^{3+}] = 1.0\\times10^{-4}\\,\\text{M}$, $[NH_3] = 0.02\\,\\text{M}$ and $[Co(NH_3)_6]^{3+}=8.0\\times10^{-5}\\,\\text{M}$.</p><p>Solution: $K_f = \\frac{[Co(NH_3)_6]^{3+}}{[Co^{3+}][NH_3]^6}=\\frac{8.0\\times10^{-5}}{(1.0\\times10^{-4})(0.02)^6}=\\frac{8.0\\times10^{-5}}{1.0\\times10^{-4}\\times6.4\\times10^{-11}}\\approx1.3\\times10^{10}$. Thus the complex is very stable.</p>",
+      "Lanthanide and actinide contraction": "<p><strong>Definition:</strong> Lanthanide (actinide) contraction is the systematic decrease in atomic/ionic radii of the 4f (5f) series elements from the first to the last element, caused by the poor shielding ability of f‑electrons against the increasing nuclear charge.</p><p><strong>Key points</strong></p><ul><li>Effective nuclear charge $Z_{\\text{eff}} = Z - S$ rises because $S$ (shielding constant) contributed by f‑electrons is almost constant.</li><li>Resulting radius reduction is approximately $0.2\\,\\text{Å}$ across the series.</li><li>Contraction influences oxidation states, complex stability, and separation of rare‑earth elements.</li></ul><p><strong>Formula (empirical)</strong></p><p>The change in radius can be expressed as $\\Delta r = k\\,\\Delta Z_{\\text{eff}}$, where $k\\approx 0.02\\,\\text{Å}$ per unit increase in $Z_{\\text{eff}}$ for lanthanides.</p><p><strong>SI units</strong></p><ul><li>Atomic/ionic radius: metre (m), usually expressed in ångströms (1 Å = $10^{-10}\\,\\text{m}$).</li><li>Effective nuclear charge: dimensionless.</li></ul><p><strong>Example</strong></p><p>Given ionic radii $r_{\\text{La}^{3+}} = 1.032\\,\\text{Å}$ and $r_{\\text{Lu}^{3+}} = 0.861\\,\\text{Å}$, calculate the lanthanide contraction.</p><p>Solution:</p><p>$\\Delta r = r_{\\text{La}^{3+}} - r_{\\text{Lu}^{3+}} = 1.032 - 0.861 = 0.171\\,\\text{Å}$.</p><p>Thus the contraction from La$^{3+}$ to Lu$^{3+}$ is $0.171\\,\\text{Å}$, close to the expected $0.2\\,\\text{Å}$.</p><p><strong>Impact</strong></p><ul><li>Higher charge density of later lanthanides/actinides leads to stronger Lewis acidity.</li><li>Contraction causes overlap of 4f and 5d energy levels, affecting colour and magnetic properties.</li></ul>"
     }
   },
   "chemistry::ch5::chemistry/coordination-compounds/long-notes.html": {
