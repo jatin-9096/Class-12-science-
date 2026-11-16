@@ -2044,6 +2044,38 @@
         "title": "Summary & Common Mistakes",
         "html": "<p><strong>Summary</strong>: Probability quantifies the likelihood of events. Use the basic definition for equally likely outcomes, otherwise apply conditional probability, multiplication rule, or Bayes theorem. For counting, choose permutations when order matters and combinations when it does not. Binomial and Poisson are the two standard discrete distributions; remember their mean and variance formulas.</p><p><strong>Common Mistakes</strong></p><ul><li>Confusing $P(A|B)$ with $P(B|A)$. Always write the conditioning event in the denominator.</li><li>Omitting the $-P(A\\cap B)$ term in the general addition rule for non‑exclusive events.</li><li>Using $n!$ for permutations without dividing by $(n-r)!$ when only $r$ objects are selected.</li><li>Treating $^nC_r$ as $\\frac{n!}{(n-r)!}$ (missing the $r!$ factor).</li><li>Applying binomial formula when trials are not independent or when $p$ varies.</li><li>For Poisson approximation, forgetting the condition $\\lambda=np$ and $n\\ge 20$, $p\\le 0.05$.</li></ul>"
       }
+    ],
+    "numericals": [
+      {
+        "level": "NCERT",
+        "question": "A bag contains 5 red, 4 blue and 3 green balls. Two balls are drawn successively without replacement. Find the probability that both are red.",
+        "solution_html": "<b>Given:</b> $n(R)=5$, $n(B)=4$, $n(G)=3$, total $n(S)=12$. Two draws without replacement.<br><b>Formula:</b> $P(A\\cap B)=P(A)\\times P(B|A)$.<br><b>Solution:</b><ol><li>First draw red: $P(R_1)=\\frac{5}{12}$.</li><li>After removing one red, $n(R)=4$, $n(S)=11$. Second draw red: $P(R_2|R_1)=\\frac{4}{11}$.</li><li>Combined probability: $P=\\frac{5}{12}\\times\\frac{4}{11}=\\frac{20}{132}=\\frac{5}{33}$.</li></ol><b>Answer:</b> $\\boxed{\\frac{5}{33}}$"
+      },
+      {
+        "level": "NCERT",
+        "question": "A die is rolled twice. Find the probability that the sum of the two numbers is 7.",
+        "solution_html": "<b>Given:</b> Sample space $S$ has $6\\times6=36$ equally likely outcomes.<br><b>Formula:</b> $P(E)=\\frac{n(E)}{n(S)}$.<br><b>Solution:</b><ol><li>Favourable ordered pairs: $(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)$.</li><li>$n(E)=6$.</li><li>$P=\\frac{6}{36}=\\frac{1}{6}$.</li></ol><b>Answer:</b> $\\boxed{\\frac{1}{6}}$"
+      },
+      {
+        "level": "Board Standard",
+        "question": "In a class of 40 students, 18 study Mathematics, 15 study Physics and 9 study both. If a student is selected at random, find the probability that the student studies at least one of the two subjects.",
+        "solution_html": "<b>Given:</b> $n(M)=18$, $n(P)=15$, $n(M\\cap P)=9$, $n(S)=40$.<br><b>Formula:</b> $n(M\\cup P)=n(M)+n(P)-n(M\\cap P)$.<br><b>Solution:</b><ol><li>$n(M\\cup P)=18+15-9=24$.</li><li$>P=\\frac{24}{40}=\\frac{3}{5}$.</li></ol><b>Answer:</b> $\\boxed{\\frac{3}{5}}$"
+      },
+      {
+        "level": "HOTS",
+        "question": "A box contains 3 white and 2 black balls. Two balls are drawn with replacement. Find the probability that exactly one ball is white.",
+        "solution_html": "<b>Given:</b> $P(W)=\\frac{3}{5}$, $P(B)=\\frac{2}{5}$. Two independent draws (replacement).<br><b>Formula:</b> $P(\\text{exactly one }W)=2\\times P(W)\\times P(B)$.<br><b>Solution:</b><ol><li>$P(W\\,\\text{first},\\,B\\,\\text{second})=\\frac{3}{5}\\times\\frac{2}{5}=\\frac{6}{25}$.</li><li>Similarly $P(B\\,\\text{first},\\,W\\,\\text{second})=\\frac{6}{25}$.</li><li>Total $P=\\frac{6}{25}+\\frac{6}{25}=\\frac{12}{25}$.</li></ol><b>Answer:</b> $\\boxed{\\frac{12}{25}}$"
+      },
+      {
+        "level": "Board Standard",
+        "question": "A student attempts a multiple choice question with 4 options, only one correct. If he guesses, what is the probability that he gets at least one correct answer in 3 independent attempts?",
+        "solution_html": "<b>Given:</b> Single attempt success $p=\\frac{1}{4}$, failure $q=\\frac{3}{4}$. 3 independent attempts.<br><b>Formula:</b> $P(\\ge1)=1-P(0)=1-q^{3}$.<br><b>Solution:</b><ol><li>$q^{3}=\\left(\\frac{3}{4}\\right)^{3}=\\frac{27}{64}$.</li><li>$P(\\ge1)=1-\\frac{27}{64}=\\frac{37}{64}$.</li></ol><b>Answer:</b> $\\boxed{\\frac{37}{64}}$"
+      },
+      {
+        "level": "HOTS",
+        "question": "Prove that for any two events $A$ and $B$, $P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$.",
+        "solution_html": "<b>Given:</b> Events $A$, $B$ in a sample space $S$ with $P$ defined.<br><b>Formula:</b> $P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$ (to be proved).<br><b>Proof:</b><ol><li>Partition $A\\cup B$ into three disjoint sets: $A\\setminus B$, $B\\setminus A$, and $A\\cap B$.</li><li>Since probability is additive over disjoint sets, $P(A\\cup B)=P(A\\setminus B)+P(B\\setminus A)+P(A\\cap B)$.</li><li>Now $P(A)=P(A\\setminus B)+P(A\\cap B)$ and $P(B)=P(B\\setminus A)+P(A\\cap B)$.</li><li>Add $P(A)$ and $P(B)$: $P(A)+P(B)=P(A\\setminus B)+P(B\\setminus A)+2P(A\\cap B)$.</li><li>Subtract $P(A\\cap B)$ from both sides to obtain $P(A)+P(B)-P(A\\cap B)=P(A\\setminus B)+P(B\\setminus A)+P(A\\cap B)=P(A\\cup B)$.</li></ol><b>Conclusion:</b> Hence $P(A\\cup B)=P(A)+P(B)-P(A\\cap B)\\,\\blacksquare$"
+      }
     ]
   },
   "physics::ch1::physics/chapter1.html": {
@@ -3068,6 +3100,44 @@
         "question": "Two slits separated by $0.5\\,\\text{mm}$ are illuminated by light of wavelength $650\\,\\text{nm}$. The screen is placed $2\\,\\text{m}$ away. Find the fringe width.",
         "solution_html": "<p><b>Given:</b> slit separation $d=0.5\\\\,\\\\text{mm}=5\\\\times10^{-4}\\\\,\\\\text{m}$, wavelength $\\\\lambda=650\\\\,\\\\text{nm}=6.5\\\\times10^{-7}\\\\,\\\\text{m}$, distance to screen $D=2\\\\,\\\\text{m}$.</p><p><b>Formula:</b> Fringe width $\\\\beta=\\\\frac{\\\\lambda D}{d}$.</p><p><b>Calculation:</b><br/>$$\\\\beta=\\\\frac{6.5\\\\times10^{-7}\\\\times2}{5\\\\times10^{-4}}=2.6\\\\times10^{-3}\\\\,\\\\text{m}=2.6\\\\,\\\\text{mm}$$</p><p><b>Answer:</b> Fringe width $=2.6\\\\,\\\\text{mm}$.</p>"
       }
+    ],
+    "pyq": [
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "State the condition for constructive interference in Young's double‑slit experiment.",
+        "answer_html": "<p>Constructive interference occurs when the path difference $d\\sin\\theta$ equals an integral multiple of the wavelength: $d\\sin\\theta = m\\lambda$, $m=0,\\pm1,\\pm2,\\dots$.</p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "Write down Rayleigh's criterion for the minimum resolvable angular separation of two point sources using a circular aperture of diameter $D$.",
+        "answer_html": "<p>Two points are just resolved when the angular separation $\\theta$ satisfies $\\theta = 1.22\\,\\frac{\\lambda}{D}$, where $\\lambda$ is the wavelength of light.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Derive the expression for the angular width of the central maximum in single‑slit diffraction of width $a$.",
+        "answer_html": "<p>For a single slit, minima occur at $a\\sin\\theta = m\\lambda$ ($m=\\pm1,\\pm2,\\dots$). The first minima on either side correspond to $m=\\pm1$, giving $\\sin\\theta_{1}=\\frac{\\lambda}{a}$. The angular width of the central maximum is therefore $\\Delta\\theta = 2\\theta_{1}\\approx 2\\frac{\\lambda}{a}$ for small angles.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "A diffraction grating has $N$ slits. Show that its resolving power in the $m^{\\text{th}}$ order is $R = mN$.",
+        "answer_html": "<p>The angular separation of two close wavelengths $\\lambda$ and $\\lambda+\\Delta\\lambda$ in order $m$ is given by $d\\,\\Delta\\theta = m\\,\\Delta\\lambda$, where $d$ is the grating spacing. Rayleigh's criterion requires $\\Delta\\theta = \\frac{\\lambda}{Nd}$. Equating, $\\frac{\\lambda}{Nd}=\\frac{m\\,\\Delta\\lambda}{d}$ \\Rightarrow $\\frac{\\lambda}{\\Delta\\lambda}=mN$. Hence the resolving power $R=\\frac{\\lambda}{\\Delta\\lambda}=mN$.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "Explain the formation of Newton's rings and derive the radius $r_{m}$ of the $m^{\\text{th}}$ dark ring formed by a plano‑convex lens of radius of curvature $R$ placed on a glass plate (air film of wavelength $\\lambda$).",
+        "answer_html": "<p>When a plano‑convex lens contacts a glass plate, a thin air film of varying thickness $t$ is formed between them. Light reflected from the top and bottom surfaces of the air film interfere. For normal incidence, the condition for destructive interference (dark ring) is $2t = (2m-1)\\frac{\\lambda}{2}$, i.e. $2t = (2m-1)\\frac{\\lambda}{2}$ \\Rightarrow $t = (2m-1)\\frac{\\lambda}{4}$.\n<p>The film thickness at a distance $r$ from the point of contact is $t = \\frac{r^{2}}{2R}$ (from geometry of a circle). Equating, $\\frac{r_{m}^{2}}{2R} = (2m-1)\\frac{\\lambda}{4}$, giving </p>\n<p>$$r_{m}=\\sqrt{\\frac{(2m-1)\\lambda R}{2}}$$</p>\n<p>Thus the radius of the $m^{\\text{th}}$ dark ring depends on $\\lambda$, $R$ and the order $m$.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "Discuss polarization by reflection. Derive Brewster's angle condition and state the nature of reflected and refracted rays at this angle.",
+        "answer_html": "<p>When unpolarized light is incident on a dielectric surface, the reflected light becomes partially polarized. At a particular angle of incidence, called Brewster's angle $\\theta_{B}$, the reflected ray is completely linearly polarized with its electric vector perpendicular to the plane of incidence.</p>\n<p>Let the incident ray make an angle $\\theta_{i}$ with the normal. The reflected and refracted rays satisfy Snell's law: $n_{1}\\sin\\theta_{i}=n_{2}\\sin\\theta_{t}$. At Brewster's angle the reflected and refracted rays are at right angles: $\\theta_{i}+\\theta_{t}=90^{\\circ}$. Using Snell's law,\n$$n_{1}\\sin\\theta_{B}=n_{2}\\cos\\theta_{B}$$\nso\n$$\\tan\\theta_{B}=\\frac{n_{2}}{n_{1}}$$\nThus $\\theta_{B}=\\arctan\\left(\\frac{n_{2}}{n_{1}}\\right)$. At this angle the reflected ray is perfectly polarized perpendicular to the plane of incidence, while the refracted ray follows Snell's law and propagates inside the medium.\n<p>Marking scheme: state Brewster's angle, derive $\\tan\\theta_{B}=n_{2}/n_{1}$, mention right‑angle condition, describe polarization of reflected ray.</p>"
+      }
     ]
   },
   "physics::ch11::physics/chapter11.html": {
@@ -3387,6 +3457,38 @@
       {
         "title": "Summary & Common Mistakes",
         "html": "<p><strong>Quick solving steps for diode problems:</strong></p><ol><li>Identify region (forward/reverse) and write the appropriate current expression.</li><li>Use $I = I_S(e^{qV/(kT)}-1)$ for forward bias; $I\\approx -I_S$ for reverse bias.</li><li>Calculate $I_S$ using doping, $n_i$, $D$, $L$ values.</li><li>Apply $V = V_{applied} - I R_s$ if series resistance $R_s$ is given.</li><li>For capacitance, compute depletion width $W$ first, then $C_j=\\epsilon_s A/W$.</li></ol><p><strong>Common mistakes to avoid:</strong></p><ul><li>Using $V_{on}=0.7\\,\\text{V}$ for Ge or GaAs – they have $\\approx0.3\\,\\text{V}$.</li><li>Neglecting the $-1$ term in the diode equation at low $V$ (leads to over‑estimation).</li><li>Mixing up signs of diffusion currents – electrons diffuse from high to low concentration, holes opposite.</li><li>Assuming $I_S$ is temperature‑independent; it varies as $T^3 e^{-E_g/(kT)}$.</li><li>Using $kT/q\\approx25\\,\\text{mV}$ at room temperature but forgetting to update for other temperatures.</li><li>For capacitance, forgetting that $W$ depends on $(V_{bi}-V)$, not just $V$.</li></ul>"
+      }
+    ],
+    "numericals": [
+      {
+        "level": "NCERT",
+        "question": "A rectangular n‑type silicon sample of length $L=2\\,\\text{cm}$, cross‑section $A=0.5\\,\\text{mm}^2$ has a resistivity $\\rho=5\\times10^{-3}\\,\\Omega\\,\\text{cm}$. Find its resistance.",
+        "solution_html": "<p><strong>Given:</strong> $L=2\\,\\text{cm}$, $A=0.5\\,\\text{mm}^2=0.5\\times10^{-2}\\,\\text{cm}^2$, $\\rho=5\\times10^{-3}\\,\\Omega\\,\\text{cm}$.</p><p><strong>Formula:</strong> $R=\\rho\\frac{L}{A}$.</p><p><strong>Calculation:</strong><br/>$R=5\\times10^{-3}\\,\\Omega\\,\\text{cm}\\times\\frac{2\\,\\text{cm}}{0.5\\times10^{-2}\\,\\text{cm}^2}=5\\times10^{-3}\\times\\frac{2}{5\\times10^{-3}}\\,\\Omega=2\\,\\Omega$.</p><p><strong>Answer:</strong> $R=2\\,\\Omega$.</p>"
+      },
+      {
+        "level": "NCERT",
+        "question": "A Hall experiment on a p‑type germanium wafer gives a Hall coefficient $R_H=+1.2\\times10^{-2}\\,\\text{m}^3\\text{C}^{-1}$. Determine the majority carrier concentration $p$.",
+        "solution_html": "<p><strong>Given:</strong> $R_H=+1.2\\times10^{-2}\\,\\text{m}^3\\text{C}^{-1}$.</p><p><strong>Formula:</strong> $R_H=\\frac{1}{qp}$ for p‑type material, where $q=1.6\\times10^{-19}\\,\\text{C}$.</p><p><strong>Calculation:</strong><br/>$p=\\frac{1}{qR_H}=\\frac{1}{(1.6\\times10^{-19})(1.2\\times10^{-2})}\\,\\text{m}^{-3}=\\frac{1}{1.92\\times10^{-21}}\\,\\text{m}^{-3}\\approx5.21\\times10^{20}\\,\\text{cm}^{-3}$ (since $1\\,\\text{m}^{-3}=10^{-6}\\,\\text{cm}^{-3}$).</p><p><strong>Answer:</strong> $p\\approx5.2\\times10^{20}\\,\\text{cm}^{-3}$.</p>"
+      },
+      {
+        "level": "Board Standard",
+        "question": "The minority carrier diffusion coefficient in silicon is $D_n=35\\,\\text{cm}^2\\text{s}^{-1}$ and the minority carrier lifetime is $\\tau_n=10^{-6}\\,\\text{s}$. Find the electron diffusion length $L_n$.",
+        "solution_html": "<p><strong>Given:</strong> $D_n=35\\,\\text{cm}^2\\text{s}^{-1}$, $\\tau_n=10^{-6}\\,\\text{s}$.</p><p><strong>Formula:</strong> $L_n=\\sqrt{D_n\\tau_n}$.</p><p><strong>Calculation:</strong><br/>$L_n=\\sqrt{35\\times10^{-6}}\\,\\text{cm}=\\sqrt{3.5\\times10^{-5}}\\,\\text{cm}\\approx5.92\\times10^{-3}\\,\\text{cm}=59.2\\,\\mu\\text{m}$.</p><p><strong>Answer:</strong> $L_n\\approx59\\,\\mu\\text{m}$.</p>"
+      },
+      {
+        "level": "Board Standard",
+        "question": "A silicon pn‑junction diode has a saturation current $I_S=10^{-12}\\,\\text{A}$ at $300\\,\\text{K}$. If the diode conducts a forward current $I=1\\,\\text{mA}$, calculate the forward bias voltage $V_F$ (use $n=1$).",
+        "solution_html": "<p><strong>Given:</strong> $I_S=10^{-12}\\,\\text{A}$, $I=1\\times10^{-3}\\,\\text{A}$, $T=300\\,\\text{K}$, $n=1$, $k=1.38\\times10^{-23}\\,\\text{J K}^{-1}$, $q=1.6\\times10^{-19}\\,\\text{C}$.</p><p><strong>Formula:</strong> $I=I_S\\left(e^{\\frac{qV_F}{nkT}}-1\\right)\\approx I_S e^{\\frac{qV_F}{kT}}$.</p><p><strong>Calculation:</strong><br/>$\\frac{I}{I_S}=10^{9}=e^{\\frac{qV_F}{kT}}\\Rightarrow \\frac{qV_F}{kT}=\\ln 10^{9}=9\\ln10\\approx20.72$.<br/>$V_F=\\frac{20.72 kT}{q}=\\frac{20.72\\times1.38\\times10^{-23}\\times300}{1.6\\times10^{-19}}\\,\\text{V}\\approx0.53\\,\\text{V}$.</p><p><strong>Answer:</strong> $V_F\\approx0.53\\,\\text{V}$.</p>"
+      },
+      {
+        "level": "Board Standard",
+        "question": "For a bipolar junction transistor, the forward current gain $\\beta=150$ and the collector‑base capacitance $C_{\\mu}=2\\,\\text{pF}$. If the collector resistance $R_C=5\\,\\text{k}\\Omega$, estimate the cut‑off frequency $f_T$ (use $f_T=\\frac{g_m}{2\\pi (C_{\\mu}+C_{\\pi})}$ and assume $C_{\\pi}\\approx\\beta C_{\\mu}$).",
+        "solution_html": "<p><strong>Given:</strong> $\\beta=150$, $C_{\\mu}=2\\times10^{-12}\\,\\text{F}$, $R_C=5\\times10^{3}\\,\\Omega$.</p><p><strong>Assumption:</strong> $C_{\\pi}=\\beta C_{\\mu}=150\\times2\\times10^{-12}=3\\times10^{-10}\\,\\text{F}$.</p><p><strong>Transconductance:</strong> $g_m=\\frac{\\beta}{R_C}=\\frac{150}{5\\times10^{3}}=3\\times10^{-2}\\,\\text{S}$.</p><p><strong>Formula:</strong> $f_T=\\frac{g_m}{2\\pi (C_{\\mu}+C_{\\pi})}$.</p><p><strong>Calculation:</strong><br/>$C_{\\mu}+C_{\\pi}=2\\times10^{-12}+3\\times10^{-10}=3.02\\times10^{-10}\\,\\text{F}$.<br/>$f_T=\\frac{3\\times10^{-2}}{2\\pi\\times3.02\\times10^{-10}}\\approx\\frac{3\\times10^{-2}}{1.896\\times10^{-9}}\\approx1.58\\times10^{7}\\,\\text{Hz}=15.8\\,\\text{MHz}$.</p><p><strong>Answer:</strong> $f_T\\approx16\\,\\text{MHz}$.</p>"
+      },
+      {
+        "level": "HOTS",
+        "question": "Show that at thermal equilibrium the product of electron concentration $n$ and hole concentration $p$ in an intrinsic semiconductor equals the square of the intrinsic carrier concentration $n_i$, i.e., $np=n_i^2$, using the expressions $n=n_i e^{\\frac{E_F-E_i}{kT}}$ and $p=n_i e^{\\frac{E_i-E_F}{kT}}$.",
+        "solution_html": "<p><strong>Given:</strong> $n=n_i e^{\\frac{E_F-E_i}{kT}}$, $p=n_i e^{\\frac{E_i-E_F}{kT}}$.</p><p><strong>Proof:</strong><br/>Multiply the two expressions:<br/>$np=(n_i e^{\\frac{E_F-E_i}{kT}})(n_i e^{\\frac{E_i-E_F}{kT}})=n_i^2 e^{\\frac{E_F-E_i+E_i-E_F}{kT}}=n_i^2 e^{0}=n_i^2$.</p><p><strong>Conclusion:</strong> At equilibrium $np=n_i^2$, which is the mass‑action law for intrinsic semiconductors.</p>"
       }
     ]
   },
