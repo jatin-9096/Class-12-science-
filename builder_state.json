@@ -3411,6 +3411,74 @@
         "question": "Explain why the addition of a non‑volatile solute lowers the vapour pressure of a solution. Include a short derivation using Raoult’s law and illustrate with a numerical example (use a 0.2 m solution of sucrose, $K_{b}=0.512\\,\\text{°C\\,kg\\,mol}^{-1}$).",
         "answer_html": "<p><strong>Explanation:</strong> In an ideal solution, the presence of a solute reduces the mole fraction of the solvent. According to Raoult’s law, the vapour pressure of the solvent above the solution is $$P_{solvent}=X_{solvent}P^{\\circ}_{solvent}$$ where $X_{solvent}<1$, so $P_{solvent}<P^{\\circ}_{solvent}$.</p><p><strong>Derivation (brief):</strong></p><p>For a dilute solution, $$X_{solvent}=\\frac{n_{solvent}}{n_{solvent}+n_{solute}}\\approx 1-\\frac{n_{solute}}{n_{solvent}}$$</p><p>Thus $$\\Delta P = P^{\\circ}_{solvent}-P_{solvent}=P^{\\circ}_{solvent}\\frac{n_{solute}}{n_{solvent}}$$</p><p><strong>Numerical example:</strong> A 0.2 m sucrose solution contains 0.2 mol solute per kg solvent. Assuming $P^{\\circ}_{water}=23.8\\,\\text{mmHg}$ at 25 °C:</p><p>$$\\Delta P = 23.8\\,\\text{mmHg}\\times\\frac{0.2}{1}=4.76\\,\\text{mmHg}$$</p><p>Hence $$P_{water}=23.8-4.76=19.04\\,\\text{mmHg}$$</p><p>The same $m$ value gives a boiling point elevation $$\\Delta T_{b}=K_{b}m=0.512\\times0.2=0.102\\,\\text{°C}$$ showing the colligative effect.</p><p><em>Marks: 2 for concept, 2 for short derivation, 1 for numerical illustration.</em></p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "A solution is best described as:",
+        "options": [
+          "A heterogeneous mixture",
+          "A homogeneous mixture of two or more substances",
+          "A mixture where particles settle down",
+          "A mixture of gases only"
+        ],
+        "answer": 1,
+        "explain": "A solution is a homogeneous mixture of two or more substances at molecular level."
+      },
+      {
+        "q": "Molar concentration (M) of a solution is given by:",
+        "options": [
+          "$c = \\frac{m}{V}$",
+          "$c = \\frac{n}{V}$",
+          "$c = \\frac{V}{n}$",
+          "$c = \\frac{n}{m}$"
+        ],
+        "answer": 1,
+        "explain": "Molar concentration $c$ equals moles of solute $n$ divided by volume of solution $V$ (in L)."
+      },
+      {
+        "q": "Molality (b) of a solution is defined as:",
+        "options": [
+          "$b = \\frac{n}{V}$",
+          "$b = \\frac{m}{V}$",
+          "$b = \\frac{n}{m_{solvent}}$",
+          "$b = \\frac{m_{solvent}}{n}$"
+        ],
+        "answer": 2,
+        "explain": "Molality $b$ is moles of solute $n$ per kilogram of solvent mass $m_{solvent}$. "
+      },
+      {
+        "q": "Boiling point elevation of a non‑volatile solute solution is expressed as:",
+        "options": [
+          "$\\Delta T_b = i K_b m$",
+          "$\\Delta T_b = K_b m$",
+          "$\\Delta T_b = i K_f m$",
+          "$\\Delta T_b = K_f m$"
+        ],
+        "answer": 0,
+        "explain": "The elevation $\\Delta T_b$ equals the van’t Hoff factor $i$ times the ebullioscopic constant $K_b$ times molality $m$. "
+      },
+      {
+        "q": "According to Raoult’s law, the vapor pressure of an ideal solution containing components 1 and 2 is:",
+        "options": [
+          "$P = x_1 P_1^0 + x_2 P_2^0$",
+          "$P = x_1 P_2^0 + x_2 P_1^0$",
+          "$P = P_1^0 + P_2^0$",
+          "$P = x_1 + x_2$"
+        ],
+        "answer": 0,
+        "explain": "Raoult’s law states $P_{solution}=x_1P_1^{0}+x_2P_2^{0}$ for ideal solutions. "
+      },
+      {
+        "q": "Henry’s law for a gas dissolved in a liquid is:",
+        "options": [
+          "$C = k_H P$",
+          "$C = \\frac{P}{k_H}$",
+          "$P = k_H C$",
+          "$P = \\frac{C}{k_H}$"
+        ],
+        "answer": 0,
+        "explain": "Henry’s law relates concentration $C$ of a gas to its partial pressure $P$ via $C = k_H P$. "
+      }
     ]
   },
   "chemistry::ch2::chemistry/electrochemistry/long-notes.html": {
@@ -3542,7 +3610,8 @@
     "long_notes": {
       "Definition and scope of coordination compounds": "<p><strong>Definition:</strong> A coordination compound (or complex) consists of a central metal atom/ion surrounded by a set of ligands that are bound through coordinate covalent bonds.</p>\\n<p><strong>Scope:</strong> Includes mononuclear, polynuclear, homoleptic, heteroleptic, chelates, and organometallic complexes. It covers concepts such as coordination number, oxidation state, geometry, isomerism, and stability constants.</p>\\n<ul>\\n<li><strong>Coordination number (CN):</strong> Number of donor atoms directly attached to the metal centre.</li>\\n<li><strong>Oxidation state (OS) of metal:</strong> $\\text{OS}=\\text{overall charge of complex}-\\sum \\text{(charges of ligands)}$.</li>\\n<li><strong>Ligand classification:</strong> L‑type (neutral), X‑type (anionic), Z‑type (neutral with lone pair donation).</li>\\n<li><strong>Chelate effect:</strong> Multidentate ligands form more stable complexes; stability expressed by formation constant $K_f$.</li>\\n</ul>\\n<table>\\n<tr><th>Parameter</th><th>Expression</th><th>SI Unit</th></tr>\\n<tr><td>Coordination number</td><td>$\\text{CN}=\\text{number of donor atoms}$</td><td>dimensionless</td></tr>\\n<tr><td>Formation constant</td><td>$K_f=\\frac{[ML_n]}{[M][L]^n}$</td><td>dimensionless</td></tr>\\n</table>\\n<p><strong>Solved Example:</strong> Find the oxidation state of Cr in $[Cr(NH_3)_4Cl_2]Cl_3$.</p>\\n<ol>\\n<li>Overall charge of the complex ion $[Cr(NH_3)_4Cl_2]^{3+}$ is $+3$ (since three external $Cl^-$ balance the charge).</li>\\n<li>Charges of ligands inside the ion: $NH_3$ (neutral) contributes $0$, each $Cl^-$ contributes $-1$. Total ligand charge $=2\\times(-1)=-2$.</li>\\n<li>Using $\\text{OS}=+3-(-2)=+5$, the oxidation state of Cr is $+5$.</li>\\n</ol>\\n<p>Understanding these fundamentals provides the foundation for studying geometry, isomerism, and applications of coordination chemistry in catalysis, bio‑inorganic systems, and material science.</p>",
       "Ligands: classification and donor atoms": "<p><strong>Ligand – Definition</strong>: A species that donates at least one <strong>electron pair</strong> to a metal centre forming a coordinate covalent bond.</p><p><strong>Classification (based on donor atoms)</strong>:</p><ul><li><strong>Monodentate</strong> – one donor atom (e.g., $\\mathrm{NH_3}$, $\\mathrm{Cl^-}$).</li><li><strong>Bidentate</strong> – two donor atoms (e.g., ethylenediamine, $\\mathrm{en}$).</li><li><strong>Polydentate (chelating)</strong> – three or more donor atoms (e.g., $\\mathrm{EDTA^{4-}}$).</li><li><strong>Ambidentate</strong> – same atom can bind through two different sites (e.g., $\\mathrm{NO_2^-}$, $\\mathrm{SCN^-}$).</li></ul><p><strong>Donor atom groups</strong> (common):</p><table><tr><th>Group</th><th>Typical donor atoms</th></tr><tr><td>O‑donor</td><td>$\\mathrm{H_2O}$, $\\mathrm{OH^-}$, $\\mathrm{CO_3^{2-}}$</td></tr><tr><td>N‑donor</td><td>$\\mathrm{NH_3}$, $\\mathrm{en}$, $\\mathrm{CN^-}$</td></tr><tr><td>S‑donor</td><td>$\\mathrm{HS^-}$, $\\mathrm{SCN^-}$ (through S)</td></tr><tr><td>P‑donor</td><td>$\\mathrm{PR_3}$, $\\mathrm{PF_3}$</td></tr></table><p><strong>Key formulas</strong>:</p><ul><li>Coordination number (CN): $\\text{CN}=\\text{number of donor atoms attached \\to the metal}$.</li><li>Chelate‑ring size: $\\text{size}=\\text{number of atoms \\in the smallest ring formed}$ (usually 5‑ or 6‑membered rings are most stable).</li></ul><p><strong>Solved example</strong>:</p><p>Find the coordination number of the complex $[\\mathrm{Co(NH_3)_4Cl_2}]\\mathrm{Cl}$.</p><ul><li>Identify donor atoms in the inner sphere: four $\\mathrm{NH_3}$ (each N‑donor) + two $\\mathrm{Cl^-}$ (each Cl‑donor).</li><li>Total donor atoms $=4+2=6$.</li><li>Therefore $\\text{CN}=6$, which corresponds to an octahedral geometry.</li></ul><p>Remember: monodentate ligands increase CN by 1, bidentate by 2, etc. Chelating ligands give extra stability (chelate effect) due to entropy gain.</p>",
-      "Coordination number, geometry and oxidation state of central metal ion": "<p><strong>Definitions</strong></p><ul><li><strong>Coordination number (CN)</strong>: total number of donor atoms directly bonded to the central metal ion.</li><li><strong>Oxidation state (OS)</strong>: formal charge on the metal ion calculated as $OS = \\text{charge of complex} - \\sum \\text{ligand charges}$.</li><li><strong>Geometry</strong>: spatial arrangement of ligands around the metal, dictated by CN.</li></ul><p><strong>Key Relations</strong></p><table><tr><th>CN</th><th>Common Geometry</th></tr><tr><td>$2$</td><td>Linear</td></tr><tr><td>$4$</td><td>Tetrahedral / Square planar</td></tr><tr><td>$6$</td><td>Octahedral</td></tr><tr><td>$8$</td><td>Square antiprismatic / Dodecahedral</td></tr></table><p>All CN and OS are dimensionless (no SI unit). Bond lengths are expressed in Å ($10^{-10}\\,\\text{m}$).</p><p><strong>Worked Example</strong></p><p>Find CN, geometry and OS of the metal ion in $[\\text{Co(NH}_3)_4\\text{Cl}_2]\\text{Cl}\\cdot\\text{H}_2\\text{O}$.</p><ul><li>Identify donor atoms: $4$ NH$_3$ (each N donates 1) + $2$ Cl$^-$ (each Cl donates 1) → $CN = 4+2 = 6$.</li><li>Geometry for $CN=6$ is octahedral.</li><li>Complex charge: inner sphere $[\\text{Co(NH}_3)_4\\text{Cl}_2]^+$ (overall +1). Outer‑sphere Cl$^-$ and H$_2$O are not counted.</li><li>Ligand charges inside sphere: NH$_3$ (neutral), Cl$^-$ (–1 each) → total ligand charge = $-2$.</li><li>Using $OS = (+1) - (-2) = +3$, so cobalt is in $+3$ oxidation state.</li></ul><p>Thus, $CN=6$, geometry = octahedral, $OS_{\\text{Co}}=+3$.</p>"
+      "Coordination number, geometry and oxidation state of central metal ion": "<p><strong>Definitions</strong></p><ul><li><strong>Coordination number (CN)</strong>: total number of donor atoms directly bonded to the central metal ion.</li><li><strong>Oxidation state (OS)</strong>: formal charge on the metal ion calculated as $OS = \\text{charge of complex} - \\sum \\text{ligand charges}$.</li><li><strong>Geometry</strong>: spatial arrangement of ligands around the metal, dictated by CN.</li></ul><p><strong>Key Relations</strong></p><table><tr><th>CN</th><th>Common Geometry</th></tr><tr><td>$2$</td><td>Linear</td></tr><tr><td>$4$</td><td>Tetrahedral / Square planar</td></tr><tr><td>$6$</td><td>Octahedral</td></tr><tr><td>$8$</td><td>Square antiprismatic / Dodecahedral</td></tr></table><p>All CN and OS are dimensionless (no SI unit). Bond lengths are expressed in Å ($10^{-10}\\,\\text{m}$).</p><p><strong>Worked Example</strong></p><p>Find CN, geometry and OS of the metal ion in $[\\text{Co(NH}_3)_4\\text{Cl}_2]\\text{Cl}\\cdot\\text{H}_2\\text{O}$.</p><ul><li>Identify donor atoms: $4$ NH$_3$ (each N donates 1) + $2$ Cl$^-$ (each Cl donates 1) → $CN = 4+2 = 6$.</li><li>Geometry for $CN=6$ is octahedral.</li><li>Complex charge: inner sphere $[\\text{Co(NH}_3)_4\\text{Cl}_2]^+$ (overall +1). Outer‑sphere Cl$^-$ and H$_2$O are not counted.</li><li>Ligand charges inside sphere: NH$_3$ (neutral), Cl$^-$ (–1 each) → total ligand charge = $-2$.</li><li>Using $OS = (+1) - (-2) = +3$, so cobalt is in $+3$ oxidation state.</li></ul><p>Thus, $CN=6$, geometry = octahedral, $OS_{\\text{Co}}=+3$.</p>",
+      "Bonding in coordination compounds – Valence Bond Theory and Crystal Field Theory": "<p><strong>Definition:</strong> A coordination compound consists of a central metal ion/atom bonded to one or more ligands through coordinate covalent bonds.</p><p><strong>Valence Bond Theory (VBT)</strong></p><ul><li>Hybridisation of metal ion determines geometry: $sp^3$ (tetrahedral), $d^2sp^3$ (octahedral), $sd^2$ (square planar).</li><li>Number of unpaired electrons $n$ gives magnetic moment $\\\\mu = \\\\sqrt{n(n+2)}\\\\ \\\\text{BM}$.</li></ul><p><strong>Crystal Field Theory (CFT)</strong></p><ul><li>Octahedral field splits $d$ orbitals into lower $t_{2g}$ and higher $e_g$ with energy gap $\\\\Delta_o$ (kJ·mol⁻¹).</li><li>CFSE (octahedral) $= (-0.4\\\\Delta_o) \\times n_{t_{2g}} + (0.6\\\\Delta_o) \\times n_{e_g}$.</li><li>Tetrahedral splitting $\\\\Delta_t \\approx 0.4\\\\Delta_o$.</li></ul><table><tr><th>Complex</th><th>Hybridisation</th><th>Geometry</th></tr><tr><td>$\\\\text{[Ni(CN)}_4]^{2-}$</td><td>$sp^2d$</td><td>Square planar</td></tr><tr><td>$\\\\text{[CoF}_6]^{3-}$</td><td>$d^2sp^3$</td><td>Octahedral</td></tr></table><p><strong>Solved Example</strong></p><p>Find the CFSE and magnetic moment of $\\\\text{[Fe(H}_2\\\\text{O)}_6]^{2+}$ (high‑spin $d^6$ octahedral).</p><ul><li>Electron configuration: $t_{2g}^4 e_g^2$ → $n_{t_{2g}}=4$, $n_{e_g}=2$.</li><li>CFSE $= (-0.4\\\\Delta_o)\\times4 + (0.6\\\\Delta_o)\\times2 = -1.6\\\\Delta_o + 1.2\\\\Delta_o = -0.4\\\\Delta_o$.</li><li>Number of unpaired electrons $n=4$ → $\\\\mu = \\\\sqrt{4(4+2)} = \\\\sqrt{24}=4.90\\\\ \\text{BM}$.</li></ul>"
     }
   },
   "chemistry::ch5::chemistry/coordination-compounds/mind-map.html": {
