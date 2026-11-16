@@ -3470,7 +3470,20 @@
         "answer": 0,
         "explain": "From $r_m = \\sqrt{(m+\\frac{1}{2})\\lambda R}$, $r_m \\propto \\sqrt{m}$; thus the radius grows as the square root of the order number."
       }
-    ]
+    ],
+    "visual_maps": {
+      "mindmap": "mindmap\n  root((Wave Optics))\n    Interference\n      Youngs Double Slit\n      Thin Film\n    Diffraction\n      Single Slit\n      Circular Aperture\n    Polarization\n      Brewsters Angle",
+      "flowchart": "flowchart TD\n  A[Start] --> B[Interference]\n  B --> C[Constructive]\n  C --> D[Bright Fringes]\n  B --> E[Destructive]\n  E --> F[Dark Fringes]\n  D --> G[Fringe Width]\n  F --> G[Fringe Width]",
+      "revision_points": [
+        "Path difference = $d\\sin\\theta$ for double slit",
+        "Fringe width $\\beta = \\frac{\\lambda D}{d}$",
+        "Condition for bright fringe $d\\sin\\theta = m\\lambda$",
+        "Condition for dark fringe $d\\sin\\theta = (m+\\frac{1}{2})\\lambda$",
+        "Brewster's angle $\\theta_B = \\arctan n$"
+      ]
+    },
+    "status": "done",
+    "updated": "2026-11-16 18:11:04"
   },
   "physics::ch11::physics/chapter11.html": {
     "last_error": "All Groq models failed after fast failover.",
