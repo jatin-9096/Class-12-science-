@@ -3463,6 +3463,118 @@
         "question": "A series RLC circuit has $R=10\\,\\Omega$, $L=0.2\\,\\text{H}$, $C=50\\,\\mu\\text{F}$ and is connected to a source of frequency $50\\,\\text{Hz}$. Calculate (a) the resonant frequency $f_0$, (b) the inductive reactance $X_L$, (c) the capacitive reactance $X_C$, (d) the net impedance $Z$, and (e) the power factor.",
         "answer_html": "<p>(a) $f_0=\\\\frac{1}{2\\\\pi\\\\sqrt{LC}}=\\\\frac{1}{2\\\\pi\\\\sqrt{0.2\\times50\\times10^{-6}}}=\\\\frac{1}{2\\\\pi\\\\times0.003162}=50.3\\,\\text{Hz}$ (approximately).</p><p>(b) $X_L=2\\\\pi f L = 2\\\\pi\\times50\\times0.2 = 62.8\\,\\Omega$.</p><p>(c) $X_C=\\\\frac{1}{2\\\\pi f C}=\\\\frac{1}{2\\\\pi\\times50\\times50\\times10^{-6}}=63.7\\,\\Omega$.</p><p>(d) Net reactance $X = X_L - X_C = -0.9\\,\\Omega$ (almost purely resistive). $Z=\\\\sqrt{R^2+X^2}=\\\\sqrt{10^2+(-0.9)^2}=10.04\\,\\Omega$.</p><p>(e) Power factor $\\cos\\phi =\\\\frac{R}{Z}=\\\\frac{10}{10.04}=0.996\\approx 1$ (circuit is nearly in‑phase).</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "The peak value $V_{0}$ of an alternating voltage is related to its rms value $V_{rms}$ by which of the following?",
+        "options": [
+          "$V_{0}=V_{rms}$",
+          "$V_{0}=\\sqrt{2}\\,V_{rms}$",
+          "$V_{0}=\\frac{V_{rms}}{\\sqrt{2}}$",
+          "$V_{0}=2\\,V_{rms}$"
+        ],
+        "answer": 1,
+        "explain": "For a sinusoidal voltage, $V_{rms}=\\frac{V_{0}}{\\sqrt{2}}$, hence $V_{0}=\\sqrt{2}\\,V_{rms}$."
+      },
+      {
+        "q": "The average power dissipated in a purely resistive AC circuit is $P=\\frac{V_{rms}I_{rms}}{\\cos\\phi}$. What is the value of the power factor $\\cos\\phi$ for a pure resistor?",
+        "options": [
+          "0",
+          "0.5",
+          "1",
+          "Undefined"
+        ],
+        "answer": 2,
+        "explain": "In a pure resistor, voltage and current are in phase, so the phase angle $\\phi=0^{\\circ}$ and $\\cos\\phi=1$."
+      },
+      {
+        "q": "If the frequency of an AC source is doubled, the inductive reactance $X_{L}$ of an inductor changes how?",
+        "options": [
+          "It halves",
+          "It remains same",
+          "It doubles",
+          "It quadruples"
+        ],
+        "answer": 2,
+        "explain": "Inductive reactance $X_{L}=2\\pi fL$, so doubling $f$ doubles $X_{L}$."
+      },
+      {
+        "q": "A series RLC circuit has $R=10\\,\\Omega$, $L=0.2\\,\\text{H}$ and $C=50\\,\\mu\\text{F}$. At what angular frequency $\\omega_{0}$ does resonance occur?",
+        "options": [
+          "$\\omega_{0}=\\sqrt{\\frac{1}{LC}}$",
+          "$\\omega_{0}=\\frac{R}{L}$",
+          "$\\omega_{0}=\\frac{1}{RC}$",
+          "$\\omega_{0}=\\frac{1}{\\sqrt{LC}}$"
+        ],
+        "answer": 3,
+        "explain": "Resonance in a series RLC occurs at $\\omega_{0}=\\frac{1}{\\sqrt{LC}}$. Substituting $L$ and $C$ gives $\\omega_{0}=\\frac{1}{\\sqrt{0.2\\times 50\\times10^{-6}}}=\\frac{1}{\\sqrt{10^{-5}}}=10^{2.5}=316\\,\\text{rad/s}$."
+      },
+      {
+        "q": "The quality factor $Q$ of a series RLC circuit is given by $Q=\\frac{\\omega_{0}L}{R}$. For the circuit in the previous question, what is $Q$?",
+        "options": [
+          "$6.32$",
+          "$3.16$",
+          "$31.6$",
+          "$0.316$"
+        ],
+        "answer": 0,
+        "explain": "Using $\\omega_{0}=316\\,\\text{rad/s}$, $L=0.2\\,\\text{H}$ and $R=10\\,\\Omega$, $Q=\\frac{316\\times0.2}{10}=\\frac{63.2}{10}=6.32$."
+      },
+      {
+        "q": "In a transformer, if the primary has $N_{1}=200$ turns and the secondary has $N_{2}=50$ turns, what is the ratio of secondary rms voltage $V_{2}$ to primary rms voltage $V_{1}$?",
+        "options": [
+          "$V_{2}=4V_{1}$",
+          "$V_{2}=\\frac{1}{4}V_{1}$",
+          "$V_{2}=\\frac{1}{2}V_{1}$",
+          "$V_{2}=2V_{1}$"
+        ],
+        "answer": 1,
+        "explain": "For an ideal transformer, $\\frac{V_{2}}{V_{1}}=\\frac{N_{2}}{N_{1}}=\\frac{50}{200}=\\frac{1}{4}$, so $V_{2}=\\frac{1}{4}V_{1}$."
+      },
+      {
+        "q": "The instantaneous power in a purely inductive AC circuit is $p(t)=V_{0}I_{0}\\sin\\omega t\\cos\\omega t$. What is the average power over a full cycle?",
+        "options": [
+          "$0$",
+          "$\\frac{V_{0}I_{0}}{2}$",
+          "$\\frac{V_{0}I_{0}}{\\sqrt{2}}$",
+          "$V_{0}I_{0}$"
+        ],
+        "answer": 0,
+        "explain": "For a pure inductor, voltage and current are $90^{\\circ}$ out of phase, making the average of $\\sin\\omega t\\cos\\omega t$ over a cycle zero; thus average power is $0$."
+      },
+      {
+        "q": "Assertion (A): In a series RLC circuit at resonance, the current is maximum. Reason (R): At resonance the inductive reactance equals the capacitive reactance, making the net reactance zero.",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation of A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "At resonance $X_{L}=X_{C}$, net reactance $X=0$, so the circuit behaves like a pure resistor and current $I=V/R$ is maximum. Hence both statements are true and R explains A."
+      },
+      {
+        "q": "Assertion (A): The phase angle between voltage and current in a series RLC circuit is $\\phi=\\tan^{-1}\\left(\\frac{X_{L}-X_{C}}{R}\\right)$. Reason (R): When $X_{L}=X_{C}$, the circuit is at resonance and $\\phi=0^{\\circ}$.",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation of A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "The given formula for $\\phi$ is correct. At resonance $X_{L}=X_{C}$, the numerator becomes zero, giving $\\phi=0^{\\circ}$. Thus both statements are true and R explains A."
+      },
+      {
+        "q": "Assertion (A): In a half-wave rectifier, the average output voltage is $V_{avg}=\\frac{V_{m}}{\\pi}$. Reason (R): The output waveform contains only the positive half cycles of the input sinusoid.",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation of A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "For a half-wave rectifier, the average (dc) value of the output is $V_{avg}=\\frac{1}{\\pi}\\int_{0}^{\\pi}V_{m}\\sin\\theta\\,d\\theta=\\frac{V_{m}}{\\pi}$. This occurs because only the positive half cycles appear at the output, making both statements true and R explains A."
+      }
     ]
   },
   "physics::ch8::physics/chapter8.html": {
@@ -4650,7 +4762,20 @@
         "answer": 0,
         "explain": "Accumulation brings carriers close to the interface, effectively increasing the capacitance compared to depletion where a space‑charge region forms. The reason correctly explains the increase."
       }
-    ]
+    ],
+    "visual_maps": {
+      "mindmap": "mindmap\\n  root((Semiconductor Electronics))\\n    Intrinsic\\n      Properties\\n    Extrinsic\\n      n-type\\n      p-type\\n    Devices\\n      Diode\\n      Transistor",
+      "flowchart": "flowchart TD\\n  A[Start] --> B[Energy Bands]\\n  B --> C[Carrier Generation]\\n  C --> D[Device Action]\\n  D --> E[Applications]",
+      "revision_points": [
+        "Intrinsic semiconductor: pure crystal, carrier concentration varies with temperature",
+        "Extrinsic semiconductor: doping creates n‑type (donor) and p‑type (acceptor)",
+        "pn junction: depletion region, built‑in potential, forward and reverse bias behavior",
+        "Diode I‑V: exponential law, saturation current, ideality factor",
+        "BJT transistor: active, cutoff, saturation modes and current amplification"
+      ]
+    },
+    "status": "done",
+    "updated": "2026-11-16 23:46:13"
   },
   "chemistry::ch1::chemistry/solutions/long-notes.html": {
     "last_error": "All Groq models failed after fast failover.",
