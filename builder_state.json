@@ -1889,6 +1889,32 @@
         "question": "Prove that for a linear programming problem with a bounded feasible region, the optimal value of the objective function occurs at a vertex (corner point) of the region.",
         "solution_html": "<p><b>Given:</b> Linear objective $Z=\\mathbf{c}^T\\mathbf{x}$, linear constraints forming a convex polygon $P$ (bounded).</p><p><b>Formula:</b> Any point $\\mathbf{x}\\in P$ can be expressed as a convex combination of the vertices of $P$ (Carath\\'eodory's theorem).</p><p><b>Proof:</b><ol><li>Let $V=\\{v_1, v_2,\\dots,v_k\\}$ be the set of vertices of $P$.</li><li>For any $\\mathbf{x}\\in P$, there exist $\\lambda_i\\ge0$ with $\\sum_{i=1}^k\\lambda_i=1$ such that $\\mathbf{x}=\\sum_{i=1}^k\\lambda_i v_i$.</li><li>Since $Z$ is linear, $Z(\\mathbf{x})=\\mathbf{c}^T\\mathbf{x}=\\mathbf{c}^T\\left(\\sum_{i=1}^k\\lambda_i v_i\\right)=\\sum_{i=1}^k\\lambda_i Z(v_i)$.</li><li>The weighted sum of the vertex values cannot exceed the maximum vertex value: $Z(\\mathbf{x})\\le\\max_{i}\\{Z(v_i)\\}$.</li><li>Hence the supremum of $Z$ over $P$ is attained at some vertex $v_j$ where $Z(v_j)=\\max_i Z(v_i)$.</li></ol></p><p><b>Conclusion:</b> The optimal solution of a bounded LP lies at a corner point of the feasible region.</p>"
       }
+    ],
+    "pyq": [
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "Define linear programming and state the conditions for a problem to be a linear programming problem.",
+        "answer_html": "<p>Linear programming is the technique of optimizing (maximising or minimising) a linear objective function $Z = c_1x_1 + c_2x_2 + \\dots + c_nx_n$ subject to linear constraints. Conditions: (i) $Z$ is linear, (ii) each constraint is of the form $a_{1}x_{1}+a_{2}x_{2}+ \\dots + a_{n}x_{n}\\;\\le\\;(\\ge,=)\\;b$, (iii) $x_i \\ge 0$ for all $i$.</p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "What is the feasible region in a linear programming problem? Mention its key properties.",
+        "answer_html": "<p>The feasible region is the set of all points $(x_1,x_2,\\dots ,x_n)$ that satisfy every constraint of the LP. It is a convex polygon (or polyhedron) possibly unbounded, and any convex combination of feasible points is also feasible.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Graphically solve: Maximise $Z = 3x + 4y$ subject to $x + y \\le 5$, $x \\ge 0$, $y \\ge 0$. State the optimal value and the point at which it occurs.",
+        "answer_html": "<p>Corner points of the feasible region: (0,0), (5,0), (0,5).<br>Evaluate $Z$: $Z(0,0)=0$, $Z(5,0)=15$, $Z(0,5)=20$.<br>Maximum $Z_{\\max}=20$ at the point $(0,5)$. </p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Convert the LP problem maximise $Z = 2x + 3y$ with constraints $x + 2y \\le 8$, $3x + y \\le 9$, $x, y \\ge 0$ into standard form.",
+        "answer_html": "<p>Introduce slack variables $s_1,s_2 \\ge 0$:<br>$x + 2y + s_1 = 8$,<br>$3x + y + s_2 = 9$,<br>Objective: maximise $Z = 2x + 3y$.<br>All variables $x,y,s_1,s_2 \\ge 0$.</p>"
+      }
     ]
   },
   "mathematics::ch13::mathematics/chapter13.html": {
@@ -3394,7 +3420,9 @@
       "Separation and purification of rare earth elements",
       "Industrial applications and environmental aspects"
     ],
-    "long_notes": {}
+    "long_notes": {
+      "Electronic configuration of $d$- and $f$-block elements": "<p><strong>Definition:</strong> The electronic configuration of $d$‑ and $f$‑block elements describes the distribution of electrons among the $(n-1)d$ and $(n-2)f$ orbitals respectively, following the Aufbau principle, Pauli exclusion principle and Hund's rule.</p><p><strong>Key Rules (Madelung or $n+\\ell$ rule):</strong></p><ul><li>Each orbital is filled in order of increasing $n+\\ell$ value.</li><li>If two subshells have the same $n+\\ell$, the one with lower $n$ is filled first.</li></ul><p>For $d$‑block: electrons enter the $(n-1)d$ subshell after the $ns$ subshell is half‑filled, giving the general pattern $[\\text{Ar}]\\,4s^{2}\\,(3d)^{1-10}$ for the first series and $[\\text{Kr}]\\,5s^{2}\\,(4d)^{1-10}$ for the second series.</p><p>For $f$‑block: electrons occupy the $(n-2)f$ subshell after the $ns$ subshell, leading to $[\\text{Xe}]\\,6s^{2}\\,(4f)^{1-14}$ and $[\\text{Rn}]\\,7s^{2}\\,(5f)^{1-14}$.</p><p><strong>Typical Configurations (selected elements):</strong></p><table><tr><th>Element</th><th>Configuration</th></tr><tr><td>Sc ($Z=21$)</td><td>$[\\text{Ar}]\\,4s^{2}\\,3d^{1}$</td></tr><tr><td>Fe ($Z=26$)</td><td>$[\\text{Ar}]\\,4s^{2}\\,3d^{6}$</td></tr><tr><td>Y ($Z=39$)</td><td>$[\\text{Kr}]\\,5s^{2}\\,4d^{1}$</td></tr><tr><td>Ce ($Z=58$)</td><td>$[\\text{Xe}]\\,6s^{2}\\,4f^{1}\\,5d^{1}$ (anomaly)</td></tr></table><p><strong>Solved Example:</strong> Write the ground‑state configuration of $\\mathrm{Fe}$ ($Z=26$).</p><ol><li>Identify the nearest noble gas: $[\\text{Ar}]$ (Z=18).</li><li>Distribute the remaining 8 electrons: fill $4s$ first (2 e⁻) → $4s^{2}$.</li><li>Remaining 6 electrons go to $3d$ (since $4s$ is lower $n+\\ell$). → $3d^{6}$.</li><li>Thus, $\\mathrm{Fe}$: $[\\text{Ar}]\\,4s^{2}\\,3d^{6}$.</li></ol><p><strong>Note:</strong> Electronic configurations are dimensionless; they merely indicate the count of electrons in each subshell.</p>"
+    }
   },
   "chemistry::ch5::chemistry/coordination-compounds/long-notes.html": {
     "last_error": "All Groq models failed after fast failover.",
