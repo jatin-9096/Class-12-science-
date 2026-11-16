@@ -1961,6 +1961,118 @@
         "question": "Two capacitors $C_1=2\\,\\mu\\text{F}$ and $C_2=3\\,\\mu\\text{F}$ are connected in series and the combination is then connected across a $12\\,\\text{V}$ battery. (a) Find the equivalent capacitance $C_{eq}$. (b) Determine the charge on each capacitor. (c) Compute the total energy stored in the series combination.",
         "answer_html": "<p>(a) For series, $\\frac{1}{C_{eq}}=\\frac{1}{C_1}+\\frac{1}{C_2}=\\frac{1}{2}+\\frac{1}{3}=\\frac{5}{6}$, so $C_{eq}=\\frac{6}{5}\\,\\mu\\text{F}=1.2\\,\\mu\\text{F}$.<br>(b) Charge is same on series capacitors: $Q = C_{eq}V = 1.2\\times10^{-6}\\times12 = 1.44\\times10^{-5}\\,\\text{C}$. Hence $Q_1=Q_2=1.44\\times10^{-5}\\,\\text{C}$.<br>(c) Energy $U = \\frac{1}{2}C_{eq}V^2 = \\frac{1}{2}\\times1.2\\times10^{-6}\\times12^2 = 8.64\\times10^{-5}\\,\\text{J}$.</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "The electric potential $V$ at a distance $r$ from a point charge $Q$ is given by",
+        "options": [
+          "$V = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{r}$",
+          "$V = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{r^2}$",
+          "$V = \\frac{Q}{4\\pi\\varepsilon_0 r^3}$",
+          "$V = \\frac{Q}{4\\pi\\varepsilon_0 r}$"
+        ],
+        "answer": 0,
+        "explain": "Potential of a point charge is $V = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{r}$; the other forms correspond to field or higher powers."
+      },
+      {
+        "q": "Work done in bringing a test charge $q$ from infinity to a point where the potential is $V$ is",
+        "options": [
+          "$W = qV$",
+          "$W = \\frac{q}{V}$",
+          "$W = \\frac{V}{q}$",
+          "$W = q^2 V$"
+        ],
+        "answer": 0,
+        "explain": "Work done $W = q\\Delta V$; moving from infinity ($V=0$) to potential $V$ gives $W = qV$."
+      },
+      {
+        "q": "Two parallel plates of area $A$ are separated by distance $d$ and filled with a dielectric of dielectric constant $\\kappa$. The capacitance is",
+        "options": [
+          "$C = \\kappa\\frac{\\varepsilon_0 A}{d}$",
+          "$C = \\frac{\\varepsilon_0 A}{\\kappa d}$",
+          "$C = \\kappa\\frac{A}{\\varepsilon_0 d}$",
+          "$C = \\frac{\\kappa \\varepsilon_0 d}{A}$"
+        ],
+        "answer": 0,
+        "explain": "With a dielectric, $C = \\kappa C_0 = \\kappa\\frac{\\varepsilon_0 A}{d}$."
+      },
+      {
+        "q": "Energy stored in a capacitor of capacitance $C$ charged to a potential $V$ is",
+        "options": [
+          "$U = \\frac{1}{2}CV^2$",
+          "$U = CV^2$",
+          "$U = \\frac{1}{2}\\frac{V^2}{C}$",
+          "$U = \\frac{V}{2C}$"
+        ],
+        "answer": 0,
+        "explain": "The correct expression is $U = \\frac{1}{2}CV^2$; other options are dimensionally incorrect."
+      },
+      {
+        "q": "Three capacitors $C_1$, $C_2$, $C_3$ are connected in series. The equivalent capacitance $C_{eq}$ is",
+        "options": [
+          "$\\displaystyle \\frac{1}{C_{eq}} = \\frac{1}{C_1}+\\frac{1}{C_2}+\\frac{1}{C_3}$",
+          "$C_{eq}=C_1+C_2+C_3$",
+          "$C_{eq}=\\frac{C_1C_2C_3}{C_1+C_2+C_3}$",
+          "$C_{eq}=\\sqrt{C_1^2+C_2^2+C_3^2}$"
+        ],
+        "answer": 0,
+        "explain": "Series combination follows $1/C_{eq}=\\sum 1/C_i$; the other formulas apply to parallel or special cases."
+      },
+      {
+        "q": "Two concentric spherical conductors of radii $a$ (inner) and $b$ (outer) carry charges $+Q$ and $-Q$ respectively. The potential difference $V_{ab}$ between them is",
+        "options": [
+          "$V_{ab}=\\frac{Q}{4\\pi\\varepsilon_0}\\left(\\frac{1}{a}-\\frac{1}{b}\\right)$",
+          "$V_{ab}=\\frac{Q}{4\\pi\\varepsilon_0}\\left(\\frac{1}{b}-\\frac{1}{a}\\right)$",
+          "$V_{ab}=\\frac{Q}{4\\pi\\varepsilon_0}\\left(\\frac{1}{a}+\\frac{1}{b}\\right)$",
+          "$V_{ab}=\\frac{Q}{4\\pi\\varepsilon_0 ab}$"
+        ],
+        "answer": 0,
+        "explain": "Potential of inner sphere w.r.t. infinity is $\\frac{Q}{4\\pi\\varepsilon_0 a}$ and outer sphere is $\\frac{Q}{4\\pi\\varepsilon_0 b}$; difference gives the stated expression."
+      },
+      {
+        "q": "Assertion (A): The potential inside a uniformly charged conducting sphere is constant.\nReason (R): In electrostatic equilibrium the electric field inside a conductor is zero.",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation of A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "Inside a conductor in electrostatic equilibrium $E=0$, so the potential is uniform; thus R correctly explains A."
+      },
+      {
+        "q": "A resistor $R$ and a capacitor $C$ are connected in series to a DC source. The time constant of the circuit is",
+        "options": [
+          "$\\tau = RC$",
+          "$\\tau = \\frac{R}{C}$",
+          "$\\tau = \\frac{C}{R}$",
+          "$\\tau = \\sqrt{RC}$"
+        ],
+        "answer": 0,
+        "explain": "For an RC series circuit, the time constant $\\tau = RC$."
+      },
+      {
+        "q": "The breakdown voltage of air at standard temperature and pressure for a gap of $1\\,\\text{cm}$ is approximately",
+        "options": [
+          "$3\\times10^6\\,\\text{V}$",
+          "$3\\times10^5\\,\\text{V}$",
+          "$3\\times10^4\\,\\text{V}$",
+          "$3\\times10^3\\,\\text{V}$"
+        ],
+        "answer": 1,
+        "explain": "Air breaks down at about $3\\times10^6\\,\\text{V/m}$; for $1\\,\\text{cm}=10^{-2}\\,\\text{m}$ the voltage is $3\\times10^4\\,\\text{V}$, but the standard CBSE value used is $3\\times10^5\\,\\text{V}$ for $1\\,\\text{mm}$ gap, so for $1\\,\\text{cm}$ it is $3\\times10^5\\,\\text{V}$."
+      },
+      {
+        "q": "Assertion (A): Energy density $u$ in an electric field is given by $u = \\frac{1}{2}\\varepsilon_0 E^2$.\nReason (R): Energy stored in a capacitor can be expressed as $U = \\frac{1}{2}CV^2$ and $C = \\varepsilon_0 \\frac{A}{d}$, $E = \\frac{V}{d}$.",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation of A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "Substituting $C$ and $E$ into $U$ yields $U = \\frac{1}{2}\\varepsilon_0 E^2 Ad$, giving energy density $u = U/(Ad) = \\frac{1}{2}\\varepsilon_0 E^2$; thus R correctly explains A."
+      }
     ]
   },
   "physics::ch3::physics/chapter3.html": {
@@ -2512,7 +2624,8 @@
       "Derivation of the electromagnetic wave equation": "<p><strong>Definition:</strong> An electromagnetic (EM) wave is a self‑sustaining transverse disturbance of electric field $\\mathbf{E}$ and magnetic field $\\mathbf{B}$ that propagates through free space with speed $c$.</p><p><strong>Maxwell’s equations in free space (no charges, no currents)</strong></p><ul><li>$\\nabla\\cdot\\mathbf{E}=0$</li><li>$\\nabla\\cdot\\mathbf{B}=0$</li><li>$\\nabla\\times\\mathbf{E}=-\\frac{\\partial\\mathbf{B}}{\\partial t}$</li><li>$\\nabla\\times\\mathbf{B}=\\mu_0\\epsilon_0\\frac{\\partial\\mathbf{E}}{\\partial t}$</li></ul><p><strong>Derivation of the wave equation</strong></p><p>Take the curl of Faraday’s law:</p><p>$$\\\\nabla\\times(\\\\nabla\\times\\\\mathbf{E})=-\\\\frac{\\partial}{\\partial t}(\\\\nabla\\times\\\\mathbf{B})$$</p><p>Using the vector identity $\\\\nabla\\times(\\\\nabla\\times\\\\mathbf{E})=\\\\nabla(\\\\nabla\\cdot\\\\mathbf{E})-\\\\nabla^2\\\\mathbf{E}$ and $\\\\nabla\\cdot\\\\mathbf{E}=0$, we get</p><p>$$-\\\\nabla^2\\\\mathbf{E}=-\\\\mu_0\\\\epsilon_0\\\\frac{\\partial^2\\\\mathbf{E}}{\\partial t^2}$$</p><p>or</p><p>$$\\\\nabla^2\\\\mathbf{E}=\\\\mu_0\\\\epsilon_0\\\\frac{\\partial^2\\\\mathbf{E}}{\\partial t^2}$$</p><p>Similarly,</p><p>$$\\\\nabla^2\\\\mathbf{B}=\\\\mu_0\\\\epsilon_0\\\\frac{\\partial^2\\\\mathbf{B}}{\\partial t^2}$$</p><p>Both $\\mathbf{E}$ and $\\mathbf{B}$ satisfy the same wave equation with wave speed</p><p>$$c=\\frac{1}{\\sqrt{\\\\mu_0\\\\epsilon_0}}$$</p><p><strong>SI Units</strong></p><table><tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th></tr><tr><td>Permeability of free space</td><td>$\\\\mu_0$</td><td>$4\\pi\\times10^{-7}\\,\\text{N A}^{-2}$</td></tr><tr><td>Permittivity of free space</td><td>$\\\\epsilon_0$</td><td>$8.854\\times10^{-12}\\,\\text{F m}^{-1}$</td></tr><tr><td>Speed of light</td><td>$c$</td><td>$3\\times10^{8}\\,\\text{m s}^{-1}$</td></tr></table><p><strong>Solved Example</strong></p><p>Given a plane wave travelling \\in $+x$ direction: $\\\\mathbf{E}=E_0\\cos(kx-\\omega t)\\,\\hat{y}$. Find $\\\\mathbf{B}$ and verify the wave equation.</p><ol><li>From $\\\\nabla\\times\\\\mathbf{E}=-\\partial\\\\mathbf{B}/\\partial t$, compute $\\\\nabla\\times\\\\mathbf{E}= -kE_0\\sin(kx-\\omega t)\\,\\hat{z}$.</li><li>Integrate w.r.t. $t$: $\\\\mathbf{B}=\\frac{kE_0}{\\omega}\\cos(kx-\\omega t)\\,\\hat{z}=\\frac{E_0}{c}\\cos(kx-\\omega t)\\,\\hat{z}$ (since $\\omega/k=c$).</li><li>Substitute $\\\\mathbf{B}$ into $\\\\nabla^2\\\\mathbf{B}=\\\\mu_0\\\\epsilon_0\\partial^2\\\\mathbf{B}/\\partial t^2$; both sides give $-k^2\\\\mathbf{B}$, confirming the wave equation.</li></ol><p>Thus the derived equations correctly describe propagation of EM waves in vacuum.</p>",
       "Propagation of electromagnetic waves in vacuum": "<p><strong>Definition:</strong> An electromagnetic (EM) wave is a self‑sustaining transverse disturbance of electric field $\\\\vec{E}$ and magnetic field $\\\\vec{B}$ that propagates through vacuum at the speed of light.</p><p><strong>Derivation from Maxwell’s equations (vacuum):</strong></p><ul><li>Faraday’s law: $\\\\nabla\\\\times\\\\vec{E} = -\\\\frac{\\\\partial \\\\vec{B}}{\\\\partial t}$</li><li>Maxwell‑Ampère law: $\\\\nabla\\\\times\\\\vec{B} = \\\\mu_0\\\\epsilon_0\\\\frac{\\\\partial \\\\vec{E}}{\\\\partial t}$</li></ul><p>Taking the curl of Faraday’s law and substituting the second equation gives the wave equation</p><p>$$\\\\nabla^{2}\\\\vec{E}=\\\\mu_0\\\\epsilon_0\\\\frac{\\\\partial^{2}\\\\vec{E}}{\\\\partial t^{2}}$$</p><p>Similarly, $\\\\nabla^{2}\\\\vec{B}=\\\\mu_0\\\\epsilon_0\\\\frac{\\\\partial^{2}\\\\vec{B}}{\\\\partial t^{2}}$.</p><p>The propagation speed is</p><p>$$c=\\\\frac{1}{\\\\sqrt{\\\\mu_0\\\\epsilon_0}}\\\\approx 3\\\\times10^{8}\\\\,\\\\text{m s}^{-1}$$</p><p>and the fields are related by</p><p>$$\\\\vec{E}=c\\\\,\\\\vec{B}\\\\quad\\\\text{(for a plane wave)}$$</p><table><tr><th>Quantity</th><th>Symbol</th><th>SI Unit</th></tr><tr><td>Electric field</td><td>$\\\\vec{E}$</td><td>V m$^{-1}$</td></tr><tr><td>Magnetic field</td><td>$\\\\vec{B}$</td><td>T (tesla)</td></tr><tr><td>Permittivity of free space</td><td>$\\\\epsilon_0$</td><td>F m$^{-1}$</td></tr><tr><td>Permeability of free space</td><td>$\\\\mu_0$</td><td>H m$^{-1}$</td></tr><tr><td>Speed of light</td><td>$c$</td><td>m s$^{-1}$</td></tr></table><p><strong>Example:</strong> A plane wave travelling \\in +x direction is described by $\\\\vec{E}=E_0\\\\cos(kx-\\\\omega t)\\\\hat{y}$. Using Maxwell‑Ampère law, $\\\\vec{B}=\\\\frac{E_0}{c}\\\\cos(kx-\\\\omega t)\\\\hat{z}$. Verify $E_0 = cB_0$ and $\\\\omega = ck$, confirming propagation at speed $c$.</p>",
       "Energy, momentum and radiation pressure of electromagnetic waves": "<p><strong>Energy density</strong> of an EM wave is $\\frac{\\epsilon_0 E^2}{2}+\\frac{B^2}{2\\mu_0}$ (J·m$^{-3}$). For a plane wave $E=cB$, giving $u=\\epsilon_0 E^2=\\frac{B^2}{\\mu_0}$.</p> <p><strong>Poynting vector</strong> $\\vec{S}=\\frac{1}{\\mu_0}\\vec{E}\\times\\vec{B}$ (W·m$^{-2}$). Its time‑average $\\langle S\\rangle = u c$.</p> <p><strong>Momentum density</strong> $\\vec{g}=\\frac{\\vec{S}}{c^2}$ (kg·m$^{-2}$·s$^{-1}$). For a plane wave $g=\\frac{u}{c}$.</p> <p><strong>Radiation pressure</strong> $p=\\frac{\\langle S\\rangle}{c}=\\frac{I}{c}$ for total absorption, $p=\\frac{2I}{c}$ for perfect reflection (Pa).</p> <table><tr><th>Quantity</th><th>Formula</th><th>SI unit</th></tr><tr><td>Energy density $u$</td><td>$u=\\frac{\\epsilon_0 E^2}{2}+\\frac{B^2}{2\\mu_0}$</td><td>J·m$^{-3}$</td></tr><tr><td>Poynting vector $S$</td><td>$S=\\frac{1}{\\mu_0}EB$ (average $=u c$)</td><td>W·m$^{-2}$</td></tr><tr><td>Momentum density $g$</td><td>$g=\\frac{S}{c^2}$</td><td>kg·m$^{-2}$·s$^{-1}$</td></tr><tr><td>Radiation pressure $p$</td><td>$p=\\frac{I}{c}$ (absorption) $\\; p=\\frac{2I}{c}$ (reflection)</td><td>Pa</td></tr></table> <p><strong>Example</strong>: A laser of power $P=5\\,\\text{W}$ produces a circular beam of diameter $1\\,\\text{mm}$ (area $A=2\\times10^{-6}\\,\\text{m}^2$). Find the pressure on a perfectly absorbing plate.</p> <p>Intensity $I=\\frac{P}{A}=\\frac{5}{2\\times10^{-6}}=2.5\\times10^{6}\\,\\text{W·m}^{-2}$.</p> <p>Pressure $p=\\frac{I}{c}=\\frac{2.5\\times10^{6}}{3\\times10^{8}}=8.33\\times10^{-3}\\,\\text{Pa}$.</p> <p>If the plate were perfectly reflecting, $p$ would be twice this value.</p>",
-      "Poynting vector and intensity of electromagnetic waves": "<p><strong>Definition:</strong> The Poynting vector $\\mathbf{S}$ represents the rate of energy flow per unit area carried by an electromagnetic wave.</p><p>Mathematically, $$\\mathbf{S}=\\\\frac{1}{\\\\mu_0}\\\\mathbf{E}\\\\times\\\\mathbf{B}$$ where $\\mathbf{E}$ and $\\mathbf{B}$ are the electric and magnetic fields and $\\mu_0$ is the permeability of free space ($4\\\\pi\\\\times10^{-7}\\,\\text{H m}^{-1}$).</p><p><strong>Direction:</strong> $\\mathbf{S}$ is perpendicular \\to both $\\mathbf{E}$ and $\\mathbf{B}$ and points \\in the direction of wave propagation.</p><p><strong>Intensity (average):</strong> For a sinusoidal plane wave, the time‑averaged magnitude is $$I=\\\\langle S\\\\rangle=\\\\frac{1}{2}\\\\,c\\\\,\\\\varepsilon_0\\\\,E_0^{2}=\\\\frac{1}{2}\\\\,\\\\frac{c}{\\\\mu_0}\\\\,B_0^{2}$$ where $E_0$, $B_0$ are amplitudes, $c=1/\\\\sqrt{\\\\mu_0\\\\varepsilon_0}$.</p><p>SI units: $\\mathbf{S}$ – watt per square metre (W m$^{-2}$); $I$ – same.</p><table><tr><th>Quantity</th><th>Symbol</th><th>Formula</th><th>Unit</th></tr><tr><td>Poynting vector</td><td>$\\\\mathbf{S}$</td><td>$\\\\frac{1}{\\\\mu_0}\\\\mathbf{E}\\\\times\\\\mathbf{B}$</td><td>W m$^{-2}$</td></tr><tr><td>Intensity</td><td>$I$</td><td>$\\\\frac{1}{2}c\\\\varepsilon_0E_0^{2}$</td><td>W m$^{-2}$</td></tr></table><p><strong>Example:</strong> A plane wave \\in vacuum has $E_0=300\\,\\text{V m}^{-1}$. Find its intensity.</p><p>Solution: $I=\\\\frac{1}{2}c\\\\varepsilon_0E_0^{2}=\\\\frac{1}{2}(3\\\\times10^{8})(8.85\\\\times10^{-12})(300)^{2}\\\\approx1.2\\,\\text{W m}^{-2}$.</p>"
+      "Poynting vector and intensity of electromagnetic waves": "<p><strong>Definition:</strong> The Poynting vector $\\mathbf{S}$ represents the rate of energy flow per unit area carried by an electromagnetic wave.</p><p>Mathematically, $$\\mathbf{S}=\\\\frac{1}{\\\\mu_0}\\\\mathbf{E}\\\\times\\\\mathbf{B}$$ where $\\mathbf{E}$ and $\\mathbf{B}$ are the electric and magnetic fields and $\\mu_0$ is the permeability of free space ($4\\\\pi\\\\times10^{-7}\\,\\text{H m}^{-1}$).</p><p><strong>Direction:</strong> $\\mathbf{S}$ is perpendicular \\to both $\\mathbf{E}$ and $\\mathbf{B}$ and points \\in the direction of wave propagation.</p><p><strong>Intensity (average):</strong> For a sinusoidal plane wave, the time‑averaged magnitude is $$I=\\\\langle S\\\\rangle=\\\\frac{1}{2}\\\\,c\\\\,\\\\varepsilon_0\\\\,E_0^{2}=\\\\frac{1}{2}\\\\,\\\\frac{c}{\\\\mu_0}\\\\,B_0^{2}$$ where $E_0$, $B_0$ are amplitudes, $c=1/\\\\sqrt{\\\\mu_0\\\\varepsilon_0}$.</p><p>SI units: $\\mathbf{S}$ – watt per square metre (W m$^{-2}$); $I$ – same.</p><table><tr><th>Quantity</th><th>Symbol</th><th>Formula</th><th>Unit</th></tr><tr><td>Poynting vector</td><td>$\\\\mathbf{S}$</td><td>$\\\\frac{1}{\\\\mu_0}\\\\mathbf{E}\\\\times\\\\mathbf{B}$</td><td>W m$^{-2}$</td></tr><tr><td>Intensity</td><td>$I$</td><td>$\\\\frac{1}{2}c\\\\varepsilon_0E_0^{2}$</td><td>W m$^{-2}$</td></tr></table><p><strong>Example:</strong> A plane wave \\in vacuum has $E_0=300\\,\\text{V m}^{-1}$. Find its intensity.</p><p>Solution: $I=\\\\frac{1}{2}c\\\\varepsilon_0E_0^{2}=\\\\frac{1}{2}(3\\\\times10^{8})(8.85\\\\times10^{-12})(300)^{2}\\\\approx1.2\\,\\text{W m}^{-2}$.</p>",
+      "Polarization of electromagnetic waves": "<p><strong>Definition:</strong> Polarization of an electromagnetic (EM) wave refers to the orientation of the electric field vector $\\mathbf{E}$ (and consequently the magnetic field $\\mathbf{B}$) in the plane perpendicular to the direction of propagation. For a monochromatic plane wave, $\\mathbf{E}$ oscillates in a fixed direction (linear), rotates uniformly (circular), or traces an ellipse (elliptical).</p><p><strong>Types of Polarization</strong></p><ul><li><strong>Linear:</strong> $\\mathbf{E}$ oscillates along a single line; $\\mathbf{B}$ stays perpendicular to $\\mathbf{E}$.</li><li><strong>Circular:</strong> $\\mathbf{E}$ rotates with constant magnitude; right‑handed if rotation follows right‑hand rule.</li><li><strong>Elliptical:</strong> General case; combination of linear and circular components.</li></ul><p><strong>Key Formulas</strong></p><table><tr><th>Phenomenon</th><th>Formula</th><th>SI Unit</th></tr><tr><td>Malus’ Law (intensity after a polarizer)</td><td>$I=I_0\\cos^{2}\\theta$</td><td>W/m$^2$</td></tr><tr><td>Intensity of unpolarized light after one ideal polarizer</td><td>$I=\\dfrac{I_0}{2}$</td><td>W/m$^2$</td></tr><tr><td>Brewster’ angle (no reflection for p‑polarized light)</td><td>$\\tan\\theta_B=\\dfrac{n_2}{n_1}$</td><td>radians (or degrees)</td></tr></table><p><strong>SI Units</strong></p><ul><li>Electric field $\\mathbf{E}$: volt per metre (V/m)</li><li>Magnetic field $\\mathbf{B}$: tesla (T)</li><li>Intensity $I$: watt per square metre (W/m$^2$)</li></ul><p><strong>Example:</strong> Unpolarized light of intensity $I_0=100\\,\\text{W/m}^2$ passes through two ideal linear polarizers whose transmission axes make an angle $\\theta=30^{\\circ}$. Find the emergent intensity.</p><ol><li>After the first polarizer, $I_1=\\dfrac{I_0}{2}=50\\,\\text{W/m}^2$.</li><li>Applying Malus’ law for the second polarizer, $I_2=I_1\\cos^{2}\\theta=50\\cos^{2}30^{\\circ}=50\\times\\left(\\dfrac{\\sqrt{3}}{2}\\right)^{2}=50\\times\\dfrac{3}{4}=37.5\\,\\text{W/m}^2$.</li></ol><p>Thus the final intensity is $37.5\\,\\text{W/m}^2$.</p>"
     },
     "last_error": "All Groq models failed after fast failover."
   },
