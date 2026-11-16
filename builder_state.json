@@ -2076,6 +2076,44 @@
         "question": "Prove that for any two events $A$ and $B$, $P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$.",
         "solution_html": "<b>Given:</b> Events $A$, $B$ in a sample space $S$ with $P$ defined.<br><b>Formula:</b> $P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$ (to be proved).<br><b>Proof:</b><ol><li>Partition $A\\cup B$ into three disjoint sets: $A\\setminus B$, $B\\setminus A$, and $A\\cap B$.</li><li>Since probability is additive over disjoint sets, $P(A\\cup B)=P(A\\setminus B)+P(B\\setminus A)+P(A\\cap B)$.</li><li>Now $P(A)=P(A\\setminus B)+P(A\\cap B)$ and $P(B)=P(B\\setminus A)+P(A\\cap B)$.</li><li>Add $P(A)$ and $P(B)$: $P(A)+P(B)=P(A\\setminus B)+P(B\\setminus A)+2P(A\\cap B)$.</li><li>Subtract $P(A\\cap B)$ from both sides to obtain $P(A)+P(B)-P(A\\cap B)=P(A\\setminus B)+P(B\\setminus A)+P(A\\cap B)=P(A\\cup B)$.</li></ol><b>Conclusion:</b> Hence $P(A\\cup B)=P(A)+P(B)-P(A\\cap B)\\,\\blacksquare$"
       }
+    ],
+    "pyq": [
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "A fair die is thrown once. Find the probability of getting an even number.",
+        "answer_html": "<p>Number of even faces = 3, total outcomes = 6.</p><p>Probability $=\\frac{3}{6}=\\frac{1}{2}$.</p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "One card is drawn from a standard deck of 52 cards. Find the probability that it is a king or a heart.",
+        "answer_html": "<p>P(King) $=\\frac{4}{52}$, P(Heart) $=\\frac{13}{52}$, P(King of hearts) $=\\frac{1}{52}$.</p><p>Required probability $=\\frac{4}{52}+\\frac{13}{52}-\\frac{1}{52}=\\frac{16}{52}=\\frac{4}{13}$.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Two cards are drawn successively without replacement from a deck of 52 cards. Find the probability that both are aces.",
+        "answer_html": "<p>First ace $=\\frac{4}{52}$, second ace $=\\frac{3}{51}$.</p><p>Combined probability $=\\frac{4}{52}\\times\\frac{3}{51}=\\frac{12}{2652}=\\frac{1}{221}$.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "A bag contains 3 red and 5 blue balls. Two balls are drawn one after another without replacement. Find the probability that the second ball is red given that the first ball drawn was blue.",
+        "answer_html": "<p>After a blue ball is drawn, remaining balls: 3 red, 4 blue (total 7).</p><p>Required probability $=\\frac{3}{7}$.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "A student guesses answers to 5 multiple‑choice questions, each having 4 options with only one correct. Find the probability that exactly 2 answers are correct.",
+        "answer_html": "<p>Using binomial formula: $P=\\binom{5}{2}\\left(\\frac{1}{4}\\right)^{2}\\left(\\frac{3}{4}\\right)^{3}$.</p><p>$=10\\times\\frac{1}{16}\\times\\frac{27}{64}=\\frac{270}{1024}=\\frac{135}{512}$.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "The probability distribution of a discrete random variable $X$ is: $X$: 0, 1, 2, 3 with $P(X)$: 0.1, 0.3, 0.4, 0.2. Find (i) $E(X)$ and (ii) $Var(X)$.",
+        "answer_html": "<p>(i) $E(X)=\\sum xP(x)=0\\times0.1+1\\times0.3+2\\times0.4+3\\times0.2=1.7$.</p><p>(ii) $E(X^{2})=\\sum x^{2}P(x)=0^{2}\\times0.1+1^{2}\\times0.3+2^{2}\\times0.4+3^{2}\\times0.2=3.7$.</p><p>Variance $=E(X^{2})-[E(X)]^{2}=3.7-(1.7)^{2}=3.7-2.89=0.81$.</p>"
+      }
     ]
   },
   "physics::ch1::physics/chapter1.html": {
@@ -3170,6 +3208,118 @@
         "question": "Discuss polarization by reflection. Derive Brewster's angle condition and state the nature of reflected and refracted rays at this angle.",
         "answer_html": "<p>When unpolarized light is incident on a dielectric surface, the reflected light becomes partially polarized. At a particular angle of incidence, called Brewster's angle $\\theta_{B}$, the reflected ray is completely linearly polarized with its electric vector perpendicular to the plane of incidence.</p>\n<p>Let the incident ray make an angle $\\theta_{i}$ with the normal. The reflected and refracted rays satisfy Snell's law: $n_{1}\\sin\\theta_{i}=n_{2}\\sin\\theta_{t}$. At Brewster's angle the reflected and refracted rays are at right angles: $\\theta_{i}+\\theta_{t}=90^{\\circ}$. Using Snell's law,\n$$n_{1}\\sin\\theta_{B}=n_{2}\\cos\\theta_{B}$$\nso\n$$\\tan\\theta_{B}=\\frac{n_{2}}{n_{1}}$$\nThus $\\theta_{B}=\\arctan\\left(\\frac{n_{2}}{n_{1}}\\right)$. At this angle the reflected ray is perfectly polarized perpendicular to the plane of incidence, while the refracted ray follows Snell's law and propagates inside the medium.\n<p>Marking scheme: state Brewster's angle, derive $\\tan\\theta_{B}=n_{2}/n_{1}$, mention right‑angle condition, describe polarization of reflected ray.</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "In Young's double‑slit experiment, the condition for bright fringes is that the path difference equals $m\\lambda$ (where $m$ is an integer). Which option correctly states the condition?",
+        "options": [
+          "$d\\sin\\theta = m\\lambda$",
+          "$d\\sin\\theta = (m+\\frac{1}{2})\\lambda$",
+          "$d\\sin\\theta = \\frac{\\lambda}{m}$",
+          "$d\\sin\\theta = \\frac{m\\lambda}{2}$"
+        ],
+        "answer": 0,
+        "explain": "Bright (constructive) interference occurs when the path difference $\\Delta = d\\sin\\theta$ equals an integral multiple of the wavelength, i.e., $\\Delta = m\\lambda$."
+      },
+      {
+        "q": "Two slits separated by $d=0.5\\,\\text{mm}$ are illuminated by monochromatic light of wavelength $\\lambda=600\\,\\text{nm}$. What is the angular position $\\theta$ of the first-order ($m=1$) bright fringe?",
+        "options": [
+          "$\\theta = 1.2\\times10^{-3}\\,\\text{rad}$",
+          "$\\theta = 1.2\\times10^{-3}\\,\\text{deg}$",
+          "$\\theta = 1.2\\times10^{-3}$ (dimensionless)",
+          "$\\theta = 1.2\\times10^{-3}\\,\\text{m}$"
+        ],
+        "answer": 0,
+        "explain": "Using $d\\sin\\theta = m\\lambda$, $\\sin\\theta = \\frac{600\\times10^{-9}}{0.5\\times10^{-3}} = 1.2\\times10^{-3}$, so $\\theta \\approx 1.2\\times10^{-3}\\,\\text{rad}$."
+      },
+      {
+        "q": "The angular width $\\Delta\\theta$ of the central maximum in single‑slit diffraction of width $a$ is given by which expression?",
+        "options": [
+          "$\\Delta\\theta = \\frac{\\lambda}{a}$",
+          "$\\Delta\\theta = \\frac{2\\lambda}{a}$",
+          "$\\Delta\\theta = \\frac{\\lambda}{2a}$",
+          "$\\Delta\\theta = \\frac{a}{\\lambda}$"
+        ],
+        "answer": 1,
+        "explain": "First minima occur at $a\\sin\\theta = \\pm\\lambda$, so the angular width between them is $\\Delta\\theta \\approx \\frac{2\\lambda}{a}$ for small angles."
+      },
+      {
+        "q": "A diffraction grating has $N=5000$ lines per cm. What is its resolving power $R$ for the $m^{\\text{th}}$ order?",
+        "options": [
+          "$R = mN$",
+          "$R = mN\\times10^{-2}$",
+          "$R = \\frac{m}{N}$",
+          "$R = \\frac{N}{m}$"
+        ],
+        "answer": 0,
+        "explain": "Resolving power $R = mN$, where $N$ is the total number of illuminated slits. Here $N = 5000\\,\\text{lines/cm}\\times1\\,\\text{cm}=5000$."
+      },
+      {
+        "q": "A diffraction grating of $600$ lines/mm is used in the second order ($m=2$) to resolve two close wavelengths. Which statement is correct?",
+        "options": [
+          "The resolving power increases with the number of illuminated lines.",
+          "The resolving power is independent of the order $m$.",
+          "Higher order always gives lower resolving power.",
+          "Resolving power depends only on the slit width."
+        ],
+        "answer": 0,
+        "explain": "Resolving power $R=mN$; increasing the number of illuminated lines $N$ (or using a higher order $m$) raises $R$."
+      },
+      {
+        "q": "According to Rayleigh’s criterion, the minimum resolvable angular separation $\\theta_{\\min}$ for a circular aperture of diameter $D$ is $1.22\\frac{\\lambda}{D}$. Which option correctly represents this?",
+        "options": [
+          "$\\theta_{\\min}=1.22\\frac{\\lambda}{D}$",
+          "$\\theta_{\\min}=0.61\\frac{\\lambda}{D}$",
+          "$\\theta_{\\min}=\\frac{\\lambda}{1.22D}$",
+          "$\\theta_{\\min}=\\frac{D}{1.22\\lambda}$"
+        ],
+        "answer": 0,
+        "explain": "Rayleigh’s criterion for a circular aperture gives $\\theta_{\\min}=1.22\\frac{\\lambda}{D}$."
+      },
+      {
+        "q": "In a Fresnel biprism experiment, the separation $d$ between the two virtual sources is given by $d=\\frac{2\\mu\\beta x}{L}$, where $\\mu$ is the refractive index of the biprism, $\\beta$ its apex angle, $x$ the distance of the biprism from the slit, and $L$ the distance from biprism to the screen. Which factor increases $d$?",
+        "options": [
+          "Increasing $\\mu$",
+          "Decreasing $\\beta$",
+          "Decreasing $x$",
+          "Increasing $L$"
+        ],
+        "answer": 0,
+        "explain": "From $d=\\frac{2\\mu\\beta x}{L}$, $d$ is directly proportional to $\\mu$, $\\beta$, and $x$, and inversely proportional to $L$; thus increasing $\\mu$ increases $d$."
+      },
+      {
+        "q": "When light reflects from a medium of higher refractive index, the phase change is:",
+        "options": [
+          "$\\pi$ radians",
+          "$0$ radians",
+          "$\\frac{\\pi}{2}$ radians",
+          "$2\\pi$ radians"
+        ],
+        "answer": 0,
+        "explain": "Reflection from a denser medium introduces a phase shift of $\\pi$ (half‑wave) relative to the incident wave."
+      },
+      {
+        "q": "If the wavelength of light in vacuum is $\\lambda_0=500\\,\\text{nm}$ and it travels in glass of refractive index $n=1.5$, what is its wavelength $\\lambda$ inside the glass?",
+        "options": [
+          "$\\lambda = 750\\,\\text{nm}$",
+          "$\\lambda = 333\\,\\text{nm}$",
+          "$\\lambda = 500\\,\\text{nm}$",
+          "$\\lambda = 500/1.5\\,\\text{nm}$"
+        ],
+        "answer": 3,
+        "explain": "Wavelength in a medium $\\lambda = \\frac{\\lambda_0}{n}=\\frac{500}{1.5}\\,\\text{nm}\\approx 333\\,\\text{nm}$; option 3 expresses the formula correctly."
+      },
+      {
+        "q": "In Newton’s rings formed by a plano‑convex lens of radius $R$ on a glass plate, the radius $r_m$ of the $m^{\\text{th}}$ bright ring (in reflected light) is given by $r_m = \\sqrt{(m+\\frac{1}{2})\\lambda R}$. Which statement is true?",
+        "options": [
+          "The radius increases with $\\sqrt{m}$",
+          "The radius is independent of $\\lambda$",
+          "The radius decreases with increasing $R$",
+          "The radius is proportional to $m$"
+        ],
+        "answer": 0,
+        "explain": "From $r_m = \\sqrt{(m+\\frac{1}{2})\\lambda R}$, $r_m \\propto \\sqrt{m}$; thus the radius grows as the square root of the order number."
+      }
     ]
   },
   "physics::ch11::physics/chapter11.html": {
@@ -3538,6 +3688,44 @@
         "level": "HOTS",
         "question": "Show that at thermal equilibrium the product of electron concentration $n$ and hole concentration $p$ in an intrinsic semiconductor equals the square of the intrinsic carrier concentration $n_i$, i.e., $np=n_i^2$, using the expressions $n=n_i e^{\\frac{E_F-E_i}{kT}}$ and $p=n_i e^{\\frac{E_i-E_F}{kT}}$.",
         "solution_html": "<p><strong>Given:</strong> $n=n_i e^{\\frac{E_F-E_i}{kT}}$, $p=n_i e^{\\frac{E_i-E_F}{kT}}$.</p><p><strong>Proof:</strong><br/>Multiply the two expressions:<br/>$np=(n_i e^{\\frac{E_F-E_i}{kT}})(n_i e^{\\frac{E_i-E_F}{kT}})=n_i^2 e^{\\frac{E_F-E_i+E_i-E_F}{kT}}=n_i^2 e^{0}=n_i^2$.</p><p><strong>Conclusion:</strong> At equilibrium $np=n_i^2$, which is the mass‑action law for intrinsic semiconductors.</p>"
+      }
+    ],
+    "pyq": [
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "Define an intrinsic semiconductor and write the expression for its electrical conductivity.",
+        "answer_html": "<p>Definition: A pure semiconductor with no impurity atoms; electrons and holes are generated only by thermal excitation.</p><p>Conductivity $\\sigma = q\\,(n_i\\mu_n + p_i\\mu_p)$ where $n_i=p_i$ is the intrinsic carrier concentration, $\\mu_n$ and $\\mu_p$ are mobilities of electrons and holes respectively.</p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "Write the expression for the drift current density of electrons in a semiconductor subjected to an electric field $E$.",
+        "answer_html": "<p>Drift current density of electrons $J_{n,\\text{drift}} = -q\\,n\\,\\mu_n\\,E$, where $q$ is the magnitude of electronic charge, $n$ is the electron concentration and $\\mu_n$ is the electron mobility.</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Explain why the width of the depletion region of a p-n junction increases when a reverse bias is applied.",
+        "answer_html": "<ul><li>Reverse bias widens the depletion region because the external voltage opposes the built‑in potential $V_0$, increasing the potential barrier to $V_0+V_R$.</li><li>The increased barrier pulls more majority carriers away from the junction, leaving a larger region devoid of free carriers.</li><li>Mathematically, depletion width $W = \\sqrt{\\frac{2\\varepsilon_s (V_0+V_R)}{q}\\left(\\frac{1}{N_A}+\\frac{1}{N_D}\\right)}$, showing $W\\propto\\sqrt{V_0+V_R}$.</li></ul>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Derive the relation between the minority carrier concentration and the doping concentration in an n‑type semiconductor at thermal equilibrium.",
+        "answer_html": "<p>At equilibrium, mass‑action law gives $n\\,p = n_i^2$.</p><p>For n‑type, majority carrier concentration $n \\approx N_D$ (donor concentration). Hence minority hole concentration $p = \\frac{n_i^2}{N_D}$.</p><p>Similarly, in p‑type $n = \\frac{n_i^2}{N_A}$.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "A silicon diode has saturation current $I_S = 10^{-12}\\,\\text{A}$ and ideality factor $n=1$. Calculate the forward voltage $V_F$ when the forward current is $I_F = 1\\,\\text{mA}$ at $T=300\\,\\text{K}$. (Take $k = 1.38\\times10^{-23}\\,\\text{J/K}$, $q = 1.6\\times10^{-19}\\,\\text{C}$.)",
+        "answer_html": "<p>Use the diode equation $I = I_S\\left(e^{\\frac{qV}{nkT}}-1\\right)\\approx I_S e^{\\frac{qV}{nkT}}$ for $I\\gg I_S$.</p><p>Rearrange: $V = \\frac{nkT}{q}\\ln\\left(\\frac{I}{I_S}\\right)$.</p><p>Substitute: $\\frac{nkT}{q}=\\frac{1\\times1.38\\times10^{-23}\\times300}{1.6\\times10^{-19}}\\approx 0.0259\\,\\text{V}$.</p><p>$\\ln\\left(\\frac{1\\times10^{-3}}{1\\times10^{-12}}\\right)=\\ln(10^{9})=9\\ln10\\approx 20.72$.</p><p>Thus $V_F = 0.0259\\times20.72 \\approx 0.537\\,\\text{V}$ (≈ $0.54\\,\\text{V}$).</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "Explain the operation of a Zener diode in the reverse breakdown region and sketch its I‑V characteristic, indicating the breakdown voltage $V_Z$.",
+        "answer_html": "<p><strong>Operation:</strong></p><ul><li>When reverse voltage reaches the Zener breakdown voltage $V_Z$, a strong electric field in the depletion region causes tunnelling of electrons from the valence to the conduction band (Zener effect) or avalanche multiplication (if $V_Z$ is high).</li><li>This results in a large increase in reverse current while the voltage across the diode remains almost constant at $V_Z$.</li><li>Thus the Zener diode can maintain a nearly fixed voltage over a wide range of reverse currents, making it useful as a voltage regulator.</li></ul><p><strong>I‑V sketch (textual description):</strong></p><p>Graph shows forward exponential region (like a regular diode) for $V>0$, and a sharp knee at $V=-V_Z$ on the reverse side where current rises sharply while voltage stays near $-V_Z$.</p><p>Key points: point A (origin), point B (forward knee), point C at $V=-V_Z$, $I=I_{Z}$ (breakdown knee), and a near‑vertical line for $V\\approx -V_Z$ as $I$ increases.</p>"
       }
     ]
   },
