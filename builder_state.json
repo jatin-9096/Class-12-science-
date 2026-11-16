@@ -2482,6 +2482,118 @@
         "question": "Explain the working principle of a potentiometer and how it can be used to measure the emf of a cell without drawing any current from the cell. Include a brief description of the required circuit diagram.",
         "answer_html": "<p><b>Answer (5 marks):</b><br>1. A potentiometer consists of a long uniform wire of length $L$ with a constant potential gradient $\\frac{V}{L}$ maintained by a stable voltage source.<br>2. When a galvanometer is connected between a point on the wire (at distance $x$) and the cell under test, the cell voltage $E$ balances the potential difference $V\\frac{x}{L}$ across that segment.<br>3. At the balance point the galvanometer shows zero deflection, meaning $E = V\\frac{x}{L}$, so $E$ can be read directly from the measured length $x$.<br>4. No current flows through the cell because the galvanometer is null‑deflected; thus the cell is not loaded.<br>5. <i>Diagram description:</i> A uniform wire AB with a sliding contact C, a stable voltage source across AB, a galvanometer connected between C and the cell whose emf $E$ is to be measured. The balance point is indicated where the galvanometer reads zero.</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "The resistivity $\\rho$ of a material is given by which of the following expressions?",
+        "options": [
+          "$\\rho = R\\frac{l}{A}$",
+          "$\\rho = \\frac{R}{A}l$",
+          "$\\rho = R\\frac{A}{l}$",
+          "$\\rho = \\frac{l}{RA}$"
+        ],
+        "answer": 2,
+        "explain": "Resistivity $\\rho = R\\frac{A}{l}$ where $R$ is resistance, $A$ cross‑sectional area and $l$ length."
+      },
+      {
+        "q": "If the drift velocity of electrons in a conductor is $v_d$, the current $I$ can be expressed as:",
+        "options": [
+          "$I = n e A v_d$",
+          "$I = n e v_d /A$",
+          "$I = n e A /v_d$",
+          "$I = n e v_d^2 A$"
+        ],
+        "answer": 0,
+        "explain": "Current $I = n e A v_d$, where $n$ is charge carrier density, $e$ charge of electron, $A$ cross‑sectional area."
+      },
+      {
+        "q": "The electric power dissipated in a resistor of resistance $R$ carrying current $I$ is:",
+        "options": [
+          "$P = I R$",
+          "$P = I^2 R$",
+          "$P = \\frac{I}{R}$",
+          "$P = \\frac{I^2}{R}$"
+        ],
+        "answer": 1,
+        "explain": "Power $P = I^2 R$ (also $P = V I = \\frac{V^2}{R}$)."
+      },
+      {
+        "q": "For a Wheatstone bridge to be balanced, which condition must hold?",
+        "options": [
+          "$R_1+R_2 = R_3+R_4$",
+          "$R_1R_2 = R_3R_4$",
+          "$\\frac{R_1}{R_2}=\\frac{R_3}{R_4}$",
+          "$\\frac{R_1}{R_3}=\\frac{R_2}{R_4}$"
+        ],
+        "answer": 2,
+        "explain": "Balance condition: $\\frac{R_1}{R_2}=\\frac{R_3}{R_4}$."
+      },
+      {
+        "q": "A cell of emf $E$ and internal resistance $r$ supplies current $I$ to an external resistor $R$. The terminal voltage $V$ is:",
+        "options": [
+          "$V = E + Ir$",
+          "$V = E - Ir$",
+          "$V = Ir - E$",
+          "$V = \\frac{E}{Ir}$"
+        ],
+        "answer": 1,
+        "explain": "Terminal voltage $V = E - Ir$ (voltage drop across internal resistance)."
+      },
+      {
+        "q": "Assertion (A): In a series circuit, the current through each resistor is the same. Reason (R): The total resistance of the circuit is the sum of individual resistances.",
+        "options": [
+          "Both A and R are true and R correctly explains A",
+          "Both A and R are true but R does not explain A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "In series, same current flows; total resistance $R_{\\text{total}}=\\sum R_i$, which leads to same current for a given emf."
+      },
+      {
+        "q": "In an $RC$ charging circuit, the time constant $\\tau$ is:",
+        "options": [
+          "$\\tau = \\frac{R}{C}$",
+          "$\\tau = RC$",
+          "$\\tau = \\frac{1}{RC}$",
+          "$\\tau = R+C$"
+        ],
+        "answer": 1,
+        "explain": "Time constant $\\tau = RC$; it is the time for charge to reach $63.2\\%$ of its final value."
+      },
+      {
+        "q": "A potentiometer wire of length $L$ has a potential gradient $k$ V/m. The potential difference between two points separated by $x$ meters is:",
+        "options": [
+          "$V = kx$",
+          "$V = \\frac{k}{x}$",
+          "$V = k\\frac{L}{x}$",
+          "$V = \\frac{x}{k}$"
+        ],
+        "answer": 0,
+        "explain": "Potential difference $V = kx$, where $k = \\frac{\\text{emf}}{L}$."
+      },
+      {
+        "q": "The resistance $R$ of a metal at temperature $T$ is given by $R = R_0[1+\\alpha (T-T_0)]$. Here $\\alpha$ denotes:",
+        "options": [
+          "Temperature coefficient of resistivity",
+          "Temperature coefficient of conductivity",
+          "Temperature coefficient of resistance",
+          "Thermal expansion coefficient"
+        ],
+        "answer": 2,
+        "explain": "$\\alpha$ is the temperature coefficient of resistance."
+      },
+      {
+        "q": "A metre bridge is essentially a:",
+        "options": [
+          "Wheatstone bridge with a uniform wire as one arm",
+          "Potentiometer with a sliding contact",
+          "Ohmmeter with a calibrated scale",
+          "Voltmeter with a variable resistor"
+        ],
+        "answer": 0,
+        "explain": "A metre bridge uses a uniform wire as one arm of a Wheatstone bridge to compare resistances."
+      }
     ]
   },
   "physics::ch4::physics/chapter4.html": {
@@ -4105,7 +4217,21 @@
       "Temperature dependence of rate constant (Arrhenius equation)": "<p><strong>Arrhenius Equation</strong> – The temperature dependence of the rate constant $k$ is given by $k = A\\\\,e^{-E_a/(RT)}$ where $k$ is the rate constant, $A$ the frequency factor, $E_a$ the activation energy, $R$ the gas constant (8.314 J mol$^{-1}$ K$^{-1}$) and $T$ the absolute temperature (K).</p><p><strong>Linear form</strong> – Taking natural logarithm, $$\\ln k = \\ln A - \\\\frac{E_a}{R}\\\\,\\\\frac{1}{T}$$. A plot of $\\ln k$ versus $1/T$ yields a straight line with slope $-E_a/R$ and intercept $\\ln A$.</p><p><strong>Units</strong></p><table><tr><th>Variable</th><th>Symbol</th><th>Unit</th><th>Meaning</th></tr><tr><td>Rate constant</td><td>$k$</td><td>depends on order (e.g., s$^{-1}$ for first order)</td><td>Speed of reaction</td></tr><tr><td>Frequency factor</td><td>$A$</td><td>s$^{-1}$ (first order)</td><td>Pre‑exponential factor</td></tr><tr><td>Activation energy</td><td>$E_a$</td><td>kJ mol$^{-1}$</td><td>Energy barrier</td></tr><tr><td>Gas constant</td><td>$R$</td><td>J mol$^{-1}$ K$^{-1}$</td><td>Universal constant</td></tr><tr><td>Temperature</td><td>$T$</td><td>K</td><td>Absolute temperature</td></tr></table><p><strong>Solved example</strong></p><p>Given: $k_1 = 1.5\\times10^{-3}\\,\\text{s}^{-1}$ at $T_1 = 300\\,\\text{K}$ and $k_2 = 6.0\\times10^{-3}\\,\\text{s}^{-1}$ at $T_2 = 320\\,\\text{K}$. Find $E_a$.</p><ul><li>Use $$\\ln\\frac{k_2}{k_1}= -\\frac{E_a}{R}\\left(\\frac{1}{T_2}-\\frac{1}{T_1}\\right)$$</li><li>$\\ln(k_2/k_1)=\\ln(6.0/1.5)=\\ln4=1.386$</li><li>$\\frac{1}{T_2}-\\frac{1}{T_1}=\\frac{1}{320}-\\frac{1}{300}= -2.083\\times10^{-4}\\,\\text{K}^{-1}$</li><li>Rearrange: $E_a = -R\\,\\frac{\\ln(k_2/k_1)}{(1/T_2-1/T_1)}$</li><li>Substitute: $E_a = -8.314\\times\\frac{1.386}{-2.083\\times10^{-4}} \\approx 5.53\\times10^{4}\\,\\text{J mol}^{-1}=55.3\\,\\text{kJ mol}^{-1}$</li></ul><p>Thus the activation energy is $55.3\\,\\text{kJ mol}^{-1}$ and the Arrhenius plot would have slope $-E_a/R$.</p>",
       "Catalysis and reaction mechanism": "<p><strong>Definition of Catalysis</strong>: A catalyst is a substance that increases the rate of a chemical reaction without being consumed, providing an alternative pathway with a lower activation energy $E_a$.</p><p><strong>Types of Catalysts</strong></p><table><tr><th>Type</th><th>Phase</th><th>Example</th></tr><tr><td>Homogeneous</td><td>Same phase as reactants</td><td>Acid‑catalyzed esterification</td></tr><tr><td>Heterogeneous</td><td>Different phase</td><td>Pt surface in hydrogenation</td></tr><tr><td>Enzyme</td><td>Biological macromolecule</td><td>Amylase</td></tr></table><p><strong>Reaction Mechanism</strong></p><ul><li>Consists of a series of elementary steps.</li><li>Each step follows its own rate law; the slowest step is the <em>rate‑determining step (RDS)</em>.</li><li>Overall rate law is derived from the RDS and any pre‑equilibria.</li></ul><p><strong>Key Derivation (Two‑step Catalytic Pathway)</strong></p><p>Consider: $A + C \\rightleftharpoons AC \\xrightarrow{k_2} P + C$</p><p>Assuming rapid pre‑equilibrium for the first step, $K = \\frac{k_1}{k_{-1}} = \\frac{[AC]}{[A][C]}$.</p><p>Overall observed rate constant:</p><p>$k_{\\text{obs}} = \\frac{k_1 k_2}{k_{-1}+k_2}$</p><p>Units: $k_{\\text{obs}}$ – $s^{-1}$ (first order), $E_a$ – $kJ\\,mol^{-1}$.</p><p><strong>Effect on Activation Energy</strong></p><p>Arrhenius equation: $k = A\\,e^{-E_a/RT}$; a catalyst lowers $E_a$, increasing $k$ at a given $T$.</p><p><strong>Solved Example</strong></p><p>Uncatalyzed reaction: $k = 2.0\\times10^{-3}\\,s^{-1}$. Catalytic cycle parameters: $k_1 = 5.0\\times10^{2}\\,M^{-1}s^{-1}$, $k_{-1}=1.0\\times10^{2}\\,s^{-1}$, $k_2=1.0\\times10^{3}\\,s^{-1}$.</p><p>Calculate $k_{\\text{obs}}$:</p><p>$k_{\\text{obs}} = \\frac{5.0\\times10^{2}\\times1.0\\times10^{3}}{1.0\\times10^{2}+1.0\\times10^{3}} = \\frac{5.0\\times10^{5}}{1.1\\times10^{3}} \\approx 4.55\\times10^{2}\\,s^{-1}$.</p><p>Half‑life for first‑order decay:</p><p>$t_{1/2}=\\frac{\\ln2}{k_{\\text{obs}}} \\approx \\frac{0.693}{4.55\\times10^{2}} \\approx 1.5\\times10^{-3}\\,s$.</p><p>This illustrates how a catalyst dramatically accelerates the reaction by providing a fast pathway with a much larger $k_{\\text{obs}}$ and a correspondingly short half‑life.</p>",
       "Collision theory and factors affecting rate": "<p><strong>Collision Theory</strong> states that a reaction occurs when reactant molecules collide with (i) energy ≥ activation energy ($E_a$) and (ii) proper orientation.</p><p><strong>Key Equation</strong></p><table><tr><th>Expression</th><th>Meaning</th></tr><tr><td>$k = Z_{AB}\\,p\\,e^{-E_a/RT}$</td><td>Rate constant in terms of collision frequency ($Z_{AB}$), steric factor ($p$) and Arrhenius factor.</td></tr></table><p><strong>Collision Frequency ($Z_{AB}$)</strong></p><p>$Z_{AB}=N_A\\,N_B\\,\\sigma_{AB}\\sqrt{\\frac{8k_B T}{\\pi \\mu}}$ where $N_i$ are number concentrations (mol L$^{-1}$), $\\sigma_{AB}$ is collision cross‑section (m$^{2}$) and $\\mu$ reduced mass (kg).</p><ul><li><strong>Concentration:</strong> $Z_{AB}\\propto [A][B]$ – doubling a reactant doubles the rate for elementary bimolecular steps.</li><li><strong>Temperature:</strong> Appears in $Z_{AB}$ (∝$\\sqrt{T}$) and in $e^{-E_a/RT}$ – a 10 °C rise roughly doubles $k$ (rule of thumb).</li><li><strong>Orientation (steric factor $p$):</strong> $0<li><strong>Catalyst:</strong> Provides an alternative pathway with lower $E_a$, increasing $e^{-E_a/RT}$.</li><li><strong>Pressure (gases):</strong> Increases $[A]$ and $[B]$, thus $Z_{AB}$.</li></li></ul><p><strong>SI Units</strong></p><ul><li>$k$ – $s^{-1}$ (first order), $M^{-1}s^{-1}$ (second order).</li><li>$E_a$ – $kJ\\,mol^{-1}$.</li></ul><p><strong>Example</strong></p><p>For a reaction with $E_a=75\\;kJ\\,mol^{-1}$ at $T=300\\;K$, calculate the \\frac{t}ion $f$ of molecules having energy ≥ $E_a$.</p><p>$f = e^{-E_a/RT}=e^{-\\frac{75\\times10^{3}}{8.314\\times300}}=e^{-30.1}\\approx9.2\\times10^{-14}$.</p><p>Thus only an extremely small fraction collides effectively; a catalyst or temperature rise is essential.</p>"
-    }
+    },
+    "short_notes": [
+      {
+        "title": "Important Formulas",
+        "html": "<table border=\\\"1\\\" cellpadding=\\\"5\\\" cellspacing=\\\"0\\\"><tr><th>Expression</th><th>Formula</th></tr><tr><td>Rate law (general)</td><td>$rate = -\\frac{d[A]}{dt}=k[A]^n$</td></tr><tr><td>First order integrated</td><td>$\\ln[A] = \\ln[A]_0 - kt$</td></tr><tr><td>Half‑life (first order)</td><td>$t_{1/2}= \\frac{0.693}{k}$</td></tr><tr><td>Second order integrated</td><td>$\\frac{1}{[A]} = \\frac{1}{[A]_0} + kt$</td></tr><tr><td>Arrhenius equation</td><td>$k = A e^{-E_a/(RT)}$</td></tr><tr><td>Arrhenius (log form)</td><td>$\\ln k = \\ln A - \\frac{E_a}{RT}$</td></tr><tr><td>Temperature coefficient (Q10)</td><td>$Q_{10}= \\frac{k_{T+10}}{k_T}$</td></tr></table>"
+      },
+      {
+        "title": "Key Definitions & Laws",
+        "html": "<ul><li><strong>Rate of reaction:</strong> Change in concentration of a reactant or product per unit time, $rate = -\\frac{1}{a}\\frac{d[A]}{dt}=\\frac{1}{b}\\frac{d[B]}{dt}$.</li><li><strong>Order of reaction:</strong> Sum of powers of concentration terms in the rate law; determines how rate depends on concentration.</li><li><strong>Rate constant ($k$):</strong> Proportionality constant in the rate law; depends on temperature, catalyst, and reaction mechanism.</li><li><strong>Activation energy ($E_a$):</strong> Minimum energy that reacting molecules must possess to form products; appears in the Arrhenius equation.</li><li><strong>Catalyst:</strong> Substance that provides an alternative pathway with lower $E_a$, increasing $k$ without being consumed.</li><li><strong>Reaction mechanism:</strong> Stepwise sequence of elementary reactions leading from reactants to products.</li><li><strong>Rate‑determining step (RDS):</strong> Slowest elementary step; its rate law governs the overall reaction rate.</li><li><strong>Molecularity:</strong> Number of molecules colliding in an elementary step (uni‑, bi‑, termolecular).</li><li><strong>Collision theory:</strong> Reaction occurs when reactant molecules collide with energy $\\ge E_a$ and proper orientation.</li><li><strong>Transition state theory:</strong> Reactants form an activated complex at the top of the potential energy curve before converting to products.</li></ul>"
+      },
+      {
+        "title": "Summary & Common Mistakes",
+        "html": "<p>• Identify the overall order from experimental data; never assume it from the stoichiometric coefficients.</p><p>• Use the correct integrated form based on the order: first‑order → ln plot, second‑order → 1/[A] plot.</p><p>• Half‑life is constant only for first‑order reactions; for others it varies with concentration.</p><p>• When applying the Arrhenius equation, keep $T$ in Kelvin and $E_a$ in J mol$^{-1}$ (or kJ mol$^{-1}$ with consistent units).</p><p>• $Q_{10}$ is useful for approximate temperature effects over a 10 °C range; do not extrapolate far beyond the measured range.</p><ul><li>Common mistake: forgetting the negative sign in $\\frac{d[A]}{dt}$ for reactants.</li><li>Mixing natural log (ln) with base‑10 log (log) in Arrhenius calculations.</li><li>Using concentration units inconsistently (M vs mol L$^{-1}$) leading to wrong $k$ values.</li><li>Assuming a reaction is first order because it appears linear on a concentration‑time graph without checking other orders.</li><li>Ignoring the effect of catalysts on $E_a$ and treating $k$ as unchanged.</li></ul>"
+      }
+    ]
   },
   "chemistry::ch3::chemistry/chemical-kinetics/mind-map.html": {
     "topics": [
@@ -4161,7 +4287,8 @@
       "Electronic configuration of $d$- and $f$-block elements": "<p><strong>Definition:</strong> The electronic configuration of $d$‑ and $f$‑block elements describes the distribution of electrons among the $(n-1)d$ and $(n-2)f$ orbitals respectively, following the Aufbau principle, Pauli exclusion principle and Hund's rule.</p><p><strong>Key Rules (Madelung or $n+\\ell$ rule):</strong></p><ul><li>Each orbital is filled in order of increasing $n+\\ell$ value.</li><li>If two subshells have the same $n+\\ell$, the one with lower $n$ is filled first.</li></ul><p>For $d$‑block: electrons enter the $(n-1)d$ subshell after the $ns$ subshell is half‑filled, giving the general pattern $[\\text{Ar}]\\,4s^{2}\\,(3d)^{1-10}$ for the first series and $[\\text{Kr}]\\,5s^{2}\\,(4d)^{1-10}$ for the second series.</p><p>For $f$‑block: electrons occupy the $(n-2)f$ subshell after the $ns$ subshell, leading to $[\\text{Xe}]\\,6s^{2}\\,(4f)^{1-14}$ and $[\\text{Rn}]\\,7s^{2}\\,(5f)^{1-14}$.</p><p><strong>Typical Configurations (selected elements):</strong></p><table><tr><th>Element</th><th>Configuration</th></tr><tr><td>Sc ($Z=21$)</td><td>$[\\text{Ar}]\\,4s^{2}\\,3d^{1}$</td></tr><tr><td>Fe ($Z=26$)</td><td>$[\\text{Ar}]\\,4s^{2}\\,3d^{6}$</td></tr><tr><td>Y ($Z=39$)</td><td>$[\\text{Kr}]\\,5s^{2}\\,4d^{1}$</td></tr><tr><td>Ce ($Z=58$)</td><td>$[\\text{Xe}]\\,6s^{2}\\,4f^{1}\\,5d^{1}$ (anomaly)</td></tr></table><p><strong>Solved Example:</strong> Write the ground‑state configuration of $\\mathrm{Fe}$ ($Z=26$).</p><ol><li>Identify the nearest noble gas: $[\\text{Ar}]$ (Z=18).</li><li>Distribute the remaining 8 electrons: fill $4s$ first (2 e⁻) → $4s^{2}$.</li><li>Remaining 6 electrons go to $3d$ (since $4s$ is lower $n+\\ell$). → $3d^{6}$.</li><li>Thus, $\\mathrm{Fe}$: $[\\text{Ar}]\\,4s^{2}\\,3d^{6}$.</li></ol><p><strong>Note:</strong> Electronic configurations are dimensionless; they merely indicate the count of electrons in each subshell.</p>",
       "Anomalous electron configurations and exceptions": "<p><strong>Definition:</strong> An anomalous electron configuration occurs when the observed arrangement of electrons in an atom or ion deviates from the order predicted by the Aufbau principle, usually to attain a half‑filled or fully‑filled $d$ or $f$ subshell, which offers extra exchange stability.</p><ul><li>Typical rule: fill lower $n+\\ell$ first; if two subshells have the same $n+\\ell$, fill the one with lower $n$.</li><li>Exception arises because a half‑filled ($d^{5}$, $f^{7}$) or fully‑filled ($d^{10}$, $f^{14}$) subshell gains extra exchange energy.</li></ul><p><strong>Key points &amp; formulae:</strong></p><ul><li>Exchange‑stabilisation energy (qualitative): $\\\\Delta E_{ex}= -\\\\frac{1}{2}K n_{\\\\uparrow} n_{\\\\downarrow}$, where $K$ is the exchange integral and $n_{\\\\uparrow}, n_{\\\\downarrow}$ are numbers of electrons with parallel spins.</li><li>Energy unit for stability: $\\\\text{kJ mol}^{-1}$.</li><li>Common $d$‑block anomalies: Cr ($Z=24$) and Cu ($Z=29$); $f$‑block anomalies: Gd ($Z=64$) and Lu ($Z=71$).</li></ul><p><strong>Example (solved):</strong> Determine the ground‑state configuration of chromium (Z=24) and explain the anomaly.</p><table><tr><th>Step</th><th>Explanation</th></tr><tr><td>1</td><td>Expected configuration from Aufbau: $\\\\text{[Ar]}3d^{4}4s^{2}$.</td></tr><tr><td>2</td><td>Observed configuration: $\\\\text{[Ar]}3d^{5}4s^{1}$.</td></tr><tr><td>3</td><td>Reason: a half‑filled $3d$ subshell ($3d^{5}$) provides maximum exchange stabilisation, outweighing the energy cost of promoting one $4s$ electron to $3d$.</td></tr><tr><td>4</td><td>Resulting ionisation energy reflects this extra stability; $\\text{IE}_{1}$ of Cr is lower than expected, confirming the anomaly.</td></tr></table><p>This pattern recurs across the transition series and must be memorised for quick recall in CBSE examinations.</p>",
       "Oxidation states and their periodic trends": "<p><strong>Oxidation states in d‑ and f‑block elements</strong> refer to the effective charge an atom acquires after loss or gain of electrons in a compound. It is a dimensionless quantity used to balance redox equations.</p><p><strong>Key points and periodic trends</strong></p><ul><li>Across a period (from left to right) the maximum oxidation state generally <strong>increases</strong> due to the increasing nuclear charge and availability of d‑electrons for bonding.</li><li>Down a group the maximum oxidation state <strong>decreases</strong> because of the poor overlap of 4f/5f orbitals and the lanthanide/actinide contraction.</li><li>Early transition metals (Sc, Ti, V) exhibit high positive states (+3 to +5) whereas later ones (Ni, Cu, Zn) show lower or fixed states (+2, +1, 0).</li><li>In the f‑block, the common oxidation states are +3 (most stable) and +2/+4 for selected lanthanides and actinides.</li><li>Electronegativity (Pauling scale, unitless) and ionisation energy (kJ·mol<sup>−1</sup>) correlate positively with the ability to attain higher positive oxidation numbers.</li></ul><p><strong>General formula for oxidation‑state calculation</strong></p><p>$OS = \\text{charge of the compound} - \\sum \\text{(oxidation numbers of all other atoms)}$</p><p><strong>Typical oxidation states</strong></p><table><tr><th>Element</th><th>Common $OS$</th></tr><tr><td>Sc</td><td>$+3$</td></tr><tr><td>Fe</td><td>$+2$, $+3$</td></tr><tr><td>Cu</td><td>$+1$, $+2$</td></tr><tr><td>Ce</td><td>$+3$, $+4$</td></tr><tr><td>U</td><td>$+3$, $+4$, $+5$, $+6$</td></tr></table><p><strong>Solved example</strong></p><p>Find the oxidation state of Cr in $K_2Cr_2O_7$.</p><p>Solution:</p><ol><li>Assign known states: $OS_{K}=+1$, $OS_{O}=-2$.</li><li>Let $OS_{Cr}=x$. The compound is neutral, so<br/>$2(+1)+2x+7(-2)=0$.</li><li>Simplify: $2+2x-14=0 \\Rightarrow 2x=12 \\Rightarrow x=+6$.</li><li>Thus each Cr atom is in the $+6$ oxidation state.</li></ol><p>Understanding these trends helps predict the chemistry of transition and inner‑transition metals in redox reactions and coordination compounds.</p>",
-      "Chemical properties of transition metals": "<p><strong>Transition Metals</strong> – elements of the d‑block (groups 3–12) that possess an incomplete d‑subshell in at least one oxidation state.</p><ul><li><strong>Variable oxidation states</strong>: due to comparable energies of $(n-1)d$ and $ns$ orbitals. Example: $\\text{Mn}$ shows $+2$ to $+7$.</li><li><strong>Formation of coloured compounds</strong>: d‑d electronic transitions absorb visible light. Energy of transition $\\Delta E = hc/\\lambda$ (SI unit: J).</li><li><strong>Catalytic activity</strong>: ability to change oxidation state facilitates redox cycles. Rate constant $k$ (unit: s$^{-1}$).</li><li><strong>Complex ion formation</strong>: high charge density leads to large stability constants $K_f = \\frac{[ML_n]}{[M][L]^n}$ (dimensionless).</li></ul><table><tr><th>Property</th><th>Typical Observation</th></tr><tr><td>Oxidation states</td><td>$+2$ to $+7$ (e.g., $\\text{Mn}$)</td></tr><tr><td>Colour</td><td>Due to $d\\!\\!\\rightarrow\\!d$ transitions; $\\lambda$ in 400–700 nm</td></tr><tr><td>Catalysis</td><td>Redox cycles; $\\Delta H$ in kJ·mol$^{-1}$</td></tr><tr><td>Complex stability</td><td>$K_f$ often $&gt;10^{10}$</td></tr></table><p><strong>Solved Example</strong></p><p>Find the oxidation state of Fe in the complex ion $[Fe(CN)_6]^{4-}$.</p><ol><li>Let oxidation state of Fe be $x$.</li><li>Each cyanide ion carries $-1$ charge, total charge $6(-1) = -6$.</li><li>Overall charge of the ion is $-4$: $x + (-6) = -4$.</li><li>Thus $x = +2$.</li></ol><p>Hence Fe is in the $+2$ oxidation state, which explains the diamagnetic nature of the complex.</p>"
+      "Chemical properties of transition metals": "<p><strong>Transition Metals</strong> – elements of the d‑block (groups 3–12) that possess an incomplete d‑subshell in at least one oxidation state.</p><ul><li><strong>Variable oxidation states</strong>: due to comparable energies of $(n-1)d$ and $ns$ orbitals. Example: $\\text{Mn}$ shows $+2$ to $+7$.</li><li><strong>Formation of coloured compounds</strong>: d‑d electronic transitions absorb visible light. Energy of transition $\\Delta E = hc/\\lambda$ (SI unit: J).</li><li><strong>Catalytic activity</strong>: ability to change oxidation state facilitates redox cycles. Rate constant $k$ (unit: s$^{-1}$).</li><li><strong>Complex ion formation</strong>: high charge density leads to large stability constants $K_f = \\frac{[ML_n]}{[M][L]^n}$ (dimensionless).</li></ul><table><tr><th>Property</th><th>Typical Observation</th></tr><tr><td>Oxidation states</td><td>$+2$ to $+7$ (e.g., $\\text{Mn}$)</td></tr><tr><td>Colour</td><td>Due to $d\\!\\!\\rightarrow\\!d$ transitions; $\\lambda$ in 400–700 nm</td></tr><tr><td>Catalysis</td><td>Redox cycles; $\\Delta H$ in kJ·mol$^{-1}$</td></tr><tr><td>Complex stability</td><td>$K_f$ often $&gt;10^{10}$</td></tr></table><p><strong>Solved Example</strong></p><p>Find the oxidation state of Fe in the complex ion $[Fe(CN)_6]^{4-}$.</p><ol><li>Let oxidation state of Fe be $x$.</li><li>Each cyanide ion carries $-1$ charge, total charge $6(-1) = -6$.</li><li>Overall charge of the ion is $-4$: $x + (-6) = -4$.</li><li>Thus $x = +2$.</li></ol><p>Hence Fe is in the $+2$ oxidation state, which explains the diamagnetic nature of the complex.</p>",
+      "Complex formation and coordination chemistry of $d$-block elements": "<p><strong>Complex formation (d‑block)</strong></p><ul><li><strong>Coordination compound</strong>: central metal ion $M^{n+}$ bonded to $x$ ligands $L$ through coordinate covalent bonds, written as $[ML_x]^{n'}$.</li><li><strong>Coordination number (CN)</strong>: number of donor atoms around the metal. Common CN = 4 (tetrahedral, square planar) and 6 (octahedral).</li><li><strong>Oxidation state</strong> of metal = charge on $M$ before ligand attachment.</li></ul><p><strong>Key formulas</strong></p><table><tr><th>Parameter</th><th>Expression</th></tr><tr><td>Stability constant $K_f$</td><td>$K_f = \\frac{[ML_n]}{[M][L]^n}$ (dimensionless)</td></tr><tr><td>Crystal‑field splitting energy</td><td>$\\Delta_o$ (octahedral) or $\\Delta_t$ (tetrahedral) in $\\text{kJ mol}^{-1}$</td></tr><tr><td>Effective atomic number (EAN)</td><td>$\\text{EAN}=Z_{metal}+n$ where $n$ = total electrons donated by ligands</td></tr></table><p><strong>SI units</strong>: $\\Delta$ in $\\text{kJ mol}^{-1}$; concentrations in $\\text{mol dm}^{-3}$.</p><p><strong>Factors influencing stability</strong></p><ul><li>Nature of metal (higher charge → larger $K_f$)</li><li>Nature of ligand (strong field → larger $\\Delta$)</li><li>Chelate effect (multidentate ligands increase $K_f$)</li></ul><p><strong>Solved example</strong></p><p>Calculate $K_f$ for $[Co(NH_3)_6]^{3+}$ if $[Co^{3+}] = 1.0\\times10^{-4}\\,\\text{M}$, $[NH_3] = 0.02\\,\\text{M}$ and $[Co(NH_3)_6]^{3+}=8.0\\times10^{-5}\\,\\text{M}$.</p><p>Solution: $K_f = \\frac{[Co(NH_3)_6]^{3+}}{[Co^{3+}][NH_3]^6}=\\frac{8.0\\times10^{-5}}{(1.0\\times10^{-4})(0.02)^6}=\\frac{8.0\\times10^{-5}}{1.0\\times10^{-4}\\times6.4\\times10^{-11}}\\approx1.3\\times10^{10}$. Thus the complex is very stable.</p>"
     }
   },
   "chemistry::ch5::chemistry/coordination-compounds/long-notes.html": {
@@ -4202,7 +4329,17 @@
     "last_error": "All Groq models failed after fast failover."
   },
   "chemistry::ch6::chemistry/haloalkanes/long-notes.html": {
-    "last_error": "All Groq models failed after fast failover."
+    "last_error": "All Groq models failed after fast failover.",
+    "topics": [
+      "Nomenclature and classification of haloalkanes and haloarenes",
+      "Methods of preparation of haloalkanes",
+      "Physical properties of haloalkanes and haloarenes",
+      "Nucleophilic substitution reactions (SN1 and SN2)",
+      "Elimination reactions (E1 and E2)",
+      "Reactions of haloarenes (electrophilic aromatic substitution and nucleophilic substitution)",
+      "Mechanistic aspects and factors affecting reaction rates",
+      "Industrial applications and environmental impact"
+    ]
   },
   "chemistry::ch6::chemistry/haloalkanes/mind-map.html": {
     "last_error": "All Groq models failed after fast failover."
