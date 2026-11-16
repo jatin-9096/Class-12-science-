@@ -1980,7 +1980,21 @@
       "Discrete Random Variables and Probability Distribution": "<p><strong>Discrete Random Variable (DRV)</strong>: A variable $X$ that can assume only a countable set of distinct values $\\{x_1,x_2,\\dots\\}$.</p><p><strong>Probability Distribution of a DRV</strong> is the list of pairs $(x_i,p_i)$ where $p_i=P(X=x_i)$ satisfying<ul><li>$p_i\\ge 0$ for every $i$</li><li>$\\sum_{i}p_i=1$</li></ul></p><p><strong>Key Formulas</strong></p><ul><li>Mean (Expected value): $\\mu=E(X)=\\sum_{i}x_i p_i$</li><li>Second moment: $E(X^2)=\\sum_{i}x_i^2 p_i$</li><li>Variance: $\\sigma^2=Var(X)=E[(X-\\mu)^2]=E(X^2)-\\mu^2$</li><li>Standard deviation: $\\sigma=\\sqrt{\\sigma^2}$</li></ul><p>Since probability is dimensionless, the SI unit is <strong>none</strong>.</p><p><strong>Example</strong>: Toss a fair coin three times. Let $X$ = number of heads.</p><table><tr><th>$x_i$</th><th>$p_i$</th></tr><tr><td>$0$</td><td>$\\frac{1}{8}$</td></tr><tr><td>$1$</td><td>$\\frac{3}{8}$</td></tr><tr><td>$2$</td><td>$\\frac{3}{8}$</td></tr><tr><td>$3$</td><td>$\\frac{1}{8}$</td></tr></table><p>Calculations:</p><p>Mean: $$\\mu=0\\cdot\\frac{1}{8}+1\\cdot\\frac{3}{8}+2\\cdot\\frac{3}{8}+3\\cdot\\frac{1}{8}=\\frac{12}{8}=1.5$$</p><p>Second moment: $$E(X^2)=0^2\\cdot\\frac{1}{8}+1^2\\cdot\\frac{3}{8}+2^2\\cdot\\frac{3}{8}+3^2\\cdot\\frac{1}{8}=\\frac{21}{8}=2.625$$</p><p>Variance: $$\\sigma^2=2.625-1.5^2=2.625-2.25=0.375$$</p><p>Standard deviation: $$\\sigma=\\sqrt{0.375}\\approx0.612$$</p>",
       "Mean and Variance of Discrete Random Variables": "<p><strong>Mean (Expected Value) of a Discrete Random Variable</strong></p><p>If $X$ takes values $x_i$ with probabilities $p_i$, then $$\\\\mu = E(X)=\\\\sum_{i} x_i p_i$$</p><p><strong>Variance</strong></p><p>$$\\\\sigma^2 = Var(X)=\\\\sum_i (x_i-\\\\mu)^2 p_i = \\\\sum_i x_i^2 p_i - \\\\mu^2$$</p><p><strong>Key Properties</strong></p><ul><li>Both are dimensionless; probability has no SI unit.</li><li>For a linear transformation $Y = aX + b$, $E(Y)=a\\\\mu + b$, $Var(Y)=a^2\\\\sigma^2$.</li></ul><p><strong>Formula Summary</strong></p><table><tr><th>Quantity</th><th>Formula</th></tr><tr><td>Mean</td><td>$$\\\\mu = \\\\sum x_i p_i$$</td></tr><tr><td>Second Moment</td><td>$$E(X^2)=\\\\sum x_i^2 p_i$$</td></tr><tr><td>Variance</td><td>$$\\\\sigma^2 = E(X^2)-\\\\mu^2$$</td></tr></table><p><strong>Example</strong></p><p>A loaded die has probabilities: $P(1)=0.1$, $P(2)=0.2$, $P(3)=0.3$, $P(4)=0.2$, $P(5)=0.1$, $P(6)=0.1$. Find the mean and variance.</p><p>Mean:</p><p>$$\\\\mu = 1(0.1)+2(0.2)+3(0.3)+4(0.2)+5(0.1)+6(0.1)=3.3$$</p><p>Second moment:</p><p>$$E(X^2)=1^2(0.1)+2^2(0.2)+3^2(0.3)+4^2(0.2)+5^2(0.1)+6^2(0.1)$$\n$$=0.1+0.8+2.7+3.2+2.5+3.6=12.9$$</p><p>Variance:</p><p>$$\\\\sigma^2 = 12.9-(3.3)^2 = 12.9-10.89 = 2.01$$</p><p>Thus, $E(X)=3.3$ and $Var(X)=2.01$ (dimensionless).</p>"
     },
-    "last_error": "All Groq models failed after fast failover."
+    "last_error": "All Groq models failed after fast failover.",
+    "short_notes": [
+      {
+        "title": "Important Formulas",
+        "html": "<table border='1' cellpadding='5' cellspacing='0'><tr><th>Concept</th><th>Formula</th></tr><tr><td>Probability of an event</td><td>$\\\\frac{\\text{Number of favourable outcomes}}{\\text{Total number of outcomes}}$</td></tr><tr><td>Complementary event</td><td>$P(A')=1-P(A)$</td></tr><tr><td>Mutually exclusive events</td><td>$P(A\\cup B)=P(A)+P(B)$</td></tr><tr><td>General addition rule</td><td>$P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$</td></tr><tr><td>Conditional probability</td><td>$P(A|B)=\\\\frac{P(A\\cap B)}{P(B)}$, $P(B)>0$</td></tr><tr><td>Multiplication rule</td><td>$P(A\\cap B)=P(A)\\,P(B|A)=P(B)\\,P(A|B)$</td></tr><tr><td>Bayes theorem</td><td>$P(A_i|B)=\\\\frac{P(B|A_i)P(A_i)}{\\sum_{k=1}^{n}P(B|A_k)P(A_k)}$</td></tr><tr><td>Permutation of n distinct objects</td><td>$P_n=n!$</td></tr><tr><td>Permutation of n objects taken r at a time</td><td>$^nP_r=\\\\frac{n!}{(n-r)!}$</td></tr><tr><td>Combination of n objects taken r at a time</td><td>$^nC_r=\\\\frac{n!}{r!(n-r)!}$</td></tr><tr><td>Binomial probability</td><td>$P(X=r)=^nC_r p^{r} q^{n-r}$, $q=1-p$</td></tr><tr><td>Mean of binomial distribution</td><td>$\\mu=np$</td></tr><tr><td>Variance of binomial distribution</td><td>$\\sigma^{2}=npq$</td></tr><tr><td>Poisson probability</td><td>$P(X=r)=\\\\frac{e^{-\\lambda}\\lambda^{r}}{r!}$</td></tr><tr><td>Mean & variance of Poisson</td><td>$\\mu=\\sigma^{2}=\\lambda$</td></tr></table>"
+      },
+      {
+        "title": "Key Definitions & Laws",
+        "html": "<ul><li><strong>Sample space (S)</strong>: Set of all possible outcomes of an experiment.</li><li><strong>Event (A)</strong>: Any subset of $S$.</li><li><strong>Complementary event</strong>: $A' = S\\setminus A$, $P(A')=1-P(A)$.</li><li><strong>Mutually exclusive (disjoint) events</strong>: $A\\cap B=\\emptyset$, $P(A\\cup B)=P(A)+P(B)$.</li><li><strong>Independent events</strong>: $P(A\\cap B)=P(A)P(B)$ or $P(A|B)=P(A)$.</li><li><strong>Addition law</strong>: $P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$.</li><li><strong>Multiplication law</strong>: $P(A\\cap B)=P(A)P(B|A)=P(B)P(A|B)$.</li><li><strong>Bayes theorem</strong>: Relates prior and posterior probabilities as given in the formula table.</li><li><strong>Random variable (X)</strong>: Numerical outcome of a random experiment.</li><li><strong>Probability distribution</strong>: Lists $P(X=r)$ for all possible $r$.</li></ul>"
+      },
+      {
+        "title": "Summary & Common Mistakes",
+        "html": "<p><strong>Summary</strong>: Probability quantifies the likelihood of events. Use the basic definition for equally likely outcomes, otherwise apply conditional probability, multiplication rule, or Bayes theorem. For counting, choose permutations when order matters and combinations when it does not. Binomial and Poisson are the two standard discrete distributions; remember their mean and variance formulas.</p><p><strong>Common Mistakes</strong></p><ul><li>Confusing $P(A|B)$ with $P(B|A)$. Always write the conditioning event in the denominator.</li><li>Omitting the $-P(A\\cap B)$ term in the general addition rule for non‑exclusive events.</li><li>Using $n!$ for permutations without dividing by $(n-r)!$ when only $r$ objects are selected.</li><li>Treating $^nC_r$ as $\\frac{n!}{(n-r)!}$ (missing the $r!$ factor).</li><li>Applying binomial formula when trials are not independent or when $p$ varies.</li><li>For Poisson approximation, forgetting the condition $\\lambda=np$ and $n\\ge 20$, $p\\le 0.05$.</li></ul>"
+      }
+    ]
   },
   "physics::ch1::physics/chapter1.html": {
     "topics": [
@@ -2982,6 +2996,28 @@
         "title": "Summary & Common Mistakes",
         "html": "<p>Wave optics hinges on the superposition principle and the requirement of coherence. For clear interference patterns ensure: (i) monochromatic source, (ii) point‑like or narrow slits, (iii) equal path lengths within a fraction of \\(\\lambda\\). Diffraction effects become prominent when slit width \\(\\sim \\lambda\\) or when using a grating with many slits.</p><p><strong>Common mistakes to avoid:</strong></p><ul><li>Confusing slit separation \\(d\\) with slit width \\(a\\) – the former appears in interference equations, the latter in single‑slit diffraction.</li><li>Using wrong sign for order \\(m\\) in destructive condition; remember the \\(\\frac12\\) term.</li><li>Neglecting the small‑angle approximation – replace \\(\\sin\\theta\\) by \\(\\theta\\) (in radians) only when \\(\\theta\\) is <~10°.</li><li>Mixing up linear fringe position \\(y\\) with angular position \\(\\theta\\); convert using \\(y = D\\tan\\theta \\approx D\\theta\\).</li><li>Overlooking the factor 1.22 in Rayleigh criterion for circular apertures.</li></ul>"
       }
+    ],
+    "numericals": [
+      {
+        "level": "NCERT / Board Standard / HOTS",
+        "question": "A single slit of width $0.02\\,\\text{mm}$ is illuminated by monochromatic light of wavelength $600\\,\\text{nm}$. Find the angular position of the first minima.",
+        "solution_html": "<p><b>Given:</b> slit width $a=0.02\\,\\text{mm}=2\\times10^{-5}\\,\\text{m}$, wavelength $\\lambda=600\\,\\text{nm}=6\\times10^{-7}\\,\\text{m}$, order $m=1$.</p><p><b>Formula:</b> $a\\sin\\theta=m\\lambda$.</p><p><b>Calculation:</b><br/>$$\\sin\\theta=\\frac{m\\lambda}{a}=\\frac{6\\times10^{-7}}{2\\times10^{-5}}=0.03$$<br/>$$\\theta=\\sin^{-1}(0.03)\\approx1.72^{\\circ}$$</p><p><b>Answer:</b> The first minima occurs at $\\theta\\approx1.72^{\\circ}$.</p>"
+      },
+      {
+        "level": "NCERT / Board Standard / HOTS",
+        "question": "A diffraction grating having $5000$ lines per cm is used to resolve two wavelengths $600\\,\\text{nm}$ and $600.1\\,\\text{nm}$ in the second order. Find the minimum number of illuminated slits required.",
+        "solution_html": "<p><b>Given:</b> line density $N_{\\\\text{line}}=5000\\\\,\\\\text{lines/cm}=5\\\\times10^{5}\\\\,\\\\text{lines/m}$, $\\\\lambda=600\\\\,\\\\text{nm}=6\\\\times10^{-7}\\\\,\\\\text{m}$, $\\\\Delta\\\\lambda=0.1\\\\,\\\\text{nm}=1\\\\times10^{-10}\\\\,\\\\text{m}$, order $m=2$.</p><p><b>Formula:</b> Resolving power $R=\\\\frac{\\\\lambda}{\\\\Delta\\\\lambda}=mN$, where $N$ is the number of illuminated slits.</p><p><b>Calculation:</b><br/>$$R=\\\\frac{6\\\\times10^{-7}}{1\\\\times10^{-10}}=6000$$<br/>$$N=\\\\frac{R}{m}=\\\\frac{6000}{2}=3000$$</p><p><b>Answer:</b> At least $3000$ slits must be illuminated.</p>"
+      },
+      {
+        "level": "NCERT / Board Standard / HOTS",
+        "question": "Find the minimum diameter of a telescope aperture required to resolve two stars separated by $0.5$ arc‑seconds using light of wavelength $550\\,\\text{nm}$.",
+        "solution_html": "<p><b>Given:</b> wavelength $\\\\lambda=550\\\\,\\\\text{nm}=5.5\\\\times10^{-7}\\\\,\\\\text{m}$, angular separation $\\\\theta=0.5''=\\\\frac{0.5}{206265}\\\\,\\\\text{rad}=2.424\\\\times10^{-6}\\\\,\\\\text{rad}$.</p><p><b>Formula (Rayleigh criterion):</b> $\\\\theta=1.22\\\\frac{\\\\lambda}{D}$, therefore $D=1.22\\\\frac{\\\\lambda}{\\\\theta}$.</p><p><b>Calculation:</b><br/>$$D=1.22\\\\frac{5.5\\\\times10^{-7}}{2.424\\\\times10^{-6}}\\\\approx2.77\\\\times10^{-1}\\\\,\\\\text{m}=27.7\\\\,\\\\text{cm}$$</p><p><b>Answer:</b> Minimum aperture diameter $\\\\approx27.7\\\\,\\\\text{cm}$.</p>"
+      },
+      {
+        "level": "NCERT / Board Standard / HOTS",
+        "question": "Two slits separated by $0.5\\,\\text{mm}$ are illuminated by light of wavelength $650\\,\\text{nm}$. The screen is placed $2\\,\\text{m}$ away. Find the fringe width.",
+        "solution_html": "<p><b>Given:</b> slit separation $d=0.5\\\\,\\\\text{mm}=5\\\\times10^{-4}\\\\,\\\\text{m}$, wavelength $\\\\lambda=650\\\\,\\\\text{nm}=6.5\\\\times10^{-7}\\\\,\\\\text{m}$, distance to screen $D=2\\\\,\\\\text{m}$.</p><p><b>Formula:</b> Fringe width $\\\\beta=\\\\frac{\\\\lambda D}{d}$.</p><p><b>Calculation:</b><br/>$$\\\\beta=\\\\frac{6.5\\\\times10^{-7}\\\\times2}{5\\\\times10^{-4}}=2.6\\\\times10^{-3}\\\\,\\\\text{m}=2.6\\\\,\\\\text{mm}$$</p><p><b>Answer:</b> Fringe width $=2.6\\\\,\\\\text{mm}$.</p>"
+      }
     ]
   },
   "physics::ch11::physics/chapter11.html": {
@@ -3479,7 +3515,20 @@
         "answer": 0,
         "explain": "Henry’s law relates concentration $C$ of a gas to its partial pressure $P$ via $C = k_H P$. "
       }
-    ]
+    ],
+    "visual_maps": {
+      "mindmap": "mindmap\n  root((Solutions))\n    Concentration terms\n      Molarity\n      Molality\n    Colligative properties\n      Boiling point elevation\n      Freezing point depression\n    Solubility\n      Henry's law\n      Common ion effect",
+      "flowchart": "flowchart TD\n  A[Start] --> B[Define solution]\n  B --> C[Identify solute and solvent]\n  C --> D[Choose concentration unit]\n  D --> E[Calculate required amount]\n  E --> F[Result]",
+      "revision_points": [
+        "Difference between molarity and molality",
+        "Formulae for boiling point elevation and freezing point depression",
+        "Effect of temperature on solubility",
+        "Common ion effect and its applications",
+        "Use of Henry's law for gases"
+      ]
+    },
+    "status": "done",
+    "updated": "2026-11-16 12:29:53"
   },
   "chemistry::ch2::chemistry/electrochemistry/long-notes.html": {
     "last_error": "All Groq models failed after fast failover.",
