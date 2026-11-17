@@ -1923,6 +1923,118 @@
         "question": "Solve $\\frac{dy}{dx}=\\frac{x+y}{x-y}$ given $y=0$ when $x=1$.",
         "answer_html": "<p>Put $y=vx\\;(v=\\frac{y}{x})$, then $\\frac{dy}{dx}=v+x\\frac{dv}{dx}$.<br>Equation becomes $v+x\\frac{dv}{dx}=\\frac{1+v}{1-v}$.<br>Hence $x\\frac{dv}{dx}=\\frac{1+v^{2}}{1-v}$ \\Rightarrow $\\frac{1-v}{1+v^{2}}dv=\\frac{dx}{x}$.<br>Integrate: $\\int\\frac{1}{1+v^{2}}dv-\\int\\frac{v}{1+v^{2}}dv=\\int\\frac{dx}{x}$<br>$\\Rightarrow \\arctan v-\\frac{1}{2}\\ln(1+v^{2})=\\ln|x|+C$.<br>Replace $v=\\frac{y}{x}$: $\\arctan\\frac{y}{x}-\\frac{1}{2}\\ln\\left(1+\\left(\\frac{y}{x}\\right)^{2}\\right)=\\ln|x|+C$.<br>Using $x=1$, $y=0$ gives $C=0$.<br>Final implicit solution: $\\boxed{\\arctan\\frac{y}{x}-\\frac{1}{2}\\ln\\left(1+\\left(\\frac{y}{x}\\right)^{2}\\right)=\\ln|x|}$.</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "The differential equation $\\frac{dy}{dx}+\\frac{2}{x}y=\\sin x$ is of order $\\_\\_$ and degree $\\_\\_$.",
+        "options": [
+          "First, one",
+          "First, two",
+          "Second, one",
+          "Second, two"
+        ],
+        "answer": 0,
+        "explain": "The highest derivative is $\\frac{dy}{dx}$ (order 1) and the equation is linear in $y$ and its derivatives, so degree is 1."
+      },
+      {
+        "q": "Solve the linear differential equation $\\frac{dy}{dx}+3y=6e^{-3x}$. The particular solution satisfying $y(0)=2$ is $y=\\_\\_$.",
+        "options": [
+          "$2e^{-3x}+2$",
+          "$2e^{-3x}+\\frac{2}{3}$",
+          "$2e^{-3x}+\\frac{4}{3}$",
+          "$2e^{-3x}+\\frac{5}{3}$"
+        ],
+        "answer": 2,
+        "explain": "Integrating factor $e^{3x}$ gives $\\frac{d}{dx}(ye^{3x})=6$, integrate to get $ye^{3x}=6x+C$. Using $y(0)=2$ gives $C=2$, so $y=2e^{-3x}+\\frac{4}{3}$."
+      },
+      {
+        "q": "Assertion (A): The differential equation $\\frac{dy}{dx}=\\frac{y}{x}$ is homogeneous.\\nReason (R): It can be written in the form $\\frac{dy}{dx}=f\\left(\\frac{y}{x}\\right)$.",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "A homogeneous first‑order DE can be expressed as $\\frac{dy}{dx}=f\\left(\\frac{y}{x}\\right)$. Here $f(t)=t$, so both statements are true and R explains A."
+      },
+      {
+        "q": "The integrating factor for the exact equation $ (2xy + y^2)dx + (x^2 + 2xy)dy = 0$ is $\\_\\_$.",
+        "options": [
+          "$\\frac{1}{x^2}$",
+          "$\\frac{1}{y^2}$",
+          "$\\frac{1}{xy}$",
+          "$1$"
+        ],
+        "answer": 3,
+        "explain": "The given equation is already exact because $\\frac{\\partial}{\\partial y}(2xy+y^2)=2x+2y$ and $\\frac{\\partial}{\\partial x}(x^2+2xy)=2x+2y$. Hence integrating factor is $1$."
+      },
+      {
+        "q": "For the Bernoulli equation $\\frac{dy}{dx}+y = y^2$, the substitution $v=\\frac{1}{y}$ transforms it into the linear equation $\\frac{dv}{dx}-v = -1$. The solution for $y$ is $y=\\frac{1}{1+Ce^{-x}}$.",
+        "options": [
+          "True",
+          "False",
+          "None of the above",
+          "Both A and B"
+        ],
+        "answer": 0,
+        "explain": "With $v=1/y$, $\\frac{dv}{dx}=-\\frac{1}{y^2}\\frac{dy}{dx}$. Substituting gives $\\frac{dv}{dx}-v=-1$, solving yields $v=1+Ce^{-x}$, so $y=1/(1+Ce^{-x})$."
+      },
+      {
+        "q": "The complementary function of the second‑order linear homogeneous equation $y''-4y'+4y=0$ is $y_c=\\_\\_$.",
+        "options": [
+          "$(C_1+C_2x)e^{2x}$",
+          "$C_1e^{2x}+C_2e^{-2x}$",
+          "$C_1\\cos2x+C_2\\sin2x$",
+          "$C_1e^{4x}+C_2e^{0x}$"
+        ],
+        "answer": 0,
+        "explain": "Characteristic equation $r^2-4r+4=0$ gives a repeated root $r=2$. Hence $y_c=(C_1+C_2x)e^{2x}$."
+      },
+      {
+        "q": "If $y_p=Ax^2+Bx+C$ is a particular integral of $y''-3y'+2y=3e^{x}$, then the constants $A,B,C$ are $\\_\\_$.",
+        "options": [
+          "$A=0$, $B=0$, $C=\\frac{3}{2}$",
+          "$A=\\frac{3}{2}$, $B=0$, $C=0$",
+          "$A=\\frac{3}{2}$, $B=\\frac{3}{2}$, $C=\\frac{3}{2}$",
+          "No such polynomial exists"
+        ],
+        "answer": 3,
+        "explain": "The RHS is $3e^{x}$, not a polynomial. A trial $y_p=Ke^{x}$ is appropriate; a quadratic trial is unnecessary, so no such polynomial works."
+      },
+      {
+        "q": "The order and degree of the differential equation $\\left(\\frac{d^2y}{dx^2}\\right)^2 + \\left(\\frac{dy}{dx}\\right)^3 = 0$ are $\\_\\_$ and $\\_\\_$.",
+        "options": [
+          "Second, two",
+          "Second, three",
+          "Third, two",
+          "Third, three"
+        ],
+        "answer": 0,
+        "explain": "Highest derivative is $\\frac{d^2y}{dx^2}$ → order 2. The equation is polynomial in derivatives; the highest power is $2$ (from the square), so degree 2."
+      },
+      {
+        "q": "For the differential equation $\\frac{dy}{dx}=\\frac{x^2+y^2}{2xy}$, the substitution $v=\\frac{y}{x}$ reduces it to $\\frac{dv}{dx}=\\frac{1-v^2}{2x}$. The general solution is $\\ln\\left|\\frac{v-1}{v+1}\\right|=\\ln|x|+C$.",
+        "options": [
+          "True",
+          "False",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 0,
+        "explain": "With $y=vx$, $\\frac{dy}{dx}=v+ x\\frac{dv}{dx}$. Substituting gives $v+ x\\frac{dv}{dx}=\\frac{1+v^2}{2v}$ → $\\frac{dv}{dx}=\\frac{1-v^2}{2x}$. Integrating leads to the stated logarithmic relation."
+      },
+      {
+        "q": "The particular integral of $y''+y=\\sec x$ can be taken as $y_p=\\sec x$.",
+        "options": [
+          "True",
+          "False",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": 1,
+        "explain": "$\\sec x$ is not a solution of the non‑homogeneous equation because substituting gives $-\\sec x\\tan^2 x+\\sec x\\neq\\sec x$. Hence $y_p=\\sec x$ is incorrect."
+      }
     ]
   },
   "mathematics::ch10::mathematics/chapter10.html": {
@@ -5780,6 +5892,74 @@
         "question": "A solution contains 0.5 mol of glucose (C$_6$H$_{12}$O$_6$) in 1 kg of water. (a) Calculate the boiling‑point elevation. (b) Calculate the freezing‑point depression. Given $K_b=0.512\\ \\text{K\\,kg\\,mol}^{-1}$, $K_f=1.86\\ \\text{K\\,kg\\,mol}^{-1}$ and $i=1$ for glucose.",
         "answer_html": "<p>(a) $\\Delta T_b = i\\,K_b\\,m = 1\\times0.512\\times0.5 = 0.256\\,\\text{K}$.<br>Boiling point of water = 100.0 °C, so new boiling point = 100.0 + 0.256 = 100.256 °C.<br>(b) $\\Delta T_f = i\\,K_f\\,m = 1\\times1.86\\times0.5 = 0.93\\,\\text{K}$.<br>Freezing point of water = 0.0 °C, so new freezing point = 0.0 – 0.93 = –0.93 °C.</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "A homogeneous mixture of two or more substances in definite proportion is called a ____.",
+        "options": [
+          "Solution",
+          "Colloid",
+          "Suspension",
+          "Alloy"
+        ],
+        "answer": 0,
+        "explain": "A solution is a homogeneous mixture of solute and solvent in definite proportion."
+      },
+      {
+        "q": "The boiling point elevation of a solution is given by $\\Delta T_{b}=iK_{b}m$. In this expression, $m$ denotes ____.",
+        "options": [
+          "Molarity",
+          "Molality",
+          "Mole fraction",
+          "Molar mass"
+        ],
+        "answer": 1,
+        "explain": "$m$ is the molality, defined as moles of solute per kilogram of solvent."
+      },
+      {
+        "q": "According to Raoult’s law, the vapor pressure of a binary ideal solution containing a non‑volatile solute is ____.",
+        "options": [
+          "higher than that of the pure solvent",
+          "equal to that of the pure solvent",
+          "lower than that of the pure solvent",
+          "independent of solute concentration"
+        ],
+        "answer": 2,
+        "explain": "The presence of a non‑volatile solute reduces the mole fraction of the solvent, lowering the vapor pressure."
+      },
+      {
+        "q": "Henry’s law states that at a constant temperature, the solubility of a gas in a liquid is directly proportional to its partial pressure. The proportionality constant is denoted by $k_{H}$. The unit of $k_{H}$ is ____.",
+        "options": [
+          "$\\frac{mol}{L\\,atm}$",
+          "$\\frac{atm}{mol\\,L}$",
+          "$\\frac{L}{mol\\,atm}$",
+          "$\\frac{mol}{L}$"
+        ],
+        "answer": 0,
+        "explain": "$k_{H}=\\frac{c}{p}$, where $c$ is concentration (mol L$^{-1}$) and $p$ is pressure (atm), giving units mol L$^{-1}$ atm$^{-1}$."
+      },
+      {
+        "q": "For a solution prepared by dissolving 58.5 g of NaCl (M = 58.5 g mol$^{-1}$) in 0.5 kg of water, the molality is ____.",
+        "options": [
+          "$1\\,m$",
+          "$2\\,m$",
+          "$0.5\\,m$",
+          "$1.5\\,m$"
+        ],
+        "answer": 1,
+        "explain": "Moles of NaCl = 58.5/58.5 = 1 mol; molality = 1 mol/0.5 kg = 2 m."
+      },
+      {
+        "q": "The freezing point depression $\\Delta T_{f}=iK_{f}m$. If a 0.1 m solution of a non‑electrolyte lowers the freezing point of water by 0.18°C, the cryoscopic constant $K_{f}$ of water is ____.",
+        "options": [
+          "$1.8\\,^{\\circ}C\\,kg\\,mol^{-1}$",
+          "$0.18\\,^{\\circ}C\\,kg\\,mol^{-1}$",
+          "$18\\,^{\\circ}C\\,kg\\,mol^{-1}$",
+          "$0.018\\,^{\\circ}C\\,kg\\,mol^{-1}$"
+        ],
+        "answer": 0,
+        "explain": "$K_{f}=\\\\Delta T_{f}/m=0.18/0.1=1.8\\\\,^{\\\\circ}C\\\\,kg\\\\,mol^{-1}$."
+      }
     ]
   },
   "chemistry::ch1::chemistry/solutions/mind-map.html": {
@@ -6214,6 +6394,44 @@
         "question": "Find the oxidation state of Mn in potassium permanganate, KMnO$_4$.",
         "solution_html": "<p><b>Given:</b> Formula KMnO$_4$, oxidation state of K = $+1$, O = $-2$ each.</p><p><b>Formula:</b> Sum of oxidation numbers = 0 for a neutral compound.</p><p><b>Step‑by‑Step:</b><br>1. Let oxidation state of Mn be $x$.<br>2. Total charge: $+1 + x + 4(-2) = 0$.<br>3. $+1 + x -8 = 0 \\Rightarrow x = +7$.</p><p><b>Final Answer:</b> Oxidation state of Mn in KMnO$_4$ is $+7$.</p>"
       }
+    ],
+    "pyq": [
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "State the general electronic configuration of the elements belonging to the d‑block.",
+        "answer_html": "The general configuration is $$(n-1)d^{1-10}ns^{2}$$."
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "Write the symbol and oxidation state of the most stable ion of copper.",
+        "answer_html": "Copper commonly forms the ion $\\text{Cu}^{2+}$ (oxidation state $+2$)."
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Explain why the first ionisation energy of scandium ($\\text{Sc}$) is higher than that of calcium ($\\text{Ca}$).",
+        "answer_html": "Sc has electronic configuration $[\\text{Ar}]3d^{1}4s^{2}$, whereas Ca is $[\\text{Ar}]4s^{2}$. Removal of an electron from Sc involves breaking a $3d$ electron which is closer to the nucleus and experiences a higher effective nuclear charge than the $4s$ electron of Ca. Hence $I_{1}$ of Sc $> I_{1}$ of Ca."
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Why do the lanthanide elements show a gradual decrease in atomic and ionic radii from La to Lu?",
+        "answer_html": "Across the series, electrons are added to the $4f$ subshell which is poorly shielding. The increase in nuclear charge pulls the electron cloud closer, leading to a steady contraction of both atomic and ionic radii (lanthanide contraction)."
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "Discuss the factors responsible for the colour of transition metal complexes and illustrate with an example of a $\\text{[Ti(H}_2\\text{O})_6]^{3+}$ complex.",
+        "answer_html": "The colour arises from d‑d electronic transitions. In an octahedral field, the five d‑orbitals split into $t_{2g}$ and $e_g$ sets with an energy gap $\\Delta_{oct}$. Absorption of visible light of energy $\\Delta_{oct}=hc/\\lambda$ promotes an electron from $t_{2g}$ to $e_g$, and the complementary colour is observed. For $\\text{[Ti(H}_2\\text{O})_6]^{3+}$, Ti$^{3+}$ has $d^{1}$ configuration; the $t_{2g}\\rightarrow e_g$ transition absorbs orange‑red light, giving the complex a violet colour."
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "Write the electronic configuration of the first three actinoid elements and explain the reason for the observed increase in oxidation states from Th to U.",
+        "answer_html": "\\textbf{Electronic configurations:}<br/>Th: $[\\text{Rn}]6d^{2}7s^{2}$<br/>Pa: $[\\text{Rn}]5f^{2}6d^{1}7s^{2}$<br/>U: $[\\text{Rn}]5f^{3}6d^{1}7s^{2}$<br/><br/>\\textbf{Reason:} In the early actinoids, the $5f$ orbitals are not fully contracted and can participate in bonding, allowing electrons from both $5f$, $6d$, and $7s$ to be removed. Consequently, higher oxidation states (+4, +5, +6) are accessible. As the series progresses, $5f$ orbitals become more core‑like, reducing their involvement and limiting the common oxidation state to +3."
+      }
     ]
   },
   "chemistry::ch5::chemistry/coordination-compounds/long-notes.html": {
@@ -6358,7 +6576,9 @@
       "Reactions of carboxylic acids (acid‑base, reduction, esterification, decarboxylation)",
       "Important derivatives (acyl halides, anhydrides, esters, amides) – preparation and reactions"
     ],
-    "long_notes": {}
+    "long_notes": {
+      "General introduction, classification and importance of aldehydes, ketones and carboxylic acids": "<p><strong>General introduction, classification and importance</strong></p><ul><li><strong>Aldehydes</strong>: Organic compounds containing the carbonyl group attached to at least one hydrogen atom. General formula $RCHO$ where $R$ may be alkyl or aryl.</li><li><strong>Ketones</strong>: Carbonyl group flanked by two carbon atoms. General formula $RCOR'$ ( $R$ and $R'$ can be identical or different).</li><li><strong>Carboxylic acids</strong>: Contain the –$COOH$ (carboxyl) group. General formula $RCOOH$.</li></ul><p>All three families are classified on the basis of the nature of $R$:</p><ul><li><strong>Aliphatic</strong> – $R$ is a straight‑chain or branched‑chain alkyl.</li><li><strong>Aromatic</strong> – $R$ contains a phenyl or substituted phenyl ring.</li><li><strong>Saturated vs. Unsaturated</strong> – Presence or absence of C=C or C≡C bonds in $R$.</li></ul><p>Key physical trends (SI units): boiling point (K), density (kg·m$^{-3}$), dipole moment (D), p$K_a$ (dimensionless). The carbonyl group is polar ($\\delta$ = $\\pm$3.5 D) leading to higher boiling points than corresponding alkanes.</p><table><tr><th>Family</th><th>General formula</th><th>IUPAC suffix</th></tr><tr><td>Aldehyde</td><td>$RCHO$</td><td>-al</td></tr><tr><td>Ketone</td><td>$RCOR'$</td><td>-one</td></tr><tr><td>Carboxylic acid</td><td>$RCOOH$</td><td>-oic acid</td></tr></table><p><strong>Importance</strong></p><ul><li>Industrial feed‑stocks: formaldehyde (resins), acetone (solvent), acetic acid (vinegar, ester production).</li><li>Biological roles: aldehydes in metabolic pathways, ketones as energy substrates, fatty acids as carboxylic acids.</li><li>Pharmaceutical precursors for drugs, fragrances and polymers.</li></ul><p><strong>Solved example (high‑yield)</strong></p><p>Calculate the molar mass of acetaldehyde ($CH_3CHO$) and the % mass of carbon in it.</p><p>Solution:</p><p>$M_{CH_3CHO}=2(12.01)+4(1.008)+16.00=44.05\\,\\text{g mol}^{-1}$</p><p>Mass of carbon = $2\\times12.01=24.02\\,\\text{g}$</p><p>\\%C $=\\frac{24.02}{44.05}\\times100=54.5\\%$ (rounded to 1 d.p.).</p><p>This type of calculation is frequently asked in NCERT‑based questions.</p>"
+    }
   },
   "chemistry::ch8::chemistry/aldehydes-ketones-acids/mind-map.html": {
     "topics": [
@@ -6424,7 +6644,8 @@
       "Role of biomolecules in health, deficiency diseases and dietary importance"
     ],
     "long_notes": {
-      "Carbohydrates – classification, general formula and important members": "<p><strong>Definition:</strong> Carbohydrates are organic compounds composed only of carbon, hydrogen and oxygen in the approximate ratio 1:2:1 and serve as a major source of energy and structural material in living organisms.</p><p><strong>General formula:</strong> The empirical formula of a carbohydrate is $C_{n}(H_{2}O)_{n}$, where $n$ denotes the number of carbon atoms. For polyhydroxy aldehydes (aldoses) the molecular formula is $C_{n}H_{2n}O_{n}$; for polyhydroxy ketones (ketoses) it is $C_{n}H_{2n}O_{n}$ as well.</p><p><strong>Classification (based on number of saccharide units):</strong></p><ul><li><strong>Monosaccharides</strong> – single‑unit sugars (e.g., glucose, fructose).</li><li><strong>Disaccharides</strong> – two monosaccharide units linked by a glycosidic bond (e.g., sucrose, lactose).</li><li><strong>Polysaccharides</strong> – long chains of monosaccharide units (e.g., starch, cellulose, glycogen).</li></ul><p><strong>Important members</strong></p><table><tr><th>Type</th><th>Common Example</th><th>Molecular Formula</th><th>Molar Mass (g·mol$^{-1}$)</th></tr><tr><td>Monosaccharide</td><td>Glucose</td><td>$C_{6}H_{12}O_{6}$</td><td>180</td></tr><tr><td>Disaccharide</td><td>Sucrose</td><td>$C_{12}H_{22}O_{11}$</td><td>342</td></tr><tr><td>Polysaccharide</td><td>Starch (amylose)</td><td>$(C_{6}H_{10}O_{5})_{n}$</td><td>Variable (depends on $n$)</td></tr></table><p><strong>SI Units:</strong> Amount of substance – mol; mass – g; concentration – mol·L$^{-1}$.</p><p><strong>Solved Example:</strong> Find the number of moles of glucose present in a 90 g sample.<br/>Molar mass of glucose = 180 g·mol$^{-1}$.<br/>$$n = \\frac{\\text{mass}}{\\text{molar mass}} = \\frac{90\\ \\text{g}}{180\\ \\text{g·mol}^{-1}} = 0.5\\ \\text{mol}$$<br/>Thus, 90 g of glucose corresponds \\to $0.5$ mol, which contains $0.5 \\times 6.022\\times10^{23} \\approx 3.01\\times10^{23}$ molecules.</p>"
+      "Carbohydrates – classification, general formula and important members": "<p><strong>Definition:</strong> Carbohydrates are organic compounds composed only of carbon, hydrogen and oxygen in the approximate ratio 1:2:1 and serve as a major source of energy and structural material in living organisms.</p><p><strong>General formula:</strong> The empirical formula of a carbohydrate is $C_{n}(H_{2}O)_{n}$, where $n$ denotes the number of carbon atoms. For polyhydroxy aldehydes (aldoses) the molecular formula is $C_{n}H_{2n}O_{n}$; for polyhydroxy ketones (ketoses) it is $C_{n}H_{2n}O_{n}$ as well.</p><p><strong>Classification (based on number of saccharide units):</strong></p><ul><li><strong>Monosaccharides</strong> – single‑unit sugars (e.g., glucose, fructose).</li><li><strong>Disaccharides</strong> – two monosaccharide units linked by a glycosidic bond (e.g., sucrose, lactose).</li><li><strong>Polysaccharides</strong> – long chains of monosaccharide units (e.g., starch, cellulose, glycogen).</li></ul><p><strong>Important members</strong></p><table><tr><th>Type</th><th>Common Example</th><th>Molecular Formula</th><th>Molar Mass (g·mol$^{-1}$)</th></tr><tr><td>Monosaccharide</td><td>Glucose</td><td>$C_{6}H_{12}O_{6}$</td><td>180</td></tr><tr><td>Disaccharide</td><td>Sucrose</td><td>$C_{12}H_{22}O_{11}$</td><td>342</td></tr><tr><td>Polysaccharide</td><td>Starch (amylose)</td><td>$(C_{6}H_{10}O_{5})_{n}$</td><td>Variable (depends on $n$)</td></tr></table><p><strong>SI Units:</strong> Amount of substance – mol; mass – g; concentration – mol·L$^{-1}$.</p><p><strong>Solved Example:</strong> Find the number of moles of glucose present in a 90 g sample.<br/>Molar mass of glucose = 180 g·mol$^{-1}$.<br/>$$n = \\frac{\\text{mass}}{\\text{molar mass}} = \\frac{90\\ \\text{g}}{180\\ \\text{g·mol}^{-1}} = 0.5\\ \\text{mol}$$<br/>Thus, 90 g of glucose corresponds \\to $0.5$ mol, which contains $0.5 \\times 6.022\\times10^{23} \\approx 3.01\\times10^{23}$ molecules.</p>",
+      "Structural features and isomerism of carbohydrates": "<p><strong>Definition:</strong> Carbohydrates are organic compounds composed only of carbon, hydrogen and oxygen, possessing the empirical formula $C_n(H_2O)_n$ where $n$ is the number of carbon atoms.</p><p><strong>Structural features of monosaccharides</strong></p><ul><li>Contain either an aldehyde (aldose) or a ketone (ketose) group.</li><li>All other carbon atoms bear a hydroxyl ($-\\!OH$) group.</li><li>Each carbon (except the carbonyl carbon) is a chiral centre, giving rise to optical activity.</li></ul><p><strong>Isomerism in carbohydrates</strong></p><ul><li><strong>Chain isomerism:</strong> Different carbon skeletons (e.g., glucose vs. fructose).</li><li><strong>Positional isomerism:</strong> Position of the carbonyl group changes (aldose vs. ketose).</li><li><strong>Functional‑group isomerism:</strong> Same molecular formula but different functional groups (e.g., glucose vs. ribose).</li><li><strong>Stereoisomerism:</strong> Varies in spatial arrangement of $-\\!OH$ groups.</li><ul><li>Enantiomers – non‑superimposable mirror images (D‑ and L‑forms).</li><li>Dia­stereomers – not mirror images (e.g., $\\alpha$‑ and $\\beta$‑anomers).</li></ul></ul><p>The number of possible stereoisomers for an aldo‑sugar having $n$ chiral centres is $2^{n}$, giving $2^{n-1}$ D‑forms and $2^{n-1}$ L‑forms.</p><table><tr><th>Isomerism type</th><th>Example</th></tr><tr><td>Chain</td><td>Glucose (C$_6$) vs. Fructose (C$_6$)</td></tr><tr><td>Positional</td><td>Glucose (aldose) vs. Fructose (ketose)</td></tr><tr><td>Functional‑group</td><td>Glucose vs. Ribose (both C$_5$H$_{10}$O$_5$)</td></tr><tr><td>Stereoisomerism</td><td>D‑Glucose vs. L‑Glucose</td></tr></table><p><strong>Solved example:</strong> Determine the total number of stereoisomers of aldo‑hexose.</p><p>Alto‑hexose has $n=6$ carbon atoms. The carbonyl carbon is not chiral; the remaining $n-2=4$ carbons are chiral centres.</p><p>Number of stereoisomers $=2^{4}=16$ (8 D‑forms and 8 L‑forms).</p><p>Thus, $\\text{Total stereoisomers}=16$.</p><p><strong>SI units</strong>: Optical rotation – degrees ($^{\\circ}$); concentration – mol·dm$^{-3}$; path length – dm.</p>"
     }
   },
   "chemistry::ch10::chemistry/biomolecules/mind-map.html": {
