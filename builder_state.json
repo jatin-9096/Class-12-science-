@@ -6663,7 +6663,20 @@
         "answer": 0,
         "explain": "General unit: $[k]=\\frac{[concentration]^{1-n}}{time}$. For $n=3$, $[k]=\\frac{(mol\\,L^{-1})^{-2}}{s}=L^2\\,mol^{-2}\\,s^{-1}$."
       }
-    ]
+    ],
+    "visual_maps": {
+      "mindmap": "mindmap\n  root((Chemical Kinetics))\n    Rate Laws\n      Order\n      Rate Constant\n    Mechanisms\n      Elementary Steps\n      Molecularity\n    Temperature Effect\n      Arrhenius Equation",
+      "flowchart": "flowchart TD\n  A[Start] --> B[Rate Law]\n  B --> C[Determine Order]\n  C --> D[Calculate Rate]\n  D --> E[Effect of Temperature]\n  E --> F[Apply Arrhenius]\n  F --> G[End]",
+      "revision_points": [
+        "Rate = k[Reactant]^n",
+        "Overall order = sum of individual orders",
+        "Elementary step = single molecular event",
+        "Molecularity = number of molecules colliding",
+        "Arrhenius: k = A e^{-Ea/RT}"
+      ]
+    },
+    "status": "done",
+    "updated": "2026-11-17 15:33:14"
   },
   "chemistry::ch4::chemistry/d-and-f-block/long-notes.html": {
     "last_error": "All Groq models failed after fast failover.",
