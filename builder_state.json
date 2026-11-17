@@ -3774,6 +3774,118 @@
         "question": "A coil of $N=200$ turns and area $A=5\\,\\text{cm}^{2}$ has resistance $R=10\\,\\Omega$. It is placed in a magnetic field that varies with time as $B=0.1t$ (T, $t$ in s). Find (a) the induced current at $t=2\\,\\text{s}$, and (b) the energy dissipated as heat in the coil during the first $2\\,\\text{s}$.",
         "answer_html": "<p>(a) Flux $\\Phi=BA=0.1t\\times5\\times10^{-4}=5\\times10^{-5}t\\,\\text{Wb}$. <br/>Induced emf $\\mathcal{E}= -N\\frac{d\\Phi}{dt}= -N\\times5\\times10^{-5}= -200\\times5\\times10^{-5}= -0.01\\,\\text{V}$. <br/>Current $I=\\frac{\\mathcal{E}}{R}=\\frac{0.01}{10}=1.0\\times10^{-3}\\,\\text{A}$ (direction given by Lenz’s law).</p><p>(b) Power $P=I^{2}R=(10^{-3})^{2}\\times10=10^{-5}\\,\\text{W}$. <br/>Energy $W=\\int_{0}^{2}P\\,dt= P\\times2=2\\times10^{-5}\\,\\text{J}$.</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "According to Faraday's law, the magnitude of the induced emf in a coil of $N$ turns is given by",
+        "options": [
+          "$\\mathcal{E}= -N\\frac{d\\Phi}{dt}$",
+          "$\\mathcal{E}= N\\frac{d\\Phi}{dt}$",
+          "$\\mathcal{E}= -\\frac{1}{N}\\frac{d\\Phi}{dt}$",
+          "$\\mathcal{E}= N\\frac{d\\Phi}{d t^2}$"
+        ],
+        "answer": 0,
+        "explain": "Faraday's law states $\\mathcal{E}= -N\\frac{d\\Phi}{dt}$; the negative sign indicates Lenz's law."
+      },
+      {
+        "q": "If a rectangular loop of area $A$ moves with velocity $v$ perpendicular to a uniform magnetic field $B$, the induced emf is",
+        "options": [
+          "$\\mathcal{E}=BvA$",
+          "$\\mathcal{E}=\\frac{Bv}{A}$",
+          "$\\mathcal{E}=Bv\\sqrt{A}$",
+          "$\\mathcal{E}=\\frac{Bv}{\\sqrt{A}}$"
+        ],
+        "answer": 0,
+        "explain": "Change of flux $\\Delta\\Phi = B\\,\\Delta A = BvA\\,\\Delta t$, so $\\mathcal{E}=\\frac{\\Delta\\Phi}{\\Delta t}=BvA$."
+      },
+      {
+        "q": "The self‑inductance $L$ of a solenoid depends on",
+        "options": [
+          "Number of turns per unit length and cross‑sectional area",
+          "Length of the solenoid only",
+          "Current flowing through the solenoid",
+          "Resistance of the winding"
+        ],
+        "answer": 0,
+        "explain": "For a solenoid $L=\\mu_0 n^2 A l$, where $n$ is turns per unit length and $A$ is cross‑sectional area."
+      },
+      {
+        "q": "A coil of inductance $L$ carries a current $I$ and is suddenly opened. The induced emf across the terminals is",
+        "options": [
+          "$\\mathcal{E}=L\\frac{dI}{dt}$",
+          "$\\mathcal{E}=\\frac{L}{I}\\frac{dI}{dt}$",
+          "$\\mathcal{E}=\\frac{1}{L}\\frac{dI}{dt}$",
+          "$\\mathcal{E}=L I$"
+        ],
+        "answer": 0,
+        "explain": "From $\\mathcal{E}= -L\\frac{dI}{dt}$; magnitude $L\\frac{dI}{dt}$."
+      },
+      {
+        "q": "Assertion (A): Lenz's law is a consequence of the conservation of energy.\nReason (R): The induced current always opposes the change producing it.",
+        "options": [
+          "Both A and R are true, and R is the correct explanation of A",
+          "Both A and R are true, but R is not the correct explanation of A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "Lenz's law ensures that the induced emf does work opposite to the cause, preventing a perpetual motion machine, thus conserving energy. Hence R correctly explains A."
+      },
+      {
+        "q": "The mutual inductance $M$ between two coils is maximum when",
+        "options": [
+          "The coils are coaxial and their planes are parallel",
+          "The coils are placed side by side with axes perpendicular",
+          "The coils are far apart",
+          "The coils have different numbers of turns"
+        ],
+        "answer": 0,
+        "explain": "Maximum flux linkage occurs when the magnetic field lines of one coil cut through the other most effectively, i.e., coaxial and parallel."
+      },
+      {
+        "q": "A circular loop of radius $r$ rotates with angular speed $\\omega$ in a uniform magnetic field $B$ whose direction is perpendicular to the axis of rotation. The peak emf induced in the loop is",
+        "options": [
+          "$\\mathcal{E}_{0}=B\\,\\pi r^{2}\\,\\omega$",
+          "$\\mathcal{E}_{0}=\\frac{1}{2}B\\,\\pi r^{2}\\,\\omega$",
+          "$\\mathcal{E}_{0}=2B\\,\\pi r^{2}\\,\\omega$",
+          "$\\mathcal{E}_{0}=B\\,r^{2}\\,\\omega$"
+        ],
+        "answer": 0,
+        "explain": "Flux $\\Phi = B\\,\\pi r^{2}\\cos\\omega t$, so $\\mathcal{E}= -\\frac{d\\Phi}{dt}=B\\,\\pi r^{2}\\,\\omega\\sin\\omega t$, peak value $B\\pi r^{2}\\omega$."
+      },
+      {
+        "q": "When a conducting rod of length $l$ slides on parallel rails in a magnetic field $B$, the induced current is $I=\\frac{Blv}{R}$. This expression assumes",
+        "options": [
+          "Uniform magnetic field and negligible self‑inductance",
+          "That the rod is superconducting",
+          "That the rails have zero resistance",
+          "That the magnetic field is time‑varying"
+        ],
+        "answer": 0,
+        "explain": "Derivation uses $\\mathcal{E}=Blv$ and Ohm's law $I=\\mathcal{E}/R$, ignoring inductive effects."
+      },
+      {
+        "q": "If the magnetic flux through a coil changes at a constant rate $k$, the induced emf is",
+        "options": [
+          "$\\mathcal{E}=k$",
+          "$\\mathcal{E}= -k$",
+          "$\\mathcal{E}= Nk$",
+          "$\\mathcal{E}= -Nk$"
+        ],
+        "answer": 3,
+        "explain": "For $N$ turns, $\\mathcal{E}= -N\\frac{d\\Phi}{dt}= -N k$."
+      },
+      {
+        "q": "A solenoid of length $l$, $N$ turns and cross‑sectional area $A$ carries a current $I$. The magnetic field inside the solenoid is",
+        "options": [
+          "$B=\\mu_{0}\\frac{N}{l}I$",
+          "$B=\\mu_{0}\\frac{N}{l}I A$",
+          "$B=\\mu_{0}\\frac{N}{l}I^{2}$",
+          "$B=\\mu_{0}\\frac{N}{l}\\sqrt{I}$"
+        ],
+        "answer": 0,
+        "explain": "For an ideal solenoid $B=\\mu_{0} n I$ where $n=N/l$; thus $B=\\mu_{0}\\frac{N}{l}I$."
+      }
     ]
   },
   "physics::ch7::physics/chapter7.html": {
@@ -5897,7 +6009,8 @@
     "long_notes": {
       "Nomenclature and classification of haloalkanes and haloarenes": "<p><strong>Definition:</strong> Haloalkanes (alkyl halides) are organic compounds containing at least one halogen atom (F, Cl, Br, I) covalently bonded to a saturated carbon atom. Haloarenes are aromatic analogues where the halogen is attached to an sp$^2$ carbon of the benzene ring.</p>\n<ul><li><strong>Classification of haloalkanes (based on carbon bearing the halogen):</strong>\n<table><tr><th>Type</th><th>General Formula</th><th>Example</th></tr><tr><td>Primary</td><td>$\\text{R-CH}_2\\text{-X}$</td><td>1‑bromoethane</td></tr><tr><td>Secondary</td><td>$\\text{R-CHX- R'}$</td><td>2‑chloropropane</td></tr><tr><td>Tertiary</td><td>$\\text{R-CX(R')_2}$</td><td>2‑bromo‑2‑methylpropane</td></tr></table></li>\n<li><strong>Classification of haloarenes:</strong> Monohaloarenes, di‑haloarenes, poly‑haloarenes; ortho, meta, para positional isomers.</li></ul>\n<p><strong>Nomenclature Rules (IUPAC):</strong></p>\n<ul><li>Identify the longest carbon chain containing the carbon bearing the halogen; number it to give the lowest possible locant to the halogen.</li><li>Use the prefix “halo‑” (fluoro, chloro, bromo, iodo) followed by the parent alkane name.</li><li>If more than one identical halogen is present, use di‑, tri‑, tetra‑ as prefixes and give separate locants (e.g., 1,2‑dichloroethane).</li><li>For haloarenes, the aromatic ring is the parent; the halogen is indicated by the same prefixes with the locant (e.g., 4‑bromophenol).</li></ul>\n<p><strong>Key Formula (Moles of NaOH required for nucleophilic substitution):</strong> $n_{\\text{NaOH}} = n_{\\text{haloalkane}} \\times \\nu$, where $\\nu$ is the stoichiometric coefficient (usually 1 for $\\text{SN}2$).</p>\n<p><strong>Solved Example:</strong></p>\n<p>Calculate the mass of NaOH needed to completely react with $0.50\\,\\text{mol}$ of 2‑bromo‑2‑methylpropane in an $\\text{SN}1$ reaction.</p>\n<ol><li>Reaction: $\\text{(CH}_3)_3\\text{CBr} + \\text{NaOH} \\rightarrow (\\text{CH}_3)_3\\text{COH} + \\text{NaBr}$</li><li>From the equation, $\\nu = 1$, so $n_{\\text{NaOH}} = 0.50\\,\\text{mol}$.</li><li>Molar mass of NaOH = $22.99 + 15.999 + 1.008 = 39.997\\,\\text{g mol}^{-1}$.</li><li>Mass $= n \\times M = 0.50\\,\\text{mol} \\times 39.997\\,\\text{g mol}^{-1} = 20.0\\,\\text{g}$.</li></ol>\n<p>Thus, $20.0\\,\\text{g}$ of NaOH will completely convert $0.50\\,\\text{mol}$ of the haloalkane.</p>",
       "Methods of preparation of haloalkanes and haloarenes": "<p><strong>Definitions</strong></p><ul><li>Haloalkane: An alkane in which one or more hydrogen atoms are replaced by halogen atoms (Cl, Br, I, F).</li><li>Haloarene: An aromatic compound containing one or more halogen substituents on the benzene ring.</li></ul><p><strong>Key Methods of Preparation</strong></p><table><tr><th>Method</th><th>Reagents / Conditions</th><th>Mechanism</th></tr><tr><td>From alkenes (addition)</td><td>$\\text{HX}$ (or $\\text{X}_2$) in presence of $\\text{H}_2\\text{SO}_4$</td><td>Electrophilic addition (Markovnikov)</td></tr><tr><td>From alcohols</td><td>$\\text{HX}$ (conc.) or $\\text{PCl}_5$, $\\text{SOCl}_2$; $\\text{ZnCl}_2$ (Lucas reagent)</td><td>SN1 (tertiary) / SN2 (primary)</td></tr><tr><td>From alkyl halides (halogen exchange)</td><td>Na$\\text{X}$ in acetone (Finkelstein); Cu$\\text{X}$, NaCN (nucleophilic substitution)</td><td>SN2</td></tr><tr><td>From carboxylic acids</td><td>HBr, $\\text{PBr}_3$ (decarboxylation)</td><td>Radical decarboxylation</td></tr><tr><td>From Grignard reagents</td><td>R$\\text{MgX}$ + $\\text{RX}$ → R–R' + MgX$_2$</td><td>Coupling</td></tr><tr><td>Haloarenes – electrophilic aromatic substitution</td><td>$\\text{X}_2$ + FeCl$_3$ (Cl), AlCl$_3$ (Br)</td><td>σ‑complex formation</td></tr><tr><td>Haloarenes – Sandmeyer reaction</td><td>Ar–N$_2^+$Cl$^-$ + CuX (X = Cl, Br, CN)</td><td>Radical substitution via diazonium salt</td></tr></table><p><strong>Rate Laws (SI Units)</strong></p><ul><li>Halogenation of alkanes: $Rate = k[RH][X_2]$; $k$ in $M^{-1}s^{-1}$.</li><li>SN1: $Rate = k[RX]$; $k$ in $s^{-1}$.</li><li>SN2: $Rate = k[RX][Nu^-]$; $k$ in $M^{-2}s^{-1}$.</li></ul><p><strong>Solved Example</strong></p><p>Prepare 1‑chloropropane from 1‑propanol using Lucas reagent.</p><ol><li>Reaction: $\\text{CH}_3\\text{CH}_2\\text{CH}_2\\text{OH} + HCl \\xrightarrow{\\text{ZnCl}_2} \\text{CH}_3\\text{CH}_2\\text{CH}_2\\text{Cl} + H_2O$.</li><li>Mechanism: Primary alcohol undergoes SN2 attack by $Cl^-$ generated in situ.</li><li>Calculation (if 10.0 g 1‑propanol, $M_{\\text{C}_3\\text{H}_8\\text{O}}=60.1\\,g\\,mol^{-1}$):<br/> $n = \\frac{10.0}{60.1}=0.166\\,mol$; theoretical $m_{\\text{C}_3\\text{H}_7\\text{Cl}} = 0.166\\times 78.5=13.0\\,g$.<br/>If 11.5 g product obtained, % yield $=\\frac{11.5}{13.0}\\times100=88.5\\%$.</li></ol><p>This concise table‑driven format aligns with the CBSE Class 12 syllabus and aids quick revision for exams.</p>",
-      "Physical properties and trends in boiling point, solubility and polarity": "<p><strong>Definition:</strong> Haloalkanes (alkyl halides) and haloarenes (aryl halides) are organic compounds containing a carbon‑halogen bond.</p><p><strong>Key factors influencing physical properties</strong></p><ul><li>Intermolecular forces – dipole‑dipole, London dispersion and, for H‑bond donors, hydrogen bonding.</li><li>Polarity – depends on C–X bond dipole moment $\\mu = \\delta \\times d$.</li><li>Molecular mass – heavier halogen → stronger dispersion forces.</li></ul><p><strong>Boiling‑point trend</strong></p><table><tr><th>Series</th><th>Trend</th></tr><tr><td>Haloalkanes (same carbon skeleton)</td><td>$\\text{CH}_3\\text{Cl} &lt; \\text{CH}_3\\text{Br} &lt; \\text{CH}_3\\text{I}$</td></tr><tr><td>Haloarenes (same ring)</td><td>$\\text{C}_6\\text{H}_5\\text{F} &lt; \\text{C}_6\\text{H}_5\\text{Cl} &lt; \\text{C}_6\\text{H}_5\\text{Br}$</td></tr></table><p>Explanation: As atomic size and mass increase, London dispersion forces ($F_{\\text{L}} \\propto \\alpha$) increase, raising $T_{\\text{b}}$.</p><p><strong>Solubility in water</strong></p><ul><li>Small, highly polar haloalkanes (e.g., CH$_2$Cl$_2$) are moderately soluble.</li><li>Heavier halides are sparingly soluble because dispersion forces dominate.</li><li>Haloarenes are essentially insoluble due to aromatic π‑system and lack of H‑bonding.</li></ul><p><strong>Polarity order (C–X bond)</strong></p><p>$\\mu_{\\text{C–F}} &gt; \\mu_{\\text{C–Cl}} &gt; \\mu_{\\text{C–Br}} &gt; \\mu_{\\text{C–I}}$ because electronegativity difference $\\Delta \\chi$ decreases down the group.</p><p><strong>Solved Example</strong></p><p>Calculate the dipole moment of the C–Cl bond in chloromethane if $\\Delta \\chi = 0.5$ and bond length $d = 1.78\\ \\text{Å}$. Using $\\mu = 0.208\\ \\Delta \\chi \\times d$ (Debye, $d$ in Å), $\\mu = 0.208 \\times 0.5 \\times 1.78 = 0.185\\ \\text{D}$. Hence chloromethane is polar ($\\mu \\approx 0.19\\ \\text{D}$).</p><p>These trends help predict boiling points, solubility and reactivity of haloalkanes and haloarenes in the CBSE exam.</p>"
+      "Physical properties and trends in boiling point, solubility and polarity": "<p><strong>Definition:</strong> Haloalkanes (alkyl halides) and haloarenes (aryl halides) are organic compounds containing a carbon‑halogen bond.</p><p><strong>Key factors influencing physical properties</strong></p><ul><li>Intermolecular forces – dipole‑dipole, London dispersion and, for H‑bond donors, hydrogen bonding.</li><li>Polarity – depends on C–X bond dipole moment $\\mu = \\delta \\times d$.</li><li>Molecular mass – heavier halogen → stronger dispersion forces.</li></ul><p><strong>Boiling‑point trend</strong></p><table><tr><th>Series</th><th>Trend</th></tr><tr><td>Haloalkanes (same carbon skeleton)</td><td>$\\text{CH}_3\\text{Cl} &lt; \\text{CH}_3\\text{Br} &lt; \\text{CH}_3\\text{I}$</td></tr><tr><td>Haloarenes (same ring)</td><td>$\\text{C}_6\\text{H}_5\\text{F} &lt; \\text{C}_6\\text{H}_5\\text{Cl} &lt; \\text{C}_6\\text{H}_5\\text{Br}$</td></tr></table><p>Explanation: As atomic size and mass increase, London dispersion forces ($F_{\\text{L}} \\propto \\alpha$) increase, raising $T_{\\text{b}}$.</p><p><strong>Solubility in water</strong></p><ul><li>Small, highly polar haloalkanes (e.g., CH$_2$Cl$_2$) are moderately soluble.</li><li>Heavier halides are sparingly soluble because dispersion forces dominate.</li><li>Haloarenes are essentially insoluble due to aromatic π‑system and lack of H‑bonding.</li></ul><p><strong>Polarity order (C–X bond)</strong></p><p>$\\mu_{\\text{C–F}} &gt; \\mu_{\\text{C–Cl}} &gt; \\mu_{\\text{C–Br}} &gt; \\mu_{\\text{C–I}}$ because electronegativity difference $\\Delta \\chi$ decreases down the group.</p><p><strong>Solved Example</strong></p><p>Calculate the dipole moment of the C–Cl bond in chloromethane if $\\Delta \\chi = 0.5$ and bond length $d = 1.78\\ \\text{Å}$. Using $\\mu = 0.208\\ \\Delta \\chi \\times d$ (Debye, $d$ in Å), $\\mu = 0.208 \\times 0.5 \\times 1.78 = 0.185\\ \\text{D}$. Hence chloromethane is polar ($\\mu \\approx 0.19\\ \\text{D}$).</p><p>These trends help predict boiling points, solubility and reactivity of haloalkanes and haloarenes in the CBSE exam.</p>",
+      "Mechanism and kinetics of nucleophilic substitution reactions (SN1 and SN2)": "<p><strong>Definitions</strong></p><ul><li><strong>SN1</strong>: unimolecular nucleophilic substitution; rate depends only on substrate.</li><li><strong>SN2</strong>: bimolecular nucleophilic substitution; rate depends on substrate and nucleophile.</li></ul><p><strong>Kinetic Expressions</strong></p><table><tr><th>Reaction</th><th>Rate law</th><th>Order</th><th>Unit of $k$</th></tr><tr><td>SN1</td><td>$rate = k[RX]$</td><td>First order</td><td>$s^{-1}$</td></tr><tr><td>SN2</td><td>$rate = k[RX][Nu^-]$</td><td>Second order</td><td>$M^{-1}s^{-1}$</td></tr></table><p><strong>Derivation (SN1)</strong></p><p>For the slow step $RX \\rightarrow R^+ + X^-$, $$\\\\frac{d[RX]}{dt} = -k[RX]$$ integrating gives $$[RX]_t = [RX]_0 e^{-kt}$$.</p><p><strong>Key Factors</strong></p><ul><li>Stability of carbocation (SN1) – tertiary &gt; secondary &gt; primary.</li><li>Strength and steric hindrance of nucleophile (SN2) – strong, unhindered nucleophile favours SN2.</li><li>Solvent polarity – polar protic stabilises ions (SN1); polar aprotic enhances nucleophilicity (SN2).</li></ul><p><strong>Solvent Effect on Rate Constant</strong></p><p>Arrhenius equation: $$k = A e^{-E_a/RT}$$ where $A$ (s$^{-1}$ or M$^{-1}$s$^{-1}$) is frequency factor, $E_a$ (kJ·mol$^{-1}$) activation energy.</p><p><strong>Solved Example</strong></p><p>At 298 K, the SN2 reaction between $CH_3Br$ and $OH^-$ follows $rate = k[CH_3Br][OH^-]$. Initial concentrations: $[CH_3Br]_0 = 0.010\\;M$, $[OH^-]_0 = 0.020\\;M$. After 500 s, $[CH_3Br] = 0.006\\;M$. Find $k$.</p><p>For second‑order reaction, $$\\\\frac{1}{[CH_3Br]_t} - \\\\frac{1}{[CH_3Br]_0} = k[OH^-]t$$ (since $[OH^-]$ ≈ constant). Plugging values: $$\\\\frac{1}{0.006} - \\\\frac{1}{0.010} = k(0.020)(500)$$ $$166.67 - 100 = 5000k$$ $$66.67 = 5000k$$ $$k = 1.33\\\\times10^{-2}\\;M^{-1}s^{-1}$$.</p><p>This $k$ value confirms a typical SN2 rate constant in polar aprotic solvent.</p>"
     }
   },
   "chemistry::ch7::chemistry/alcohols-phenols-ethers/long-notes.html": {
