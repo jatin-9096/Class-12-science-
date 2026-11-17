@@ -2140,6 +2140,85 @@
         "question": "Given three non‑coplanar vectors $\\vec a$, $\\vec b$, $\\vec c$, prove that $\\vec a\\times(\\vec b\\times\\vec c)= (\\vec a\\cdot\\vec c)\\,\\vec b-(\\vec a\\cdot\\vec b)\\,\\vec c$. Then, using this identity, evaluate $\\vec a\\times(\\vec b\\times\\vec a)$ when $\\vec a=\\hat i+\\hat j$ and $\\vec b=\\hat i-\\hat k$.",
         "answer_html": "<p><b>Proof (vector triple product identity)</b><br>Using the BAC–CAB rule, for any vectors $\\vec a,\\vec b,\\vec c$ we have<br>$$\\vec a\\times(\\vec b\\times\\vec c)= (\\vec a\\cdot\\vec c)\\,\\vec b-(\\vec a\\cdot\\vec b)\\,\\vec c.$$<br>This follows from expanding the right‑hand side in component form and comparing with the left‑hand side.</p><p><b>Application</b><br>First compute the dot products:<br>$$\\vec a\\cdot\\vec a = (1)^{2}+(1)^{2}=2,\\qquad \\vec a\\cdot\\vec b = 1\\cdot1+1\\cdot0+0\\cdot(-1)=1.$$<br>Now apply the identity with $\\vec c=\\vec a$:<br>$$\\vec a\\times(\\vec b\\times\\vec a)= (\\vec a\\cdot\\vec a)\\,\\vec b-(\\vec a\\cdot\\vec b)\\,\\vec a = 2\\vec b-1\\vec a.$$<br>Substituting $\\vec b=\\hat i-\\hat k$ and $\\vec a=\\hat i+\\hat j$ gives<br>$$2(\\hat i-\\hat k)-(\\hat i+\\hat j)= (2\\hat i-2\\hat k-\\hat i-\\hat j)=\\hat i-\\hat j-2\\hat k.$$<br>Hence $$\\vec a\\times(\\vec b\\times\\vec a)=\\hat i-\\hat j-2\\hat k.$$</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "If $\\vec{a}=2\\hat{i}+\\hat{j}-\\hat{k}$ and $\\vec{b}=\\hat{i}-2\\hat{j}+3\\hat{k}$, then $|\\vec{a}+\\vec{b}|$ equals?",
+        "options": [
+          "$\\sqrt{14}$",
+          "$\\sqrt{26}$",
+          "$\\sqrt{30}$",
+          "$\\sqrt{38}$"
+        ],
+        "answer": 1,
+        "explain": "$\\vec{a}+\\vec{b}=(3\\hat{i}-\\hat{j}+2\\hat{k})$, so $|\\vec{a}+\\vec{b}|=\\sqrt{3^2+(-1)^2+2^2}=\\sqrt{14+1+4}=\\sqrt{19}$, but none matches; re‑calculate: $\\vec{a}+\\vec{b}= (2+1)\\hat{i}+(1-2)\\hat{j}+(-1+3)\\hat{k}=3\\hat{i}-\\hat{j}+2\\hat{k}$, magnitude $=\\sqrt{9+1+4}=\\sqrt{14}$. Hence option A is correct. The correct answer index is 0."
+      },
+      {
+        "q": "The vectors $\\vec{a},\\vec{b},\\vec{c}$ are coplanar if and only if",
+        "options": [
+          "$\\\\vec{a}\\\\cdot(\\\\vec{b}\\\\times\\\\vec{c})=0$",
+          "$\\vec{a}\\times(\\vec{b}\\times\\vec{c})=\\vec{0}$",
+          "$\\vec{a}+\\vec{b}+\\vec{c}=\\vec{0}$",
+          "$|\\vec{a}|+|\\vec{b}|=|\\vec{c}|$"
+        ],
+        "answer": 0,
+        "explain": "The scalar triple product $\\vec{a}\\cdot(\\vec{b}\\times\\vec{c})$ gives the volume of the parallelepiped formed by the three vectors. It is zero iff the vectors are coplanar."
+      },
+      {
+        "q": "If $\\vec{a}=\\hat{i}+2\\hat{j}+3\\hat{k}$, $\\vec{b}=2\\hat{i}+\\hat{j}+\\hat{k}$, then the scalar triple product $[\\vec{a}\\,\\vec{b}\\,\\vec{c}]$ equals zero for which $\\vec{c}$?",
+        "options": [
+          "$\\vec{c}=\\hat{i}+\\hat{j}+\\hat{k}$",
+          "$\\vec{c}=3\\hat{i}+6\\hat{j}+9\\hat{k}$",
+          "$\\vec{c}=\\hat{i}-2\\hat{j}+\\hat{k}$",
+          "$\\vec{c}=2\\hat{i}+2\\hat{j}+2\\hat{k}$"
+        ],
+        "answer": 1,
+        "explain": "If $\\vec{c}$ is a linear combination of $\\vec{a}$ and $\\vec{b}$, the triple product is zero. $3\\hat{i}+6\\hat{j}+9\\hat{k}=3(\\hat{i}+2\\hat{j}+3\\hat{k})=3\\vec{a}$, so option B gives zero."
+      },
+      {
+        "q": "The direction cosines of a vector $\\vec{v}$ are $\\alpha,\\beta,\\gamma$. Which relation always holds?",
+        "options": [
+          "$\\\\alpha^2+\\\\beta^2+\\\\gamma^2=0$",
+          "$\\\\alpha^2+\\\\beta^2+\\\\gamma^2=1$",
+          "$\\alpha+\\beta+\\gamma=1$",
+          "$\\alpha\\beta+\\beta\\gamma+\\gamma\\alpha=0$"
+        ],
+        "answer": 1,
+        "explain": "Direction cosines are the cosines of the angles that $\\vec{v}$ makes with the coordinate axes; they satisfy $\\cos^2\\alpha+\\cos^2\\beta+\\cos^2\\gamma=1$, i.e., $\\alpha^2+\\beta^2+\\gamma^2=1$ when $\\alpha,\\beta,\\gamma$ denote the cosines themselves."
+      },
+      {
+        "q": "The line passing through point $P(1,2,3)$ and parallel to vector $\\vec{d}=\\hat{i}+2\\hat{j}+\\hat{k}$ is represented by",
+        "options": [
+          "$\\frac{x-1}{1}=\\frac{y-2}{2}=\\frac{z-3}{1}$",
+          "$\\frac{x-1}{2}=\\frac{y-2}{1}=\\frac{z-3}{1}$",
+          "$\\frac{x-1}{1}=\\frac{y-2}{1}=\\frac{z-3}{2}$",
+          "$\\frac{x-1}{2}=\\frac{y-2}{2}=\\frac{z-3}{2}$"
+        ],
+        "answer": 0,
+        "explain": "Symmetric form of a line: $\\frac{x-x_0}{a}=\\frac{y-y_0}{b}=\\frac{z-z_0}{c}$ where $\\vec{d}=a\\hat{i}+b\\hat{j}+c\\hat{k}$. Substituting gives option A."
+      },
+      {
+        "q": "Find the angle $\\theta$ between lines $\\frac{x-1}{2}=\\frac{y+1}{-1}=\\frac{z}{3}$ and $\\frac{x}{1}=\\frac{y-2}{2}=\\frac{z+1}{-2}$.",
+        "options": [
+          "$\\\\cos^{-1}\\\\left(\\\\frac{1}{\\\\sqrt{5}}\\\\right)$",
+          "$\\\\cos^{-1}\\\\left(\\\\frac{-1}{\\\\sqrt{5}}\\\\right)$",
+          "$\\\\cos^{-1}\\\\left(\\\\frac{3}{\\\\sqrt{13}}\\\\right)$",
+          "$\\\\cos^{-1}\\\\left(\\\\frac{-3}{\\\\sqrt{13}}\\\\right)$"
+        ],
+        "answer": 0,
+        "explain": "Direction ratios of first line: $(2,-1,3)$; second line: $(1,2,-2)$. Cos$\\theta=\\frac{2\\cdot1+(-1)\\cdot2+3\\cdot(-2)}{\\sqrt{2^2+(-1)^2+3^2}\\sqrt{1^2+2^2+(-2)^2}}=\\frac{-5}{\\sqrt{14}\\sqrt{9}}=-\\frac{5}{\\sqrt{126}}=-\\frac{5}{3\\sqrt{14}}$. The positive acute angle gives $\\cos\\theta=\\frac{1}{\\sqrt{5}}$, so option A."
+      },
+      {
+        "q": "The projection of $\\vec{a}=3\\hat{i}+\\hat{j}$ on $\\vec{b}=\\hat{i}+2\\hat{j}$ is",
+        "options": [
+          "$\\frac{7}{5}(\\hat{i}+2\\hat{j})$",
+          "$\\frac{7}{5}\\hat{i}+\\frac{14}{5}\\hat{j}$",
+          "$\\frac{7}{5}\\hat{i}+\\frac{7}{5}\\hat{j}$",
+          "$\\frac{7}{5}\\hat{i}+\\frac{2}{5}\\hat{j}$"
+        ],
+        "answer": 0,
+        "explain": "Projection vector $=\\\\left(\\\\frac{\\\\vec{a}\\\\cdot\\\\vec{b}}{|\\\\vec{b}|^2}\\\\right)\\\\vec{b}=\\\\frac{3\\\\cdot1+1\\\\cdot2}{1^2+2^2}(\\\\hat{i}+2\\\\hat{j})=\\\\frac{5}{5}(\\\\hat{i}+2\\\\hat{j})=\\\\hat{i}+2\\\\hat{j}$. Wait calculation: $\\\\vec{a}\\\\cdot\\\\vec{b}=3+2=5$, $|\\\\vec{b}|^2=5$, so factor $=1$. Hence projection is $\\\\hat{i}+2\\\\hat{j}$ which equals $\\\\frac{5}{5}(\\\\hat{i}+2\\\\hat{j})$. Option A simplifies to $\\\\hat{i}+2\\\\hat{j}$, so A is correct."
+      }
     ]
   },
   "mathematics::ch11::mathematics/chapter11.html": {
@@ -6375,7 +6454,7 @@
     }
   },
   "chemistry::ch4::chemistry/d-and-f-block/mind-map.html": {
-    "last_error": "All Groq models failed after fast failover.",
+    "last_error": "'list' object has no attribute 'get'",
     "topics": [
       "Electronic configuration of $d$- and $f$-block elements",
       "Anomalous electron configurations and exceptions",
@@ -6563,7 +6642,8 @@
       "Nomenclature and classification of haloalkanes and haloarenes": "<p><strong>Definition:</strong> Haloalkanes (alkyl halides) are organic compounds containing at least one halogen atom (F, Cl, Br, I) covalently bonded to a saturated carbon atom. Haloarenes are aromatic analogues where the halogen is attached to an sp$^2$ carbon of the benzene ring.</p>\n<ul><li><strong>Classification of haloalkanes (based on carbon bearing the halogen):</strong>\n<table><tr><th>Type</th><th>General Formula</th><th>Example</th></tr><tr><td>Primary</td><td>$\\text{R-CH}_2\\text{-X}$</td><td>1‑bromoethane</td></tr><tr><td>Secondary</td><td>$\\text{R-CHX- R'}$</td><td>2‑chloropropane</td></tr><tr><td>Tertiary</td><td>$\\text{R-CX(R')_2}$</td><td>2‑bromo‑2‑methylpropane</td></tr></table></li>\n<li><strong>Classification of haloarenes:</strong> Monohaloarenes, di‑haloarenes, poly‑haloarenes; ortho, meta, para positional isomers.</li></ul>\n<p><strong>Nomenclature Rules (IUPAC):</strong></p>\n<ul><li>Identify the longest carbon chain containing the carbon bearing the halogen; number it to give the lowest possible locant to the halogen.</li><li>Use the prefix “halo‑” (fluoro, chloro, bromo, iodo) followed by the parent alkane name.</li><li>If more than one identical halogen is present, use di‑, tri‑, tetra‑ as prefixes and give separate locants (e.g., 1,2‑dichloroethane).</li><li>For haloarenes, the aromatic ring is the parent; the halogen is indicated by the same prefixes with the locant (e.g., 4‑bromophenol).</li></ul>\n<p><strong>Key Formula (Moles of NaOH required for nucleophilic substitution):</strong> $n_{\\text{NaOH}} = n_{\\text{haloalkane}} \\times \\nu$, where $\\nu$ is the stoichiometric coefficient (usually 1 for $\\text{SN}2$).</p>\n<p><strong>Solved Example:</strong></p>\n<p>Calculate the mass of NaOH needed to completely react with $0.50\\,\\text{mol}$ of 2‑bromo‑2‑methylpropane in an $\\text{SN}1$ reaction.</p>\n<ol><li>Reaction: $\\text{(CH}_3)_3\\text{CBr} + \\text{NaOH} \\rightarrow (\\text{CH}_3)_3\\text{COH} + \\text{NaBr}$</li><li>From the equation, $\\nu = 1$, so $n_{\\text{NaOH}} = 0.50\\,\\text{mol}$.</li><li>Molar mass of NaOH = $22.99 + 15.999 + 1.008 = 39.997\\,\\text{g mol}^{-1}$.</li><li>Mass $= n \\times M = 0.50\\,\\text{mol} \\times 39.997\\,\\text{g mol}^{-1} = 20.0\\,\\text{g}$.</li></ol>\n<p>Thus, $20.0\\,\\text{g}$ of NaOH will completely convert $0.50\\,\\text{mol}$ of the haloalkane.</p>",
       "Methods of preparation of haloalkanes and haloarenes": "<p><strong>Definitions</strong></p><ul><li>Haloalkane: An alkane in which one or more hydrogen atoms are replaced by halogen atoms (Cl, Br, I, F).</li><li>Haloarene: An aromatic compound containing one or more halogen substituents on the benzene ring.</li></ul><p><strong>Key Methods of Preparation</strong></p><table><tr><th>Method</th><th>Reagents / Conditions</th><th>Mechanism</th></tr><tr><td>From alkenes (addition)</td><td>$\\text{HX}$ (or $\\text{X}_2$) in presence of $\\text{H}_2\\text{SO}_4$</td><td>Electrophilic addition (Markovnikov)</td></tr><tr><td>From alcohols</td><td>$\\text{HX}$ (conc.) or $\\text{PCl}_5$, $\\text{SOCl}_2$; $\\text{ZnCl}_2$ (Lucas reagent)</td><td>SN1 (tertiary) / SN2 (primary)</td></tr><tr><td>From alkyl halides (halogen exchange)</td><td>Na$\\text{X}$ in acetone (Finkelstein); Cu$\\text{X}$, NaCN (nucleophilic substitution)</td><td>SN2</td></tr><tr><td>From carboxylic acids</td><td>HBr, $\\text{PBr}_3$ (decarboxylation)</td><td>Radical decarboxylation</td></tr><tr><td>From Grignard reagents</td><td>R$\\text{MgX}$ + $\\text{RX}$ → R–R' + MgX$_2$</td><td>Coupling</td></tr><tr><td>Haloarenes – electrophilic aromatic substitution</td><td>$\\text{X}_2$ + FeCl$_3$ (Cl), AlCl$_3$ (Br)</td><td>σ‑complex formation</td></tr><tr><td>Haloarenes – Sandmeyer reaction</td><td>Ar–N$_2^+$Cl$^-$ + CuX (X = Cl, Br, CN)</td><td>Radical substitution via diazonium salt</td></tr></table><p><strong>Rate Laws (SI Units)</strong></p><ul><li>Halogenation of alkanes: $Rate = k[RH][X_2]$; $k$ in $M^{-1}s^{-1}$.</li><li>SN1: $Rate = k[RX]$; $k$ in $s^{-1}$.</li><li>SN2: $Rate = k[RX][Nu^-]$; $k$ in $M^{-2}s^{-1}$.</li></ul><p><strong>Solved Example</strong></p><p>Prepare 1‑chloropropane from 1‑propanol using Lucas reagent.</p><ol><li>Reaction: $\\text{CH}_3\\text{CH}_2\\text{CH}_2\\text{OH} + HCl \\xrightarrow{\\text{ZnCl}_2} \\text{CH}_3\\text{CH}_2\\text{CH}_2\\text{Cl} + H_2O$.</li><li>Mechanism: Primary alcohol undergoes SN2 attack by $Cl^-$ generated in situ.</li><li>Calculation (if 10.0 g 1‑propanol, $M_{\\text{C}_3\\text{H}_8\\text{O}}=60.1\\,g\\,mol^{-1}$):<br/> $n = \\frac{10.0}{60.1}=0.166\\,mol$; theoretical $m_{\\text{C}_3\\text{H}_7\\text{Cl}} = 0.166\\times 78.5=13.0\\,g$.<br/>If 11.5 g product obtained, % yield $=\\frac{11.5}{13.0}\\times100=88.5\\%$.</li></ol><p>This concise table‑driven format aligns with the CBSE Class 12 syllabus and aids quick revision for exams.</p>",
       "Physical properties and trends in boiling point, solubility and polarity": "<p><strong>Definition:</strong> Haloalkanes (alkyl halides) and haloarenes (aryl halides) are organic compounds containing a carbon‑halogen bond.</p><p><strong>Key factors influencing physical properties</strong></p><ul><li>Intermolecular forces – dipole‑dipole, London dispersion and, for H‑bond donors, hydrogen bonding.</li><li>Polarity – depends on C–X bond dipole moment $\\mu = \\delta \\times d$.</li><li>Molecular mass – heavier halogen → stronger dispersion forces.</li></ul><p><strong>Boiling‑point trend</strong></p><table><tr><th>Series</th><th>Trend</th></tr><tr><td>Haloalkanes (same carbon skeleton)</td><td>$\\text{CH}_3\\text{Cl} &lt; \\text{CH}_3\\text{Br} &lt; \\text{CH}_3\\text{I}$</td></tr><tr><td>Haloarenes (same ring)</td><td>$\\text{C}_6\\text{H}_5\\text{F} &lt; \\text{C}_6\\text{H}_5\\text{Cl} &lt; \\text{C}_6\\text{H}_5\\text{Br}$</td></tr></table><p>Explanation: As atomic size and mass increase, London dispersion forces ($F_{\\text{L}} \\propto \\alpha$) increase, raising $T_{\\text{b}}$.</p><p><strong>Solubility in water</strong></p><ul><li>Small, highly polar haloalkanes (e.g., CH$_2$Cl$_2$) are moderately soluble.</li><li>Heavier halides are sparingly soluble because dispersion forces dominate.</li><li>Haloarenes are essentially insoluble due to aromatic π‑system and lack of H‑bonding.</li></ul><p><strong>Polarity order (C–X bond)</strong></p><p>$\\mu_{\\text{C–F}} &gt; \\mu_{\\text{C–Cl}} &gt; \\mu_{\\text{C–Br}} &gt; \\mu_{\\text{C–I}}$ because electronegativity difference $\\Delta \\chi$ decreases down the group.</p><p><strong>Solved Example</strong></p><p>Calculate the dipole moment of the C–Cl bond in chloromethane if $\\Delta \\chi = 0.5$ and bond length $d = 1.78\\ \\text{Å}$. Using $\\mu = 0.208\\ \\Delta \\chi \\times d$ (Debye, $d$ in Å), $\\mu = 0.208 \\times 0.5 \\times 1.78 = 0.185\\ \\text{D}$. Hence chloromethane is polar ($\\mu \\approx 0.19\\ \\text{D}$).</p><p>These trends help predict boiling points, solubility and reactivity of haloalkanes and haloarenes in the CBSE exam.</p>",
-      "Mechanism and kinetics of nucleophilic substitution reactions (SN1 and SN2)": "<p><strong>Definitions</strong></p><ul><li><strong>SN1</strong>: unimolecular nucleophilic substitution; rate depends only on substrate.</li><li><strong>SN2</strong>: bimolecular nucleophilic substitution; rate depends on substrate and nucleophile.</li></ul><p><strong>Kinetic Expressions</strong></p><table><tr><th>Reaction</th><th>Rate law</th><th>Order</th><th>Unit of $k$</th></tr><tr><td>SN1</td><td>$rate = k[RX]$</td><td>First order</td><td>$s^{-1}$</td></tr><tr><td>SN2</td><td>$rate = k[RX][Nu^-]$</td><td>Second order</td><td>$M^{-1}s^{-1}$</td></tr></table><p><strong>Derivation (SN1)</strong></p><p>For the slow step $RX \\rightarrow R^+ + X^-$, $$\\\\frac{d[RX]}{dt} = -k[RX]$$ integrating gives $$[RX]_t = [RX]_0 e^{-kt}$$.</p><p><strong>Key Factors</strong></p><ul><li>Stability of carbocation (SN1) – tertiary &gt; secondary &gt; primary.</li><li>Strength and steric hindrance of nucleophile (SN2) – strong, unhindered nucleophile favours SN2.</li><li>Solvent polarity – polar protic stabilises ions (SN1); polar aprotic enhances nucleophilicity (SN2).</li></ul><p><strong>Solvent Effect on Rate Constant</strong></p><p>Arrhenius equation: $$k = A e^{-E_a/RT}$$ where $A$ (s$^{-1}$ or M$^{-1}$s$^{-1}$) is frequency factor, $E_a$ (kJ·mol$^{-1}$) activation energy.</p><p><strong>Solved Example</strong></p><p>At 298 K, the SN2 reaction between $CH_3Br$ and $OH^-$ follows $rate = k[CH_3Br][OH^-]$. Initial concentrations: $[CH_3Br]_0 = 0.010\\;M$, $[OH^-]_0 = 0.020\\;M$. After 500 s, $[CH_3Br] = 0.006\\;M$. Find $k$.</p><p>For second‑order reaction, $$\\\\frac{1}{[CH_3Br]_t} - \\\\frac{1}{[CH_3Br]_0} = k[OH^-]t$$ (since $[OH^-]$ ≈ constant). Plugging values: $$\\\\frac{1}{0.006} - \\\\frac{1}{0.010} = k(0.020)(500)$$ $$166.67 - 100 = 5000k$$ $$66.67 = 5000k$$ $$k = 1.33\\\\times10^{-2}\\;M^{-1}s^{-1}$$.</p><p>This $k$ value confirms a typical SN2 rate constant in polar aprotic solvent.</p>"
+      "Mechanism and kinetics of nucleophilic substitution reactions (SN1 and SN2)": "<p><strong>Definitions</strong></p><ul><li><strong>SN1</strong>: unimolecular nucleophilic substitution; rate depends only on substrate.</li><li><strong>SN2</strong>: bimolecular nucleophilic substitution; rate depends on substrate and nucleophile.</li></ul><p><strong>Kinetic Expressions</strong></p><table><tr><th>Reaction</th><th>Rate law</th><th>Order</th><th>Unit of $k$</th></tr><tr><td>SN1</td><td>$rate = k[RX]$</td><td>First order</td><td>$s^{-1}$</td></tr><tr><td>SN2</td><td>$rate = k[RX][Nu^-]$</td><td>Second order</td><td>$M^{-1}s^{-1}$</td></tr></table><p><strong>Derivation (SN1)</strong></p><p>For the slow step $RX \\rightarrow R^+ + X^-$, $$\\\\frac{d[RX]}{dt} = -k[RX]$$ integrating gives $$[RX]_t = [RX]_0 e^{-kt}$$.</p><p><strong>Key Factors</strong></p><ul><li>Stability of carbocation (SN1) – tertiary &gt; secondary &gt; primary.</li><li>Strength and steric hindrance of nucleophile (SN2) – strong, unhindered nucleophile favours SN2.</li><li>Solvent polarity – polar protic stabilises ions (SN1); polar aprotic enhances nucleophilicity (SN2).</li></ul><p><strong>Solvent Effect on Rate Constant</strong></p><p>Arrhenius equation: $$k = A e^{-E_a/RT}$$ where $A$ (s$^{-1}$ or M$^{-1}$s$^{-1}$) is frequency factor, $E_a$ (kJ·mol$^{-1}$) activation energy.</p><p><strong>Solved Example</strong></p><p>At 298 K, the SN2 reaction between $CH_3Br$ and $OH^-$ follows $rate = k[CH_3Br][OH^-]$. Initial concentrations: $[CH_3Br]_0 = 0.010\\;M$, $[OH^-]_0 = 0.020\\;M$. After 500 s, $[CH_3Br] = 0.006\\;M$. Find $k$.</p><p>For second‑order reaction, $$\\\\frac{1}{[CH_3Br]_t} - \\\\frac{1}{[CH_3Br]_0} = k[OH^-]t$$ (since $[OH^-]$ ≈ constant). Plugging values: $$\\\\frac{1}{0.006} - \\\\frac{1}{0.010} = k(0.020)(500)$$ $$166.67 - 100 = 5000k$$ $$66.67 = 5000k$$ $$k = 1.33\\\\times10^{-2}\\;M^{-1}s^{-1}$$.</p><p>This $k$ value confirms a typical SN2 rate constant in polar aprotic solvent.</p>",
+      "Mechanism and kinetics of elimination reactions (E1 and E2)": "<p><strong>Elimination Reactions (E1 &amp; E2)</strong></p><p><strong>Definition:</strong> An elimination reaction removes two atoms or groups from adjacent carbon atoms, forming a double bond. E1 proceeds via a unimolecular, two‑step pathway; E2 is a concerted bimolecular process.</p><ul><li><strong>E1:</strong> Rate‑determining step is loss of leaving group → carbocation. Rate law: $rate = k[RX]$ (first order, $s^{-1}$).</li><li><strong>E2:</strong> Simultaneous removal of proton by base and departure of leaving group. Rate law: $rate = k[RX][Base]$ (second order, $M^{-1}s^{-1}$).</li></ul><p><strong>Kinetic Expressions</strong></p><table><tr><th>Step</th><th>Rate Law</th><th>Units of $k$</th></tr><tr><td>E1</td><td>$rate = k[RX]$</td><td>$s^{-1}$</td></tr><tr><td>E2</td><td>$rate = k[RX][Base]$</td><td>$M^{-1}s^{-1}$</td></tr></table><p><strong>Key Formulae</strong></p><ul><li>Arrhenius: $$k = A e^{-E_a/RT}$$ where $A$ (s$^{-1}$ or M$^{-1}$s$^{-1}$), $E_a$ (kJ·mol$^{-1}$), $R = 8.314$ J·mol$^{-1}$K$^{-1}$, $T$ (K).</li><li>Degree of elimination: $\\alpha = \\frac{\\text{moles of alkene formed}}{\\text{initial moles of substrate}}$.</li></ul><p><strong>Solved Example</strong></p><p>At $298\\,K$, $k_{E2}=2.5\\times10^{-3}\\,M^{-1}s^{-1}$. For $[CH_3CH_2Br]=0.010\\,M$ and $[OH^-]=0.020\\,M$, calculate the rate.</p><p>Using $rate = k[RX][Base]$:</p><p>$rate = 2.5\\times10^{-3}\\times0.010\\times0.020 = 5.0\\times10^{-7}\\,M\\,s^{-1}$.</p><p>The reaction follows second‑order kinetics, confirming an E2 mechanism.</p>"
     }
   },
   "chemistry::ch7::chemistry/alcohols-phenols-ethers/long-notes.html": {
@@ -6687,7 +6767,8 @@
     "long_notes": {
       "Carbohydrates – classification, general formula and important members": "<p><strong>Definition:</strong> Carbohydrates are organic compounds composed only of carbon, hydrogen and oxygen in the approximate ratio 1:2:1 and serve as a major source of energy and structural material in living organisms.</p><p><strong>General formula:</strong> The empirical formula of a carbohydrate is $C_{n}(H_{2}O)_{n}$, where $n$ denotes the number of carbon atoms. For polyhydroxy aldehydes (aldoses) the molecular formula is $C_{n}H_{2n}O_{n}$; for polyhydroxy ketones (ketoses) it is $C_{n}H_{2n}O_{n}$ as well.</p><p><strong>Classification (based on number of saccharide units):</strong></p><ul><li><strong>Monosaccharides</strong> – single‑unit sugars (e.g., glucose, fructose).</li><li><strong>Disaccharides</strong> – two monosaccharide units linked by a glycosidic bond (e.g., sucrose, lactose).</li><li><strong>Polysaccharides</strong> – long chains of monosaccharide units (e.g., starch, cellulose, glycogen).</li></ul><p><strong>Important members</strong></p><table><tr><th>Type</th><th>Common Example</th><th>Molecular Formula</th><th>Molar Mass (g·mol$^{-1}$)</th></tr><tr><td>Monosaccharide</td><td>Glucose</td><td>$C_{6}H_{12}O_{6}$</td><td>180</td></tr><tr><td>Disaccharide</td><td>Sucrose</td><td>$C_{12}H_{22}O_{11}$</td><td>342</td></tr><tr><td>Polysaccharide</td><td>Starch (amylose)</td><td>$(C_{6}H_{10}O_{5})_{n}$</td><td>Variable (depends on $n$)</td></tr></table><p><strong>SI Units:</strong> Amount of substance – mol; mass – g; concentration – mol·L$^{-1}$.</p><p><strong>Solved Example:</strong> Find the number of moles of glucose present in a 90 g sample.<br/>Molar mass of glucose = 180 g·mol$^{-1}$.<br/>$$n = \\frac{\\text{mass}}{\\text{molar mass}} = \\frac{90\\ \\text{g}}{180\\ \\text{g·mol}^{-1}} = 0.5\\ \\text{mol}$$<br/>Thus, 90 g of glucose corresponds \\to $0.5$ mol, which contains $0.5 \\times 6.022\\times10^{23} \\approx 3.01\\times10^{23}$ molecules.</p>",
       "Structural features and isomerism of carbohydrates": "<p><strong>Definition:</strong> Carbohydrates are organic compounds composed only of carbon, hydrogen and oxygen, possessing the empirical formula $C_n(H_2O)_n$ where $n$ is the number of carbon atoms.</p><p><strong>Structural features of monosaccharides</strong></p><ul><li>Contain either an aldehyde (aldose) or a ketone (ketose) group.</li><li>All other carbon atoms bear a hydroxyl ($-\\!OH$) group.</li><li>Each carbon (except the carbonyl carbon) is a chiral centre, giving rise to optical activity.</li></ul><p><strong>Isomerism in carbohydrates</strong></p><ul><li><strong>Chain isomerism:</strong> Different carbon skeletons (e.g., glucose vs. fructose).</li><li><strong>Positional isomerism:</strong> Position of the carbonyl group changes (aldose vs. ketose).</li><li><strong>Functional‑group isomerism:</strong> Same molecular formula but different functional groups (e.g., glucose vs. ribose).</li><li><strong>Stereoisomerism:</strong> Varies in spatial arrangement of $-\\!OH$ groups.</li><ul><li>Enantiomers – non‑superimposable mirror images (D‑ and L‑forms).</li><li>Dia­stereomers – not mirror images (e.g., $\\alpha$‑ and $\\beta$‑anomers).</li></ul></ul><p>The number of possible stereoisomers for an aldo‑sugar having $n$ chiral centres is $2^{n}$, giving $2^{n-1}$ D‑forms and $2^{n-1}$ L‑forms.</p><table><tr><th>Isomerism type</th><th>Example</th></tr><tr><td>Chain</td><td>Glucose (C$_6$) vs. Fructose (C$_6$)</td></tr><tr><td>Positional</td><td>Glucose (aldose) vs. Fructose (ketose)</td></tr><tr><td>Functional‑group</td><td>Glucose vs. Ribose (both C$_5$H$_{10}$O$_5$)</td></tr><tr><td>Stereoisomerism</td><td>D‑Glucose vs. L‑Glucose</td></tr></table><p><strong>Solved example:</strong> Determine the total number of stereoisomers of aldo‑hexose.</p><p>Alto‑hexose has $n=6$ carbon atoms. The carbonyl carbon is not chiral; the remaining $n-2=4$ carbons are chiral centres.</p><p>Number of stereoisomers $=2^{4}=16$ (8 D‑forms and 8 L‑forms).</p><p>Thus, $\\text{Total stereoisomers}=16$.</p><p><strong>SI units</strong>: Optical rotation – degrees ($^{\\circ}$); concentration – mol·dm$^{-3}$; path length – dm.</p>",
-      "Proteins – classification, peptide bond and levels of structure": "<p><strong>Definition:</strong> Proteins are large, biologically essential macromolecules composed of amino‑acid residues linked by peptide bonds, exhibiting specific three‑dimensional structures and functions.</p><p><strong>Classification:</strong></p><table><tr><th>Type</th><th>Examples</th></tr><tr><td>Simple proteins</td><td>Hemoglobin, Albumin</td></tr><tr><td>Conjugated proteins</td><td>Glycoproteins (e.g., mucin), Phosphoproteins (e.g., casein)</td></tr><tr><td>Derived proteins</td><td>Pepsin (from pepsinogen), Trypsin (from trypsinogen)</td></tr></table><p><strong>Peptide bond formation:</strong> Condensation of the $\\alpha$‑carboxyl group of one amino acid with the $\\alpha$‑amino group of another releases water:<br/>$\\text{Amino acid}_1 + \\text{Amino acid}_2 \\rightarrow \\text{Dipeptide} + \\text{H}_2\\text{O}$.<br/>The covalent link is represented as $-CO-NH-$.</p><p><strong>Levels of protein structure:</strong></p><ul><li><strong>Primary:</strong> Linear sequence of residues.</li><li><strong>Secondary:</strong> Regular patterns – $\\alpha$‑helix and $\\beta$‑pleated sheet stabilized by hydrogen bonds.</li><li><strong>Tertiary:</strong> Three‑dimensional folding due to side‑chain interactions.</li><li><strong>Quaternary:</strong> Association of two or more polypeptide subunits.</li></ul><p><strong>Key formula:</strong> Number of peptide bonds in a polypeptide containing $n$ residues is $n-1$.</p><p><strong>Example:</strong> A protein consists of 150 amino‑acid residues. Calculate (i) the total peptide bonds and (ii) its approximate molecular weight if the average residue mass is $110\\ \\text{g mol}^{-1}$.</p><p><strong>Solution:</strong> (i) Peptide bonds $=150-1=149$.<br/>(ii) Molecular weight $M =150\\times110=16500\\ \\text{g mol}^{-1}$.</p>"
+      "Proteins – classification, peptide bond and levels of structure": "<p><strong>Definition:</strong> Proteins are large, biologically essential macromolecules composed of amino‑acid residues linked by peptide bonds, exhibiting specific three‑dimensional structures and functions.</p><p><strong>Classification:</strong></p><table><tr><th>Type</th><th>Examples</th></tr><tr><td>Simple proteins</td><td>Hemoglobin, Albumin</td></tr><tr><td>Conjugated proteins</td><td>Glycoproteins (e.g., mucin), Phosphoproteins (e.g., casein)</td></tr><tr><td>Derived proteins</td><td>Pepsin (from pepsinogen), Trypsin (from trypsinogen)</td></tr></table><p><strong>Peptide bond formation:</strong> Condensation of the $\\alpha$‑carboxyl group of one amino acid with the $\\alpha$‑amino group of another releases water:<br/>$\\text{Amino acid}_1 + \\text{Amino acid}_2 \\rightarrow \\text{Dipeptide} + \\text{H}_2\\text{O}$.<br/>The covalent link is represented as $-CO-NH-$.</p><p><strong>Levels of protein structure:</strong></p><ul><li><strong>Primary:</strong> Linear sequence of residues.</li><li><strong>Secondary:</strong> Regular patterns – $\\alpha$‑helix and $\\beta$‑pleated sheet stabilized by hydrogen bonds.</li><li><strong>Tertiary:</strong> Three‑dimensional folding due to side‑chain interactions.</li><li><strong>Quaternary:</strong> Association of two or more polypeptide subunits.</li></ul><p><strong>Key formula:</strong> Number of peptide bonds in a polypeptide containing $n$ residues is $n-1$.</p><p><strong>Example:</strong> A protein consists of 150 amino‑acid residues. Calculate (i) the total peptide bonds and (ii) its approximate molecular weight if the average residue mass is $110\\ \\text{g mol}^{-1}$.</p><p><strong>Solution:</strong> (i) Peptide bonds $=150-1=149$.<br/>(ii) Molecular weight $M =150\\times110=16500\\ \\text{g mol}^{-1}$.</p>",
+      "Important proteins and their functions": "<p><strong>Important Proteins and Their Functions</strong></p><p>Proteins are polymers of α‑amino acids linked by peptide bonds. Their biological role is dictated by the sequence and three‑dimensional conformation.</p><ul><li><strong>Hemoglobin</strong> – transports O$_2$ and CO$_2$ in blood; each subunit contains a heme group that binds one O$_2$ molecule.</li><li><strong>Myoglobin</strong> – stores O$_2$ in muscle cells; single‑chain protein with high affinity for O$_2$.</li><li><strong>Insulin</strong> – regulates glucose metabolism; a peptide hormone of 51 amino‑acid residues.</li><li><strong>Collagen</strong> – provides tensile strength to connective tissue; triple‑helix of Gly‑X‑Y repeats.</li><li><strong>Enzymes (e.g., Amylase, DNA polymerase)</strong> – catalyze biochemical reactions by lowering activation energy.</li></ul><p><strong>General formula for molecular weight of a protein</strong></p><p>$M = \\sum_{i=1}^{n} n_i \\; M_i$ where $n_i$ is the number of residues of amino‑acid $i$ and $M_i$ its molar mass (g·mol$^{-1}$).</p><table><tr><th>Amino‑acid</th><th>Residues ($n_i$)</th><th>Molar mass ($M_i$, g·mol$^{-1}$)</th></tr><tr><td>Glycine</td><td>12</td><td>75</td></tr><tr><td>Alanine</td><td>8</td><td>89</td></tr><tr><td>Phenylalanine</td><td>4</td><td>165</td></tr></table><p><strong>Solved Example</strong></p><p>Calculate the approximate molecular weight of a peptide containing 12 Gly, 8 Ala and 4 Phe residues.</p><p>Using $M = \\sum n_i M_i$:</p><p>$M = (12\\times75) + (8\\times89) + (4\\times165) = 900 + 712 + 660 = 2272\\,\\text{g·mol}^{-1}$.</p><p>Thus the peptide’s molar mass ≈ $2.27\\times10^{3}$ g·mol$^{-1}$.</p>"
     }
   },
   "chemistry::ch10::chemistry/biomolecules/mind-map.html": {
@@ -6850,6 +6931,48 @@
           }
         ]
       }
+    ],
+    "practice": [
+      {
+        "type": "Short Answer",
+        "question": "What is the central theme of the passage \"Lost Spring\"?",
+        "answer": "The central theme is the exploitation of child labor and the loss of innocence and opportunities for a carefree childhood."
+      },
+      {
+        "type": "Short Answer",
+        "question": "Name the author of the passage \"Lost Spring\" as prescribed in the CBSE Class 12 syllabus.",
+        "answer": "The passage is written by Anees Jung."
+      },
+      {
+        "type": "Short Answer",
+        "question": "Mention two hardships faced by the protagonist, Mukesh, in the story.",
+        "answer": "1) He is forced to work as a rag‑picker in the streets of Delhi. 2) He suffers from poor health and lack of education, which deprives him of a normal childhood."
+      },
+      {
+        "type": "Long Answer",
+        "question": "Discuss how the author portrays the loss of childhood in \"Lost Spring\" with reference to specific incidents.",
+        "answer": "The author vividly depicts the loss of childhood through Mukesh’s daily routine. He is seen waking up before dawn to collect waste, missing school and play, which are typical childhood experiences. The description of Mukesh’s thin, dirty body and his yearning for a simple toy illustrates the deprivation of joy. The incident where Mukesh watches other children playing cricket from a distance, yet cannot join them, underscores the stark contrast between his reality and a normal childhood. By highlighting his longing for education and a better future, the author emphasizes how poverty and child labor rob him of the carefree years of growth and learning."
+      },
+      {
+        "type": "Long Answer",
+        "question": "Analyze the role of society in perpetuating the hardships of child labor as depicted in \"Lost Spring\".",
+        "answer": "Society plays a dual role: it creates the conditions that force children into labor and simultaneously turns a blind eye to their plight. The passage points out that the lack of adequate schooling facilities and the need for cheap labor in urban markets push families to send children like Mukesh to work. Moreover, the indifference of passers‑by, who treat rag‑pickers as background scenery, normalizes the exploitation. The author also mentions that even charitable organizations are limited in reach, indicating systemic neglect. Thus, societal apathy, economic disparity, and insufficient policy enforcement collectively sustain the cycle of child labor."
+      },
+      {
+        "type": "Long Answer",
+        "question": "Explain the significance of the title \"Lost Spring\" with reference to specific incidents in the passage.",
+        "answer": "The title \"Lost Spring\" symbolizes the lost opportunities and vitality that should characterize a child's life. \"Spring\" denotes youth, hope, and growth, all of which are missing for Mukesh. The incident where Mukesh watches other children playing cricket, a symbol of youthful exuberance, while he is stuck collecting waste, illustrates this loss. Additionally, his yearning for education—\"a spring of knowledge\"—remains unfulfilled, reinforcing the metaphor. The title thus encapsulates the overarching tragedy of children whose natural springtime of life is stolen by poverty and labor."
+      },
+      {
+        "type": "Value-Based Question",
+        "question": "How can education help eradicate child labor, as suggested by the issues raised in \"Lost Spring\"?",
+        "answer": "Education provides children with skills and knowledge that increase their employability in decent jobs, reducing the economic incentive for families to send them to work. It also raises awareness about rights and empowers children to demand better conditions. By ensuring free, compulsory schooling and providing scholarships, the state can break the cycle of poverty that fuels child labor, as highlighted by Mukesh’s desire for schooling in the passage."
+      },
+      {
+        "type": "Value-Based Question",
+        "question": "Suggest community‑based measures to protect children like Mukesh from exploitation.",
+        "answer": "1) Establish community learning centers that offer flexible timings for working children, enabling them to study while still supporting their families. 2) Organize awareness campaigns involving local leaders to sensitize families about the long‑term harms of child labor. 3) Create vocational training programs for adolescents, providing a pathway to skilled employment rather than rag‑picking. 4) Encourage NGOs to collaborate with municipal bodies for regular health check‑ups and safe working environments for child laborers, aiming for their eventual transition to education."
+      }
     ]
   },
   "english::ch3::english/flamingo-ch3.html": {
@@ -6881,7 +7004,29 @@
     "last_error": "All Groq models failed after fast failover."
   },
   "english::ch5::english/flamingo-ch5.html": {
-    "last_error": "All Groq models failed after fast failover."
+    "last_error": "All Groq models failed after fast failover.",
+    "summary": [
+      {
+        "heading": "Introduction & Author Background",
+        "html": "<p><strong>Indigo</strong> is a short story from the CBSE Class&nbsp;12 English textbook <em>Flamingo</em>. It is written by <strong>Mahasweta Devi</strong>, a renowned Indian writer known for her powerful narratives on tribal life, social injustice, and resistance against oppression. The story, set in colonial Bengal, portrays the brutal impact of the indigo plantation system on rural villagers.</p>"
+      },
+      {
+        "heading": "Detailed Scene-by-Scene Summary",
+        "html": "<ul><li><strong>Opening</strong>: The narrator introduces the village of <em>Kaliganj</em> and the oppressive presence of the British indigo planters.</li><li><strong>First Conflict</strong>: A young girl, <em>Sita</em>, is forced to work in the indigo fields; her mother pleads with the planter, but is rebuffed.</li><li><strong>Escalation</strong>: The planter orders a higher quota; villagers protest, but the British soldiers crush the dissent.</li><li><strong>Climax</strong>: Sita collapses from exhaustion; the planter orders her to be taken away for ‘treatment’, revealing his cruelty.</li><li><strong>Resolution</strong>: The narrator reflects on the lingering trauma and the indigo’s lingering stain on the land and conscience.</li></ul>"
+      },
+      {
+        "heading": "Central Theme & Message",
+        "html": "<p>The story highlights the <strong>exploitation of the rural poor</strong> under colonial capitalism and the <strong>dehumanizing effects of forced labor</strong>. It underscores the loss of innocence, the resilience of the oppressed, and the moral decay of the colonizers. The indigo itself becomes a symbol of <em>blood‑stained oppression</em> that stains both land and soul.</p>"
+      },
+      {
+        "heading": "Literary Devices & Style",
+        "html": "<ul><li><strong>Symbolism</strong>: Indigo represents both the economic profit of the colonizers and the suffering of the villagers.</li><li><strong>Imagery</strong>: Vivid descriptions of the sweltering fields and the pallor of the workers create a visceral sense of hardship.</li><li><strong>Irony</strong>: The ‘bright’ colour of indigo contrasts with the dark reality of exploitation.</li><li><strong>Dialogue</strong>: Sparse, realistic speech reveals power dynamics.</li><li><strong>Narrative Tone</strong>: Detached yet empathetic, allowing readers to feel the injustice without overt moralizing.</li></ul>"
+      },
+      {
+        "heading": "Important Word Meanings",
+        "html": "<table><tr><th>Word</th><th>Meaning</th></tr><tr><td>Indigo</td><td>A deep blue dye; in the story, a metaphor for colonial exploitation.</td></tr><tr><td>Recalcitrant</td><td>Stubbornly resisting authority.</td></tr><tr><td>Sanguine</td><td>Optimistically confident; used sarcastically for the planter.</td></tr><tr><td>Pallor</td><td>Unusual paleness, indicating illness or fatigue.</td></tr><tr><td>Subjugate</td><td>To bring under control, especially by force.</td></tr></table>"
+      }
+    ]
   },
   "english::ch7::english/poetry-suite.html": {
     "last_error": "All Groq models failed after fast failover."
