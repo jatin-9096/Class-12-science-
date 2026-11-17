@@ -4209,6 +4209,118 @@
         "question": "A plane electromagnetic wave in vacuum has an average Poynting vector magnitude $S = 5\\,\\text{W/m}^2$. Find the amplitudes $E_0$ and $B_0$ of the wave.",
         "answer_html": "<p>Average intensity $S = \\frac{1}{2}c\\epsilon_0 E_0^2$.<br>Thus $E_0 = \\sqrt{\\frac{2S}{c\\epsilon_0}} = \\sqrt{\\frac{2\\times5}{(3\\times10^8)(8.85\\times10^{-12})}} \\approx 1.09\\times10^2\\,\\text{V/m}.$<br>Magnetic amplitude $B_0 = \\frac{E_0}{c} \\approx \\frac{1.09\\times10^2}{3\\times10^8} \\approx 3.6\\times10^{-7}\\,\\text{T}.$</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "The speed of an electromagnetic wave in vacuum is $c = 3\\times10^{8}$ m/s. Which of the following statements is correct?",
+        "options": [
+          "It is independent of frequency",
+          "It depends on the medium's permittivity only",
+          "It varies with wavelength",
+          "It is equal to the speed of light in glass"
+        ],
+        "answer": 0,
+        "explain": "In vacuum, electromagnetic waves travel at $c$, which is a constant independent of frequency, wavelength or any material property."
+      },
+      {
+        "q": "For a plane monochromatic wave travelling in the $+x$ direction, the electric and magnetic fields are given by $\\vec{E}=E_{0}\\hat{y}\\cos(kx-\\omega t)$ and $\\vec{B}=B_{0}\\hat{z}\\cos(kx-\\omega t)$. What is the relationship between $E_{0}$ and $B_{0}$?",
+        "options": [
+          "$E_{0}=cB_{0}$",
+          "$E_{0}=\\frac{B_{0}}{c}$",
+          "$E_{0}=\\frac{c}{B_{0}}$",
+          "$E_{0}=B_{0}$"
+        ],
+        "answer": 0,
+        "explain": "For electromagnetic waves in vacuum, $E_{0}=cB_{0}$ because $\\vec{E}=c\\,\\vec{B}\\times\\hat{k}$."
+      },
+      {
+        "q": "The intensity $I$ of an electromagnetic wave is proportional to which of the following?",
+        "options": [
+          "$E_{0}^{2}$",
+          "$B_{0}^{2}$",
+          "$E_{0}B_{0}$",
+          "All of the above"
+        ],
+        "answer": 3,
+        "explain": "Intensity $I=\\frac{1}{2}c\\epsilon_{0}E_{0}^{2}=\\frac{1}{2}\\frac{c}{\\mu_{0}}B_{0}^{2}=c\\epsilon_{0}E_{0}B_{0}$, so all three are proportional."
+      },
+      {
+        "q": "A radio wave of frequency $1\\,\\text{MHz}$ is incident on a perfectly conducting surface. The reflected wave will have:",
+        "options": [
+          "The same frequency and wavelength",
+          "Double the frequency",
+          "Half the wavelength",
+          "Zero amplitude"
+        ],
+        "answer": 0,
+        "explain": "Reflection from a perfect conductor does not change frequency or wavelength; only the phase may change."
+      },
+      {
+        "q": "The Poynting vector for a plane electromagnetic wave in vacuum is $\\vec{S}=\\frac{1}{\\mu_{0}}\\vec{E}\\times\\vec{B}$. Its magnitude is $S=\\frac{E_{0}^{2}}{\\mu_{0}c}$. What is the average value $\\langle S\\rangle$ over a complete cycle?",
+        "options": [
+          "$\\frac{E_{0}^{2}}{2\\mu_{0}c}$",
+          "$\\frac{E_{0}^{2}}{\\mu_{0}c}$",
+          "$\\frac{E_{0}^{2}}{4\\mu_{0}c}$",
+          "$0$"
+        ],
+        "answer": 0,
+        "explain": "The time average of $\\cos^{2}(\\omega t)$ over a cycle is $1/2$, giving $\\langle S\\rangle=\\frac{E_{0}^{2}}{2\\mu_{0}c}$."
+      },
+      {
+        "q": "Assertion (A): In a waveguide, the cutoff frequency for the $TE_{mn}$ mode is given by $f_{c}=\\frac{c}{2}\\sqrt{\\left(\\frac{m}{a}\\right)^{2}+\\left(\\frac{n}{b}\\right)^{2}}$.\\nReason (R): The cutoff occurs when the propagation constant along the guide becomes zero.",
+        "options": [
+          "Both A and R are true and R correctly explains A",
+          "Both A and R are true but R does not explain A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "The formula for $f_{c}$ is derived by setting the longitudinal propagation constant $\\beta=0$, which is exactly the reason stated."
+      },
+      {
+        "q": "Assertion (A): The energy density of an electromagnetic wave is equally shared between electric and magnetic fields.\\nReason (R): In vacuum $\\epsilon_{0}E^{2}=\\frac{1}{\\mu_{0}}B^{2}$ for a plane wave.",
+        "options": [
+          "Both A and R are true and R correctly explains A",
+          "Both A and R are true but R does not explain A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "For a plane wave in vacuum $u_{E}=\\frac{1}{2}\\epsilon_{0}E^{2}$ and $u_{B}=\\frac{1}{2}\\frac{B^{2}}{\\mu_{0}}$, and using $E=cB$ gives $u_{E}=u_{B}$; the reason shows the equality."
+      },
+      {
+        "q": "If the wavelength of an electromagnetic wave is halved, what happens to its photon energy?",
+        "options": [
+          "It doubles",
+          "It quadruples",
+          "It halves",
+          "It remains unchanged"
+        ],
+        "answer": 0,
+        "explain": "Photon energy $E=h\\nu=\\frac{hc}{\\lambda}$; halving $\\lambda$ doubles $\\nu$, thus $E$ doubles."
+      },
+      {
+        "q": "A linearly polarized wave traveling in the $+z$ direction has electric field $\\vec{E}=E_{0}\\hat{x}\\cos(kz-\\omega t)$. What is the direction of the magnetic field $\\vec{B}$?",
+        "options": [
+          "$\\hat{y}$",
+          "$-\\hat{y}$",
+          "$\\hat{x}$",
+          "$-\\hat{x}$"
+        ],
+        "answer": 0,
+        "explain": "Using $\\vec{B}=\\frac{1}{c}\\hat{k}\\times\\vec{E}$, with $\\hat{k}=\\hat{z}$ and $\\vec{E}$ along $\\hat{x}$ gives $\\vec{B}$ along $\\hat{y}$."
+      },
+      {
+        "q": "The radiation pressure exerted by a perfectly absorbing surface on an incident electromagnetic wave of intensity $I$ is:",
+        "options": [
+          "$I/c$",
+          "$2I/c$",
+          "$I/2c$",
+          "$0$"
+        ],
+        "answer": 0,
+        "explain": "For a perfectly absorbing surface, radiation pressure $P=I/c$; for a perfectly reflecting surface it would be $2I/c$."
+      }
     ]
   },
   "physics::ch9::physics/chapter9.html": {
@@ -5785,6 +5897,13 @@
         "title": "Summary & Common Mistakes",
         "html": "<h3>Quick Summary</h3><ul><li>Always write the cell notation left‑to‑right: anode | electrolyte || electrolyte | cathode.</li><li>Use $n$ = number of electrons transferred in the overall redox reaction for Nernst and $\\Delta G$ equations.</li><li>Standard potentials are tabulated for reduction half‑reactions; reverse sign for oxidation.</li><li>Temperature in Nernst equation must be in Kelvin; $0.0592$ V is valid only at $25^\\circ\\text{C}$.</li></ul><h3>Common Mistakes to Avoid</h3><ul><li>Confusing $E^\\circ_{cell}$ with $E_{cell}$ – the former is for standard conditions only.</li><li>Using $\\log$ instead of $\\ln$ without converting the coefficient (use $0.0592$ for $\\log_{10}$, $RT/F$ for natural log).</li><li>Neglecting sign change when writing oxidation half‑reaction from a reduction potential.</li><li>For Faraday’s law, forgetting to convert current $I$ from mA to A or time $t$ from minutes to seconds.</li></ul>"
       }
+    ],
+    "numericals": [
+      {
+        "level": "NCERT / Board Standard / HOTS",
+        "question": "Calculate the e.m.f of the cell Zn|Zn^{2+}(0.1 M)||Cu^{2+}(0.01 M)|Cu at 25 °C.",
+        "solution_html": "<p><b>Given:</b> Cell: Zn|Zn^{2+}(0.1\\,M)||Cu^{2+}(0.01\\,M)|Cu, T=298\\,K.</p><p><b>Formula:</b> $E = E^{\\\\circ} - \\\\frac{0.0592}{n}\\\\log Q$ (25°C).</p><p><b>Steps:</b><ol><li>Standard cell potential $E^{\\\\circ}_{cell}=E^{\\\\circ}_{cathode}-E^{\\\\circ}_{anode}=0.34-(-0.76)=1.10\\,\\\\text{V}$.</li><li>Reaction quotient $Q=\\\\frac{[Zn^{2+}]}{[Cu^{2+}]}=\\\\frac{0.1}{0.01}=10$.</li><li>Substitute: $E=1.10-\\\\frac{0.0592}{2}\\\\log 10=1.10-0.0296=1.0704\\,\\\\text{V}$.</li></ol></p><p><b>Answer:</b> $E=1.07\\,\\\\text{V}$.</p>"
+      }
     ]
   },
   "chemistry::ch2::chemistry/electrochemistry/mind-map.html": {
@@ -6125,7 +6244,8 @@
     ],
     "long_notes": {
       "Structure & nomenclature of aldehydes and ketones": "<p><strong>Definition</strong>: Aldehydes contain a carbonyl group ($&gt;C=O$) bonded to at least one hydrogen atom, represented as –$CHO$. Ketones have a carbonyl group flanked by two carbon atoms, represented as –$CO-$.</p><p><strong>General formulas (saturated)</strong>:</p><ul><li>Aldehyde: $C_{n}H_{2n+1}CHO$ (or $C_{n}H_{2n+2}O$)</li><li>Ketone: $C_{n}H_{2n}O$</li></ul><p><strong>Key IUPAC naming rules</strong>:</p><ol><li>Identify the longest carbon chain containing the carbonyl carbon.</li><li>Number the chain so that the carbonyl carbon gets the lowest possible locant.</li><li>For aldehydes, replace the –$e$ of the parent alkane with –$al$; for ketones, replace –$e$ with –$one$.</li><li>If substituents are present, name them in alphabetical order with their locants.</li><li>When the carbonyl is at the end of the chain, the aldehyde locant is omitted (e.g., $propanal$).</li></ol><p><strong>Summary table</strong>:</p><table><tr><th>Functional group</th><th>Suffix</th><th>Example</th></tr><tr><td>Aldehyde</td><td>–$al$</td><td>CH$_3$CH$_2$CHO → $propanal$</td></tr><tr><td>Ketone</td><td>–$one$</td><td>CH$_3$COCH$_3$ → $propanone$ (acetone)</td></tr></table><p><strong>Solved example</strong>:</p><p>Give the IUPAC name of the following structure:<br/>CH$_3$–CH$_2$–CH(CH$_3$)–CHO</p><p><em>Solution</em>:</p><ol><li>Longest chain containing –$CHO$ has 4 carbons → base name $butanal$.</li><li>Number from the carbonyl end: carbonyl carbon is C‑1.</li><li>There is a methyl substituent on C‑3.</li><li>Combine: $3$‑$methyl$ $butanal$.</li></ol><p><strong>Important SI units</strong>: Boiling point, melting point, density etc. are expressed in $^circ C$, $g,cm^{-3}$ respectively.</p>",
-      "Methods of preparation of aldehydes and ketones": "<p><strong>Definitions</strong></p><ul><li>Aldehyde: $RCHO$ (carbonyl carbon attached to at least one hydrogen).</li><li>Ketone: $RCOR'$ (carbonyl carbon attached to two alkyl/aryl groups).</li></ul><p><strong>Key Methods of Preparation</strong></p><table><tr><th>Method</th><th>Reagents / Conditions</th><th>Product</th></tr><tr><td>Oxidation of primary alcohol</td><td>$RCH_2OH$ + $[O]$ (e.g., $PCC$, $KMnO_4$ (cold))</td><td>$RCHO$</td></tr><tr><td>Ozonolysis of alkenes</td><td>$RCH=CH_2$ + $O_3$ → $H_2O_2$ work‑up</td><td>$RCHO$ + $R'CHO$</td></tr><tr><td>Hydration of terminal alkyne</td><td>$RC\\equiv CH$ + $H_2O$ (HgSO$_4$, $H_2SO_4$)</td><td>$RCHO$</td></tr><tr><td>Reduction of acid derivatives</td><td>$RCOCl$, $RCOOR'$, $RCOOH$, $RCONH_2$ + $LiAlH_4$ (or $NaBH_4$ for acid chloride)</td><td>$RCHO$ (or $RCOR'$ for ketone)</td></tr><tr><td>From nitriles</td><td>$RCN$ + $H_2$ (Raney Ni) or $LiAlH_4$</td><td>$RCH_2NH_2$ → $RCHO$ (via hydrolysis)</td></tr><tr><td>From carboxylic acids</td><td>$RCOOH$ + $P_2O_5$ (dry distillation)</td><td>$RCHO$</td></tr><tr><td>Grignard addition to CO</td><td>$R MgX$ + $CO$ + $H_2O$</td><td>$RCHO$</td></tr></table><p>Typical conditions: temperature $25-80^\\circ C$, pressure $1\\ atm$, solvents $CH_2Cl_2$, $EtOH$; yields are reported in %.</p><p><strong>Representative Example (Oxidation of Ethanol)</strong></p><p>Convert ethanol ($CH_3CH_2OH$) to acetaldehyde ($CH_3CHO$) using pyridinium chlorochromate (PCC).</p><table><tr><th>Step</th><th>Reaction</th></tr><tr><td>1</td><td>$CH_3CH_2OH$ + $PCC$ → $CH_3CHO$ + $Cr^{3+}$ + $Cl^-$</td></tr><tr><td>2</td><td>Work‑up with $H_2O$ gives pure $CH_3CHO$ (boiling point $20.2^\\circ C$).</td></tr></table><p>Key points: Use a mild oxidising agent to stop at aldehyde; avoid over‑oxidation to acetic acid.</p>"
+      "Methods of preparation of aldehydes and ketones": "<p><strong>Definitions</strong></p><ul><li>Aldehyde: $RCHO$ (carbonyl carbon attached to at least one hydrogen).</li><li>Ketone: $RCOR'$ (carbonyl carbon attached to two alkyl/aryl groups).</li></ul><p><strong>Key Methods of Preparation</strong></p><table><tr><th>Method</th><th>Reagents / Conditions</th><th>Product</th></tr><tr><td>Oxidation of primary alcohol</td><td>$RCH_2OH$ + $[O]$ (e.g., $PCC$, $KMnO_4$ (cold))</td><td>$RCHO$</td></tr><tr><td>Ozonolysis of alkenes</td><td>$RCH=CH_2$ + $O_3$ → $H_2O_2$ work‑up</td><td>$RCHO$ + $R'CHO$</td></tr><tr><td>Hydration of terminal alkyne</td><td>$RC\\equiv CH$ + $H_2O$ (HgSO$_4$, $H_2SO_4$)</td><td>$RCHO$</td></tr><tr><td>Reduction of acid derivatives</td><td>$RCOCl$, $RCOOR'$, $RCOOH$, $RCONH_2$ + $LiAlH_4$ (or $NaBH_4$ for acid chloride)</td><td>$RCHO$ (or $RCOR'$ for ketone)</td></tr><tr><td>From nitriles</td><td>$RCN$ + $H_2$ (Raney Ni) or $LiAlH_4$</td><td>$RCH_2NH_2$ → $RCHO$ (via hydrolysis)</td></tr><tr><td>From carboxylic acids</td><td>$RCOOH$ + $P_2O_5$ (dry distillation)</td><td>$RCHO$</td></tr><tr><td>Grignard addition to CO</td><td>$R MgX$ + $CO$ + $H_2O$</td><td>$RCHO$</td></tr></table><p>Typical conditions: temperature $25-80^\\circ C$, pressure $1\\ atm$, solvents $CH_2Cl_2$, $EtOH$; yields are reported in %.</p><p><strong>Representative Example (Oxidation of Ethanol)</strong></p><p>Convert ethanol ($CH_3CH_2OH$) to acetaldehyde ($CH_3CHO$) using pyridinium chlorochromate (PCC).</p><table><tr><th>Step</th><th>Reaction</th></tr><tr><td>1</td><td>$CH_3CH_2OH$ + $PCC$ → $CH_3CHO$ + $Cr^{3+}$ + $Cl^-$</td></tr><tr><td>2</td><td>Work‑up with $H_2O$ gives pure $CH_3CHO$ (boiling point $20.2^\\circ C$).</td></tr></table><p>Key points: Use a mild oxidising agent to stop at aldehyde; avoid over‑oxidation to acetic acid.</p>",
+      "Physical & chemical properties of aldehydes": "<p><strong>Physical &amp; Chemical Properties of Aldehydes (RCHO)</strong></p><p>Aldehydes contain the carbonyl group ($\\mathrm{C=O}$) attached to at least one hydrogen atom. They are polar, have characteristic pungent odours and are generally soluble in water up to $\\sim$5 % (by mass) due to hydrogen‑bonding.</p><ul><li><strong>Boiling point:</strong> Higher than the corresponding alcohol because of dipole‑dipole interactions, but lower than the analogous ketone (no extra alkyl group).</li><li><strong>Density:</strong> $1.0\\text{–}1.2\\,\\text{g cm}^{-3}$ (close to water).</li><li><strong>Reactivity:</strong> The carbonyl carbon is electrophilic; aldehydes undergo nucleophilic addition, oxidation to carboxylic acids and reduction to primary alcohols.</li></ul><table><tr><th>Property</th><th>Trend in Aldehydes</th></tr><tr><td>Boiling point (°C)</td><td>Increases with molecular weight; $\\mathrm{CH_2O}$ = -19, $\\mathrm{C_6H_{12}O}$ ≈ 120</td></tr><tr><td>Solubility in water</td><td>Decreases with chain length; $\\mathrm{CH_2O}$ fully miscible, $\\mathrm{C_6H_{12}O}$ ≈ 5 %</td></tr><tr><td>Acidity of $α$‑H</td><td>pK_a ≈ 17 (more acidic than alkanes)</td></tr></table><p><strong>Key Chemical Reactions</strong></p><ul><li>Oxidation: $\\mathrm{RCHO + [O] \\rightarrow RCOOH}$ (e.g., $\\mathrm{CH_2O + 2[O] \\rightarrow HCOOH}$). Rate law often first order: $\\text{Rate}=k[\\text{aldehyde}]$.</li><li>Reduction: $\\mathrm{RCHO + 2[H] \\rightarrow RCH_2OH}$ (e.g., NaBH$_4$).</li><li>Nucleophilic addition (e.g., formation of hemiacetal with $\\mathrm{ROH}$).</li></ul><p><strong>SI Units</strong></p><ul><li>Temperature – kelvin (K) or degree Celsius (°C).</li><li>Pressure – pascal (Pa).</li><li>Amount – mole (mol).</li></ul><p><strong>Solved Example</strong></p><p>Calculate the moles of formaldehyde ($\\mathrm{CH_2O}$) formed when $5.0\\,\\text{g}$ of methanol is oxidised completely.</p><p>Step 1: Molar mass of $\\mathrm{CH_2O}$ = $12.01 + 2(1.008) + 16.00 = 30.03\\,\\text{g mol}^{-1}$.</p><p>Step 2: $n = \\frac{m}{M} = \\frac{5.0\\,\\text{g}}{30.03\\,\\text{g mol}^{-1}} = 1.66\\times10^{-1}\\,\\text{mol}$.</p><p>Thus, $0.166\\,\\text{mol}$ of formaldehyde is produced.</p>"
     },
     "last_error": "All Groq models failed after fast failover."
   },
@@ -6174,7 +6294,9 @@
       "Vitamins – classification (fat soluble & water soluble) and significance",
       "Role of biomolecules in health, deficiency diseases and dietary importance"
     ],
-    "long_notes": {}
+    "long_notes": {
+      "Carbohydrates – classification, general formula and important members": "<p><strong>Definition:</strong> Carbohydrates are organic compounds composed only of carbon, hydrogen and oxygen in the approximate ratio 1:2:1 and serve as a major source of energy and structural material in living organisms.</p><p><strong>General formula:</strong> The empirical formula of a carbohydrate is $C_{n}(H_{2}O)_{n}$, where $n$ denotes the number of carbon atoms. For polyhydroxy aldehydes (aldoses) the molecular formula is $C_{n}H_{2n}O_{n}$; for polyhydroxy ketones (ketoses) it is $C_{n}H_{2n}O_{n}$ as well.</p><p><strong>Classification (based on number of saccharide units):</strong></p><ul><li><strong>Monosaccharides</strong> – single‑unit sugars (e.g., glucose, fructose).</li><li><strong>Disaccharides</strong> – two monosaccharide units linked by a glycosidic bond (e.g., sucrose, lactose).</li><li><strong>Polysaccharides</strong> – long chains of monosaccharide units (e.g., starch, cellulose, glycogen).</li></ul><p><strong>Important members</strong></p><table><tr><th>Type</th><th>Common Example</th><th>Molecular Formula</th><th>Molar Mass (g·mol$^{-1}$)</th></tr><tr><td>Monosaccharide</td><td>Glucose</td><td>$C_{6}H_{12}O_{6}$</td><td>180</td></tr><tr><td>Disaccharide</td><td>Sucrose</td><td>$C_{12}H_{22}O_{11}$</td><td>342</td></tr><tr><td>Polysaccharide</td><td>Starch (amylose)</td><td>$(C_{6}H_{10}O_{5})_{n}$</td><td>Variable (depends on $n$)</td></tr></table><p><strong>SI Units:</strong> Amount of substance – mol; mass – g; concentration – mol·L$^{-1}$.</p><p><strong>Solved Example:</strong> Find the number of moles of glucose present in a 90 g sample.<br/>Molar mass of glucose = 180 g·mol$^{-1}$.<br/>$$n = \\frac{\\text{mass}}{\\text{molar mass}} = \\frac{90\\ \\text{g}}{180\\ \\text{g·mol}^{-1}} = 0.5\\ \\text{mol}$$<br/>Thus, 90 g of glucose corresponds \\to $0.5$ mol, which contains $0.5 \\times 6.022\\times10^{23} \\approx 3.01\\times10^{23}$ molecules.</p>"
+    }
   },
   "chemistry::ch10::chemistry/biomolecules/mind-map.html": {
     "last_error": "All Groq models failed after fast failover.",
