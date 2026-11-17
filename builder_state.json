@@ -2042,6 +2042,118 @@
         "question": "Find the angle between the line through $A(1,0,2)$ and $B(3,-2,5)$ and the plane $2x-y+2z=7$.",
         "answer_html": "<p>Direction ratios of the line $=\\langle 3-1,-2-0,5-2\\rangle =\\langle 2,-2,3\\rangle$.<br/>Normal to the plane $\\mathbf{n}=\\langle 2,-1,2\\rangle$.<br/>Cosine of angle $\\theta$ between line and normal:<br/>$\\cos\\theta=\\dfrac{|2\\cdot2+(-2)(-1)+3\\cdot2|}{\\sqrt{2^{2}+(-2)^{2}+3^{2}}\\,\\sqrt{2^{2}+(-1)^{2}+2^{2}}}=\\dfrac{12}{3\\sqrt{17}}=\\dfrac{4}{\\sqrt{17}}$.<br/>Angle with the plane $=90^{\\circ}-\\theta=\\sin^{-1}\\left(\\dfrac{4}{\\sqrt{17}}\\right)$. </p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "If the direction ratios of a line are $1,\\,2,\\, -2$, which of the following is a correct symmetric equation of the line?",
+        "options": [
+          "$\\frac{x-1}{1}=\\frac{y+2}{2}=\\frac{z-3}{-2}$",
+          "$\\frac{x-1}{2}=\\frac{y+2}{1}=\\frac{z-3}{-2}$",
+          "$\\frac{x-1}{1}=\\frac{y+2}{-2}=\\frac{z-3}{2}$",
+          "$\\frac{x-1}{-1}=\\frac{y+2}{2}=\\frac{z-3}{2}$"
+        ],
+        "answer": 0,
+        "explain": "Direction ratios $(1,2,-2)$ give the symmetric form $\\frac{x-x_0}{1}=\\frac{y-y_0}{2}=\\frac{z-z_0}{-2}$. Option A matches this."
+      },
+      {
+        "q": "The plane $\\pi$ passes through the point $(2, -1, 3)$ and is perpendicular to the vector $\\vec{n}=\\langle 4,\\, -2,\\, 1\\rangle$. Its equation is:",
+        "options": [
+          "$4x-2y+z=9$",
+          "$4x-2y+z=5$",
+          "$4x-2y+z=13$",
+          "$4x-2y+z=7$"
+        ],
+        "answer": 1,
+        "explain": "Using $\\vec{n}\\cdot (\\vec{r}-\\vec{r_0})=0$: $4(x-2)-2(y+1)+1(z-3)=0\\Rightarrow 4x-2y+z=5$."
+      },
+      {
+        "q": "The shortest distance between the skew lines $L_1:\\frac{x-1}{2}=\\frac{y+1}{-1}=\\frac{z-2}{3}$ and $L_2:\\frac{x+2}{-1}=\\frac{y-3}{2}=\\frac{z+1}{4}$ is",
+        "options": [
+          "$\\frac{5}{\\sqrt{29}}$",
+          "$\\frac{7}{\\sqrt{29}}$",
+          "$\\frac{5}{\\sqrt{14}}$",
+          "$\\frac{7}{\\sqrt{14}}$"
+        ],
+        "answer": 0,
+        "explain": "Direction vectors $\\vec{d_1}=\\langle2,-1,3\\rangle$, $\\vec{d_2}=\\langle-1,2,4\\rangle$. Vector between points $\\vec{PQ}=\\langle -3, -4, -1\\rangle$. Distance $=\\frac{|\\vec{PQ}\\cdot(\\vec{d_1}\\times\\vec{d_2})|}{|\\vec{d_1}\\times\\vec{d_2}|}=\\frac{5}{\\sqrt{29}}$."
+      },
+      {
+        "q": "If a line makes equal angles with the coordinate axes, then the direction ratios of the line are proportional to",
+        "options": [
+          "$1,\\,1,\\,1$",
+          "$1,\\,1,\\,-1$",
+          "$1,\\, -1,\\,1$",
+          "$-1,\\,1,\\,1$"
+        ],
+        "answer": 0,
+        "explain": "Equal angles with all axes imply equal direction ratios, i.e., $1:1:1$."
+      },
+      {
+        "q": "Assertion (A): The line $\\frac{x-2}{3}=\\frac{y+1}{-2}=\\frac{z}{1}$ is perpendicular to the plane $3x-2y+z=5$.\\nReason (R): The direction ratios of the line are proportional to the normal ratios of the plane.",
+        "options": [
+          "Both A and R are true, and R is the correct explanation",
+          "Both A and R are true, but R is not the correct explanation",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "Direction ratios of the line are $(3,-2,1)$ which are exactly the normal ratios of the plane, so the line is perpendicular to the plane. Hence both statements are true and R explains A."
+      },
+      {
+        "q": "The angle $\\theta$ between the line $\\frac{x-1}{2}=\\frac{y+3}{-1}=\\frac{z-2}{2}$ and the plane $x-2y+2z=4$ satisfies",
+        "options": [
+          "$\\sin\\theta=\\frac{\\sqrt{9}}{\\sqrt{14}}$",
+          "$\\cos\\theta=\\frac{\\sqrt{9}}{\\sqrt{14}}$",
+          "$\\tan\\theta=\\frac{\\sqrt{9}}{\\sqrt{14}}$",
+          "$\\cot\\theta=\\frac{\\sqrt{9}}{\\sqrt{14}}$"
+        ],
+        "answer": 1,
+        "explain": "If $\\vec{d}=\\langle2,-1,2\\rangle$ and normal $\\vec{n}=\\langle1,-2,2\\rangle$, then $\\cos\\theta=\\frac{|\\vec{d}\\cdot\\vec{n}|}{|\\vec{d}|\\,|\\vec{n}|}=\\frac{\\sqrt{9}}{\\sqrt{14}}$."
+      },
+      {
+        "q": "The foot of the perpendicular from the point $P(1,2,3)$ to the plane $2x- y+2z=7$ is",
+        "options": [
+          "$(\\frac{5}{3},\\frac{7}{3},\\frac{11}{3})$",
+          "$(\\frac{4}{3},\\frac{8}{3},\\frac{10}{3})$",
+          "$(\\frac{2}{3},\\frac{5}{3},\\frac{8}{3})$",
+          "$(\\frac{1}{3},\\frac{4}{3},\\frac{7}{3})$"
+        ],
+        "answer": 1,
+        "explain": "Foot $F= P-\\frac{2\\cdot1-1\\cdot2+2\\cdot3-7}{2^2+(-1)^2+2^2}\\langle2,-1,2\\rangle = (\\frac{4}{3},\\frac{8}{3},\\frac{10}{3})$."
+      },
+      {
+        "q": "If two planes $\\pi_1: x+2y-3z+4=0$ and $\\pi_2: 2x+4y-6z-5=0$ intersect, the angle between them is",
+        "options": [
+          "$0^{\\circ}$",
+          "$90^{\\circ}$",
+          "$180^{\\circ}$",
+          "Undefined"
+        ],
+        "answer": 0,
+        "explain": "Normals are proportional $(1,2,-3)$ and $(2,4,-6)$, so planes are parallel (or coincident). Hence angle $0^{\\circ}$."
+      },
+      {
+        "q": "The line $L$ passes through the point $(1,0,2)$ and is parallel to the plane $x- y+z=0$ and also perpendicular to the line $\\frac{x}{1}=\\frac{y}{2}=\\frac{z}{3}$. Direction ratios of $L$ are",
+        "options": [
+          "$2,\\, -1,\\, 0$",
+          "$1,\\, 1,\\, -2$",
+          "$3,\\, -3,\\, 0$",
+          "$2,\\, 1,\\, -1$"
+        ],
+        "answer": 3,
+        "explain": "Let $\\vec{d}=\\langle a,b,c\\rangle$. Perpendicular to $\\langle1,2,3\\rangle$ gives $a+2b+3c=0$. Parallel to plane $x-y+z=0$ means $\\vec{d}\\cdot\\langle1,-1,1\\rangle=0\\Rightarrow a-b+c=0$. Solving gives $a:b:c=2:1:-1$."
+      },
+      {
+        "q": "The volume of the tetrahedron formed by the coordinate planes and the plane $x+2y+3z=6$ is",
+        "options": [
+          "$2$",
+          "$3$",
+          "$4$",
+          "$6$"
+        ],
+        "answer": 2,
+        "explain": "Intercepts are $6,3,2$. Volume $=\\frac{1}{6}\\times6\\times3\\times2=4$."
+      }
     ]
   },
   "mathematics::ch12::mathematics/chapter12.html": {
@@ -3635,7 +3747,20 @@
         "answer": 0,
         "explain": "For a half-wave rectifier, the average (dc) value of the output is $V_{avg}=\\frac{1}{\\pi}\\int_{0}^{\\pi}V_{m}\\sin\\theta\\,d\\theta=\\frac{V_{m}}{\\pi}$. This occurs because only the positive half cycles appear at the output, making both statements true and R explains A."
       }
-    ]
+    ],
+    "visual_maps": {
+      "mindmap": "mindmap\n  root((Alternating Current))\n    Basics\n      Definition\n    AC_Circuits\n      RLC\n    Power\n      AvgPower",
+      "flowchart": "flowchart TD\n  A[Start] --> B[AC Basics]\n  B --> C[Impedance]\n  C --> D[Power]\n  D --> E[End]",
+      "revision_points": [
+        "Definition of alternating current",
+        "Peak, RMS and average values",
+        "Impedance of R, L, C and series RLC circuit",
+        "Power in AC: instantaneous, average and power factor",
+        "Resonance in series and parallel RLC circuits"
+      ]
+    },
+    "status": "done",
+    "updated": "2026-11-17 01:43:28"
   },
   "physics::ch8::physics/chapter8.html": {
     "topics": [
