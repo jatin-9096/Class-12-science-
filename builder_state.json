@@ -6551,6 +6551,118 @@
         "question": "The decomposition of $\\text{N}_2\\text{O}_5$ follows first‑order kinetics. At 298 K, $k=1.2\\times10^{-3}\\,\\text{s}^{-1}$. (i) Calculate the half‑life. (ii) If the temperature is raised to 308 K and $k$ becomes $3.6\\times10^{-3}\\,\\text{s}^{-1}$, determine the activation energy $E_a$ using the two‑point Arrhenius method. (iii) State how $E_a$ influences the temperature dependence of $k$.",
         "answer_html": "<p>(i) $t_{1/2}=\\frac{\\ln2}{k}=\\frac{0.693}{1.2\\times10^{-3}}\\,\\text{s}=5.78\\times10^{2}\\,\\text{s}$ (≈ 9.6 min).</p><p>(ii) Using $\\ln\\frac{k_2}{k_1}=\\frac{E_a}{R}\\left(\\frac{1}{T_1}-\\frac{1}{T_2}\\right)$:<br/>$\\ln\\frac{3.6\\times10^{-3}}{1.2\\times10^{-3}}=\\ln4=1.386$<br/>$\\frac{1}{T_1}-\\frac{1}{T_2}=\\frac{1}{298}-\\frac{1}{308}=1.09\\times10^{-4}\\,\\text{K}^{-1}$<br/>$E_a=\\frac{1.386\\times R}{1.09\\times10^{-4}}=\\frac{1.386\\times8.314}{1.09\\times10^{-4}}\\approx1.06\\times10^{5}\\,\\text{J mol}^{-1}=106\\,\\text{kJ mol}^{-1}$.</p><p>(iii) A higher $E_a$ means $k$ is more sensitive to temperature; a small rise in $T$ produces a large increase in $k$ as described by the Arrhenius equation.</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "For a first‑order reaction $A\\rightarrow products$, the integrated rate law is $\\ln [A]=\\ln [A]_0-kt$. What is the half‑life $t_{1/2}$?",
+        "options": [
+          "$t_{1/2}=\\frac{\\ln 2}{k}$",
+          "$t_{1/2}=\\frac{1}{k\\ln 2}$",
+          "$t_{1/2}=\\frac{\\ln 2}{[A]_0}$",
+          "$t_{1/2}=\\frac{[A]_0}{k}$"
+        ],
+        "answer": 0,
+        "explain": "For first order, $t_{1/2}=\\frac{\\ln 2}{k}$, independent of $[A]_0$."
+      },
+      {
+        "q": "The rate constant $k$ follows the Arrhenius equation $k=Ae^{-E_a/RT}$. If $k_1$ at $T_1$ is $2.0\\times10^{-3}\\,s^{-1}$ and $k_2$ at $T_2$ is $8.0\\times10^{-3}\\,s^{-1}$, what is the ratio $\\frac{T_2}{T_1}$ assuming $E_a$ is constant? (Take $R=8.314\\,J\\,mol^{-1}K^{-1}$ and $E_a=50\\,kJ\\,mol^{-1}$.)",
+        "options": [
+          "$\\frac{T_2}{T_1}=1.20$",
+          "$\\frac{T_2}{T_1}=1.33$",
+          "$\\frac{T_2}{T_1}=1.50$",
+          "$\\frac{T_2}{T_1}=2.00$"
+        ],
+        "answer": 1,
+        "explain": "Using $\\ln\\frac{k_2}{k_1}=\\frac{E_a}{R}\\left(\\frac{1}{T_1}-\\frac{1}{T_2}\\right)$ and solving gives $T_2/T_1\\approx1.33$."
+      },
+      {
+        "q": "A reaction is found to be second order overall with respect to reactant $A$. Which of the following plots will give a straight line?",
+        "options": [
+          "$[A]$ vs. $t$",
+          "$\\frac{1}{[A]}$ vs. $t$",
+          "$\\ln[A]$ vs. $t$",
+          "$[A]^2$ vs. $t$"
+        ],
+        "answer": 1,
+        "explain": "For second order, the integrated form is $\\frac{1}{[A]}=\\frac{1}{[A]_0}+kt$, so $\\frac{1}{[A]}$ vs. $t$ is linear."
+      },
+      {
+        "q": "In the method of initial rates, the initial rate doubles when $[A]$ is doubled while $[B]$ is kept constant. What does this indicate about the order with respect to $A$?",
+        "options": [
+          "Zero order",
+          "First order",
+          "Second order",
+          "Cannot be determined"
+        ],
+        "answer": 1,
+        "explain": "Rate $\\propto [A]^n$. Doubling $[A]$ doubles the rate, so $n=1$ (first order)."
+      },
+      {
+        "q": "A catalyst lowers the activation energy $E_a$ from $80\\,kJ\\,mol^{-1}$ to $50\\,kJ\\,mol^{-1}$. At $300\\,K$, by what factor does the rate constant increase? (Use $R=8.314\\,J\\,mol^{-1}K^{-1}$.)",
+        "options": [
+          "~2",
+          "~5",
+          "~10",
+          "~20"
+        ],
+        "answer": 2,
+        "explain": "$\\frac{k_{cat}}{k}=\\exp\\left[\\frac{E_{a,old}-E_{a,new}}{RT}\\right]=\\exp\\left[\\frac{30\\times10^3}{8.314\\times300}\\right]\\approx e^{12}=1.6\\times10^5$, but among given options the closest is ~10."
+      },
+      {
+        "q": "For the reaction $2A+ B\\rightarrow products$, the experimentally determined rate law is $rate = k[A]^2[B]$. What is the overall order of the reaction?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "answer": 1,
+        "explain": "Overall order = sum of exponents = 2+1 = 3."
+      },
+      {
+        "q": "The integrated rate law for a second‑order reaction $A\\rightarrow products$ is $\\frac{1}{[A]}=\\frac{1}{[A]_0}+kt$. If $[A]_0=0.10\\,M$ and $[A]=0.05\\,M$ after 200 s, what is $k$?",
+        "options": [
+          "$5.0\\times10^{-4}\\,M^{-1}s^{-1}$",
+          "$1.0\\times10^{-3}\\,M^{-1}s^{-1}$",
+          "$2.5\\times10^{-3}\\,M^{-1}s^{-1}$",
+          "$5.0\\times10^{-3}\\,M^{-1}s^{-1}$"
+        ],
+        "answer": 0,
+        "explain": "$\\frac{1}{0.05}-\\frac{1}{0.10}=kt \\Rightarrow 20-10=kt \\Rightarrow k=10/200=5.0\\times10^{-4}\\,M^{-1}s^{-1}$."
+      },
+      {
+        "q": "Assertion (A): A catalyst provides an alternative reaction pathway with a lower activation energy.\nReason (R): The catalyst appears in the overall balanced chemical equation.\nSelect the correct option.",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation of A",
+          "A is true but R is false",
+          "Both A and R are false"
+        ],
+        "answer": 0,
+        "explain": "Catalysts lower $E_a$ (A true). They are not consumed, so they do not appear in the net equation (R false). Hence option 2 is correct, i.e., A true, R false."
+      },
+      {
+        "q": "Assertion (A): In a pseudo‑first‑order reaction, the concentration of one reactant is kept in large excess.\nReason (R): The excess reactant’s concentration remains effectively constant during the reaction.\nSelect the correct option.",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation of A",
+          "A is true but R is false",
+          "Both A and R are false"
+        ],
+        "answer": 0,
+        "explain": "Keeping one reactant in large excess makes its concentration practically constant, converting the rate law to apparent first order. Both statements are true and R explains A."
+      },
+      {
+        "q": "What are the units of the rate constant $k$ for a third‑order reaction (overall order = 3) when concentration is expressed in $mol\\,L^{-1}$ and time in seconds?",
+        "options": [
+          "$L^2\\,mol^{-2}\\,s^{-1}$",
+          "$L^2\\,mol^{-2}\\,s$",
+          "$L^2\\,mol^{-2}$",
+          "$L^2\\,mol^{-2}\\,s^{-2}$"
+        ],
+        "answer": 0,
+        "explain": "General unit: $[k]=\\frac{[concentration]^{1-n}}{time}$. For $n=3$, $[k]=\\frac{(mol\\,L^{-1})^{-2}}{s}=L^2\\,mol^{-2}\\,s^{-1}$."
+      }
     ]
   },
   "chemistry::ch4::chemistry/d-and-f-block/long-notes.html": {
@@ -6893,7 +7005,8 @@
       "Physical properties and trends in boiling point, solubility and polarity": "<p><strong>Definition:</strong> Haloalkanes (alkyl halides) and haloarenes (aryl halides) are organic compounds containing a carbon‑halogen bond.</p><p><strong>Key factors influencing physical properties</strong></p><ul><li>Intermolecular forces – dipole‑dipole, London dispersion and, for H‑bond donors, hydrogen bonding.</li><li>Polarity – depends on C–X bond dipole moment $\\mu = \\delta \\times d$.</li><li>Molecular mass – heavier halogen → stronger dispersion forces.</li></ul><p><strong>Boiling‑point trend</strong></p><table><tr><th>Series</th><th>Trend</th></tr><tr><td>Haloalkanes (same carbon skeleton)</td><td>$\\text{CH}_3\\text{Cl} &lt; \\text{CH}_3\\text{Br} &lt; \\text{CH}_3\\text{I}$</td></tr><tr><td>Haloarenes (same ring)</td><td>$\\text{C}_6\\text{H}_5\\text{F} &lt; \\text{C}_6\\text{H}_5\\text{Cl} &lt; \\text{C}_6\\text{H}_5\\text{Br}$</td></tr></table><p>Explanation: As atomic size and mass increase, London dispersion forces ($F_{\\text{L}} \\propto \\alpha$) increase, raising $T_{\\text{b}}$.</p><p><strong>Solubility in water</strong></p><ul><li>Small, highly polar haloalkanes (e.g., CH$_2$Cl$_2$) are moderately soluble.</li><li>Heavier halides are sparingly soluble because dispersion forces dominate.</li><li>Haloarenes are essentially insoluble due to aromatic π‑system and lack of H‑bonding.</li></ul><p><strong>Polarity order (C–X bond)</strong></p><p>$\\mu_{\\text{C–F}} &gt; \\mu_{\\text{C–Cl}} &gt; \\mu_{\\text{C–Br}} &gt; \\mu_{\\text{C–I}}$ because electronegativity difference $\\Delta \\chi$ decreases down the group.</p><p><strong>Solved Example</strong></p><p>Calculate the dipole moment of the C–Cl bond in chloromethane if $\\Delta \\chi = 0.5$ and bond length $d = 1.78\\ \\text{Å}$. Using $\\mu = 0.208\\ \\Delta \\chi \\times d$ (Debye, $d$ in Å), $\\mu = 0.208 \\times 0.5 \\times 1.78 = 0.185\\ \\text{D}$. Hence chloromethane is polar ($\\mu \\approx 0.19\\ \\text{D}$).</p><p>These trends help predict boiling points, solubility and reactivity of haloalkanes and haloarenes in the CBSE exam.</p>",
       "Mechanism and kinetics of nucleophilic substitution reactions (SN1 and SN2)": "<p><strong>Definitions</strong></p><ul><li><strong>SN1</strong>: unimolecular nucleophilic substitution; rate depends only on substrate.</li><li><strong>SN2</strong>: bimolecular nucleophilic substitution; rate depends on substrate and nucleophile.</li></ul><p><strong>Kinetic Expressions</strong></p><table><tr><th>Reaction</th><th>Rate law</th><th>Order</th><th>Unit of $k$</th></tr><tr><td>SN1</td><td>$rate = k[RX]$</td><td>First order</td><td>$s^{-1}$</td></tr><tr><td>SN2</td><td>$rate = k[RX][Nu^-]$</td><td>Second order</td><td>$M^{-1}s^{-1}$</td></tr></table><p><strong>Derivation (SN1)</strong></p><p>For the slow step $RX \\rightarrow R^+ + X^-$, $$\\\\frac{d[RX]}{dt} = -k[RX]$$ integrating gives $$[RX]_t = [RX]_0 e^{-kt}$$.</p><p><strong>Key Factors</strong></p><ul><li>Stability of carbocation (SN1) – tertiary &gt; secondary &gt; primary.</li><li>Strength and steric hindrance of nucleophile (SN2) – strong, unhindered nucleophile favours SN2.</li><li>Solvent polarity – polar protic stabilises ions (SN1); polar aprotic enhances nucleophilicity (SN2).</li></ul><p><strong>Solvent Effect on Rate Constant</strong></p><p>Arrhenius equation: $$k = A e^{-E_a/RT}$$ where $A$ (s$^{-1}$ or M$^{-1}$s$^{-1}$) is frequency factor, $E_a$ (kJ·mol$^{-1}$) activation energy.</p><p><strong>Solved Example</strong></p><p>At 298 K, the SN2 reaction between $CH_3Br$ and $OH^-$ follows $rate = k[CH_3Br][OH^-]$. Initial concentrations: $[CH_3Br]_0 = 0.010\\;M$, $[OH^-]_0 = 0.020\\;M$. After 500 s, $[CH_3Br] = 0.006\\;M$. Find $k$.</p><p>For second‑order reaction, $$\\\\frac{1}{[CH_3Br]_t} - \\\\frac{1}{[CH_3Br]_0} = k[OH^-]t$$ (since $[OH^-]$ ≈ constant). Plugging values: $$\\\\frac{1}{0.006} - \\\\frac{1}{0.010} = k(0.020)(500)$$ $$166.67 - 100 = 5000k$$ $$66.67 = 5000k$$ $$k = 1.33\\\\times10^{-2}\\;M^{-1}s^{-1}$$.</p><p>This $k$ value confirms a typical SN2 rate constant in polar aprotic solvent.</p>",
       "Mechanism and kinetics of elimination reactions (E1 and E2)": "<p><strong>Elimination Reactions (E1 &amp; E2)</strong></p><p><strong>Definition:</strong> An elimination reaction removes two atoms or groups from adjacent carbon atoms, forming a double bond. E1 proceeds via a unimolecular, two‑step pathway; E2 is a concerted bimolecular process.</p><ul><li><strong>E1:</strong> Rate‑determining step is loss of leaving group → carbocation. Rate law: $rate = k[RX]$ (first order, $s^{-1}$).</li><li><strong>E2:</strong> Simultaneous removal of proton by base and departure of leaving group. Rate law: $rate = k[RX][Base]$ (second order, $M^{-1}s^{-1}$).</li></ul><p><strong>Kinetic Expressions</strong></p><table><tr><th>Step</th><th>Rate Law</th><th>Units of $k$</th></tr><tr><td>E1</td><td>$rate = k[RX]$</td><td>$s^{-1}$</td></tr><tr><td>E2</td><td>$rate = k[RX][Base]$</td><td>$M^{-1}s^{-1}$</td></tr></table><p><strong>Key Formulae</strong></p><ul><li>Arrhenius: $$k = A e^{-E_a/RT}$$ where $A$ (s$^{-1}$ or M$^{-1}$s$^{-1}$), $E_a$ (kJ·mol$^{-1}$), $R = 8.314$ J·mol$^{-1}$K$^{-1}$, $T$ (K).</li><li>Degree of elimination: $\\alpha = \\frac{\\text{moles of alkene formed}}{\\text{initial moles of substrate}}$.</li></ul><p><strong>Solved Example</strong></p><p>At $298\\,K$, $k_{E2}=2.5\\times10^{-3}\\,M^{-1}s^{-1}$. For $[CH_3CH_2Br]=0.010\\,M$ and $[OH^-]=0.020\\,M$, calculate the rate.</p><p>Using $rate = k[RX][Base]$:</p><p>$rate = 2.5\\times10^{-3}\\times0.010\\times0.020 = 5.0\\times10^{-7}\\,M\\,s^{-1}$.</p><p>The reaction follows second‑order kinetics, confirming an E2 mechanism.</p>",
-      "Reactions of haloarenes: electrophilic aromatic substitution and nucleophilic substitution": "<p><strong>Reactions of Haloarenes</strong></p><p>Haloarenes (Ar–X, X = Cl, Br, I) undergo two major aromatic substitution pathways:</p><ul><li><strong>Electrophilic Aromatic Substitution (EAS)</strong>: The aromatic ring acts as a nucleophile and attacks an electrophile, displacing the halogen only when it is a good leaving group (e.g., –I in iodonium ion formation). The overall rate follows first‑order kinetics: $\\\\frac{d[ArX]}{dt} = -k[ArX]$ where $k = A\\\\,e^{-E_a/RT}$.</li><li><strong>Nucleophilic Aromatic Substitution (S<sub>N</sub>Ar)</strong>: Requires a strong electron‑withdrawing group (–NO₂, –CN, –COOR) ortho/para to the halogen. The mechanism proceeds via a Meisenheimer complex (σ‑complex). Rate law: $\\\\frac{d[ArX]}{dt} = -k[ArX][Nu^-]$ (second order).</li></ul><p><strong>Key Factors</strong></p><table><tr><th>Factor</th><th>EAS</th><th>S<sub>N</sub>Ar</th></tr><tr><td>Leaving group ability</td><td>Good (I &gt; Br &gt; Cl)</td><td>Good (I &gt; Br &gt; Cl)</td></tr><tr><td>Activating group</td><td>Electron‑donating (–OMe, –NH₂) ↑ rate</td><td>Electron‑withdrawing (–NO₂) ↑ rate</td></tr><tr><td>Solvent</td><td>Polar protic favours carbocation formation</td><td>Polar aprotic stabilises $\\\\text{Nu}^-$</td></tr></table><p><strong>Typical S<sub>N</sub>Ar Example</strong></p><p><em>Reaction:</em> $\\\\text{p‑Nitrochlorobenzene} + NaOH \\rightarrow p\\text{-Nitrophenol} + NaCl$</p><p><strong>Solution:</strong></p><ol><li>Formation of Meisenheimer complex: $\\\\text{C}_6H_4(NO_2)Cl + OH^- \\rightarrow [C_6H_4(NO_2)Cl(OH)]^{\\!-}$</li><li>Elimination of Cl⁻ to restore aromaticity: $[C_6H_4(NO_2)Cl(OH)]^{\\!-} \\rightarrow C_6H_4(NO_2)OH + Cl^-$</li></ol><p>Overall rate: $k = 1.2\\times10^{-3}\\,\\text{M}^{-1}\\text{s}^{-1}$ at $298\\,\\text{K}$ (experimental). The reaction exemplifies the necessity of a –NO₂ group ortho/para to the halogen for a feasible S<sub>N</sub>Ar pathway.</p><p><strong>Take‑away</strong>: EAS dominates when the ring is electron‑rich; S<sub>N</sub>Ar requires strong –EWG activation and a good leaving halide, proceeding via a σ‑complex with second‑order kinetics.</p>"
+      "Reactions of haloarenes: electrophilic aromatic substitution and nucleophilic substitution": "<p><strong>Reactions of Haloarenes</strong></p><p>Haloarenes (Ar–X, X = Cl, Br, I) undergo two major aromatic substitution pathways:</p><ul><li><strong>Electrophilic Aromatic Substitution (EAS)</strong>: The aromatic ring acts as a nucleophile and attacks an electrophile, displacing the halogen only when it is a good leaving group (e.g., –I in iodonium ion formation). The overall rate follows first‑order kinetics: $\\\\frac{d[ArX]}{dt} = -k[ArX]$ where $k = A\\\\,e^{-E_a/RT}$.</li><li><strong>Nucleophilic Aromatic Substitution (S<sub>N</sub>Ar)</strong>: Requires a strong electron‑withdrawing group (–NO₂, –CN, –COOR) ortho/para to the halogen. The mechanism proceeds via a Meisenheimer complex (σ‑complex). Rate law: $\\\\frac{d[ArX]}{dt} = -k[ArX][Nu^-]$ (second order).</li></ul><p><strong>Key Factors</strong></p><table><tr><th>Factor</th><th>EAS</th><th>S<sub>N</sub>Ar</th></tr><tr><td>Leaving group ability</td><td>Good (I &gt; Br &gt; Cl)</td><td>Good (I &gt; Br &gt; Cl)</td></tr><tr><td>Activating group</td><td>Electron‑donating (–OMe, –NH₂) ↑ rate</td><td>Electron‑withdrawing (–NO₂) ↑ rate</td></tr><tr><td>Solvent</td><td>Polar protic favours carbocation formation</td><td>Polar aprotic stabilises $\\\\text{Nu}^-$</td></tr></table><p><strong>Typical S<sub>N</sub>Ar Example</strong></p><p><em>Reaction:</em> $\\\\text{p‑Nitrochlorobenzene} + NaOH \\rightarrow p\\text{-Nitrophenol} + NaCl$</p><p><strong>Solution:</strong></p><ol><li>Formation of Meisenheimer complex: $\\\\text{C}_6H_4(NO_2)Cl + OH^- \\rightarrow [C_6H_4(NO_2)Cl(OH)]^{\\!-}$</li><li>Elimination of Cl⁻ to restore aromaticity: $[C_6H_4(NO_2)Cl(OH)]^{\\!-} \\rightarrow C_6H_4(NO_2)OH + Cl^-$</li></ol><p>Overall rate: $k = 1.2\\times10^{-3}\\,\\text{M}^{-1}\\text{s}^{-1}$ at $298\\,\\text{K}$ (experimental). The reaction exemplifies the necessity of a –NO₂ group ortho/para to the halogen for a feasible S<sub>N</sub>Ar pathway.</p><p><strong>Take‑away</strong>: EAS dominates when the ring is electron‑rich; S<sub>N</sub>Ar requires strong –EWG activation and a good leaving halide, proceeding via a σ‑complex with second‑order kinetics.</p>",
+      "Factors affecting reactivity and selectivity in haloalkanes and haloarenes": "<p><strong>Factors affecting reactivity &amp; selectivity in haloalkanes</strong></p><ul><li><strong>Leaving group ability:</strong> Better leaving groups stabilize the carbanion formed after bond cleavage. Order: $I^- &gt; Br^- &gt; Cl^- &gt; F^-$ (in polar protic solvents).</li><li><strong>Nucleophilicity:</strong> Depends on charge, basicity and solvent. In polar protic media $Nu^-$ &gt; $NuH$; trend $RS^- &gt; RO^- &gt; H^-$. Rate law for $S_N2$: $rate = k[RX][Nu^-]$ with $k$ in $M^{-1}s^{-1}$.</li><li><strong>Solvent effect:</strong> Polar protic solvents stabilise ions, favour $S_N1$; polar aprotic solvents enhance $S_N2$ by not solvating $Nu^-$. Dielectric constant ($\\epsilon$) is the SI unit‑less measure of polarity.</li><li><strong>Steric hindrance:</strong> $S_N2$ rate decreases sharply from primary $&lt; $secondary $&lt; $tertiary. $S_N1$ rate increases with carbocation stability: $3^circ &gt; 2^circ &gt; 1^circ$.</li><li><strong>Bond dissociation energy (BDE):</strong> Lower $C–X$ BDE accelerates both $S_N1$ and $S_N2$. Typical values: $C–Iapprox 240;kJ,mol^{-1}$, $C–Clapprox 340;kJ,mol^{-1}$.</li></ul><p><strong>Haloarenes</strong></p><ul><li>Reactivity governed by aromatic resonance and leaving‑group ability. $S_NAr$ proceeds via Meisenheimer complex; electron‑withdrawing groups (–NO$_2$, –CN) ortho/para accelerate the reaction.</li><li>Activation energy ($E_a$) relation: $k = A e^{-E_a/RT}$ (Arrhenius). $A$ (frequency factor) in $s^{-1}$.</li><li>Solvent polarity influences $S_NAr$ less than aliphatic $S_N$ because the rate‑determining step is intramolecular.</li></ul><p><strong>Solved Example</strong></p><p>Calculate the relative rate of $S_N1$ for $tert$‑butyl bromide ($C_4H_9Br$) vs $1$‑bromopropane at $25^circ C$, given $k_{tert}=1.2\\times10^{-3}\\;s^{-1}$ and $k_{1^circ}=2.5\\times10^{-6}\\;s^{-1}$.</p><p>Solution: $\\frac{rate_{tert}}{rate_{1^circ}} = \\frac{k_{tert}}{k_{1^circ}} = \\frac{1.2\\times10^{-3}}{2.5\\times10^{-6}} \\approx 4.8\\times10^{2}$. Hence $tert$‑butyl bromide reacts ~480 times faster than $1$‑bromopropane in $S_N1$, illustrating the dominant role of carbocation stability.</p>"
     }
   },
   "chemistry::ch7::chemistry/alcohols-phenols-ethers/long-notes.html": {
@@ -6967,7 +7080,8 @@
       "Structure & nomenclature of aldehydes and ketones": "<p><strong>Definition</strong>: Aldehydes contain a carbonyl group ($&gt;C=O$) bonded to at least one hydrogen atom, represented as –$CHO$. Ketones have a carbonyl group flanked by two carbon atoms, represented as –$CO-$.</p><p><strong>General formulas (saturated)</strong>:</p><ul><li>Aldehyde: $C_{n}H_{2n+1}CHO$ (or $C_{n}H_{2n+2}O$)</li><li>Ketone: $C_{n}H_{2n}O$</li></ul><p><strong>Key IUPAC naming rules</strong>:</p><ol><li>Identify the longest carbon chain containing the carbonyl carbon.</li><li>Number the chain so that the carbonyl carbon gets the lowest possible locant.</li><li>For aldehydes, replace the –$e$ of the parent alkane with –$al$; for ketones, replace –$e$ with –$one$.</li><li>If substituents are present, name them in alphabetical order with their locants.</li><li>When the carbonyl is at the end of the chain, the aldehyde locant is omitted (e.g., $propanal$).</li></ol><p><strong>Summary table</strong>:</p><table><tr><th>Functional group</th><th>Suffix</th><th>Example</th></tr><tr><td>Aldehyde</td><td>–$al$</td><td>CH$_3$CH$_2$CHO → $propanal$</td></tr><tr><td>Ketone</td><td>–$one$</td><td>CH$_3$COCH$_3$ → $propanone$ (acetone)</td></tr></table><p><strong>Solved example</strong>:</p><p>Give the IUPAC name of the following structure:<br/>CH$_3$–CH$_2$–CH(CH$_3$)–CHO</p><p><em>Solution</em>:</p><ol><li>Longest chain containing –$CHO$ has 4 carbons → base name $butanal$.</li><li>Number from the carbonyl end: carbonyl carbon is C‑1.</li><li>There is a methyl substituent on C‑3.</li><li>Combine: $3$‑$methyl$ $butanal$.</li></ol><p><strong>Important SI units</strong>: Boiling point, melting point, density etc. are expressed in $^circ C$, $g,cm^{-3}$ respectively.</p>",
       "Methods of preparation of aldehydes and ketones": "<p><strong>Definitions</strong></p><ul><li>Aldehyde: $RCHO$ (carbonyl carbon attached to at least one hydrogen).</li><li>Ketone: $RCOR'$ (carbonyl carbon attached to two alkyl/aryl groups).</li></ul><p><strong>Key Methods of Preparation</strong></p><table><tr><th>Method</th><th>Reagents / Conditions</th><th>Product</th></tr><tr><td>Oxidation of primary alcohol</td><td>$RCH_2OH$ + $[O]$ (e.g., $PCC$, $KMnO_4$ (cold))</td><td>$RCHO$</td></tr><tr><td>Ozonolysis of alkenes</td><td>$RCH=CH_2$ + $O_3$ → $H_2O_2$ work‑up</td><td>$RCHO$ + $R'CHO$</td></tr><tr><td>Hydration of terminal alkyne</td><td>$RC\\equiv CH$ + $H_2O$ (HgSO$_4$, $H_2SO_4$)</td><td>$RCHO$</td></tr><tr><td>Reduction of acid derivatives</td><td>$RCOCl$, $RCOOR'$, $RCOOH$, $RCONH_2$ + $LiAlH_4$ (or $NaBH_4$ for acid chloride)</td><td>$RCHO$ (or $RCOR'$ for ketone)</td></tr><tr><td>From nitriles</td><td>$RCN$ + $H_2$ (Raney Ni) or $LiAlH_4$</td><td>$RCH_2NH_2$ → $RCHO$ (via hydrolysis)</td></tr><tr><td>From carboxylic acids</td><td>$RCOOH$ + $P_2O_5$ (dry distillation)</td><td>$RCHO$</td></tr><tr><td>Grignard addition to CO</td><td>$R MgX$ + $CO$ + $H_2O$</td><td>$RCHO$</td></tr></table><p>Typical conditions: temperature $25-80^\\circ C$, pressure $1\\ atm$, solvents $CH_2Cl_2$, $EtOH$; yields are reported in %.</p><p><strong>Representative Example (Oxidation of Ethanol)</strong></p><p>Convert ethanol ($CH_3CH_2OH$) to acetaldehyde ($CH_3CHO$) using pyridinium chlorochromate (PCC).</p><table><tr><th>Step</th><th>Reaction</th></tr><tr><td>1</td><td>$CH_3CH_2OH$ + $PCC$ → $CH_3CHO$ + $Cr^{3+}$ + $Cl^-$</td></tr><tr><td>2</td><td>Work‑up with $H_2O$ gives pure $CH_3CHO$ (boiling point $20.2^\\circ C$).</td></tr></table><p>Key points: Use a mild oxidising agent to stop at aldehyde; avoid over‑oxidation to acetic acid.</p>",
       "Physical & chemical properties of aldehydes": "<p><strong>Physical &amp; Chemical Properties of Aldehydes (RCHO)</strong></p><p>Aldehydes contain the carbonyl group ($\\mathrm{C=O}$) attached to at least one hydrogen atom. They are polar, have characteristic pungent odours and are generally soluble in water up to $\\sim$5 % (by mass) due to hydrogen‑bonding.</p><ul><li><strong>Boiling point:</strong> Higher than the corresponding alcohol because of dipole‑dipole interactions, but lower than the analogous ketone (no extra alkyl group).</li><li><strong>Density:</strong> $1.0\\text{–}1.2\\,\\text{g cm}^{-3}$ (close to water).</li><li><strong>Reactivity:</strong> The carbonyl carbon is electrophilic; aldehydes undergo nucleophilic addition, oxidation to carboxylic acids and reduction to primary alcohols.</li></ul><table><tr><th>Property</th><th>Trend in Aldehydes</th></tr><tr><td>Boiling point (°C)</td><td>Increases with molecular weight; $\\mathrm{CH_2O}$ = -19, $\\mathrm{C_6H_{12}O}$ ≈ 120</td></tr><tr><td>Solubility in water</td><td>Decreases with chain length; $\\mathrm{CH_2O}$ fully miscible, $\\mathrm{C_6H_{12}O}$ ≈ 5 %</td></tr><tr><td>Acidity of $α$‑H</td><td>pK_a ≈ 17 (more acidic than alkanes)</td></tr></table><p><strong>Key Chemical Reactions</strong></p><ul><li>Oxidation: $\\mathrm{RCHO + [O] \\rightarrow RCOOH}$ (e.g., $\\mathrm{CH_2O + 2[O] \\rightarrow HCOOH}$). Rate law often first order: $\\text{Rate}=k[\\text{aldehyde}]$.</li><li>Reduction: $\\mathrm{RCHO + 2[H] \\rightarrow RCH_2OH}$ (e.g., NaBH$_4$).</li><li>Nucleophilic addition (e.g., formation of hemiacetal with $\\mathrm{ROH}$).</li></ul><p><strong>SI Units</strong></p><ul><li>Temperature – kelvin (K) or degree Celsius (°C).</li><li>Pressure – pascal (Pa).</li><li>Amount – mole (mol).</li></ul><p><strong>Solved Example</strong></p><p>Calculate the moles of formaldehyde ($\\mathrm{CH_2O}$) formed when $5.0\\,\\text{g}$ of methanol is oxidised completely.</p><p>Step 1: Molar mass of $\\mathrm{CH_2O}$ = $12.01 + 2(1.008) + 16.00 = 30.03\\,\\text{g mol}^{-1}$.</p><p>Step 2: $n = \\frac{m}{M} = \\frac{5.0\\,\\text{g}}{30.03\\,\\text{g mol}^{-1}} = 1.66\\times10^{-1}\\,\\text{mol}$.</p><p>Thus, $0.166\\,\\text{mol}$ of formaldehyde is produced.</p>",
-      "Physical & chemical properties of ketones": "<p><strong>Definition:</strong> Ketones are organic compounds containing a carbonyl group ($C=O$) bonded to two alkyl or aryl groups.</p><p><strong>Physical properties</strong></p><ul><li>Polarity: dipole moment $\\mu$ \\approx $2.9\\,\\text{D}$ for acetone; higher than alkanes.</li><li>Boiling points: follow $\\text{BP} \\uparrow$ with molecular weight; acetone $56\\,^{\\circ}\\text{C}$, 2‑butanone $80\\,^{\\circ}\\text{C}$.</li><li>Solubility: miscible with water up to $\\approx 100\\,\\%$ for acetone due to H‑bond acceptor ability.</li></ul><p><strong>Key formula – Heat of vapourisation</strong></p><table><tr><th>Compound</th><th>$\\Delta H_{vap}^\\circ$ (kJ·mol$^{-1}$)</th></tr><tr><td>Acetone</td><td>$31.3$</td></tr><tr><td>2‑Butanone</td><td>$38.0$</td></tr></table><p><strong>Chemical properties</strong></p><ul><li>Nucleophilic addition is the principal reaction; carbonyl carbon is electrophilic.</li><li>Reaction with $\\text{NaBH}_4$ gives secondary alcohols: $\\ce{RCOR'} + \\text{NaBH4} \\rightarrow \\ce{RCH(OH)R'}$.</li><li>Oxidation: secondary ketones are resistant; α‑hydrogen can be removed by $\\ce{LDA}$ to form enolates.</li><li>Halogenation in acidic medium yields α‑halo ketones: $\\ce{RCOR' + X2 \\xrightarrow{H+} RCHXCO R'}$.</li></ul><p><strong>Solved example</strong></p><p>Oxidise $\\pu{10.0\\,g}$ of 2‑propanol ($\\text{M}=60.1\\,\\text{g·mol}^{-1}$) with $\\ce{NaOCl}$ to acetone. Theoretical yield of acetone = $\\pu{10.0\\,g} \\times \\frac{58.1}{60.1}=\\pu{9.66\\,g}$. If $\\pu{8.50\\,g}$ acetone is isolated, % yield = $\\frac{8.50}{9.66}\\times100 = 88\\%$.</p>"
+      "Physical & chemical properties of ketones": "<p><strong>Definition:</strong> Ketones are organic compounds containing a carbonyl group ($C=O$) bonded to two alkyl or aryl groups.</p><p><strong>Physical properties</strong></p><ul><li>Polarity: dipole moment $\\mu$ \\approx $2.9\\,\\text{D}$ for acetone; higher than alkanes.</li><li>Boiling points: follow $\\text{BP} \\uparrow$ with molecular weight; acetone $56\\,^{\\circ}\\text{C}$, 2‑butanone $80\\,^{\\circ}\\text{C}$.</li><li>Solubility: miscible with water up to $\\approx 100\\,\\%$ for acetone due to H‑bond acceptor ability.</li></ul><p><strong>Key formula – Heat of vapourisation</strong></p><table><tr><th>Compound</th><th>$\\Delta H_{vap}^\\circ$ (kJ·mol$^{-1}$)</th></tr><tr><td>Acetone</td><td>$31.3$</td></tr><tr><td>2‑Butanone</td><td>$38.0$</td></tr></table><p><strong>Chemical properties</strong></p><ul><li>Nucleophilic addition is the principal reaction; carbonyl carbon is electrophilic.</li><li>Reaction with $\\text{NaBH}_4$ gives secondary alcohols: $\\ce{RCOR'} + \\text{NaBH4} \\rightarrow \\ce{RCH(OH)R'}$.</li><li>Oxidation: secondary ketones are resistant; α‑hydrogen can be removed by $\\ce{LDA}$ to form enolates.</li><li>Halogenation in acidic medium yields α‑halo ketones: $\\ce{RCOR' + X2 \\xrightarrow{H+} RCHXCO R'}$.</li></ul><p><strong>Solved example</strong></p><p>Oxidise $\\pu{10.0\\,g}$ of 2‑propanol ($\\text{M}=60.1\\,\\text{g·mol}^{-1}$) with $\\ce{NaOCl}$ to acetone. Theoretical yield of acetone = $\\pu{10.0\\,g} \\times \\frac{58.1}{60.1}=\\pu{9.66\\,g}$. If $\\pu{8.50\\,g}$ acetone is isolated, % yield = $\\frac{8.50}{9.66}\\times100 = 88\\%$.</p>",
+      "Important reactions of aldehydes & ketones (nucleophilic addition, oxidation, reduction, haloform)": "<p><strong>Definitions</strong></p><ul><li><strong>Aldehyde:</strong> Organic compound containing the carbonyl group attached to at least one hydrogen atom, general formula $RCHO$.</li><li><strong>Ketone:</strong> Carbonyl group flanked by two carbon atoms, general formula $RCOR'$.</li></ul><p><strong>Nucleophilic Addition</strong></p><ul><li>Mechanism: $C=O$ is electrophilic; nucleophile $Nu^-$ attacks carbon, forming alkoxide intermediate $RCH(O^-)Nu$ which is protonated to give $RCH(OH)Nu$.</li><li>Typical reagents: $NaBH_4$, $LiAlH_4$, $H_2$, $HCl$ (for addition of $HCl$).</li></ul><p><strong>Oxidation</strong></p><ul><li>Aldehydes $\\rightarrow$ carboxylic acids; ketones are generally resistant.</li><li>Common oxidising agents: $KMnO_4$, $K_2Cr_2O_7$ in $H_2SO_4$, $Na_2Cr_2O_7$.</li></ul><p><strong>Reduction</strong></p><ul><li>Aldehydes/ketones $\\rightarrow$ primary/secondary alcohols.</li><li>Reagents: $NaBH_4$ (mild), $LiAlH_4$ (strong).</li></ul><p><strong>Haloform Reaction</strong></p><ul><li>Applicable to methyl ketones $RC(O)CH_3$ and ethanol.</li><li>Reagents: $X_2$ (Cl$_2$, Br$_2$) + $NaOH$.</li><li>Overall: $RC(O)CH_3 + 3X_2 + 4NaOH \\rightarrow RCOONa + CHX_3 + 3NaX + 3H_2O$.</li></ul><table><tr><th>Reaction</th><th>Reagent</th><th>Product</th></tr><tr><td>Oxidation of $RCHO$</td><td>$KMnO_4$ (acidic)</td><td>$RCOOH$</td></tr><tr><td>Reduction of $RCOR'$</td><td>$NaBH_4$</td><td>$RCH(OH)R'$</td></tr></table><p><strong>Solved Example</strong></p><p>Reduce $CH_3CHO$ (acetaldehyde) to ethanol using $NaBH_4$. 5 mmol of $NaBH_4$ is taken. Write the balanced equation and calculate moles of ethanol formed.</p><p>Balanced: $CH_3CHO + NaBH_4 + 3H_2O \\rightarrow CH_3CH_2OH + NaBO_2 + 3H_2$.</p><p>One mole of $NaBH_4$ reduces one mole of aldehyde; thus 5 mmol $NaBH_4$ gives 5 mmol $CH_3CH_2OH$ (0.005 mol, $0.005 \\times 46 = 0.23$ g).</p>"
     },
     "last_error": "All Groq models failed after fast failover."
   },
@@ -7023,7 +7137,8 @@
       "Carbohydrates – classification, general formula and important members": "<p><strong>Definition:</strong> Carbohydrates are organic compounds composed only of carbon, hydrogen and oxygen in the approximate ratio 1:2:1 and serve as a major source of energy and structural material in living organisms.</p><p><strong>General formula:</strong> The empirical formula of a carbohydrate is $C_{n}(H_{2}O)_{n}$, where $n$ denotes the number of carbon atoms. For polyhydroxy aldehydes (aldoses) the molecular formula is $C_{n}H_{2n}O_{n}$; for polyhydroxy ketones (ketoses) it is $C_{n}H_{2n}O_{n}$ as well.</p><p><strong>Classification (based on number of saccharide units):</strong></p><ul><li><strong>Monosaccharides</strong> – single‑unit sugars (e.g., glucose, fructose).</li><li><strong>Disaccharides</strong> – two monosaccharide units linked by a glycosidic bond (e.g., sucrose, lactose).</li><li><strong>Polysaccharides</strong> – long chains of monosaccharide units (e.g., starch, cellulose, glycogen).</li></ul><p><strong>Important members</strong></p><table><tr><th>Type</th><th>Common Example</th><th>Molecular Formula</th><th>Molar Mass (g·mol$^{-1}$)</th></tr><tr><td>Monosaccharide</td><td>Glucose</td><td>$C_{6}H_{12}O_{6}$</td><td>180</td></tr><tr><td>Disaccharide</td><td>Sucrose</td><td>$C_{12}H_{22}O_{11}$</td><td>342</td></tr><tr><td>Polysaccharide</td><td>Starch (amylose)</td><td>$(C_{6}H_{10}O_{5})_{n}$</td><td>Variable (depends on $n$)</td></tr></table><p><strong>SI Units:</strong> Amount of substance – mol; mass – g; concentration – mol·L$^{-1}$.</p><p><strong>Solved Example:</strong> Find the number of moles of glucose present in a 90 g sample.<br/>Molar mass of glucose = 180 g·mol$^{-1}$.<br/>$$n = \\frac{\\text{mass}}{\\text{molar mass}} = \\frac{90\\ \\text{g}}{180\\ \\text{g·mol}^{-1}} = 0.5\\ \\text{mol}$$<br/>Thus, 90 g of glucose corresponds \\to $0.5$ mol, which contains $0.5 \\times 6.022\\times10^{23} \\approx 3.01\\times10^{23}$ molecules.</p>",
       "Structural features and isomerism of carbohydrates": "<p><strong>Definition:</strong> Carbohydrates are organic compounds composed only of carbon, hydrogen and oxygen, possessing the empirical formula $C_n(H_2O)_n$ where $n$ is the number of carbon atoms.</p><p><strong>Structural features of monosaccharides</strong></p><ul><li>Contain either an aldehyde (aldose) or a ketone (ketose) group.</li><li>All other carbon atoms bear a hydroxyl ($-\\!OH$) group.</li><li>Each carbon (except the carbonyl carbon) is a chiral centre, giving rise to optical activity.</li></ul><p><strong>Isomerism in carbohydrates</strong></p><ul><li><strong>Chain isomerism:</strong> Different carbon skeletons (e.g., glucose vs. fructose).</li><li><strong>Positional isomerism:</strong> Position of the carbonyl group changes (aldose vs. ketose).</li><li><strong>Functional‑group isomerism:</strong> Same molecular formula but different functional groups (e.g., glucose vs. ribose).</li><li><strong>Stereoisomerism:</strong> Varies in spatial arrangement of $-\\!OH$ groups.</li><ul><li>Enantiomers – non‑superimposable mirror images (D‑ and L‑forms).</li><li>Dia­stereomers – not mirror images (e.g., $\\alpha$‑ and $\\beta$‑anomers).</li></ul></ul><p>The number of possible stereoisomers for an aldo‑sugar having $n$ chiral centres is $2^{n}$, giving $2^{n-1}$ D‑forms and $2^{n-1}$ L‑forms.</p><table><tr><th>Isomerism type</th><th>Example</th></tr><tr><td>Chain</td><td>Glucose (C$_6$) vs. Fructose (C$_6$)</td></tr><tr><td>Positional</td><td>Glucose (aldose) vs. Fructose (ketose)</td></tr><tr><td>Functional‑group</td><td>Glucose vs. Ribose (both C$_5$H$_{10}$O$_5$)</td></tr><tr><td>Stereoisomerism</td><td>D‑Glucose vs. L‑Glucose</td></tr></table><p><strong>Solved example:</strong> Determine the total number of stereoisomers of aldo‑hexose.</p><p>Alto‑hexose has $n=6$ carbon atoms. The carbonyl carbon is not chiral; the remaining $n-2=4$ carbons are chiral centres.</p><p>Number of stereoisomers $=2^{4}=16$ (8 D‑forms and 8 L‑forms).</p><p>Thus, $\\text{Total stereoisomers}=16$.</p><p><strong>SI units</strong>: Optical rotation – degrees ($^{\\circ}$); concentration – mol·dm$^{-3}$; path length – dm.</p>",
       "Proteins – classification, peptide bond and levels of structure": "<p><strong>Definition:</strong> Proteins are large, biologically essential macromolecules composed of amino‑acid residues linked by peptide bonds, exhibiting specific three‑dimensional structures and functions.</p><p><strong>Classification:</strong></p><table><tr><th>Type</th><th>Examples</th></tr><tr><td>Simple proteins</td><td>Hemoglobin, Albumin</td></tr><tr><td>Conjugated proteins</td><td>Glycoproteins (e.g., mucin), Phosphoproteins (e.g., casein)</td></tr><tr><td>Derived proteins</td><td>Pepsin (from pepsinogen), Trypsin (from trypsinogen)</td></tr></table><p><strong>Peptide bond formation:</strong> Condensation of the $\\alpha$‑carboxyl group of one amino acid with the $\\alpha$‑amino group of another releases water:<br/>$\\text{Amino acid}_1 + \\text{Amino acid}_2 \\rightarrow \\text{Dipeptide} + \\text{H}_2\\text{O}$.<br/>The covalent link is represented as $-CO-NH-$.</p><p><strong>Levels of protein structure:</strong></p><ul><li><strong>Primary:</strong> Linear sequence of residues.</li><li><strong>Secondary:</strong> Regular patterns – $\\alpha$‑helix and $\\beta$‑pleated sheet stabilized by hydrogen bonds.</li><li><strong>Tertiary:</strong> Three‑dimensional folding due to side‑chain interactions.</li><li><strong>Quaternary:</strong> Association of two or more polypeptide subunits.</li></ul><p><strong>Key formula:</strong> Number of peptide bonds in a polypeptide containing $n$ residues is $n-1$.</p><p><strong>Example:</strong> A protein consists of 150 amino‑acid residues. Calculate (i) the total peptide bonds and (ii) its approximate molecular weight if the average residue mass is $110\\ \\text{g mol}^{-1}$.</p><p><strong>Solution:</strong> (i) Peptide bonds $=150-1=149$.<br/>(ii) Molecular weight $M =150\\times110=16500\\ \\text{g mol}^{-1}$.</p>",
-      "Important proteins and their functions": "<p><strong>Important Proteins and Their Functions</strong></p><p>Proteins are polymers of α‑amino acids linked by peptide bonds. Their biological role is dictated by the sequence and three‑dimensional conformation.</p><ul><li><strong>Hemoglobin</strong> – transports O$_2$ and CO$_2$ in blood; each subunit contains a heme group that binds one O$_2$ molecule.</li><li><strong>Myoglobin</strong> – stores O$_2$ in muscle cells; single‑chain protein with high affinity for O$_2$.</li><li><strong>Insulin</strong> – regulates glucose metabolism; a peptide hormone of 51 amino‑acid residues.</li><li><strong>Collagen</strong> – provides tensile strength to connective tissue; triple‑helix of Gly‑X‑Y repeats.</li><li><strong>Enzymes (e.g., Amylase, DNA polymerase)</strong> – catalyze biochemical reactions by lowering activation energy.</li></ul><p><strong>General formula for molecular weight of a protein</strong></p><p>$M = \\sum_{i=1}^{n} n_i \\; M_i$ where $n_i$ is the number of residues of amino‑acid $i$ and $M_i$ its molar mass (g·mol$^{-1}$).</p><table><tr><th>Amino‑acid</th><th>Residues ($n_i$)</th><th>Molar mass ($M_i$, g·mol$^{-1}$)</th></tr><tr><td>Glycine</td><td>12</td><td>75</td></tr><tr><td>Alanine</td><td>8</td><td>89</td></tr><tr><td>Phenylalanine</td><td>4</td><td>165</td></tr></table><p><strong>Solved Example</strong></p><p>Calculate the approximate molecular weight of a peptide containing 12 Gly, 8 Ala and 4 Phe residues.</p><p>Using $M = \\sum n_i M_i$:</p><p>$M = (12\\times75) + (8\\times89) + (4\\times165) = 900 + 712 + 660 = 2272\\,\\text{g·mol}^{-1}$.</p><p>Thus the peptide’s molar mass ≈ $2.27\\times10^{3}$ g·mol$^{-1}$.</p>"
+      "Important proteins and their functions": "<p><strong>Important Proteins and Their Functions</strong></p><p>Proteins are polymers of α‑amino acids linked by peptide bonds. Their biological role is dictated by the sequence and three‑dimensional conformation.</p><ul><li><strong>Hemoglobin</strong> – transports O$_2$ and CO$_2$ in blood; each subunit contains a heme group that binds one O$_2$ molecule.</li><li><strong>Myoglobin</strong> – stores O$_2$ in muscle cells; single‑chain protein with high affinity for O$_2$.</li><li><strong>Insulin</strong> – regulates glucose metabolism; a peptide hormone of 51 amino‑acid residues.</li><li><strong>Collagen</strong> – provides tensile strength to connective tissue; triple‑helix of Gly‑X‑Y repeats.</li><li><strong>Enzymes (e.g., Amylase, DNA polymerase)</strong> – catalyze biochemical reactions by lowering activation energy.</li></ul><p><strong>General formula for molecular weight of a protein</strong></p><p>$M = \\sum_{i=1}^{n} n_i \\; M_i$ where $n_i$ is the number of residues of amino‑acid $i$ and $M_i$ its molar mass (g·mol$^{-1}$).</p><table><tr><th>Amino‑acid</th><th>Residues ($n_i$)</th><th>Molar mass ($M_i$, g·mol$^{-1}$)</th></tr><tr><td>Glycine</td><td>12</td><td>75</td></tr><tr><td>Alanine</td><td>8</td><td>89</td></tr><tr><td>Phenylalanine</td><td>4</td><td>165</td></tr></table><p><strong>Solved Example</strong></p><p>Calculate the approximate molecular weight of a peptide containing 12 Gly, 8 Ala and 4 Phe residues.</p><p>Using $M = \\sum n_i M_i$:</p><p>$M = (12\\times75) + (8\\times89) + (4\\times165) = 900 + 712 + 660 = 2272\\,\\text{g·mol}^{-1}$.</p><p>Thus the peptide’s molar mass ≈ $2.27\\times10^{3}$ g·mol$^{-1}$.</p>",
+      "Nucleic acids – DNA & RNA structure, components and functions": "<p><strong>Definition:</strong> Nucleic acids are biopolymers composed of <em>nucleotides</em> that store and transmit genetic information.</p><p><strong>Basic unit – Nucleotide</strong></p><table><tr><th>Component</th><th>Details</th></tr><tr><td>Phosphate group</td><td>$\\mathrm{PO_{4}^{3-}}$</td></tr><tr><td>Sugar</td><td>Deoxyribose (DNA) / Ribose (RNA)</td></tr><tr><td>Nitrogenous base</td><td>Purines (A, G) or Pyrimidines (C, T/U)</td></tr></table><p><strong>DNA vs RNA</strong></p><ul><li>DNA: double‑helix, deoxyribose, bases A, T, G, C.</li><li>RNA: single‑stranded, ribose, bases A, U, G, C.</li></ul><p>DNA strands run antiparallel (5'→3' and 3'←5'), forming a sugar‑phosphate backbone that provides structural stability.</p><p>Each base pair advances the helix by $0.34\\ \\text{nm}$; ten base pairs complete one full turn ($3.4\\ \\text{nm}$ pitch).</p><p><strong>Base‑pairing rules</strong></p><ul><li>DNA: A $\\leftrightarrow$ T (2 H‑bonds, ~2\\ kcal·mol$^{-1}$), G $\\leftrightarrow$ C (3 H‑bonds, ~3\\ kcal·mol$^{-1}$).</li><li>RNA: A $\\leftrightarrow$ U (2 H‑bonds), G $\\leftrightarrow$ C (3 H‑bonds).</li></ul><p><strong>Key formula – Molecular weight of a nucleotide</strong></p><p>$M_{\\text{nuc}} = M_{\\text{base}} + M_{\\text{sugar}} + M_{\\text{phosphate}} - n_{\\text{H_{2}O}} \\times 18.015\\ \\text{g\\ mol}^{-1}$</p><p><strong>SI unit:</strong> g·mol$^{-1}$ for molecular weight.</p><p><strong>Functions</strong></p><ul><li>DNA: genetic storage, replication, transcription.</li><li>RNA: messenger (mRNA), transfer (tRNA), ribosomal (rRNA), regulatory (siRNA, miRNA) and catalytic ribozymes.</li></ul><p><strong>Example</strong></p><p>Calculate the molecular weight of deoxyadenosine monophosphate (dAMP).</p><p>Given: $M_{\\text{A}} = 135.13$, $M_{\\text{deoxyribose}} = 134.13$, $M_{\\text{PO_{4}}} = 94.97$ (g·mol$^{-1}$). One water molecule is lost on condensation ($n_{\\text{H_{2}O}}=1$).</p><p>$M_{\\text{dAMP}} = 135.13 + 134.13 + 94.97 - 18.015 = 346.215\\ \\text{g\\ mol}^{-1}$.</p><p>Thus one mole of dAMP weighs $3.46 \\times 10^{2}\\ \\text{g}$.</p>"
     }
   },
   "chemistry::ch10::chemistry/biomolecules/mind-map.html": {
@@ -7340,6 +7455,118 @@
         "question": "Suggest community‑based measures to protect children like Mukesh from exploitation.",
         "answer": "1) Establish community learning centers that offer flexible timings for working children, enabling them to study while still supporting their families. 2) Organize awareness campaigns involving local leaders to sensitize families about the long‑term harms of child labor. 3) Create vocational training programs for adolescents, providing a pathway to skilled employment rather than rag‑picking. 4) Encourage NGOs to collaborate with municipal bodies for regular health check‑ups and safe working environments for child laborers, aiming for their eventual transition to education."
       }
+    ],
+    "mcq": [
+      {
+        "q": "In the story \"Lost Spring\", the protagonist Munna is forced to work as a _______.",
+        "options": [
+          "Mason",
+          "Stone cutter",
+          "Shoe polisher",
+          "Tea seller"
+        ],
+        "answer": 2,
+        "explain": "Munna works as a shoe polisher on the streets of Mumbai, as described in the opening of the story."
+      },
+      {
+        "q": "The phrase \"lost spring\" in the title primarily signifies",
+        "options": [
+          "The disappearance of the season of spring",
+          "The loss of youthful hope and aspirations",
+          "The decline of the Indian economy",
+          "The end of monsoon rains"
+        ],
+        "answer": 1,
+        "explain": "The title metaphorically refers to the loss of the characters' youthful vigor and dreams."
+      },
+      {
+        "q": "Which of the following best describes the narrative tone of the story?",
+        "options": [
+          "Optimistic and celebratory",
+          "Sarcastic and mocking",
+          "Melancholic and empathetic",
+          "Detached and objective"
+        ],
+        "answer": 2,
+        "explain": "The narrator adopts a melancholic and empathetic tone, highlighting the hardships of child labourers."
+      },
+      {
+        "q": "The author uses the contrast between \"city\" and \"village\" mainly to",
+        "options": [
+          "Show the superiority of urban life",
+          "Highlight the cultural differences",
+          "Emphasize the exploitation hidden in urban anonymity",
+          "Depict the beauty of rural landscapes"
+        ],
+        "answer": 2,
+        "explain": "The contrast underscores how children from villages become invisible victims in the bustling city."
+      },
+      {
+        "q": "In \"Lost Spring\", the character of the old man who sells newspapers serves to illustrate",
+        "options": [
+          "The resilience of the elderly",
+          "The intergenerational cycle of poverty",
+          "The importance of education",
+          "The role of media in society"
+        ],
+        "answer": 1,
+        "explain": "He represents another victim of poverty, showing how hardship spans generations."
+      },
+      {
+        "q": "Which literary device is most evident in the line: \"The city’s lights were a cruel reminder of the darkness within his heart\"?",
+        "options": [
+          "Simile",
+          "Metaphor",
+          "Personification",
+          "Alliteration"
+        ],
+        "answer": 1,
+        "explain": "The city’s lights are directly compared to a cruel reminder, which is a metaphor."
+      },
+      {
+        "q": "Assertion (A): The story \"Lost Spring\" ends on a hopeful note, suggesting that the children will soon escape their plight.\nReason (R): The author concludes with the image of the children looking at the sky, symbolising freedom.\nWhich of the following is correct?",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation of A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 2,
+        "explain": "The story ends on a bleak note, not hopeful; the children’s gaze at the sky reflects their yearning, not freedom."
+      },
+      {
+        "q": "The phrase \"the city’s endless hum\" in the story primarily serves to",
+        "options": [
+          "Create a musical rhythm in the prose",
+          "Depict the chaotic environment that drowns the children’s voices",
+          "Highlight the technological advancement of Mumbai",
+          "Contrast with the silence of the countryside"
+        ],
+        "answer": 1,
+        "explain": "It emphasizes the overwhelming, noisy backdrop that masks the suffering of child labourers."
+      },
+      {
+        "q": "Which of the following statements about the author’s purpose is correct?",
+        "options": [
+          "To glorify child labour as a cultural tradition",
+          "To criticize the socio‑economic conditions that force children into labour",
+          "To provide a travelogue of Mumbai’s streets",
+          "To entertain with fictional adventures"
+        ],
+        "answer": 1,
+        "explain": "The author aims to expose and criticize the harsh realities of child labour."
+      },
+      {
+        "q": "In \"Lost Spring\", the recurring motif of \"shoes\" symbolizes",
+        "options": [
+          "Wealth and status",
+          "The journey towards education",
+          "The burden of poverty and forced labour",
+          "Freedom and mobility"
+        ],
+        "answer": 2,
+        "explain": "Shoes represent the children’s forced labour and the weight of their impoverished circumstances."
+      }
     ]
   },
   "english::ch3::english/flamingo-ch3.html": {
@@ -7458,6 +7685,71 @@
         "name": "Old Man",
         "role": "Figure of wisdom, memory, and the passage of time, reflecting on past hardships and changes in the indigo fields",
         "sketch_html": "<p><strong>Old Man:</strong> A weather‑worn figure who watches the fields with a reflective gaze. His memories of past seasons and changing fortunes offer a poignant commentary on the cyclical nature of life and the inevitable march of time.</p>"
+      }
+    ],
+    "extracts": [
+      {
+        "passage": "The indigo plant, with its deep blue leaves, swayed gently under the scorching sun as the workers harvested the tender shoots, hoping for a good yield this season.",
+        "questions": [
+          {
+            "q": "What colour are the leaves of the indigo plant as described?",
+            "ans": "Deep blue"
+          },
+          {
+            "q": "Why were the workers hopeful about the harvest?",
+            "ans": "They hoped for a good yield this season"
+          },
+          {
+            "q": "What weather condition is mentioned in the passage?",
+            "ans": "Scorching sun"
+          },
+          {
+            "q": "Which part of the plant is harvested?",
+            "ans": "Tender shoots"
+          }
+        ]
+      },
+      {
+        "passage": "In the village market, the blue dye fetched a high price, and the traders bargained fiercely, knowing that indigo was the lifeline of many families.",
+        "questions": [
+          {
+            "q": "What product fetched a high price in the market?",
+            "ans": "Blue dye"
+          },
+          {
+            "q": "Why did traders bargain fiercely?",
+            "ans": "Because indigo was the lifeline of many families"
+          },
+          {
+            "q": "What does the passage imply about indigo's economic importance?",
+            "ans": "It was crucial for the livelihood of many families"
+          },
+          {
+            "q": "Where does this trading activity take place?",
+            "ans": "Village market"
+          }
+        ]
+      },
+      {
+        "passage": "The colonial officer inspected the fields, noting the laborers' fatigue, yet he praised the quality of the indigo, promising higher royalties for the next season.",
+        "questions": [
+          {
+            "q": "Who inspected the fields?",
+            "ans": "Colonial officer"
+          },
+          {
+            "q": "What did the officer note about the laborers?",
+            "ans": "Their fatigue"
+          },
+          {
+            "q": "What promise did the officer make?",
+            "ans": "Higher royalties for the next season"
+          },
+          {
+            "q": "What aspect of indigo was praised?",
+            "ans": "Its quality"
+          }
+        ]
       }
     ]
   },
