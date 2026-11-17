@@ -2035,7 +2035,20 @@
         "answer": 1,
         "explain": "$\\sec x$ is not a solution of the non‑homogeneous equation because substituting gives $-\\sec x\\tan^2 x+\\sec x\\neq\\sec x$. Hence $y_p=\\sec x$ is incorrect."
       }
-    ]
+    ],
+    "visual_maps": {
+      "mindmap": "mindmap\n  root((Differential Equations))\n    Order & Degree\n      Definition\n      Determination\n    Solution Methods\n      Separable\n      Linear\n      Exact\n    Homogeneous\n      Substitution\n    Non‑homogeneous\n      Complementary + Particular",
+      "flowchart": "flowchart TD\n  A[Start] --> B[Identify type]\n  B --> C[Apply appropriate method]\n  C --> D[Obtain general solution]\n  D --> E[Apply initial condition]\n  E --> F[Final solution]",
+      "revision_points": [
+        "Order and degree are defined only for polynomial form of the DE",
+        "General solution = complementary function + particular integral",
+        "Separable equations: separate variables and integrate both sides",
+        "Linear first‑order: use integrating factor $\\mu(x)=e^{\\int P(x)dx}$",
+        "Exact equations: verify $M_y=N_x$ and find potential function"
+      ]
+    },
+    "status": "done",
+    "updated": "2026-11-17 11:09:14"
   },
   "mathematics::ch10::mathematics/chapter10.html": {
     "last_error": "All Groq models failed after fast failover.",
