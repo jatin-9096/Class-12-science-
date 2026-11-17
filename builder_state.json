@@ -6457,6 +6457,74 @@
         "question": "A reaction follows rate law $r = k[A]^2[B]$. At $t=0$, $[A]=0.20\\,\\text{M}$, $[B]=0.10\\,\\text{M}$ and $r=2.0\\times10^{-4}\\,\\text{M s}^{-1}$. (a) Find $k$. (b) Predict the rate when $[A]=0.10\\,\\text{M}$ and $[B]=0.20\\,\\text{M}$.",
         "answer_html": "<p>(a) $r = k[A]^2[B]\\Rightarrow k = \\frac{r}{[A]^2[B]} = \\frac{2.0\\times10^{-4}}{(0.20)^2(0.10)} = \\frac{2.0\\times10^{-4}}{0.004}=5.0\\times10^{-2}\\,\\text{M}^{-2}\\text{s}^{-1}$.<br>(b) New rate $r' = k(0.10)^2(0.20) = 5.0\\times10^{-2}\\times0.01\\times0.20 = 1.0\\times10^{-4}\\,\\text{M s}^{-1}$.</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "For a reaction $2A + B \\rightarrow C$, the experimentally determined rate law is $rate = k[A]^2[B]$. What is the overall order of the reaction?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "answer": 1,
+        "explain": "The order with respect to $A$ is 2 and with respect to $B$ is 1, so overall order = 2+1 = 3."
+      },
+      {
+        "q": "The half-life ($t_{1/2}$) of a first-order reaction is $8$ min. What will be the half-life when the initial concentration is doubled?",
+        "options": [
+          "8 min",
+          "4 min",
+          "16 min",
+          "cannot be determined"
+        ],
+        "answer": 0,
+        "explain": "For a first-order reaction, $t_{1/2}=\\frac{0.693}{k}$, which is independent of the initial concentration."
+      },
+      {
+        "q": "If the rate constant $k$ of a reaction doubles when the temperature is raised from $300\\ \\text{K}$ to $310\\ \\text{K}$, what is the approximate activation energy $E_a$? (Use $R = 8.314\\ \\text{J mol}^{-1}\\text{K}^{-1}$)",
+        "options": [
+          "$53.6\\ \\text{kJ mol}^{-1}$",
+          "$27.0\\ \\text{kJ mol}^{-1}$",
+          "$10.6\\ \\text{kJ mol}^{-1}$",
+          "$5.3\\ \\text{kJ mol}^{-1}$"
+        ],
+        "answer": 0,
+        "explain": "Using Arrhenius equation $\\ln(k_2/k_1)= -\\frac{E_a}{R}\\left(\\frac{1}{T_2}-\\frac{1}{T_1}\\right)$, $E_a=\\frac{\\ln2\\,R}{1/300-1/310}\\approx 5.36\\times10^{4}\\ \\text{J mol}^{-1}=53.6\\ \\text{kJ mol}^{-1}$."
+      },
+      {
+        "q": "In the following mechanism, which step is the rate-determining step?\\nStep 1: $A + B \\rightarrow C$ (fast)\\nStep 2: $C \\rightarrow D + E$ (slow)",
+        "options": [
+          "Step 1",
+          "Step 2",
+          "Both steps",
+          "Neither step"
+        ],
+        "answer": 1,
+        "explain": "The slow step controls the overall rate, so Step 2 is the rate-determining step."
+      },
+      {
+        "q": "A catalyst increases the rate of a reaction by:",
+        "options": [
+          "Increasing $E_a$",
+          "Providing an alternative pathway with lower $E_a$",
+          "Increasing the concentration of reactants",
+          "Changing the equilibrium constant"
+        ],
+        "answer": 1,
+        "explain": "A catalyst offers a different reaction pathway with a lower activation energy, thereby increasing the rate."
+      },
+      {
+        "q": "A reaction shows that when $[A]$ is doubled, the initial rate quadruples, while changing $[B]$ has no effect. What is the rate law?",
+        "options": [
+          "$rate = k[A]^2$",
+          "$rate = k[A][B]$",
+          "$rate = k[A]^2[B]$",
+          "$rate = k[B]$"
+        ],
+        "answer": 0,
+        "explain": "Rate varies as the square of $[A]$ and is independent of $[B]$, so $rate = k[A]^2$."
+      }
     ]
   },
   "chemistry::ch3::chemistry/chemical-kinetics/mind-map.html": {
@@ -6920,7 +6988,20 @@
         "answer": 2,
         "explain": "Across the $3d$ series, the increase in nuclear charge is largely compensated by the poor shielding of $3d$ electrons, so atomic radii change little, while ionic radii decrease due to higher effective nuclear charge on the cations."
       }
-    ]
+    ],
+    "visual_maps": {
+      "mindmap": "mindmap\n  root((d- and f-Block Elements))\n    d-Block\n      Scandium\n      Yttrium\n    f-Block\n      Lanthanides\n      Actinides",
+      "flowchart": "flowchart TD\n  A[Start] --> B[Electronic Configuration]\n  B --> C[Properties]\n  C --> D[Applications]\n  D --> E[End]",
+      "revision_points": [
+        "General trends in atomic size",
+        "Oxidation states of lanthanides",
+        "Anomalous behaviour of scandium and yttrium",
+        "Common oxidation states of actinides",
+        "Uses of lanthanides in industry"
+      ]
+    },
+    "status": "done",
+    "updated": "2026-11-17 16:54:03"
   },
   "chemistry::ch5::chemistry/coordination-compounds/long-notes.html": {
     "last_error": "All Groq models failed after fast failover.",
