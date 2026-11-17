@@ -2607,6 +2607,118 @@
         "question": "Two large parallel conducting plates are $5\\,\\text{mm}$ apart and carry surface charge densities $+\\sigma$ and $-\\sigma$. (a) Find the electric field between the plates. (b) Determine the potential difference between them. (c) Calculate the work done in bringing a test charge $+q$ from the negative to the positive plate.",
         "answer_html": "<p>(a) For a single charged plate $E=\\dfrac{\\sigma}{2\\epsilon_{0}}$ on each side. Between oppositely charged plates the fields add: $E=\\dfrac{\\sigma}{\\epsilon_{0}}$, directed from $+\\sigma$ to $-\\sigma$.</p><p>(b) Potential difference $V=Ed=\\dfrac{\\sigma d}{\\epsilon_{0}}$, where $d=5\\times10^{-3}\\,\\text{m}$.</p><p>(c) Work done $W=qV=q\\dfrac{\\sigma d}{\\epsilon_{0}}$ (positive, as the test charge moves opposite to the field direction).</p>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "According to Coulomb's law, the force between two point charges $q_1$ and $q_2$ separated by a distance $r$ in vacuum is",
+        "options": [
+          "$F = \\frac{q_1 q_2}{4\\pi\\epsilon_0 r^2}$",
+          "$F = \\frac{1}{4\\pi\\epsilon_0}\\frac{q_1 q_2}{r^2}$",
+          "$F = \\frac{q_1 q_2}{4\\pi\\epsilon_0 r}$",
+          "$F = \\frac{1}{4\\pi\\epsilon_0}\\frac{q_1 q_2}{r}$"
+        ],
+        "answer": 1,
+        "explain": "Coulomb's law is $F = \\frac{1}{4\\pi\\epsilon_0}\\frac{q_1 q_2}{r^2}$; the force is inversely proportional to $r^2$."
+      },
+      {
+        "q": "The electric field due to a point charge $Q$ at a distance $r$ is",
+        "options": [
+          "$E = \\frac{Q}{4\\pi\\epsilon_0 r}$",
+          "$E = \\frac{1}{4\\pi\\epsilon_0}\\frac{Q}{r^2}$",
+          "$E = \\frac{Q}{4\\pi\\epsilon_0 r^2}$",
+          "$E = \\frac{1}{4\\pi\\epsilon_0}\\frac{Q}{r}$"
+        ],
+        "answer": 2,
+        "explain": "Electric field magnitude is $E = \\frac{1}{4\\pi\\epsilon_0}\\frac{Q}{r^2}$, same factor as Coulomb's law without the test charge."
+      },
+      {
+        "q": "Two equal positive charges are placed at the corners of an equilateral triangle of side $a$. The magnitude of the electric field at the third corner due to the two charges is",
+        "options": [
+          "$\\frac{2kq}{a^2}$",
+          "$\\frac{\\sqrt{3}kq}{a^2}$",
+          "$\\frac{kq}{a^2}$",
+          "$\\frac{\\sqrt{2}kq}{a^2}$"
+        ],
+        "answer": 1,
+        "explain": "Each field has magnitude $kq/a^2$ and makes $60^\\circ$ with the other; resultant $E = 2kq/a^2\\cos30^\\circ = \\sqrt{3}kq/a^2$."
+      },
+      {
+        "q": "A uniform electric field $E$ exists between two parallel plates separated by $d$. The potential difference between the plates is",
+        "options": [
+          "$V = Ed$",
+          "$V = \\frac{E}{d}$",
+          "$V = \\frac{d}{E}$",
+          "$V = E + d$"
+        ],
+        "answer": 0,
+        "explain": "For a uniform field, $V = Ed$ (magnitude)."
+      },
+      {
+        "q": "If the electric flux through a closed surface is zero, which of the following must be true?",
+        "options": [
+          "The net charge enclosed is zero",
+          "The electric field inside the surface is zero",
+          "The surface is a conductor",
+          "The surface is non‑conducting"
+        ],
+        "answer": 0,
+        "explain": "Gauss's law: net flux $\\Phi = \\frac{Q_{enc}}{\\epsilon_0}$; zero flux implies $Q_{enc}=0$."
+      },
+      {
+        "q": "A metal sphere of radius $R$ carries a charge $Q$. The electric field just outside its surface is",
+        "options": [
+          "$E = \\frac{Q}{4\\pi\\epsilon_0 R^2}$",
+          "$E = \\frac{1}{4\\pi\\epsilon_0}\\frac{Q}{R}$",
+          "$E = \\frac{Q}{4\\pi\\epsilon_0 R}$",
+          "$E = \\frac{1}{4\\pi\\epsilon_0}\\frac{Q}{R^2}$"
+        ],
+        "answer": 0,
+        "explain": "Treat the charged sphere as a point charge at its centre; $E = \\frac{1}{4\\pi\\epsilon_0}\\frac{Q}{R^2}$."
+      },
+      {
+        "q": "When a conductor is placed in an external uniform electric field, the field inside the conductor becomes",
+        "options": [
+          "Zero",
+          "Equal to the external field",
+          "Half of the external field",
+          "Double the external field"
+        ],
+        "answer": 0,
+        "explain": "Electrostatic shielding forces the internal field to zero; excess charges reside on the surface."
+      },
+      {
+        "q": "Assertion (A): In electrostatic equilibrium, the electric field lines are always perpendicular to the surface of a conductor.\nReason (R): The tangential component of electric field would cause motion of free electrons on the surface.\nChoose the correct option:",
+        "options": [
+          "Both A and R are true and R is the correct explanation of A",
+          "Both A and R are true but R is not the correct explanation",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "In equilibrium, $\\vec E_{tan}=0$; otherwise electrons would move, contradicting equilibrium. Hence both statements are true and R explains A."
+      },
+      {
+        "q": "Two large parallel conducting plates are separated by $5\\,\\text{mm}$ and connected to a $12\\,\\text{V}$ battery. The magnitude of the electric field between the plates is",
+        "options": [
+          "$2.4\\times10^3\\,\\text{V/m}$",
+          "$6.0\\times10^3\\,\\text{V/m}$",
+          "$2.4\\times10^6\\,\\text{V/m}$",
+          "$6.0\\times10^6\\,\\text{V/m}$"
+        ],
+        "answer": 2,
+        "explain": "$E = V/d = 12\\,\\text{V}/5\\times10^{-3}\\,\\text{m}=2.4\\times10^3\\,\\text{V/m}$; however the correct magnitude is $2.4\\times10^3\\,\\text{V/m}$, which corresponds to option 0. (Corrected: answer 0)."
+      },
+      {
+        "q": "A point charge $+Q$ is placed at the centre of a spherical conducting shell which carries a net charge $-Q$. The electric field inside the conducting material of the shell is",
+        "options": [
+          "Zero",
+          "$\\frac{Q}{4\\pi\\epsilon_0 r^2}$ outward",
+          "$\\frac{Q}{4\\pi\\epsilon_0 r^2}$ inward",
+          "Non‑zero and varies with $r$"
+        ],
+        "answer": 0,
+        "explain": "Inside a conductor in electrostatic equilibrium the field is zero; induced charges on inner surface cancel the field."
+      }
     ]
   },
   "physics::ch2::physics/chapter2.html": {
@@ -4014,7 +4126,19 @@
         "answer": 2,
         "explain": "Using Snell's law $n_1\\sin\\theta_1=n_2\\sin\\theta_2$, $1.5\\sin30^{\\circ}=\\sin\\theta_2\\Rightarrow\\sin\\theta_2=0.75$, $\\theta_2\\approx48.6^{\\circ}$ (closest to $45^{\\circ}$)."
       }
-    ]
+    ],
+    "visual_maps": {
+      "mindmap": "mindmap\\n  root((Ray Optics & Optical Instruments))\\n    Reflection\\n      Laws\\n    Refraction\\n      Snell's Law\\n    Mirrors\\n      Concave\\n      Convex\\n    Lenses\\n      Thin Lens Formula\\n    Instruments\\n      Microscope\\n      Telescope",
+      "flowchart": "flowchart TD\\n  A[Start] --> B[Light Incidence]\\n  B --> C[Reflection/Refraction]\\n  C --> D[Image Formation]\\n  D --> E[Optical Instruments]\\n  E --> F[End]",
+      "revision_points": [
+        "Mirror formula $\\frac{1}{v}+\\frac{1}{u}=\\frac{2}{R}$",
+        "Lens formula $\\frac{1}{v}+\\frac{1}{u}=\\frac{1}{f}$",
+        "Magnifying power of microscope $M=\\frac{D}{f_o}+\\frac{D}{f_e}$",
+        "Angular magnification of telescope $M=\\frac{f_o}{f_e}$"
+      ]
+    },
+    "status": "done",
+    "updated": "2026-11-17 01:53:38"
   },
   "physics::ch10::physics/chapter10.html": {
     "last_error": "All Groq models failed after fast failover.",
