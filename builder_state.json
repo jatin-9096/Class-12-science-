@@ -8656,6 +8656,107 @@
         "question": "(a) Give the IUPAC name of $CH_3CH_2OCH_2CH_3$. (b) Predict the major product when it is refluxed with aqueous NaOH. Write a brief mechanism.",
         "answer_html": "<p>(a) IUPAC name: <strong>diethyl ether</strong> (systematic name: ethoxyethane).</p><p>(b) Reaction with aqueous NaOH (hydrolysis) gives ethanol:</p><p>$CH_3CH_2OCH_2CH_3 + NaOH \\xrightarrow{\\text{reflux}} CH_3CH_2OH + CH_3CH_2ONa$</p><p>Mechanism:</p><ol><li>OH$^-$ attacks the electrophilic carbon attached to oxygen (SN2).</li><li>Cleavage of the C–O bond forms ethanol and ethoxide ion.</li><li>Ethoxide ion is protonated by water to give a second molecule of ethanol.</li></ol>"
       }
+    ],
+    "mcq": [
+      {
+        "q": "Which of the following is the correct IUPAC name of $CH_3CH_2CH_2CH_2OH$?",
+        "options": [
+          "Butanol",
+          "Pentanol",
+          "Butanal",
+          "Butanone"
+        ],
+        "answer": 0,
+        "explain": "The longest chain containing the –OH group has four carbon atoms, giving the parent name butane; the –OH suffix changes it to butanol."
+      },
+      {
+        "q": "The primary oxidation product of a primary alcohol $R-CH_2OH$ is:",
+        "options": [
+          "Aldehyde",
+          "Carboxylic acid",
+          "Ketone",
+          "Ester"
+        ],
+        "answer": 0,
+        "explain": "Primary alcohols are oxidized first to aldehydes ($R-CHO$); further oxidation gives carboxylic acids."
+      },
+      {
+        "q": "In the Williamson ether synthesis, which combination of reagents is used?",
+        "options": [
+          "$R-OH$ + $HX$",
+          "$R-X$ + $R'ONa$",
+          "$R-COOH$ + $R'OH$",
+          "$R-CH_2Cl$ + $NaCN$"
+        ],
+        "answer": 1,
+        "explain": "A primary alkyl halide ($R-X$) reacts with a sodium alkoxide ($R'ONa$) to give an ether $R-O-R'$ via an $S_N2$ mechanism."
+      },
+      {
+        "q": "The acid-catalyzed dehydration of $2$‑methyl‑1‑propanol yields:",
+        "options": [
+          "Isobutene",
+          "Isobutane",
+          "Methyl ethyl ether",
+          "tert‑Butyl alcohol"
+        ],
+        "answer": 0,
+        "explain": "Dehydration of a secondary alcohol under acid gives the corresponding alkene; $2$‑methyl‑1‑propanol loses water to form isobutene ($CH_2=C(CH_3)_2$)."
+      },
+      {
+        "q": "Which of the following ethers is most susceptible to cleavage by HI?",
+        "options": [
+          "Diethyl ether",
+          "Methyl phenyl ether",
+          "tert‑Butyl methyl ether",
+          "Anisole"
+        ],
+        "answer": 2,
+        "explain": "Ethers with a tertiary alkyl group undergo rapid $S_N1$ cleavage; $tert$‑butyl methyl ether is cleaved faster than the others by HI."
+      },
+      {
+        "q": "The pK$_a$ of phenol is approximately:",
+        "options": [
+          "$10$",
+          "$16$",
+          "$4$",
+          "$20$"
+        ],
+        "answer": 0,
+        "explain": "Phenol is a weak acid with $pK_a\\approx10$, whereas aliphatic alcohols have $pK_a\\approx16$."
+      },
+      {
+        "q": "Assertion (A): Phenol is more acidic than ethanol. Reason (R): The phenoxide ion is stabilized by resonance delocalization of the negative charge over the aromatic ring.",
+        "options": [
+          "Both A and R are true and R is the correct explanation",
+          "Both A and R are true but R is not the correct explanation",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explain": "Phenol ($pK_a\\approx10$) is indeed more acidic than ethanol ($pK_a\\approx16$). The phenoxide ion’s negative charge is delocalized over the aromatic ring, stabilizing it and accounting for the higher acidity."
+      },
+      {
+        "q": "In the oxidation of a secondary alcohol $R_2CHOH$, the major product is:",
+        "options": [
+          "Ketone",
+          "Aldehyde",
+          "Carboxylic acid",
+          "Alcohol"
+        ],
+        "answer": 0,
+        "explain": "Secondary alcohols are oxidized to ketones; further oxidation is difficult under normal conditions."
+      },
+      {
+        "q": "Which of the following reactions illustrates the formation of an ether by the acid-catalyzed dehydration of two alcohol molecules?",
+        "options": [
+          "$CH_3CH_2OH \\xrightarrow{H_2SO_4} CH_3CH_2OCH_2CH_3 + H_2O$",
+          "$CH_3CH_2OH + HCl \\rightarrow CH_3CH_2Cl + H_2O$",
+          "$CH_3CH_2OH \\xrightarrow{KMnO_4} CH_3COOH + H_2O$",
+          "$CH_3CH_2OH + Na \\rightarrow CH_3CH_2Na + H_2$"
+        ],
+        "answer": 0,
+        "explain": "Acid-catalyzed dehydration of two ethanol molecules yields diethyl ether ($CH_3CH_2OCH_2CH_3$) and water."
+      }
     ]
   },
   "chemistry::ch8::chemistry/aldehydes-ketones-acids/long-notes.html": {
@@ -9461,7 +9562,8 @@
       "Monosaccharides – important examples and reactions": "<p><strong>Monosaccharides</strong> – simplest carbohydrates containing a single carbonyl group and $C_nH_{2n}O_n$ ( $n = 3$ to $7$ ). They are classified as <em>aldoses</em> (aldehyde group) or <em>ketoses</em> (ketone group).</p><p><strong>Important examples</strong></p><table><tr><th>Common Name</th><th>Formula</th><th>Type</th></tr><tr><td>Glyceraldehyde</td><td>$C_3H_6O_3$</td><td>Aldose</td></tr><tr><td>Dihydroxyacetone</td><td>$C_3H_6O_3$</td><td>Ketose</td></tr><tr><td>Glucose (D‑glucose)</td><td>$C_6H_{12}O_6$</td><td>Aldose</td></tr><tr><td>Fructose</td><td>$C_6H_{12}O_6$</td><td>Ketose</td></tr><tr><td>Ribose</td><td>$C_5H_{10}O_5$</td><td>Aldose</td></tr></table><p><strong>Key reactions</strong></p><ul><li><strong>Oxidation (to aldonic/uronic acids)</strong>: $R-CHO + [O] \\rightarrow R-COOH$ (aldose) or $R-CO-CH_2OH + [O] \\rightarrow R-COOH$ (ketose).</li><li><strong>Reduction (to alditols)</strong>: $R-CHO + 2[H] \\rightarrow R-CH_2OH$ giving e.g., glucose \\rightarrow sorbitol.</li><li><strong>Formation of glycosidic bond</strong>: $R-OH + HO-R' \\rightarrow R-O-R' + H_2O$ (condensation).</li><li><strong>Isomerisation (Lobry de Bruyn–Alberda van Ekenstein)</strong>: Aldose \\leftrightarrow Ketose via enediol intermediate.</li></ul><p><strong>Solved example</strong></p><p>Calculate moles of glucose in $180\\ \\text{g}$ sample. Molar mass of glucose $M = 180\\ \\text{g mol}^{-1}$.</p><p>$$n = \\frac{m}{M} = \\frac{180\\ \\text{g}}{180\\ \\text{g mol}^{-1}} = 1\\ \\text{mol}$$</p><p>Thus $1\\ \\text{mol}$ of glucose contains $6.02\\times10^{23}$ molecules.</p>",
       "Disaccharides and polysaccharides – structure and functions": "<p><strong>Disaccharides</strong> – A disaccharide is a carbohydrate formed by a <em>glycosidic linkage</em> between two monosaccharide units. The linkage is denoted as $\\alpha$ or $\\beta$ depending on the anomeric carbon configuration and the carbon numbers involved (e.g., $\\alpha$‑1,4, $\\beta$‑1,2). Common examples are sucrose, lactose and maltose.</p><ul><li><strong>Sucrose</strong>: $\\alpha$‑D‑glucose $\\leftrightarrow$ $\\beta$‑D‑fructose via $\\alpha$‑1,2 bond; non‑reducing.</li><li><strong>Lactose</strong>: $\\beta$‑D‑galactose $\\leftrightarrow$ $\\alpha$‑D‑glucose via $\\beta$‑1,4 bond; reducing.</li><li><strong>Maltose</strong>: $\\alpha$‑D‑glucose $\\leftrightarrow$ $\\alpha$‑D‑glucose via $\\alpha$‑1,4 bond; reducing.</li></ul><p><strong>Polysaccharides</strong> – Long chains of monosaccharide units linked by glycosidic bonds. They are classified as <em>homopolysaccharides</em> (e.g., starch, glycogen, cellulose) or <em>heteropolysaccharides</em> (e.g., chitin). Key parameters:</p><ul><li><strong>Degree of Polymerisation (DP)</strong>: $\\text{DP}=\\frac{M_n}{M_0}$, where $M_n$ is the number‑average molar mass (g·mol$^{-1}$) and $M_0$ is the monomer molar mass (g·mol$^{-1}$).</li><li><strong>Average Molar Mass</strong>: $M_n=\\frac{\\sum n_i M_i}{\\sum n_i}$.</li></ul><table><tr><th>Polysaccharide</th><th>Monomer</th><th>Linkage</th><th>Function</th></tr><tr><td>Starch (amylose)</td><td>\\alpha$‑D‑glucose</td><td>$\\alpha$‑1,4</td><td>Energy reserve \\in plants</td></tr><tr><td>Glycogen</td><td>\\alpha$‑D‑glucose</td><td>$\\alpha$‑1,4 \\text{(branches $\\alpha$‑1,6)}</td><td>Energy reserve in animals</td></tr><tr><td>Cellulose</td><td>\\beta$‑D‑glucose</td><td>$\\beta$‑1,4</td><td>Structural support \\in plants</td></tr></table><p><strong>Solved Example</strong></p><p>Calculate the degree of polymerisation of amylose if its number‑average molar mass $M_n = 1.2\\times10^5\\,\\text{g mol}^{-1}$ and the monomer molar mass $M_0 = 180\\,\\text{g mol}^{-1}$.</p><p>Solution:</p><ol><li>Write the DP formula: $\\text{DP}=\\frac{M_n}{M_0}$.</li><li>Substitute the values: $\\text{DP}=\\frac{1.2\\times10^5}{180}$.</li><li>Perform the division: $\\text{DP}=\\frac{1.2\\times10^5}{1.8\\times10^2}=\\frac{1.2}{1.8}\\times10^{3}=0.667\\times10^{3}\\approx 667$.</li></ol><p>Thus, the amylose chain contains roughly $667$ glucose units. The result is dimensionless, as DP is a count of monomer units.</p>",
       "Proteins – amino acids, peptide bond and levels of organization": "<p><strong>Proteins – Amino Acids, Peptide Bond &amp; Levels of Organization</strong></p><ul><li><strong>Amino acid:</strong> An organic molecule containing $\\\\alpha$‑carbon bonded to $\\\\text{–COOH}$, $\\\\text{–NH}_2$, a hydrogen and a variable $R$‑group.</li><li><strong>General formula:</strong> $\\\\text{NH}_2\\\\text{–CH}(R)\\\\text{–COOH}$ (molar mass in $\\\\text{g\\cdot mol}^{-1}$).</li><li><strong>Peptide bond:</strong> Covalent $\\\\text{C–N}$ bond formed by condensation (dehydration) between $\\\\text{–COOH}$ of one amino acid and $\\\\text{–NH}_2$ of another, releasing $\\\\text{H}_2\\\\text{O}$.</li></ul><table><tr><th>Reaction</th><th>Products</th></tr><tr><td>$\\\\text{Amino acid}_1 + \\\\text{Amino acid}_2$</td><td>$\\\\text{Dipeptide} + \\\\text{H}_2\\\\text{O}$</td></tr></table><p><strong>Levels of protein organization</strong></p><ol><li>Primary – sequence of amino acids.</li><li>Secondary – $\\\\alpha$‑helix, $\\\\beta$‑sheet (hydrogen bonding).</li><li>Tertiary – 3‑D folding (disulphide bridges, hydrophobic interactions).</li><li>Quaternary – association of multiple polypeptide chains.</li></ol><p><strong>Example:</strong> A protein has a molar mass of $5.0\\\\times10^3\\\\,\\\\text{g\\cdot mol}^{-1}$ and is composed solely of glycine ($M_{\\\\text{Gly}} = 75\\\\,\\\\text{g\\cdot mol}^{-1}$). Find the number of peptide bonds.</p><p>Solution:</p><ol><li>Number of residues $n = \\\\frac{M_{\\\\text{protein}}}{M_{\\\\text{Gly}}}=\\\\frac{5.0\\\\times10^3}{75}=66.7\\\\approx 67$.</li><li>Peptide bonds $= n-1 = 66$.</li></ol><p>Thus the protein contains $66$ peptide bonds.</p>",
-      "Nucleic acids – DNA and RNA structure, nucleotides and genetic information flow": "<p><strong>Definition:</strong> Nucleic acids are high‑molecular‑weight polymers of <em>nucleotides</em> that store and transmit genetic information.</p><p><strong>Basic unit – Nucleotide</strong></p><ul><li>Three components: a <strong>nitrogenous base</strong> (purine = A,G; pyrimidine = C,T,U), a <strong>five‑carbon sugar</strong> (deoxyribose in DNA, ribose in RNA), and one or more <strong>phosphate groups</strong>.</li><li>General formula: $\\text{Base–Sugar–(PO}_4\\text{)}_n$.</li></ul><p><strong>DNA vs RNA</strong></p><ul><li>DNA: double‑helix, antiparallel strands, deoxyribose, bases A,T,G,C.</li><li>RNA: single‑stranded, ribose, bases A,U,G,C.</li></ul><p><strong>Base‑pairing rules (Chargaff’s rule)</strong></p><ul><li>$[A]=[T]$, $[G]=[C]$ in DNA.</li><li>In RNA, $[A]=[U]$, $[G]=[C]$.</li></ul><p><strong>Average molar mass of a nucleotide</strong></p><ul><li>DNA: $330\\ \\text{g mol}^{-1}$</li><li>RNA: $340\\ \\text{g mol}^{-1}$</li></ul><p><strong>Genetic information flow (Central Dogma)</strong></p><ul><li>DNA $\\xrightarrow{\\text{transcription}}$ RNA $\\xrightarrow{\\text{translation}}$ Protein.</li></ul><p><strong>Example:</strong> A DNA fragment weighs $10\\ \\mu\\text{g}$ and contains 30 % A, 30 % T, 20 % G, 20 % C. Find the number of nucleotides.</p><table><tr><th>Base</th><th>Percent</th><th>Molar mass (g mol$^{-1}$)</th></tr><tr><td>A</td><td>30</td><td>331</td></tr><tr><td>T</td><td>30</td><td>331</td></tr><tr><td>G</td><td>20</td><td>347</td></tr><tr><td>C</td><td>20</td><td>347</td></tr></table><p>Average molar mass $M_{avg}=0.30\\times331+0.30\\times331+0.20\\times347+0.20\\times347=337.4\\ \\text{g mol}^{-1}$.</p><p>Moles $n=\\frac{10\\times10^{-6}\\ \\text{g}}{337.4\\ \\text{g mol}^{-1}}=2.96\\times10^{-8}\\ \\text{mol}$.</p><p>Number of nucleotides $N=n\\times N_A=2.96\\times10^{-8}\\times6.022\\times10^{23}\\approx1.78\\times10^{16}$.</p>"
+      "Nucleic acids – DNA and RNA structure, nucleotides and genetic information flow": "<p><strong>Definition:</strong> Nucleic acids are high‑molecular‑weight polymers of <em>nucleotides</em> that store and transmit genetic information.</p><p><strong>Basic unit – Nucleotide</strong></p><ul><li>Three components: a <strong>nitrogenous base</strong> (purine = A,G; pyrimidine = C,T,U), a <strong>five‑carbon sugar</strong> (deoxyribose in DNA, ribose in RNA), and one or more <strong>phosphate groups</strong>.</li><li>General formula: $\\text{Base–Sugar–(PO}_4\\text{)}_n$.</li></ul><p><strong>DNA vs RNA</strong></p><ul><li>DNA: double‑helix, antiparallel strands, deoxyribose, bases A,T,G,C.</li><li>RNA: single‑stranded, ribose, bases A,U,G,C.</li></ul><p><strong>Base‑pairing rules (Chargaff’s rule)</strong></p><ul><li>$[A]=[T]$, $[G]=[C]$ in DNA.</li><li>In RNA, $[A]=[U]$, $[G]=[C]$.</li></ul><p><strong>Average molar mass of a nucleotide</strong></p><ul><li>DNA: $330\\ \\text{g mol}^{-1}$</li><li>RNA: $340\\ \\text{g mol}^{-1}$</li></ul><p><strong>Genetic information flow (Central Dogma)</strong></p><ul><li>DNA $\\xrightarrow{\\text{transcription}}$ RNA $\\xrightarrow{\\text{translation}}$ Protein.</li></ul><p><strong>Example:</strong> A DNA fragment weighs $10\\ \\mu\\text{g}$ and contains 30 % A, 30 % T, 20 % G, 20 % C. Find the number of nucleotides.</p><table><tr><th>Base</th><th>Percent</th><th>Molar mass (g mol$^{-1}$)</th></tr><tr><td>A</td><td>30</td><td>331</td></tr><tr><td>T</td><td>30</td><td>331</td></tr><tr><td>G</td><td>20</td><td>347</td></tr><tr><td>C</td><td>20</td><td>347</td></tr></table><p>Average molar mass $M_{avg}=0.30\\times331+0.30\\times331+0.20\\times347+0.20\\times347=337.4\\ \\text{g mol}^{-1}$.</p><p>Moles $n=\\frac{10\\times10^{-6}\\ \\text{g}}{337.4\\ \\text{g mol}^{-1}}=2.96\\times10^{-8}\\ \\text{mol}$.</p><p>Number of nucleotides $N=n\\times N_A=2.96\\times10^{-8}\\times6.022\\times10^{23}\\approx1.78\\times10^{16}$.</p>",
+      "Vitamins – classification, functions and deficiency disorders": "<p><strong>Vitamins – Definition</strong>: Organic compounds required in minute amounts for normal metabolism, cannot be synthesized in adequate quantity by the human body.</p><p><strong>Classification</strong> (by solubility):</p><table><tr><th>Fat‑soluble</th><th>Water‑soluble</th></tr><tr><td>Vitamin $A$ ($C_{40}H_{56}O$), Vitamin $D$ ($C_{27}H_{44}O$), Vitamin $E$ ($C_{29}H_{50}O_{2}$), Vitamin $K$ ($C_{31}H_{46}O_{2}$)</td><td>Vitamin $C$ ($C_6H_8O_6$), B‑complex (B$_1$, B$_2$, B$_3$, B$_5$, B$_6$, B$_7$, B$_9$, B$_12$)</td></tr></table><p><strong>Absorption &amp; Storage</strong>: Fat‑soluble vitamins are incorporated into micelles, absorbed with dietary lipids and transported as chylomicrons; they are stored in liver and adipose tissue. Water‑soluble vitamins are absorbed by active transport in the proximal small intestine and excess is eliminated in urine.</p><p><strong>Key Functions</strong>:</p><ul><li>Vitamin $A$: Vision, epithelial integrity, immune modulation.</li><li>Vitamin $D$: Calcium‑phosphate homeostasis, bone mineralisation.</li><li>Vitamin $E$: Antioxidant, protects membrane lipids.</li><li>Vitamin $K$: $\\gamma$‑carboxylation of clotting factors.</li><li>Vitamin $C$: Co‑factor for hydroxylases, enhances iron absorption, antioxidant.</li><li>B‑complex: Co‑enzymes in carbohydrate, protein and lipid metabolism.</li></ul><p><strong>Deficiency Disorders</strong> (selected):</p><ul><li>Vitamin $A$ – Night blindness, xerophthalmia.</li><li>Vitamin $D$ – Rickets (children), osteomalacia (adults).</li><li>Vitamin $C$ – Scurvy: gum bleeding, impaired collagen synthesis.</li><li>Vitamin $B_1$ – Beriberi: peripheral neuropathy, cardiac failure.</li><li>Vitamin $B_9$ – Megaloblastic anaemia, neural‑tube defects.</li></ul><p><strong>Toxicity</strong>: Because fat‑soluble vitamins accumulate, excess intake may cause hypervitaminosis (e.g., $A$, $D$). Water‑soluble vitamins are generally excreted, so toxicity is rare, though very high doses of vitamin $C$ may cause gastrointestinal upset.</p><p><strong>Solved Example</strong>:</p><p>Daily Recommended Dietary Allowance (RDA) of Vitamin $C$ = $60\\ \\text{mg}$. One orange provides $50\\ \\text{mg}$. How many oranges are needed to meet RDA?</p><p>Solution: Required number $= \\dfrac{60\\ \\text{mg}}{50\\ \\text{mg/orange}} = 1.2$ oranges. Hence, at least $2$ oranges are required to satisfy the RDA.</p>"
     }
   },
   "english::ch1::english/flamingo-ch1.html": {
