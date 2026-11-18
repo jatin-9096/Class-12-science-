@@ -6455,6 +6455,44 @@
         "question": "A current of 0.500 A is passed through a solution of Ag⁺ for 30 min. Find the mass of Ag deposited.",
         "solution_html": "<p><b>Given:</b> $I=0.500\\,\\text{A}$, $t=30\\,\\text{min}=1800\\,\\text{s}$, $n=1$, $M_{\\text{Ag}}=107.87\\,\\text{g·mol}^{-1}$, $F=96500\\,\\text{C·mol}^{-1}$.</p><p><b>Formula:</b> $m = \\frac{I t M}{nF}$.</p><p><b>Calculation:</b> $I t = 0.500\\times1800 = 900\\,\\text{C}$.<br>$m = \\frac{900\\times107.87}{1\\times96500}=1.01\\,\\text{g}$ (rounded to 3 s.f.).</p><p><b>Answer:</b> $m = 1.01\\,\\text{g}$ of Ag.</p>"
       }
+    ],
+    "pyq": [
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "Define an electrochemical cell and state the two main types of electrochemical cells.",
+        "answer_html": "<p><strong>Answer:</strong> An <em>electrochemical cell</em> is a device that converts chemical energy into electrical energy (galvanic) or vice‑versa (electrolytic). The two main types are <ul><li>Galvanic (voltaic) cell – spontaneous redox reaction produces emf.</li><li>Electrolytic cell – non‑spontaneous reaction driven by external source.</li></ul></p>"
+      },
+      {
+        "marks": "2 Marks",
+        "tag": "Board Important",
+        "question": "Write the overall cell reaction for a Daniell's cell (Zn|Zn^{2+}||Cu^{2+}|Cu).",
+        "answer_html": "<p><strong>Answer:</strong> $\\text{Zn(s)} + \\text{Cu}^{2+}(aq) \\rightarrow \\text{Zn}^{2+}(aq) + \\text{Cu(s)}$</p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Explain the working of a galvanic cell with reference to electrode potentials.",
+        "answer_html": "<p><strong>Answer:</strong> <ol><li>At the anode oxidation occurs; Zn(s) \\rightarrow Zn^{2+}+2e^- (E^\\circ_{\\text{Zn}^{2+}/\\text{Zn}}=-0.76\\,V).</li><li>At the cathode reduction occurs; Cu^{2+}+2e^- \\rightarrow Cu(s) (E^\\circ_{\\text{Cu}^{2+}/\\text{Cu}}=+0.34\\,V).</li><li>The cell emf $E_{cell}=E_{cathode}-E_{anode}=0.34-(-0.76)=1.10\\,V$. Electrons flow from Zn to Cu through external circuit, while ions migrate through the salt bridge to maintain neutrality.</li></ol></p>"
+      },
+      {
+        "marks": "3 Marks",
+        "tag": "Board Important",
+        "question": "Derive the Nernst equation for the half‑cell reaction $\\text{Ox}+ne^- \\rightleftharpoons \\text{Red}$.",
+        "answer_html": "<p><strong>Answer:</strong> For the half‑reaction $\\text{Ox}+ne^- \\rightleftharpoons \\text{Red}$, $E=E^\\circ-\\frac{RT}{nF}\\ln\\frac{[\\text{Red}]}{[\\text{Ox}]}$. At $25^\\circ\\text{C}$, $\\frac{RT}{F}=0.0257\\,V$, so $E=E^\\circ-\\frac{0.0257}{n}\\ln\\frac{[\\text{Red}]}{[\\text{Ox}]}=E^\\circ-\\frac{0.0592}{n}\\log_{10}\\frac{[\\text{Red}]}{[\\text{Ox}]}$.</p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "A galvanic cell is constructed using $\\text{Zn}|\\text{Zn}^{2+}(0.1\\,\\text{M})||\\text{Cu}^{2+}(0.01\\,\\text{M})|\\text{Cu}$. Calculate the cell potential at $25^\\circ\\text{C}$ using the Nernst equation. (Given $E^\\circ_{\\text{Zn}^{2+}/\\text{Zn}}=-0.76\\,\\text{V}$, $E^\\circ_{\\text{Cu}^{2+}/\\text{Cu}}=+0.34\\,\\text{V}$).",
+        "answer_html": "<p><strong>Answer:</strong> <ol><li>Standard emf $E^\\circ_{cell}=E^\\circ_{cathode}-E^\\circ_{anode}=0.34-(-0.76)=1.10\\,\\text{V}$.</li><li>Overall reaction: $\\text{Zn(s)}+\\text{Cu}^{2+}(aq)\\rightarrow\\text{Zn}^{2+}(aq)+\\text{Cu(s)}$.</li><li>Reaction quotient $Q=\\frac{[\\text{Zn}^{2+}]}{[\\text{Cu}^{2+}]}=\\frac{0.1}{0.01}=10$.</li><li>Nernst equation: $E=E^\\circ-\\frac{0.0592}{n}\\log_{10}Q$, with $n=2$.</li><li>$E=1.10-\\frac{0.0592}{2}\\log_{10}10=1.10-0.0296\\times1=1.0704\\,\\text{V}$ (≈1.07 V).</li></ol></p>"
+      },
+      {
+        "marks": "5 Marks",
+        "tag": "Board Important",
+        "question": "Explain the corrosion of iron and how it can be prevented by (i) protective coating and (ii) cathodic protection. Include the relevant half‑reactions.",
+        "answer_html": "<p><strong>Answer:</strong> <ol><li><strong>Corrosion of iron:</strong> In presence of moisture and oxygen, iron undergoes oxidation: $\\text{Fe}\\rightarrow\\text{Fe}^{2+}+2e^-$ (anodic). Simultaneously, oxygen is reduced: $\\text{O}_2+2H_2O+4e^-\\rightarrow4\\text{OH}^-$ (cathodic). The $\\text{Fe}^{2+}$ reacts with $\\text{OH}^-$ to form hydrated iron(III) oxide (rust).</li><li><strong>(i) Protective coating:</strong> Paint or oil creates a physical barrier, preventing contact of iron with water/oxygen, thus blocking both anodic and cathodic sites.</li><li><strong>(ii) Cathodic protection:</strong> The iron is made the cathode by attaching a more active metal (e.g., Zn). The sacrificial anode oxidises: $\\text{Zn}\\rightarrow\\text{Zn}^{2+}+2e^-$, supplying electrons to the iron surface, so iron does not oxidise. Alternatively, an impressed current system forces electrons onto the iron surface.</li></ol></p>"
+      }
     ]
   },
   "chemistry::ch3::chemistry/chemical-kinetics/long-notes.html": {
@@ -7506,6 +7544,23 @@
         "title": "Summary & Common Mistakes",
         "html": "<ul><li>Always identify the type of substrate (primary, secondary, tertiary, allylic, benzylic, or aryl) before choosing SN1 or SN2.</li><li>Do not confuse the rate laws: SN1 is first order in substrate only; SN2 is second order (substrate + nucleophile).</li><li>Remember that aryl halides do NOT undergo SN1/SN2 under normal conditions; they require S<sub>N</sub>Ar mechanism with a strong nucleophile and a –NO<sub>2</sub> (or other –EWG) ortho/para to the halogen.</li><li>In SN2, the nucleophile attacks from the side opposite to the leaving group – leading to Walden inversion. Forgetting inversion leads to wrong stereochemistry.</li><li>When calculating % yield, use the theoretical yield based on the limiting reagent, not the stoichiometric amount of the halide.</li><li>Common error: treating F as a good leaving group. In haloalkanes, F is a poor leaving group; reactions are slower compared to Cl, Br, I.</li><li>For elimination, check the base strength: strong bases favour E2, weak bases favour E1 (often with carbocation formation).</li><li>Do not overlook solvent effects: polar protic solvents stabilise carbocations (favor SN1/E1), while polar aprotic solvents enhance nucleophilicity (favor SN2/E2).</li></ul>"
       }
+    ],
+    "numericals": [
+      {
+        "level": "NCERT / Board Standard / HOTS",
+        "question": "Calculate the rate of an SN1 reaction for 2‑bromo‑2‑methylpropane when $[\\text{(CH}_3)_3\\text{C–Br}]=0.020\\ \\text{M}$ and the rate constant $k=1.5\\times10^{3}\\ \\text{M}^{-1}\\text{s}^{-1}$.",
+        "solution_html": "<p><strong>Given:</strong> $[\\\\text{(CH}_3)_3\\\\text{C–Br}]=0.020\\\\ \\\\text{M}$, $k=1.5\\\\times10^{3}\\\\ \\\\text{M}^{-1}\\\\text{s}^{-1}$.</p><p><strong>Formula:</strong> Rate $=k[\\\\text{substrate}]$ for a first‑order SN1 process.</p><p><strong>Calculation:</strong> Rate $=1.5\\\\times10^{3}\\\\times0.020=30\\\\ \\\\text{M\\\\,s}^{-1}$.</p><p><strong>Answer:</strong> $30\\\\ \\\\text{M\\\\,s}^{-1}$ (i.e., $30\\\\ \\\\text{mol\\\\,L}^{-1}\\\\text{s}^{-1}$).</p>"
+      },
+      {
+        "level": "NCERT / Board Standard / HOTS",
+        "question": "2.5 g of 1‑chloropropane ($\\text{C}_3\\text{H}_7\\text{Cl}$, $M=78.5\\ \\text{g\\,mol}^{-1}$) is hydrolysed with excess NaOH: $\\text{C}_3\\text{H}_7\\text{Cl}+\\text{NaOH}\\rightarrow\\text{C}_3\\text{H}_7\\text{OH}+\\text{NaCl}$. Find the mass of NaCl formed.",
+        "solution_html": "<p><strong>Given:</strong> $m_{\\\\text{C}_3\\\\text{H}_7\\\\text{Cl}}=2.5\\\\ \\\\text{g}$, $M_{\\\\text{C}_3\\\\text{H}_7\\\\text{Cl}}=78.5\\\\ \\\\text{g\\\\,mol}^{-1}$, $M_{\\\\text{NaCl}}=58.44\\\\ \\\\text{g\\\\,mol}^{-1}$.</p><p><strong>Formula:</strong> $n=\\\\frac{m}{M}$ and stoichiometry $1:\\\\!1$ for $\\\\text{C}_3\\\\text{H}_7\\\\text{Cl}$ to NaCl.</p><p><strong>Calculation:</strong> $n_{\\\\text{C}_3\\\\text{H}_7\\\\text{Cl}}=\\\\frac{2.5}{78.5}=3.18\\\\times10^{-2}\\\\ \\\\text{mol}$. Hence $m_{\\\\text{NaCl}}=n\\\\times M_{\\\\text{NaCl}}=3.18\\\\times10^{-2}\\\\times58.44=1.86\\\\ \\\\text{g}$.</p><p><strong>Answer:</strong> $1.86\\\\ \\\\text{g}$ of NaCl are obtained.</p>"
+      },
+      {
+        "level": "NCERT / Board Standard / HOTS",
+        "question": "A solution is prepared by dissolving $0.50\\ \\text{mol}$ of bromoethane in $1.0\\ \\text{kg}$ of water. Given $K_{\\text{b}}=0.512\\ ^\\circ\\text{C\\,kg\\,mol}^{-1}$, calculate the boiling‑point elevation $\\Delta T_{\\text{b}}$.",
+        "solution_html": "<p><strong>Given:</strong> $m=0.50\\ \\text{mol}$, $\\text{kg of solvent}=1.0\\ \\text{kg}$, $K_{\\text{b}}=0.512\\ ^\\circ\\text{C\\,kg\\,mol}^{-1}$.</p><p><strong>Formula:</strong> $\\Delta T_{\\text{b}}=K_{\\text{b}}\\times m_{\\text{solute}}$, where $m_{\\text{solute}}=\\frac{\\text{mol solute}}{\\text{kg solvent}}$.</p><p><strong>Calculation:</strong> $m_{\\text{solute}}=\\frac{0.50}{1.0}=0.50\\ \\text{mol\\,kg}^{-1}$. $\\Delta T_{\\text{b}}=0.512\\times0.50=0.256\\ ^\\circ\\text{C}$.</p><p><strong>Answer:</strong> The boiling point is raised by $0.256\\ ^\\circ\\text{C}$.</p>"
+      }
     ]
   },
   "chemistry::ch7::chemistry/alcohols-phenols-ethers/long-notes.html": {
@@ -7899,6 +7954,118 @@
         "tag": "Board Important",
         "question": "State two differences between DNA and RNA.",
         "answer_html": "<ul><li>DNA contains deoxyribose sugar; RNA contains ribose sugar.</li><li>DNA uses thymine as a base; RNA uses uracil instead of thymine.</li></ul>"
+      }
+    ],
+    "mcq": [
+      {
+        "q": "Which of the following is not a component of nucleic acids?",
+        "options": [
+          "Phosphate group",
+          "Pentose sugar",
+          "Amino group",
+          "Nitrogenous base"
+        ],
+        "answer": 2,
+        "explain": "Nucleic acids are composed of a phosphate group, a pentose sugar (ribose or deoxyribose) and a nitrogenous base. Amino groups are not part of nucleic acid structure."
+      },
+      {
+        "q": "The primary structure of a protein is determined by",
+        "options": [
+          "Sequence of amino acids",
+          "Hydrogen bonding",
+          "Disulfide bridges",
+          "Tertiary folding"
+        ],
+        "answer": 0,
+        "explain": "The primary structure refers to the linear sequence of amino acids linked by peptide bonds."
+      },
+      {
+        "q": "Assertion: DNA replication is semi-conservative. Reason: Each daughter DNA molecule contains one parental and one newly synthesized strand.",
+        "options": [
+          "Both A and R are true and R correctly explains A",
+          "Both A and R are true but R does not explain A",
+          "A is true, R is false",
+          "A is false, R is true"
+        ],
+        "answer": 0,
+        "explain": "In semi-conservative replication each new DNA duplex consists of one original (parental) strand and one newly synthesized strand; thus the reason correctly explains the assertion."
+      },
+      {
+        "q": "Which of the following monosaccharides is a ketose?",
+        "options": [
+          "Glucose",
+          "Fructose",
+          "Ribose",
+          "Galactose"
+        ],
+        "answer": 1,
+        "explain": "Fructose contains a ketone functional group at C-2, making it a ketose, whereas the others are aldoses."
+      },
+      {
+        "q": "In the structure of a typical phospholipid, the hydrophilic head contains",
+        "options": [
+          "Glycerol and fatty acid",
+          "Glycerol and phosphate group",
+          "Two fatty acid chains",
+          "Cholesterol"
+        ],
+        "answer": 1,
+        "explain": "The polar head of a phospholipid consists of glycerol linked to a phosphate group (often with additional polar groups)."
+      },
+      {
+        "q": "The enzyme that catalyzes the formation of peptide bonds during protein synthesis is",
+        "options": [
+          "DNA polymerase",
+          "RNA polymerase",
+          "Ribosome",
+          "Ligase"
+        ],
+        "answer": 2,
+        "explain": "Ribosomes facilitate the formation of peptide bonds between amino acids during translation."
+      },
+      {
+        "q": "Assertion: Unsaturated fatty acids have lower melting points than saturated fatty acids. Reason: Presence of cis double bonds introduces kinks, preventing tight packing.",
+        "options": [
+          "Both A and R are true and R correctly explains A",
+          "Both A and R are true but R does not explain A",
+          "A is true, R is false",
+          "A is false, R is true"
+        ],
+        "answer": 0,
+        "explain": "Cis double bonds create bends in the hydrocarbon chain, reducing van der Waals interactions and lowering the melting point; the reason explains the assertion."
+      },
+      {
+        "q": "Which of the following is a storage polysaccharide in plants?",
+        "options": [
+          "Cellulose",
+          "Starch",
+          "Glycogen",
+          "Chitin"
+        ],
+        "answer": 1,
+        "explain": "Starch serves as the major storage carbohydrate in plants, whereas cellulose is structural, glycogen is animal storage, and chitin is fungal/exoskeletal."
+      },
+      {
+        "q": "The functional group present in all amino acids is",
+        "options": [
+          "Carboxyl $-\\mathrm{COOH}$",
+          "Amino $-\\mathrm{NH_2}$",
+          "Both carboxyl and amino",
+          "Hydroxyl $-\\mathrm{OH}$"
+        ],
+        "answer": 2,
+        "explain": "Every amino acid contains both a carboxyl ($-\\mathrm{COOH}$) and an amino ($-\\mathrm{NH_2}$) group attached to the same carbon atom."
+      },
+      {
+        "q": "Which vitamin is essential for the synthesis of collagen?",
+        "options": [
+          "Vitamin A",
+          "Vitamin C",
+          "Vitamin D",
+          "Vitamin K"
+        ],
+        "answer": 1,
+        "explain": "Vitamin C acts as a cofactor for prolyl and lysyl hydroxylases, enzymes required for collagen maturation."
       }
     ]
   },
@@ -10114,6 +10281,118 @@
         "question": "How does the narrative illustrate the importance of perseverance in achieving goals, and why is this value essential for students?",
         "answer": "Through relentless hardships—freezing temperatures, disorienting blizzards, and physical exhaustion—the narrator persists, driven by curiosity and purpose. This perseverance leads to personal growth and successful completion of the journey. For students, the value underscores that academic and personal challenges are surmountable through consistent effort, resilience, and a positive mindset, preparing them for future endeavors."
       }
+    ],
+    "mcq": [
+      {
+        "q": "In the passage, the phrase “the endless horizon” primarily signifies",
+        "options": [
+          "The physical expanse of the sea",
+          "The narrator’s longing for freedom",
+          "The inevitability of death",
+          "The vastness of human imagination"
+        ],
+        "answer": 1,
+        "explain": "The phrase reflects the narrator’s yearning to break free from constraints and explore beyond known limits."
+      },
+      {
+        "q": "Which literary device is most evident in the line “the waves whispered secrets of distant lands”?",
+        "options": [
+          "Metaphor",
+          "Personification",
+          "Alliteration",
+          "Hyperbole"
+        ],
+        "answer": 1,
+        "explain": "Waves are given the human ability to whisper, which is personification."
+      },
+      {
+        "q": "The narrator’s attitude towards the journey changes from the beginning to the end. This change is best described as",
+        "options": [
+          "From fear to curiosity",
+          "From indifference to enthusiasm",
+          "From optimism to despair",
+          "From excitement to resignation"
+        ],
+        "answer": 0,
+        "explain": "Initially fearful of the unknown, the narrator grows curious as the journey unfolds."
+      },
+      {
+        "q": "The title “Journey to the End of the Earth” is an example of",
+        "options": [
+          "Irony",
+          "Symbolism",
+          "Foreshadowing",
+          "Oxymoron"
+        ],
+        "answer": 1,
+        "explain": "‘End of the Earth’ symbolizes the ultimate quest for self‑discovery, not a literal place."
+      },
+      {
+        "q": "Which of the following best captures the central theme of the chapter?",
+        "options": [
+          "Man’s triumph over nature",
+          "The futility of ambition",
+          "Exploration as a path to self‑realisation",
+          "The danger of isolation"
+        ],
+        "answer": 2,
+        "explain": "The narrative emphasizes that outward exploration mirrors inner growth."
+      },
+      {
+        "q": "Assertion (A): The recurring motif of the compass represents the narrator’s moral compass. Reason (R): The compass is repeatedly described as pointing towards the unknown, indicating moral ambiguity. ",
+        "options": [
+          "Both A and R are true and R correctly explains A",
+          "Both A and R are true but R does not explain A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 2,
+        "explain": "The compass symbolizes direction and purpose, not moral ambiguity; thus A is true, R is false."
+      },
+      {
+        "q": "In the passage, the description of the night sky uses the term $\\pi$ to denote",
+        "options": [
+          "The infinite nature of time",
+          "The circular path of the stars",
+          "A mathematical constant unrelated to the theme",
+          "The cyclical pattern of tides"
+        ],
+        "answer": 0,
+        "explain": "$\\pi$ is employed metaphorically to convey the endless, unquantifiable nature of time."
+      },
+      {
+        "q": "The narrator’s use of first‑person narrative primarily serves to",
+        "options": [
+          "Create an objective account",
+          "Highlight personal transformation",
+          "Obscure the setting",
+          "Introduce multiple viewpoints"
+        ],
+        "answer": 1,
+        "explain": "First‑person narration allows readers to experience the narrator’s internal changes directly."
+      },
+      {
+        "q": "Which of the following statements about the setting is correct?",
+        "options": [
+          "The journey takes place entirely on land",
+          "The sea is portrayed as a hostile antagonist",
+          "The setting shifts from a bustling port to a desolate ice field",
+          "The environment remains static throughout the chapter"
+        ],
+        "answer": 2,
+        "explain": "The narrative moves from a lively port to an isolated icy landscape, reflecting the inner journey."
+      },
+      {
+        "q": "The phrase “silence of the abyss” most effectively creates a sense of",
+        "options": [
+          "Joyful anticipation",
+          "Mysterious dread",
+          "Comic relief",
+          "Romantic nostalgia"
+        ],
+        "answer": 1,
+        "explain": "‘Abyss’ coupled with ‘silence’ evokes an ominous, unsettling atmosphere."
+      }
     ]
   },
   "english::ch4::english/vistas-ch4.html": {
@@ -10421,6 +10700,71 @@
         "name": "Friend (Playmate)",
         "role": "Companion in Childhood Adventures",
         "sketch_html": "<p>The friend appears in fleeting memories of games and shared mischief, illustrating the social aspect of the narrator’s early life. Their camaraderie underscores themes of innocence and collective joy.</p>"
+      }
+    ],
+    "extracts": [
+      {
+        "passage": "The courtyard was a canvas of dust and laughter. We chased each other under the scorching sun, our bare feet kicking up clouds of earth. The sweet scent of ripe mangoes from the neighbour’s tree lingered, promising a cool respite after the games.",
+        "questions": [
+          {
+            "q": "Summarize the scene described in the passage in one sentence.",
+            "ans": "Children play joyfully in a dusty courtyard, yearning for the sweet mangoes that offer relief from the heat."
+          },
+          {
+            "q": "What does the phrase “canvas of dust and laughter” suggest?",
+            "ans": "It depicts the courtyard as a lively, vibrant space filled with playful activity and dust."
+          },
+          {
+            "q": "Why does the narrator describe the mangoes as promising a “cool respite”?",
+            "ans": "Because the mangoes are sweet and refreshing, providing relief from the scorching sun."
+          },
+          {
+            "q": "Give a suitable title for this extract.",
+            "ans": "A Summer Playground"
+          }
+        ]
+      },
+      {
+        "passage": "Monsoon clouds gathered, and the school bell rang for the last time before the rains. We hurried home, splashing through puddles, while the distant thunder sang a lullaby. The wet earth released a petrichor that reminded us of stories told by grandparents.",
+        "questions": [
+          {
+            "q": "What is the main activity of the children as the monsoon approaches?",
+            "ans": "They rush home, splashing through puddles, after the school bell rings."
+          },
+          {
+            "q": "Explain the meaning of “petrichor” as used in the passage.",
+            "ans": "The pleasant earthy smell that arises when rain falls on dry ground."
+          },
+          {
+            "q": "Why does the narrator link the smell of rain to grandparents’ stories?",
+            "ans": "Because the scent evokes nostalgic memories of tales heard from grandparents."
+          },
+          {
+            "q": "Provide an appropriate title for this extract.",
+            "ans": "The Arrival of Monsoon"
+          }
+        ]
+      },
+      {
+        "passage": "Under the ancient banyan’s sprawling shade, we gathered every evening. Grandfather would sit on the low stool, his voice weaving myths of brave heroes and distant lands. The rustling leaves seemed to echo his words, making the stories feel alive.",
+        "questions": [
+          {
+            "q": "What role does the banyan tree play in the passage?",
+            "ans": "It provides a cool, communal space where stories are shared."
+          },
+          {
+            "q": "What does the phrase “voice weaving myths” convey about the grandfather?",
+            "ans": "His storytelling is skillful and imaginative, creating vivid tales."
+          },
+          {
+            "q": "How do the rustling leaves contribute to the atmosphere?",
+            "ans": "They echo the stories, enhancing the sense that the myths are alive."
+          },
+          {
+            "q": "Suggest a fitting title for this extract.",
+            "ans": "Evenings Beneath the Banyan"
+          }
+        ]
       }
     ]
   }
