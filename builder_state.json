@@ -6433,6 +6433,28 @@
         "title": "Summary & Common Mistakes",
         "html": "<ul><li>Always write the cell notation in the order: <em>anode | electrolyte || electrolyte | cathode</em>. Reversing gives wrong sign for $E_{cell}$.</li><li>When using the Nernst equation, $n$ is the number of electrons transferred in the overall cell reaction, not per half‑reaction.</li><li>Remember to convert concentrations to activities (or use $[\\text{species}]$ if activity coefficients are ~1). Ignoring this leads to errors in $Q$.</li><li>Standard EMF $E^\\circ_{cell}$ is calculated as $E^\\circ_{cathode} - E^\\circ_{anode}$, not the other way round.</li><li>Do not confuse $F$ (Faraday constant) with $f$ (frequency). $F = 96485\\,\\text{C mol}^{-1}$.</li><li>For equilibrium calculations, use $\\Delta G^\\circ = -RT\\ln K$ or its logarithmic form $\\log K = \\frac{nE^\\circ_{cell}}{0.0592}$.</li><li>Common sign error: In electrolytic cells the cell potential is negative (non‑spontaneous), but the magnitude is used in calculations.</li></ul>"
       }
+    ],
+    "numericals": [
+      {
+        "level": "NCERT / Board Standard / HOTS",
+        "question": "Calculate the standard emf of a Daniell cell Zn|Zn2+ (1 M)||Cu2+ (1 M)|Cu at 25 °C.",
+        "solution_html": "<p><b>Given:</b> $E^\\circ_{\\text{Zn}^{2+}/\\text{Zn}} = -0.76\\,\\text{V}$, $E^\\circ_{\\text{Cu}^{2+}/\\text{Cu}} = +0.34\\,\\text{V}$.</p><p><b>Formula:</b> $E_{\\text{cell}} = E^\\circ_{\\text{cathode}} - E^\\circ_{\\text{anode}}$.</p><p><b>Calculation:</b> $E_{\\text{cell}} = (+0.34) - (-0.76) = +1.10\\,\\text{V}$.</p><p><b>Answer:</b> $E_{\\text{cell}} = 1.10\\,\\text{V}$.</p>"
+      },
+      {
+        "level": "NCERT / Board Standard / HOTS",
+        "question": "Find the emf of the same Daniell cell when [Cu2+] = 0.10 M and [Zn2+] = 0.10 M at 298 K.",
+        "solution_html": "<p><b>Given:</b> $E^\\circ_{\\text{cell}} = 1.10\\,\\text{V}$, $[\\text{Cu}^{2+}] = 0.10\\,\\text{M}$, $[\\text{Zn}^{2+}] = 0.10\\,\\text{M}$, $n=2$, $T=298\\,\\text{K}$.</p><p><b>Formula (Nernst):</b> $E = E^\\circ - \\frac{0.0592}{n}\\log Q$, where $Q = \\frac{[\\text{Cu}^{2+}]}{[\\text{Zn}^{2+}]}$.</p><p><b>Calculation:</b> $Q = \\frac{0.10}{0.10}=1$, $\\log Q = 0$.<br>Thus $E = 1.10 - \\frac{0.0592}{2}\\times 0 = 1.10\\,\\text{V}$.</p><p><b>Answer:</b> $E = 1.10\\,\\text{V}$ (no change as $Q=1$).</p>"
+      },
+      {
+        "level": "NCERT / Board Standard / HOTS",
+        "question": "Using Faraday’s law, calculate the total charge required to deposit 10.0 g of Cu (Cu²⁺ + 2e⁻) during electrolysis.",
+        "solution_html": "<p><b>Given:</b> Mass of Cu, $m=10.0\\,\\text{g}$; Molar mass $M_{\\text{Cu}}=63.55\\,\\text{g·mol}^{-1}$; $n=2$; $F=96500\\,\\text{C·mol}^{-1}$.</p><p><b>Formula:</b> $Q = \\frac{m}{M}\\times nF$.</p><p><b>Calculation:</b> $\\frac{10.0}{63.55}=0.1574\\,\\text{mol Cu}$.<br>$Q = 0.1574\\times 2\\times 96500 = 3.04\\times10^{4}\\,\\text{C}$.</p><p><b>Answer:</b> $Q = 3.04\\times10^{4}\\,\\text{C}$.</p>"
+      },
+      {
+        "level": "NCERT / Board Standard / HOTS",
+        "question": "A current of 0.500 A is passed through a solution of Ag⁺ for 30 min. Find the mass of Ag deposited.",
+        "solution_html": "<p><b>Given:</b> $I=0.500\\,\\text{A}$, $t=30\\,\\text{min}=1800\\,\\text{s}$, $n=1$, $M_{\\text{Ag}}=107.87\\,\\text{g·mol}^{-1}$, $F=96500\\,\\text{C·mol}^{-1}$.</p><p><b>Formula:</b> $m = \\frac{I t M}{nF}$.</p><p><b>Calculation:</b> $I t = 0.500\\times1800 = 900\\,\\text{C}$.<br>$m = \\frac{900\\times107.87}{1\\times96500}=1.01\\,\\text{g}$ (rounded to 3 s.f.).</p><p><b>Answer:</b> $m = 1.01\\,\\text{g}$ of Ag.</p>"
+      }
     ]
   },
   "chemistry::ch3::chemistry/chemical-kinetics/long-notes.html": {
@@ -10198,6 +10220,48 @@
             "ans": "The story’s moral is that selfish actions damage trust and erode compassion, creating an internal enemy that haunts the conscience. True loyalty, exemplified by the dog, remains pure, while human folly leads to lasting remorse. Recognizing and correcting our selfishness before it destroys relationships is essential, for once compassion is broken, it is difficult to restore its original depth."
           }
         ]
+      }
+    ],
+    "practice": [
+      {
+        "type": "Short Answer",
+        "question": "What is the central theme of \"The Enemy\"?",
+        "answer": "The central theme is the clash between national duty and personal conscience, showing how war compels individuals to confront moral dilemmas and reassess the meaning of patriotism."
+      },
+      {
+        "type": "Short Answer",
+        "question": "Who narrates the story and what is his profession?",
+        "answer": "The story is narrated in the third person, focusing on Dr. Satyendra Nath Bose, a dedicated scientist working on a secret project for the Indian war effort."
+      },
+      {
+        "type": "Short Answer",
+        "question": "How does the author depict patriotism through the protagonist?",
+        "answer": "Patriotism is shown as a complex, self‑sacrificial commitment; the protagonist continues his work despite personal loss, illustrating that true patriotism may demand painful choices."
+      },
+      {
+        "type": "Long Answer",
+        "question": "Discuss how the setting influences the protagonist’s decisions in \"The Enemy\". Include references to specific incidents.",
+        "answer": "The story is set in a wartime laboratory in Calcutta, a city under threat of bombings and political unrest. The oppressive atmosphere of scarcity and fear heightens the protagonist’s sense of urgency. For example, when the enemy air raid sirens sound, Dr. Bose chooses to stay in the lab rather than flee, reflecting his resolve to protect the nation’s scientific progress. The cramped, dimly lit lab symbolizes the limited resources and the heavy burden of responsibility, compelling him to prioritize collective welfare over personal safety. Thus, the setting acts as a catalyst, pushing the protagonist toward decisions that underscore his dedication to the larger cause."
+      },
+      {
+        "type": "Long Answer",
+        "question": "Analyze the character development of Dr. Satyendra Nath Bose and how his internal conflict reflects the larger socio‑political scenario of wartime India.",
+        "answer": "At the story’s outset, Dr. Bose is portrayed as a rational scientist, focused solely on research. As the narrative progresses, he confronts the moral weight of his work, which could be used for destructive purposes. This internal conflict mirrors India’s own struggle between supporting the Allied war effort and preserving moral integrity. His moments of doubt—especially when he learns that his invention may aid the enemy’s weaponry—show a shift from blind obedience to reflective patriotism. By the climax, he accepts personal sacrifice, embodying the nation’s resolve to endure hardship for future freedom. His evolution from a detached researcher to a conscientious patriot encapsulates the broader tension between colonial allegiance and emerging nationalist sentiment."
+      },
+      {
+        "type": "Long Answer",
+        "question": "Explain the significance of the title \"The Enemy\" in relation to the moral dilemmas faced by the characters.",
+        "answer": "The title operates on multiple levels. Literally, \"the enemy\" refers to the foreign forces threatening India. Symbolically, it represents the internal adversary—fear, doubt, and ethical compromise—that each character battles. Dr. Bose’s struggle is not just against an external foe but against his own conscience, questioning whether scientific advancement can be weaponized. The title also alludes to the paradox that the true enemy may be the loss of humanity that accompanies war. By naming the story \"The Enemy,\" the author emphasizes that the greatest battles are often internal, and overcoming them defines true heroism."
+      },
+      {
+        "type": "Value-Based Question",
+        "question": "\"Patriotism sometimes demands personal sacrifice.\" Reflect on this statement with examples from the story.",
+        "answer": "In \"The Enemy,\" Dr. Bose sacrifices his personal safety, family time, and emotional peace to continue his research, believing it serves the nation’s future. When bombings threaten his lab, he chooses to stay, risking his life. This illustrates that patriotism is not merely symbolic gestures but involves tangible sacrifices that may strain personal relationships and well‑being. The story teaches that genuine love for the country often requires putting collective interests above individual comforts, reinforcing the idea that personal loss can be a noble contribution to national progress."
+      },
+      {
+        "type": "Value-Based Question",
+        "question": "How can the lessons from \"The Enemy\" be applied to contemporary issues of national duty versus personal ethics?",
+        "answer": "The story’s core dilemma—balancing duty to the nation with personal moral standards—resonates today in debates over data privacy, military service, and public health mandates. Like Dr. Bose, modern professionals may face choices where their work benefits the country but raises ethical concerns (e.g., developing surveillance technology). The narrative encourages critical reflection: one should serve the nation responsibly, ensuring that personal ethics are not compromised. It advocates for informed sacrifice, where individuals evaluate the broader impact of their actions rather than following directives blindly."
       }
     ]
   },
