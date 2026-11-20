@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Class 12 Physics Chapter 1: Electric Charges & Fields — All NCERT Definitions, All 7 Full Derivations, Short Revision Notes, Mind Map & Flowchart by Shorveer Notes.">
+  <meta name="description" content="Class 12 Physics Chapter 1: Electric Charges and Fields — Complete Long Detailed NCERT Notes, All Definitions, Full Derivations, Graphs & Solved Examples by Shorveer Notes.">
   <meta name="author" content="Jatin Sandilya">
   <meta name="robots" content="index, follow">
   <meta name="color-scheme" content="light dark">
@@ -23,7 +23,7 @@
   <!-- Main Global Stylesheet -->
   <link rel="stylesheet" href="../style.css">
 
-  <!-- Instant Theme Restore (Prevents flash on load) -->
+  <!-- Instant Theme Restore -->
   <script>
     document.documentElement.classList.add('js');
     try {
@@ -45,10 +45,65 @@
   <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
   <style>
-    /* Lightweight chapter-page helpers using your exact style.css tokens */
-    .ch-hero { padding: 54px 0 32px; }
-    .ch-hero h1 { font-size: clamp(36px, 5.2vw, 62px); margin-bottom: 14px; color: var(--ink); }
-    .ch-hero p { max-width: 680px; color: var(--muted); font-size: 17px; line-height: 1.65; margin-bottom: 24px; }
+    .ch-hero {
+      margin: 34px 0 26px;
+      padding: 34px 32px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    .ch-hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--rust), var(--gold));
+    }
+    .ch-hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      margin: 12px 0 12px;
+      color: var(--ink);
+    }
+    .ch-hero h1 em { font-style: italic; color: var(--rust); }
+    .ch-hero-desc {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 16.5px;
+      line-height: 1.65;
+      margin-bottom: 22px;
+    }
+    .ch-subpages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--line);
+    }
+    .ch-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform .2s var(--ease), border-color .2s ease, background .2s ease;
+    }
+    .ch-pill:hover {
+      transform: translateY(-2px);
+      border-color: var(--rust);
+      background: var(--card);
+    }
+    .ch-pill.active-pill {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
     .ch-badge {
       display: inline-block;
       padding: 4px 10px;
@@ -62,7 +117,7 @@
       border: 1px solid var(--line);
       color: var(--rust);
     }
-    .def-item {
+    .def-box {
       padding: 16px 18px;
       margin: 14px 0;
       background: var(--paper-2);
@@ -70,10 +125,35 @@
       border-left: 3px solid var(--rust);
       border-radius: var(--r-md);
     }
-    .def-item h3 { margin: 4px 0 8px; font-size: 19px; color: var(--ink); }
-    .def-item p { margin: 0; font-size: 15.5px; line-height: 1.7; color: var(--ink-2); }
-    .deriv-steps { padding-left: 20px; margin: 12px 0; display: grid; gap: 10px; }
-    .deriv-steps li { line-height: 1.75; color: var(--ink-2); }
+    .def-box h3 {
+      margin: 2px 0 6px;
+      font-size: 18.5px;
+      color: var(--ink);
+    }
+    .def-meta {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .deriv-steps {
+      padding-left: 22px;
+      margin: 14px 0;
+      display: grid;
+      gap: 12px;
+    }
+    .deriv-steps li { line-height: 1.8; color: var(--ink-2); }
+    .board-tip {
+      margin: 16px 0;
+      padding: 14px 18px;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--teal);
+      border-radius: var(--r-md);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink-2);
+    }
+    .board-tip strong { color: var(--ink); }
     .sn-table-wrap { width: 100%; overflow-x: auto; margin: 16px 0; }
     .sn-table { width: 100%; border-collapse: collapse; font-size: 15px; }
     .sn-table th, .sn-table td {
@@ -81,19 +161,25 @@
       padding: 11px 14px;
       text-align: left;
       color: var(--ink-2);
+      vertical-align: top;
     }
     .sn-table th { background: var(--paper-2); color: var(--ink); font-weight: 700; }
-    .ch-divider {
-      margin: 44px 0 22px;
+    .bottom-nav {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
       gap: 12px;
+      margin: 34px 0 10px;
+      padding-top: 24px;
+      border-top: 1px dashed var(--line);
     }
-    .ch-divider h2 { font-size: clamp(26px, 3.6vw, 36px); color: var(--ink); }
-    .ch-divider span { font-family: var(--font-hand); font-size: 24px; color: var(--rust); }
+    @media (max-width: 640px) {
+      .ch-hero { padding: 22px 18px; }
+      .topic-card { padding: 22px 18px; }
+    }
   </style>
 
-  <title>Ch 01: Electric Charges &amp; Fields | Shorveer Notes</title>
+  <title>Ch 01: Electric Charges &amp; Fields — Long Detailed Notes | Shorveer Notes</title>
 </head>
 
 <body>
@@ -156,56 +242,48 @@
         </span>
         <b>Notebook</b><small>Warm paper</small>
       </button>
-
       <button class="theme-opt" data-theme-value="chalkboard" aria-pressed="false">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#1e2a24"></span><span style="background:#f0d97a"></span><span style="background:#7bc3bf"></span><span style="background:#ebe6d5"></span>
         </span>
         <b>Chalkboard</b><small>Dark green</small>
       </button>
-
       <button class="theme-opt" data-theme-value="blueprint" aria-pressed="false">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#0f2b4c"></span><span style="background:#7ec8f5"></span><span style="background:#ff9d7c"></span><span style="background:#e2eefb"></span>
         </span>
         <b>Blueprint</b><small>Technical navy</small>
       </button>
-
       <button class="theme-opt" data-theme-value="sunset" aria-pressed="false">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#241226"></span><span style="background:#ff8a5b"></span><span style="background:#ffb87a"></span><span style="background:#ffe9d6"></span>
         </span>
         <b>Sunset</b><small>Plum warm glow</small>
       </button>
-
       <button class="theme-opt" data-theme-value="emerald" aria-pressed="false">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#0c1c17"></span><span style="background:#34d399"></span><span style="background:#f97316"></span><span style="background:#e6f6ee"></span>
         </span>
         <b>Emerald</b><small>Botanical dark</small>
       </button>
-
       <button class="theme-opt" data-theme-value="cyberpunk" aria-pressed="false">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#0b0c13"></span><span style="background:#00f0ff"></span><span style="background:#ff007f"></span><span style="background:#f0f3ff"></span>
         </span>
         <b>Cyberpunk</b><small>Neon cyan</small>
       </button>
-
       <button class="theme-opt" data-theme-value="minimal" aria-pressed="false">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#f8fafc"></span><span style="background:#2563eb"></span><span style="background:#dc2626"></span><span style="background:#0f172a"></span>
         </span>
         <b>Minimal</b><small>Clean slate</small>
       </button>
-
       <button class="theme-opt" data-theme-value="dracula" aria-pressed="false">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#191622"></span><span style="background:#ff79c6"></span><span style="background:#bd93f9"></span><span style="background:#f8f8f2"></span>
         </span>
         <b>Dracula</b><small>Midnight purple</small>
       </button>
-
       <button class="theme-opt" data-theme-value="solarized" aria-pressed="false">
         <span class="theme-swatch" aria-hidden="true">
           <span style="background:#fdf6e3"></span><span style="background:#b58900"></span><span style="background:#cb4b16"></span><span style="background:#073642"></span>
@@ -219,442 +297,586 @@
   <!-- ============ MAIN CONTENT ============ -->
   <main id="main" class="container">
 
-    <!-- Chapter Header -->
-    <section class="ch-hero">
-      <div class="kicker" style="margin-bottom:14px;">
+    <!-- Top Chapter Hero + Links to Other Chapter 1 Pages -->
+    <header class="ch-hero">
+      <div class="kicker" style="margin-bottom:6px;">
         <span class="dot"></span>
-        <span>CBSE Class 12 Physics · Unit I · Chapter 01</span>
+        <span>Class 12 · Physics · Chapter 01 · Long Detailed Notes</span>
       </div>
       <h1>Electric Charges &amp; <em>Fields</em></h1>
-      <p>
-        Complete NCERT Class 12 Board Notes: every definition separated one by one, all 7 full step-by-step derivations, formula sheet, visual mind map, and concept flowchart.
+      <p class="ch-hero-desc">
+        Full NCERT line-by-line notes covering every definition, physical reasoning, vector proofs, all 7 board derivations in complete step-by-step form, and key solved examples.
       </p>
 
-      <!-- Quick Jump Bar (uses your native .quick-jump class) -->
-      <nav class="quick-jump" aria-label="Chapter sections">
-        <span class="qj-title">Jump to section</span>
-        <a href="#definitions">1. All 16 Definitions</a>
-        <a href="#derivations">2. All 7 Derivations</a>
-        <a href="#short-notes">3. Short Revision Notes</a>
-        <a href="#mindmap">4. Mind Map</a>
-        <a href="#flowchart">5. Concept Flowchart</a>
-        <a href="index.html">← Physics Hub</a>
+      <!-- Links to the separate Chapter 1 study pages -->
+      <nav class="ch-subpages" aria-label="Chapter 1 resources">
+        <a class="ch-pill active-pill" href="chapter1.html">Long Detailed Notes</a>
+        <a class="ch-pill" href="chapter1-short-notes.html">Short Revision Notes</a>
+        <a class="ch-pill" href="chapter1-visual-maps.html">Mind Map &amp; Flowchart</a>
+        <a class="ch-pill" href="chapter1-numericals.html">Solved Numericals</a>
+        <a class="ch-pill" href="chapter1-pyq.html">CBSE PYQ Bank</a>
+        <a class="ch-pill" href="chapter1-mcq.html">Timed MCQ Test</a>
       </nav>
-    </section>
+    </header>
 
     <div class="chap-wrap">
 
+      <!-- Quick Jump Inside Long Notes -->
+      <nav class="quick-jump" aria-label="Topics in this chapter">
+        <span class="qj-title">Jump to topic</span>
+        <a href="#t1">1. Electric Charge &amp; Induction</a>
+        <a href="#t2">2. Properties of Charge</a>
+        <a href="#t3">3. Coulomb's Law &amp; Vector Form</a>
+        <a href="#t4">4. Superposition Principle</a>
+        <a href="#t5">5. Electric Field &amp; Field Lines</a>
+        <a href="#t6">6. Electric Dipole (Axial &amp; Equatorial)</a>
+        <a href="#t7">7. Dipole in Uniform Field (Torque)</a>
+        <a href="#t8">8. Continuous Charge &amp; Electric Flux</a>
+        <a href="#t9">9. Gauss's Law &amp; Proof</a>
+        <a href="#t10">10. Applications of Gauss's Law</a>
+      </nav>
+
       <!-- ========================================================= -->
-      <!-- SECTION 1: ALL NCERT DEFINITIONS ONE BY ONE               -->
+      <!-- TOPIC 1: ELECTRIC CHARGE, CONDUCTORS & CHARGING           -->
       <!-- ========================================================= -->
-      <div class="ch-divider" id="definitions">
-        <span>01.</span>
-        <h2>All NCERT Definitions (One by One)</h2>
-      </div>
+      <article class="topic-card" id="t1">
+        <span class="ch-badge">Topic 1.1 – 1.4 · NCERT Basics</span>
+        <h2>1. Electric Charge, Conductors, Insulators &amp; Charging</h2>
 
-      <article class="topic-card">
-        <span class="ch-badge">Part A · Charge &amp; Fundamental Properties</span>
-        <h2>Electric Charge &amp; Its Properties</h2>
+        <p>
+          Electrostatics is the branch of physics that deals with forces, fields, and potentials arising from <strong>static (stationary) charges</strong>. When you comb dry hair with a plastic comb or pull off a synthetic sweater in winter, you hear a faint crackle and see sparks—that is static electricity caused by the transfer of electrons from one surface to another.
+        </p>
 
-        <div class="def-item">
-          <span class="ch-badge">Definition 1</span>
-          <h3>Electric Charge ($q$)</h3>
-          <p>An intrinsic property of elementary particles (protons and electrons) by virtue of which they exert and experience electrostatic forces. It is a scalar quantity. SI unit: <strong>Coulomb ($\text{C}$)</strong>.</p>
+        <div class="def-box">
+          <h3>Definition: Electric Charge ($q$)</h3>
+          <p>Electric charge is an intrinsic property of elementary particles (such as electrons and protons) by virtue of which they exert and experience electrostatic forces.</p>
+          <div class="def-meta"><strong>Nature:</strong> Scalar quantity · <strong>SI Unit:</strong> Coulomb ($\text{C}$) · <strong>Dimensional Formula:</strong> $[\text{A T}]$ · <strong>Elementary Charge:</strong> $e = 1.6 \times 10^{-19}\text{ C}$</div>
         </div>
 
-        <div class="def-item">
-          <span class="ch-badge">Definition 2</span>
-          <h3>Additivity of Charge</h3>
-          <p>The total electric charge of an extended system is the algebraic sum of all individual charges present at different points inside the system: $q_{\text{net}} = q_1 + q_2 + \dots + q_n$.</p>
+        <p>
+          Experiments show there are only two kinds of charges in nature, named <strong>positive</strong> and <strong>negative</strong> by Benjamin Franklin:
+        </p>
+        <ul>
+          <li><strong>Like charges repel</strong> each other ($+$ repels $+$, $-$ repels $-$).</li>
+          <li><strong>Unlike charges attract</strong> each other ($+$ attracts $-$).</li>
+          <li>A body becomes <strong>positively charged</strong> when it <em>loses electrons</em> (slight decrease in mass), and <strong>negatively charged</strong> when it <em>gains electrons</em> (slight increase in mass). Protons remain locked inside the nucleus and are never transferred during ordinary charging.</li>
+        </ul>
+
+        <div class="def-box">
+          <h3>Definition: Conductors &amp; Insulators</h3>
+          <p><strong>Conductors</strong> are substances that allow electric charges to move freely through them because they have a large number of loosely bound free electrons (e.g., metals like copper, silver, aluminium, human body, earth).<br>
+          <strong>Insulators (Dielectrics)</strong> are substances that offer very high resistance to the passage of electricity because their electrons are tightly bound to parent atoms (e.g., glass, rubber, plastic, dry wood, porcelain).</p>
         </div>
 
-        <div class="def-item">
-          <span class="ch-badge">Definition 3</span>
-          <h3>Conservation of Charge</h3>
-          <p>The total electric charge of an isolated system always remains constant. Charge can neither be created nor destroyed; it can only be transferred from one body to another.</p>
+        <p>
+          <strong>Important distinction:</strong> If you place extra charge on a conductor, it immediately spreads over its entire outer surface. If you place charge on an insulator, it stays trapped right where you put it.
+        </p>
+
+        <h3>Three Methods of Charging a Body</h3>
+        <ul>
+          <li><strong>1. Charging by Friction:</strong> Rubbing two suitable insulating bodies transfers electrons from the material with lower work function to the one with higher work function (e.g., glass rod rubbed with silk → glass becomes $+$, silk becomes $-$).</li>
+          <li><strong>2. Charging by Conduction:</strong> Touching a charged conductor to an uncharged conductor causes charge to flow until both reach the same electric potential. Both end up with the <em>same sign</em> of charge.</li>
+          <li><strong>3. Charging by Induction:</strong> Bringing a charged body near an isolated neutral conductor without touching it. The near end develops an <em>opposite</em> bound charge and the far end develops a <em>similar</em> free charge. Earthing (grounding) the far end lets the free charge escape to earth; removing the earth connection first and then the inducing rod leaves the conductor permanently charged with the opposite sign.</li>
+        </ul>
+
+        <div class="def-box">
+          <h3>Definition: Earthing (Grounding)</h3>
+          <p>The process of sharing the excess charge of a body with the Earth through a conducting wire. Because the Earth is an enormous conductor, it can absorb or supply virtually unlimited charge without any noticeable change in its own potential.</p>
         </div>
 
-        <div class="def-item">
-          <span class="ch-badge">Definition 4</span>
-          <h3>Quantisation of Charge</h3>
-          <p>Every free electric charge in nature is always an integral multiple of the basic elementary charge $e$ ($1.6 \times 10^{-19}\text{ C}$): $$q = \pm n e \quad (n = 0, 1, 2, 3, \dots)$$</p>
-        </div>
-
-        <div class="def-item">
-          <span class="ch-badge">Definition 5</span>
-          <h3>Conductors &amp; Insulators</h3>
-          <p><strong>Conductors:</strong> Materials that allow electric charges to pass through them easily due to free electrons (e.g., copper, aluminium, earth).<br>
-          <strong>Insulators (Dielectrics):</strong> Materials that offer high resistance to the flow of charge because electrons are tightly bound (e.g., glass, plastic, dry wood).</p>
-        </div>
-
-        <div class="def-item">
-          <span class="ch-badge">Definition 6</span>
-          <h3>Charging by Induction</h3>
-          <p>The process of charging an uncharged conductor by bringing a charged body near it without actual physical contact. Opposite charge is induced on the nearer face and like charge on the farther face.</p>
-        </div>
-      </article>
-
-      <article class="topic-card">
-        <span class="ch-badge">Part B · Forces, Fields, Dipoles &amp; Gauss's Law</span>
-        <h2>Coulomb's Law, Electric Field, Dipole &amp; Flux</h2>
-
-        <div class="def-item">
-          <span class="ch-badge">Definition 7</span>
-          <h3>Coulomb's Law</h3>
-          <p>The electrostatic force between two stationary point charges is directly proportional to the product of the magnitudes of the charges and inversely proportional to the square of the distance between them, acting along the line joining the charges:
-          $$F = \frac{1}{4\pi\varepsilon_0}\frac{|q_1 q_2|}{r^2}, \qquad \vec{F}_{21} = \frac{1}{4\pi\varepsilon_0}\frac{q_1 q_2}{r_{21}^2}\hat{r}_{21}$$
-          where $\varepsilon_0 = 8.854 \times 10^{-12}\text{ C}^2\text{ N}^{-1}\text{ m}^{-2}$ and $\frac{1}{4\pi\varepsilon_0} = 9 \times 10^9\text{ N m}^2\text{ C}^{-2}$.</p>
-        </div>
-
-        <div class="def-item">
-          <span class="ch-badge">Definition 8</span>
-          <h3>One Coulomb ($1\text{ C}$)</h3>
-          <p>One coulomb is the charge which, when placed at a distance of $1\text{ m}$ from an equal and similar charge in vacuum, repels it with a force of $9 \times 10^9\text{ N}$.</p>
-        </div>
-
-        <div class="def-item">
-          <span class="ch-badge">Definition 9</span>
-          <h3>Dielectric Constant / Relative Permittivity ($K$ or $\varepsilon_r$)</h3>
-          <p>The ratio of permittivity of a medium ($\varepsilon$) to permittivity of free space ($\varepsilon_0$), equal to the ratio of electrostatic force in vacuum to force in the medium for the same charges and separation:
-          $$K = \varepsilon_r = \frac{\varepsilon}{\varepsilon_0} = \frac{F_{\text{vac}}}{F_{\text{med}}}$$</p>
-        </div>
-
-        <div class="def-item">
-          <span class="ch-badge">Definition 10</span>
-          <h3>Principle of Superposition</h3>
-          <p>The net electrostatic force on any charge due to a system of other charges is the vector sum of the individual forces exerted on it by each charge taken one at a time, unaffected by the presence of other charges: $$\vec{F}_1 = \vec{F}_{12} + \vec{F}_{13} + \dots + \vec{F}_{1n}$$</p>
-        </div>
-
-        <div class="def-item">
-          <span class="ch-badge">Definition 11</span>
-          <h3>Electric Field Intensity ($\vec{E}$)</h3>
-          <p>The electrostatic force experienced per unit vanishingly small positive test charge ($q_0 \to 0$) placed at a point: $$\vec{E} = \lim_{q_0 \to 0}\frac{\vec{F}}{q_0}$$ SI unit: $\text{N C}^{-1}$ or $\text{V m}^{-1}$. Vector quantity.</p>
-        </div>
-
-        <div class="def-item">
-          <span class="ch-badge">Definition 12</span>
-          <h3>Electric Field Lines</h3>
-          <p>Imaginary smooth curves drawn in an electric field such that the tangent at any point gives the direction of the net electric field at that point. They originate on positive charges, terminate on negative charges, never intersect, and never form closed loops.</p>
-        </div>
-
-        <div class="def-item">
-          <span class="ch-badge">Definition 13</span>
-          <h3>Electric Dipole &amp; Dipole Moment ($\vec{p}$)</h3>
-          <p>An <strong>electric dipole</strong> is a pair of equal and opposite point charges ($+q$ and $-q$) separated by a small distance $2a$. Its <strong>dipole moment</strong> is $\vec{p} = q(2\vec{a})$, directed from $-q$ to $+q$. SI unit: $\text{C m}$.</p>
-        </div>
-
-        <div class="def-item">
-          <span class="ch-badge">Definition 14</span>
-          <h3>Continuous Charge Densities ($\lambda, \sigma, \rho$)</h3>
-          <p><strong>Linear charge density:</strong> $\lambda = \frac{\Delta q}{\Delta l}$ ($\text{C m}^{-1}$) ·
-          <strong>Surface charge density:</strong> $\sigma = \frac{\Delta q}{\Delta S}$ ($\text{C m}^{-2}$) ·
-          <strong>Volume charge density:</strong> $\rho = \frac{\Delta q}{\Delta V}$ ($\text{C m}^{-3}$).</p>
-        </div>
-
-        <div class="def-item">
-          <span class="ch-badge">Definition 15</span>
-          <h3>Electric Flux ($\Phi_E$)</h3>
-          <p>The measure of the total number of electric field lines crossing a given surface normally: $$d\Phi_E = \vec{E} \cdot d\vec{S} = E\,dS\cos\theta, \qquad \Phi_E = \int \vec{E}\cdot d\vec{S}$$ SI unit: $\text{N m}^2\text{ C}^{-1}$ (or $\text{V m}$). Scalar quantity.</p>
-        </div>
-
-        <div class="def-item">
-          <span class="ch-badge">Definition 16</span>
-          <h3>Gauss's Law</h3>
-          <p>The total electric flux through any closed surface (Gaussian surface) in vacuum is equal to $\frac{1}{\varepsilon_0}$ times the net electric charge enclosed inside it: $$\Phi_E = \oint \vec{E}\cdot d\vec{S} = \frac{q_{\text{enc}}}{\varepsilon_0}$$</p>
+        <div class="board-tip">
+          <strong>CBSE Concept Check:</strong> Can two similarly charged bodies ever attract each other? <strong>Yes</strong>—if one body has a very large charge and the other has a very small charge of the same sign, the strongly charged body induces an opposite charge on the nearer side of the smaller body, and the resulting attraction can exceed the weak repulsion! That is why <strong>repulsion is the surest test of electrification</strong>, not attraction.
         </div>
       </article>
 
       <!-- ========================================================= -->
-      <!-- SECTION 2: ALL 7 FULL NCERT DERIVATIONS                   -->
+      <!-- TOPIC 2: BASIC PROPERTIES OF ELECTRIC CHARGE              -->
       <!-- ========================================================= -->
-      <div class="ch-divider" id="derivations">
-        <span>02.</span>
-        <h2>All 7 Full Step-by-Step Derivations</h2>
-      </div>
+      <article class="topic-card" id="t2">
+        <span class="ch-badge">Topic 1.5 · Fundamental Laws</span>
+        <h2>2. Basic Properties of Electric Charge</h2>
 
-      <!-- Derivation 1 -->
-      <article class="topic-card">
-        <span class="ch-badge">Derivation 1 · High Yield</span>
-        <h2>Electric Field due to a Dipole on the Axial Line</h2>
-        <p><strong>Setup:</strong> Consider a dipole of charges $-q$ at $A$ and $+q$ at $B$ separated by $2a$, with midpoint $O$. Let $P$ be a point on the axial line at distance $r$ from $O$ on the side of $+q$. Let $\hat{p}$ be the unit vector along $\vec{p}$ (from $-q$ to $+q$).</p>
+        <div class="def-box">
+          <h3>Definition 1: Additivity of Electric Charge</h3>
+          <p>If a system contains $n$ point charges $q_1, q_2, q_3, \dots, q_n$, the total charge of the system is simply their algebraic sum (keeping proper $+$ and $-$ signs):
+          $$q_{\text{total}} = q_1 + q_2 + q_3 + \dots + q_n$$</p>
+        </div>
+
+        <div class="def-box">
+          <h3>Definition 2: Conservation of Electric Charge</h3>
+          <p>The total electric charge of an isolated system always remains constant. Charge can neither be created nor destroyed; it can only be transferred from one body to another, or created/destroyed in equal and opposite pairs (e.g., pair production: $\gamma \to e^- + e^+$).</p>
+        </div>
+
+        <div class="def-box">
+          <h3>Definition 3: Quantisation of Electric Charge</h3>
+          <p>All free charges observed in nature are always an integral multiple of a basic unit of charge $e$ (the magnitude of charge on an electron or proton):
+          $$q = \pm n e \qquad \text{where } n = 0, 1, 2, 3, \dots \text{ and } e = 1.6 \times 10^{-19}\text{ C}$$</p>
+        </div>
+
+        <p>
+          <strong>Why does charge look continuous at the macroscopic level?</strong> A charge of just $1\text{ }\mu\text{C}$ contains $n = \frac{10^{-6}}{1.6 \times 10^{-19}} = 6.25 \times 10^{12}$ electrons. Adding or removing a few electrons makes zero noticeable difference at that scale, so for large charges we ignore the "graininess" and treat charge as continuous. At the atomic/microscopic level, however, quantisation is strict and cannot be ignored.
+        </p>
+
+        <div class="def-box">
+          <h3>Definition 4: Invariance of Charge</h3>
+          <p>The magnitude of electric charge on a particle does not depend on its speed ($q_{\text{moving}} = q_{\text{rest}}$). By contrast, relativistic mass increases with velocity ($m = \frac{m_0}{\sqrt{1 - v^2/c^2}}$).</p>
+        </div>
+
+        <div class="practice-box">
+          <strong>Worked Example 1 (NCERT):</strong> How many electrons must be removed from a neutral metal sphere to give it a positive charge of $+1\text{ C}$?<br><br>
+          <strong>Solution:</strong> Using $q = ne$:
+          $$n = \frac{q}{e} = \frac{1\text{ C}}{1.6 \times 10^{-19}\text{ C}} = 6.25 \times 10^{18}\text{ electrons}$$
+          Since the sphere needs a positive charge, $6.25 \times 10^{18}$ electrons must be <strong>removed</strong> from it.
+        </div>
+      </article>
+
+      <!-- ========================================================= -->
+      <!-- TOPIC 3: COULOMB'S LAW & VECTOR FORM                      -->
+      <!-- ========================================================= -->
+      <article class="topic-card" id="t3">
+        <span class="ch-badge">Topic 1.6 · Inverse-Square Law</span>
+        <h2>3. Coulomb's Law, Permittivity &amp; Vector Form</h2>
+
+        <div class="def-box">
+          <h3>Definition: Coulomb's Law</h3>
+          <p>The electrostatic force of attraction or repulsion between two stationary point charges in vacuum is directly proportional to the product of the magnitudes of the two charges, inversely proportional to the square of the distance between them, and acts along the straight line joining the two charges.</p>
+        </div>
+
+        <div class="formula-box">
+          $$F = k \frac{|q_1 q_2|}{r^2} = \frac{1}{4\pi\varepsilon_0}\frac{|q_1 q_2|}{r^2}$$
+          <ul>
+            <li>$\varepsilon_0 = 8.854 \times 10^{-12}\text{ C}^2\text{ N}^{-1}\text{ m}^{-2}$ (Permittivity of free space / vacuum).</li>
+            <li>Dimensional formula of $\varepsilon_0$: $[\text{M}^{-1}\text{L}^{-3}\text{T}^{4}\text{A}^{2}]$.</li>
+            <li>$k = \frac{1}{4\pi\varepsilon_0} = 9 \times 10^9\text{ N m}^2\text{ C}^{-2}$ (in vacuum).</li>
+          </ul>
+        </div>
+
+        <div class="def-box">
+          <h3>Definition: One Coulomb ($1\text{ C}$)</h3>
+          <p>One coulomb is that charge which, when placed at a distance of $1\text{ m}$ from an equal and similar charge in vacuum, repels it with a force of $9 \times 10^9\text{ N}$.</p>
+        </div>
+
+        <h3>Coulomb's Law in Vector Form (Derivation &amp; Significance)</h3>
+        <p>
+          Let two point charges $q_1$ and $q_2$ be located at position vectors $\vec{r}_1$ and $\vec{r}_2$ from origin $O$. Define the displacement vector from $q_1$ to $q_2$ as $\vec{r}_{21} = \vec{r}_2 - \vec{r}_1$, and from $q_2$ to $q_1$ as $\vec{r}_{12} = \vec{r}_1 - \vec{r}_2 = -\vec{r}_{21}$.
+        </p>
+        <p>The unit vectors are $\hat{r}_{21} = \frac{\vec{r}_{21}}{r}$ and $\hat{r}_{12} = \frac{\vec{r}_{12}}{r} = -\hat{r}_{21}$, where $r = |\vec{r}_{21}| = |\vec{r}_{12}|$.</p>
+
+        <div class="formula-box">
+          Force on $q_2$ due to $q_1$:
+          $$\vec{F}_{21} = \frac{1}{4\pi\varepsilon_0}\frac{q_1 q_2}{r^2}\hat{r}_{21} = \frac{1}{4\pi\varepsilon_0}\frac{q_1 q_2}{|\vec{r}_2 - \vec{r}_1|^3}(\vec{r}_2 - \vec{r}_1)$$
+          Force on $q_1$ due to $q_2$:
+          $$\vec{F}_{12} = \frac{1}{4\pi\varepsilon_0}\frac{q_1 q_2}{r^2}\hat{r}_{12} = \frac{1}{4\pi\varepsilon_0}\frac{q_1 q_2}{r^2}(-\hat{r}_{21}) = -\vec{F}_{21}$$
+        </div>
+
+        <p><strong>Two crucial conclusions from the vector form:</strong></p>
         <ol class="deriv-steps">
-          <li>Distance of $P$ from $+q$ is $(r - a)$, and from $-q$ is $(r + a)$.</li>
-          <li>Field at $P$ due to $+q$ (away from $+q$, along $\hat{p}$):
+          <li><strong>Obeys Newton's Third Law:</strong> $\vec{F}_{12} = -\vec{F}_{21}$—the two forces are always equal in magnitude and opposite in direction, regardless of whether the charges have equal or unequal magnitudes.</li>
+          <li><strong>Central Force:</strong> The force always acts along the line joining the centres of the two charges. If $q_1 q_2 &gt; 0$ (like charges), $\vec{F}_{21}$ is along $\hat{r}_{21}$ (repulsive). If $q_1 q_2 &lt; 0$ (unlike charges), $\vec{F}_{21}$ is along $-\hat{r}_{21}$ (attractive).</li>
+        </ol>
+
+        <div class="def-box">
+          <h3>Definition: Dielectric Constant / Relative Permittivity ($K$ or $\varepsilon_r$)</h3>
+          <p>When the two charges are placed in an insulating medium of permittivity $\varepsilon$, the force drops to $F_{\text{med}} = \frac{1}{4\pi\varepsilon}\frac{|q_1 q_2|}{r^2}$. The ratio of permittivity of the medium to permittivity of vacuum is called the <strong>dielectric constant ($K$)</strong>:
+          $$K = \varepsilon_r = \frac{\varepsilon}{\varepsilon_0} = \frac{F_{\text{vac}}}{F_{\text{med}}}$$
+          For vacuum, $K = 1$; for air, $K \approx 1.00059$; for pure water, $K \approx 80$; for metals, $K = \infty$.</p>
+        </div>
+
+        <p><strong>Limitations of Coulomb's Law:</strong> Valid only for <strong>point charges</strong> that are <strong>stationary</strong> (or very slowly moving), and breaks down at nuclear distances ($r &lt; 10^{-15}\text{ m}$) where strong nuclear forces dominate.</p>
+      </article>
+
+      <!-- ========================================================= -->
+      <!-- TOPIC 4: PRINCIPLE OF SUPERPOSITION                       -->
+      <!-- ========================================================= -->
+      <article class="topic-card" id="t4">
+        <span class="ch-badge">Topic 1.7 · Multi-Charge Systems</span>
+        <h2>4. Forces Between Multiple Charges: Principle of Superposition</h2>
+
+        <div class="def-box">
+          <h3>Definition: Principle of Superposition</h3>
+          <p>The net electrostatic force on any given charge due to a number of other charges is the vector sum of the individual forces exerted on it by each charge taken one at a time. The force between any two charges is completely unaffected by the presence of other charges.</p>
+        </div>
+
+        <p>
+          For a system of $n$ charges $q_1, q_2, \dots, q_n$, the net force $\vec{F}_1$ on charge $q_1$ is:
+        </p>
+        <div class="formula-box">
+          $$\vec{F}_1 = \vec{F}_{12} + \vec{F}_{13} + \dots + \vec{F}_{1n} = \frac{q_1}{4\pi\varepsilon_0} \sum_{i=2}^{n} \frac{q_i}{r_{1i}^2}\hat{r}_{1i}$$
+        </div>
+
+        <div class="board-tip">
+          <strong>Numerical Strategy:</strong> Whenever 3 or more charges are arranged on a triangle or square, never add forces directly as scalars. Find the magnitude of each force using Coulomb's law, mark its direction (push or pull), and then combine them using the parallelogram law $F = \sqrt{F_1^2 + F_2^2 + 2F_1 F_2 \cos\theta}$ or by resolving into $x$ and $y$ components.
+        </div>
+      </article>
+
+      <!-- ========================================================= -->
+      <!-- TOPIC 5: ELECTRIC FIELD & ELECTRIC FIELD LINES            -->
+      <!-- ========================================================= -->
+      <article class="topic-card" id="t5">
+        <span class="ch-badge">Topic 1.8 – 1.9 · Field Concept</span>
+        <h2>5. Electric Field &amp; Electric Field Lines</h2>
+
+        <p>
+          Instead of imagining one charge magically pulling another across empty space ("action at a distance"), Faraday introduced the concept of a <strong>field</strong>: a source charge $Q$ modifies the space around it by creating an electric field $\vec{E}$, and any other charge $q_0$ placed in that space interacts locally with that field.
+        </p>
+
+        <div class="def-box">
+          <h3>Definition: Electric Field Intensity ($\vec{E}$)</h3>
+          <p>The electric field at a point is defined as the electrostatic force experienced per unit vanishingly small positive test charge ($q_0 \to 0$) placed at that point:
+          $$\vec{E}(\vec{r}) = \lim_{q_0 \to 0} \frac{\vec{F}}{q_0}$$</p>
+          <div class="def-meta"><strong>Nature:</strong> Vector quantity · <strong>SI Unit:</strong> $\text{N C}^{-1}$ or $\text{V m}^{-1}$ · <strong>Dimensions:</strong> $[\text{M L T}^{-3}\text{A}^{-1}]$</div>
+        </div>
+
+        <p>
+          <strong>Why must $q_0 \to 0$?</strong> If the test charge $q_0$ were large, it would exert a strong force back on the source charges and shift them from their original positions, changing the very field we are trying to measure! Taking $q_0 \to 0$ ensures the source distribution stays undisturbed.
+        </p>
+
+        <div class="formula-box">
+          <strong>Electric field due to a single point charge $Q$ at distance $r$:</strong>
+          $$\vec{E} = \frac{1}{4\pi\varepsilon_0}\frac{Q}{r^2}\hat{r}$$
+          <strong>Force on any charge $q$ placed in an electric field $\vec{E}$:</strong>
+          $$\vec{F} = q\vec{E}$$
+          (For $+q$, force is in the direction of $\vec{E}$; for $-q$, force is opposite to $\vec{E}$.)
+        </div>
+
+        <p>
+          <strong>Physical Significance of Electric Field:</strong> In electrostatics it is a convenient book-keeping tool, but in <em>electrodynamics</em> (moving/accelerating charges), the electric field is a real physical entity that carries energy and momentum and propagates through vacuum at the finite speed of light $c = 3 \times 10^8\text{ m s}^{-1}$.
+        </p>
+
+        <div class="def-box">
+          <h3>Definition: Electric Field Lines</h3>
+          <p>An electric field line is an imaginary smooth curve drawn in an electric field such that the tangent drawn at any point on the curve gives the direction of the net electric field at that point.</p>
+        </div>
+
+        <h3>7 Essential Properties of Electric Field Lines (CBSE Favourite)</h3>
+        <ol class="deriv-steps">
+          <li>They start from positive charges and terminate on negative charges. For a single isolated charge, they start or end at infinity.</li>
+          <li>In a charge-free region, field lines are continuous curves without any sudden breaks.</li>
+          <li><strong>Two electric field lines can NEVER intersect each other.</strong> <em>Reason:</em> If they intersected, two tangents could be drawn at the point of intersection, meaning two different directions of the net electric field at the same point—which is physically impossible.</li>
+          <li><strong>Electrostatic field lines NEVER form closed loops.</strong> <em>Reason:</em> The electrostatic field is conservative in nature (work done in a closed loop is zero).</li>
+          <li>The relative closeness (crowding) of field lines represents the magnitude of field strength: crowded lines = strong field; widely spaced lines = weak field.</li>
+          <li>Equidistant, parallel, straight field lines represent a <strong>uniform electric field</strong>.</li>
+          <li>Electric field lines always enter or leave the surface of a conductor <strong>perpendicularly ($90^\circ$)</strong>, and there are no field lines inside a conductor in electrostatic equilibrium.</li>
+        </ol>
+      </article>
+
+      <!-- ========================================================= -->
+      <!-- TOPIC 6: ELECTRIC DIPOLE — AXIAL & EQUATORIAL DERIVATIONS -->
+      <!-- ========================================================= -->
+      <article class="topic-card" id="t6">
+        <span class="ch-badge">Topic 1.11 · Derivations 1 &amp; 2</span>
+        <h2>6. Electric Dipole: Axial &amp; Equatorial Field Derivations</h2>
+
+        <div class="def-box">
+          <h3>Definition: Electric Dipole &amp; Electric Dipole Moment ($\vec{p}$)</h3>
+          <p>An <strong>electric dipole</strong> is a pair of equal and opposite point charges ($+q$ and $-q$) separated by a small fixed distance $2a$.<br>
+          The <strong>electric dipole moment ($\vec{p}$)</strong> is a vector measuring the strength of the dipole, equal to the product of the magnitude of either charge and the separation $2a$:
+          $$\vec{p} = q(2\vec{a})$$</p>
+          <div class="def-meta"><strong>Direction (Physics convention):</strong> From $-q$ to $+q$ · <strong>SI Unit:</strong> $\text{C m}$ · <strong>Net charge of dipole:</strong> Zero ($+q - q = 0$)</div>
+        </div>
+
+        <p><em>Note:</em> Although the total charge of a dipole is zero, its electric field is <strong>not zero</strong> because the two charges are located at slightly different positions, so their fields do not completely cancel.</p>
+
+        <h3>Derivation 1: Electric Field on the Axial Line of a Dipole</h3>
+        <p>
+          Consider an electric dipole with charges $-q$ at $A$ and $+q$ at $B$, separated by distance $2a$, with midpoint $O$. Let $P$ be an observation point on the axial line at distance $r$ from the centre $O$ (on the side of $+q$). Let $\hat{p}$ be the unit vector along $\vec{p}$ (from $A$ to $B$).
+        </p>
+        <ol class="deriv-steps">
+          <li><strong>Distances from $P$:</strong> Distance of $P$ from $+q$ is $BP = (r - a)$. Distance of $P$ from $-q$ is $AP = (r + a)$.</li>
+          <li><strong>Electric field at $P$ due to $+q$</strong> (directed away from $+q$, i.e., along $\hat{p}$):
             $$\vec{E}_{+q} = \frac{1}{4\pi\varepsilon_0}\frac{q}{(r - a)^2}\hat{p}$$
           </li>
-          <li>Field at $P$ due to $-q$ (towards $-q$, along $-\hat{p}$):
+          <li><strong>Electric field at $P$ due to $-q$</strong> (directed towards $-q$, i.e., along $-\hat{p}$):
             $$\vec{E}_{-q} = -\frac{1}{4\pi\varepsilon_0}\frac{q}{(r + a)^2}\hat{p}$$
           </li>
-          <li>Net field at $P$ by superposition ($\vec{E}_{\text{axial}} = \vec{E}_{+q} + \vec{E}_{-q}$):
-            $$\vec{E}_{\text{axial}} = \frac{q}{4\pi\varepsilon_0}\left[\frac{1}{(r - a)^2} - \frac{1}{(r + a)^2}\right]\hat{p} = \frac{q}{4\pi\varepsilon_0}\left[\frac{(r + a)^2 - (r - a)^2}{(r^2 - a^2)^2}\right]\hat{p}$$
-            Since $(r + a)^2 - (r - a)^2 = 4ar$ and $p = q(2a)$:
-            $$\vec{E}_{\text{axial}} = \frac{1}{4\pi\varepsilon_0}\frac{2(q \cdot 2a)r}{(r^2 - a^2)^2}\hat{p} = \frac{1}{4\pi\varepsilon_0}\frac{2pr}{(r^2 - a^2)^2}\hat{p}$$
+          <li><strong>Net electric field at $P$ by superposition ($\vec{E}_{\text{axial}} = \vec{E}_{+q} + \vec{E}_{-q}$):</strong>
+            $$\vec{E}_{\text{axial}} = \frac{q}{4\pi\varepsilon_0}\left[\frac{1}{(r - a)^2} - \frac{1}{(r + a)^2}\right]\hat{p}$$
+            Taking LCM $(r - a)^2(r + a)^2 = (r^2 - a^2)^2$:
+            $$\vec{E}_{\text{axial}} = \frac{q}{4\pi\varepsilon_0}\left[\frac{(r + a)^2 - (r - a)^2}{(r^2 - a^2)^2}\right]\hat{p}$$
+            Expanding $(r^2 + 2ar + a^2) - (r^2 - 2ar + a^2) = 4ar$:
+            $$\vec{E}_{\text{axial}} = \frac{q}{4\pi\varepsilon_0}\frac{4ar}{(r^2 - a^2)^2}\hat{p} = \frac{1}{4\pi\varepsilon_0}\frac{2(q \cdot 2a)r}{(r^2 - a^2)^2}\hat{p}$$
+            Since $p = q \cdot 2a$ and $\vec{p} = p\hat{p}$:
+            $$\vec{E}_{\text{axial}} = \frac{1}{4\pi\varepsilon_0}\frac{2\vec{p}r}{(r^2 - a^2)^2}$$
           </li>
-          <li><strong>Short Dipole ($r \gg a$):</strong> Neglecting $a^2$ compared to $r^2$, $(r^2 - a^2)^2 \approx r^4$:
+          <li><strong>Special Case — Short (Ideal) Dipole ($r \gg a$):</strong> Neglecting $a^2$ in comparison to $r^2$, $(r^2 - a^2)^2 \approx r^4$:
             $$\vec{E}_{\text{axial}} = \frac{1}{4\pi\varepsilon_0}\frac{2\vec{p}}{r^3}$$
           </li>
         </ol>
-        <div class="formula-box"><strong>Direction:</strong> Always parallel to $\vec{p}$ (from $-q$ towards $+q$).</div>
-      </article>
 
-      <!-- Derivation 2 -->
-      <article class="topic-card">
-        <span class="ch-badge">Derivation 2 · High Yield</span>
-        <h2>Electric Field due to a Dipole on the Equatorial Line</h2>
-        <p><strong>Setup:</strong> Consider a dipole ($-q$ at $A$, $+q$ at $B$, separation $2a$, centre $O$). Let $P$ be a point on the perpendicular bisector at distance $r$ from $O$.</p>
+        <div class="formula-box">
+          <strong>Key Takeaway (Axial):</strong> $\vec{E}_{\text{axial}}$ points in the <strong>same direction as $\vec{p}$</strong> (angle between $\vec{E}_{\text{axial}}$ and $\vec{p}$ is $0^\circ$), and falls off as $1/r^3$ (faster than a point charge's $1/r^2$).
+        </div>
+
+        <h3>Derivation 2: Electric Field on the Equatorial Line (Perpendicular Bisector)</h3>
+        <p>
+          Consider the same dipole ($-q$ at $A$, $+q$ at $B$, length $2a$, centre $O$). Let $P$ be a point on the equatorial plane at perpendicular distance $r$ from $O$.
+        </p>
         <ol class="deriv-steps">
-          <li>By Pythagoras theorem, distance $AP = BP = \sqrt{r^2 + a^2}$. Let $\angle PAB = \angle PBA = \theta$.</li>
-          <li>Magnitudes of fields at $P$ due to $+q$ and $-q$ are equal:
-            $$E_{+q} = E_{-q} = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2 + a^2}$$
+          <li><strong>Distances from $P$:</strong> In right triangles $\triangle AOP$ and $\triangle BOP$,
+            $$AP = BP = \sqrt{r^2 + a^2}$$
+            Let $\angle PAB = \angle PBA = \theta$.
           </li>
-          <li>Resolve both vectors parallel and perpendicular to the dipole axis:
+          <li><strong>Magnitudes of individual fields at $P$:</strong>
+            $$E_{+q} = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2 + a^2} \quad (\text{along } BP \text{ produced})$$
+            $$E_{-q} = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2 + a^2} \quad (\text{along } PA)$$
+            Hence $E_{+q} = E_{-q}$.
+          </li>
+          <li><strong>Resolving into horizontal and vertical components:</strong>
             <ul>
-              <li>Perpendicular components ($E_{+q}\sin\theta$ upwards and $E_{-q}\sin\theta$ downwards) are equal and opposite, so they <strong>cancel out</strong>.</li>
-              <li>Parallel components ($E_{+q}\cos\theta$ and $E_{-q}\cos\theta$) both act opposite to $\vec{p}$ (along $-\hat{p}$), so they <strong>add up</strong>.</li>
+              <li><strong>Vertical components (perpendicular to dipole axis):</strong> $E_{+q}\sin\theta$ acts upwards and $E_{-q}\sin\theta$ acts downwards. Since $E_{+q} = E_{-q}$, they are equal and opposite and <strong>cancel out completely</strong>.</li>
+              <li><strong>Horizontal components (parallel to dipole axis):</strong> $E_{+q}\cos\theta$ and $E_{-q}\cos\theta$ both act from $+q$ towards $-q$ (i.e., along $-\hat{p}$), so they <strong>add up</strong>.</li>
             </ul>
           </li>
-          <li>Net electric field at $P$:
-            $$\vec{E}_{\text{eq}} = -(E_{+q}\cos\theta + E_{-q}\cos\theta)\hat{p} = -2E_{+q}\cos\theta\,\hat{p}$$
-            From right triangle $\triangle AOP$, $\cos\theta = \frac{a}{\sqrt{r^2 + a^2}}$:
-            $$\vec{E}_{\text{eq}} = -2\left(\frac{1}{4\pi\varepsilon_0}\frac{q}{r^2 + a^2}\right)\frac{a}{(r^2 + a^2)^{1/2}}\hat{p} = -\frac{1}{4\pi\varepsilon_0}\frac{\vec{p}}{(r^2 + a^2)^{3/2}}$$
+          <li><strong>Net electric field at $P$:</strong>
+            $$\vec{E}_{\text{eq}} = -(E_{+q}\cos\theta + E_{-q}\cos\theta)\hat{p} = -2 E_{+q}\cos\theta\,\hat{p}$$
+            From right triangle $\triangle AOP$, $\cos\theta = \frac{\text{Base}}{\text{Hypotenuse}} = \frac{a}{\sqrt{r^2 + a^2}} = \frac{a}{(r^2 + a^2)^{1/2}}$. Substituting both:
+            $$\vec{E}_{\text{eq}} = -2\left(\frac{1}{4\pi\varepsilon_0}\frac{q}{r^2 + a^2}\right)\left(\frac{a}{(r^2 + a^2)^{1/2}}\right)\hat{p}$$
+            $$\vec{E}_{\text{eq}} = -\frac{1}{4\pi\varepsilon_0}\frac{q(2a)}{(r^2 + a^2)^{3/2}}\hat{p} = -\frac{1}{4\pi\varepsilon_0}\frac{\vec{p}}{(r^2 + a^2)^{3/2}}$$
           </li>
-          <li><strong>Short Dipole ($r \gg a$):</strong> Neglecting $a^2$, $(r^2 + a^2)^{3/2} \approx r^3$:
+          <li><strong>Special Case — Short Dipole ($r \gg a$):</strong> Neglecting $a^2$, $(r^2 + a^2)^{3/2} \approx r^3$:
             $$\vec{E}_{\text{eq}} = -\frac{1}{4\pi\varepsilon_0}\frac{\vec{p}}{r^3}$$
           </li>
         </ol>
-        <div class="formula-box"><strong>Key Result:</strong> $\vec{E}_{\text{eq}}$ is antiparallel to $\vec{p}$, and for a short dipole $E_{\text{axial}} = 2E_{\text{eq}}$.</div>
-      </article>
 
-      <!-- Derivation 3 -->
-      <article class="topic-card">
-        <span class="ch-badge">Derivation 3</span>
-        <h2>Torque on an Electric Dipole in a Uniform Electric Field</h2>
-        <p><strong>Setup:</strong> Place an electric dipole ($-q, +q$, length $2a$) in a uniform electric field $\vec{E}$ at an angle $\theta$ with $\vec{E}$.</p>
-        <ol class="deriv-steps">
-          <li>Force on $+q$: $\vec{F}_+ = +q\vec{E}$ (along $\vec{E}$). Force on $-q$: $\vec{F}_- = -q\vec{E}$ (opposite to $\vec{E}$).</li>
-          <li>Net translational force: $\vec{F}_{\text{net}} = q\vec{E} - q\vec{E} = \vec{0}$ (no linear acceleration).</li>
-          <li>Since these two equal and opposite forces act at different points, they form a couple. The perpendicular distance between their lines of action is $2a\sin\theta$.</li>
-          <li>Magnitude of torque:
-            $$\tau = (\text{Force}) \times (\perp \text{ distance}) = (qE)(2a\sin\theta) = (q \cdot 2a)E\sin\theta = pE\sin\theta$$
-          </li>
-          <li>Vector form:
-            $$\vec{\tau} = \vec{p} \times \vec{E}$$
-          </li>
-        </ol>
         <div class="formula-box">
-          <strong>Special Cases:</strong> $\theta = 0^\circ \Rightarrow \tau = 0$ (Stable equilibrium) · $\theta = 180^\circ \Rightarrow \tau = 0$ (Unstable equilibrium) · $\theta = 90^\circ \Rightarrow \tau_{\max} = pE$.
+          <strong>Key Takeaway (Equatorial):</strong> $\vec{E}_{\text{eq}}$ is directed <strong>antiparallel to $\vec{p}$</strong> (angle is $180^\circ$). For a short dipole at the same distance $r$, the ratio of magnitudes is:
+          $$\frac{E_{\text{axial}}}{E_{\text{eq}}} = 2$$
         </div>
       </article>
 
-      <!-- Derivation 4 -->
-      <article class="topic-card">
-        <span class="ch-badge">Derivation 4</span>
-        <h2>Proof of Gauss's Law from Coulomb's Law (Sphere)</h2>
-        <p><strong>Setup:</strong> Consider a point charge $+q$ at the centre $O$ of an imaginary sphere of radius $r$.</p>
-        <ol class="deriv-steps">
-          <li>Electric field on the sphere's surface: $\vec{E} = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\hat{r}$.</li>
-          <li>Consider an area element $d\vec{S} = dS\,\hat{r}$ directed radially outward. Here angle between $\vec{E}$ and $d\vec{S}$ is $\theta = 0^\circ$.</li>
-          <li>Flux through $d\vec{S}$:
-            $$d\Phi_E = \vec{E}\cdot d\vec{S} = E\,dS\cos 0^\circ = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\,dS$$
-          </li>
-          <li>Total flux over the closed sphere (since $r$ is constant and $\oint dS = 4\pi r^2$):
-            $$\Phi_E = \oint d\Phi_E = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\oint dS = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}(4\pi r^2) = \frac{q}{\varepsilon_0}$$
-          </li>
-        </ol>
-      </article>
+      <!-- ========================================================= -->
+      <!-- TOPIC 7: DIPOLE IN UNIFORM ELECTRIC FIELD                 -->
+      <!-- ========================================================= -->
+      <article class="topic-card" id="t7">
+        <span class="ch-badge">Topic 1.12 · Derivation 3</span>
+        <h2>7. Electric Dipole in a Uniform External Electric Field</h2>
 
-      <!-- Derivation 5 -->
-      <article class="topic-card">
-        <span class="ch-badge">Derivation 5 · Gauss Application 1</span>
-        <h2>Electric Field due to an Infinitely Long Straight Charged Wire</h2>
-        <p><strong>Setup:</strong> Consider an infinitely long thin straight wire with uniform linear charge density $\lambda$. Find $\vec{E}$ at perpendicular distance $r$.</p>
+        <h3>Derivation 3: Torque Acting on an Electric Dipole</h3>
+        <p>
+          Place a permanent electric dipole of dipole moment $\vec{p} = q(2\vec{a})$ in a uniform electric field $\vec{E}$ such that $\vec{p}$ makes an angle $\theta$ with $\vec{E}$.
+        </p>
         <ol class="deriv-steps">
-          <li><strong>Gaussian Surface:</strong> By cylindrical symmetry, choose a coaxial cylinder of radius $r$ and length $l$. $\vec{E}$ is radially outward everywhere.</li>
-          <li><strong>Flux through 3 surfaces:</strong>
+          <li><strong>Forces on the two charges:</strong>
             <ul>
-              <li>Top &amp; bottom flat caps: $\vec{E} \perp d\vec{S} \Rightarrow \theta = 90^\circ \Rightarrow \Phi_{\text{top}} = \Phi_{\text{bottom}} = 0$.</li>
-              <li>Curved surface (area $2\pi r l$): $\vec{E} \parallel d\vec{S} \Rightarrow \theta = 0^\circ \Rightarrow \Phi_{\text{curved}} = E(2\pi r l)$.</li>
+              <li>Force on $+q$: $\vec{F}_+ = +q\vec{E}$ (in the direction of $\vec{E}$).</li>
+              <li>Force on $-q$: $\vec{F}_- = -q\vec{E}$ (opposite to $\vec{E}$).</li>
             </ul>
           </li>
-          <li><strong>Enclosed charge:</strong> $q_{\text{enc}} = \lambda l$.</li>
-          <li><strong>Apply Gauss's Law ($\Phi_E = \frac{q_{\text{enc}}}{\varepsilon_0}$):</strong>
-            $$E(2\pi r l) = \frac{\lambda l}{\varepsilon_0} \implies E = \frac{\lambda}{2\pi\varepsilon_0 r}, \qquad \vec{E} = \frac{\lambda}{2\pi\varepsilon_0 r}\hat{n}$$
+          <li><strong>Net translational force:</strong>
+            $$\vec{F}_{\text{net}} = \vec{F}_+ + \vec{F}_- = q\vec{E} - q\vec{E} = \vec{0}$$
+            Because the net force is zero, the dipole undergoes <strong>no linear (translational) motion</strong> in a uniform field.
           </li>
-        </ol>
-      </article>
-
-      <!-- Derivation 6 -->
-      <article class="topic-card">
-        <span class="ch-badge">Derivation 6 · Gauss Application 2</span>
-        <h2>Electric Field due to a Uniformly Charged Infinite Plane Sheet</h2>
-        <p><strong>Setup:</strong> Consider an infinite thin plane sheet with uniform surface charge density $\sigma$.</p>
-        <ol class="deriv-steps">
-          <li><strong>Gaussian Surface:</strong> Choose a cylindrical pillbox of cross-sectional area $A$ piercing the sheet perpendicularly on both sides.</li>
-          <li><strong>Flux calculation:</strong>
-            <ul>
-              <li>Curved side wall: $\vec{E} \perp d\vec{S} \Rightarrow \Phi_{\text{curved}} = 0$.</li>
-              <li>Two flat end caps (area $A$ each): $\vec{E} \parallel d\vec{S}$ on both sides, so $\Phi_E = EA + EA = 2EA$.</li>
-            </ul>
+          <li><strong>Torque (Couple):</strong> Since the two equal and opposite forces act at two different points, their lines of action do not coincide. They form a couple that rotates the dipole to align it with $\vec{E}$.
+            $$\tau = (\text{Magnitude of either force}) \times (\text{Perpendicular distance between lines of action})$$
+            Drop a perpendicular from $+q$ to the line of action of $\vec{F}_-$. From right-triangle geometry, the perpendicular arm is $2a\sin\theta$:
+            $$\tau = (qE)(2a\sin\theta) = (q \cdot 2a)E\sin\theta = pE\sin\theta$$
           </li>
-          <li><strong>Enclosed charge:</strong> $q_{\text{enc}} = \sigma A$.</li>
-          <li><strong>Apply Gauss's Law:</strong>
-            $$2EA = \frac{\sigma A}{\varepsilon_0} \implies E = \frac{\sigma}{2\varepsilon_0}, \qquad \vec{E} = \frac{\sigma}{2\varepsilon_0}\hat{n}$$
-          </li>
-        </ol>
-        <div class="formula-box"><strong>Board Note:</strong> $E$ is uniform and completely independent of distance $r$ from the infinite sheet.</div>
-      </article>
-
-      <!-- Derivation 7 -->
-      <article class="topic-card">
-        <span class="ch-badge">Derivation 7 · Gauss Application 3</span>
-        <h2>Electric Field due to a Uniformly Charged Thin Spherical Shell</h2>
-        <p><strong>Setup:</strong> Consider a thin spherical shell of radius $R$ with uniform surface charge density $\sigma$ and total charge $q = 4\pi R^2\sigma$. Draw a concentric spherical Gaussian surface of radius $r$.</p>
-
-        <h3>Case 1: Outside the Shell ($r &gt; R$)</h3>
-        <ol class="deriv-steps">
-          <li>Flux over Gaussian sphere: $\Phi_E = E(4\pi r^2)$. Enclosed charge: $q_{\text{enc}} = q$.</li>
-          <li>By Gauss's Law:
-            $$E(4\pi r^2) = \frac{q}{\varepsilon_0} \implies E = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2} = \frac{\sigma R^2}{\varepsilon_0 r^2}$$
+          <li><strong>Vector Form:</strong>
+            $$\vec{\tau} = \vec{p} \times \vec{E}$$
+            The direction of $\vec{\tau}$ is given by the right-hand screw rule (perpendicular to the plane containing $\vec{p}$ and $\vec{E}$).
           </li>
         </ol>
 
-        <h3>Case 2: On the Surface ($r = R$)</h3>
-        <p>Putting $r = R$ gives: $$E = \frac{1}{4\pi\varepsilon_0}\frac{q}{R^2} = \frac{\sigma}{\varepsilon_0}$$</p>
-
-        <h3>Case 3: Inside the Shell ($r &lt; R$)</h3>
-        <ol class="deriv-steps">
-          <li>Gaussian sphere of radius $r &lt; R$ encloses <strong>zero charge</strong>: $q_{\text{enc}} = 0$.</li>
-          <li>By Gauss's Law:
-            $$E(4\pi r^2) = 0 \implies E = 0$$
-          </li>
-        </ol>
-      </article>
-
-      <!-- ========================================================= -->
-      <!-- SECTION 3: SHORT REVISION NOTES & FORMULA SHEET           -->
-      <!-- ========================================================= -->
-      <div class="ch-divider" id="short-notes">
-        <span>03.</span>
-        <h2>CBSE Short Revision Notes &amp; Formula Sheet</h2>
-      </div>
-
-      <article class="topic-card">
-        <h2>All Formulas at a Glance</h2>
         <div class="sn-table-wrap">
           <table class="sn-table">
             <thead>
-              <tr><th>Topic / Law</th><th>Formula</th><th>SI Unit</th></tr>
+              <tr><th>Orientation ($\theta$)</th><th>Torque ($\tau = pE\sin\theta$)</th><th>Physical State</th></tr>
             </thead>
             <tbody>
-              <tr><td>Quantisation of Charge</td><td>$q = \pm ne$</td><td>$\text{C}$</td></tr>
-              <tr><td>Coulomb's Law</td><td>$F = \frac{1}{4\pi\varepsilon_0}\frac{|q_1 q_2|}{r^2}$</td><td>$\text{N}$</td></tr>
-              <tr><td>Electric Field (Point Charge)</td><td>$E = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}$</td><td>$\text{N C}^{-1}$</td></tr>
-              <tr><td>Dipole Moment</td><td>$\vec{p} = q(2\vec{a})$</td><td>$\text{C m}$</td></tr>
-              <tr><td>Dipole Axial Field ($r \gg a$)</td><td>$E_{\text{axial}} = \frac{1}{4\pi\varepsilon_0}\frac{2p}{r^3}$</td><td>$\text{N C}^{-1}$</td></tr>
-              <tr><td>Dipole Equatorial Field ($r \gg a$)</td><td>$E_{\text{eq}} = \frac{1}{4\pi\varepsilon_0}\frac{p}{r^3}$</td><td>$\text{N C}^{-1}$</td></tr>
-              <tr><td>Torque on Dipole</td><td>$\vec{\tau} = \vec{p} \times \vec{E} = pE\sin\theta$</td><td>$\text{N m}$</td></tr>
-              <tr><td>Electric Flux &amp; Gauss's Law</td><td>$\Phi_E = \oint \vec{E}\cdot d\vec{S} = \frac{q_{\text{enc}}}{\varepsilon_0}$</td><td>$\text{N m}^2\text{ C}^{-1}$</td></tr>
-              <tr><td>Infinite Charged Wire</td><td>$E = \frac{\lambda}{2\pi\varepsilon_0 r}$</td><td>$\text{N C}^{-1}$</td></tr>
-              <tr><td>Infinite Plane Sheet</td><td>$E = \frac{\sigma}{2\varepsilon_0}$</td><td>$\text{N C}^{-1}$</td></tr>
-              <tr><td>Thin Spherical Shell</td><td>$E_{\text{out}} = \frac{q}{4\pi\varepsilon_0 r^2}$, $E_{\text{in}} = 0$</td><td>$\text{N C}^{-1}$</td></tr>
+              <tr><td>$\theta = 0^\circ$ ($\vec{p} \parallel \vec{E}$)</td><td>$\tau = 0$</td><td><strong>Stable Equilibrium:</strong> Slight tilt produces a restoring torque bringing it back to $0^\circ$.</td></tr>
+              <tr><td>$\theta = 90^\circ$ ($\vec{p} \perp \vec{E}$)</td><td>$\tau_{\max} = pE$</td><td><strong>Maximum Torque:</strong> Strongest rotational pull toward $\vec{E}$.</td></tr>
+              <tr><td>$\theta = 180^\circ$ ($\vec{p}$ antiparallel to $\vec{E}$)</td><td>$\tau = 0$</td><td><strong>Unstable Equilibrium:</strong> Slight disturbance flips the dipole completely around to $0^\circ$.</td></tr>
             </tbody>
           </table>
         </div>
 
-        <div class="practice-box">
-          <strong>High-Yield CBSE Exam Traps:</strong>
-          <ul>
-            <li>Charge is speed-invariant; mass increases with relativistic velocity.</li>
-            <li>In a <strong>non-uniform</strong> field, a dipole experiences both a net force and a torque.</li>
-            <li>In $\oint \vec{E}\cdot d\vec{S} = q_{\text{enc}}/\varepsilon_0$, $\vec{E}$ is due to <em>all</em> charges (inside + outside), while $q_{\text{enc}}$ is <em>only</em> the charge inside the Gaussian surface.</li>
-          </ul>
+        <div class="board-tip">
+          <strong>What if the field is NON-UNIFORM?</strong> Then $\vec{F}_+ \neq -\vec{F}_-$, so the dipole experiences <strong>both a net translational force AND a torque</strong>. If $\vec{p}$ is parallel to an increasing $\vec{E}$, the net force pulls the dipole in the direction of increasing field (this is why a charged comb attracts neutral bits of paper by inducing a dipole in them!).
         </div>
       </article>
 
       <!-- ========================================================= -->
-      <!-- SECTION 4: NATIVE MIND MAP (USES YOUR .mm-wrap CLASSES)   -->
+      <!-- TOPIC 8: CONTINUOUS CHARGE & ELECTRIC FLUX                -->
       <!-- ========================================================= -->
-      <div class="ch-divider" id="mindmap">
-        <span>04.</span>
-        <h2>Chapter Mind Map</h2>
-      </div>
+      <article class="topic-card" id="t8">
+        <span class="ch-badge">Topic 1.10 &amp; 1.13 · Macroscopic Distributions</span>
+        <h2>8. Continuous Charge Distributions &amp; Electric Flux</h2>
 
-      <section class="mm-wrap" style="margin-bottom:40px;">
-        <div class="mm-root">Ch 01: Electric Charges &amp; Fields</div>
+        <p>When a huge number of charges are packed closely on a wire, sheet, or solid, we describe them using three charge densities:</p>
 
-        <div class="mm-card">
-          <h3>1. Electric Charge &amp; Properties</h3>
+        <div class="def-box">
+          <h3>Definitions: Linear, Surface &amp; Volume Charge Densities</h3>
           <ul>
-            <li>Scalar quantity, SI unit Coulomb ($\text{C}$), elementary charge $e = 1.6 \times 10^{-19}\text{ C}$.</li>
-            <li>Three core laws: Additivity ($q = \sum q_i$), Conservation (isolated system), Quantisation ($q = \pm ne$).</li>
-            <li>Methods of charging: Friction, Conduction, Induction (no physical contact).</li>
+            <li><strong>Linear Charge Density ($\lambda$):</strong> Charge per unit length of a line/wire: $\lambda = \frac{\Delta q}{\Delta l}$, SI unit $\text{C m}^{-1}$.</li>
+            <li><strong>Surface Charge Density ($\sigma$):</strong> Charge per unit area of a surface/sheet: $\sigma = \frac{\Delta q}{\Delta S}$, SI unit $\text{C m}^{-2}$.</li>
+            <li><strong>Volume Charge Density ($\rho$):</strong> Charge per unit volume of a 3D body: $\rho = \frac{\Delta q}{\Delta V}$, SI unit $\text{C m}^{-3}$.</li>
           </ul>
         </div>
 
-        <div class="mm-card">
-          <h3>2. Coulomb's Law &amp; Superposition</h3>
-          <ul>
-            <li>Force $F = \frac{1}{4\pi\varepsilon_0}\frac{|q_1 q_2|}{r^2}$ acts along the line joining two point charges (central force).</li>
-            <li>In a dielectric medium of constant $K$, force reduces by a factor of $K$: $F_{\text{med}} = F_{\text{vac}}/K$.</li>
-            <li>Superposition: Total force on a charge is the vector sum of individual two-body forces.</li>
-          </ul>
+        <div class="def-box">
+          <h3>Definition: Area Vector ($d\vec{S}$) &amp; Electric Flux ($\Phi_E$)</h3>
+          <p>A small planar surface element has an <strong>area vector</strong> $d\vec{S} = dS\,\hat{n}$ whose magnitude is its area $dS$ and direction $\hat{n}$ is along the <strong>outward normal</strong> to the surface.<br><br>
+          <strong>Electric Flux ($\Phi_E$)</strong> through a surface is the measure of the total number of electric field lines passing normally through that surface:
+          $$d\Phi_E = \vec{E} \cdot d\vec{S} = E\,dS\cos\theta \implies \Phi_E = \int \vec{E}\cdot d\vec{S}$$</p>
+          <div class="def-meta"><strong>Nature:</strong> Scalar quantity · <strong>SI Unit:</strong> $\text{N m}^2\text{ C}^{-1}$ (or $\text{V m}$) · <strong>Dimensions:</strong> $[\text{M L}^{3}\text{T}^{-3}\text{A}^{-1}]$</div>
         </div>
 
-        <div class="mm-card">
-          <h3>3. Electric Field &amp; Electric Dipole</h3>
-          <ul>
-            <li>Field intensity $\vec{E} = \lim_{q_0\to 0}\vec{F}/q_0$; field lines never intersect and never form closed loops.</li>
-            <li>Dipole moment $\vec{p} = q(2\vec{a})$ directed from $-q$ to $+q$.</li>
-            <li>Short dipole: $E_{\text{axial}} = \frac{2kp}{r^3}$ (along $\vec{p}$), $E_{\text{eq}} = \frac{kp}{r^3}$ (opposite to $\vec{p}$), Torque $\vec{\tau} = \vec{p} \times \vec{E}$.</li>
-          </ul>
-        </div>
-
-        <div class="mm-card">
-          <h3>4. Electric Flux &amp; Gauss's Law</h3>
-          <ul>
-            <li>Flux $\Phi_E = \oint \vec{E}\cdot d\vec{S} = q_{\text{enc}}/\varepsilon_0$ depends only on enclosed charge, not surface shape.</li>
-            <li>Infinite line charge: $E = \frac{\lambda}{2\pi\varepsilon_0 r}$ ($E \propto 1/r$).</li>
-            <li>Infinite plane sheet: $E = \frac{\sigma}{2\varepsilon_0}$ (independent of $r$).</li>
-            <li>Spherical shell: $E_{\text{out}} = \frac{kq}{r^2}$, $E_{\text{surface}} = \frac{\sigma}{\varepsilon_0}$, $E_{\text{in}} = 0$.</li>
-          </ul>
-        </div>
-      </section>
+        <ul>
+          <li>If $\theta = 0^\circ$ ($\vec{E}$ parallel to area vector, i.e., perpendicular to surface plane): $\Phi_E = +ES$ (maximum outward flux).</li>
+          <li>If $\theta = 90^\circ$ ($\vec{E}$ grazing/parallel to surface plane): $\Phi_E = 0$.</li>
+          <li>If $\theta = 180^\circ$ (field lines entering a closed surface): $\Phi_E = -ES$ (negative/inward flux).</li>
+        </ul>
+      </article>
 
       <!-- ========================================================= -->
-      <!-- SECTION 5: CONCEPT FLOWCHART (USES YOUR .flow-wrap)       -->
+      <!-- TOPIC 9: GAUSS'S LAW & ITS PROOF                          -->
       <!-- ========================================================= -->
-      <div class="ch-divider" id="flowchart">
-        <span>05.</span>
-        <h2>Exam Problem-Solving Flowchart</h2>
-      </div>
+      <article class="topic-card" id="t9">
+        <span class="ch-badge">Topic 1.14 · Derivation 4</span>
+        <h2>9. Gauss's Law &amp; Proof from Coulomb's Law</h2>
 
-      <section class="flow-wrap" style="margin-bottom:40px;">
-        <div class="flow-node root">Identify the Charge Distribution</div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node">
-          <h3>Discrete Point Charges?</h3>
+        <div class="def-box">
+          <h3>Definition: Gauss's Law</h3>
+          <p>The total electric flux through any closed surface (called a Gaussian surface) in vacuum is equal to $\frac{1}{\varepsilon_0}$ times the net electric charge ($q_{\text{enc}}$) enclosed within that surface:
+          $$\Phi_E = \oint \vec{E}\cdot d\vec{S} = \frac{q_{\text{enc}}}{\varepsilon_0}$$</p>
+        </div>
+
+        <h3>Derivation 4: Proof of Gauss's Law for a Spherical Surface</h3>
+        <p>Consider an isolated positive point charge $+q$ placed at the centre $O$ of an imaginary sphere of radius $r$.</p>
+        <ol class="deriv-steps">
+          <li><strong>Electric field on the surface:</strong> By Coulomb's law, the field at any point on the sphere is directed radially outward with constant magnitude:
+            $$\vec{E} = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\hat{r}$$
+          </li>
+          <li><strong>Area element:</strong> Choose a tiny patch $d\vec{S} = dS\,\hat{r}$ on the sphere. Both $\vec{E}$ and $d\vec{S}$ point radially outward, so the angle between them is $\theta = 0^\circ$.</li>
+          <li><strong>Flux through $d\vec{S}$:</strong>
+            $$d\Phi_E = \vec{E}\cdot d\vec{S} = E\,dS\cos 0^\circ = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\,dS$$
+          </li>
+          <li><strong>Total flux over the entire closed sphere:</strong> Integrating over the closed surface (taking constant $E$ outside the integral):
+            $$\Phi_E = \oint d\Phi_E = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\oint dS$$
+            Since the total surface area of a sphere of radius $r$ is $\oint dS = 4\pi r^2$:
+            $$\Phi_E = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}(4\pi r^2) = \frac{q}{\varepsilon_0}$$
+          </li>
+        </ol>
+
+        <h3>5 Key Rules of Gauss's Law (Frequently Tested in 1–2 Mark Qs)</h3>
+        <ul>
+          <li>Gauss's law holds for <strong>any closed surface</strong> regardless of its size or shape (sphere, cube, cylinder, or irregular potato shape).</li>
+          <li>If $q_{\text{enc}} = 0$ (e.g., an electric dipole enclosed inside a sphere, or charges lying outside), total flux $\Phi_E = 0$, even if $\vec{E} \neq 0$ at points on the surface.</li>
+          <li>In $\oint \vec{E}\cdot d\vec{S} = \frac{q_{\text{enc}}}{\varepsilon_0}$, the electric field $\vec{E}$ on the LHS is the resultant field due to <strong>all charges (both inside and outside)</strong>, whereas $q_{\text{enc}}$ on the RHS includes <strong>only charges strictly inside</strong> the surface.</li>
+          <li>The Gaussian surface must never pass through a discrete point charge (since $\vec{E}$ is undefined right at a point charge), though it may pass through a continuous charge distribution.</li>
+          <li>Gauss's law is fundamentally equivalent to the inverse-square ($1/r^2$) dependence of Coulomb's law.</li>
+        </ul>
+      </article>
+
+      <!-- ========================================================= -->
+      <!-- TOPIC 10: ALL 3 APPLICATIONS OF GAUSS'S LAW               -->
+      <!-- ========================================================= -->
+      <article class="topic-card" id="t10">
+        <span class="ch-badge">Topic 1.15 · Derivations 5, 6 &amp; 7</span>
+        <h2>10. Applications of Gauss's Law (All 3 Full Derivations)</h2>
+
+        <!-- Application 1 -->
+        <h3>Derivation 5: Electric Field due to an Infinitely Long Straight Uniformly Charged Wire</h3>
+        <p>
+          Consider an infinitely long, thin straight wire carrying uniform linear charge density $\lambda$ ($\text{C m}^{-1}$). We want to find the electric field $\vec{E}$ at a perpendicular distance $r$ from the wire.
+        </p>
+        <ol class="deriv-steps">
+          <li><strong>Symmetry Analysis:</strong> Because the wire is infinitely long, every point at perpendicular distance $r$ is physically identical. For any pair of symmetric charge elements above and below the observation point, their vertical field components cancel and horizontal radial components add. Thus $\vec{E}$ is <strong>radially outward</strong> (for $\lambda &gt; 0$) and has constant magnitude at distance $r$.</li>
+          <li><strong>Gaussian Surface:</strong> Imagine a closed coaxial circular cylinder of radius $r$ and length $l$ around the wire.</li>
+          <li><strong>Flux through the 3 parts of the cylinder:</strong>
+            <ul>
+              <li><strong>Top circular cap ($S_1$):</strong> $\vec{E}$ is radial while $d\vec{S}_1$ points vertically up ($\theta = 90^\circ$) $\implies \Phi_1 = \int E\,dS\cos 90^\circ = 0$.</li>
+              <li><strong>Bottom circular cap ($S_2$):</strong> $\vec{E}$ is radial while $d\vec{S}_2$ points vertically down ($\theta = 90^\circ$) $\implies \Phi_2 = 0$.</li>
+              <li><strong>Curved cylindrical surface ($S_3$):</strong> At every point, $\vec{E} \parallel d\vec{S}_3$ ($\theta = 0^\circ$) and $E$ is constant over area $2\pi r l$:
+                $$\Phi_3 = \int E\,dS\cos 0^\circ = E \int dS = E(2\pi r l)$$
+              </li>
+            </ul>
+          </li>
+          <li><strong>Total flux:</strong> $\Phi_E = \Phi_1 + \Phi_2 + \Phi_3 = E(2\pi r l)$.</li>
+          <li><strong>Charge enclosed inside length $l$:</strong> $q_{\text{enc}} = \lambda l$.</li>
+          <li><strong>Applying Gauss's Law ($\Phi_E = \frac{q_{\text{enc}}}{\varepsilon_0}$):</strong>
+            $$E(2\pi r l) = \frac{\lambda l}{\varepsilon_0} \implies E = \frac{\lambda}{2\pi\varepsilon_0 r}$$
+            In vector form: $$\vec{E} = \frac{\lambda}{2\pi\varepsilon_0 r}\hat{n}$$
+          </li>
+        </ol>
+        <div class="formula-box">
+          <strong>Graph Behaviour:</strong> $E \propto \frac{1}{r}$ (rectangular hyperbola). Notice $l$ cancels out completely.
+        </div>
+
+        <!-- Application 2 -->
+        <h3>Derivation 6: Electric Field due to a Uniformly Charged Infinite Plane Sheet</h3>
+        <p>
+          Consider a thin, infinite plane sheet carrying uniform surface charge density $\sigma$ ($\text{C m}^{-2}$).
+        </p>
+        <ol class="deriv-steps">
+          <li><strong>Symmetry Analysis:</strong> By planar symmetry, $\vec{E}$ cannot depend on $y$ or $z$ coordinates parallel to the sheet; it must point strictly perpendicular to the sheet, directed away from it on both sides (for $\sigma &gt; 0$).</li>
+          <li><strong>Gaussian Surface:</strong> Choose a right circular cylinder (or rectangular pillbox) of cross-sectional area $A$ piercing the sheet perpendicularly and extending equally on both sides.</li>
+          <li><strong>Flux through the pillbox:</strong>
+            <ul>
+              <li><strong>Curved side wall:</strong> $\vec{E}$ is parallel to the wall, so $\vec{E} \perp d\vec{S}$ ($\theta = 90^\circ$) $\implies \Phi_{\text{curved}} = 0$.</li>
+              <li><strong>Left &amp; Right flat end faces (area $A$ each):</strong> On both faces, $\vec{E}$ and outward normal $d\vec{S}$ point in the same direction ($\theta = 0^\circ$):
+                $$\Phi_E = \int_{\text{left}} E\,dS + \int_{\text{right}} E\,dS = EA + EA = 2EA$$
+              </li>
+            </ul>
+          </li>
+          <li><strong>Charge enclosed by the pillbox:</strong> $q_{\text{enc}} = \sigma A$.</li>
+          <li><strong>Applying Gauss's Law:</strong>
+            $$2EA = \frac{\sigma A}{\varepsilon_0} \implies E = \frac{\sigma}{2\varepsilon_0}, \qquad \vec{E} = \frac{\sigma}{2\varepsilon_0}\hat{n}$$
+          </li>
+        </ol>
+
+        <div class="board-tip">
+          <strong>Special Board Case — Two Parallel Infinite Sheets ($+\sigma$ and $-\sigma$):</strong>
           <ul>
-            <li>Use Coulomb's Law $F = k\frac{q_1 q_2}{r^2}$ or $E = k\frac{q}{r^2}$.</li>
-            <li>For multiple charges, resolve into $x, y$ components and apply Superposition.</li>
+            <li><strong>Region outside (left of $+\sigma$ or right of $-\sigma$):</strong> Fields are equal and opposite, so $E_{\text{out}} = \frac{\sigma}{2\varepsilon_0} - \frac{\sigma}{2\varepsilon_0} = 0$.</li>
+            <li><strong>Region between the sheets:</strong> Both fields point from $+\sigma$ to $-\sigma$, so they add up: $E_{\text{between}} = \frac{\sigma}{2\varepsilon_0} + \frac{\sigma}{2\varepsilon_0} = \frac{\sigma}{\varepsilon_0}$ (this is the exact basis of a parallel-plate capacitor in Chapter 2!).</li>
           </ul>
         </div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node">
-          <h3>Equal &amp; Opposite Pair ($+q, -q$)?</h3>
+
+        <!-- Application 3 -->
+        <h3>Derivation 7: Electric Field due to a Uniformly Charged Thin Spherical Shell</h3>
+        <p>
+          Consider a thin spherical shell of radius $R$ carrying uniform surface charge density $\sigma$. The total charge on the shell is $q = \sigma(4\pi R^2)$. We determine $\vec{E}$ at a distance $r$ from the centre $O$ by choosing a concentric spherical Gaussian surface of radius $r$.
+        </p>
+
+        <p><strong>Case 1: Point Outside the Shell ($r &gt; R$)</strong></p>
+        <ol class="deriv-steps">
+          <li>By spherical symmetry, $\vec{E}$ is radially outward and has the same magnitude at every point on the Gaussian sphere of radius $r$.</li>
+          <li>Total electric flux: $\Phi_E = \oint \vec{E}\cdot d\vec{S} = E\oint dS = E(4\pi r^2)$.</li>
+          <li>Charge enclosed: Since the entire shell lies inside the Gaussian sphere, $q_{\text{enc}} = q = 4\pi R^2\sigma$.</li>
+          <li>By Gauss's Law:
+            $$E(4\pi r^2) = \frac{q}{\varepsilon_0} \implies E = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2} = \frac{\sigma R^2}{\varepsilon_0 r^2}$$
+          </li>
+        </ol>
+        <p><em>Physical conclusion:</em> For all external points, a uniformly charged spherical shell behaves exactly as if its entire charge $q$ were concentrated as a point charge at its centre.</p>
+
+        <p><strong>Case 2: Point on the Surface of the Shell ($r = R$)</strong></p>
+        <p>Putting $r = R$ in the outside expression gives the maximum field:</p>
+        $$E = \frac{1}{4\pi\varepsilon_0}\frac{q}{R^2} = \frac{\sigma}{\varepsilon_0}$$
+
+        <p><strong>Case 3: Point Inside the Shell ($r &lt; R$)</strong></p>
+        <ol class="deriv-steps">
+          <li>The concentric Gaussian sphere of radius $r &lt; R$ lies completely inside the hollow shell. Because all charge resides on the outer surface at $R$, the enclosed charge is <strong>zero</strong>: $q_{\text{enc}} = 0$.</li>
+          <li>Applying Gauss's Law:
+            $$E(4\pi r^2) = \frac{0}{\varepsilon_0} = 0 \implies E = 0$$
+          </li>
+        </ol>
+
+        <div class="formula-box">
+          <strong>$E$ vs $r$ Graph Summary (Board 1-Mark Favourite):</strong>
           <ul>
-            <li>Calculate dipole moment $p = q(2a)$.</li>
-            <li>Use Axial ($\frac{2kp}{r^3}$), Equatorial ($\frac{kp}{r^3}$), or Torque ($\tau = pE\sin\theta$).</li>
+            <li>For $0 \le r &lt; R$: $E = 0$ (flat line along the $r$-axis).</li>
+            <li>At $r = R$: Sharp jump to maximum value $E_{\max} = \frac{\sigma}{\varepsilon_0} = \frac{1}{4\pi\varepsilon_0}\frac{q}{R^2}$.</li>
+            <li>For $r &gt; R$: Smooth hyperbolic fall as $E \propto \frac{1}{r^2}$.</li>
           </ul>
         </div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node">
-          <h3>Symmetric Continuous Distribution?</h3>
-          <ul>
-            <li>Choose matching Gaussian surface (Cylinder for wire, Pillbox for sheet, Sphere for shell).</li>
-            <li>Apply $\oint \vec{E}\cdot d\vec{S} = q_{\text{enc}}/\varepsilon_0$ to extract $E$ directly.</li>
-          </ul>
-        </div>
-      </section>
+      </article>
+
+      <!-- Bottom Chapter Navigation -->
+      <nav class="bottom-nav" aria-label="Next steps">
+        <a class="btn btn-light" href="index.html">← Back to Physics Hub</a>
+        <a class="btn btn-dark" href="chapter1-short-notes.html">Next: Short Revision Notes →</a>
+      </nav>
 
     </div>
   </main>
@@ -727,7 +949,7 @@
     </div>
   </div>
 
-  <!-- ============ THEME, SEARCH & MENU SCRIPT ============ -->
+  <!-- ============ SCRIPT ============ -->
   <script>
     const store = {
       get(k) { try { return localStorage.getItem(k); } catch { return null; } },
@@ -736,7 +958,6 @@
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    /* Theme Engine synced with shorveer-theme-name */
     const VALID_THEMES = ["notebook","chalkboard","blueprint","sunset","emerald","cyberpunk","minimal","dracula","solarized"];
     const htmlEl = document.documentElement;
     const themeButton = document.getElementById("themeButton");
@@ -773,22 +994,14 @@
       }
     });
 
-    /* Search Modal */
     const searchData = [
-      { title: "Ch 01: Electric Charges & Fields", description: "Definitions, Derivations, Gauss's Law", url: "chapter1.html" },
-      { title: "Ch 02: Electrostatic Potential & Capacitance", description: "Equipotential surfaces, capacitors", url: "chapter2.html" },
-      { title: "Ch 03: Current Electricity", description: "Drift velocity, Kirchhoff's rules", url: "chapter3.html" },
-      { title: "Ch 04: Moving Charges & Magnetism", description: "Biot-Savart, Ampere's Law", url: "chapter4.html" },
-      { title: "Ch 05: Magnetism & Matter", description: "Dia, Para, Ferromagnetic materials", url: "chapter5.html" },
-      { title: "Ch 06: Electromagnetic Induction", description: "Faraday, Lenz Law, Eddy currents", url: "chapter6.html" },
-      { title: "Ch 07: Alternating Current", description: "LCR resonance, Transformers", url: "chapter7.html" },
-      { title: "Ch 08: Electromagnetic Waves", description: "Displacement current, spectrum", url: "chapter8.html" },
-      { title: "Ch 09: Ray Optics", description: "Lens Maker, Prism, Microscope, Telescope", url: "chapter9.html" },
-      { title: "Ch 10: Wave Optics", description: "Huygens, Young's double slit interference", url: "chapter10.html" },
-      { title: "Ch 11: Dual Nature of Radiation", description: "Photoelectric effect, de Broglie", url: "chapter11.html" },
-      { title: "Ch 12: Atoms", description: "Bohr model, hydrogen spectrum", url: "chapter12.html" },
-      { title: "Ch 13: Nuclei", description: "Mass defect, binding energy curve", url: "chapter13.html" },
-      { title: "Ch 14: Semiconductor Electronics", description: "p-n junction diodes, rectifiers", url: "chapter14.html" }
+      { title: "Ch 01: Long Detailed Notes", description: "Electric Charges & Fields — full NCERT notes & derivations", url: "chapter1.html" },
+      { title: "Ch 01: Short Revision Notes", description: "Quick formula sheet & exam traps", url: "chapter1-short-notes.html" },
+      { title: "Ch 01: Mind Map & Flowchart", description: "Visual chapter summary", url: "chapter1-visual-maps.html" },
+      { title: "Ch 01: Solved Numericals", description: "Step-by-step NCERT & Board problems", url: "chapter1-numericals.html" },
+      { title: "Ch 01: CBSE PYQ Bank", description: "2-mark, 3-mark & 5-mark board questions", url: "chapter1-pyq.html" },
+      { title: "Ch 01: Timed MCQ Test", description: "Interactive board-level quiz with timer", url: "chapter1-mcq.html" },
+      { title: "Ch 02: Electrostatic Potential & Capacitance", description: "Equipotential surfaces, capacitors", url: "chapter2.html" }
     ];
 
     const searchButton = document.getElementById("searchButton");
@@ -813,7 +1026,7 @@
       const matches = searchData.filter(i => !q || i.title.toLowerCase().includes(q) || i.description.toLowerCase().includes(q));
       searchResults.innerHTML = matches.length
         ? matches.map(i => `<a class="result" href="${i.url}"><div><strong>${i.title}</strong><small>${i.description}</small></div><span class="go">→</span></a>`).join("")
-        : '<div class="empty-result">No matching physics topic found.</div>';
+        : '<div class="empty-result">No matching topic found.</div>';
     }
 
     searchButton.addEventListener("click", openSearch);
@@ -821,7 +1034,6 @@
     searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
     searchInput.addEventListener("input", e => renderResults(e.target.value));
 
-    /* Mobile Menu */
     const menuButton = document.getElementById("menuButton");
     const mobileMenu = document.getElementById("mobileMenu");
     function setMenu(open) {
