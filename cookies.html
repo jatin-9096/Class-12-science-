@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="notebook">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Cookies & Browser Storage Policy for Shorveer Notes — learn what preferences we save locally, how your theme stays synced, and how to clear your data.">
+  <meta name="author" content="Jatin Sandilya">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+
+  <link rel="canonical" href="https://shorveernotes.website/cookies.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cookies & Storage Policy | Shorveer Notes">
+  <meta property="og:description" content="Transparent breakdown of how Shorveer Notes uses browser storage and cookies to keep your study setup fast and personalized.">
+  <meta property="og:site_name" content="Shorveer Notes">
+  <meta property="og:url" content="https://shorveernotes.website/cookies.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1c1a'/%3E%3Cpath d='M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z' fill='%23e8b64c'/%3E%3C/svg%3E">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Global Stylesheet (Root) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Instant Theme Restore -->
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      const saved = localStorage.getItem('shorveer-theme-name');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    } catch {}
+  </script>
+
+  <style>
+    .policy-hero { padding: 54px 0 28px; }
+    .policy-hero h1 { font-size: clamp(34px, 5vw, 56px); margin-bottom: 14px; color: var(--ink); }
+    .policy-hero h1 em { font-style: italic; color: var(--rust); }
+    .policy-hero p { max-width: 660px; color: var(--muted); font-size: 17px; line-height: 1.65; margin-bottom: 16px; }
+    .policy-meta {
+      display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      font-size: 13.5px; color: var(--muted); padding: 7px 14px;
+      border: 1px dashed var(--line); border-radius: 999px;
+    }
+    .policy-badge {
+      display: inline-block; padding: 4px 10px; margin-bottom: 10px;
+      border-radius: 999px; font-size: 11.5px; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase;
+      background: var(--paper-2); border: 1px solid var(--line); color: var(--rust);
+    }
+    .sn-table-wrap { width: 100%; overflow-x: auto; margin: 16px 0; }
+    .sn-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    .sn-table th, .sn-table td {
+      border: 1px solid var(--line); padding: 11px 14px; text-align: left; color: var(--ink-2);
+    }
+    .sn-table th { background: var(--paper-2); color: var(--ink); font-weight: 700; }
+    .sn-table code {
+      font-family: var(--font-mono); font-size: 13px;
+      padding: 2px 6px; border-radius: 4px;
+      background: var(--paper-2); color: var(--ink); border: 1px solid var(--line-soft);
+    }
+    .storage-box {
+      margin-top: 16px; padding: 18px 20px;
+      background: var(--paper-2); border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .storage-status { font-size: 14.5px; color: var(--ink-2); line-height: 1.6; }
+    .storage-status strong { color: var(--ink); }
+    .storage-msg { margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--green); min-height: 20px; }
+  </style>
+
+  <title>Cookies &amp; Storage Policy | Shorveer Notes</title>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Shorveer Notes home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+          </svg>
+        </span>
+        <span class="brand-name">Shorveer<em>Notes</em></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="physics/index.html">Subjects</a>
+        <a href="about-notes.html">Framework</a>
+        <a href="about.html">About us</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="nav-icon" id="searchButton" aria-label="Open search" title="Search (Ctrl+K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/>
+          </svg>
+        </button>
+
+        <button class="nav-icon" id="themeButton" aria-label="Change theme" aria-expanded="false" title="Change theme">
+          <span class="palette-dot" aria-hidden="true"></span>
+        </button>
+
+        <button class="nav-icon mobile-toggle" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <path d="M3 6h18M3 12h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="physics/index.html">Physics Hub</a>
+      <a href="chemistry/index.html">Chemistry Hub</a>
+      <a href="mathematics/index.html">Mathematics Hub</a>
+      <a href="english/index.html">English Hub</a>
+      <a href="about.html">About Shorveer</a>
+    </div>
+  </header>
+
+  <!-- ============ THEME PICKER POPOVER (ALL 9 THEMES) ============ -->
+  <div class="theme-pop" id="themePop" role="dialog" aria-label="Choose a theme">
+    <h4>Pick a look</h4>
+    <div class="theme-grid">
+      <button class="theme-opt" data-theme-value="notebook" aria-pressed="true">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#fdfaf3"></span><span style="background:#e8b64c"></span><span style="background:#bf5a3c"></span><span style="background:#1c1c1a"></span>
+        </span>
+        <b>Notebook</b><small>Warm paper</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="chalkboard" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#1e2a24"></span><span style="background:#f0d97a"></span><span style="background:#7bc3bf"></span><span style="background:#ebe6d5"></span>
+        </span>
+        <b>Chalkboard</b><small>Dark green</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="blueprint" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#0f2b4c"></span><span style="background:#7ec8f5"></span><span style="background:#ff9d7c"></span><span style="background:#e2eefb"></span>
+        </span>
+        <b>Blueprint</b><small>Technical navy</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="sunset" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#241226"></span><span style="background:#ff8a5b"></span><span style="background:#ffb87a"></span><span style="background:#ffe9d6"></span>
+        </span>
+        <b>Sunset</b><small>Plum warm glow</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="emerald" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#0c1c17"></span><span style="background:#34d399"></span><span style="background:#f97316"></span><span style="background:#e6f6ee"></span>
+        </span>
+        <b>Emerald</b><small>Botanical dark</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="cyberpunk" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#0b0c13"></span><span style="background:#00f0ff"></span><span style="background:#ff007f"></span><span style="background:#f0f3ff"></span>
+        </span>
+        <b>Cyberpunk</b><small>Neon cyan</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="minimal" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#f8fafc"></span><span style="background:#2563eb"></span><span style="background:#dc2626"></span><span style="background:#0f172a"></span>
+        </span>
+        <b>Minimal</b><small>Clean slate</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="dracula" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#191622"></span><span style="background:#ff79c6"></span><span style="background:#bd93f9"></span><span style="background:#f8f8f2"></span>
+        </span>
+        <b>Dracula</b><small>Midnight purple</small>
+      </button>
+
+      <button class="theme-opt" data-theme-value="solarized" aria-pressed="false">
+        <span class="theme-swatch" aria-hidden="true">
+          <span style="background:#fdf6e3"></span><span style="background:#b58900"></span><span style="background:#cb4b16"></span><span style="background:#073642"></span>
+        </span>
+        <b>Solarized</b><small>Reading cream</small>
+      </button>
+    </div>
+    <p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0">Saved across all pages.</p>
+  </div>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main id="main" class="container">
+
+    <section class="policy-hero">
+      <div class="kicker" style="margin-bottom:14px;">
+        <span class="dot"></span>
+        <span>Transparency · Shorveer Notes</span>
+      </div>
+      <h1>Cookies &amp; <em>Browser Storage</em></h1>
+      <p>
+        Shorveer Notes is a free, account-free Class 12 study platform. Here is a plain-English breakdown of the small pieces of data saved in your browser so your reading experience stays smooth.
+      </p>
+      <div class="policy-meta">
+        <span>Last updated: <strong>November 2026</strong></span>
+        <span>·</span>
+        <span>Zero logins · Zero paywalls</span>
+      </div>
+    </section>
+
+    <div class="chap-wrap">
+
+      <!-- Section 1 -->
+      <article class="topic-card">
+        <span class="policy-badge">01 · Overview</span>
+        <h2>What Are Cookies &amp; Local Storage?</h2>
+        <p>
+          <strong>Cookies</strong> are tiny text files a website can place in your browser. <strong>Local Storage</strong> (`localStorage`) is a modern browser feature that saves simple preferences directly on your device—and unlike cookies, it is never sent back to a server on every page load.
+        </p>
+        <p style="margin-top:10px;">
+          Shorveer Notes relies primarily on <strong>Local Storage</strong> so features like your chosen reading theme stay consistent when you move between Physics, Chemistry, Mathematics, and English chapters.
+        </p>
+      </article>
+
+      <!-- Section 2 -->
+      <article class="topic-card">
+        <span class="policy-badge">02 · Exact Data Stored</span>
+        <h2>What Shorveer Notes Saves on Your Device</h2>
+        <div class="sn-table-wrap">
+          <table class="sn-table">
+            <thead>
+              <tr>
+                <th>Key / Type</th>
+                <th>Storage</th>
+                <th>Purpose</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>shorveer-theme-name</code></td>
+                <td>Local Storage</td>
+                <td>Remembers your selected colour palette (Notebook, Chalkboard, Blueprint, Sunset, etc.) across all pages.</td>
+                <td>Until cleared</td>
+              </tr>
+              <tr>
+                <td><code>cookie-consent</code></td>
+                <td>Local Storage</td>
+                <td>Remembers that you dismissed the cookie notice banner so it does not keep popping up while you study.</td>
+                <td>Until cleared</td>
+              </tr>
+              <tr>
+                <td>Third-Party Resources</td>
+                <td>Browser Cache / Cookies</td>
+                <td>External services such as Google Fonts, MathJax (for equations), or advertising partners (if ads are active) may use standard cookies or cache headers to load assets faster or deliver relevant ads.</td>
+                <td>Varies by provider</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- Section 3 -->
+      <article class="topic-card">
+        <span class="policy-badge">03 · Privacy Commitment</span>
+        <h2>What We Never Collect or Store</h2>
+        <ul>
+          <li><strong>No user accounts or passwords:</strong> You never have to sign up to read notes, derivations, or practice MCQs.</li>
+          <li><strong>No personal contact data in cookies:</strong> We do not store your name, phone number, email, or school details in browser storage.</li>
+          <li><strong>No selling of student data:</strong> Your local preferences stay strictly on your own device.</li>
+        </ul>
+      </article>
+
+      <!-- Section 4: Interactive Storage Manager -->
+      <article class="topic-card">
+        <span class="policy-badge">04 · Your Control</span>
+        <h2>Manage or Clear Your Saved Data</h2>
+        <p>
+          You are always in control of what stays in your browser. You can reset your Shorveer Notes local preferences below with a single click, or clear cookies anytime through your browser settings (Chrome, Edge, Safari, or Firefox → Settings → Privacy &amp; Security → Clear browsing data).
+        </p>
+
+        <div class="storage-box">
+          <div class="storage-status" id="storageStatus">
+            Checking saved preferences…
+          </div>
+          <button type="button" class="btn btn-dark" id="clearStorageBtn" style="min-height:42px; padding:0 18px; font-size:14px;">
+            Clear Saved Preferences
+          </button>
+        </div>
+        <div class="storage-msg" id="storageMsg" aria-live="polite"></div>
+      </article>
+
+      <!-- Section 5 -->
+      <article class="topic-card">
+        <span class="policy-badge">05 · Updates &amp; Contact</span>
+        <h2>Policy Updates</h2>
+        <p>
+          If new interactive study tools (like saved quiz bookmarks or progress trackers) are added to Shorveer Notes in the future, this page will be updated to list them clearly.
+        </p>
+        <p style="margin-top:10px;">
+          Have questions about how the site works? Visit the <a href="about.html" style="color:var(--rust); text-decoration:underline;">About Shorveer</a> page or check our <a href="privacy.html" style="color:var(--rust); text-decoration:underline;">Privacy Policy</a>.
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="sn-clean-footer">
+    <div class="container sn-f-wrap">
+      <div class="sn-f-grid">
+        <div class="sn-f-col brand-col">
+          <a class="brand" href="index.html" style="margin-bottom: 12px; display: inline-flex;">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M44 20c-2.5-3.5-7-5-12-5-9 0-14 5.5-14 11.5 0 8 7.5 10 14 12 6.5 2 10 3.5 10 7.5 0 5-5 8-11 8-6.5 0-11-3-13.5-7.5l-4 4.5C17 56 23 60 31 60c11 0 18-6.5 18-15 0-9-8-11.5-14.5-13.5-6-2-9.5-3-9.5-6.5 0-4 4-6 9.5-6 4.5 0 8 1.5 10.5 4.5L44 20z" fill="#e8b64c"/>
+              </svg>
+            </span>
+            <span class="brand-name">Shorveer<em>Notes</em></span>
+          </a>
+          <p class="sn-f-desc">A student-focused Class 12 Science learning platform with structured Physics, Chemistry, Mathematics and English resources.</p>
+          <div class="sn-f-author">Created with pride by <strong>Jatin Sandilya</strong></div>
+          <div style="margin-top: 14px;">
+            <a class="btn btn-dark" style="min-height: 38px; padding: 0 14px; font-size: 13px;" href="https://www.youtube.com/@JSEDIZ" target="_blank" rel="noopener noreferrer">
+              JS EDIZ on YouTube →
+            </a>
+          </div>
+        </div>
+
+        <div class="sn-f-col">
+          <h3 class="sn-f-title">Subjects</h3>
+          <ul class="sn-f-links">
+            <li><a href="physics/index.html">Physics Hub</a></li>
+            <li><a href="chemistry/index.html">Chemistry Hub</a></li>
+            <li><a href="mathematics/index.html">Mathematics Hub</a></li>
+            <li><a href="english/index.html">English Hub</a></li>
+          </ul>
+        </div>
+
+        <div class="sn-f-col">
+          <h3 class="sn-f-title">Resources</h3>
+          <ul class="sn-f-links">
+            <li><a href="exam-info.html">Exam Info</a></li>
+            <li><a href="about-notes.html">About Notes</a></li>
+            <li><a href="about.html">About Shorveer</a></li>
+            <li><a href="cookies.html">Cookies &amp; Storage</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sn-f-bottom">
+        <p>&copy; <span id="year">2026</span> Shorveer Notes · All rights reserved.</p>
+        <p>Built with pride in India 🇮🇳</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ SEARCH POPUP ============ -->
+  <div class="search-layer" id="searchLayer" aria-hidden="true">
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search">
+      <div class="search-top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+          <circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/>
+        </svg>
+        <input id="searchInput" type="search" placeholder="Search subjects and pages…" autocomplete="off">
+        <button class="search-close" id="searchClose" aria-label="Close search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- ============ SCRIPT ============ -->
+  <script>
+    const store = {
+      get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+      set(k, v) { try { localStorage.setItem(k, v); } catch {} },
+      clear() { try { localStorage.clear(); } catch {} }
+    };
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* Theme Engine */
+    const VALID_THEMES = ["notebook","chalkboard","blueprint","sunset","emerald","cyberpunk","minimal","dracula","solarized"];
+    const htmlEl = document.documentElement;
+    const themeButton = document.getElementById("themeButton");
+    const themePop = document.getElementById("themePop");
+    const themeOpts = document.querySelectorAll(".theme-opt");
+    const storageStatus = document.getElementById("storageStatus");
+    const storageMsg = document.getElementById("storageMsg");
+
+    function updateStorageReadout() {
+      const currentTheme = store.get("shorveer-theme-name") || "notebook (default)";
+      let keyCount = 0;
+      try { keyCount = localStorage.length; } catch {}
+      storageStatus.innerHTML =
+        `Active saved theme: <strong>${currentTheme}</strong><br>` +
+        `Total saved items on this device: <strong>${keyCount}</strong>`;
+    }
+
+    function applyTheme(name, save = true) {
+      if (!VALID_THEMES.includes(name)) name = "notebook";
+      htmlEl.setAttribute("data-theme", name);
+      if (save) store.set("shorveer-theme-name", name);
+      themeOpts.forEach(btn => btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === name)));
+      updateStorageReadout();
+    }
+
+    applyTheme(store.get("shorveer-theme-name") || "notebook", false);
+
+    themeButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = themePop.classList.toggle("open");
+      themeButton.setAttribute("aria-expanded", String(open));
+    });
+
+    themeOpts.forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyTheme(btn.dataset.themeValue, true);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+        storageMsg.textContent = "";
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!themePop.contains(e.target) && !themeButton.contains(e.target)) {
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    /* Clear Storage Button */
+    document.getElementById("clearStorageBtn").addEventListener("click", () => {
+      store.clear();
+      applyTheme("notebook", false);
+      storageMsg.textContent = "All Shorveer Notes local preferences have been cleared.";
+    });
+
+    /* Search Modal */
+    const searchData = [
+      { title: "Physics Hub", description: "Class 12 Physics — 14 chapters, derivations & notes", url: "physics/index.html" },
+      { title: "Chemistry Hub", description: "Class 12 Chemistry — Physical, Organic & Inorganic", url: "chemistry/index.html" },
+      { title: "Mathematics Hub", description: "Class 12 Mathematics — Formulas & solved problems", url: "mathematics/index.html" },
+      { title: "English Hub", description: "Class 12 Flamingo & Vistas summaries and Q&A", url: "english/index.html" },
+      { title: "Exam Info", description: "CBSE Class 12 blueprint and weightage", url: "exam-info.html" },
+      { title: "About Shorveer Notes", description: "Mission and creator details", url: "about.html" }
+    ];
+
+    const searchButton = document.getElementById("searchButton");
+    const searchLayer = document.getElementById("searchLayer");
+    const searchClose = document.getElementById("searchClose");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    function openSearch() {
+      searchLayer.classList.add("active");
+      searchLayer.setAttribute("aria-hidden", "false");
+      setTimeout(() => searchInput.focus(), 60);
+      renderResults("");
+    }
+    function closeSearch() {
+      searchLayer.classList.remove("active");
+      searchLayer.setAttribute("aria-hidden", "true");
+      searchInput.value = "";
+    }
+    function renderResults(query) {
+      const q = query.trim().toLowerCase();
+      const matches = searchData.filter(i => !q || i.title.toLowerCase().includes(q) || i.description.toLowerCase().includes(q));
+      searchResults.innerHTML = matches.length
+        ? matches.map(i => `<a class="result" href="${i.url}"><div><strong>${i.title}</strong><small>${i.description}</small></div><span class="go">→</span></a>`).join("")
+        : '<div class="empty-result">No matching page found.</div>';
+    }
+
+    searchButton.addEventListener("click", openSearch);
+    searchClose.addEventListener("click", closeSearch);
+    searchLayer.addEventListener("click", e => { if (e.target === searchLayer) closeSearch(); });
+    searchInput.addEventListener("input", e => renderResults(e.target.value));
+
+    /* Mobile Menu */
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    function setMenu(open) {
+      mobileMenu.classList.toggle("open", open);
+      menuButton.setAttribute("aria-expanded", String(open));
+    }
+    menuButton.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        closeSearch(); setMenu(false);
+        themePop.classList.remove("open");
+        themeButton.setAttribute("aria-expanded", "false");
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault(); openSearch();
+      }
+    });
+  </script>
+</body>
+</html>
